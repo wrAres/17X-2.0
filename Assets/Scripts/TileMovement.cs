@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-
+using UnityEngine.SceneManagement;
 public class TileMovement : MonoBehaviour
 {
     private Transform tileToMove;
@@ -126,7 +126,10 @@ public class TileMovement : MonoBehaviour
                 if (Puzzle[i,j] != num++) flag = false;
             }
         }
-        if (flag) Debug.Log("Finished Puzzle");
+        if (flag) {
+			Debug.Log("Finished Puzzle");
+			SceneManager.LoadScene("scene3");
+		}
     }
 
     // Move tile on the screen
