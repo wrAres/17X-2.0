@@ -12,15 +12,27 @@ public class TileMovement : MonoBehaviour
     private float speed = 100.0f;
 
     Dictionary<int, string> dict = new Dictionary<int, string>();
+    static Dictionary<Tuple<int, int>, Vector3> startPos = new Dictionary<Tuple<int, int>, Vector3>();
     int[,] Puzzle;
 
     // Start is called before the first frame update
     void Start()
     {
-        invisTile = GameObject.Find("InvisTile").GetComponent<Transform>();
+        // Set StartPos dictionary
+        int limit = 1;
+        for (int j = 0; j < 3; j++){
+            for (int k = 0; k < 3; k++){
+                Vector3 tilePos = GameObject.Find("Tile" + limit++).GetComponent<Transform>().position;
+                Tuple<int, int> tup = new Tuple<int, int>(j, k);
+                startPos.Add(tup, tilePos);
+            }
+        }
+        
+        invisTile = GameObject.Find("Tile9").GetComponent<Transform>();
         Puzzle = MakePuzzle();
+        print_puzzle();
 
-        //Set Dictionary to map Puzzle to screen
+        // Set Dictionary to map Puzzle to screen
         for (int i = 1; i <= 9; i++){
             dict.Add(i, "Tile" + i);
         }
@@ -72,12 +84,24 @@ public class TileMovement : MonoBehaviour
     }
 
     private static int[,] MakePuzzle(){
-        // Can make this static and set a puzzle
+        // Make Puzzle Random
+        List<int> numbers = new List<int>();
+        int number;
+        for (int i = 0; i < 9; i++){
+            do{
+                number = UnityEngine.Random.Range(1, 10);
+            } while (numbers.Contains(number));
+            numbers.Add(number);
+        }
+        // Place puzzle in 3x3 grid
         int[,] puzzle = new int[3,3];
-        int num = 1;
+        int num = 0;
         for (int i = 0; i < 3; i++){
             for (int j = 0; j < 3; j++){
-                puzzle[i,j] = num++;
+                puzzle[i,j] = numbers[num];
+                GameObject tileToChange = GameObject.Find("Tile" + numbers[num++]);
+                Tuple<int, int> location = new Tuple<int, int>(i, j);
+                tileToChange.GetComponent<Transform>().position = startPos[location];
             }
         }
         return puzzle;
