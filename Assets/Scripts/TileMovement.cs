@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class TileMovement : MonoBehaviour
 {
@@ -45,6 +46,14 @@ public class TileMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("scene3");
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("scene0");
+        }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Tuple<bool, string>[] tiles = GetTiles();
@@ -199,6 +208,7 @@ public class TileMovement : MonoBehaviour
             tempColor.a = 1.0f;
             lastTile.GetComponent<Image>().color = tempColor;
             Debug.Log("Finished Puzzle");
+            SceneManager.LoadScene("scene3");
         }
     }
 
