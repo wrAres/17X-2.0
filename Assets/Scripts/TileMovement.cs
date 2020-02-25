@@ -6,6 +6,8 @@ using System;
 
 public class TileMovement : MonoBehaviour
 {
+    public Sprite finalTile; // The last piece to the puzzle
+
     private Transform tileToMove;
     private Transform invisTile;
 
@@ -32,7 +34,6 @@ public class TileMovement : MonoBehaviour
 
         invisTile = GameObject.Find("Tile9").GetComponent<Transform>();
         Puzzle = MakePuzzle();
-        print_puzzle();
 
         // Set Dictionary to map Puzzle to screen
         for (int i = 1; i <= 9; i++)
@@ -96,6 +97,18 @@ public class TileMovement : MonoBehaviour
 
     private static int[,] MakePuzzle()
     {
+        // Simple puzzle (use to test if puzzle is funcitoning properly)
+        /*int[,] Tpuzzle = new int[3, 3];
+        int Tnum = 1;
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                Tpuzzle[i, j] = Tnum++;
+            }
+        }
+        return Tpuzzle;*/
+
         // Make Puzzle Random
         List<int> numbers = new List<int>();
         int number;
@@ -177,7 +190,16 @@ public class TileMovement : MonoBehaviour
                 if (Puzzle[i, j] != num++) flag = false;
             }
         }
-        if (flag) Debug.Log("Finished Puzzle");
+        if (flag){
+            // TODO: Implement element combination to make last piece of puzzle
+            // For now spawn in last piece
+            GameObject lastTile = GameObject.Find("Tile9");
+            lastTile.GetComponent<Image>().sprite = finalTile;
+            var tempColor = lastTile.GetComponent<Image>().color;
+            tempColor.a = 1.0f;
+            lastTile.GetComponent<Image>().color = tempColor;
+            Debug.Log("Finished Puzzle");
+        }
     }
 
     // Move tile on the screen
