@@ -1,6 +1,8 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - SpellTreeManager
+    - TalisDrag
     - TileMovement
     - playerMovement
     - sceneTransition
@@ -23,8 +25,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
-    com.unity.multiplayer-hlapi.Runtime.dll:
-    - UnityEngine.Networking.NetworkCallbacks
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -48,17 +48,70 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11186}
+      Script: {instanceID: 11182}
     - Class: 114
-      Script: {instanceID: 11442}
+      Script: {instanceID: 11438}
     - Class: 114
-      Script: {instanceID: 11954}
+      Script: {instanceID: 11950}
     - Class: 114
-      Script: {instanceID: 12892}
+      Script: {instanceID: 12888}
     - Class: 114
-      Script: {instanceID: 13062}
+      Script: {instanceID: 13058}
     - Class: 114
-      Script: {instanceID: 13526}
+      Script: {instanceID: 13522}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
+    Assets/Scenes/Spell-Tree-Test.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11182}
+    - Class: 114
+      Script: {instanceID: 11432}
+    - Class: 114
+      Script: {instanceID: 11438}
+    - Class: 114
+      Script: {instanceID: 11950}
+    - Class: 114
+      Script: {instanceID: 12246}
+    - Class: 114
+      Script: {instanceID: 12888}
+    - Class: 114
+      Script: {instanceID: 13058}
+    - Class: 114
+      Script: {instanceID: 13522}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -105,9 +158,9 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11168}
+      Script: {instanceID: 11164}
     - Class: 114
-      Script: {instanceID: 12166}
+      Script: {instanceID: 12162}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -148,9 +201,9 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11168}
+      Script: {instanceID: 11164}
     - Class: 114
-      Script: {instanceID: 12166}
+      Script: {instanceID: 12162}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -191,9 +244,9 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11168}
+      Script: {instanceID: 11164}
     - Class: 114
-      Script: {instanceID: 12166}
+      Script: {instanceID: 12162}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -234,11 +287,11 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11168}
+      Script: {instanceID: 11164}
     - Class: 114
-      Script: {instanceID: 12008}
+      Script: {instanceID: 12004}
     - Class: 114
-      Script: {instanceID: 12166}
+      Script: {instanceID: 12162}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -279,9 +332,9 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11168}
+      Script: {instanceID: 11164}
     - Class: 114
-      Script: {instanceID: 12166}
+      Script: {instanceID: 12162}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -413,6 +466,18 @@ ScriptsOnlyBuild:
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
     className: NetworkTransform
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements
+    className: CallbackExecutor
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: UnityEngine.Advertisements.dll
+    namespaceName: UnityEngine.Advertisements.Editor
+    className: Placeholder
   - hash:
       serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
@@ -895,4 +960,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/scene2.unity
   - Assets/Scenes/scene4.unity
   - Assets/Scenes/SampleScene.unity
+  - Assets/Scenes/Spell-Tree-Test.unity
   playerPath: G:/programs/171/MovePuzzle.exe

@@ -6,6 +6,7 @@ public class playerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
 	public int isReverse;
+	public Animator ani;
     void Start()
     {
         
@@ -14,6 +15,8 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+		ani.SetFloat("Speed", Mathf.Abs(GetComponent<Rigidbody>().velocity.z));
 		if(Input.GetKey("w")){
 			GetComponent<Rigidbody>().velocity = new Vector3(0,0,3*isReverse);
 		}
