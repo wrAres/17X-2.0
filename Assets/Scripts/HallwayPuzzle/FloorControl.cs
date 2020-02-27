@@ -6,7 +6,7 @@ public class FloorControl : MonoBehaviour
 {
     // Keep a list of platforms the player is colliding with
     public List<string> floor = new List<string>();
-    public bool start = false;
+    public bool start = true;
     public bool end = false;
 
     private Vector3 startPos;
@@ -22,7 +22,7 @@ public class FloorControl : MonoBehaviour
         Destroy(randomObj);
     }
 
-    // Update is called once per frame
+    // Update is called once per frameS
     void Update()
     {
         if (floor.Count > 0 && start == false && end == false) start = true;
