@@ -42,13 +42,14 @@ public class Backpack : MonoBehaviour
         imageObjects.AddLast(imageObj);
 
         RawImage image = imageObj.AddComponent<RawImage>(); //Add the Image Component script
+        ItemDragHandler handler = imageObj.AddComponent<ItemDragHandler>(); //Add item-drag component
 
         image.texture = Resources.Load<Texture2D>(name); //Set the Sprite of the Image Component on the new GameObject
         imageObj.tag = "Item";
 
         RectTransform item_transform = imageObj.GetComponent<RectTransform>();
         RectTransform backpack_transform = backpack.GetComponent<RectTransform>();
-        item_transform.SetParent(canvas.transform); //Assign the newly created Image GameObject as a Child of the Parent Panel.
+        item_transform.SetParent(canvas.transform); //Assign the newly created Image GameObject as a Child of the Parent Panel, Canvas/Main UI.
 
         item_transform.anchoredPosition = backpack_transform.anchoredPosition + new Vector2((length-5)*100, 0);
         item_transform.sizeDelta = new Vector2(90, 90);
