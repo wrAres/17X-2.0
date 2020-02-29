@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TalismanManager : MonoBehaviour {
+    [System.Serializable]
+    public class Recipe {
+        public string itemName;
+        public TalisDrag.Elements[] element = new TalisDrag.Elements[3];
+    }
+    // Main display variables
     public GameObject display;
     public float timer;
     public GameObject prefab, player;
+    // Element variables
+    public GameObject[] elements;
+    public Vector3[] elePos;
 
     private float curTime;
-    public GameObject[] elements;
-    public Transform[] elePos;
-
-
-    private List<GameObject> unlockedEle = new List<GameObject>();
-    public GameObject eleSpell;
-
-    private void Start() {
-        UnlockElement(eleSpell);
-        UnlockElement(eleSpell);
-    }
+    // Cookbook variables
+    private TalisDrag.Elements[] craft = new TalisDrag.Elements[3];
+    public Recipe[] recipeBook;
 
     // Update is called once per frame
     void Update() {
@@ -35,10 +36,11 @@ public class TalismanManager : MonoBehaviour {
             curTime -= Time.deltaTime;
         }
         else if (curTime <= 0 && display.activeSelf) {
-            display.SetActive(false);
+            CloseDisplay();
         }
     }
 
+    // Display the list of currently usable elements
     private void DisplaySpellList() {
         int curPos = 0;
         for (int i = 0; i < elements.Length; i++) {
@@ -47,7 +49,8 @@ public class TalismanManager : MonoBehaviour {
             if (!ele.locked && !ele.known) {
                 elements[i].SetActive(true);
                 elements[i].GetComponent<RectTransform>().localPosition =
-                    Vector3.zero;
+                    elePos[curPos];
+                elements[i].GetComponent<TalisDrag>().UpdateOrigin(elePos[curPos]);
                 curPos += 1;
             }
             else {
@@ -56,10 +59,61 @@ public class TalismanManager : MonoBehaviour {
         }
     }
 
-    // Functions to be called by other scripts
-    public void UnlockElement(GameObject e) {
-        if (e.GetComponent<TalisDrag>()) {
-            unlockedEle.Add(e);
+    // Reset the craft log
+    private void ResetCraft() {
+        for (int i = 0; i < craft.Length; i++) {
+            craft[i] = TalisDrag.Elements.NONE;
         }
     }
+
+    // Close the entire talisman display
+    private void CloseDisplay() {
+        display.SetActive(false);
+        ResetCraft();
+        curTime = 0;
+    }
+
+    // Check if recipe can be made from current craft
+    private bool CheckRecipe(Recipe r) {
+        TalisDrag.Elements[] curCraft = new TalisDrag.Elements[3];
+        System.Array.Copy(craft, curCraft, 3);
+        for (int i = 0; i < r.element.Length; i++) {
+            bool gotEle = false;
+            for (int j = 0; j < craft.Length; j++) {
+                if (r.element[i] == curCraft[j]) {
+                    gotEle = true;
+                    curCraft[j] = TalisDrag.Elements.NONE;
+                    break;
+                }
+            }
+
+            if (!gotEle && r.element[i] != TalisDrag.Elements.NONE) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /*
+     * Functions to be called by other scripts
+     */
+
+    // Add an element to the craft log
+    public void AddCraft(TalisDrag.Elements e) {
+        for (int i = 0; i < craft.Length; i++) {
+            if(craft[i] == TalisDrag.Elements.NONE){
+                craft[i] = e;
+                break;
+            }
+        }
+
+        // Check if item can be made
+        for (int i = 0; i < recipeBook.Length; i++) {
+            if (CheckRecipe(recipeBook[i])) {
+                Debug.Log("MADE ITEM: " + recipeBook[i].itemName);
+                CloseDisplay();
+            }
+        }
+    }
+
 }

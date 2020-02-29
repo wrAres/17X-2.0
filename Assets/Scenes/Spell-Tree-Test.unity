@@ -238,7 +238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -652, y: 0}
+  m_AnchoredPosition: {x: -504, y: 215}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &35972553
@@ -255,6 +255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   element: 1
   locked: 1
+  known: 0
   talisman: {fileID: 1589300915}
   dispManager: {fileID: 1219038889}
 --- !u!114 &35972554
@@ -345,6 +346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   element: 7
   locked: 1
+  known: 0
   talisman: {fileID: 1589300915}
   dispManager: {fileID: 1219038889}
 --- !u!114 &82007079
@@ -435,6 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   element: 4
   locked: 0
+  known: 0
   talisman: {fileID: 1589300915}
   dispManager: {fileID: 1219038889}
 --- !u!114 &100484147
@@ -816,6 +819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   element: 8
   locked: 1
+  known: 0
   talisman: {fileID: 1589300915}
   dispManager: {fileID: 1219038889}
 --- !u!114 &367476037
@@ -1435,7 +1439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &805716179
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2103,9 +2107,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   display: {fileID: 1743515861}
-  timer: 6
+  timer: 10
   prefab: {fileID: 1743515861}
   player: {fileID: 0}
+  elements:
+  - {fileID: 35972551}
+  - {fileID: 100484144}
+  - {fileID: 2049825945}
+  - {fileID: 1598906503}
+  - {fileID: 1268294885}
+  - {fileID: 82007076}
+  - {fileID: 367476034}
+  - {fileID: 1424797488}
+  - {fileID: 1335349794}
+  elePos:
+  - {x: -504, y: 321, z: 1}
+  - {x: -504, y: 215, z: 1}
+  - {x: -504, y: 109, z: 1}
+  - {x: -504, y: 3, z: 1}
+  - {x: -504, y: -103, z: 1}
+  - {x: -504, y: -209, z: 1}
+  - {x: -504, y: -315, z: 1}
+  - {x: -504, y: 321, z: 1}
+  - {x: -504, y: 321, z: 1}
+  recipeBook:
+  - itemName: Dirt
+    element: 040000000400000004000000
 --- !u!114 &1219038892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2118,34 +2145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eaf5dd188a174b2799d6201832420de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spell:
-  - icon: {fileID: 1796059630}
-    element: 1
-    locked: 1
-  - icon: {fileID: 752125457}
-    element: 4
-    locked: 0
-  - icon: {fileID: 1968837549}
-    element: 0
-    locked: 1
-  - icon: {fileID: 203630409}
-    element: 5
-    locked: 1
-  - icon: {fileID: 766773853}
-    element: 6
-    locked: 1
-  - icon: {fileID: 1613450153}
-    element: 7
-    locked: 1
-  - icon: {fileID: 2049061755}
-    element: 8
-    locked: 1
-  - icon: {fileID: 1344209092}
-    element: 3
-    locked: 1
-  - icon: {fileID: 1401690641}
-    element: 2
-    locked: 1
+  spell: []
   display: {fileID: 805716178}
 --- !u!224 &1221653410 stripped
 RectTransform:
@@ -2205,6 +2205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   element: 6
   locked: 1
+  known: 0
   talisman: {fileID: 1589300915}
   dispManager: {fileID: 1219038889}
 --- !u!114 &1268294888
@@ -2420,6 +2421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   element: 2
   locked: 1
+  known: 0
   talisman: {fileID: 1589300915}
   dispManager: {fileID: 1219038889}
 --- !u!114 &1335349797
@@ -2780,6 +2782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   element: 3
   locked: 1
+  known: 0
   talisman: {fileID: 1589300915}
   dispManager: {fileID: 1219038889}
 --- !u!114 &1424797491
@@ -2845,15 +2848,15 @@ RectTransform:
   m_GameObject: {fileID: 1589300914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 2.5611498, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 1743515864}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.58874995, y: 0.231}
-  m_AnchorMax: {x: 0.904375, y: 0.776}
-  m_AnchoredPosition: {x: 1.5, y: -3}
-  m_SizeDelta: {x: -405, y: -390}
+  m_AnchorMin: {x: 0.666875, y: 0.22210337}
+  m_AnchorMax: {x: 0.8281249, y: 0.776}
+  m_AnchoredPosition: {x: 0, y: 1}
+  m_SizeDelta: {x: -158, y: -398}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1589300916
 MonoBehaviour:
@@ -2943,6 +2946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   element: 5
   locked: 1
+  known: 0
   talisman: {fileID: 1589300915}
   dispManager: {fileID: 1219038889}
 --- !u!114 &1598906506
@@ -3083,7 +3087,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1743515862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3419,7 +3423,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: 0
-  locked: 1
+  locked: 0
+  known: 0
   talisman: {fileID: 1589300915}
   dispManager: {fileID: 1219038889}
 --- !u!114 &2049825948

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHandler {
-    public enum Elements { METAL, WOOD, WATER, FIRE, EARTH, THUNDER, SUN, WIND, MOON };
+    public enum Elements { METAL, WOOD, WATER, FIRE, EARTH, THUNDER, SUN, WIND, MOON, NONE };
     public Elements element;
     public bool locked, known;
     public Transform talisman, dispManager;
@@ -25,7 +25,8 @@ public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHand
 
     public void OnEndDrag(PointerEventData eventData) {
         if (!setTalis) {
-            transform.position = origin;
+            //transform.position = origin;
+            gameObject.GetComponent<RectTransform>().localPosition = origin;
         }
     }
 
@@ -33,18 +34,23 @@ public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHand
         RectTransform invPanel = talisman as RectTransform;
 
         if (RectTransformUtility.RectangleContainsScreenPoint(invPanel, Input.mousePosition)) {
-            Debug.Log("Spell Detected: " + element);
-            setTalis = true;
+            Debug.Log("Added element: " + element);
+            //setTalis = true;
+            dispManager.GetComponent<TalismanManager>().AddCraft(element);
         }
     }
 
     // Start is called before the first frame update
     void Start() {
-        origin = transform.position;
+        origin = gameObject.GetComponent<RectTransform>().localPosition;
     }
 
     // Update is called once per frame
     void Update() {
 
+    }
+
+    public void UpdateOrigin(Vector3 newPos) {
+        origin = newPos;
     }
 }
