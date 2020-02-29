@@ -21,6 +21,8 @@ public class TalismanManager : MonoBehaviour {
     private TalisDrag.Elements[] craft = new TalisDrag.Elements[3];
     public Recipe[] recipeBook;
 
+    public Backpack backpack;
+
     // Update is called once per frame
     void Update() {
         if (Input.GetKey("space") && curTime <= 0) {
@@ -111,6 +113,7 @@ public class TalismanManager : MonoBehaviour {
         for (int i = 0; i < recipeBook.Length; i++) {
             if (CheckRecipe(recipeBook[i])) {
                 Debug.Log("MADE ITEM: " + recipeBook[i].itemName);
+                backpack.AddItem(recipeBook[i].itemName);
                 CloseDisplay();
             }
         }
