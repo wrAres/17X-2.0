@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{723736E0-234A-81B5-781F-EA4585C42642}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TalisDrag.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BackpackScript/Item.cs">
     <Files>
-      <File FileName="Assets/TileMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/SpellTreeManager.cs" Line="10" Column="27" />
-      <File FileName="Assets/Scripts/TalisDrag.cs" Line="90" Column="2" />
+      <File FileName="Assets/Scripts/SpellTreeManager.cs" Line="23" Column="35" />
+      <File FileName="Assets/Scripts/TalisDrag.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/TalismanSpelltree/TalismanManager.cs" Line="8" Column="38" />
+      <File FileName="Assets/Scripts/BackpackScript/Item.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,7 +12,10 @@
           <Node name="17X-2.0" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="TalisDrag.cs" selected="True" />
+                <Node name="BackpackScript" expanded="True">
+                  <Node name="Item.cs" selected="True" />
+                </Node>
+                <Node name="TalismanSpelltree" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -21,7 +25,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d533afc3-d5c0-4005-82ff-dba6478ef9de" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="42c5b9bf-ce1d-4acf-8cc0-4957d41c96f7" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
