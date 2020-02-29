@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class Show : MonoBehaviour
 {
+    public GameObject spellTreeDisp;
+
     GraphicRaycaster raycaster;
     PointerEventData pointerData;
     EventSystem eventSystem;
@@ -37,17 +39,22 @@ public class Show : MonoBehaviour
             {
                 // Debug.Log("Hit " + result.gameObject.tag);
 
-                if (result.gameObject.tag.CompareTo("BackpackIcon") == 0){
+                if (result.gameObject.tag.CompareTo("BackpackIcon") == 0) {
                     if (Backpack.backpack.activeSelf) {
                         Backpack.backpack.GetComponent<Backpack>().Show(false);
-                    } else {
+                    }
+                    else {
                         Backpack.backpack.GetComponent<Backpack>().Show(true);
                     }
-                } else if (result.gameObject.tag.CompareTo("Item") == 0){
+                }
+                else if (result.gameObject.tag.CompareTo("Item") == 0) {
                     PutObject.itemOnGround = result.gameObject;
                     PutObject.holdItem = true;
                     ItemDragHandler.previousPosition = result.gameObject.GetComponent<RectTransform>().anchoredPosition;
-                } 
+                }
+                else if (result.gameObject.tag.CompareTo("SpellTreeIcon") == 0) {
+                    spellTreeDisp.SetActive(!spellTreeDisp.activeSelf);
+                }
             }
         }
     }

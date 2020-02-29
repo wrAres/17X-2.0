@@ -20,12 +20,14 @@ public class SpellTreeManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        /*
         if (Input.GetKey(KeyCode.S)) {
             display.SetActive(true);
         }
         else {
             display.SetActive(false);
         }
+        */
     }
 
     private void UpdateIcons() {
