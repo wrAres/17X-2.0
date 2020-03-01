@@ -4,14 +4,32 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    // Field
-    // private Elements curEle;
-    private string itemName;
+    private static Hashtable itemOnPuzzle;
+    private static string[] availablePutList;
 
-    public Item(string name) {
-        itemName = name;
+    void Start() {
+        itemOnPuzzle = new Hashtable();
+        itemOnPuzzle.Add("dirt", "River Flowerpot");
+        
     }
 
-    // Functions to be called by other scripts
-    public string GetName() { return itemName; }
+    public static bool canPlace(string item, string position) {
+        string available = (string)itemOnPuzzle[item];
+        if (available == null)
+            return false;
+        availablePutList = available.Split(' ');
+        for (int i = 0; i < availablePutList.Length; i++) {
+            if (position.CompareTo(availablePutList[i]) == 0){
+                return true;
+            }
+        }
+        return false;
+    }
+    public static void puzzleEffect(string item, string position) {
+        if (item.CompareTo("dirt") == 0 && position.CompareTo("River") == 0){
+            GameObject river = GameObject.Find("River");
+            river.GetComponent<CapsuleCollider>().radius = 0;
+            GameObject.Find("River").GetComponent<Renderer>().material.color = Color.gray;
+        }
+    }
 }

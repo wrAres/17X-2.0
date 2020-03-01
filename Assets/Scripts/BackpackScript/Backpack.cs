@@ -20,7 +20,8 @@ public class Backpack : MonoBehaviour
         imageObjects = new LinkedList<GameObject>();
         length = 0;
         this.AddItem("branch");
-        this.AddItem("item1");
+        this.AddItem("dirt");
+        this.Show(false);
     }
     void OnGUI() {
         GUI.depth = 0;

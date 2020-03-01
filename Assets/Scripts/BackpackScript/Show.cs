@@ -48,8 +48,8 @@ public class Show : MonoBehaviour
                     }
                 }
                 else if (result.gameObject.tag.CompareTo("Item") == 0) {
-                    PutObject.itemOnGround = result.gameObject;
-                    PutObject.holdItem = true;
+                    ItemDragHandler.itemOnGround = result.gameObject;
+                    ItemDragHandler.holdItem = true;
                     ItemDragHandler.previousPosition = result.gameObject.GetComponent<RectTransform>().anchoredPosition;
                 }
                 else if (result.gameObject.tag.CompareTo("SpellTreeIcon") == 0) {
