@@ -52,7 +52,7 @@ public class Backpack : MonoBehaviour
         RectTransform backpack_transform = backpack.GetComponent<RectTransform>();
         item_transform.SetParent(canvas.transform); //Assign the newly created Image GameObject as a Child of the Parent Panel, Canvas/Main UI.
 
-        item_transform.anchoredPosition = backpack_transform.anchoredPosition + new Vector2((length-5)*100, 0);
+        item_transform.anchoredPosition = backpack_transform.anchoredPosition + new Vector2((length-7.5f)*100, 0);
         item_transform.sizeDelta = new Vector2(90, 90);
         
     }
