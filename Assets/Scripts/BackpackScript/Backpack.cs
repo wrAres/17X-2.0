@@ -20,7 +20,6 @@ public class Backpack : MonoBehaviour
         imageObjects = new LinkedList<GameObject>();
         length = 0;
         this.AddItem("branch");
-        this.AddItem("dirt");
         this.Show(false);
     }
     void OnGUI() {
@@ -55,6 +54,7 @@ public class Backpack : MonoBehaviour
         item_transform.anchoredPosition = backpack_transform.anchoredPosition + new Vector2((length-7.5f)*100, 0);
         item_transform.sizeDelta = new Vector2(60, 60);
         
+        imageObj.SetActive(Backpack.backpack.activeSelf);
     }
 
     public void RemoveItem(string name) {
