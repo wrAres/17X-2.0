@@ -15,6 +15,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     }
 
     public void OnEndDrag(PointerEventData eventData){
+        // StartCoroutine(Put());
         Put();
         holdItem = false;
     }
@@ -45,16 +46,16 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
                     GameObject imageObj = new GameObject(itemOnGround.name);
                     SpriteRenderer image = imageObj.AddComponent<SpriteRenderer>(); //Add the Image Component script
                     image.sprite = Resources.Load<Sprite>(itemOnGround.name); //Set the Sprite of the Image Component on the new GameObject
-                    imageObj.transform.position = hitInfo.point + new Vector3(0.0f, 0.2f, 0);
+                    imageObj.transform.position = hitInfo.point + new Vector3(0.0f, 0.1f, 0);
                     // imageObj.transform.position = hitInfo.point;
                     imageObj.transform.localScale = new Vector3(0.03f, 0.04f, 0.04f);
                     Vector3 temp = imageObj.transform.rotation.eulerAngles;
                     temp.x = 45f;
                     imageObj.transform.rotation = Quaternion.Euler(temp);
-                    Item.puzzleEffect(itemOnGround.name, dragOnObject.name);
                     // imageObj.transform.rotation.x = 45;
                     Backpack.backpack.GetComponent<Backpack>().RemoveItem(itemOnGround.name);
                     Destroy(itemOnGround);
+                    Item.puzzleEffect(imageObj.name, dragOnObject.name);
                 } else {
                     this.GetComponent<RectTransform>().anchoredPosition = previousPosition;
                 }

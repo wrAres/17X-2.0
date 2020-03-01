@@ -30,6 +30,7 @@ public class Item : MonoBehaviour
             GameObject river = GameObject.Find("River");
             river.GetComponent<CapsuleCollider>().radius = 0;
             GameObject.Find("River").GetComponent<Renderer>().material.color = Color.gray;
+            // Destroy(GameObject.Find("dirt"));
         }
     }
 }
