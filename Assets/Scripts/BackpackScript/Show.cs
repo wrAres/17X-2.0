@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(TalismanManager))]
 public class Show : MonoBehaviour
 {
     public GameObject spellTreeDisp;
+    private TalismanManager talisDisp;
 
     GraphicRaycaster raycaster;
     PointerEventData pointerData;
@@ -15,6 +17,8 @@ public class Show : MonoBehaviour
     private void Start() {
         raycaster = GetComponent<GraphicRaycaster>();
         eventSystem = GetComponent<EventSystem>();
+
+        talisDisp = GetComponent<TalismanManager>();
     }
 
     // public Backpack bk;
@@ -46,6 +50,9 @@ public class Show : MonoBehaviour
                     else {
                         Backpack.backpack.GetComponent<Backpack>().Show(true);
                     }
+                    // Close other canvas
+                    spellTreeDisp.SetActive(false);
+                    talisDisp.CloseDisplay();
                 }
                 else if (result.gameObject.tag.CompareTo("Item") == 0) {
                     ItemDragHandler.itemOnGround = result.gameObject;
@@ -54,6 +61,9 @@ public class Show : MonoBehaviour
                 }
                 else if (result.gameObject.tag.CompareTo("SpellTreeIcon") == 0) {
                     spellTreeDisp.SetActive(!spellTreeDisp.activeSelf);
+                    // Close other canvas
+                    talisDisp.CloseDisplay();
+                    Backpack.backpack.GetComponent<Backpack>().Show(false);
                 }
             }
         }
@@ -61,5 +71,10 @@ public class Show : MonoBehaviour
 
     private void PrintName(GameObject obj) {
         print("Debug" + obj.name);
+    }
+
+    public void CloseDisplays() {
+        Backpack.backpack.GetComponent<Backpack>().Show(false);
+        spellTreeDisp.SetActive(false);
     }
 }

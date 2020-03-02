@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Show))]
 public class TalismanManager : MonoBehaviour {
     [System.Serializable]
     public class Recipe {
@@ -22,11 +23,17 @@ public class TalismanManager : MonoBehaviour {
     public Recipe[] recipeBook;
 
     public Backpack backpack;
+    private Show dispManager;
+
+    private void Awake() {
+        dispManager = GetComponent<Show>();
+    }
 
     // Update is called once per frame
     void Update() {
         if (Input.GetKey("space") && curTime <= 0) {
             display.SetActive(true);
+            dispManager.CloseDisplays();
             DisplaySpellList();
             curTime = timer;
         }
@@ -68,13 +75,6 @@ public class TalismanManager : MonoBehaviour {
         }
     }
 
-    // Close the entire talisman display
-    private void CloseDisplay() {
-        display.SetActive(false);
-        ResetCraft();
-        curTime = 0;
-    }
-
     // Check if recipe can be made from current craft
     private bool CheckRecipe(Recipe r) {
         TalisDrag.Elements[] curCraft = new TalisDrag.Elements[3];
@@ -99,6 +99,13 @@ public class TalismanManager : MonoBehaviour {
     /*
      * Functions to be called by other scripts
      */
+
+    // Close the entire talisman display
+    public void CloseDisplay() {
+        display.SetActive(false);
+        ResetCraft();
+        curTime = 0;
+    }
 
     // Add an element to the craft log
     public void AddCraft(TalisDrag.Elements e) {

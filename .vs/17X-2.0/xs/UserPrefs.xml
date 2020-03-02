@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{723736E0-234A-81B5-781F-EA4585C42642}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BackpackScript/Show.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BackpackScript/Item.cs">
     <Files>
-      <File FileName="Assets/Scripts/SpellTreeManager.cs" Line="30" Column="11" />
-      <File FileName="Assets/Scripts/TalisDrag.cs" Line="37" Column="37" />
-      <File FileName="Assets/Scripts/TalismanSpelltree/TalismanManager.cs" Line="116" Column="56" />
+      <File FileName="Assets/Scripts/TalismanSpelltree/TalismanManager.cs" Line="29" Column="44" />
       <File FileName="Assets/Scripts/BackpackScript/Backpack.cs" Line="32" Column="9" />
-      <File FileName="Assets/Scripts/BackpackScript/Show.cs" Line="55" Column="72" />
+      <File FileName="Assets/Scripts/BackpackScript/Show.cs" Line="48" Column="73" />
+      <File FileName="Assets/Scripts/TalismanSpelltree/SpellTreeManager.cs" Line="42" Column="6" />
+      <File FileName="Assets/Scripts/TalismanSpelltree/Spell.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BackpackScript/Item.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,7 +15,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="BackpackScript" expanded="True">
-                  <Node name="Show.cs" selected="True" />
+                  <Node name="Item.cs" selected="True" />
                 </Node>
                 <Node name="TalismanSpelltree" expanded="True" />
               </Node>
@@ -26,7 +27,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="42c5b9bf-ce1d-4acf-8cc0-4957d41c96f7" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2b96977f-3c40-4af2-8d2a-06df665aa98b" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
