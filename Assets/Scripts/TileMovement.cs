@@ -13,6 +13,7 @@ public class TileMovement : MonoBehaviour
     private Transform invisTile;
 
     private float speed = 100.0f;
+    public static int mixTimes = 30;
 
     Dictionary<int, string> dict = new Dictionary<int, string>();
     static Dictionary<Tuple<int, int>, Vector3> startPos = new Dictionary<Tuple<int, int>, Vector3>();
@@ -34,13 +35,16 @@ public class TileMovement : MonoBehaviour
         }
 
         invisTile = GameObject.Find("Tile9").GetComponent<Transform>();
-        Puzzle = MakePuzzle();
 
         // Set Dictionary to map Puzzle to screen
         for (int i = 1; i <= 9; i++)
         {
             dict.Add(i, "Tile" + i);
         }
+
+        Puzzle = StartPuzzle();
+        MixPuzzle();
+        print_puzzle();
     }
 
     // Update is called once per frame
@@ -104,45 +108,43 @@ public class TileMovement : MonoBehaviour
         }
     }
 
-    private static int[,] MakePuzzle()
+    private int[,] StartPuzzle()
     {
-        // Simple puzzle (use to test if puzzle is funcitoning properly)
-        /*int[,] Tpuzzle = new int[3, 3];
-        int Tnum = 1;
+        // Create the completed puzzle
+        int[,] puzzle = new int[3, 3];
+        int num = 1;
         for (int i = 0; i < 3; i++)
         {
             for (int j = 0; j < 3; j++)
             {
-                Tpuzzle[i, j] = Tnum++;
+                puzzle[i, j] = num++;
             }
         }
-        return Tpuzzle;*/
+        return puzzle;
+    }
 
-        // Make Puzzle Random
-        List<int> numbers = new List<int>();
-        int number;
-        for (int i = 0; i < 9; i++)
+    private void MixPuzzle()
+    {
+        // Mix the completed puzzle
+        for (int i = 0; i < mixTimes; i++)
         {
-            do
-            {
-                number = UnityEngine.Random.Range(1, 10);
-            } while (numbers.Contains(number));
-            numbers.Add(number);
+            Tuple<bool, string>[] tiles = GetTiles();
+            int number = UnityEngine.Random.Range(1, 5);
+            if (number == 1 && tiles[0].Item1 == true) UpdatePuzzle("up");
+            else if (number == 2 && tiles[1].Item1 == true) UpdatePuzzle("down");
+            else if (number == 3 && tiles[2].Item1 == true) UpdatePuzzle("left");
+            else if (number == 4 && tiles[3].Item1 == true) UpdatePuzzle("right");
         }
-        // Place puzzle in 3x3 grid
-        int[,] puzzle = new int[3, 3];
-        int num = 0;
+        // Update the tiles in 3D space
         for (int i = 0; i < 3; i++)
         {
             for (int j = 0; j < 3; j++)
             {
-                puzzle[i, j] = numbers[num];
-                GameObject tileToChange = GameObject.Find("Tile" + numbers[num++]);
+                GameObject tileToChange = GameObject.Find("Tile" + Puzzle[i, j]);
                 Tuple<int, int> location = new Tuple<int, int>(i, j);
                 tileToChange.GetComponent<Transform>().position = startPos[location];
             }
         }
-        return puzzle;
     }
 
     private Tuple<bool, string>[] GetTiles()
@@ -199,7 +201,8 @@ public class TileMovement : MonoBehaviour
                 if (Puzzle[i, j] != num++) flag = false;
             }
         }
-        if (flag){
+        if (flag)
+        {
             // TODO: Implement element combination to make last piece of puzzle
             // For now spawn in last piece
             GameObject lastTile = GameObject.Find("Tile9");

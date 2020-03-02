@@ -12,6 +12,7 @@ public class FloorControl : MonoBehaviour
     private Vector3 startPos;
 
     private GameObject randomObj;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,9 @@ public class FloorControl : MonoBehaviour
     // Update is called once per frameS
     void Update()
     {
+        player = GameObject.Find("Main Character");
+        if (player.GetComponent<Transform>().position.y < -1) player.GetComponent<Transform>().position = startPos;
+
         if (floor.Count > 0 && start == false && end == false) start = true;
     }
 
