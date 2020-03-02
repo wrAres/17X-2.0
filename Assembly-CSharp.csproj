@@ -72,6 +72,8 @@
      <Compile Include="Assets\Scripts\playerMovement.cs" />
      <Compile Include="Assets\Scripts\sceneTransition.cs" />
      <Compile Include="Assets\Scripts\waveMovement.cs" />
+     <Compile Include="Assets\flowerInMirror.cs" />
+     <Compile Include="Assets\mirrors.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/zhengyang/Documents/171/17X-2.0/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

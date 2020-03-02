@@ -2810,6 +2810,7 @@ GameObject:
   - component: {fileID: 425918660}
   - component: {fileID: 425918662}
   - component: {fileID: 425918661}
+  - component: {fileID: 425918663}
   m_Layer: 0
   m_Name: Flower 3
   m_TagString: Untagged
@@ -2839,7 +2840,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425918659}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 17.432127, y: 18.571857, z: 0.20000036}
@@ -2894,6 +2895,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &425918663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425918659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c04fd7b56ce744db2ffe5c135a8ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRight: 0
+  mirror: {fileID: 427663448}
 --- !u!1 &427663448
 GameObject:
   m_ObjectHideFlags: 0
@@ -2903,6 +2918,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 427663449}
+  - component: {fileID: 427663450}
   m_Layer: 0
   m_Name: mirrors
   m_TagString: Untagged
@@ -2930,6 +2946,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &427663450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427663448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c765afa7304499b489af8a491d13d042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  f1: {fileID: 881261420}
+  f2: {fileID: 1012726368}
+  f3: {fileID: 425918659}
+  f4: {fileID: 904625115}
+  f5: {fileID: 570649171}
+  f6: {fileID: 1320069329}
 --- !u!1 &471372053
 GameObject:
   m_ObjectHideFlags: 0
@@ -3471,6 +3505,7 @@ GameObject:
   - component: {fileID: 570649172}
   - component: {fileID: 570649174}
   - component: {fileID: 570649173}
+  - component: {fileID: 570649175}
   m_Layer: 0
   m_Name: Flower 5
   m_TagString: Untagged
@@ -3500,7 +3535,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 570649171}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 16.716248, y: 18.571857, z: 0.20000035}
@@ -3555,6 +3590,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &570649175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570649171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c04fd7b56ce744db2ffe5c135a8ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRight: 0
+  mirror: {fileID: 427663448}
 --- !u!1 &571100949
 GameObject:
   m_ObjectHideFlags: 0
@@ -5215,6 +5264,7 @@ GameObject:
   - component: {fileID: 881261422}
   - component: {fileID: 881261421}
   - component: {fileID: 881261423}
+  - component: {fileID: 881261424}
   m_Layer: 0
   m_Name: Flower 1
   m_TagString: Untagged
@@ -5294,11 +5344,25 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881261420}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 17.555311, y: 18.571857, z: 0.20000044}
   m_Center: {x: 0.07436459, y: 0.35777918, z: 0.0000000017941908}
+--- !u!114 &881261424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881261420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c04fd7b56ce744db2ffe5c135a8ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRight: 1
+  mirror: {fileID: 427663448}
 --- !u!1 &893403235
 GameObject:
   m_ObjectHideFlags: 0
@@ -5391,6 +5455,7 @@ GameObject:
   - component: {fileID: 904625116}
   - component: {fileID: 904625118}
   - component: {fileID: 904625117}
+  - component: {fileID: 904625119}
   m_Layer: 0
   m_Name: Flower 4
   m_TagString: Untagged
@@ -5420,7 +5485,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904625115}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 17.561413, y: 18.571857, z: 0.2000004}
@@ -5475,6 +5540,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &904625119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904625115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c04fd7b56ce744db2ffe5c135a8ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRight: 0
+  mirror: {fileID: 427663448}
 --- !u!1 &906354986
 GameObject:
   m_ObjectHideFlags: 0
@@ -6134,6 +6213,7 @@ GameObject:
   - component: {fileID: 1012726369}
   - component: {fileID: 1012726371}
   - component: {fileID: 1012726370}
+  - component: {fileID: 1012726372}
   m_Layer: 0
   m_Name: Flower 2
   m_TagString: Untagged
@@ -6163,7 +6243,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012726368}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 16.855303, y: 18.571857, z: 0.20000033}
@@ -6218,6 +6298,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1012726372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012726368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c04fd7b56ce744db2ffe5c135a8ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRight: 0
+  mirror: {fileID: 427663448}
 --- !u!1 &1014912386
 GameObject:
   m_ObjectHideFlags: 0
@@ -8503,6 +8597,7 @@ GameObject:
   - component: {fileID: 1320069330}
   - component: {fileID: 1320069332}
   - component: {fileID: 1320069331}
+  - component: {fileID: 1320069333}
   m_Layer: 0
   m_Name: Flower 6
   m_TagString: Untagged
@@ -8532,7 +8627,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320069329}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 16.997038, y: 18.571857, z: 0.20000032}
@@ -8587,6 +8682,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1320069333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320069329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c04fd7b56ce744db2ffe5c135a8ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRight: 0
+  mirror: {fileID: 427663448}
 --- !u!1 &1326891710
 GameObject:
   m_ObjectHideFlags: 0
