@@ -29,6 +29,7 @@ public class TalismanManager : MonoBehaviour {
 
     private void Awake() {
         dispManager = GetComponent<Show>();
+        ResetCraft();
     }
 
     // Update is called once per frame
@@ -99,9 +100,8 @@ public class TalismanManager : MonoBehaviour {
         return true;
     }
 
-    /*
-     * Functions to be called by other scripts
-     */
+    // Functions to be called by other scripts
+     
 
     // Close the entire talisman display
     public void CloseDisplay() {
