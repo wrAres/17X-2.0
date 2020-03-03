@@ -6,16 +6,18 @@ using UnityEngine.EventSystems;
 public class Spell : MonoBehaviour, IPointerEnterHandler {
     public SpellTreeManager spellTreeDisp;
 
-    public enum SpellState { LOCKED, KNOWN, UNLOCKED};
+    public enum SpellState { LOCKED, KNOWN, UNLOCKED };
     public SpellState curState;
 
     public string spellName;
     public TalisDrag.Elements[] recipe;
     public int level;
+    public string knownResp;
     public string knownDes, unlockedDes;
+    public TalisDrag.Elements element;
 
     public void OnPointerEnter(PointerEventData eventData) {
-        Debug.Log(spellName);
+        spellTreeDisp.UpdateTextBox(this);
     }
 
     // Start is called before the first frame update
@@ -27,6 +29,9 @@ public class Spell : MonoBehaviour, IPointerEnterHandler {
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.A)) {
+            spellTreeDisp.UnlockElement(TalisDrag.Elements.WATER);
+            Debug.Log("should work");
+        }
     }
 }

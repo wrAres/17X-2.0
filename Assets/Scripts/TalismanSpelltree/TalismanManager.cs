@@ -4,16 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Show))]
+[RequireComponent(typeof(SpellTreeManager))]
 public class TalismanManager : MonoBehaviour {
+    /*
     [System.Serializable]
     public class Recipe {
         public string itemName;
         public TalisDrag.Elements[] element = new TalisDrag.Elements[3];
     }
+    */
     // Main display variables
     public GameObject display;
     public float timer;
-    public GameObject prefab, player;
+    public GameObject prefab;
     // Element variables
     public GameObject[] elements;
     public Vector3[] elePos;
@@ -22,7 +25,7 @@ public class TalismanManager : MonoBehaviour {
     // Cookbook variables
     private TalisDrag.Elements[] craft = new TalisDrag.Elements[3];
     public Image[] slots;
-    public Recipe[] recipeBook;
+    private Spell[] recipeBook;
 
     public Backpack backpack;
     private Show dispManager;
@@ -30,6 +33,7 @@ public class TalismanManager : MonoBehaviour {
     private void Awake() {
         dispManager = GetComponent<Show>();
         ResetCraft();
+        recipeBook = GetComponent<SpellTreeManager>().GetSpellBook();
     }
 
     // Update is called once per frame
@@ -80,20 +84,20 @@ public class TalismanManager : MonoBehaviour {
     }
 
     // Check if recipe can be made from current craft
-    private bool CheckRecipe(Recipe r) {
+    private bool CheckRecipe(Spell r) {
         TalisDrag.Elements[] curCraft = new TalisDrag.Elements[3];
         System.Array.Copy(craft, curCraft, 3);
-        for (int i = 0; i < r.element.Length; i++) {
+        for (int i = 0; i < r.recipe.Length; i++) {
             bool gotEle = false;
             for (int j = 0; j < craft.Length; j++) {
-                if (r.element[i] == curCraft[j]) {
+                if (r.recipe[i] == curCraft[j]) {
                     gotEle = true;
                     curCraft[j] = TalisDrag.Elements.NONE;
                     break;
                 }
             }
 
-            if (!gotEle && r.element[i] != TalisDrag.Elements.NONE) {
+            if (!gotEle && r.recipe[i] != TalisDrag.Elements.NONE) {
                 return false;
             }
         }
@@ -124,9 +128,26 @@ public class TalismanManager : MonoBehaviour {
         // Check if item can be made
         for (int i = 0; i < recipeBook.Length; i++) {
             if (CheckRecipe(recipeBook[i])) {
-                Debug.Log("MADE ITEM: " + recipeBook[i].itemName);
-                backpack.AddItem(recipeBook[i].itemName);
+                Debug.Log("MADE ITEM: " + recipeBook[i].spellName);
+                // Add to backpack if it's not an element
+                if (recipeBook[i].element == TalisDrag.Elements.NONE) {
+                    backpack.AddItem(recipeBook[i].spellName);
+                }
+                else {
+                    GetComponent<SpellTreeManager>().UnlockElement(recipeBook[i].element);
+                }
                 CloseDisplay();
+            }
+        }
+    }
+
+    public void UnlockElement(TalisDrag.Elements e) {
+        for (int i = 0; i < elements.Length; i++) {
+            TalisDrag ele = elements[i].GetComponent<TalisDrag>();
+            if (ele.element == e) {
+                ele.locked = false;
+                ele.known = false;
+                break;
             }
         }
     }

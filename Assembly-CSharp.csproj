@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\TalismanSpelltree\Spell.cs" />
     <Compile Include="Assets\Scripts\TalismanSpelltree\SpellTreeManager.cs" />
     <Compile Include="Assets\Scripts\TalismanSpelltree\TalisDrag.cs" />
+    <Compile Include="Assets\Scripts\TalismanSpelltree\TalismanManager.cs" />
     <Compile Include="Assets\Scripts\TileMovement.cs" />
     <Compile Include="Assets\Scripts\blockMovement.cs" />
     <Compile Include="Assets\Scripts\player.cs" />
