@@ -13,7 +13,7 @@ public class TileMovement : MonoBehaviour
     private Transform invisTile;
 
     private float speed = 100.0f;
-    public static int mixTimes = 30;
+    public static int mixTimes = 10;
 
     Dictionary<int, string> dict = new Dictionary<int, string>();
     static Dictionary<Tuple<int, int>, Vector3> startPos = new Dictionary<Tuple<int, int>, Vector3>();
@@ -44,7 +44,6 @@ public class TileMovement : MonoBehaviour
 
         Puzzle = StartPuzzle();
         MixPuzzle();
-        print_puzzle();
     }
 
     // Update is called once per frame
@@ -206,10 +205,10 @@ public class TileMovement : MonoBehaviour
             // TODO: Implement element combination to make last piece of puzzle
             // For now spawn in last piece
             GameObject lastTile = GameObject.Find("Tile9");
-            lastTile.GetComponent<Image>().sprite = finalTile;
-            var tempColor = lastTile.GetComponent<Image>().color;
+            lastTile.GetComponent<SpriteRenderer>().sprite = finalTile;
+            var tempColor = lastTile.GetComponent<SpriteRenderer>().color;
             tempColor.a = 1.0f;
-            lastTile.GetComponent<Image>().color = tempColor;
+            lastTile.GetComponent<SpriteRenderer>().color = tempColor;
             Debug.Log("Finished Puzzle");
             SceneManager.LoadScene("scene3");
         }
