@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{723736E0-234A-81B5-781F-EA4585C42642}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TalismanSpelltree/SpellTreeManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/TalismanSpelltree/TalismanManager.cs" Line="97" Column="18" />
+      <File FileName="Assets/Scripts/TalismanSpelltree/TalismanManager.cs" Line="107" Column="26" />
       <File FileName="Assets/Scripts/BackpackScript/Backpack.cs" Line="85" Column="1" />
-      <File FileName="Assets/Scripts/BackpackScript/Show.cs" Line="77" Column="1" />
-      <File FileName="Assets/Scripts/TalismanSpelltree/SpellTreeManager.cs" Line="133" Column="82" />
-      <File FileName="Assets/Scripts/TalismanSpelltree/Spell.cs" Line="32" Column="43" />
+      <File FileName="Assets/Scripts/BackpackScript/Show.cs" Line="92" Column="2" />
+      <File FileName="Assets/Scripts/TalismanSpelltree/SpellTreeManager.cs" Line="82" Column="22" />
+      <File FileName="Assets/Scripts/TalismanSpelltree/Spell.cs" Line="32" Column="9" />
       <File FileName="Assets/Scripts/BackpackScript/Item.cs" Line="37" Column="1" />
       <File FileName="Assets/Scripts/TalismanSpelltree/TalisDrag.cs" Line="57" Column="2" />
       <File FileName="Assets/Scripts/TileMovement.cs" Line="293" Column="1" />
@@ -16,15 +16,7 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="17X-2.0" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="TalismanSpelltree" expanded="True">
-                  <Node name="SpellTreeManager.cs" selected="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
+          <Node name="17X-2.0" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
