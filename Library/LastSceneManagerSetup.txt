@@ -1,5 +1,5 @@
 sceneSetups:
-- path: /Users/Heatler/.Trash/17X-2.0/Assets/Scenes/scene0.unity
+- path: Assets/Scenes/scene0.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
