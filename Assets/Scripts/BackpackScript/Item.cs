@@ -39,12 +39,13 @@ public class Item : MonoBehaviour
         else if (item.CompareTo("Water Seed") == 0 && position.CompareTo("Dirt") == 0){
             GameObject seed = GameObject.Find("Water Seed");
             GameObject sprout = new GameObject("Water Sprout");
+            GameObject dirt = new GameObject("Dirt");
             
             // RectTransform seed_transform = seed.GetComponent<RectTransform>();
             // RectTransform sprout_transform = sprout.GetComponent<RectTransform>();
             // sprout_transform.anchoredPosition = seed_transform.anchoredPosition;
-            sprout.transform.position = seed.transform.position;
-            print(seed.transform.position);
+            sprout.transform.position = dirt.transform.position;
+            print(dirt.transform.position);
             SpriteRenderer image = sprout.AddComponent<SpriteRenderer>(); //Add the Image Component script
             image.sprite = Resources.Load<Sprite>("Water Sprout"); //Set the Sprite of the Image Component on the new GameObject
             sprout.transform.localScale = new Vector3(0.03f, 0.04f, 0.04f);
