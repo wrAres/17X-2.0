@@ -54,7 +54,8 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
                     imageObj.AddComponent<BoxCollider>();
                     Backpack.backpack.GetComponent<Backpack>().RemoveItem(itemOnGround.name);
                     Destroy(itemOnGround);
-                    Item.puzzleEffect(imageObj.name, dragOnObject.name);
+                    Item.puzzleEffect(imageObj.name, dragOnObject.name,
+                        imageObj.transform.position + new Vector3(0.0f, 0.1f, 0));
                 } else {
                     this.GetComponent<RectTransform>().anchoredPosition = previousPosition;
                 }

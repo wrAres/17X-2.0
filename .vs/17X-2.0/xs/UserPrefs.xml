@@ -1,28 +1,32 @@
 ﻿<Properties StartupConfiguration="{723736E0-234A-81B5-781F-EA4585C42642}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BackpackScript/Item.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BackpackScript/ItemDragHandler.cs">
     <Files>
       <File FileName="Assets/Scripts/TalismanSpelltree/TalismanManager.cs" Line="161" Column="1" />
-      <File FileName="Assets/Scripts/BackpackScript/Backpack.cs" Line="85" Column="1" />
+      <File FileName="Assets/Scripts/BackpackScript/Backpack.cs" Line="24" Column="29" />
       <File FileName="Assets/Scripts/BackpackScript/Show.cs" />
-      <File FileName="Assets/Scripts/TalismanSpelltree/SpellTreeManager.cs" Line="157" Column="1" />
-      <File FileName="Assets/Scripts/TalismanSpelltree/Spell.cs" Line="32" Column="9" />
-      <File FileName="Assets/Scripts/BackpackScript/Item.cs" Line="70" Column="1" />
-      <File FileName="Assets/Scripts/TalismanSpelltree/TalisDrag.cs" Line="57" Column="2" />
-      <File FileName="Assets/Scripts/TileMovement.cs" Line="293" Column="1" />
+      <File FileName="Assets/Scripts/BackpackScript/Item.cs" Line="48" Column="1" />
+      <File FileName="Assets/Scripts/BackpackScript/ItemDragHandler.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/BackpackScript/PickObject.cs" />
-      <File FileName="Assets/Scripts/BackpackScript/ItemDragHandler.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="17X-2.0" expanded="True" selected="True" />
+          <Node name="17X-2.0" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="BackpackScript" expanded="True">
+                  <Node name="ItemDragHandler.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="821dae4a-37b9-4ee4-9dd5-4ec7740525c7" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b8a28c50-c1bd-4b07-953d-76fa9ce1bfb0" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

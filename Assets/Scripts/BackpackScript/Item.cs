@@ -28,7 +28,7 @@ public class Item : MonoBehaviour
         }
         return false;
     }
-    public static void puzzleEffect(string item, string position) {
+    public static void puzzleEffect(string item, string position, Vector3 newPos) {
         if (item.CompareTo("Dirt") == 0 && position.CompareTo("River") == 0){
             GameObject river = GameObject.Find("River");
             river.GetComponent<CapsuleCollider>().radius = 0;
@@ -40,12 +40,13 @@ public class Item : MonoBehaviour
             GameObject seed = GameObject.Find("Water Seed");
             GameObject sprout = new GameObject("Water Sprout");
             GameObject dirt = new GameObject("Dirt");
-            
+            Camera camera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
             // RectTransform seed_transform = seed.GetComponent<RectTransform>();
             // RectTransform sprout_transform = sprout.GetComponent<RectTransform>();
             // sprout_transform.anchoredPosition = seed_transform.anchoredPosition;
-            sprout.transform.position = dirt.transform.position;
-            print(dirt.transform.position);
+            //sprout.transform.position = camera.ScreenToWorldPoint(seed.transform.position);
+            sprout.transform.position = newPos;
+            print(seed.transform.position);
             SpriteRenderer image = sprout.AddComponent<SpriteRenderer>(); //Add the Image Component script
             image.sprite = Resources.Load<Sprite>("Water Sprout"); //Set the Sprite of the Image Component on the new GameObject
             sprout.transform.localScale = new Vector3(0.03f, 0.04f, 0.04f);
