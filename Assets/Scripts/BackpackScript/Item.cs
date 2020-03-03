@@ -14,6 +14,7 @@ public class Item : MonoBehaviour
         itemOnPuzzle = new Hashtable();
         itemOnPuzzle.Add("Dirt", "River,Flowerpot");
         itemOnPuzzle.Add("Water Seed", "Dirt");
+        itemOnPuzzle.Add("Firewood", "法阵-scene2");
     }
 
     public static bool canPlace(string item, string position) {
@@ -54,6 +55,13 @@ public class Item : MonoBehaviour
             temp.x = 45f;
             sprout.transform.rotation = Quaternion.Euler(temp);
             Destroy(seed);
+            s.UnlockElement(TalisDrag.Elements.WOOD);
+        } 
+        else if (item.CompareTo("Firewood") == 0 && position.CompareTo("法阵-scene2") == 0){
+            SceneTransition sceneTrans = GameObject.Find("法阵-scene2").GetComponent<SceneTransition>();
+            Debug.Log(sceneTrans);
+            sceneTrans.enterable = true;
+            s.UnlockElement(TalisDrag.Elements.FIRE);
         } 
         // else if (item.CompareTo("Life Water") == 0 && position.CompareTo("Water Sprout") == 0){
         //     GameObject sspell = GameObject.Find("Life Water");
