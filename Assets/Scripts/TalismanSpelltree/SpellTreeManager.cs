@@ -39,10 +39,10 @@ public class SpellTreeManager : MonoBehaviour {
         }
         */
 
-        if (Input.GetKeyDown(KeyCode.A)) {
-            UnlockElement(TalisDrag.Elements.WATER);
-            Debug.Log("should work");
-        }
+        // if (Input.GetKeyDown(KeyCode.A)) {
+        //     UnlockElement(TalisDrag.Elements.WATER);
+        //     Debug.Log("should work");
+        // }
     }
 
     private void UpdateIcons() {

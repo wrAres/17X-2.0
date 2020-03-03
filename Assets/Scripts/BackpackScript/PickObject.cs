@@ -17,12 +17,10 @@ public class PickObject : MonoBehaviour
     // Update is called once per frame
     void Update(){
         if (Input.GetMouseButtonDown(0)) {
-            print("aaaa");
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, layerMask)) {
                 GameObject clickObject = hitInfo.collider.gameObject;
-                print(clickObject.name);
                 if (clickObject.tag.CompareTo("Pickable") == 0){
                     Backpack.backpack.GetComponent<Backpack>().AddItem(clickObject.name);
                     Destroy(clickObject);
