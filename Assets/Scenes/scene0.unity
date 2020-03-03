@@ -591,8 +591,10 @@ MonoBehaviour:
   spellName: Metal
   recipe: 
   level: 1
+  knownResp: 
   knownDes: 
-  unlockedDes: 
+  unlockedDes: The element of West and Fall. It represents everything that is gathering.
+  element: 0
 --- !u!114 &81842011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,8 +700,16 @@ MonoBehaviour:
   spellName: Water
   recipe: 
   level: 1
+  knownResp: 
   knownDes: 
-  unlockedDes: 
+  unlockedDes: "The element of North and Winter. It represents everything that is
+    permeated, the Yin element of the five basic elements. The element of North and
+    Winter. It represents everything that is permeated, the Yin element of the five
+    basic elements.; Cell E15 The element of North and Winter. It represents everything
+    that is permeated, the Yin element of the five basic elements.; Cell E15     
+    \t\t  The element of North and Winter. It represents everything that is permeated,
+    the Yin element of the five basic elements. Haobin Zhang has left the document."
+  element: 2
 --- !u!114 &111274134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -952,6 +962,117 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165275430}
   m_CullTransparentMesh: 0
+--- !u!1 &324457521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 324457522}
+  - component: {fileID: 324457526}
+  - component: {fileID: 324457525}
+  - component: {fileID: 324457524}
+  - component: {fileID: 324457523}
+  m_Layer: 5
+  m_Name: taiji key
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &324457522
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324457521}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 12}
+  m_Children: []
+  m_Father: {fileID: 963497183}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -644, y: 230}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &324457523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324457521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+--- !u!114 &324457524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324457521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &324457525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324457521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellTreeDisp: {fileID: 651340834}
+  curState: 0
+  spellName: Taiji Key
+  recipe: 020000000600000008000000
+  level: 3
+  knownResp: 'Recipe: ?, ?, ?'
+  knownDes: 'A compass of Taiji symbol made by talismam. Everyone can feel the overflow
+    of water elements from it. '
+  unlockedDes: A compass of Taiji symbol made by talismam. Everyone can feel the
+    overflow of water elements from it. It seems like a key of something.
+  element: 9
+--- !u!222 &324457526
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324457521}
+  m_CullTransparentMesh: 0
 --- !u!1 &336070322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,6 +1262,115 @@ Transform:
   m_Father: {fileID: 126118429}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+--- !u!1 &458059261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 458059262}
+  - component: {fileID: 458059266}
+  - component: {fileID: 458059265}
+  - component: {fileID: 458059264}
+  - component: {fileID: 458059263}
+  m_Layer: 5
+  m_Name: firewood
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &458059262
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458059261}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 12}
+  m_Children: []
+  m_Father: {fileID: 963497183}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -635, y: -207}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &458059263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458059261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+--- !u!114 &458059264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458059261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &458059265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458059261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellTreeDisp: {fileID: 651340834}
+  curState: 0
+  spellName: Firewood
+  recipe: 030000000100000007000000
+  level: 3
+  knownResp: 'Recipe: fire, ?, ?'
+  knownDes: 'A gust of wind made by talismam. It has a direction for sure. '
+  unlockedDes: A gust of wind made by talismam. It comes from south-east.
+  element: 9
+--- !u!222 &458059266
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458059261}
+  m_CullTransparentMesh: 0
 --- !u!1 &546134803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,10 +1461,12 @@ MonoBehaviour:
   spellTreeDisp: {fileID: 651340834}
   curState: 0
   spellName: Wind
-  recipe: 
-  level: 1
-  knownDes: 
-  unlockedDes: 
+  recipe: 0200000001000000
+  level: 2
+  knownResp: 'Recipe: ?, wood'
+  knownDes: It's said that wind comes from wood in winter.
+  unlockedDes: It's said that wind comes from wood in winter.
+  element: 7
 --- !u!114 &546134808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1382,7 +1614,6 @@ MonoBehaviour:
   display: {fileID: 27129634}
   timer: 10
   prefab: {fileID: 27129634}
-  player: {fileID: 0}
   elements:
   - {fileID: 2143107248}
   - {fileID: 1270148040}
@@ -1407,9 +1638,6 @@ MonoBehaviour:
   - {fileID: 6268761307783105954}
   - {fileID: 4110092817574242607}
   - {fileID: 6404357065070960642}
-  recipeBook:
-  - itemName: dirt
-    element: 040000000400000004000000
   backpack: {fileID: 1449376765}
 --- !u!114 &651340834
 MonoBehaviour:
@@ -1423,8 +1651,122 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eaf5dd188a174b2799d6201832420de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spell: []
   display: {fileID: 963497182}
+  textBox: {fileID: 1243308291}
+  spellName: {fileID: 1255391618}
+  recipe: {fileID: 1451702541}
+  desc: {fileID: 1998305004}
+--- !u!1 &751266304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751266305}
+  - component: {fileID: 751266309}
+  - component: {fileID: 751266308}
+  - component: {fileID: 751266307}
+  - component: {fileID: 751266306}
+  m_Layer: 5
+  m_Name: life water
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &751266305
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751266304}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 12}
+  m_Children: []
+  m_Father: {fileID: 963497183}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -419, y: 25}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &751266306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751266304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+--- !u!114 &751266307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751266304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &751266308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751266304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellTreeDisp: {fileID: 651340834}
+  curState: 0
+  spellName: Life Water
+  recipe: 020000000200000002000000
+  level: 3
+  knownResp: 'Recipe: water, ?, ?'
+  knownDes: 'A drop of water made by talismam. It''s full of energy after created
+    by Qi of water elements. '
+  unlockedDes: A drop of water made by talismam. It's full of energy after created
+    by Qi of water elements. The drop are able to make anything re-alive.
+  element: 9
+--- !u!222 &751266309
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751266304}
+  m_CullTransparentMesh: 0
 --- !u!1 &814557679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,8 +1859,11 @@ MonoBehaviour:
   spellName: Fire
   recipe: 
   level: 1
+  knownResp: 
   knownDes: 
-  unlockedDes: 
+  unlockedDes: The element of South and Summer. It represents everything that is
+    destroyed, the Yang element of the five basic elements.
+  element: 3
 --- !u!114 &814557684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1711,12 +2056,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellTreeDisp: {fileID: 651340834}
-  curState: 0
+  curState: 2
   spellName: Earth
   recipe: 
   level: 1
+  knownResp: 
   knownDes: 
-  unlockedDes: 
+  unlockedDes: The element of Middle and Long-Summer. It represents everything that
+    is syncretic, the only element belongs to humans.
+  element: 4
 --- !u!114 &855495025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1893,7 +2241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &963497183
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1915,6 +2263,13 @@ RectTransform:
   - {fileID: 814557680}
   - {fileID: 111274130}
   - {fileID: 1243308292}
+  - {fileID: 324457522}
+  - {fileID: 1980138494}
+  - {fileID: 751266305}
+  - {fileID: 1781974771}
+  - {fileID: 458059262}
+  - {fileID: 2026756682}
+  - {fileID: 1094329888}
   m_Father: {fileID: 651340832}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2050,6 +2405,118 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041330550}
   m_CullTransparentMesh: 0
+--- !u!1 &1094329887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1094329888}
+  - component: {fileID: 1094329892}
+  - component: {fileID: 1094329891}
+  - component: {fileID: 1094329890}
+  - component: {fileID: 1094329889}
+  m_Layer: 5
+  m_Name: dirt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1094329888
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094329887}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 12}
+  m_Children: []
+  m_Father: {fileID: 963497183}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -267, y: 263}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1094329889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094329887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+--- !u!114 &1094329890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094329887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: ac7c7e61ee43b407d8ddc20ab2d2e0aa, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1094329891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094329887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellTreeDisp: {fileID: 651340834}
+  curState: 1
+  spellName: Dirt
+  recipe: 040000000400000004000000
+  level: 3
+  knownResp: 'Recipe: earth, ?, ?'
+  knownDes: A block of dirt made by talisman. It became dense after created by Qi
+    of earth elements.
+  unlockedDes: A block of dirt made by talisman. It became dense and concrete after
+    forming by Qi of earth elements. The dirt is able to absorb liquid and cultivate
+    lives.
+  element: 9
+--- !u!222 &1094329892
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094329887}
+  m_CullTransparentMesh: 0
 --- !u!1 &1220299209
 GameObject:
   m_ObjectHideFlags: 0
@@ -2140,10 +2607,12 @@ MonoBehaviour:
   spellTreeDisp: {fileID: 651340834}
   curState: 0
   spellName: Thunder
-  recipe: 
-  level: 1
-  knownDes: 
-  unlockedDes: 
+  recipe: 0300000001000000
+  level: 2
+  knownResp: 'Recipe: ?, wood'
+  knownDes: It's said that thunder comes from wood in summer.
+  unlockedDes: It's said that thunder comes from wood in summer.
+  element: 5
 --- !u!114 &1220299214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2194,7 +2663,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 484, y: -278}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1243308293
@@ -2491,10 +2960,12 @@ MonoBehaviour:
   spellTreeDisp: {fileID: 651340834}
   curState: 0
   spellName: Sun
-  recipe: 
-  level: 1
-  knownDes: 
-  unlockedDes: 
+  recipe: 0300000003000000
+  level: 2
+  knownResp: 'Recipe: ?, ?'
+  knownDes: It's said that sun is the represent of the most Yang element.
+  unlockedDes: It's said that sun is the most Yang element.
+  element: 6
 --- !u!114 &1304875978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2763,8 +3234,10 @@ MonoBehaviour:
   spellName: Wood
   recipe: 
   level: 1
+  knownResp: 
   knownDes: 
-  unlockedDes: 
+  unlockedDes: The element of East and Spring. It represents everything that is growing.
+  element: 1
 --- !u!1 &1449376762
 GameObject:
   m_ObjectHideFlags: 0
@@ -3394,6 +3867,116 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1781974770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1781974771}
+  - component: {fileID: 1781974775}
+  - component: {fileID: 1781974774}
+  - component: {fileID: 1781974773}
+  - component: {fileID: 1781974772}
+  m_Layer: 5
+  m_Name: taoist wind
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1781974771
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781974770}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 12}
+  m_Children: []
+  m_Father: {fileID: 963497183}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -657, y: 9}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1781974772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781974770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+--- !u!114 &1781974773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781974770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1781974774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781974770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellTreeDisp: {fileID: 651340834}
+  curState: 0
+  spellName: Water
+  recipe: 030000000100000007000000
+  level: 3
+  knownResp: 'Recipe: fire, ?, ?'
+  knownDes: 'A gust of wind made by talismam. It has a direction for sure. '
+  unlockedDes: A gust of wind made by talismam. It comes from south-east.A gust of
+    wind made by talismam. It comes from south-east.
+  element: 9
+--- !u!222 &1781974775
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781974770}
+  m_CullTransparentMesh: 0
 --- !u!1 &1816629402
 GameObject:
   m_ObjectHideFlags: 0
@@ -3484,10 +4067,12 @@ MonoBehaviour:
   spellTreeDisp: {fileID: 651340834}
   curState: 0
   spellName: Moon
-  recipe: 
-  level: 1
-  knownDes: 
-  unlockedDes: 
+  recipe: 0200000002000000
+  level: 2
+  knownResp: 'Recipe: ?, ?'
+  knownDes: It's said that moon is the represent of the most Yin element.
+  unlockedDes: It's said that moon is the most Yin element.
+  element: 8
 --- !u!114 &1816629407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3774,6 +4359,117 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979361180}
   m_CullTransparentMesh: 0
+--- !u!1 &1980138493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1980138494}
+  - component: {fileID: 1980138498}
+  - component: {fileID: 1980138497}
+  - component: {fileID: 1980138496}
+  - component: {fileID: 1980138495}
+  m_Layer: 5
+  m_Name: board
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1980138494
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980138493}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 12}
+  m_Children: []
+  m_Father: {fileID: 963497183}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -432, y: 237}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1980138495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980138493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+--- !u!114 &1980138496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980138493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1980138497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980138493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellTreeDisp: {fileID: 651340834}
+  curState: 0
+  spellName: Board
+  recipe: 040000000400000002000000
+  level: 3
+  knownResp: 'Recipe: ?, earth, ?'
+  knownDes: 'A piece of board made by talismam. It became concrete after combining
+    two kinds of Qi. '
+  unlockedDes: A piece of board made by talismam. It became concrete after combining
+    two kinds of Qi. The board are able to change its pattern according to the environment.
+  element: 9
+--- !u!222 &1980138498
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980138493}
+  m_CullTransparentMesh: 0
 --- !u!1 &1998305002
 GameObject:
   m_ObjectHideFlags: 0
@@ -3786,7 +4482,7 @@ GameObject:
   - component: {fileID: 1998305005}
   - component: {fileID: 1998305004}
   m_Layer: 5
-  m_Name: recipe (1)
+  m_Name: description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3831,7 +4527,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -3852,6 +4548,116 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998305002}
+  m_CullTransparentMesh: 0
+--- !u!1 &2026756681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2026756682}
+  - component: {fileID: 2026756686}
+  - component: {fileID: 2026756685}
+  - component: {fileID: 2026756684}
+  - component: {fileID: 2026756683}
+  m_Layer: 5
+  m_Name: glowing sun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2026756682
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026756681}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 12}
+  m_Children: []
+  m_Father: {fileID: 963497183}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -409, y: -195}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2026756683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026756681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+--- !u!114 &2026756684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026756681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2026756685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026756681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellTreeDisp: {fileID: 651340834}
+  curState: 0
+  spellName: Glowing Sun
+  recipe: 040000000600000006000000
+  level: 3
+  knownResp: 'Recipe: ?, sun, ?'
+  knownDes: A entity of sun made by talismam. It's hot.
+  unlockedDes: A entity of sun made by talismam. It's hot and excatly functioning
+    as the real sun.
+  element: 9
+--- !u!222 &2026756686
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026756681}
   m_CullTransparentMesh: 0
 --- !u!1 &2120403878
 GameObject:

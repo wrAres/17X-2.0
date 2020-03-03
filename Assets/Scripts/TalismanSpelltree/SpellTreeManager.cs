@@ -22,8 +22,10 @@ public class SpellTreeManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-     //   UpdateIcons();
+        //   UpdateIcons();
+        display.SetActive(true);
         spell = GetComponentsInChildren<Spell>();
+        display.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,6 +38,11 @@ public class SpellTreeManager : MonoBehaviour {
             display.SetActive(false);
         }
         */
+
+        if (Input.GetKeyDown(KeyCode.A)) {
+            UnlockElement(TalisDrag.Elements.WATER);
+            Debug.Log("should work");
+        }
     }
 
     private void UpdateIcons() {

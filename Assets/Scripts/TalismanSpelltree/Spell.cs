@@ -29,9 +29,6 @@ public class Spell : MonoBehaviour, IPointerEnterHandler {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A)) {
-            spellTreeDisp.UnlockElement(TalisDrag.Elements.WATER);
-            Debug.Log("should work");
-        }
+        
     }
 }
