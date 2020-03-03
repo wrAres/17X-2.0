@@ -33,12 +33,12 @@ public class TalismanManager : MonoBehaviour {
     private void Awake() {
         dispManager = GetComponent<Show>();
         ResetCraft();
-        recipeBook = GetComponent<SpellTreeManager>().GetSpellBook();
     }
 
     // Update is called once per frame
     void Update() {
         if (Input.GetKey("space") && curTime <= 0) {
+            recipeBook = GetComponent<SpellTreeManager>().GetSpellBook();
             display.SetActive(true);
             dispManager.CloseDisplays();
             DisplaySpellList();
@@ -100,6 +100,11 @@ public class TalismanManager : MonoBehaviour {
             if (!gotEle && r.recipe[i] != TalisDrag.Elements.NONE) {
                 return false;
             }
+        }
+
+        // Don't make empty elements
+        if (r.recipe.Length <= 0) {
+            return false;
         }
         return true;
     }

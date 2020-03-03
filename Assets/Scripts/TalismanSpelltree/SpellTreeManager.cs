@@ -87,6 +87,7 @@ public class SpellTreeManager : MonoBehaviour {
                 return false;
             }
         }
+        if (r.recipe.Length <= 0) return false;
         return true;
     }
 
