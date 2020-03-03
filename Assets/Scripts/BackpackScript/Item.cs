@@ -7,14 +7,17 @@ public class Item : MonoBehaviour
     private static Hashtable itemOnPuzzle;
     public static string[] availablePutList;
     public static SpellTreeManager s;
+    private static bool waterSeedGrow;
 
     void Start() {
         s = GameObject.Find("MainUI").GetComponent<SpellTreeManager>();
+        waterSeedGrow = false;
         // s = FindObjectsOfType<SpellTreeManager>()[0];;
         itemOnPuzzle = new Hashtable();
         itemOnPuzzle.Add("Dirt", "River,Flowerpot");
         itemOnPuzzle.Add("Water Seed", "Dirt");
         itemOnPuzzle.Add("Firewood", "法阵-scene2");
+        itemOnPuzzle.Add("Life Water", "Water Seed");
     }
 
     public static bool canPlace(string item, string position) {
@@ -24,7 +27,10 @@ public class Item : MonoBehaviour
         availablePutList = available.Split(',');
         for (int i = 0; i < availablePutList.Length; i++) {
             if (position.CompareTo(availablePutList[i]) == 0){
-                return true;
+                if (item.CompareTo("Life Water") != 0)
+                    return true;
+                else if (waterSeedGrow)
+                    return true;
             }
         }
         return false;
@@ -38,16 +44,17 @@ public class Item : MonoBehaviour
             Destroy(GameObject.Find("Dirt"));
         } 
         else if (item.CompareTo("Water Seed") == 0 && position.CompareTo("Dirt") == 0){
+            waterSeedGrow = true;
+        } 
+        else if (item.CompareTo("Life Water") == 0 && position.CompareTo("Water Seed") == 0){
             GameObject seed = GameObject.Find("Water Seed");
             GameObject sprout = new GameObject("Water Sprout");
-            GameObject dirt = new GameObject("Dirt");
-            Camera camera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+            // Camera camera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
             // RectTransform seed_transform = seed.GetComponent<RectTransform>();
             // RectTransform sprout_transform = sprout.GetComponent<RectTransform>();
             // sprout_transform.anchoredPosition = seed_transform.anchoredPosition;
             //sprout.transform.position = camera.ScreenToWorldPoint(seed.transform.position);
             sprout.transform.position = newPos;
-            print(seed.transform.position);
             SpriteRenderer image = sprout.AddComponent<SpriteRenderer>(); //Add the Image Component script
             image.sprite = Resources.Load<Sprite>("Water Sprout"); //Set the Sprite of the Image Component on the new GameObject
             sprout.transform.localScale = new Vector3(0.03f, 0.04f, 0.04f);
@@ -56,7 +63,7 @@ public class Item : MonoBehaviour
             sprout.transform.rotation = Quaternion.Euler(temp);
             Destroy(seed);
             s.UnlockElement(TalisDrag.Elements.WOOD);
-        } 
+        }
         else if (item.CompareTo("Firewood") == 0 && position.CompareTo("法阵-scene2") == 0){
             SceneTransition sceneTrans = GameObject.Find("法阵-scene2").GetComponent<SceneTransition>();
             Debug.Log(sceneTrans);
