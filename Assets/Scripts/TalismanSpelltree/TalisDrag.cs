@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHandler {
     public enum Elements { METAL, WOOD, WATER, FIRE, EARTH, THUNDER, SUN, WIND, MOON, NONE };
@@ -36,7 +37,7 @@ public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHand
         if (RectTransformUtility.RectangleContainsScreenPoint(invPanel, Input.mousePosition)) {
             Debug.Log("Added element: " + element);
             //setTalis = true;
-            dispManager.GetComponent<TalismanManager>().AddCraft(element);
+            dispManager.GetComponent<TalismanManager>().AddCraft(element, GetComponent<Image>().sprite);
         }
     }
 

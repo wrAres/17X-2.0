@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Show))]
 public class TalismanManager : MonoBehaviour {
@@ -20,6 +21,7 @@ public class TalismanManager : MonoBehaviour {
     private float curTime;
     // Cookbook variables
     private TalisDrag.Elements[] craft = new TalisDrag.Elements[3];
+    public Image[] slots;
     public Recipe[] recipeBook;
 
     public Backpack backpack;
@@ -72,6 +74,7 @@ public class TalismanManager : MonoBehaviour {
     private void ResetCraft() {
         for (int i = 0; i < craft.Length; i++) {
             craft[i] = TalisDrag.Elements.NONE;
+            slots[i].enabled = false;
         }
     }
 
@@ -108,10 +111,12 @@ public class TalismanManager : MonoBehaviour {
     }
 
     // Add an element to the craft log
-    public void AddCraft(TalisDrag.Elements e) {
+    public void AddCraft(TalisDrag.Elements e, Sprite s) {
         for (int i = 0; i < craft.Length; i++) {
             if(craft[i] == TalisDrag.Elements.NONE){
                 craft[i] = e;
+                slots[i].enabled = true;
+                slots[i].sprite = s;
                 break;
             }
         }
