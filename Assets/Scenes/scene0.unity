@@ -421,7 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb31100d47de6147aab17554bfdaa84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: Scene2
+  scene: scene2
   enterable: 0
 --- !u!65 &72247049
 BoxCollider:
@@ -4134,7 +4134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: SampleScene
-  enterable: 0
+  enterable: 1
 --- !u!65 &1928741907
 BoxCollider:
   m_ObjectHideFlags: 0

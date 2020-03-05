@@ -16,9 +16,9 @@ public class SceneTransition : MonoBehaviour
 	}
 
 	void OnTriggerEnter(Collider other){
-		if(other.CompareTag("Player") && enterable){
+		if (other.CompareTag("Player") && enterable) {
 			Debug.Log("trasferring");
 			SceneManager.LoadScene(scene);
-	    }
+		}
 	}
 }
