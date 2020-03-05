@@ -137,9 +137,11 @@ public class TalismanManager : MonoBehaviour {
                 // Add to backpack if it's not an element
                 if (recipeBook[i].element == TalisDrag.Elements.NONE) {
                     backpack.AddItem(recipeBook[i].spellName);
+                    GameObject.Find("Backpack_Icon").GetComponent<ShakingIcon>().ShakeMe();
                 }
                 else {
                     GetComponent<SpellTreeManager>().UnlockElement(recipeBook[i].element);
+                    GameObject.Find("SpellTreeIcon").GetComponent<ShakingIcon>().ShakeMe();
                 }
                 CloseDisplay();
             }

@@ -21,6 +21,7 @@ public class PickObject : MonoBehaviour
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, layerMask)) {
                 GameObject clickObject = hitInfo.collider.gameObject;
+                print(clickObject.name);
                 if (clickObject.tag.CompareTo("Pickable") == 0){
                     Backpack.backpack.GetComponent<Backpack>().AddItem(clickObject.name);
                     Destroy(clickObject);
