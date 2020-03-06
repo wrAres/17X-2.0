@@ -6,6 +6,12 @@ public class AIDataManager : MonoBehaviour
 {
     private static Dictionary<string, int> spellAccessCount;
     private static Dictionary<string, int> spellAccessStandardCount;
+
+    public int movingPuzzleMoves = 0;
+    public float movingPuzzleTime = 0.0f;
+
+    public int walkingPuzzleFalls = 0;
+
     // Start is called before the first frame update
     void Start()
     {
