@@ -124,6 +124,7 @@ public class TalismanManager : MonoBehaviour {
         for (int i = 0; i < craft.Length; i++) {
             if(craft[i] == TalisDrag.Elements.NONE){
                 craft[i] = e;
+                AIDataManager.IncrementElementAccess(e);
                 slots[i].enabled = true;
                 slots[i].sprite = s;
                 break;
@@ -137,6 +138,7 @@ public class TalismanManager : MonoBehaviour {
                 // Add to backpack if it's not an element
                 if (recipeBook[i].element == TalisDrag.Elements.NONE) {
                     backpack.AddItem(recipeBook[i].spellName);
+                    AIDataManager.IncrementSpellAccess(recipeBook[i].spellName);
                     GameObject.Find("Backpack_Icon").GetComponent<ShakingIcon>().ShakeMe();
                 }
                 else {

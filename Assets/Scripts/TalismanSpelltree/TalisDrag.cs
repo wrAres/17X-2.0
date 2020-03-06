@@ -28,6 +28,7 @@ public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHand
         if (!setTalis) {
             //transform.position = origin;
             gameObject.GetComponent<RectTransform>().localPosition = origin;
+            
         }
     }
 

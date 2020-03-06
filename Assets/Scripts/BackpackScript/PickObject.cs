@@ -25,6 +25,8 @@ public class PickObject : MonoBehaviour
                 if (clickObject.tag.CompareTo("Pickable") == 0){
                     Backpack.backpack.GetComponent<Backpack>().AddItem(clickObject.name);
                     Destroy(clickObject);
+                } else if (clickObject.name.CompareTo("Boss") == 0){
+                    AIDataManager.DecideTrigram();
                 }
             }
         }
