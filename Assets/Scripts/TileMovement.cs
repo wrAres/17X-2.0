@@ -217,6 +217,7 @@ public class TileMovement : MonoBehaviour
     // Move tile on the screen
     private void MoveTile(Transform movingTile, Transform invTile)
     {
+        //AI moving puzzle move tile
         Vector3 Start = movingTile.position;
         Vector3 Destination = invisTile.position;
 

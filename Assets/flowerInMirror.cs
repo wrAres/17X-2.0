@@ -22,6 +22,7 @@ public class flowerInMirror : MonoBehaviour
 	void OnMouseDown(){
 		if(!isRight){
 			mirror.GetComponent<mirrors>().reset();
+			// AI add wrong selected mirror
 		}else{
 			player.GetComponent<playerMovement>().isReverse = 1;
 			Destroy(mirror);
