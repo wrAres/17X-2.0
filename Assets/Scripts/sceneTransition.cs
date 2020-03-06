@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class SceneTransition : MonoBehaviour
+public class sceneTransition : MonoBehaviour
 {
     //[SerializeField] private string newlevel;
 	public string scene;

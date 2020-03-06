@@ -74,7 +74,7 @@ public class Item : MonoBehaviour
             s.UnlockElement(TalisDrag.Elements.WOOD);
         }
         else if (item.CompareTo("Firewood") == 0 && position.CompareTo("法阵-scene2") == 0){
-            SceneTransition sceneTrans = GameObject.Find("法阵-scene2").GetComponent<SceneTransition>();
+            sceneTransition sceneTrans = GameObject.Find("法阵-scene2").GetComponent<sceneTransition>();
             Debug.Log(sceneTrans);
             sceneTrans.enterable = true;
             s.UnlockElement(TalisDrag.Elements.FIRE);

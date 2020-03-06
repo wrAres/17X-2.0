@@ -4134,7 +4134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: SampleScene
-  enterable: 1
+  enterable: 0
 --- !u!65 &1928741907
 BoxCollider:
   m_ObjectHideFlags: 0
