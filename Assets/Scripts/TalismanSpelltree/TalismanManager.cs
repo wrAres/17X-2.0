@@ -54,6 +54,11 @@ public class TalismanManager : MonoBehaviour {
         else if (curTime <= 0 && display.activeSelf) {
             CloseDisplay();
         }
+
+        // TEST MAKE BUTTON
+        if (Input.GetKey(KeyCode.G) && display.activeSelf) {
+            MakeItem();
+        }
     }
 
     // Display the list of currently usable elements
@@ -85,8 +90,17 @@ public class TalismanManager : MonoBehaviour {
 
     // Check if recipe can be made from current craft
     private bool CheckRecipe(Spell r) {
-        TalisDrag.Elements[] curCraft = new TalisDrag.Elements[3];
-        System.Array.Copy(craft, curCraft, 3);
+        TalisDrag.Elements[] curCraft = new TalisDrag.Elements[craft.Length];
+        System.Array.Copy(craft, curCraft, craft.Length);
+
+        for (int i = 0; i < curCraft.Length; i++) {
+            if (curCraft[i] != TalisDrag.Elements.NONE) {
+                Debug.Log("I SLEEP");
+                if (r.recipe.Length < i+1) return false;
+            }
+        }
+
+        // Make sure each element is matched
         for (int i = 0; i < r.recipe.Length; i++) {
             bool gotEle = false;
             for (int j = 0; j < craft.Length; j++) {
@@ -96,15 +110,17 @@ public class TalismanManager : MonoBehaviour {
                     break;
                 }
             }
-
-            if (!gotEle && r.recipe[i] != TalisDrag.Elements.NONE) {
-                return false;
-            }
+            Debug.Log(i);
+            if (!gotEle) { return false; }
         }
 
         // Don't make empty elements
         if (r.recipe.Length <= 0) {
             return false;
+        }
+
+        for (int i = 0; i < curCraft.Length; i++) {
+            Debug.Log(curCraft[i]);
         }
         return true;
     }
@@ -130,24 +146,6 @@ public class TalismanManager : MonoBehaviour {
                 break;
             }
         }
-
-        // Check if item can be made
-        for (int i = 0; i < recipeBook.Length; i++) {
-            if (CheckRecipe(recipeBook[i])) {
-                Debug.Log("MADE ITEM: " + recipeBook[i].spellName);
-                // Add to backpack if it's not an element
-                if (recipeBook[i].element == TalisDrag.Elements.NONE) {
-                    backpack.AddItem(recipeBook[i].spellName);
-                    AIDataManager.IncrementSpellAccess(recipeBook[i].spellName);
-                    GameObject.Find("Backpack_Icon").GetComponent<ShakingIcon>().ShakeMe();
-                }
-                else {
-                    GetComponent<SpellTreeManager>().UnlockElement(recipeBook[i].element);
-                    GameObject.Find("SpellTreeIcon").GetComponent<ShakingIcon>().ShakeMe();
-                }
-                CloseDisplay();
-            }
-        }
     }
 
     public void UnlockElement(TalisDrag.Elements e) {
@@ -159,6 +157,35 @@ public class TalismanManager : MonoBehaviour {
                 break;
             }
         }
+    }
+
+    private bool MakeItem() {
+        // Check if item can be made
+        for (int i = 0; i < recipeBook.Length; i++) {
+            if (CheckRecipe(recipeBook[i])) {
+                Debug.Log("MADE ITEM: " + recipeBook[i].spellName);
+                // Add to backpack if it's not an element
+                if (recipeBook[i].element == TalisDrag.Elements.NONE) {
+                    backpack.AddItem(recipeBook[i].spellName);
+                    AIDataManager.IncrementSpellAccess(recipeBook[i].spellName);
+                    GameObject.Find("Backpack_Icon").GetComponent<ShakingIcon>().ShakeMe();
+                    if (recipeBook[i].curState == Spell.SpellState.KNOWN) {
+                        recipeBook[i].ChangeState(Spell.SpellState.UNLOCKED);
+                    }
+                }
+                else {
+                    GetComponent<SpellTreeManager>().UnlockElement(recipeBook[i].element);
+                    GameObject.Find("SpellTreeIcon").GetComponent<ShakingIcon>().ShakeMe();
+                }
+                CloseDisplay();
+                return true;
+            }
+        }
+
+        // Failed to make item
+        Debug.Log("No items can be made");
+        CloseDisplay();
+        return false;
     }
 
 }

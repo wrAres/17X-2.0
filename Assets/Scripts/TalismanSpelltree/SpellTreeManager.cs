@@ -40,7 +40,7 @@ public class SpellTreeManager : MonoBehaviour {
         */
 
         if (Input.GetKeyDown(KeyCode.Q)) {
-            UnlockElement(TalisDrag.Elements.FIRE);
+            UnlockElement(TalisDrag.Elements.WATER);
             Debug.Log("should work");
         }
     }
@@ -107,6 +107,8 @@ public class SpellTreeManager : MonoBehaviour {
                 recipe.text = "Recipe: ";
                 for (int i = 0; i < s.recipe.Length; i++) {
                     recipe.text += EleToString(s.recipe[i]);
+                    if (i + 1 >= s.recipe.Length) break;
+                    recipe.text += ", ";
                 }
                 if (s.recipe.Length <= 0) { recipe.text += "N/A"; }
             }
@@ -121,7 +123,7 @@ public class SpellTreeManager : MonoBehaviour {
         // Unlock the element
         for (int i = 0; i < spell.Length; i++) {
             if (spell[i].element == e) {
-                spell[i].curState = Spell.SpellState.UNLOCKED;
+                spell[i].ChangeState(Spell.SpellState.UNLOCKED);
                 break;
             }
         }
@@ -139,7 +141,7 @@ public class SpellTreeManager : MonoBehaviour {
             }
             */
             if (CanCraft(spell[i]) && spell[i].element == TalisDrag.Elements.NONE) {
-                spell[i].curState = Spell.SpellState.KNOWN;
+                spell[i].ChangeState(Spell.SpellState.KNOWN);
             }
         }
 

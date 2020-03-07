@@ -31,4 +31,8 @@ public class Spell : MonoBehaviour, IPointerEnterHandler {
     {
         
     }
+
+    public void ChangeState(SpellState s) {
+        curState = s;
+    }
 }

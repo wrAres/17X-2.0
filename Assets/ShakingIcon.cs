@@ -18,7 +18,7 @@ public class ShakingIcon : MonoBehaviour
             Vector3 newPos = Random.insideUnitSphere * (Time.deltaTime * shakeAmt) + transform.position;
             
             newPos.z = transform.position.z;
-            print("newPos" + newPos);
+//            print("newPos" + newPos);
             transform.position = newPos;
             shakeAmt -= 15;
         }
