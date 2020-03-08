@@ -6,26 +6,20 @@ public class AIDataManager : MonoBehaviour
 {
     private static Dictionary<string, int> spellAccessCount;
     private static Dictionary<string, int> spellAccessStandardCount;
+    private static string[] spellListBeforeWaterBoss;
+    private static string[] elementListBeforeWaterBoss;
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        spellListBeforeWaterBoss = new string[] {"Taiji Key", "Board", "Life Water", "Taoist Wind", "Firewood", "Glowing Sun", "Dirt"};
+        elementListBeforeWaterBoss = new string[] {"thunder", "sun", "wind", "moon", "water", "fire", "wood", "earth", "metal"};
         spellAccessCount = new Dictionary<string, int>();
-        spellAccessCount.Add("thunder", 0);
-        spellAccessCount.Add("sun", 0);
-        spellAccessCount.Add("wind", 0);
-        spellAccessCount.Add("moon", 0);
-        spellAccessCount.Add("Taiji Key", 0);
-        spellAccessCount.Add("Board", 0);
-        spellAccessCount.Add("Life Water", 0);
-        spellAccessCount.Add("Taoist Wind", 0);
-        spellAccessCount.Add("Firewood", 0);
-        spellAccessCount.Add("Glowing Sun", 0);
-        spellAccessCount.Add("Dirt", 0);
-        spellAccessCount.Add("water", 0);
-        spellAccessCount.Add("fire", 0);
-        spellAccessCount.Add("wood", 0);
-        spellAccessCount.Add("earth", 0);
-        spellAccessCount.Add("metal", 0);
+        for (int i = 0; i < spellListBeforeWaterBoss.Length; i++) {
+            spellAccessCount.Add(spellListBeforeWaterBoss[i], 0);
+        }
+        for (int i = 0; i < elementListBeforeWaterBoss.Length; i++) {
+            spellAccessCount.Add(spellListBeforeWaterBoss[i], 0);
+        }
         spellAccessCount.Add("", 0);
 
         spellAccessStandardCount = new Dictionary<string, int>();
@@ -78,9 +72,10 @@ public class AIDataManager : MonoBehaviour
 
     public static string DecideTrigram() {
         int sum = 0;
-        foreach(KeyValuePair<string, int> s in spellAccessCount) {
-            sum = sum + (int)s.Value;
+        for (int i = 0; i < spellListBeforeWaterBoss.Length; i++) {
+            spellAccessCount[spellListBeforeWaterBoss[i]] = 1;
         }
+
         if (sum == 32) {
             print("\u2630"); //qian; Firmament
         } else if (sum > 32 && sum <= 35) {
