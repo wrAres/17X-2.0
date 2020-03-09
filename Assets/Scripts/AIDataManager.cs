@@ -12,6 +12,11 @@ public class AIDataManager : MonoBehaviour
     public int movingPuzzleMoves = 0;
     public float movingPuzzleTime = 0.0f;
 
+
+	int incorrectMirrorCount = 0;
+	List<float> timeForSpellUnlock = new List<float>();
+	int nonExistentRecipeTries = 0;
+
     public int walkingPuzzleFalls = 0;
     // Start is called before the first frame update
     void Start()
@@ -101,4 +106,17 @@ public class AIDataManager : MonoBehaviour
         return "";
     }
     
+
+	public void ClickedWrongMirror()
+	{
+		incorrectMirrorCount++;
+	}
+	public void TryNonExistentRecipe()
+	{
+		nonExistentRecipeTries++;
+	}
+	public void DiscoverNewSpell(float time)
+	{
+		timeForSpellUnlock.Add(time);
+	}
 }
