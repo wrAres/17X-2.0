@@ -10,6 +10,8 @@ public class AIDataManager : MonoBehaviour
     private static string[] spellListBeforeWaterBoss;
     private static string[] elementListBeforeWaterBoss;
 
+    public static int wrongItemPlacementCount = 0;
+
     public int movingPuzzleMoves = 0;
     public float movingPuzzleTime = 0.0f;
 
@@ -54,7 +56,6 @@ public class AIDataManager : MonoBehaviour
     }
 
     public static void IncrementSpellAccess(string spell) {
-        print(spell);
         spellAccessCount[spell] = spellAccessCount[spell] + 1;
     }
 
@@ -93,6 +94,10 @@ public class AIDataManager : MonoBehaviour
             smartOnTalisman += Math.Exp(spellAccessCount[element] - spellAccessStandardCount[element]) / 16.0f;
         }
         return smartOnTalisman;
+    }
+
+    public static double ItemPlacementSmartness() {
+        return Math.Exp(wrongItemPlacementCount);
     }
 
     public static string DecideTrigram() {
