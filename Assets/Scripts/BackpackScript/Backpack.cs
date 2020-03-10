@@ -19,7 +19,7 @@ public class Backpack : MonoBehaviour
         // listOfItems = new LinkedList<Item>();
         imageObjects = new LinkedList<GameObject>();
         length = 0;
-        this.AddItem("branch");
+        this.AddItem("Life Water");
         this.Show(false);
     }
     void OnGUI() {

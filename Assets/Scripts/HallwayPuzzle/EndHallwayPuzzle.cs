@@ -4,21 +4,11 @@ using UnityEngine;
 
 public class EndHallwayPuzzle : MonoBehaviour
 {
-    private Vector3 startPos;
+    public FloorControl bounds;
 
-    private GameObject MainChar;
-
-    void Start()
+    private void OnTriggerEnter(Collider obj)
     {
-        GameObject MainChar = GameObject.Find("Main Character");
-        startPos = MainChar.GetComponent<Transform>().position;
-    }
-
-    void Update()
-    {
-        if (GameObject.Find("Main Character").GetComponent<Transform>().position.y < .6) 
-        {
-            GameObject.Find("Main Character").GetComponent<Transform>().position = startPos; 
-        }
+        bounds.start = false;
+        bounds.end = true;
     }
 }

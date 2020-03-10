@@ -7,6 +7,7 @@ public class flowerInMirror : MonoBehaviour
     // Start is called before the first frame update
 	public bool isRight;
 	public GameObject mirror;
+	public GameObject player;
     void Start()
     {
         
@@ -22,6 +23,7 @@ public class flowerInMirror : MonoBehaviour
 		if(!isRight){
 			mirror.GetComponent<mirrors>().reset();
 		}else{
+			player.GetComponent<playerMovement>().isReverse = 1;
 			Destroy(mirror);
 		}
 	}
