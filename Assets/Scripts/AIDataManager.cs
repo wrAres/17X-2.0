@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AIDataManager : MonoBehaviour
 {
@@ -80,12 +81,22 @@ public class AIDataManager : MonoBehaviour
         spellAccessCount[element] = spellAccessCount[element] + 1;
     }
 
-    public static string DecideTrigram() {
-        int sum = 0;
+    public static double TalismanSmartness() {
+        double smartOnTalisman = 0; // the higher the smarter; max 1
         for (int i = 0; i < spellListBeforeWaterBoss.Length; i++) {
-            spellAccessCount[spellListBeforeWaterBoss[i]] = 1;
+            string spell = spellListBeforeWaterBoss[i];
+            smartOnTalisman += Math.Exp(spellAccessCount[spell] - spellAccessStandardCount[spell]) / 16.0f;
         }
 
+        for (int i = 0; i < elementListBeforeWaterBoss.Length; i++) {
+            string element = elementListBeforeWaterBoss[i];
+            smartOnTalisman += Math.Exp(spellAccessCount[element] - spellAccessStandardCount[element]) / 16.0f;
+        }
+        return smartOnTalisman;
+    }
+
+    public static string DecideTrigram() {
+        int sum = 0;
         if (sum == 32) {
             print("\u2630"); //qian; Firmament
         } else if (sum > 32 && sum <= 35) {
