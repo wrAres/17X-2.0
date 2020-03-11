@@ -130,10 +130,11 @@ public class TalismanManager : MonoBehaviour {
                 break;
             }
         }
-
+        bool madeItem = false;
         // Check if item can be made
         for (int i = 0; i < recipeBook.Length; i++) {
             if (CheckRecipe(recipeBook[i])) {
+                madeItem = true;
                 Debug.Log("MADE ITEM: " + recipeBook[i].spellName);
                 // Add to backpack if it's not an element
                 if (recipeBook[i].element == TalisDrag.Elements.NONE) {
@@ -142,12 +143,17 @@ public class TalismanManager : MonoBehaviour {
                     GameObject.Find("Backpack_Icon").GetComponent<ShakingIcon>().ShakeMe();
                 }
                 else {
+                    AIDataManager.DiscoverNewSpell(Time.time - previousUnlockTime);
+		            previousUnlockTime = Time.time;
+
                     GetComponent<SpellTreeManager>().UnlockElement(recipeBook[i].element);
                     GameObject.Find("SpellTreeIcon").GetComponent<ShakingIcon>().ShakeMe();
                 }
                 CloseDisplay();
             }
         }
+        if(!madeItem)
+            AIDataManager.MadeNonExistentItem();
     }
 
     public void UnlockElement(TalisDrag.Elements e) {

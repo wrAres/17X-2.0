@@ -13,8 +13,6 @@ public class mirrors : MonoBehaviour
 	public GameObject f6;
 	GameObject[] mirrorArray = new GameObject[6];
 
-	[SerializeField] AIDataManager aiData;
-
 	void Start()
     {
         
@@ -34,7 +32,7 @@ public class mirrors : MonoBehaviour
 	
 	public void reset(){
 
-		aiData.ClickedWrongMirror();
+		AIDataManager.ClickedWrongMirror();
 
 		for(int i = 0;i<6;i++){
 			int x = Random.Range(0,6);

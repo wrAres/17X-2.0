@@ -18,7 +18,8 @@ public class AIDataManager : MonoBehaviour
     
 
 	int incorrectMirrorCount = 0;
-	List<float> timeForSpellUnlock = new List<float>();
+	List<double> timeForSpellUnlock = new List<double>();
+    List<double> bestTimeForSpellUnlock = new List<double>(); //TODO add perfect times for spell discovery
 	int nonExistentRecipeTries = 0;
 
     public int walkingPuzzleFalls = 0;
@@ -136,4 +137,24 @@ public class AIDataManager : MonoBehaviour
 	{
 		timeForSpellUnlock.Add(time);
 	}
+
+    public double MirrorSmartness()
+    {
+        return Mathf.Exp(incorrectMirrorCount * -1);
+    }
+
+    public double SpellSmartness()
+    {
+        double totalsmartness = 0;
+        for(int i = 0; i < timeForSpellUnlock.Count; i++)
+        {
+            totalsmartness += Mathf.exp(timeForSpellUnlock[i] - bestTimeForSpellUnlock[i]);
+        }
+        return Mathf.exp(totalsmartness * -1);
+    }
+
+    public double RecipeSmartness()
+    {
+        return Mathf.Exp(nonExistentRecipeTries * -1);
+    }
 }

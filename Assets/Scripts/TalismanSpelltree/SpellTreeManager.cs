@@ -20,8 +20,6 @@ public class SpellTreeManager : MonoBehaviour {
     public GameObject textBox;
     public Text spellName, recipe, desc;
 
-	[SerializeField] AIDataManager aiData;
-	float previousUnlockTime;
 
 
 	// Start is called before the first frame update
@@ -124,8 +122,7 @@ public class SpellTreeManager : MonoBehaviour {
 
     public void UnlockElement(TalisDrag.Elements e) {
 
-		aiData.DiscoverNewSpell(Time.time - previousUnlockTime);
-		previousUnlockTime = Time.time;
+		
 
         // Unlock the element
         for (int i = 0; i < spell.Length; i++) {
