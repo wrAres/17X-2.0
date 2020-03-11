@@ -11,10 +11,11 @@ public class AIDataManager : MonoBehaviour
     private static string[] elementListBeforeWaterBoss;
 
     public static int wrongItemPlacementCount = 0;
+    public static bool gentlypassthedoor = true;
 
     public int movingPuzzleMoves = 0;
     public float movingPuzzleTime = 0.0f;
-
+    
 
 	int incorrectMirrorCount = 0;
 	List<float> timeForSpellUnlock = new List<float>();
@@ -31,7 +32,7 @@ public class AIDataManager : MonoBehaviour
             spellAccessCount.Add(spellListBeforeWaterBoss[i], 0);
         }
         for (int i = 0; i < elementListBeforeWaterBoss.Length; i++) {
-            spellAccessCount.Add(spellListBeforeWaterBoss[i], 0);
+            spellAccessCount.Add(elementListBeforeWaterBoss[i], 0);
         }
         spellAccessCount.Add("", 0);
 

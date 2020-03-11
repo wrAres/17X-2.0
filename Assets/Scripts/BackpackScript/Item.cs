@@ -109,5 +109,20 @@ public class Item : MonoBehaviour
         //     sprout.transform.rotation = Quaternion.Euler(temp);
         //     Destroy(seed);
         // }
+        else if (item.CompareTo("Taiji Key") == 0 && position.CompareTo("Water Boss Door") == 0){
+            GameObject taijikey = GameObject.Find("Taiji Key");
+            GameObject waterbossdoor = GameObject.Find("Water Boss Door");
+            Destroy(taijikey);
+            Destroy(waterbossdoor);
+            AIDataManager.gentlypassthedoor = true; 
+            Debug.Log(AIDataManager.gentlypassthedoor);
+        }
+        else if (item.CompareTo("Boom") == 0 && position.CompareTo("Water Boss Door") == 0){
+            GameObject boom = GameObject.Find("Boom");
+            GameObject waterbossdoor = GameObject.Find("Water Boss Door");
+            Destroy(boom);
+            Destroy(waterbossdoor);
+            AIDataManager.gentlypassthedoor = false; 
+        }
     }
 }
