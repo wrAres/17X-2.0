@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +13,18 @@ public class Show : MonoBehaviour
     GraphicRaycaster raycaster;
     PointerEventData pointerData;
     EventSystem eventSystem;
+
+    private static Show showInstance;
+    void Awake() {
+        DontDestroyOnLoad(this);
+
+        if (showInstance == null) {
+            showInstance = this;
+        }
+        else {
+            Destroy(gameObject);
+        }
+    }
 
     private void Start() {
         raycaster = GetComponent<GraphicRaycaster>();

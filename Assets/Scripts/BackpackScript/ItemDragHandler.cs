@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -41,7 +41,6 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
             if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity)) {
                 GameObject dragOnObject = hitInfo.collider.gameObject;
                 canPlaceItem = Item.canPlace(itemOnGround.name, dragOnObject.name);
-                
                 if (canPlaceItem) {
                     GameObject imageObj = new GameObject(itemOnGround.name);
                     SpriteRenderer image = imageObj.AddComponent<SpriteRenderer>(); //Add the Image Component script
@@ -52,10 +51,11 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
                     Vector3 temp = imageObj.transform.rotation.eulerAngles;
                     temp.x = 45f;
                     imageObj.transform.rotation = Quaternion.Euler(temp);
-                    // imageObj.transform.rotation.x = 45;
+                    imageObj.AddComponent<BoxCollider>();
                     Backpack.backpack.GetComponent<Backpack>().RemoveItem(itemOnGround.name);
                     Destroy(itemOnGround);
-                    Item.puzzleEffect(imageObj.name, dragOnObject.name);
+                    Item.puzzleEffect(imageObj.name, dragOnObject.name,
+                        imageObj.transform.position + new Vector3(0.0f, 0.1f, 0));
                 } else {
                     this.GetComponent<RectTransform>().anchoredPosition = previousPosition;
                 }

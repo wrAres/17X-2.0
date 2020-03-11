@@ -1,2 +1,6 @@
-Base path: 'C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/PlaybackEngines'
+<<<<<<< HEAD
+Base path: 'C:/Program Files/Unity/Hub/Editor/2019.3.4f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.3.4f1/Editor/Data/PlaybackEngines'
+=======
+Base path: 'G:/Program Files/2019.3.0f6/Editor/Data', plugins path 'G:/Program Files/2019.3.0f6/Editor/Data/PlaybackEngines'
+>>>>>>> origin/WaterRoom
 Cmd: initializeCompiler
