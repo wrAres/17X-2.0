@@ -148,13 +148,25 @@ public class AIDataManager : MonoBehaviour
         double totalsmartness = 0;
         for(int i = 0; i < timeForSpellUnlock.Count; i++)
         {
-            totalsmartness += Mathf.exp(timeForSpellUnlock[i] - bestTimeForSpellUnlock[i]);
+            totalsmartness += Mathf.Exp(timeForSpellUnlock[i] - bestTimeForSpellUnlock[i]);
         }
-        return Mathf.exp(totalsmartness * -1);
+        return Mathf.Exp(totalsmartness * -1);
     }
 
     public double RecipeSmartness()
     {
         return Mathf.Exp(nonExistentRecipeTries * -1);
+    }
+
+    public double MovingPuzzleSmartness()
+    {
+        // Smartness is (Puzzle Moves + Puzzle Time)
+        return Mathf.Exp((movingPuzzleMoves + movingPuzzleTime) * -1);
+    }
+
+    public double WalkingPuzzleSmartness()
+    {
+        // Smartness is Puzzle Falls
+        return Mathf.Exp(walkingPuzzleFalls * -1);
     }
 }
