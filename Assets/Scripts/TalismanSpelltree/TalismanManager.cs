@@ -143,8 +143,8 @@ public class TalismanManager : MonoBehaviour {
                     GameObject.Find("Backpack_Icon").GetComponent<ShakingIcon>().ShakeMe();
                 }
                 else {
-                    AIDataManager.DiscoverNewSpell(Time.time - previousUnlockTime);
-		            previousUnlockTime = Time.time;
+                    AIDataManager.DiscoverNewSpell(Time.time - AIDataManager.previousUnlockTime);
+		            AIDataManager.previousUnlockTime = Time.time;
 
                     GetComponent<SpellTreeManager>().UnlockElement(recipeBook[i].element);
                     GameObject.Find("SpellTreeIcon").GetComponent<ShakingIcon>().ShakeMe();
@@ -153,7 +153,7 @@ public class TalismanManager : MonoBehaviour {
             }
         }
         if(!madeItem)
-            AIDataManager.MadeNonExistentItem();
+            AIDataManager.TryNonExistentRecipe();
     }
 
     public void UnlockElement(TalisDrag.Elements e) {

@@ -13,16 +13,17 @@ public class AIDataManager : MonoBehaviour
     public static int wrongItemPlacementCount = 0;
     public static bool gentlypassthedoor = true;
 
-    public int movingPuzzleMoves = 0;
-    public float movingPuzzleTime = 0.0f;
+    public static int movingPuzzleMoves = 0;
+    public static float movingPuzzleTime = 0.0f;
     
 
-	int incorrectMirrorCount = 0;
-	List<double> timeForSpellUnlock = new List<double>();
-    List<double> bestTimeForSpellUnlock = new List<double>(); //TODO add perfect times for spell discovery
-	int nonExistentRecipeTries = 0;
+	static int incorrectMirrorCount = 0;
+	static List<double> timeForSpellUnlock = new List<double>();
+    static List<double> bestTimeForSpellUnlock = new List<double>(); //TODO add perfect times for spell discovery
+	static int nonExistentRecipeTries = 0;
 
-    public int walkingPuzzleFalls = 0;
+    public static int walkingPuzzleFalls = 0;
+    public static float previousUnlockTime = 0;
     // Start is called before the first frame update
     void Start()
     {   
@@ -125,48 +126,48 @@ public class AIDataManager : MonoBehaviour
     }
     
 
-	public void ClickedWrongMirror()
+	public static void ClickedWrongMirror()
 	{
 		incorrectMirrorCount++;
 	}
-	public void TryNonExistentRecipe()
+	public static void TryNonExistentRecipe()
 	{
 		nonExistentRecipeTries++;
 	}
-	public void DiscoverNewSpell(float time)
+	public static void DiscoverNewSpell(float time)
 	{
 		timeForSpellUnlock.Add(time);
 	}
 
-    public double MirrorSmartness()
+    public static double MirrorSmartness()
     {
         return Mathf.Exp(incorrectMirrorCount * -1);
     }
 
-    public double SpellSmartness()
+    public static double SpellSmartness()
     {
         double totalsmartness = 0;
         for(int i = 0; i < timeForSpellUnlock.Count; i++)
         {
-            totalsmartness += Mathf.Exp(timeForSpellUnlock[i] - bestTimeForSpellUnlock[i]);
+            totalsmartness += Math.Exp(timeForSpellUnlock[i] - bestTimeForSpellUnlock[i]);
         }
-        return Mathf.Exp(totalsmartness * -1);
+        return Math.Exp(totalsmartness * -1);
     }
 
-    public double RecipeSmartness()
+    public static double RecipeSmartness()
     {
-        return Mathf.Exp(nonExistentRecipeTries * -1);
+        return Math.Exp(nonExistentRecipeTries * -1);
     }
 
-    public double MovingPuzzleSmartness()
+    public static double MovingPuzzleSmartness()
     {
         // Smartness is (Puzzle Moves + Puzzle Time)
-        return Mathf.Exp((movingPuzzleMoves + movingPuzzleTime) * -1);
+        return Math.Exp((movingPuzzleMoves + movingPuzzleTime) * -1);
     }
 
-    public double WalkingPuzzleSmartness()
+    public static double WalkingPuzzleSmartness()
     {
         // Smartness is Puzzle Falls
-        return Mathf.Exp(walkingPuzzleFalls * -1);
+        return Math.Exp(walkingPuzzleFalls * -1);
     }
 }

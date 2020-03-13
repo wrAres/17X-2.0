@@ -28,7 +28,7 @@ public class SpellTreeManager : MonoBehaviour {
         display.SetActive(true);
         spell = GetComponentsInChildren<Spell>();
         display.SetActive(false);
-		previousUnlockTime = Time.time;
+		AIDataManager.previousUnlockTime = Time.time;
     }
 
     // Update is called once per frame
