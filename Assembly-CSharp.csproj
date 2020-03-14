@@ -56,6 +56,15 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AI\AIDataManager.cs" />
+     <Compile Include="Assets\Scripts\AI\BT\ActionNode.cs" />
+     <Compile Include="Assets\Scripts\AI\BT\Check.cs" />
+     <Compile Include="Assets\Scripts\AI\BT\CheckNode.cs" />
+     <Compile Include="Assets\Scripts\AI\BT\Inverter.cs" />
+     <Compile Include="Assets\Scripts\AI\BT\MathTree.cs" />
+     <Compile Include="Assets\Scripts\AI\BT\Node.cs" />
+     <Compile Include="Assets\Scripts\AI\BT\NodeStates.cs" />
+     <Compile Include="Assets\Scripts\AI\BT\Selector.cs" />
+     <Compile Include="Assets\Scripts\AI\BT\Sequence.cs" />
      <Compile Include="Assets\Scripts\BackpackScript\Backpack.cs" />
      <Compile Include="Assets\Scripts\BackpackScript\Item.cs" />
      <Compile Include="Assets\Scripts\BackpackScript\ItemDragHandler.cs" />
