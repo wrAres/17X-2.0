@@ -22,15 +22,19 @@ public class playerMovement : MonoBehaviour
 		ani.SetFloat("Speed", GetComponent<Rigidbody>().velocity.z);
 		if(Input.GetKey("w")){
 			GetComponent<Rigidbody>().velocity = new Vector3(0,0,3*isReverse);
+			TipsDialog.HideTextBox();
 		}
 		if(Input.GetKey("s")){
 			GetComponent<Rigidbody>().velocity = new Vector3(0,0,-3*isReverse);
+			TipsDialog.HideTextBox();
 		}
         if(Input.GetKey("a")){
 			GetComponent<Rigidbody>().velocity = new Vector3(-3*isReverse,0,0);
+			TipsDialog.HideTextBox();
 		}
 		if(Input.GetKey("d")){
 			GetComponent<Rigidbody>().velocity = new Vector3(3*isReverse,0,0);
+			TipsDialog.HideTextBox();
 		}
     }
 }

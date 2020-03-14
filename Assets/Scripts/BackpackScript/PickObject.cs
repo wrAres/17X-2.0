@@ -28,6 +28,7 @@ public class PickObject : MonoBehaviour
                 } else if (clickObject.name.CompareTo("Boss") == 0){
                     AIDataManager.DecideTrigram();
                 }
+                TipsDialog.PrintDialog(clickObject.name);
             }
         }
     }
