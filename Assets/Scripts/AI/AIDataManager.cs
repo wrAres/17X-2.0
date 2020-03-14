@@ -85,7 +85,7 @@ public class AIDataManager : MonoBehaviour
         spellAccessCount[element] = spellAccessCount[element] + 1;
     }
 
-    public static double TalismanSmartness() {
+    public double TalismanSmartness() {
         double smartOnTalisman = 0; // the higher the smarter; max 1
         for (int i = 0; i < spellListBeforeWaterBoss.Length; i++) {
             string spell = spellListBeforeWaterBoss[i];
@@ -99,7 +99,7 @@ public class AIDataManager : MonoBehaviour
         return smartOnTalisman;
     }
 
-    public static double ItemPlacementSmartness() {
+    public double ItemPlacementSmartness() {
         return Math.Exp(wrongItemPlacementCount);
     }
 
@@ -144,7 +144,7 @@ public class AIDataManager : MonoBehaviour
         return Mathf.Exp(incorrectMirrorCount * -1);
     }
 
-    public static double SpellSmartness()
+    public double SpellSmartness()
     {
         double totalsmartness = 0;
         for(int i = 0; i < timeForSpellUnlock.Count; i++)
@@ -154,18 +154,18 @@ public class AIDataManager : MonoBehaviour
         return Math.Exp(totalsmartness * -1);
     }
 
-    public static double RecipeSmartness()
+    public double RecipeSmartness()
     {
         return Math.Exp(nonExistentRecipeTries * -1);
     }
 
-    public static double MovingPuzzleSmartness()
+    public double MovingPuzzleSmartness()
     {
         // Smartness is (Puzzle Moves + Puzzle Time)
         return Math.Exp((movingPuzzleMoves + movingPuzzleTime) * -1);
     }
 
-    public static double WalkingPuzzleSmartness()
+    public double WalkingPuzzleSmartness()
     {
         // Smartness is Puzzle Falls
         return Math.Exp(walkingPuzzleFalls * -1);
