@@ -58,6 +58,10 @@ public class AIDataManager : MonoBehaviour
         spellAccessStandardCount.Add("", 0);
     }
 
+    public static void UpdateStandardSpellCount(string spell, int count) {
+        spellAccessStandardCount[spell] = spellAccessStandardCount[spell] + count;
+    }
+
     public static void IncrementSpellAccess(string spell) {
         spellAccessCount[spell] = spellAccessCount[spell] + 1;
     }
@@ -89,12 +93,12 @@ public class AIDataManager : MonoBehaviour
         double smartOnTalisman = 0; // the higher the smarter; max 1
         for (int i = 0; i < spellListBeforeWaterBoss.Length; i++) {
             string spell = spellListBeforeWaterBoss[i];
-            smartOnTalisman += Math.Exp(spellAccessCount[spell] - spellAccessStandardCount[spell]) / 16.0f;
+            smartOnTalisman += Math.Exp(spellAccessStandardCount[spell] - spellAccessCount[spell]) / 16.0f;
         }
 
         for (int i = 0; i < elementListBeforeWaterBoss.Length; i++) {
             string element = elementListBeforeWaterBoss[i];
-            smartOnTalisman += Math.Exp(spellAccessCount[element] - spellAccessStandardCount[element]) / 16.0f;
+            smartOnTalisman += Math.Exp(spellAccessStandardCount[element] - spellAccessCount[element]) / 16.0f;
         }
         return smartOnTalisman;
     }

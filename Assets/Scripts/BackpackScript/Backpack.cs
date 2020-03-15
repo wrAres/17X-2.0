@@ -20,6 +20,9 @@ public class Backpack : MonoBehaviour
         imageObjects = new LinkedList<GameObject>();
         length = 0;
         this.AddItem("Life Water");
+        this.AddItem("Taiji Key");
+        this.AddItem("Dirt");
+        this.AddItem("Glowing Sun");
         this.Show(false);
     }
     void OnGUI() {

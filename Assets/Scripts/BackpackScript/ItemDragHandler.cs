@@ -52,14 +52,15 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
                     temp.x = 45f;
                     imageObj.transform.rotation = Quaternion.Euler(temp);
                     imageObj.AddComponent<BoxCollider>();
-                    Backpack.backpack.GetComponent<Backpack>().RemoveItem(itemOnGround.name);
-                    Destroy(itemOnGround);
+                    // Backpack.backpack.GetComponent<Backpack>().RemoveItem(itemOnGround.name);
+                    // Destroy(itemOnGround);
                     Item.puzzleEffect(imageObj.name, dragOnObject.name,
                         imageObj.transform.position + new Vector3(0.0f, 0.1f, 0));
                 } else {
-                    this.GetComponent<RectTransform>().anchoredPosition = previousPosition;
                     AIDataManager.wrongItemPlacementCount += 1;
+                    
                 }
+                this.GetComponent<RectTransform>().anchoredPosition = previousPosition;
             }
             else {
                 print("physics error");

@@ -19,6 +19,7 @@ public class Item : MonoBehaviour
         itemOnPuzzle.Add("Firewood", "法阵-scene2");
         itemOnPuzzle.Add("Life Water", "Water Seed");
         itemOnPuzzle.Add("Glowing Sun", "Water Sprout");
+        itemOnPuzzle.Add("Taiji Key", "Water Boss Door");
     }
 
     public static bool canPlace(string item, string position) {
@@ -42,7 +43,10 @@ public class Item : MonoBehaviour
             river.GetComponent<CapsuleCollider>().radius = 0;
             GameObject.Find("River").GetComponent<Renderer>().material.color = Color.gray;
             s.UnlockElement(TalisDrag.Elements.WATER);
-            Destroy(GameObject.Find("Dirt"));
+            Destroy(GameObject.Find("Scene0/Dirt"));
+            
+            AIDataManager.UpdateStandardSpellCount("Dirt", 1);
+            AIDataManager.UpdateStandardSpellCount("earth", 3);
         } 
         else if (item.CompareTo("Water Seed") == 0 && position.CompareTo("Dirt") == 0){
             waterSeedGrow = true;
@@ -72,12 +76,20 @@ public class Item : MonoBehaviour
             Destroy(lifeWater);
 
             s.UnlockElement(TalisDrag.Elements.WOOD);
+
+            AIDataManager.UpdateStandardSpellCount("Dirt", 1);
+            AIDataManager.UpdateStandardSpellCount("earth", 3);
+            AIDataManager.UpdateStandardSpellCount("Life Water", 1);
+            AIDataManager.UpdateStandardSpellCount("water", 3);
         }
         else if (item.CompareTo("Firewood") == 0 && position.CompareTo("法阵-scene2") == 0){
             sceneTransition sceneTrans = GameObject.Find("法阵-scene2").GetComponent<sceneTransition>();
             Debug.Log(sceneTrans);
             sceneTrans.enterable = true;
             s.UnlockElement(TalisDrag.Elements.FIRE);
+
+            AIDataManager.UpdateStandardSpellCount("Firewood", 1);
+            AIDataManager.UpdateStandardSpellCount("wood", 3);
         } 
         else if (item.CompareTo("Glowing Sun") == 0 && position.CompareTo("Water Sprout") == 0){
             GameObject dirt = GameObject.Find("Dirt");
@@ -96,6 +108,10 @@ public class Item : MonoBehaviour
             temp.x = 45f;
             bloom.transform.rotation = Quaternion.Euler(temp);
 
+            AIDataManager.UpdateStandardSpellCount("Glowing Sun", 1);
+            AIDataManager.UpdateStandardSpellCount("sun", 2);
+            AIDataManager.UpdateStandardSpellCount("earth", 1);
+            AIDataManager.UpdateStandardSpellCount("fire", 2);
         } 
         // else if (item.CompareTo("Life Water") == 0 && position.CompareTo("Water Sprout") == 0){
         //     GameObject sspell = GameObject.Find("Life Water");
@@ -114,8 +130,13 @@ public class Item : MonoBehaviour
             GameObject waterbossdoor = GameObject.Find("Water Boss Door");
             Destroy(taijikey);
             Destroy(waterbossdoor);
+            Debug.Log("run");
+
             AIDataManager.gentlypassthedoor = true; 
-            Debug.Log(AIDataManager.gentlypassthedoor);
+            AIDataManager.UpdateStandardSpellCount("water", 3);
+            AIDataManager.UpdateStandardSpellCount("moon", 1);
+            AIDataManager.UpdateStandardSpellCount("sun", 1);
+            AIDataManager.UpdateStandardSpellCount("Taiji Key", 1);
         }
         else if (item.CompareTo("Boom") == 0 && position.CompareTo("Water Boss Door") == 0){
             GameObject boom = GameObject.Find("Boom");
