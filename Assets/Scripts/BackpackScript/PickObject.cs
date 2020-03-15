@@ -9,7 +9,6 @@ public class PickObject : MonoBehaviour
     private void Start() {
         // This would cast rays only against colliders in layer 8.
         // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
-        print("start");
         layerMask = 1 << 8;
         layerMask = ~layerMask;
     }

@@ -20,6 +20,7 @@ public class Selector : Node
      * it will report a failure instead.*/
     public override NodeStates Evaluate()
     {
+        AIDataManager.Print();
         foreach (Node node in m_nodes)
         {
             switch (node.Evaluate())

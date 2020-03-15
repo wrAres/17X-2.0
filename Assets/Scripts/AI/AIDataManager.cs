@@ -89,7 +89,7 @@ public class AIDataManager : MonoBehaviour
         spellAccessCount[element] = spellAccessCount[element] + 1;
     }
 
-    public double TalismanSmartness() {
+    public static double TalismanSmartness() {
         double smartOnTalisman = 0; // the higher the smarter; max 1
         for (int i = 0; i < spellListBeforeWaterBoss.Length; i++) {
             string spell = spellListBeforeWaterBoss[i];
@@ -103,7 +103,7 @@ public class AIDataManager : MonoBehaviour
         return smartOnTalisman;
     }
 
-    public double ItemPlacementSmartness() {
+    public static double ItemPlacementSmartness() {
         return Math.Exp(wrongItemPlacementCount);
     }
 
@@ -128,7 +128,6 @@ public class AIDataManager : MonoBehaviour
         }
         return "";
     }
-    
 
 	public static void ClickedWrongMirror()
 	{
@@ -143,12 +142,12 @@ public class AIDataManager : MonoBehaviour
 		timeForSpellUnlock.Add(time);
 	}
 
-    public double MirrorSmartness()
+    public static double MirrorSmartness()
     {
         return Mathf.Exp(incorrectMirrorCount * -1);
     }
 
-    public double SpellSmartness()
+    public static double SpellSmartness()
     {
         double totalsmartness = 0;
         for(int i = 0; i < timeForSpellUnlock.Count; i++)
@@ -158,20 +157,35 @@ public class AIDataManager : MonoBehaviour
         return Math.Exp(totalsmartness * -1);
     }
 
-    public double RecipeSmartness()
+    public static double RecipeSmartness()
     {
         return Math.Exp(nonExistentRecipeTries * -1);
     }
 
-    public double MovingPuzzleSmartness()
+    public static double MovingPuzzleSmartness()
     {
         // Smartness is (Puzzle Moves + Puzzle Time)
-        return Math.Exp((movingPuzzleMoves + movingPuzzleTime) * -1);
+        return Math.Exp((movingPuzzleMoves + movingPuzzleTime) * -0.01);
     }
 
-    public double WalkingPuzzleSmartness()
+    public static double WalkingPuzzleSmartness()
     {
         // Smartness is Puzzle Falls
-        return Math.Exp(walkingPuzzleFalls * -1);
+        return Math.Exp(walkingPuzzleFalls * -0.2);
+    }
+
+    public static void Print() {
+        print("Mirror");
+        print(MirrorSmartness());
+        print("Spell");
+        print(SpellSmartness());
+        print("Recipe");
+        print(RecipeSmartness());
+        print("Moving puzzle");
+        print(MovingPuzzleSmartness());
+        print("Talisman");
+        print(TalismanSmartness());
+        print("Walking puzzle");
+        print(WalkingPuzzleSmartness());
     }
 }

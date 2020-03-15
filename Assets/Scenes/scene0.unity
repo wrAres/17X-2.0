@@ -824,6 +824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isReverse: 1
   ani: {fileID: 126118433}
+  system: {fileID: 0}
 --- !u!54 &126118431
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3644,6 +3645,7 @@ GameObject:
   - component: {fileID: 1530061567}
   - component: {fileID: 1530061566}
   - component: {fileID: 1530061568}
+  - component: {fileID: 1530061569}
   m_Layer: 5
   m_Name: TrigramManager
   m_TagString: Untagged
@@ -3718,6 +3720,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f8b5c0f3e95a14aba7ea66fcf9ebb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1530061569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530061564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c5eb882b29c6747b7dc32b324f9b27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorPiece1: {fileID: 0}
+  floorPiece2: {fileID: 0}
+  floorPiece3: {fileID: 0}
+  floorPiece4: {fileID: 0}
+  floorPiece5: {fileID: 0}
+  floorPiece6: {fileID: 0}
+  floorPiece7: {fileID: 0}
+  transformPiece1: {fileID: 0}
+  transformPiece2: {fileID: 0}
+  transformPiece3: {fileID: 0}
+  transformPiece4: {fileID: 0}
+  transformPiece5: {fileID: 0}
+  transformPiece6: {fileID: 0}
+  transformPiece7: {fileID: 0}
 --- !u!1 &1542438111
 GameObject:
   m_ObjectHideFlags: 0

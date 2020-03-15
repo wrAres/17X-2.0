@@ -152,7 +152,7 @@ public class TalismanManager : MonoBehaviour {
                 CloseDisplay();
             }
         }
-        if(!madeItem)
+        if(!madeItem && craft[2] != null)
             AIDataManager.TryNonExistentRecipe();
     }
 
