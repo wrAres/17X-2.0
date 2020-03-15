@@ -40,20 +40,20 @@ public class AIDataManager : MonoBehaviour
 
         spellAccessStandardCount = new Dictionary<string, int>();
         spellAccessStandardCount.Add("thunder", 0);
-        spellAccessStandardCount.Add("sun", 3);
-        spellAccessStandardCount.Add("wind", 1);
-        spellAccessStandardCount.Add("moon", 1);
-        spellAccessStandardCount.Add("Taiji Key", 1);
-        spellAccessStandardCount.Add("Board", 1);
-        spellAccessStandardCount.Add("Life Water", 1);
-        spellAccessStandardCount.Add("Taoist Wind", 1);
-        spellAccessStandardCount.Add("Firewood", 1);
-        spellAccessStandardCount.Add("Glowing Sun", 1);
-        spellAccessStandardCount.Add("Dirt", 2);
-        spellAccessStandardCount.Add("water", 6);
-        spellAccessStandardCount.Add("fire", 2);
-        spellAccessStandardCount.Add("wood", 4);
-        spellAccessStandardCount.Add("earth", 7);
+        spellAccessStandardCount.Add("sun", 0);
+        spellAccessStandardCount.Add("wind", 0);
+        spellAccessStandardCount.Add("moon", 0);
+        spellAccessStandardCount.Add("Taiji Key", 0);
+        spellAccessStandardCount.Add("Board", 0);
+        spellAccessStandardCount.Add("Life Water", 0);
+        spellAccessStandardCount.Add("Taoist Wind", 0);
+        spellAccessStandardCount.Add("Firewood", 0);
+        spellAccessStandardCount.Add("Glowing Sun", 0);
+        spellAccessStandardCount.Add("Dirt", 0);
+        spellAccessStandardCount.Add("water", 0);
+        spellAccessStandardCount.Add("fire", 0);
+        spellAccessStandardCount.Add("wood", 0);
+        spellAccessStandardCount.Add("earth", 0);
         spellAccessStandardCount.Add("metal", 0);
         spellAccessStandardCount.Add("", 0);
     }
