@@ -5,6 +5,12 @@ using UnityEngine;
 public class SystemTree : MonoBehaviour
 {
     private AIDataManager dataManager;
+    public Transform floorPiece1;
+    public Transform floorPiece2;
+    public Transform floorPiece3;
+    public Transform floorPiece4;
+    public Transform floorPiece5;
+    public Transform floorPiece6;
 
    /* Behavior Tree hierarchy
     * Node's number and letter refer to the path taken down the tree to get to them
@@ -54,6 +60,7 @@ public class SystemTree : MonoBehaviour
     void Start()
     {
         dataManager = GameObject.Find("TrigramManager").GetComponent<AIDataManager>();
+        FindFloorPiecesTranform();
 
         /* First Subtree creation - noda_1A
          * Create and add child nodes to a list for Sequence node_1A
@@ -178,6 +185,16 @@ public class SystemTree : MonoBehaviour
 
     }
 
+    void FindFloorPiecesTranform()
+    {
+        floorPiece1 = GameObject.Find("FloorPiece1").GetComponent<Transform>();
+        floorPiece2 = GameObject.Find("FloorPiece2").GetComponent<Transform>();
+        floorPiece3 = GameObject.Find("FloorPiece3").GetComponent<Transform>();
+        floorPiece4 = GameObject.Find("FloorPiece4").GetComponent<Transform>();
+        floorPiece5 = GameObject.Find("FloorPiece5").GetComponent<Transform>();
+        floorPiece6 = GameObject.Find("FloorPiece6").GetComponent<Transform>();
+    }
+
     /* Hit a problem with delegate methods and not being able to pass in paramaters
      * Since every subtree has different thresholds for deciding things I just made
      * new methods that each tree will call.
@@ -233,8 +250,11 @@ public class SystemTree : MonoBehaviour
 
     private NodeStates ChangeMovingPuzzleT1()
     {
-        // TODO: Implement the changes for moving puzzle to change
-        return NodeStates.FAILURE;
+        // floorPiece1.position = hitInfo.point + new Vector3(0.0f, 0.1f, 0);
+        Vector3 temp = floorPiece1.rotation.eulerAngles;
+        temp.x = 45f;
+        floorPiece1.rotation = Quaternion.Euler(temp);
+        return NodeStates.SUCCESS;
     }
 
 
