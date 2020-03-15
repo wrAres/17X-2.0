@@ -192,7 +192,10 @@ public class SystemTree : MonoBehaviour
     }
 
     // Call this function to run the behavior tree
-    public void Execute() => rootNode.Evaluate();
+    public void Execute() {
+        AIDataManager.Print();
+        rootNode.Evaluate();
+    }
     
     public void FindFloorPiecesTranform()
     {
@@ -266,38 +269,32 @@ public class SystemTree : MonoBehaviour
             return NodeStates.FAILURE;
     }
 
-    private NodeStates ChangeMovingPuzzleT2()
+    private NodeStates ChangeMovingPuzzleT1()
     {
-        print("T2 EXE");
-        transformPiece1.position = new Vector3(2.5f, 0.35f, -41.33f);
+        // TODO: Implement the changes for moving puzzle to change
+        print("T1 EXE");
+        transformPiece1.position = new Vector3(0f, 0.35f, -41.33f);
         Vector3 temp = transformPiece1.rotation.eulerAngles;
-        temp.y = 48f;
+        temp.y = 0f;
         transformPiece1.rotation = Quaternion.Euler(temp);
 
-        transformPiece2.position = new Vector3(6.53f, 0.34f, -37.72f);
+        transformPiece2.position = new Vector3(0f, 0.34f, -36.72f);
         transformPiece2.rotation = Quaternion.Euler(temp);
 
-        transformPiece3.position = new Vector3(10.2f, 0.35f, -34.45f);
+        transformPiece3.position = new Vector3(0f, 0.35f, -31.45f);
         transformPiece3.rotation = Quaternion.Euler(temp);
 
-        temp.y = -48f;
-
-        transformPiece4.position = new Vector3(10.2f, 0.36f, -30.4f);
+        transformPiece4.position = new Vector3(0f, 0.34f, -28.14f);
         transformPiece4.rotation = Quaternion.Euler(temp);
 
-        transformPiece5.position = new Vector3(4.2f, 0.35f, -25f);
+        transformPiece5.position = new Vector3(0f, 0.35f, -20f);
         transformPiece5.rotation = Quaternion.Euler(temp);
 
-        transformPiece6.position = new Vector3(-2.1f, 0.33f, -19.35f);
-        transformPiece6.rotation = Quaternion.Euler(temp);
-
-        transformPiece7.position = new Vector3(-5.8f, 0.35f, -16f);
-        transformPiece7.rotation = Quaternion.Euler(temp);
-        transformPiece7.localScale = new Vector3(1.5f, 0.01f, 2.524f);
+        Destroy(floorPiece6);
+        Destroy(floorPiece7);
 
         return NodeStates.SUCCESS;
     }
-
 
     // Delegate methods for subtree 2
     private NodeStates CheckTimeUseSpellScoreT2()
@@ -332,33 +329,37 @@ public class SystemTree : MonoBehaviour
             return NodeStates.FAILURE;
     }
 
-    private NodeStates ChangeMovingPuzzleT1()
+    private NodeStates ChangeMovingPuzzleT2()
     {
-        // TODO: Implement the changes for moving puzzle to change
-        print("T1 EXE");
-        transformPiece1.position = new Vector3(0f, 0.35f, -41.33f);
+        print("T2 EXE");
+        transformPiece1.position = new Vector3(2.5f, 0.35f, -41.33f);
         Vector3 temp = transformPiece1.rotation.eulerAngles;
-        temp.y = 0f;
+        temp.y = 48f;
         transformPiece1.rotation = Quaternion.Euler(temp);
 
-        transformPiece2.position = new Vector3(0f, 0.34f, -36.72f);
+        transformPiece2.position = new Vector3(6.53f, 0.34f, -37.72f);
         transformPiece2.rotation = Quaternion.Euler(temp);
 
-        transformPiece3.position = new Vector3(0f, 0.35f, -31.45f);
+        transformPiece3.position = new Vector3(10.2f, 0.35f, -34.45f);
         transformPiece3.rotation = Quaternion.Euler(temp);
 
-        transformPiece4.position = new Vector3(0f, 0.34f, -28.14f);
+        temp.y = -48f;
+
+        transformPiece4.position = new Vector3(10.2f, 0.36f, -30.4f);
         transformPiece4.rotation = Quaternion.Euler(temp);
 
-        transformPiece5.position = new Vector3(0f, 0.35f, -20f);
+        transformPiece5.position = new Vector3(4.2f, 0.35f, -25f);
         transformPiece5.rotation = Quaternion.Euler(temp);
 
-        Destroy(floorPiece6);
-        Destroy(floorPiece7);
+        transformPiece6.position = new Vector3(-2.1f, 0.33f, -19.35f);
+        transformPiece6.rotation = Quaternion.Euler(temp);
+
+        transformPiece7.position = new Vector3(-5.8f, 0.35f, -16f);
+        transformPiece7.rotation = Quaternion.Euler(temp);
+        transformPiece7.localScale = new Vector3(1.5f, 0.01f, 2.524f);
 
         return NodeStates.SUCCESS;
     }
-
 
     // Delegate methods for subtree 3
     private NodeStates CheckTimeUseSpellScoreT3()
@@ -412,7 +413,7 @@ public class SystemTree : MonoBehaviour
     private NodeStates ChangeMovingPuzzleT3()
     {
         // TODO: Implement the changes for moving puzzle to change
-        print("T1 EXE");
+        print("T3 EXE");
         transformPiece1.position = new Vector3(3f, 0.35f, -43.33f);
         Vector3 temp = transformPiece1.rotation.eulerAngles;
         temp.y = 90f;
@@ -507,6 +508,7 @@ public class SystemTree : MonoBehaviour
     private NodeStates ChangeMovingPuzzleT4()
     {
         // TODO: Implement the changes for moving puzzle to change
+        print("T4 EXE");
         transformPiece1.position = new Vector3(0f, 0.35f, -41.33f);
         Vector3 temp = transformPiece1.rotation.eulerAngles;
         temp.y = 0f;
@@ -544,6 +546,7 @@ public class SystemTree : MonoBehaviour
     private NodeStates ChangeMovingPuzzleT5()
     {
         // TODO: Implement the changes for moving puzzle to change
+        print("T5 EXE");
         transformPiece1.position = new Vector3(-3.7f, 0.35f, -42.3f);
         Vector3 temp = transformPiece1.rotation.eulerAngles;
         temp.y = 0f;

@@ -187,5 +187,7 @@ public class AIDataManager : MonoBehaviour
         print(TalismanSmartness());
         print("Walking puzzle");
         print(WalkingPuzzleSmartness());
+        print("Drop Item");
+        print(ItemPlacementSmartness());
     }
 }
