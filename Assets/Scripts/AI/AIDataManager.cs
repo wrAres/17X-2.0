@@ -139,7 +139,7 @@ public class AIDataManager : MonoBehaviour
 		timeForSpellUnlock.Add(time);
 	}
 
-    public static double MirrorSmartness()
+    public double MirrorSmartness()
     {
         return Mathf.Exp(incorrectMirrorCount * -1);
     }
