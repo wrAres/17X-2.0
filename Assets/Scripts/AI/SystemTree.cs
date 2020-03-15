@@ -5,12 +5,20 @@ using UnityEngine;
 public class SystemTree : MonoBehaviour
 {
     private AIDataManager dataManager;
-    public Transform floorPiece1;
-    public Transform floorPiece2;
-    public Transform floorPiece3;
-    public Transform floorPiece4;
-    public Transform floorPiece5;
-    public Transform floorPiece6;
+    public GameObject floorPiece1;
+    public GameObject floorPiece2;
+    public GameObject floorPiece3;
+    public GameObject floorPiece4;
+    public GameObject floorPiece5;
+    public GameObject floorPiece6;
+    public GameObject floorPiece7;
+    public Transform transformPiece1;
+    public Transform transformPiece2;
+    public Transform transformPiece3;
+    public Transform transformPiece4;
+    public Transform transformPiece5;
+    public Transform transformPiece6;
+    public Transform transformPiece7;
 
    /* Behavior Tree hierarchy
     * Node's number and letter refer to the path taken down the tree to get to them
@@ -187,12 +195,21 @@ public class SystemTree : MonoBehaviour
 
     void FindFloorPiecesTranform()
     {
-        floorPiece1 = GameObject.Find("FloorPiece1").GetComponent<Transform>();
-        floorPiece2 = GameObject.Find("FloorPiece2").GetComponent<Transform>();
-        floorPiece3 = GameObject.Find("FloorPiece3").GetComponent<Transform>();
-        floorPiece4 = GameObject.Find("FloorPiece4").GetComponent<Transform>();
-        floorPiece5 = GameObject.Find("FloorPiece5").GetComponent<Transform>();
-        floorPiece6 = GameObject.Find("FloorPiece6").GetComponent<Transform>();
+        floorPiece1 = GameObject.Find("FloorPiece1");
+        floorPiece2 = GameObject.Find("FloorPiece2");
+        floorPiece3 = GameObject.Find("FloorPiece3");
+        floorPiece4 = GameObject.Find("FloorPiece4");
+        floorPiece5 = GameObject.Find("FloorPiece5");
+        floorPiece6 = GameObject.Find("FloorPiece6");
+        floorPiece7 = GameObject.Find("End");
+
+        transformPiece1 = floorPiece1.GetComponent<Transform>();
+        transformPiece2 = floorPiece2.GetComponent<Transform>();
+        transformPiece3 = floorPiece3.GetComponent<Transform>();
+        transformPiece4 = floorPiece4.GetComponent<Transform>();
+        transformPiece5 = floorPiece5.GetComponent<Transform>();
+        transformPiece6 = floorPiece6.GetComponent<Transform>();
+        transformPiece7 = floorPiece7.GetComponent<Transform>();
     }
 
     /* Hit a problem with delegate methods and not being able to pass in paramaters
@@ -248,12 +265,34 @@ public class SystemTree : MonoBehaviour
             return NodeStates.FAILURE;
     }
 
-    private NodeStates ChangeMovingPuzzleT1()
+    private NodeStates ChangeMovingPuzzleT2()
     {
-        // floorPiece1.position = hitInfo.point + new Vector3(0.0f, 0.1f, 0);
-        Vector3 temp = floorPiece1.rotation.eulerAngles;
-        temp.x = 45f;
-        floorPiece1.rotation = Quaternion.Euler(temp);
+        transformPiece1.position = new Vector3(2.5f, 0.35f, -41.33f);
+        Vector3 temp = transformPiece1.rotation.eulerAngles;
+        temp.y = 48f;
+        transformPiece1.rotation = Quaternion.Euler(temp);
+
+        transformPiece2.position = new Vector3(6.53f, 0.34f, -37.72f);
+        transformPiece2.rotation = Quaternion.Euler(temp);
+
+        transformPiece3.position = new Vector3(10.2f, 0.35f, -34.45f);
+        transformPiece3.rotation = Quaternion.Euler(temp);
+
+        temp.y = -48f;
+
+        transformPiece4.position = new Vector3(10.2f, 0.36f, -30.4f);
+        transformPiece4.rotation = Quaternion.Euler(temp);
+
+        transformPiece5.position = new Vector3(4.2f, 0.35f, -25f);
+        transformPiece5.rotation = Quaternion.Euler(temp);
+
+        transformPiece6.position = new Vector3(-2.1f, 0.33f, -19.35f);
+        transformPiece6.rotation = Quaternion.Euler(temp);
+
+        transformPiece7.position = new Vector3(-5.8f, 0.35f, -16f);
+        transformPiece7.rotation = Quaternion.Euler(temp);
+        transformPiece7.localScale = new Vector3(1.5f, 0.01f, 2.524f);
+
         return NodeStates.SUCCESS;
     }
 
@@ -291,10 +330,30 @@ public class SystemTree : MonoBehaviour
             return NodeStates.FAILURE;
     }
 
-    private NodeStates ChangeMovingPuzzleT2()
+    private NodeStates ChangeMovingPuzzleT1()
     {
         // TODO: Implement the changes for moving puzzle to change
-        return NodeStates.FAILURE;
+        transformPiece1.position = new Vector3(0f, 0.35f, -41.33f);
+        Vector3 temp = transformPiece1.rotation.eulerAngles;
+        temp.y = 0f;
+        transformPiece1.rotation = Quaternion.Euler(temp);
+
+        transformPiece2.position = new Vector3(0f, 0.34f, -36.72f);
+        transformPiece2.rotation = Quaternion.Euler(temp);
+
+        transformPiece3.position = new Vector3(0f, 0.35f, -31.45f);
+        transformPiece3.rotation = Quaternion.Euler(temp);
+
+        transformPiece4.position = new Vector3(0f, 0.34f, -28.14f);
+        transformPiece4.rotation = Quaternion.Euler(temp);
+
+        transformPiece5.position = new Vector3(0f, 0.35f, -20f);
+        transformPiece5.rotation = Quaternion.Euler(temp);
+
+        Destroy(floorPiece6);
+        Destroy(floorPiece7);
+
+        return NodeStates.SUCCESS;
     }
 
 
@@ -350,7 +409,31 @@ public class SystemTree : MonoBehaviour
     private NodeStates ChangeMovingPuzzleT3()
     {
         // TODO: Implement the changes for moving puzzle to change
-        return NodeStates.FAILURE;
+        transformPiece1.position = new Vector3(3f, 0.35f, -43.33f);
+        Vector3 temp = transformPiece1.rotation.eulerAngles;
+        temp.y = 90f;
+        transformPiece1.rotation = Quaternion.Euler(temp);
+
+        transformPiece2.position = new Vector3(6f, 0.34f, -40.72f);
+        temp.y = 0f;
+        transformPiece2.rotation = Quaternion.Euler(temp);
+
+        transformPiece3.position = new Vector3(6f, 0.35f, -35.45f);
+        transformPiece3.rotation = Quaternion.Euler(temp);
+
+        temp.y = -40f;
+        transformPiece4.position = new Vector3(3.8f, 0.36f, -30.5f);
+        transformPiece4.rotation = Quaternion.Euler(temp);
+
+        transformPiece5.position = new Vector3(-1.25f, 0.35f, -24.48f);
+        transformPiece5.rotation = Quaternion.Euler(temp);
+
+        transformPiece6.position = new Vector3(-7f, 0.33f, -17.63f);
+        transformPiece6.rotation = Quaternion.Euler(temp);
+
+        Destroy(floorPiece7);
+
+        return NodeStates.SUCCESS;
     }
 
 
@@ -420,6 +503,35 @@ public class SystemTree : MonoBehaviour
     private NodeStates ChangeMovingPuzzleT4()
     {
         // TODO: Implement the changes for moving puzzle to change
+        transformPiece1.position = new Vector3(0f, 0.35f, -41.33f);
+        Vector3 temp = transformPiece1.rotation.eulerAngles;
+        temp.y = 0f;
+        transformPiece1.rotation = Quaternion.Euler(temp);
+
+        transformPiece2.position = new Vector3(1.32f, 0.34f, -35.5f);
+        temp.y = 30f;
+        transformPiece2.rotation = Quaternion.Euler(temp);
+
+        transformPiece3.position = new Vector3(-3.6f, 0.35f, -25f);
+        temp.y = -40f;
+        transformPiece3.rotation = Quaternion.Euler(temp);
+        transformPiece3.localScale = new Vector3(1.5f, 0.01f, 20f);
+
+        transformPiece4.position = new Vector3(2.96f, 0.36f, -29.7f);
+        temp.y = 5f;
+        transformPiece4.rotation = Quaternion.Euler(temp);
+
+        transformPiece5.position = new Vector3(3.6f, 0.35f, -22.48f);
+        transformPiece5.rotation = Quaternion.Euler(temp);
+
+        transformPiece6.position = new Vector3(-2.1f, 0.33f, -19.35f);
+        temp.y = 40f;
+        transformPiece6.rotation = Quaternion.Euler(temp);
+        transformPiece6.localScale = new Vector3(1.5f, 0.01f, 20f);
+
+        transformPiece7.position = new Vector3(-9.85f, 0.35f, -15.8f);
+        transformPiece7.localScale = new Vector3(1.5f, 0.01f, 4f);
+
         return NodeStates.FAILURE;
     }
 
@@ -428,6 +540,37 @@ public class SystemTree : MonoBehaviour
     private NodeStates ChangeMovingPuzzleT5()
     {
         // TODO: Implement the changes for moving puzzle to change
+        transformPiece1.position = new Vector3(-3.7f, 0.35f, -42.3f);
+        Vector3 temp = transformPiece1.rotation.eulerAngles;
+        temp.y = 0f;
+        transformPiece1.rotation = Quaternion.Euler(temp);
+
+        transformPiece2.position = new Vector3(-1.8f, 0.34f, -44.8f);
+        temp.y = 50f;
+        transformPiece2.rotation = Quaternion.Euler(temp);
+
+        transformPiece5.position = new Vector3(-3.28f, 0.35f, -34f);
+        temp.y = 5f;
+        transformPiece5.rotation = Quaternion.Euler(temp);
+
+        transformPiece3.position = new Vector3(-9.6f, 0.33f, -25f);
+        temp.y = -40f;
+        transformPiece3.rotation = Quaternion.Euler(temp);
+        transformPiece3.localScale = new Vector3(1.5f, 0.01f, 20f);
+
+        transformPiece4.position = new Vector3(-2.54f, 0.34f, -25.5f);
+        temp.y = 5f;
+        transformPiece4.rotation = Quaternion.Euler(temp);
+
+        transformPiece6.position = new Vector3(3f, 0.33f, -25.5f);
+        temp.y = 40f;
+        transformPiece6.rotation = Quaternion.Euler(temp);
+        transformPiece6.localScale = new Vector3(1.5f, 0.01f, 20f);
+
+        transformPiece7.position = new Vector3(7.9f, 0.35f, -15.2f);
+        transformPiece7.rotation = Quaternion.Euler(temp);
+        transformPiece7.localScale = new Vector3(1.5f, 0.01f, 4f);
+
         return NodeStates.FAILURE;
     }
 
