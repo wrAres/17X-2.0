@@ -7,11 +7,12 @@ public class playerMovement : MonoBehaviour
     // Start is called before the first frame update
 	public int isReverse;
 	public Animator ani;
+	public SystemTree system;
 
-    // void Start()
-    // {
-	// 	dataManger = GameObject.Find("TrigramManager").GetComponent<AIDataManager>();
-    // }
+    void Start()
+    {
+		system = GameObject.Find("TrigramManager").GetComponent<SystemTree>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -20,6 +21,7 @@ public class playerMovement : MonoBehaviour
 		if(GetComponent<Rigidbody>().transform.position.y < -20){
 			GetComponent<Rigidbody>().transform.position = new Vector3(0,2,-43);
 			AIDataManager.walkingPuzzleFalls++;
+			system.Execute();
 		}
 		ani.SetFloat("Speed", GetComponent<Rigidbody>().velocity.z);
 		if(Input.GetKey("w")){

@@ -193,6 +193,9 @@ public class SystemTree : MonoBehaviour
 
     }
 
+    // Call this function to run the behavior tree
+    public void Execute() => rootNode.Evaluate();
+    
     void FindFloorPiecesTranform()
     {
         floorPiece1 = GameObject.Find("FloorPiece1");
