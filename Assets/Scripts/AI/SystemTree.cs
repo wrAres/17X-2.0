@@ -530,7 +530,10 @@ public class SystemTree : MonoBehaviour
     private NodeStates CheckOpenBreakDoorScoreT4()
     {
         // TODO: Implement Open/Break Door smartness checker in AIAIDataManager
-        return NodeStates.FAILURE;
+        if (AIDataManager.gentlypassthedoor)
+            return NodeStates.FAILURE;
+        else 
+            return NodeStates.SUCCESS;
     }
 
     private NodeStates ChangeMovingPuzzleT4()

@@ -152,8 +152,10 @@ public class TalismanManager : MonoBehaviour {
                 CloseDisplay();
             }
         }
-        if(!madeItem && craft[2] != null)
+        if(!madeItem && craft[2] != TalisDrag.Elements.NONE){
+            print("craft, " + craft[2]);
             AIDataManager.TryNonExistentRecipe();
+        }
     }
 
     public void UnlockElement(TalisDrag.Elements e) {

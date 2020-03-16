@@ -27,6 +27,7 @@ public class AIDataManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
+
         spellListBeforeWaterBoss = new string[] {"Taiji Key", "Board", "Life Water", "Taoist Wind", "Firewood", "Glowing Sun", "Dirt"};
         elementListBeforeWaterBoss = new string[] {"thunder", "sun", "wind", "moon", "water", "fire", "wood", "earth", "metal"};
         spellAccessCount = new Dictionary<string, int>();
@@ -135,11 +136,13 @@ public class AIDataManager : MonoBehaviour
 	}
 	public static void TryNonExistentRecipe()
 	{
-		nonExistentRecipeTries++;
+        nonExistentRecipeTries++;
+        print("Add non exist recipe: " + nonExistentRecipeTries);
 	}
 	public static void DiscoverNewSpell(float time)
 	{
 		timeForSpellUnlock.Add(time);
+        bestTimeForSpellUnlock.Add(60);
 	}
 
     public static double MirrorSmartness()
