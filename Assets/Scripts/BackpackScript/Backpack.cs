@@ -62,7 +62,17 @@ public class Backpack : MonoBehaviour
         item_transform.SetParent(canvas.transform); //Assign the newly created Image GameObject as a Child of the Parent Panel, Canvas/Main UI.
 
         item_transform.anchoredPosition = backpack_transform.anchoredPosition + new Vector2((length-7.5f)*100, 0);
-        item_transform.sizeDelta = new Vector2(60, 60);
+        if (name.CompareTo("Life Water") == 0) {
+            item_transform.sizeDelta = new Vector2(60, 35);
+        } else if (name.CompareTo("Dirt") == 0) {
+            item_transform.anchoredPosition = item_transform.anchoredPosition + new Vector2(0, 5);
+            item_transform.sizeDelta = new Vector2(45, 40);
+        } else if (name.CompareTo("Taiji Key") == 0) {
+            item_transform.sizeDelta = new Vector2(180, 120);
+        } else {
+            item_transform.sizeDelta = new Vector2(50, 50);
+        }
+        
         
         imageObj.SetActive(Backpack.backpack.activeSelf);
     }
