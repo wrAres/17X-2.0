@@ -121,10 +121,10 @@ public class TalismanManager : MonoBehaviour {
 
     // Add an element to the craft log
     public void AddCraft(TalisDrag.Elements e, Sprite s) {
+        AIDataManager.IncrementElementAccess(e);
         for (int i = 0; i < craft.Length; i++) {
             if(craft[i] == TalisDrag.Elements.NONE){
                 craft[i] = e;
-                AIDataManager.IncrementElementAccess(e);
                 slots[i].enabled = true;
                 slots[i].sprite = s;
                 break;

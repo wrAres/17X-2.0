@@ -104,7 +104,7 @@ public class AIDataManager : MonoBehaviour
     }
 
     public static double ItemPlacementSmartness() {
-        return Math.Exp(wrongItemPlacementCount);
+        return Math.Exp(wrongItemPlacementCount * -0.05);
     }
 
     public static string DecideTrigram() {
@@ -175,19 +175,12 @@ public class AIDataManager : MonoBehaviour
     }
 
     public static void Print() {
-        print("Mirror");
-        print(MirrorSmartness());
-        print("Spell");
-        print(SpellSmartness());
-        print("Recipe");
-        print(RecipeSmartness());
-        print("Moving puzzle");
-        print(MovingPuzzleSmartness());
-        print("Talisman");
-        print(TalismanSmartness());
-        print("Walking puzzle");
-        print(WalkingPuzzleSmartness());
-        print("Drop Item");
-        print(ItemPlacementSmartness());
+        print("Mirror: " + MirrorSmartness());
+        print("Spell: " + SpellSmartness());
+        print("Recipe: " + RecipeSmartness());
+        print("Moving puzzle" + MovingPuzzleSmartness());
+        print("Talisman: " + TalismanSmartness());
+        print("Walking puzzle: " + WalkingPuzzleSmartness());
+        print("Drop Item: " + ItemPlacementSmartness());
     }
 }
