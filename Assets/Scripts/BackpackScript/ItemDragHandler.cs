@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
+public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {   
     public static bool canPlaceItem = true;
     public static Vector3 previousPosition = new Vector3(0,0,0);
@@ -11,13 +11,18 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     public static bool holdItem;
 
     public void OnDrag(PointerEventData eventData){
-        transform.position = Input.mousePosition;
+        itemOnGround.transform.position = Input.mousePosition;
     }
 
     public void OnEndDrag(PointerEventData eventData){
         // StartCoroutine(Put());
         Put();
         holdItem = false;
+    }
+
+    public void OnBeginDrag(PointerEventData eventData) {
+        // print("begin drag: "+itemOnGround.name);
+        holdItem = true;
     }
 
     // Start is called before the first frame update
@@ -59,13 +64,14 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
                 } else {
                     AIDataManager.wrongItemPlacementCount += 1;
                     print("wrong drop: " + AIDataManager.wrongItemPlacementCount);
-                    
+                    itemOnGround.GetComponent<RectTransform>().anchoredPosition = previousPosition;
                 }
-                this.GetComponent<RectTransform>().anchoredPosition = previousPosition;
             }
             else {
                 print("physics error");
+                itemOnGround.GetComponent<RectTransform>().anchoredPosition = previousPosition;
             }
-        }
+        } else
+            itemOnGround.GetComponent<RectTransform>().anchoredPosition = previousPosition;
     }
  }

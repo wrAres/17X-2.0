@@ -67,9 +67,10 @@ public class Show : MonoBehaviour
                     talisDisp.CloseDisplay();
                 }
                 else if (result.gameObject.tag.CompareTo("Item") == 0) {
-                    ItemDragHandler.itemOnGround = result.gameObject;
-                    ItemDragHandler.holdItem = true;
-                    ItemDragHandler.previousPosition = result.gameObject.GetComponent<RectTransform>().anchoredPosition;
+                    if (!ItemDragHandler.holdItem) {
+                        ItemDragHandler.itemOnGround = result.gameObject;
+                        ItemDragHandler.previousPosition = result.gameObject.GetComponent<RectTransform>().anchoredPosition;
+                    }
                 }
                 else if (result.gameObject.tag.CompareTo("SpellTreeIcon") == 0) {
                     spellTreeDisp.SetActive(!spellTreeDisp.activeSelf);
