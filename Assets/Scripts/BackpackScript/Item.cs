@@ -52,9 +52,9 @@ public class Item : MonoBehaviour
             waterSeedGrow = true;
         } 
         else if (item.CompareTo("Life Water") == 0 && position.CompareTo("Water Seed") == 0){
-            GameObject seed = GameObject.Find("Water Seed");
+            // GameObject seed = GameObject.Find("Water Seed");
             GameObject sprout = new GameObject("Water Sprout");
-            GameObject lifeWater = GameObject.Find("Life Water");
+            // GameObject lifeWater = GameObject.Find("Life Water");
             // Camera camera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
             // RectTransform seed_transform = seed.GetComponent<RectTransform>();
             // RectTransform sprout_transform = sprout.GetComponent<RectTransform>();
@@ -72,8 +72,8 @@ public class Item : MonoBehaviour
             BoxCollider sproutCollider = sprout.AddComponent<BoxCollider>();
             sproutCollider.size = new Vector3(10f, 10f, 10f);
             
-            Destroy(seed);
-            Destroy(lifeWater);
+            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("SpellObject"))
+                Destroy(obj);
 
             s.UnlockElement(TalisDrag.Elements.WOOD);
 
@@ -95,9 +95,8 @@ public class Item : MonoBehaviour
             GameObject dirt = GameObject.Find("Dirt");
             GameObject sprout = GameObject.Find("Water Sprout");
             GameObject flowerpot = GameObject.Find("Flowerpot");
-            Destroy(dirt);
             Destroy(sprout);
-            Destroy(flowerpot);
+            // Destroy(flowerpot);
 
             GameObject bloom = new GameObject("Bloom");
             bloom.transform.position = newPos;

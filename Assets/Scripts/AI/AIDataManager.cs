@@ -105,7 +105,7 @@ public class AIDataManager : MonoBehaviour
     }
 
     public static double ItemPlacementSmartness() {
-        return Math.Exp(wrongItemPlacementCount * -0.05);
+        return Math.Exp(wrongItemPlacementCount * -0.15);
     }
 
     public static string DecideTrigram() {

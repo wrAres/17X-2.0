@@ -17,6 +17,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
     public void OnEndDrag(PointerEventData eventData){
         // StartCoroutine(Put());
         Put();
+        itemOnGround.GetComponent<RectTransform>().anchoredPosition = previousPosition;
         holdItem = false;
     }
 
@@ -57,6 +58,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
                     temp.x = 45f;
                     imageObj.transform.rotation = Quaternion.Euler(temp);
                     imageObj.AddComponent<BoxCollider>();
+                    imageObj.tag = "SpellObject";
                     // Backpack.backpack.GetComponent<Backpack>().RemoveItem(itemOnGround.name);
                     // Destroy(itemOnGround);
                     Item.puzzleEffect(imageObj.name, dragOnObject.name,
@@ -64,14 +66,11 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
                 } else {
                     AIDataManager.wrongItemPlacementCount += 1;
                     print("wrong drop: " + AIDataManager.wrongItemPlacementCount);
-                    itemOnGround.GetComponent<RectTransform>().anchoredPosition = previousPosition;
                 }
             }
             else {
                 print("physics error");
-                itemOnGround.GetComponent<RectTransform>().anchoredPosition = previousPosition;
             }
-        } else
-            itemOnGround.GetComponent<RectTransform>().anchoredPosition = previousPosition;
+        }
     }
  }

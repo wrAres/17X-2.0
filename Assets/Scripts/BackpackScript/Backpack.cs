@@ -36,6 +36,13 @@ public class Backpack : MonoBehaviour
     }
 
     public void AddItem(string name) {
+        LinkedList<GameObject>.Enumerator em = imageObjects.GetEnumerator(); 
+        while (em.MoveNext()) {
+            GameObject currObj = em.Current;
+            if (currObj.name.CompareTo(name) == 0) {
+                return ;
+            }
+        }
         length++;
         // listOfItems.AddLast(item);
 
