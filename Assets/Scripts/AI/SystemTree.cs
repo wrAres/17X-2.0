@@ -243,7 +243,7 @@ public class SystemTree : MonoBehaviour
     // Delegate methods for subtree 1
     private NodeStates CheckNewSpellsScoreT1()
     {
-        if (AIDataManager.SpellSmartness() > 0.5)
+        if (AIDataManager.SpellSmartness() > 0.8)
             return NodeStates.SUCCESS;
         else
             return NodeStates.FAILURE;
@@ -251,7 +251,7 @@ public class SystemTree : MonoBehaviour
 
     private NodeStates CheckNonExistRecipeScoreT1()
     {
-        if (AIDataManager.RecipeSmartness() > 0.5)
+        if (AIDataManager.RecipeSmartness() > 0.8)
             return NodeStates.SUCCESS;
         else
             return NodeStates.FAILURE;
@@ -259,7 +259,7 @@ public class SystemTree : MonoBehaviour
 
     private NodeStates CheckItemPlacementScoreT1()
     {
-        if (AIDataManager.ItemPlacementSmartness() > 0.5)
+        if (AIDataManager.ItemPlacementSmartness() > 0.8)
             return NodeStates.SUCCESS;
         else
             return NodeStates.FAILURE;
@@ -267,7 +267,7 @@ public class SystemTree : MonoBehaviour
 
     private NodeStates CheckMovingPuzzleScoreT1()
     {
-        if (AIDataManager.MovingPuzzleSmartness() > 0.5)
+        if (AIDataManager.MovingPuzzleSmartness() > 0.8)
             return NodeStates.SUCCESS;
         else
             return NodeStates.FAILURE;
@@ -275,7 +275,7 @@ public class SystemTree : MonoBehaviour
 
     private NodeStates CheckWalkingPuzzleScoreT1()
     {
-        if (AIDataManager.WalkingPuzzleSmartness() > 0.5)
+        if (AIDataManager.WalkingPuzzleSmartness() > 0.8)
             return NodeStates.SUCCESS;
         else
             return NodeStates.FAILURE;
@@ -283,7 +283,7 @@ public class SystemTree : MonoBehaviour
 
     private NodeStates CheckTimeUseSpellScoreT1()
     {
-        if (AIDataManager.TalismanSmartness() > 0.5)
+        if (AIDataManager.TalismanSmartness() > 0.8)
             return NodeStates.SUCCESS;
         else
             return NodeStates.FAILURE;
@@ -293,6 +293,7 @@ public class SystemTree : MonoBehaviour
     {
         // TODO: Implement the changes for moving puzzle to change
         print("T1 EXE");
+        SetWalkingPuzzle();
         transformPiece1.position = new Vector3(0f, 0.35f, -41.33f);
         Vector3 temp = transformPiece1.rotation.eulerAngles;
         temp.y = 0f;
@@ -301,7 +302,7 @@ public class SystemTree : MonoBehaviour
         transformPiece2.position = new Vector3(0f, 0.34f, -36.72f);
         transformPiece2.rotation = Quaternion.Euler(temp);
 
-        transformPiece3.position = new Vector3(0f, 0.35f, -31.45f);
+        transformPiece3.position = new Vector3(0f, 0.341f, -31.45f);
         transformPiece3.rotation = Quaternion.Euler(temp);
 
         transformPiece4.position = new Vector3(0f, 0.34f, -28.14f);
@@ -310,8 +311,8 @@ public class SystemTree : MonoBehaviour
         transformPiece5.position = new Vector3(0f, 0.35f, -20f);
         transformPiece5.rotation = Quaternion.Euler(temp);
 
-        Destroy(floorPiece6);
-        Destroy(floorPiece7);
+        floorPiece6.SetActive(false);
+        floorPiece7.SetActive(false);
 
         return NodeStates.SUCCESS;
     }
@@ -343,7 +344,7 @@ public class SystemTree : MonoBehaviour
 
     private NodeStates CheckItemPlacementScoreT2()
     {
-        if (AIDataManager.ItemPlacementSmartness() > 0.8)
+        if (AIDataManager.ItemPlacementSmartness() > 0.7)
             return NodeStates.SUCCESS;
         else
             return NodeStates.FAILURE;
@@ -351,7 +352,7 @@ public class SystemTree : MonoBehaviour
 
     private NodeStates CheckWalkingPuzzleScoreT2()
     {
-        if (AIDataManager.WalkingPuzzleSmartness() > 0.8)
+        if (AIDataManager.WalkingPuzzleSmartness() > 0.7)
             return NodeStates.SUCCESS;
         else
             return NodeStates.FAILURE;
@@ -360,6 +361,7 @@ public class SystemTree : MonoBehaviour
     private NodeStates ChangeMovingPuzzleT2()
     {
         print("T2 EXE");
+        SetWalkingPuzzle();
         transformPiece1.position = new Vector3(2.5f, 0.35f, -41.33f);
         Vector3 temp = transformPiece1.rotation.eulerAngles;
         temp.y = 48f;
@@ -392,7 +394,7 @@ public class SystemTree : MonoBehaviour
     // Delegate methods for subtree 3
     private NodeStates CheckTimeUseSpellScoreT3()
     {
-        if (AIDataManager.TalismanSmartness() > 0.7)
+        if (AIDataManager.TalismanSmartness() > 0.6)
             return NodeStates.SUCCESS;
         else
             return NodeStates.FAILURE;
@@ -400,7 +402,7 @@ public class SystemTree : MonoBehaviour
 
     private NodeStates CheckNewSpellsScoreT3()
     {
-        if (AIDataManager.SpellSmartness() > 0.7)
+        if (AIDataManager.SpellSmartness() > 0.6)
             return NodeStates.SUCCESS;
         else
             return NodeStates.FAILURE;
@@ -408,7 +410,7 @@ public class SystemTree : MonoBehaviour
 
     private NodeStates CheckNonExistRecipeScoreT3()
     {
-        if (AIDataManager.RecipeSmartness() > 0.7)
+        if (AIDataManager.RecipeSmartness() > 0.6)
             return NodeStates.SUCCESS;
         else
             return NodeStates.FAILURE;
@@ -416,7 +418,7 @@ public class SystemTree : MonoBehaviour
 
     private NodeStates CheckItemPlacementScoreT3()
     {
-        if (AIDataManager.ItemPlacementSmartness() > 0.7)
+        if (AIDataManager.ItemPlacementSmartness() > 0.6)
             return NodeStates.SUCCESS;
         else
             return NodeStates.FAILURE;
@@ -424,7 +426,7 @@ public class SystemTree : MonoBehaviour
 
     private NodeStates CheckMovingPuzzleScoreT3()
     {
-        if (AIDataManager.MovingPuzzleSmartness() > 0.8)
+        if (AIDataManager.MovingPuzzleSmartness() > 0.6)
             return NodeStates.SUCCESS;
         else
             return NodeStates.FAILURE;
@@ -432,7 +434,7 @@ public class SystemTree : MonoBehaviour
 
     private NodeStates CheckWalkingPuzzleScoreT3()
     {
-        if (AIDataManager.WalkingPuzzleSmartness() > 0.8)
+        if (AIDataManager.WalkingPuzzleSmartness() > 0.6)
             return NodeStates.SUCCESS;
         else
             return NodeStates.FAILURE;
@@ -442,6 +444,7 @@ public class SystemTree : MonoBehaviour
     {
         // TODO: Implement the changes for moving puzzle to change
         print("T3 EXE");
+        SetWalkingPuzzle();
         transformPiece1.position = new Vector3(3f, 0.35f, -43.33f);
         Vector3 temp = transformPiece1.rotation.eulerAngles;
         temp.y = 90f;
@@ -464,7 +467,7 @@ public class SystemTree : MonoBehaviour
         transformPiece6.position = new Vector3(-7f, 0.33f, -17.63f);
         transformPiece6.rotation = Quaternion.Euler(temp);
 
-        Destroy(floorPiece7);
+        floorPiece7.SetActive(false);
 
         return NodeStates.SUCCESS;
     }
@@ -540,6 +543,7 @@ public class SystemTree : MonoBehaviour
     {
         // TODO: Implement the changes for moving puzzle to change
         print("T4 EXE");
+        SetWalkingPuzzle();
         transformPiece1.position = new Vector3(0f, 0.35f, -41.33f);
         Vector3 temp = transformPiece1.rotation.eulerAngles;
         temp.y = 0f;
@@ -578,6 +582,7 @@ public class SystemTree : MonoBehaviour
     {
         // TODO: Implement the changes for moving puzzle to change
         print("T5 EXE");
+        SetWalkingPuzzle();
         transformPiece1.position = new Vector3(-3.7f, 0.35f, -42.3f);
         Vector3 temp = transformPiece1.rotation.eulerAngles;
         temp.y = 0f;
@@ -612,4 +617,8 @@ public class SystemTree : MonoBehaviour
         return NodeStates.SUCCESS;
     }
 
+    private void SetWalkingPuzzle() {
+        floorPiece6.SetActive(true);
+        floorPiece7.SetActive(true);
+    }
 }
