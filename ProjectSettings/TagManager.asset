@@ -9,6 +9,8 @@ TagManager:
   - Item
   - SpellTreeIcon
   - Pickable
+  - AIManager
+  - SpellObject
   layers:
   - Default
   - TransparentFX

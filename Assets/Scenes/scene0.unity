@@ -587,7 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 651340834}
+  spellTreeDisp: {fileID: 0}
   curState: 0
   spellName: Metal
   recipe: 
@@ -696,7 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 651340834}
+  spellTreeDisp: {fileID: 0}
   curState: 0
   spellName: Water
   recipe: 
@@ -824,6 +824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isReverse: 1
   ani: {fileID: 126118433}
+  system: {fileID: 0}
 --- !u!54 &126118431
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1055,7 +1056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 651340834}
+  spellTreeDisp: {fileID: 0}
   curState: 0
   spellName: Taiji Key
   recipe: 020000000600000008000000
@@ -1355,7 +1356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 651340834}
+  spellTreeDisp: {fileID: 0}
   curState: 0
   spellName: Firewood
   recipe: 010000000100000001000000
@@ -1459,7 +1460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 651340834}
+  spellTreeDisp: {fileID: 0}
   curState: 0
   spellName: Wind
   recipe: 0200000001000000
@@ -1650,7 +1651,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 651340827}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eaf5dd188a174b2799d6201832420de, type: 3}
+  m_Script: {fileID: 11500000, guid: 26c1430c40f3c4cd89d42b7b29bc71ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   display: {fileID: 963497182}
@@ -1750,7 +1751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 651340834}
+  spellTreeDisp: {fileID: 0}
   curState: 0
   spellName: Life Water
   recipe: 020000000200000002000000
@@ -1856,7 +1857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 651340834}
+  spellTreeDisp: {fileID: 0}
   curState: 0
   spellName: Fire
   recipe: 
@@ -1879,6 +1880,115 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates: []
+--- !u!1 &821128518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 821128519}
+  - component: {fileID: 821128523}
+  - component: {fileID: 821128522}
+  - component: {fileID: 821128521}
+  - component: {fileID: 821128520}
+  m_Layer: 5
+  m_Name: boom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &821128519
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821128518}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 12}
+  m_Children: []
+  m_Father: {fileID: 963497183}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 120, y: 263}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &821128520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821128518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+--- !u!114 &821128521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821128518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: ac7c7e61ee43b407d8ddc20ab2d2e0aa, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &821128522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821128518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellTreeDisp: {fileID: 0}
+  curState: 0
+  spellName: Boom
+  recipe: 030000000300000003000000
+  level: 3
+  knownResp: 'Recipe: ? x3'
+  knownDes: 
+  unlockedDes: 
+  element: 9
+--- !u!222 &821128523
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821128518}
+  m_CullTransparentMesh: 0
 --- !u!1 &844647120
 GameObject:
   m_ObjectHideFlags: 0
@@ -2057,7 +2167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 651340834}
+  spellTreeDisp: {fileID: 0}
   curState: 2
   spellName: Earth
   recipe: 
@@ -2286,6 +2396,7 @@ RectTransform:
   - {fileID: 458059262}
   - {fileID: 2026756682}
   - {fileID: 1094329888}
+  - {fileID: 821128519}
   m_Father: {fileID: 651340832}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2513,7 +2624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 651340834}
+  spellTreeDisp: {fileID: 0}
   curState: 1
   spellName: Dirt
   recipe: 040000000400000004000000
@@ -2620,7 +2731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 651340834}
+  spellTreeDisp: {fileID: 0}
   curState: 0
   spellName: Thunder
   recipe: 0300000001000000
@@ -2973,7 +3084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 651340834}
+  spellTreeDisp: {fileID: 0}
   curState: 0
   spellName: Sun
   recipe: 0300000003000000
@@ -3245,7 +3356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 651340834}
+  spellTreeDisp: {fileID: 0}
   curState: 0
   spellName: Wood
   recipe: 
@@ -3534,6 +3645,7 @@ GameObject:
   - component: {fileID: 1530061567}
   - component: {fileID: 1530061566}
   - component: {fileID: 1530061568}
+  - component: {fileID: 1530061569}
   m_Layer: 5
   m_Name: TrigramManager
   m_TagString: Untagged
@@ -3605,9 +3717,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 1530061564}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66ce63141ef044115b986d5a9ccb849e, type: 3}
+  m_Script: {fileID: 11500000, guid: f4f8b5c0f3e95a14aba7ea66fcf9ebb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1530061569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530061564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c5eb882b29c6747b7dc32b324f9b27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorPiece1: {fileID: 0}
+  floorPiece2: {fileID: 0}
+  floorPiece3: {fileID: 0}
+  floorPiece4: {fileID: 0}
+  floorPiece5: {fileID: 0}
+  floorPiece6: {fileID: 0}
+  floorPiece7: {fileID: 0}
+  transformPiece1: {fileID: 0}
+  transformPiece2: {fileID: 0}
+  transformPiece3: {fileID: 0}
+  transformPiece4: {fileID: 0}
+  transformPiece5: {fileID: 0}
+  transformPiece6: {fileID: 0}
+  transformPiece7: {fileID: 0}
 --- !u!1 &1542438111
 GameObject:
   m_ObjectHideFlags: 0
@@ -4062,7 +4200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 651340834}
+  spellTreeDisp: {fileID: 0}
   curState: 0
   spellName: Water
   recipe: 030000000100000007000000
@@ -4167,7 +4305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 651340834}
+  spellTreeDisp: {fileID: 0}
   curState: 0
   spellName: Moon
   recipe: 0200000002000000
@@ -4569,7 +4707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 651340834}
+  spellTreeDisp: {fileID: 0}
   curState: 0
   spellName: Board
   recipe: 040000000400000002000000
@@ -4759,7 +4897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 651340834}
+  spellTreeDisp: {fileID: 0}
   curState: 0
   spellName: Glowing Sun
   recipe: 040000000600000006000000

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +19,7 @@ public class Item : MonoBehaviour
         itemOnPuzzle.Add("Firewood", "法阵-scene2");
         itemOnPuzzle.Add("Life Water", "Water Seed");
         itemOnPuzzle.Add("Glowing Sun", "Water Sprout");
+        itemOnPuzzle.Add("Taiji Key", "Water Boss Door");
     }
 
     public static bool canPlace(string item, string position) {
@@ -42,15 +43,18 @@ public class Item : MonoBehaviour
             river.GetComponent<CapsuleCollider>().radius = 0;
             GameObject.Find("River").GetComponent<Renderer>().material.color = Color.gray;
             s.UnlockElement(TalisDrag.Elements.WATER);
-            Destroy(GameObject.Find("Dirt"));
+            Destroy(GameObject.Find("Scene0/Dirt"));
+            
+            AIDataManager.UpdateStandardSpellCount("Dirt", 1);
+            AIDataManager.UpdateStandardSpellCount("earth", 3);
         } 
         else if (item.CompareTo("Water Seed") == 0 && position.CompareTo("Dirt") == 0){
             waterSeedGrow = true;
         } 
         else if (item.CompareTo("Life Water") == 0 && position.CompareTo("Water Seed") == 0){
-            GameObject seed = GameObject.Find("Water Seed");
+            // GameObject seed = GameObject.Find("Water Seed");
             GameObject sprout = new GameObject("Water Sprout");
-            GameObject lifeWater = GameObject.Find("Life Water");
+            // GameObject lifeWater = GameObject.Find("Life Water");
             // Camera camera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
             // RectTransform seed_transform = seed.GetComponent<RectTransform>();
             // RectTransform sprout_transform = sprout.GetComponent<RectTransform>();
@@ -68,24 +72,31 @@ public class Item : MonoBehaviour
             BoxCollider sproutCollider = sprout.AddComponent<BoxCollider>();
             sproutCollider.size = new Vector3(10f, 10f, 10f);
             
-            Destroy(seed);
-            Destroy(lifeWater);
+            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("SpellObject"))
+                Destroy(obj);
 
             s.UnlockElement(TalisDrag.Elements.WOOD);
+
+            AIDataManager.UpdateStandardSpellCount("Dirt", 1);
+            AIDataManager.UpdateStandardSpellCount("earth", 3);
+            AIDataManager.UpdateStandardSpellCount("Life Water", 1);
+            AIDataManager.UpdateStandardSpellCount("water", 3);
         }
         else if (item.CompareTo("Firewood") == 0 && position.CompareTo("法阵-scene2") == 0){
             sceneTransition sceneTrans = GameObject.Find("法阵-scene2").GetComponent<sceneTransition>();
             Debug.Log(sceneTrans);
             sceneTrans.enterable = true;
             s.UnlockElement(TalisDrag.Elements.FIRE);
+
+            AIDataManager.UpdateStandardSpellCount("Firewood", 1);
+            AIDataManager.UpdateStandardSpellCount("wood", 3);
         } 
         else if (item.CompareTo("Glowing Sun") == 0 && position.CompareTo("Water Sprout") == 0){
             GameObject dirt = GameObject.Find("Dirt");
             GameObject sprout = GameObject.Find("Water Sprout");
             GameObject flowerpot = GameObject.Find("Flowerpot");
-            Destroy(dirt);
             Destroy(sprout);
-            Destroy(flowerpot);
+            // Destroy(flowerpot);
 
             GameObject bloom = new GameObject("Bloom");
             bloom.transform.position = newPos;
@@ -96,6 +107,10 @@ public class Item : MonoBehaviour
             temp.x = 45f;
             bloom.transform.rotation = Quaternion.Euler(temp);
 
+            AIDataManager.UpdateStandardSpellCount("Glowing Sun", 1);
+            AIDataManager.UpdateStandardSpellCount("sun", 2);
+            AIDataManager.UpdateStandardSpellCount("earth", 1);
+            AIDataManager.UpdateStandardSpellCount("fire", 2);
         } 
         // else if (item.CompareTo("Life Water") == 0 && position.CompareTo("Water Sprout") == 0){
         //     GameObject sspell = GameObject.Find("Life Water");
@@ -109,5 +124,25 @@ public class Item : MonoBehaviour
         //     sprout.transform.rotation = Quaternion.Euler(temp);
         //     Destroy(seed);
         // }
+        else if (item.CompareTo("Taiji Key") == 0 && position.CompareTo("Water Boss Door") == 0){
+            GameObject waterbossdoor = GameObject.Find("Water Boss Door");
+            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("SpellObject"))
+                Destroy(obj);
+            Destroy(waterbossdoor);
+            Debug.Log("run");
+
+            AIDataManager.gentlypassthedoor = true; 
+            AIDataManager.UpdateStandardSpellCount("water", 3);
+            AIDataManager.UpdateStandardSpellCount("moon", 1);
+            AIDataManager.UpdateStandardSpellCount("sun", 1);
+            AIDataManager.UpdateStandardSpellCount("Taiji Key", 1);
+        }
+        else if (item.CompareTo("Boom") == 0 && position.CompareTo("Water Boss Door") == 0){
+            GameObject boom = GameObject.Find("Boom");
+            GameObject waterbossdoor = GameObject.Find("Water Boss Door");
+            Destroy(boom);
+            Destroy(waterbossdoor);
+            AIDataManager.gentlypassthedoor = false; 
+        }
     }
 }

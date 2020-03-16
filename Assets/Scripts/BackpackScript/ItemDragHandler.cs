@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
+public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {   
     public static bool canPlaceItem = true;
     public static Vector3 previousPosition = new Vector3(0,0,0);
@@ -11,13 +11,19 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     public static bool holdItem;
 
     public void OnDrag(PointerEventData eventData){
-        transform.position = Input.mousePosition;
+        itemOnGround.transform.position = Input.mousePosition;
     }
 
     public void OnEndDrag(PointerEventData eventData){
         // StartCoroutine(Put());
         Put();
+        itemOnGround.GetComponent<RectTransform>().anchoredPosition = previousPosition;
         holdItem = false;
+    }
+
+    public void OnBeginDrag(PointerEventData eventData) {
+        print("begin drag: "+itemOnGround.name);
+        holdItem = true;
     }
 
     // Start is called before the first frame update
@@ -52,12 +58,14 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
                     temp.x = 45f;
                     imageObj.transform.rotation = Quaternion.Euler(temp);
                     imageObj.AddComponent<BoxCollider>();
-                    Backpack.backpack.GetComponent<Backpack>().RemoveItem(itemOnGround.name);
-                    Destroy(itemOnGround);
+                    imageObj.tag = "SpellObject";
+                    // Backpack.backpack.GetComponent<Backpack>().RemoveItem(itemOnGround.name);
+                    // Destroy(itemOnGround);
                     Item.puzzleEffect(imageObj.name, dragOnObject.name,
                         imageObj.transform.position + new Vector3(0.0f, 0.1f, 0));
                 } else {
-                    this.GetComponent<RectTransform>().anchoredPosition = previousPosition;
+                    AIDataManager.wrongItemPlacementCount += 1;
+                    print("wrong drop: " + AIDataManager.wrongItemPlacementCount);
                 }
             }
             else {
@@ -65,4 +73,4 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
             }
         }
     }
- }
+}

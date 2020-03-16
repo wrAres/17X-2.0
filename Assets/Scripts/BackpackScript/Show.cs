@@ -53,7 +53,7 @@ public class Show : MonoBehaviour
             //For every result returned, output the name of the GameObject on the Canvas hit by the Ray
             foreach (RaycastResult result in results)
             {
-                // Debug.Log("Hit " + result.gameObject.tag);
+                Debug.Log("Hit " + result.gameObject);
 
                 if (result.gameObject.tag.CompareTo("BackpackIcon") == 0) {
                     if (Backpack.backpack.activeSelf) {
@@ -67,9 +67,11 @@ public class Show : MonoBehaviour
                     talisDisp.CloseDisplay();
                 }
                 else if (result.gameObject.tag.CompareTo("Item") == 0) {
-                    ItemDragHandler.itemOnGround = result.gameObject;
-                    ItemDragHandler.holdItem = true;
-                    ItemDragHandler.previousPosition = result.gameObject.GetComponent<RectTransform>().anchoredPosition;
+                    if (!ItemDragHandler.holdItem) {
+                        ItemDragHandler.itemOnGround = result.gameObject;
+                        ItemDragHandler.previousPosition = result.gameObject.GetComponent<RectTransform>().anchoredPosition;
+                        ItemDragHandler.holdItem = true;
+                    }
                 }
                 else if (result.gameObject.tag.CompareTo("SpellTreeIcon") == 0) {
                     spellTreeDisp.SetActive(!spellTreeDisp.activeSelf);

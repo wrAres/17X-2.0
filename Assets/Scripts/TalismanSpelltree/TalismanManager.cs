@@ -121,19 +121,20 @@ public class TalismanManager : MonoBehaviour {
 
     // Add an element to the craft log
     public void AddCraft(TalisDrag.Elements e, Sprite s) {
+        AIDataManager.IncrementElementAccess(e);
         for (int i = 0; i < craft.Length; i++) {
             if(craft[i] == TalisDrag.Elements.NONE){
                 craft[i] = e;
-                AIDataManager.IncrementElementAccess(e);
                 slots[i].enabled = true;
                 slots[i].sprite = s;
                 break;
             }
         }
-
+        bool madeItem = false;
         // Check if item can be made
         for (int i = 0; i < recipeBook.Length; i++) {
             if (CheckRecipe(recipeBook[i])) {
+                madeItem = true;
                 Debug.Log("MADE ITEM: " + recipeBook[i].spellName);
                 // Add to backpack if it's not an element
                 if (recipeBook[i].element == TalisDrag.Elements.NONE) {
@@ -142,11 +143,18 @@ public class TalismanManager : MonoBehaviour {
                     GameObject.Find("Backpack_Icon").GetComponent<ShakingIcon>().ShakeMe();
                 }
                 else {
+                    AIDataManager.DiscoverNewSpell(Time.time - AIDataManager.previousUnlockTime);
+		            AIDataManager.previousUnlockTime = Time.time;
+
                     GetComponent<SpellTreeManager>().UnlockElement(recipeBook[i].element);
                     GameObject.Find("SpellTreeIcon").GetComponent<ShakingIcon>().ShakeMe();
                 }
                 CloseDisplay();
             }
+        }
+        if(!madeItem && craft[2] != TalisDrag.Elements.NONE){
+            print("craft, " + craft[2]);
+            AIDataManager.TryNonExistentRecipe();
         }
     }
 
