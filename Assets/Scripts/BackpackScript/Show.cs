@@ -53,7 +53,7 @@ public class Show : MonoBehaviour
             //For every result returned, output the name of the GameObject on the Canvas hit by the Ray
             foreach (RaycastResult result in results)
             {
-                Debug.Log("Hit " + result.gameObject);
+                // Debug.Log("Hit " + result.gameObject);
 
                 if (result.gameObject.tag.CompareTo("BackpackIcon") == 0) {
                     if (Backpack.backpack.activeSelf) {

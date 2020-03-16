@@ -22,7 +22,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
     }
 
     public void OnBeginDrag(PointerEventData eventData) {
-        print("begin drag: "+itemOnGround.name);
+        // print("begin drag: "+itemOnGround.name);
         holdItem = true;
     }
 
