@@ -34,32 +34,36 @@ public class SystemTree : MonoBehaviour
             public CheckNode node_1A_2E;
             public CheckNode node_1A_2F;
             public ActionNode node_1A_2G;
-        public Selector node_1B;
-            public Sequence node_1B_2A;
-                public CheckNode node_1B_2A_3A;
-                public CheckNode node_1B_2A_3B;
-                public CheckNode node_1B_2A_3C;
-            public CheckNode node_1B_2B;
+        public Sequence node_1B_REAL;
+            public Selector node_1B;
+                public Sequence node_1B_2A;
+                    public CheckNode node_1B_2A_3A;
+                    public CheckNode node_1B_2A_3B;
+                    public CheckNode node_1B_2A_3C;
+                public CheckNode node_1B_2B;
+            public CheckNode node_1B_2D;
             public ActionNode node_1B_2C;
-        public Selector node_1C;
-            public Sequence node_1C_2A;
-                public CheckNode node_1C_2A_3A;
-                public CheckNode node_1C_2A_3B;
-                public CheckNode node_1C_2A_3C;
-                public CheckNode node_1C_2A_3D;
-            public CheckNode node_1C_2B;
-            public CheckNode node_1C_2C;
+        public Sequence node_1C_REAL;
+            public Selector node_1C;
+                public Sequence node_1C_2A;
+                    public CheckNode node_1C_2A_3A;
+                    public CheckNode node_1C_2A_3B;
+                    public CheckNode node_1C_2A_3C;
+                    public CheckNode node_1C_2A_3D;
+                public CheckNode node_1C_2B;
+                public CheckNode node_1C_2C;
             public ActionNode node_1C_2D;
-        public Selector node_1D;
-            public Sequence node_1D_2A;
-                public CheckNode node_1D_2A_3A;
-                public CheckNode node_1D_2A_3B;
-                public CheckNode node_1D_2A_3C;
-                public CheckNode node_1D_2A_3D;
-            public CheckNode node_1D_2B;
-            public CheckNode node_1D_2C;
-            public CheckNode node_1D_2D;
-            public CheckNode node_1D_2E;
+        public Sequence node_1D_REAL;
+            public Selector node_1D;
+                public Sequence node_1D_2A;
+                    public CheckNode node_1D_2A_3A;
+                    public CheckNode node_1D_2A_3B;
+                    public CheckNode node_1D_2A_3C;
+                    public CheckNode node_1D_2A_3D;
+                public CheckNode node_1D_2B;
+                public CheckNode node_1D_2C;
+                public CheckNode node_1D_2D;
+                public CheckNode node_1D_2E;
             public ActionNode node_1D_2F;
         public ActionNode node_1E;
 
@@ -107,12 +111,19 @@ public class SystemTree : MonoBehaviour
         node_1B_2A = new Sequence(node_1B_2A_children);
         node_1B_2B = new CheckNode(CheckItemPlacementScoreT2);
         node_1B_2C = new ActionNode(ChangeMovingPuzzleT2);
+        node_1B_2D = new CheckNode(CheckWalkingPuzzleScoreT2);
 
         List<Node> node_1B_children = new List<Node>();
         node_1B_children.Add(node_1B_2A);
         node_1B_children.Add(node_1B_2B);
-
         node_1B = new Selector(node_1B_children);
+
+        List<Node> node_1B_REAL_children = new List<Node>();
+        node_1B_REAL_children.Add(node_1B);
+        node_1B_REAL_children.Add(node_1B_2D);
+        node_1B_REAL_children.Add(node_1B_2C);
+
+        node_1B_REAL = new Sequence(node_1B_REAL_children);
 
 
         // Third Subtree creation - node_1C
@@ -136,9 +147,13 @@ public class SystemTree : MonoBehaviour
         node_1C_children.Add(node_1C_2A);
         node_1C_children.Add(node_1C_2B);
         node_1C_children.Add(node_1C_2C);
-        node_1C_children.Add(node_1C_2D);
-
         node_1C = new Selector(node_1C_children);
+
+        List<Node> node_1C_REAL_children = new List<Node>();
+        node_1C_REAL_children.Add(node_1C);
+        node_1C_REAL_children.Add(node_1C_2D);
+
+        node_1C_REAL = new Sequence(node_1C_REAL_children);
 
 
         // Fourth Subtree creation - node_1D
@@ -166,9 +181,14 @@ public class SystemTree : MonoBehaviour
         node_1D_children.Add(node_1D_2C);
         node_1D_children.Add(node_1D_2D);
         node_1D_children.Add(node_1D_2E);
-        node_1D_children.Add(node_1D_2F);
 
         node_1D = new Selector(node_1D_children);
+
+        List<Node> node_1D_REAL_children = new List<Node>();
+        node_1D_REAL_children.Add(node_1D);
+        node_1D_REAL_children.Add(node_1D_2F);
+
+        node_1D_REAL = new Sequence(node_1D_REAL_children);
 
 
         // Fifth Subtree creation - node_1E (default)
@@ -177,9 +197,9 @@ public class SystemTree : MonoBehaviour
         // Create root node and attach its children
         List<Node> rootChildren = new List<Node>();
         rootChildren.Add(node_1A);
-        rootChildren.Add(node_1B);
-        rootChildren.Add(node_1C);
-        rootChildren.Add(node_1D);
+        rootChildren.Add(node_1B_REAL);
+        rootChildren.Add(node_1C_REAL);
+        rootChildren.Add(node_1D_REAL);
         rootChildren.Add(node_1E);
 
         rootNode = new Selector(rootChildren);
@@ -329,6 +349,14 @@ public class SystemTree : MonoBehaviour
             return NodeStates.FAILURE;
     }
 
+    private NodeStates CheckWalkingPuzzleScoreT2()
+    {
+        if (AIDataManager.WalkingPuzzleSmartness() > 0.8)
+            return NodeStates.SUCCESS;
+        else
+            return NodeStates.FAILURE;
+    }
+
     private NodeStates ChangeMovingPuzzleT2()
     {
         print("T2 EXE");
@@ -423,7 +451,7 @@ public class SystemTree : MonoBehaviour
         temp.y = 0f;
         transformPiece2.rotation = Quaternion.Euler(temp);
 
-        transformPiece3.position = new Vector3(6f, 0.35f, -35.45f);
+        transformPiece3.position = new Vector3(6f, 0.341f, -35.45f);
         transformPiece3.rotation = Quaternion.Euler(temp);
 
         temp.y = -40f;

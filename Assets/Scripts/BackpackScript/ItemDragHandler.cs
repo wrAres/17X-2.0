@@ -58,6 +58,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
                         imageObj.transform.position + new Vector3(0.0f, 0.1f, 0));
                 } else {
                     AIDataManager.wrongItemPlacementCount += 1;
+                    print("wrong drop: " + AIDataManager.wrongItemPlacementCount);
                     
                 }
                 this.GetComponent<RectTransform>().anchoredPosition = previousPosition;

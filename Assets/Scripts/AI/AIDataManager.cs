@@ -171,7 +171,7 @@ public class AIDataManager : MonoBehaviour
     public static double WalkingPuzzleSmartness()
     {
         // Smartness is Puzzle Falls
-        return Math.Exp(walkingPuzzleFalls * -0.2);
+        return Math.Exp(walkingPuzzleFalls * -0.1);
     }
 
     public static void Print() {
