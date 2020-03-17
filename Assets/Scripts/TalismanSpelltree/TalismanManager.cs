@@ -162,14 +162,15 @@ public class TalismanManager : MonoBehaviour {
                 if (recipeBook[i].element == TalisDrag.Elements.NONE) {
                     backpack.AddItem(recipeBook[i].spellName);
                     AIDataManager.IncrementSpellAccess(recipeBook[i].spellName);
-                    GameObject.Find("Backpack_Icon").GetComponent<ShakingIcon>().ShakeMe();
+                    // GameObject.Find("Backpack_Icon").GetComponent<ShakingIcon>().ShakeMe();
+                    GetComponent<FlyingSpell>().FlyTowardsIcon(recipeBook[i].GetComponent<Image>().sprite, false);
                     if (recipeBook[i].curState == Spell.SpellState.KNOWN) {
                         recipeBook[i].ChangeState(Spell.SpellState.UNLOCKED);
                     }
                 }
                 else {
                     GetComponent<SpellTreeManager>().UnlockElement(recipeBook[i].element);
-                    GameObject.Find("SpellTreeIcon").GetComponent<ShakingIcon>().ShakeMe();
+                    GetComponent<FlyingSpell>().FlyTowardsIcon(recipeBook[i].GetComponent<Image>().sprite, true);
                 }
                 CloseDisplay();
                 return true;

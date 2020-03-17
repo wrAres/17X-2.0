@@ -61,6 +61,7 @@ public class Show : MonoBehaviour
                     }
                     else {
                         Backpack.backpack.GetComponent<Backpack>().Show(true);
+                        GetComponent<FlyingSpell>().ResetFlyingSpell();
                     }
                     // Close other canvas
                     spellTreeDisp.SetActive(false);
