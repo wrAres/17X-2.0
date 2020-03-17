@@ -89,7 +89,6 @@ public class TalismanManager : MonoBehaviour {
 
         for (int i = 0; i < curCraft.Length; i++) {
             if (curCraft[i] != TalisDrag.Elements.NONE) {
-                Debug.Log("I SLEEP");
                 if (r.recipe.Length < i+1) return false;
             }
         }
@@ -104,17 +103,12 @@ public class TalismanManager : MonoBehaviour {
                     break;
                 }
             }
-            Debug.Log(i);
             if (!gotEle) { return false; }
         }
 
         // Don't make empty elements
         if (r.recipe.Length <= 0) {
             return false;
-        }
-
-        for (int i = 0; i < curCraft.Length; i++) {
-            Debug.Log(curCraft[i]);
         }
         return true;
     }
@@ -157,7 +151,6 @@ public class TalismanManager : MonoBehaviour {
         // Check if item can be made
         for (int i = 0; i < recipeBook.Length; i++) {
             if (CheckRecipe(recipeBook[i])) {
-                Debug.Log("MADE ITEM: " + recipeBook[i].spellName);
                 // Add to backpack if it's not an element
                 if (recipeBook[i].element == TalisDrag.Elements.NONE) {
                     backpack.AddItem(recipeBook[i].spellName);
