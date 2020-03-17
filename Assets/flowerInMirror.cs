@@ -8,23 +8,47 @@ public class flowerInMirror : MonoBehaviour
 	public bool isRight;
 	public GameObject mirror;
 	public GameObject player;
+	public Sprite cracked;
+	Sprite def;
+	int timer;
+	bool isCracked;
+	int temp;
+	
     void Start()
     {
-        
+		def = this.gameObject.GetComponent<SpriteRenderer>().sprite;
+		
+		timer = 0;
+		isCracked = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        timer++;
+		if(isCracked = true && temp+100==timer){
+				this.gameObject.GetComponent<SpriteRenderer>().sprite = def;
+				isCracked = false;
+				mirror.GetComponent<mirrors>().reset();
+				
+		}
     }
 	
 	void OnMouseDown(){
 		if(!isRight){
-			mirror.GetComponent<mirrors>().reset();
+			this.gameObject.GetComponent<SpriteRenderer>().sprite = cracked;
+			temp = timer;
+			isCracked = true;
+			/*if(temp+100<timer){
+				this.gameObject.GetComponent<SpriteRenderer>().sprite = def;
+				mirror.GetComponent<mirrors>().reset();
+			}*/
 		}else{
 			player.GetComponent<playerMovement>().isReverse = 1;
 			Destroy(mirror);
 		}
 	}
+	
+	
+		
 }
