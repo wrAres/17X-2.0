@@ -2,33 +2,17 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TalismanSpelltree/TalismanManager.cs">
     <Files>
       <File FileName="Assets/Scripts/TalismanSpelltree/TalismanManager.cs" Line="100" Column="1" />
-      <File FileName="Assets/Scripts/BackpackScript/Backpack.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/BackpackScript/Show.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/TalismanSpelltree/Spell.cs" Line="36" Column="22" />
-      <File FileName="Assets/Scripts/TalismanSpelltree/TalisDrag.cs" />
+      <File FileName="Assets/Scripts/BackpackScript/Backpack.cs" />
+      <File FileName="Assets/Scripts/BackpackScript/Show.cs" />
+      <File FileName="Assets/Scripts/TalismanSpelltree/Spell.cs" />
+      <File FileName="Assets/Scripts/TalismanSpelltree/TalisDrag.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/TalismanSpelltree/SpellTreeManager.cs" Line="43" Column="51" />
-      <File FileName="Assets/ShakingIcon.cs" Line="21" Column="3" />
+      <File FileName="Assets/ShakingIcon.cs" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="17X-2.0" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="BackpackScript" expanded="True" />
-                <Node name="TalismanSpelltree" expanded="True">
-                  <Node name="TalismanManager.cs" selected="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0657dceb-9a31-4457-acbe-208336f067d1" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="85db83d3-be08-4cea-a78c-d20c8fe483a8" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

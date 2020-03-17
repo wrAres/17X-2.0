@@ -33,30 +33,24 @@ public class TalismanManager : MonoBehaviour {
     private void Awake() {
         dispManager = GetComponent<Show>();
         ResetCraft();
+        CloseDisplay();
     }
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKey("space") && curTime <= 0) {
+        if (Input.GetKeyDown("space") && !display.activeSelf) {
             recipeBook = GetComponent<SpellTreeManager>().GetSpellBook();
             display.SetActive(true);
             dispManager.CloseDisplays();
             DisplaySpellList();
             curTime = timer;
         }
-        if (!display.activeSelf && curTime > 0) {
-            curTime = 0;
-        }
-
-        if (curTime > 0) {
-            curTime -= Time.deltaTime;
-        }
-        else if (curTime <= 0 && display.activeSelf) {
+        else if (Input.GetKeyDown("space")) {
             CloseDisplay();
         }
 
         // TEST MAKE BUTTON
-        if (Input.GetKey(KeyCode.G) && display.activeSelf) {
+        if (Input.GetKey(KeyCode.Return) && display.activeSelf) {
             MakeItem();
         }
     }
