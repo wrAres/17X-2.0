@@ -13,7 +13,7 @@ public class SpellTreeManager : MonoBehaviour {
         public bool locked;
     }
     */
-    private Spell[] spell;
+    private List<Spell> spell = new List<Spell>();
     public GameObject display;
 
     // Textbox display
@@ -21,10 +21,15 @@ public class SpellTreeManager : MonoBehaviour {
     public Text spellName, recipe, desc;
 
     // Start is called before the first frame update
-    void Start() {
+    void Awake() {
         //   UpdateIcons();
         display.SetActive(true);
-        spell = GetComponentsInChildren<Spell>();
+       // spell = GetComponentsInChildren<Spell>();
+        foreach (Transform child in transform) {
+            Spell[] spellList = child.GetComponentsInChildren<Spell>();
+            for(int i = 0; i < spellList.Length; i++)
+                spell.Add(spellList[i]);
+        }
         display.SetActive(false);
     }
 
@@ -46,7 +51,7 @@ public class SpellTreeManager : MonoBehaviour {
     }
 
     private void UpdateIcons() {
-        for (int i = 0; i < spell.Length; i++) {
+        for (int i = 0; i < spell.Count; i++) {
             if (spell[i].curState == Spell.SpellState.LOCKED) {
                 Image img = spell[i].gameObject.GetComponent<Image>();
                 var tempColor = img.color;
@@ -74,7 +79,7 @@ public class SpellTreeManager : MonoBehaviour {
     private bool CanCraft(Spell r) {
         for (int i = 0; i < r.recipe.Length; i++) {
             bool gotEle = false;
-            for (int j = 0; j < spell.Length; j++) {
+            for (int j = 0; j < spell.Count; j++) {
                 if (spell[j].curState == Spell.SpellState.UNLOCKED) {
                     if (r.recipe[i] == spell[j].element) {
                         gotEle = true;
@@ -121,7 +126,7 @@ public class SpellTreeManager : MonoBehaviour {
 
     public void UnlockElement(TalisDrag.Elements e) {
         // Unlock the element
-        for (int i = 0; i < spell.Length; i++) {
+        for (int i = 0; i < spell.Count; i++) {
             if (spell[i].element == e) {
                 spell[i].ChangeState(Spell.SpellState.UNLOCKED);
                 GetComponent<FlyingSpell>().FlyTowardsIcon(spell[i].GetComponent<Image>().sprite, true);
@@ -130,7 +135,7 @@ public class SpellTreeManager : MonoBehaviour {
         }
 
         // Make related recipes known if locked
-        for (int i = 0; i < spell.Length; i++) {
+        for (int i = 0; i < spell.Count; i++) {
             /*
             if (spell[i].curState == Spell.SpellState.LOCKED) {
                 for (int j = 0; j < spell[i].recipe.Length; j++) {
@@ -153,7 +158,11 @@ public class SpellTreeManager : MonoBehaviour {
     
 
     public Spell[] GetSpellBook() {
-        return spell;
+        Spell[] theList = new Spell[spell.Count];
+        for (int i = 0; i < spell.Count; i++) {
+            theList[i] = spell[i];
+        }
+        return theList;
     }
     
 }
