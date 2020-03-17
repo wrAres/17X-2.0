@@ -170,7 +170,7 @@ public class TalismanManager : MonoBehaviour {
                 }
                 else {
                     GetComponent<SpellTreeManager>().UnlockElement(recipeBook[i].element);
-                    GetComponent<FlyingSpell>().FlyTowardsIcon(recipeBook[i].GetComponent<Image>().sprite, true);
+                    //GetComponent<FlyingSpell>().FlyTowardsIcon(recipeBook[i].GetComponent<Image>().sprite, true);
                 }
                 CloseDisplay();
                 return true;
