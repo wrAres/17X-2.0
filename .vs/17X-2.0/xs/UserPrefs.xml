@@ -1,14 +1,13 @@
 ﻿<Properties StartupConfiguration="{723736E0-234A-81B5-781F-EA4585C42642}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BackpackScript/Item.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TalismanSpelltree/TalismanManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/TalismanSpelltree/TalismanManager.cs" Line="165" Column="70" />
+      <File FileName="Assets/Scripts/TalismanSpelltree/TalismanManager.cs" Line="92" Column="1" />
       <File FileName="Assets/Scripts/BackpackScript/Backpack.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/BackpackScript/Show.cs" Line="65" Column="22" />
-      <File FileName="Assets/Scripts/TalismanSpelltree/Spell.cs" Line="17" Column="39" />
-      <File FileName="Assets/Scripts/TalismanSpelltree/TalisDrag.cs" Line="17" Column="31" />
-      <File FileName="Assets/Scripts/TalismanSpelltree/SpellTreeManager.cs" Line="43" Column="51" />
+      <File FileName="Assets/Scripts/BackpackScript/Show.cs" Line="79" Column="1" />
+      <File FileName="Assets/Scripts/TalismanSpelltree/Spell.cs" Line="35" Column="29" />
+      <File FileName="Assets/Scripts/TalismanSpelltree/SpellTreeManager.cs" Line="132" Column="69" />
       <File FileName="Assets/Scripts/TalismanSpelltree/FlyingSpell.cs" Line="40" Column="28" />
-      <File FileName="Assets/Scripts/BackpackScript/PickObject.cs" Line="27" Column="101" />
+      <File FileName="Assets/Scripts/BackpackScript/PickObject.cs" Line="27" Column="103" />
       <File FileName="Assets/Scripts/BackpackScript/Item.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

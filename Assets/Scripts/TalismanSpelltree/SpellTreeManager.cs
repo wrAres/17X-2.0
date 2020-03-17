@@ -21,7 +21,7 @@ public class SpellTreeManager : MonoBehaviour {
     public Text spellName, recipe, desc;
 
     // Start is called before the first frame update
-    void Awake() {
+    void Start() {
         //   UpdateIcons();
         display.SetActive(true);
        // spell = GetComponentsInChildren<Spell>();
@@ -45,7 +45,7 @@ public class SpellTreeManager : MonoBehaviour {
         */
 
         if (Input.GetKeyDown(KeyCode.Q)) {
-            UnlockElement(TalisDrag.Elements.WATER);
+            UnlockElement(TalisDrag.Elements.FIRE);
             Debug.Log("should work");
         }
     }
@@ -130,22 +130,13 @@ public class SpellTreeManager : MonoBehaviour {
             if (spell[i].element == e) {
                 spell[i].ChangeState(Spell.SpellState.UNLOCKED);
                 GetComponent<FlyingSpell>().FlyTowardsIcon(spell[i].GetComponent<Image>().sprite, true);
+                Debug.Log(spell[i].GetComponent<Image>().color);
                 break;
             }
         }
 
         // Make related recipes known if locked
         for (int i = 0; i < spell.Count; i++) {
-            /*
-            if (spell[i].curState == Spell.SpellState.LOCKED) {
-                for (int j = 0; j < spell[i].recipe.Length; j++) {
-                    if (spell[i].recipe[j] == e) {
-                        spell[i].curState = Spell.SpellState.KNOWN;
-                        break;
-                    }
-                }
-            }
-            */
             if (CanCraft(spell[i]) && spell[i].element == TalisDrag.Elements.NONE) {
                 spell[i].ChangeState(Spell.SpellState.KNOWN);
             }

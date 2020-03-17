@@ -26,7 +26,7 @@ public class Spell : MonoBehaviour, IPointerEnterHandler {
     }
 
     // Start is called before the first frame update
-    void Start() {
+    void Awake() {
         ogPos = transform.position;
         ogScale = transform.localScale;
         ogSprite = GetComponent<Image>().sprite;
@@ -35,9 +35,7 @@ public class Spell : MonoBehaviour, IPointerEnterHandler {
             transform.localPosition = new Vector3(0, 0, 0);
             transform.localScale = new Vector3(1,1,1);
             GetComponent<Image>().sprite = locked;
-            Debug.Log("????");
         }
-        else { Debug.Log(spellName + " " + curState); }
     }
 
     // Update is called once per frame
