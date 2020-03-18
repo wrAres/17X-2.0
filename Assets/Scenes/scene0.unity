@@ -675,7 +675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 0}
+  spellTreeDisp: {fileID: 651340834}
   curState: 0
   spellName: Metal
   recipe: 
@@ -734,7 +734,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -7.6}
+  m_AnchoredPosition: {x: 0, y: 23.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &111274131
@@ -785,7 +785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 0}
+  spellTreeDisp: {fileID: 651340834}
   curState: 0
   spellName: Water
   recipe: 
@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 0}
+  spellTreeDisp: {fileID: 651340834}
   curState: 0
   spellName: Taiji Key
   recipe: 020000000600000008000000
@@ -1521,7 +1521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 0}
+  spellTreeDisp: {fileID: 651340834}
   curState: 0
   spellName: Firewood
   recipe: 010000000100000001000000
@@ -2058,7 +2058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2176,7 +2176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 0}
+  spellTreeDisp: {fileID: 651340834}
   curState: 0
   spellName: Life Water
   recipe: 020000000200000002000000
@@ -2283,7 +2283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 0}
+  spellTreeDisp: {fileID: 651340834}
   curState: 0
   spellName: Fire
   recipe: 
@@ -2573,7 +2573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 0}
+  spellTreeDisp: {fileID: 651340834}
   curState: 2
   spellName: Earth
   recipe: 
@@ -2862,7 +2862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &963497183
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3118,7 +3118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 0}
+  spellTreeDisp: {fileID: 651340834}
   curState: 1
   spellName: Dirt
   recipe: 040000000400000004000000
@@ -3300,7 +3300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 0}
+  spellTreeDisp: {fileID: 651340834}
   curState: 0
   spellName: Thunder
   recipe: 0300000001000000
@@ -3816,7 +3816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 0}
+  spellTreeDisp: {fileID: 651340834}
   curState: 0
   spellName: Sun
   recipe: 0300000003000000
@@ -3906,7 +3906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4252,7 +4252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 0}
+  spellTreeDisp: {fileID: 651340834}
   curState: 0
   spellName: Wood
   recipe: 
@@ -5434,7 +5434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 0}
+  spellTreeDisp: {fileID: 651340834}
   curState: 0
   spellName: Water
   recipe: 030000000100000007000000
@@ -5540,7 +5540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 0}
+  spellTreeDisp: {fileID: 651340834}
   curState: 0
   spellName: Moon
   recipe: 0200000002000000
@@ -6017,7 +6017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 0}
+  spellTreeDisp: {fileID: 651340834}
   curState: 0
   spellName: Board
   recipe: 040000000400000002000000
@@ -6208,7 +6208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a4ba2269ec484c04804e13c63d16de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellTreeDisp: {fileID: 0}
+  spellTreeDisp: {fileID: 651340834}
   curState: 0
   spellName: Glowing Sun
   recipe: 040000000600000006000000
