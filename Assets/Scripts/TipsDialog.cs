@@ -17,6 +17,7 @@ public class TipsDialog : MonoBehaviour
         dialogList = new Dictionary<string, string>();
         dialogList.Add("法阵-scene3", waterGateDiscription);
         dialogList.Add("River", riverDiscription);
+        dialog.SetActive(false);
     }
 
     public static void PrintDialog(string objName){

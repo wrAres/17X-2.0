@@ -21,7 +21,7 @@ public class Backpack : MonoBehaviour
         length = 0;
         // this.AddItem("Dirt");
         // this.AddItem("Life Water");
-        // this.AddItem("Taiji Key");
+        this.AddItem("Taiji Key");
         // this.AddItem("Glowing Sun");
         this.Show(false);
     }
