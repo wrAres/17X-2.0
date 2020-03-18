@@ -9,7 +9,6 @@ public class PickObject : MonoBehaviour
     private void Start() {
         // This would cast rays only against colliders in layer 8.
         // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
-        print("start");
         layerMask = 1 << 8;
         layerMask = ~layerMask;
     }
@@ -24,6 +23,8 @@ public class PickObject : MonoBehaviour
                 print(clickObject.name);
                 if (clickObject.tag.CompareTo("Pickable") == 0){
                     Backpack.backpack.GetComponent<Backpack>().AddItem(clickObject.name);
+                    Sprite item = clickObject.GetComponent<SpriteRenderer>().sprite;
+                    GameObject.Find("MainUI").GetComponent<FlyingSpell>().FlyTowardsIcon(item, false);
                     Destroy(clickObject);
                 } else if (clickObject.name.CompareTo("Boss") == 0){
                     AIDataManager.DecideTrigram();

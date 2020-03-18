@@ -222,6 +222,7 @@ MonoBehaviour:
   knownDes: It's said that sun is the represent of the most Yang element.
   unlockedDes: It's said that sun is the most Yang element.
   element: 6
+  locked: {fileID: 0}
 --- !u!222 &103449269
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -334,6 +335,7 @@ MonoBehaviour:
     forming by Qi of earth elements. The dirt is able to absorb liquid and cultivate
     lives.
   element: 9
+  locked: {fileID: 0}
 --- !u!222 &105594815
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -443,6 +445,7 @@ MonoBehaviour:
   knownDes: It's said that thunder comes from wood in summer.
   unlockedDes: It's said that thunder comes from wood in summer.
   element: 5
+  locked: {fileID: 0}
 --- !u!222 &188829421
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -709,6 +712,7 @@ MonoBehaviour:
   unlockedDes: The element of South and Summer. It represents everything that is
     destroyed, the Yang element of the five basic elements.
   element: 3
+  locked: {fileID: 0}
 --- !u!222 &319365439
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -983,6 +987,7 @@ MonoBehaviour:
   unlockedDes: The element of Middle and Long-Summer. It represents everything that
     is syncretic, the only element belongs to humans.
   element: 4
+  locked: {fileID: 0}
 --- !u!222 &468785912
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1169,6 +1174,7 @@ MonoBehaviour:
   knownDes: 
   unlockedDes: The element of East and Spring. It represents everything that is growing.
   element: 1
+  locked: {fileID: 0}
 --- !u!222 &542827081
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1284,6 +1290,7 @@ MonoBehaviour:
     \t\t  The element of North and Winter. It represents everything that is permeated,
     the Yin element of the five basic elements. Haobin Zhang has left the document."
   element: 2
+  locked: {fileID: 0}
 --- !u!222 &554852737
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1650,6 +1657,7 @@ MonoBehaviour:
   unlockedDes: A compass of Taiji symbol made by talismam. Everyone can feel the
     overflow of water elements from it. It seems like a key of something.
   element: 9
+  locked: {fileID: 0}
 --- !u!222 &647988584
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1759,6 +1767,7 @@ MonoBehaviour:
   knownDes: 'A gust of wind made by talismam. It has a direction for sure. '
   unlockedDes: A gust of wind made by talismam. It comes from south-east.
   element: 9
+  locked: {fileID: 0}
 --- !u!222 &649556667
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1955,6 +1964,7 @@ MonoBehaviour:
   unlockedDes: A gust of wind made by talismam. It comes from south-east.A gust of
     wind made by talismam. It comes from south-east.
   element: 9
+  locked: {fileID: 0}
 --- !u!222 &772955453
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2461,6 +2471,7 @@ MonoBehaviour:
   unlockedDes: A drop of water made by talismam. It's full of energy after created
     by Qi of water elements. The drop are able to make anything re-alive.
   element: 9
+  locked: {fileID: 0}
 --- !u!222 &995995907
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2664,7 +2675,7 @@ Transform:
   m_LocalScale: {x: 20, y: 0.1, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1077165099
 GameObject:
@@ -2863,6 +2874,7 @@ MonoBehaviour:
   knownDes: 
   unlockedDes: The element of West and Fall. It represents everything that is gathering.
   element: 0
+  locked: {fileID: 0}
 --- !u!222 &1118851927
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2972,6 +2984,7 @@ MonoBehaviour:
   knownDes: It's said that moon is the represent of the most Yin element.
   unlockedDes: It's said that moon is the most Yin element.
   element: 8
+  locked: {fileID: 0}
 --- !u!222 &1134205128
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3083,6 +3096,7 @@ MonoBehaviour:
   unlockedDes: A piece of board made by talismam. It became concrete after combining
     two kinds of Qi. The board are able to change its pattern according to the environment.
   element: 9
+  locked: {fileID: 0}
 --- !u!222 &1156005366
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3195,7 +3209,7 @@ GameObject:
   - component: {fileID: 1354479197}
   - component: {fileID: 1354479196}
   m_Layer: 0
-  m_Name: "\u6CD5\u9635-scene3"
+  m_Name: EarthPortal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3304,7 +3318,7 @@ GameObject:
   - component: {fileID: 1413656061}
   - component: {fileID: 1413656060}
   m_Layer: 0
-  m_Name: Key
+  m_Name: Key(to enter the portal)
   m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3541,6 +3555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isReverse: 1
   ani: {fileID: 1550972248}
+  system: {fileID: 0}
 --- !u!54 &1550972251
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3620,7 +3635,7 @@ Transform:
   m_Children:
   - {fileID: 873089398}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!1 &1569564935
 GameObject:
@@ -3815,6 +3830,7 @@ MonoBehaviour:
   unlockedDes: A entity of sun made by talismam. It's hot and excatly functioning
     as the real sun.
   element: 9
+  locked: {fileID: 0}
 --- !u!222 &1573130050
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4000,7 +4016,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1757138782
 GameObject:
@@ -4176,6 +4192,7 @@ MonoBehaviour:
   knownDes: It's said that wind comes from wood in winter.
   unlockedDes: It's said that wind comes from wood in winter.
   element: 7
+  locked: {fileID: 0}
 --- !u!222 &1759104535
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4505,100 +4522,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2060298367
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2060298371}
-  - component: {fileID: 2060298370}
-  - component: {fileID: 2060298369}
-  - component: {fileID: 2060298368}
-  m_Layer: 0
-  m_Name: River
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!136 &2060298368
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2060298367}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.45
-  m_Height: 106.12023
-  m_Direction: 1
-  m_Center: {x: 0.00000003973643, y: 10, z: 0.0017850399}
---- !u!23 &2060298369
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2060298367}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: abfda964034888a44a5cf15cd38ef1ff, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &2060298370
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2060298367}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &2060298371
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2060298367}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.51, y: -1.84, z: 2.22}
-  m_LocalScale: {x: 6, y: 0.1, z: 6}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2073101524
 GameObject:
   m_ObjectHideFlags: 0
@@ -4860,7 +4783,7 @@ RectTransform:
   - {fileID: 1483059309}
   - {fileID: 730023189}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

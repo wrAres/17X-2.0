@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,7 +19,10 @@ public class Backpack : MonoBehaviour
         // listOfItems = new LinkedList<Item>();
         imageObjects = new LinkedList<GameObject>();
         length = 0;
-        this.AddItem("Life Water");
+        // this.AddItem("Dirt");
+        // this.AddItem("Life Water");
+        // this.AddItem("Taiji Key");
+        // this.AddItem("Glowing Sun");
         this.Show(false);
     }
     void OnGUI() {
@@ -33,6 +36,13 @@ public class Backpack : MonoBehaviour
     }
 
     public void AddItem(string name) {
+        LinkedList<GameObject>.Enumerator em = imageObjects.GetEnumerator(); 
+        while (em.MoveNext()) {
+            GameObject currObj = em.Current;
+            if (currObj.name.CompareTo(name) == 0) {
+                return ;
+            }
+        }
         length++;
         // listOfItems.AddLast(item);
 
@@ -52,7 +62,17 @@ public class Backpack : MonoBehaviour
         item_transform.SetParent(canvas.transform); //Assign the newly created Image GameObject as a Child of the Parent Panel, Canvas/Main UI.
 
         item_transform.anchoredPosition = backpack_transform.anchoredPosition + new Vector2((length-7.5f)*100, 0);
-        item_transform.sizeDelta = new Vector2(60, 60);
+        if (name.CompareTo("Life Water") == 0) {
+            item_transform.sizeDelta = new Vector2(60, 35);
+        } else if (name.CompareTo("Dirt") == 0) {
+            item_transform.anchoredPosition = item_transform.anchoredPosition + new Vector2(0, 5);
+            item_transform.sizeDelta = new Vector2(45, 40);
+        } else if (name.CompareTo("Taiji Key") == 0) {
+            item_transform.sizeDelta = new Vector2(180, 120);
+        } else {
+            item_transform.sizeDelta = new Vector2(50, 50);
+        }
+        
         
         imageObj.SetActive(Backpack.backpack.activeSelf);
     }

@@ -33,26 +33,25 @@ public class TalismanManager : MonoBehaviour {
     private void Awake() {
         dispManager = GetComponent<Show>();
         ResetCraft();
+        CloseDisplay();
     }
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKey("space") && curTime <= 0) {
+        if (Input.GetKeyDown("space") && !display.activeSelf) {
             recipeBook = GetComponent<SpellTreeManager>().GetSpellBook();
             display.SetActive(true);
             dispManager.CloseDisplays();
             DisplaySpellList();
             curTime = timer;
         }
-        if (!display.activeSelf && curTime > 0) {
-            curTime = 0;
+        else if (Input.GetKeyDown("space")) {
+            CloseDisplay();
         }
 
-        if (curTime > 0) {
-            curTime -= Time.deltaTime;
-        }
-        else if (curTime <= 0 && display.activeSelf) {
-            CloseDisplay();
+        // TEST MAKE BUTTON
+        if (Input.GetKey(KeyCode.Return) && display.activeSelf) {
+            MakeItem();
         }
     }
 
@@ -85,8 +84,16 @@ public class TalismanManager : MonoBehaviour {
 
     // Check if recipe can be made from current craft
     private bool CheckRecipe(Spell r) {
-        TalisDrag.Elements[] curCraft = new TalisDrag.Elements[3];
-        System.Array.Copy(craft, curCraft, 3);
+        TalisDrag.Elements[] curCraft = new TalisDrag.Elements[craft.Length];
+        System.Array.Copy(craft, curCraft, craft.Length);
+
+        for (int i = 0; i < curCraft.Length; i++) {
+            if (curCraft[i] != TalisDrag.Elements.NONE) {
+                if (r.recipe.Length < i+1) return false;
+            }
+        }
+
+        // Make sure each element is matched
         for (int i = 0; i < r.recipe.Length; i++) {
             bool gotEle = false;
             for (int j = 0; j < craft.Length; j++) {
@@ -96,10 +103,7 @@ public class TalismanManager : MonoBehaviour {
                     break;
                 }
             }
-
-            if (!gotEle && r.recipe[i] != TalisDrag.Elements.NONE) {
-                return false;
-            }
+            if (!gotEle) { return false; }
         }
 
         // Don't make empty elements
@@ -121,31 +125,13 @@ public class TalismanManager : MonoBehaviour {
 
     // Add an element to the craft log
     public void AddCraft(TalisDrag.Elements e, Sprite s) {
+        AIDataManager.IncrementElementAccess(e);
         for (int i = 0; i < craft.Length; i++) {
             if(craft[i] == TalisDrag.Elements.NONE){
                 craft[i] = e;
-                AIDataManager.IncrementElementAccess(e);
                 slots[i].enabled = true;
                 slots[i].sprite = s;
                 break;
-            }
-        }
-
-        // Check if item can be made
-        for (int i = 0; i < recipeBook.Length; i++) {
-            if (CheckRecipe(recipeBook[i])) {
-                Debug.Log("MADE ITEM: " + recipeBook[i].spellName);
-                // Add to backpack if it's not an element
-                if (recipeBook[i].element == TalisDrag.Elements.NONE) {
-                    backpack.AddItem(recipeBook[i].spellName);
-                    AIDataManager.IncrementSpellAccess(recipeBook[i].spellName);
-                    GameObject.Find("Backpack_Icon").GetComponent<ShakingIcon>().ShakeMe();
-                }
-                else {
-                    GetComponent<SpellTreeManager>().UnlockElement(recipeBook[i].element);
-                    GameObject.Find("SpellTreeIcon").GetComponent<ShakingIcon>().ShakeMe();
-                }
-                CloseDisplay();
             }
         }
     }
@@ -159,6 +145,40 @@ public class TalismanManager : MonoBehaviour {
                 break;
             }
         }
+    }
+
+    private bool MakeItem() {
+        // Check if item can be made
+        for (int i = 0; i < recipeBook.Length; i++) {
+            if (CheckRecipe(recipeBook[i])) {
+                // Add to backpack if it's not an element
+                if (recipeBook[i].element == TalisDrag.Elements.NONE) {
+                    backpack.AddItem(recipeBook[i].spellName);
+                    AIDataManager.IncrementSpellAccess(recipeBook[i].spellName);
+                    // GameObject.Find("Backpack_Icon").GetComponent<ShakingIcon>().ShakeMe();
+                    GetComponent<FlyingSpell>().FlyTowardsIcon(recipeBook[i].GetComponent<Image>().sprite, false);
+                    if (recipeBook[i].curState == Spell.SpellState.KNOWN) {
+                        recipeBook[i].ChangeState(Spell.SpellState.UNLOCKED);
+                    }
+                }
+                else {
+                    AIDataManager.DiscoverNewSpell(Time.time - AIDataManager.previousUnlockTime);
+		            AIDataManager.previousUnlockTime = Time.time;
+
+                    GetComponent<SpellTreeManager>().UnlockElement(recipeBook[i].element);
+                    //GetComponent<FlyingSpell>().FlyTowardsIcon(recipeBook[i].GetComponent<Image>().sprite, true);
+                }
+                CloseDisplay();
+                return true;
+            }
+        }
+
+        // Failed to make item
+        AIDataManager.TryNonExistentRecipe();
+        Debug.Log("No items can be made");
+        CloseDisplay();
+        return false;
+
     }
 
 }

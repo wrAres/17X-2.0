@@ -15,6 +15,8 @@ public class TileMovement : MonoBehaviour
     private float speed = 100.0f;
     public static int mixTimes = 10;
 
+    private float start;
+
     Dictionary<int, string> dict = new Dictionary<int, string>();
     static Dictionary<Tuple<int, int>, Vector3> startPos = new Dictionary<Tuple<int, int>, Vector3>();
     int[,] Puzzle;
@@ -22,6 +24,13 @@ public class TileMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Set up componants for TrigramManager
+        GameObject manager = GameObject.Find("TrigramManager");
+
+        Debug.Log("Data Manager object name: " + manager.name);
+
+        start = Time.time;
+
         // Set StartPos dictionary
         int limit = 1;
         for (int j = 0; j < 3; j++)
@@ -65,6 +74,7 @@ public class TileMovement : MonoBehaviour
                 tileToMove = GameObject.Find(tiles[0].Item2).GetComponent<Transform>();
                 MoveTile(tileToMove, invisTile);
                 UpdatePuzzle("up");
+                AIDataManager.movingPuzzleMoves++;
                 CheckDone();
             }
             else Debug.Log("No Valid up movement");
@@ -77,6 +87,7 @@ public class TileMovement : MonoBehaviour
                 tileToMove = GameObject.Find(tiles[1].Item2).GetComponent<Transform>();
                 MoveTile(tileToMove, invisTile);
                 UpdatePuzzle("down");
+                AIDataManager.movingPuzzleMoves++;
                 CheckDone();
             }
             else Debug.Log("No valid down movement");
@@ -89,6 +100,7 @@ public class TileMovement : MonoBehaviour
                 tileToMove = GameObject.Find(tiles[2].Item2).GetComponent<Transform>();
                 MoveTile(tileToMove, invisTile);
                 UpdatePuzzle("left");
+                AIDataManager.movingPuzzleMoves++;
                 CheckDone();
             }
             else Debug.Log("No valid left movement");
@@ -101,6 +113,7 @@ public class TileMovement : MonoBehaviour
                 tileToMove = GameObject.Find(tiles[3].Item2).GetComponent<Transform>();
                 MoveTile(tileToMove, invisTile);
                 UpdatePuzzle("right");
+                AIDataManager.movingPuzzleMoves++;
                 CheckDone();
             }
             else Debug.Log("No valid right movement");
@@ -210,6 +223,12 @@ public class TileMovement : MonoBehaviour
             tempColor.a = 1.0f;
             lastTile.GetComponent<SpriteRenderer>().color = tempColor;
             Debug.Log("Finished Puzzle");
+            Debug.Log("Number of moves: " + AIDataManager.movingPuzzleMoves);
+
+            float totalTime = Time.time - start;
+            Debug.Log("Time: " + totalTime);
+            AIDataManager.movingPuzzleTime = totalTime;
+
             SceneManager.LoadScene("scene3");
         }
     }
@@ -217,6 +236,7 @@ public class TileMovement : MonoBehaviour
     // Move tile on the screen
     private void MoveTile(Transform movingTile, Transform invTile)
     {
+        //AI moving puzzle move tile
         Vector3 Start = movingTile.position;
         Vector3 Destination = invisTile.position;
 
