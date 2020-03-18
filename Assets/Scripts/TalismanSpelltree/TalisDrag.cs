@@ -36,7 +36,6 @@ public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHand
         RectTransform invPanel = talisman as RectTransform;
 
         if (RectTransformUtility.RectangleContainsScreenPoint(invPanel, Input.mousePosition)) {
-            Debug.Log("Added element: " + element);
             //setTalis = true;
             dispManager.GetComponent<TalismanManager>().AddCraft(element, GetComponent<Image>().sprite);
         }

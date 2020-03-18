@@ -69,10 +69,12 @@
      <Compile Include="Assets\Scripts\BackpackScript\ItemDragHandler.cs" />
      <Compile Include="Assets\Scripts\BackpackScript\PickObject.cs" />
      <Compile Include="Assets\Scripts\BackpackScript\Show.cs" />
+     <Compile Include="Assets\Scripts\DontDestroyVariables.cs" />
      <Compile Include="Assets\Scripts\HallwayPuzzle\EndHallwayPuzzle.cs" />
      <Compile Include="Assets\Scripts\HallwayPuzzle\FloorControl.cs" />
      <Compile Include="Assets\Scripts\HallwayPuzzle\PuzzleFloorCollider.cs" />
      <Compile Include="Assets\Scripts\HallwayPuzzle\WindMovement.cs" />
+     <Compile Include="Assets\Scripts\TalismanSpelltree\FlyingSpell.cs" />
      <Compile Include="Assets\Scripts\TalismanSpelltree\Spell.cs" />
      <Compile Include="Assets\Scripts\TalismanSpelltree\SpellTreeManager.cs" />
      <Compile Include="Assets\Scripts\TalismanSpelltree\TalisDrag.cs" />

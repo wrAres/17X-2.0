@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":-3.7480835914611818,"y":4.67161750793457,"z":3.962724208831787},"rotation":{"x":0.45892274379730227,"y":0.13627998530864716,"z":-0.07149068266153336,"w":0.875097393989563},"size":12.2819242477417,"orthographic":true}
 =======
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":-1.9564828872680665,"y":1.3595170974731446,"z":-6.7361040115356449},"rotation":{"x":0.2555588483810425,"y":0.08686927706003189,"z":-0.02306259796023369,"w":0.96260666847229},"size":22.07001495361328,"orthographic":true}
@@ -7,3 +8,6 @@
 =======
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":342.70001220703127,"y":265.4674987792969,"z":0.3725000023841858},"rotation":{"x":0.12408459931612015,"y":-0.03868862986564636,"z":0.004841648042201996,"w":0.9915059208869934},"size":173.84219360351563,"orthographic":true}
 >>>>>>> AI
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":201.34375,"y":-39.25000762939453,"z":0.703125},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":246.14260864257813,"orthographic":false}
+>>>>>>> mainUI3.5

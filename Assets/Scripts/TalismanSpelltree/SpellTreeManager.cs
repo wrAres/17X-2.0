@@ -13,7 +13,7 @@ public class SpellTreeManager : MonoBehaviour {
         public bool locked;
     }
     */
-    private Spell[] spell;
+    private List<Spell> spell = new List<Spell>();
     public GameObject display;
 
     // Textbox display
@@ -24,7 +24,12 @@ public class SpellTreeManager : MonoBehaviour {
     void Start() {
         //   UpdateIcons();
         display.SetActive(true);
-        spell = GetComponentsInChildren<Spell>();
+       // spell = GetComponentsInChildren<Spell>();
+        foreach (Transform child in transform) {
+            Spell[] spellList = child.GetComponentsInChildren<Spell>();
+            for(int i = 0; i < spellList.Length; i++)
+                spell.Add(spellList[i]);
+        }
         display.SetActive(false);
     }
 
@@ -46,7 +51,7 @@ public class SpellTreeManager : MonoBehaviour {
     }
 
     private void UpdateIcons() {
-        for (int i = 0; i < spell.Length; i++) {
+        for (int i = 0; i < spell.Count; i++) {
             if (spell[i].curState == Spell.SpellState.LOCKED) {
                 Image img = spell[i].gameObject.GetComponent<Image>();
                 var tempColor = img.color;
@@ -74,7 +79,7 @@ public class SpellTreeManager : MonoBehaviour {
     private bool CanCraft(Spell r) {
         for (int i = 0; i < r.recipe.Length; i++) {
             bool gotEle = false;
-            for (int j = 0; j < spell.Length; j++) {
+            for (int j = 0; j < spell.Count; j++) {
                 if (spell[j].curState == Spell.SpellState.UNLOCKED) {
                     if (r.recipe[i] == spell[j].element) {
                         gotEle = true;
@@ -107,6 +112,8 @@ public class SpellTreeManager : MonoBehaviour {
                 recipe.text = "Recipe: ";
                 for (int i = 0; i < s.recipe.Length; i++) {
                     recipe.text += EleToString(s.recipe[i]);
+                    if (i + 1 >= s.recipe.Length) break;
+                    recipe.text += ", ";
                 }
                 if (s.recipe.Length <= 0) { recipe.text += "N/A"; }
             }
@@ -119,27 +126,19 @@ public class SpellTreeManager : MonoBehaviour {
 
     public void UnlockElement(TalisDrag.Elements e) {
         // Unlock the element
-        for (int i = 0; i < spell.Length; i++) {
+        for (int i = 0; i < spell.Count; i++) {
             if (spell[i].element == e) {
-                spell[i].curState = Spell.SpellState.UNLOCKED;
+                spell[i].ChangeState(Spell.SpellState.UNLOCKED);
+                GetComponent<FlyingSpell>().FlyTowardsIcon(spell[i].GetComponent<Image>().sprite, true);
+                Debug.Log(spell[i].GetComponent<Image>().color);
                 break;
             }
         }
 
         // Make related recipes known if locked
-        for (int i = 0; i < spell.Length; i++) {
-            /*
-            if (spell[i].curState == Spell.SpellState.LOCKED) {
-                for (int j = 0; j < spell[i].recipe.Length; j++) {
-                    if (spell[i].recipe[j] == e) {
-                        spell[i].curState = Spell.SpellState.KNOWN;
-                        break;
-                    }
-                }
-            }
-            */
+        for (int i = 0; i < spell.Count; i++) {
             if (CanCraft(spell[i]) && spell[i].element == TalisDrag.Elements.NONE) {
-                spell[i].curState = Spell.SpellState.KNOWN;
+                spell[i].ChangeState(Spell.SpellState.KNOWN);
             }
         }
 
@@ -150,7 +149,11 @@ public class SpellTreeManager : MonoBehaviour {
     
 
     public Spell[] GetSpellBook() {
-        return spell;
+        Spell[] theList = new Spell[spell.Count];
+        for (int i = 0; i < spell.Count; i++) {
+            theList[i] = spell[i];
+        }
+        return theList;
     }
     
 }

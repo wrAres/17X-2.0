@@ -53,7 +53,7 @@ public class Show : MonoBehaviour
             //For every result returned, output the name of the GameObject on the Canvas hit by the Ray
             foreach (RaycastResult result in results)
             {
-                // Debug.Log("Hit " + result.gameObject);
+                // Debug.Log("Hit " + result.gameObject.tag);
 
                 if (result.gameObject.tag.CompareTo("BackpackIcon") == 0) {
                     if (Backpack.backpack.activeSelf) {
@@ -61,6 +61,7 @@ public class Show : MonoBehaviour
                     }
                     else {
                         Backpack.backpack.GetComponent<Backpack>().Show(true);
+                        GetComponent<FlyingSpell>().ResetFlyingSpell();
                     }
                     // Close other canvas
                     spellTreeDisp.SetActive(false);
