@@ -28,7 +28,7 @@ public class WaterSoundManagerScript : MonoBehaviour
     public static void PlaySound()
     {
         if (shortStep) {
-            audioSources[1].volume = Random.Range(0.15f, 0.3f);
+            audioSources[1].volume = Random.Range(0.05f, 0.1f);
             audioSources[1].PlayOneShot(player1StepSound);
             shortStep = false;
         }
@@ -41,7 +41,7 @@ public class WaterSoundManagerScript : MonoBehaviour
     public static void StopPlaySound()
     {
         if (triggerStep) {
-            audioSources[0].Pause();
+            audioSources[0].Stop();
             triggerStep = false;
             shortStep = true;
         }

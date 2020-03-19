@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\HallwayPuzzle\FloorControl.cs" />
      <Compile Include="Assets\Scripts\HallwayPuzzle\PuzzleFloorCollider.cs" />
      <Compile Include="Assets\Scripts\HallwayPuzzle\WindMovement.cs" />
+     <Compile Include="Assets\Scripts\Sound\UISoundScript.cs" />
      <Compile Include="Assets\Scripts\Sound\WaterSoundManagerScript.cs" />
      <Compile Include="Assets\Scripts\TalismanSpelltree\FlyingSpell.cs" />
      <Compile Include="Assets\Scripts\TalismanSpelltree\Spell.cs" />
@@ -91,7 +92,6 @@
      <Compile Include="Assets\Scripts\sceneTransition.cs" />
      <Compile Include="Assets\Scripts\waveMovement.cs" />
      <Compile Include="Assets\ShakingIcon.cs" />
-     <Compile Include="Assets\UISoundScript.cs" />
      <Compile Include="Assets\flowerInMirror.cs" />
      <Compile Include="Assets\mirrors.cs" />
  <Reference Include="Unity.Timeline.Editor">
