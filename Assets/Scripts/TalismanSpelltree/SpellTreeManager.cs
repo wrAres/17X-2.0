@@ -46,7 +46,6 @@ public class SpellTreeManager : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Q)) {
             UnlockElement(TalisDrag.Elements.WATER);
-            Debug.Log("should work");
         }
     }
 
@@ -131,7 +130,6 @@ public class SpellTreeManager : MonoBehaviour {
                 spell[i].ChangeState(Spell.SpellState.UNLOCKED);
                 GetComponent<FlyingSpell>().FlyTowardsIcon(spell[i].GetComponent<Image>().sprite, true);
                 UISoundScript.PlaySpellTreeIcon();
-                Debug.Log(spell[i].GetComponent<Image>().color);
                 break;
             }
         }

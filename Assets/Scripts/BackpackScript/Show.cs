@@ -10,6 +10,7 @@ public class Show : MonoBehaviour
 {
     public GameObject spellTreeDisp;
     private TalismanManager talisDisp;
+    private bool earthUnlocked;
 
     GraphicRaycaster raycaster;
     PointerEventData pointerData;
@@ -26,6 +27,8 @@ public class Show : MonoBehaviour
             Destroy(gameObject);
         }
         SceneManager.sceneLoaded += OnSceneLoaded;
+        GameObject.FindGameObjectWithTag("BackpackIcon").GetComponent<Image>().enabled = false;
+        GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled = false;
     }
 
     private void Start() {
@@ -33,9 +36,6 @@ public class Show : MonoBehaviour
         eventSystem = GetComponent<EventSystem>();
 
         talisDisp = GetComponent<TalismanManager>();
-
-        GameObject.FindGameObjectWithTag("BackpackIcon").GetComponent<Image>().enabled = false;
-        GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled = false;
     }
 
     // public Backpack bk;
@@ -102,7 +102,9 @@ public class Show : MonoBehaviour
     public void ShowSpelltreeIcon() { GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled = true; }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-        if (scene.name == "scene0") {
+        if (scene.name == "scene0" && !earthUnlocked) {
+            earthUnlocked = true;
+            ShowSpelltreeIcon();
             GetComponent<SpellTreeManager>().UnlockElement(TalisDrag.Elements.EARTH);
         }
     }

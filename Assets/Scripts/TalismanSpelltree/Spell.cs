@@ -27,8 +27,8 @@ public class Spell : MonoBehaviour, IPointerEnterHandler {
 
     // Start is called before the first frame update
     void Awake() {
-        ogPos = transform.position;
-        ogScale = transform.localScale;
+        ogPos = GetComponent<Transform>().localPosition;
+        ogScale = GetComponent<Transform>().localScale;
         ogSprite = GetComponent<Image>().sprite;
 
         if (curState == SpellState.LOCKED) {
@@ -45,8 +45,8 @@ public class Spell : MonoBehaviour, IPointerEnterHandler {
 
     public void ChangeState(SpellState s) {
         if (curState == SpellState.LOCKED && s != SpellState.LOCKED) {
-            transform.position = ogPos;
-            transform.localScale = ogScale;
+            GetComponent<Transform>().localPosition = ogPos;
+            GetComponent<Transform>().localScale = ogScale;
             GetComponent<Image>().sprite = ogSprite;
         }
 
