@@ -11,6 +11,8 @@ public class Show : MonoBehaviour
     public GameObject spellTreeDisp;
     private TalismanManager talisDisp;
     private bool earthUnlocked;
+    private int closedFirstTimeFlag = 0; // Used to mark when to pop up talisman description text
+    public bool clickedObject = false;
 
     GraphicRaycaster raycaster;
     PointerEventData pointerData;
@@ -81,11 +83,25 @@ public class Show : MonoBehaviour
                 }
                 else if (result.gameObject.tag.CompareTo("SpellTreeIcon") == 0) {
                     spellTreeDisp.SetActive(!spellTreeDisp.activeSelf);
+             
+                    closedFirstTimeFlag++;
+                    print(closedFirstTimeFlag);
                     // Close other canvas
                     talisDisp.CloseDisplay();
                     Backpack.backpack.GetComponent<Backpack>().Show(false);
                 }
             }
+        }
+        // Show talisman building description after closing the spell tree
+        if (closedFirstTimeFlag == 2)
+        {
+            TipsDialog.PrintDialog("Talisman");
+            clickedObject = true;
+            closedFirstTimeFlag = 3;
+        }
+        else
+        {
+            clickedObject = false;
         }
     }
 

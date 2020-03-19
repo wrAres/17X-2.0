@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PickObject : MonoBehaviour
 {   
     private int layerMask;
 
-    private bool dialogShow = false;
+    public bool dialogShow = false;
 
     private void Start() {
         // This would cast rays only against colliders in layer 8.
         // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
         layerMask = 1 << 8;
         layerMask = ~layerMask;
+
+        // Check to see if current scene is the lobby if so show spell tree description
+        // "Scene 0" name might eb changed later
+        if (SceneManager.GetActiveScene().name == "scene0")
+            TipsDialog.PrintDialog("Spelltree");
     }
 
     // Update is called once per frame
@@ -35,11 +41,17 @@ public class PickObject : MonoBehaviour
                     } else if (clickObject.name.CompareTo("Boss") == 0){
                         AIDataManager.DecideTrigram();
                     }
-                    TipsDialog.PrintDialog(clickObject.name);
-                    dialogShow = true;
+                    if (TipsDialog.dialogList.ContainsKey(clickObject.name))
+                    {
+                        TipsDialog.PrintDialog(clickObject.name);
+                        dialogShow = true;
+                    }
                 }
+            } else if (GameObject.Find("MainUI").GetComponent<Show>().clickedObject) {
+                dialogShow = true;
             } else {
                 TipsDialog.HideTextBox();
+                print("setting dialogshow to false in pickObject");
                 dialogShow = false;
             }
         }
