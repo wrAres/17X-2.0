@@ -16,6 +16,7 @@ public class Item : MonoBehaviour
         dirtInPot = false;
         // s = FindObjectsOfType<SpellTreeManager>()[0];;
         itemOnPuzzle = new Hashtable();
+        itemOnPuzzle.Add("Earth Key", "EarthPortal");
         itemOnPuzzle.Add("Dirt", "River,Flowerpot");
         itemOnPuzzle.Add("Water Seed", "Flowerpot");
         itemOnPuzzle.Add("Firewood", "法阵-scene2");
@@ -26,6 +27,7 @@ public class Item : MonoBehaviour
     }
 
     public static bool canPlace(string item, string targetObj) {
+        print(item + ", " + targetObj);
         string available = (string)itemOnPuzzle[item];
         if (available == null)
             return false;
@@ -51,7 +53,7 @@ public class Item : MonoBehaviour
         }
     }
 
-    public static void puzzleEffect(string item, string position, Vector3 newPos) {
+    public static void puzzleEffect(string item, string position) {
         if (item.CompareTo("Dirt") == 0 && position.CompareTo("River") == 0){
             GameObject river = GameObject.Find("River");
             river.GetComponent<CapsuleCollider>().radius = 0;
@@ -63,7 +65,12 @@ public class Item : MonoBehaviour
 
             deleteSpellObject("Dirt");
         } 
-        if (item.CompareTo("Dirt") == 0 && position.CompareTo("Flowerpot") == 0){
+        else if (item.CompareTo("Earth Key") == 0 && position.CompareTo("EarthPortal") == 0){
+            GameObject.Find("EarthPortal").GetComponent<sceneTransition>().enterable = true;
+            print("Earthportal");
+            deleteSpellObject("Earth Key");
+        } 
+        else if (item.CompareTo("Dirt") == 0 && position.CompareTo("Flowerpot") == 0){
             GameObject flowerpot = GameObject.Find("Flowerpot");
             flowerpot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Flowerpot with dirt");;
 
@@ -89,7 +96,7 @@ public class Item : MonoBehaviour
             // RectTransform sprout_transform = sprout.GetComponent<RectTransform>();
             // sprout_transform.anchoredPosition = seed_transform.anchoredPosition;
             //sprout.transform.position = camera.ScreenToWorldPoint(seed.transform.position);
-            sprout.transform.position = newPos;
+            sprout.transform.position = GameObject.Find("Flowerpot").transform.position + new Vector3(0f, 1.0f, 0f);
             sprout.transform.localScale = new Vector3(0.03f, 0.04f, 0.04f);
             Vector3 temp = sprout.transform.rotation.eulerAngles;
             temp.x = 45f;
@@ -121,15 +128,11 @@ public class Item : MonoBehaviour
             AIDataManager.UpdateStandardSpellCount("wood", 3);
         } 
         else if (item.CompareTo("Glowing Sun") == 0 && position.CompareTo("Water Sprout") == 0){
-            GameObject sprout = GameObject.Find("Scene3/Water Sprout");
-            // GameObject flowerpot = GameObject.Find("Scene3/Flowerpot");
-            // Destroy(flowerpot);
-
             GameObject bloom = new GameObject("Bloom");
-            bloom.transform.position = newPos;
+            bloom.transform.position = GameObject.Find("Flowerpot").transform.position + new Vector3(0f, 1.8f, 0f);;
             SpriteRenderer image = bloom.AddComponent<SpriteRenderer>(); //Add the Image Component script
             image.sprite = Resources.Load<Sprite>("Bloom"); //Set the Sprite of the Image Component on the new GameObject
-            bloom.transform.localScale = new Vector3(0.3f, 0.4f, 0.4f);
+            bloom.transform.localScale = new Vector3(0.15f, 0.2f, 0.2f);
             Vector3 temp = bloom.transform.rotation.eulerAngles;
             temp.x = 45f;
             bloom.transform.rotation = Quaternion.Euler(temp);
@@ -139,7 +142,7 @@ public class Item : MonoBehaviour
             AIDataManager.UpdateStandardSpellCount("earth", 1);
             AIDataManager.UpdateStandardSpellCount("fire", 2);
 
-            Destroy(sprout);
+            deleteSpellObject("Water Sprout");
         } 
         // else if (item.CompareTo("Life Water") == 0 && position.CompareTo("Water Sprout") == 0){
         //     GameObject sspell = GameObject.Find("Life Water");

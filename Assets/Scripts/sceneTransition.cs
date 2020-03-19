@@ -9,7 +9,7 @@ public class sceneTransition : MonoBehaviour
 	public bool enterable;
 
 	void Start() {
-		if (this.gameObject.name.CompareTo("法阵-scene2") == 0)
+		if (this.gameObject.name.CompareTo("法阵-scene2") == 0 || this.gameObject.name.CompareTo("EarthPortal") == 0)
 			enterable = false;
 		else 
 			enterable = true;
