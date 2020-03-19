@@ -1240,7 +1240,7 @@ GameObject:
   - component: {fileID: 390860075}
   - component: {fileID: 390860074}
   m_Layer: 5
-  m_Name: taiji key
+  m_Name: Boom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1320,14 +1320,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellTreeDisp: {fileID: 103709450}
   curState: 0
-  spellName: Taiji Key
-  recipe: 020000000600000008000000
+  spellName: Boom
+  recipe: 030000000300000003000000
   level: 3
-  knownResp: 'Recipe: ?, ?, ?'
-  knownDes: 'A compass of Taiji symbol made by talismam. Everyone can feel the overflow
-    of water elements from it. '
-  unlockedDes: A compass of Taiji symbol made by talismam. Everyone can feel the
-    overflow of water elements from it. It seems like a key of something.
+  knownResp: 'Recipe: Fire * 3'
+  knownDes: Destroy something.
+  unlockedDes: Destroy the door to boss room.
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
 --- !u!222 &390860077
