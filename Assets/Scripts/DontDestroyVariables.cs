@@ -6,5 +6,4 @@ public class DontDestroyVariables : MonoBehaviour
 {
     
 	public static bool enterWaterRoom;
-	public static bool growSprout = false;
 }

@@ -13,6 +13,11 @@ public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHand
     private Vector3 origin;
     private bool setTalis;
 
+    public bool isLevelTwo() {
+        return element == Elements.THUNDER || element == Elements.SUN ||
+            element == Elements.WIND || element == Elements.MOON;
+    }
+
     // Reset position of talisman
     private void OnDisable() {
         transform.position = origin;
