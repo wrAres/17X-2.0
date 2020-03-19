@@ -126,9 +126,9 @@ public class Item : MonoBehaviour
         // }
         else if (item.CompareTo("Taiji Key") == 0 && position.CompareTo("Water Boss Door") == 0){
             GameObject waterbossdoor = GameObject.Find("Water Boss Door");
+            Destroy(waterbossdoor);
             foreach (GameObject obj in GameObject.FindGameObjectsWithTag("SpellObject"))
                 Destroy(obj);
-            Destroy(waterbossdoor);
             Debug.Log("run");
 
             AIDataManager.gentlypassthedoor = true; 
