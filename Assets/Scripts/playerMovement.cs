@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerMovement : MonoBehaviour
 {
@@ -10,7 +11,11 @@ public class playerMovement : MonoBehaviour
 	public SystemTree system;
 	private bool findFloor;
 
-    void Start()
+	private bool isWaterScene =>
+        SceneManager.GetActiveScene().name == "scene3";
+
+
+	void Start()
     {
 		system = GameObject.Find("TrigramManager").GetComponent<SystemTree>();
 		findFloor = false;
@@ -33,22 +38,22 @@ public class playerMovement : MonoBehaviour
 		ani.SetFloat("Speed", GetComponent<Rigidbody>().velocity.z);
 		if(Input.GetKey("w")){
 			GetComponent<Rigidbody>().velocity = new Vector3(0,0,3*isReverse);
-			WaterSoundManagerScript.PlaySound();
+			if(isWaterScene) WaterSoundManagerScript.PlaySound();
 		}
 		else if(Input.GetKey("s")){
 			GetComponent<Rigidbody>().velocity = new Vector3(0,0,-3*isReverse);
-			WaterSoundManagerScript.PlaySound();
+			if (isWaterScene) WaterSoundManagerScript.PlaySound();
 		}
         else if(Input.GetKey("a")){
 			GetComponent<Rigidbody>().velocity = new Vector3(-3*isReverse,0,0);
-			WaterSoundManagerScript.PlaySound();
+			if (isWaterScene) WaterSoundManagerScript.PlaySound();
 		}
 		else if(Input.GetKey("d")){
 			GetComponent<Rigidbody>().velocity = new Vector3(3*isReverse,0,0);
-			WaterSoundManagerScript.PlaySound();
+			if (isWaterScene) WaterSoundManagerScript.PlaySound();
 		}
 		else {
-			WaterSoundManagerScript.StopPlaySound();
+			if (isWaterScene) WaterSoundManagerScript.StopPlaySound();
 		}
     }
 }

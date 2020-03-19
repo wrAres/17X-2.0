@@ -83,8 +83,7 @@ public class Show : MonoBehaviour
                     spellTreeDisp.SetActive(!spellTreeDisp.activeSelf);
                     // Close other canvas
                     talisDisp.CloseDisplay();
-                    Backpack.backpack.GetComponent<Backpack>().Show(false);
-                }
+                    Backpack.backpack.GetComponent<Backpack>().Show(false);                }
             }
         }
     }

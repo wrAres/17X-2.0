@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 678, y: 342}
   m_MaxSize: {x: 12003, y: 8042}
   vertical: 0
-  controlID: 17469
+  controlID: 17596
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -83,7 +83,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 342}
   m_MaxSize: {x: 8002, y: 8042}
   vertical: 1
-  controlID: 17470
+  controlID: 17597
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 17471
+  controlID: 17598
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -183,8 +183,8 @@ MonoBehaviour:
     y: 0
     width: 317
     height: 402
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -219,9 +219,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 6e9dffffaa9effffcc9effff78a0ffffcac2ffff28ceffff5cd1ffff4cd9fffff6d9fffffadaffff74dbffff72deffffcadeffffc0dfffffe0e0ffff94e3ffffcae3ffff0ce5ffffc2e5fffff6e6ffff10e7ffff72e7ffff8ce7ffffcaf3ffffc8f4ffff00f6ffff54f7ffffcaf7fffff4f7ffff20f8ffff42f8ffff58f8ffff76f8ffff98f8ffffc6f8ffff2afbfffff4ffffff1c5c00004e5c00008a5c0000e0d90000
+      m_SelectedIDs: 2c330100
+      m_LastClickedID: 78636
+      m_ExpandedIDs: 548effffda90fffff490ffff0a91ffff2491ffff8896ffff6e97ffff6e9dffffaa9effffcc9effff78a0ffffcac2ffff28ceffff5cd1ffff4cd9fffff6d9fffffadaffff74dbffff72deffffcadeffffc0dfffffe0e0ffff94e3ffffcae3ffff0ce5ffffc2e5fffff6e6ffff10e7ffff72e7ffff8ce7ffffcaf3ffffc8f4ffff00f6ffff54f7ffffcaf7fffff4f7ffff20f8ffff42f8ffff58f8ffff76f8ffff98f8ffffc6f8ffff2afbfffff4ffffff1c5c00004e5c00008a5c0000e0d9000078310100cc310100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -479,19 +479,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/BackpackScript
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/BackpackScript
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/Heatler/Games/17X-2.0
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 117.82709}
-    m_SelectedIDs: ee3a0000
-    m_LastClickedID: 15086
+    scrollPos: {x: 0, y: 186}
+    m_SelectedIDs: f43a0000
+    m_LastClickedID: 15092
     m_ExpandedIDs: 000000001e3a0000203a0000223a0000243a0000263a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -545,9 +545,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 003d0000
-    m_LastClickedInstanceID: 15616
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -626,7 +626,7 @@ MonoBehaviour:
   m_MinSize: {x: 276, y: 292}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 17439
+  controlID: 17534
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -689,7 +689,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: 15616
+  m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
 --- !u!114 &16
 MonoBehaviour:
@@ -710,8 +710,8 @@ MonoBehaviour:
     y: 449
     width: 401
     height: 224
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
