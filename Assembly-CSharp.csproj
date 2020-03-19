@@ -96,7 +96,6 @@
      <Compile Include="Assets\Scripts\player.cs" />
      <Compile Include="Assets\Scripts\playerMovement.cs" />
      <Compile Include="Assets\Scripts\sceneTransition.cs" />
-     <Compile Include="Assets\ShowWaterSprout.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/wensdon/Desktop/academic/UCSC/Senior/winter 2020/The Atlas of Shanhe and Sheji/17X-2.0/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
