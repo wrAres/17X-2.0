@@ -129,7 +129,7 @@ public class Item : MonoBehaviour
         } 
         else if (item.CompareTo("Glowing Sun") == 0 && position.CompareTo("Water Sprout") == 0){
             GameObject bloom = new GameObject("Bloom");
-            bloom.transform.position = GameObject.Find("Flowerpot").transform.position + new Vector3(0f, 1.8f, 0f);;
+            bloom.transform.position = GameObject.Find("Flowerpot").transform.position + new Vector3(0f, 1.8f, 0f);
             SpriteRenderer image = bloom.AddComponent<SpriteRenderer>(); //Add the Image Component script
             image.sprite = Resources.Load<Sprite>("Bloom"); //Set the Sprite of the Image Component on the new GameObject
             bloom.transform.localScale = new Vector3(0.15f, 0.2f, 0.2f);
@@ -157,11 +157,8 @@ public class Item : MonoBehaviour
         //     Destroy(seed);
         // }
         else if (item.CompareTo("Taiji Key") == 0 && position.CompareTo("Water Boss Door") == 0){
-            GameObject waterbossdoor = GameObject.Find("Water Boss Door");
-            Destroy(waterbossdoor);
-            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("SpellObject"))
-                Destroy(obj);
-            Debug.Log("run");
+            deleteSpellObject("Water Boss Door");
+            deleteSpellObject("Taiji Key");
 
             AIDataManager.gentlypassthedoor = true; 
             AIDataManager.UpdateStandardSpellCount("water", 3);
