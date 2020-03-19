@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(TalismanManager))]
 public class Show : MonoBehaviour
@@ -24,6 +25,7 @@ public class Show : MonoBehaviour
         else {
             Destroy(gameObject);
         }
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void Start() {
@@ -31,6 +33,9 @@ public class Show : MonoBehaviour
         eventSystem = GetComponent<EventSystem>();
 
         talisDisp = GetComponent<TalismanManager>();
+
+        GameObject.FindGameObjectWithTag("BackpackIcon").GetComponent<Image>().enabled = false;
+        GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled = false;
     }
 
     // public Backpack bk;
@@ -91,5 +96,14 @@ public class Show : MonoBehaviour
     public void CloseDisplays() {
         Backpack.backpack.GetComponent<Backpack>().Show(false);
         spellTreeDisp.SetActive(false);
+    }
+
+    public void ShowBackpackIcon() { GameObject.FindGameObjectWithTag("BackpackIcon").GetComponent<Image>().enabled = true; }
+    public void ShowSpelltreeIcon() { GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled = true; }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        if (scene.name == "scene0") {
+            GetComponent<SpellTreeManager>().UnlockElement(TalisDrag.Elements.EARTH);
+        }
     }
 }
