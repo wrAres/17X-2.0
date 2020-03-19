@@ -73,7 +73,7 @@ public class Backpack : MonoBehaviour
             item_transform.sizeDelta = new Vector2(50, 50);
         }
         
-        
+        UISoundScript.PlayBackpack();
         imageObj.SetActive(Backpack.backpack.activeSelf);
     }
 

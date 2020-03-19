@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 678, y: 342}
   m_MaxSize: {x: 12003, y: 8042}
   vertical: 0
-  controlID: 33
+  controlID: 99
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -92,10 +92,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 284
+    width: 298
     height: 463
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -120,8 +120,8 @@ MonoBehaviour:
     y: 463
     width: 1148
     height: 271
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 13}
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 342}
   m_MaxSize: {x: 8003, y: 8042}
   vertical: 1
-  controlID: 34
+  controlID: 100
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 120
+  controlID: 74
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -260,9 +260,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 284
+    x: 298
     y: 0
-    width: 864
+    width: 850
     height: 463
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -338,21 +338,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Resources/Sound/UI
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Resources/Sound/UI
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/wensdon/Desktop/academic/UCSC/Senior/winter 2020/The
     Atlas of Shanhe and Sheji/17X-2.0
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 95}
-    m_SelectedIDs: 283a0000
-    m_LastClickedID: 14888
-    m_ExpandedIDs: 00000000003a0000023a0000043a0000063a0000083a000000ca9a3b
+    scrollPos: {x: 0, y: 122}
+    m_SelectedIDs: e46d0000
+    m_LastClickedID: 28132
+    m_ExpandedIDs: 00000000043a0000063a0000083a00000a3a00000c3a00002a3a00002c3a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -380,7 +380,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000003a0000023a0000043a0000063a0000083a0000
+    m_ExpandedIDs: 00000000043a0000063a0000083a00000a3a00000c3a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -405,8 +405,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 7e500000
-    m_LastClickedInstanceID: 20606
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -497,15 +497,15 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 75
-    width: 283
+    width: 297
     height: 442
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 7e500000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 98efffff6efbfffff4fffffffc360000
+      m_ExpandedIDs: 46f0ffffc4faffff6efbffffb86b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -521,7 +521,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -550,9 +550,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 284
+    x: 298
     y: 75
-    width: 862
+    width: 848
     height: 442
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
@@ -565,9 +565,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3.63, y: 1.7, z: 1.9}
+    m_Target: {x: -0.31874004, y: -3.7957873, z: -12.005174}
     speed: 2
-    m_Value: {x: 3.63, y: 1.7, z: 1.9}
+    m_Value: {x: -0.31874004, y: -3.7957873, z: -12.005174}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -613,13 +613,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.3496058, y: -0.027541999, z: 0.010282231, w: -0.936442}
+    m_Target: {x: -0.19552703, y: 0.012353721, z: -0.0024635221, w: -0.9806238}
     speed: 2
-    m_Value: {x: -0.34960368, y: -0.027541831, z: 0.010282168, w: -0.9364363}
+    m_Value: {x: -0.19552583, y: 0.012353645, z: -0.0024635068, w: -0.9806177}
   m_Size:
-    m_Target: 14.5658865
+    m_Target: 56.794163
     speed: 2
-    m_Value: 14.5658865
+    m_Value: 56.794163
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -665,9 +665,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 284
+    x: 298
     y: 75
-    width: 862
+    width: 848
     height: 442
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewsNames: []
@@ -711,23 +711,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 862
+      width: 848
       height: 421
     m_Scale: {x: 2, y: 2}
-    m_Translation: {x: 431, y: 210.5}
+    m_Translation: {x: 424, y: 210.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -215.5
+      x: -212
       y: -105.25
-      width: 431
+      width: 424
       height: 210.5
     m_MinimalGUI: 1
   m_defaultScale: 2
-  m_LastWindowPixelSize: {x: 1724, y: 884}
+  m_LastWindowPixelSize: {x: 1696, y: 884}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000

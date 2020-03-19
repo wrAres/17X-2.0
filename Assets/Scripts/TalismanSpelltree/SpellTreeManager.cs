@@ -130,6 +130,7 @@ public class SpellTreeManager : MonoBehaviour {
             if (spell[i].element == e) {
                 spell[i].ChangeState(Spell.SpellState.UNLOCKED);
                 GetComponent<FlyingSpell>().FlyTowardsIcon(spell[i].GetComponent<Image>().sprite, true);
+                UISoundScript.PlaySpellTreeIcon();
                 Debug.Log(spell[i].GetComponent<Image>().color);
                 break;
             }

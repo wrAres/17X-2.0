@@ -28,19 +28,27 @@ public class playerMovement : MonoBehaviour
 				findFloor = true;
 			}
 			system.Execute();
-		}
+		} 
+		
 		ani.SetFloat("Speed", GetComponent<Rigidbody>().velocity.z);
 		if(Input.GetKey("w")){
 			GetComponent<Rigidbody>().velocity = new Vector3(0,0,3*isReverse);
+			WaterSoundManagerScript.PlaySound();
 		}
-		if(Input.GetKey("s")){
+		else if(Input.GetKey("s")){
 			GetComponent<Rigidbody>().velocity = new Vector3(0,0,-3*isReverse);
+			WaterSoundManagerScript.PlaySound();
 		}
-        if(Input.GetKey("a")){
+        else if(Input.GetKey("a")){
 			GetComponent<Rigidbody>().velocity = new Vector3(-3*isReverse,0,0);
+			WaterSoundManagerScript.PlaySound();
 		}
-		if(Input.GetKey("d")){
+		else if(Input.GetKey("d")){
 			GetComponent<Rigidbody>().velocity = new Vector3(3*isReverse,0,0);
+			WaterSoundManagerScript.PlaySound();
+		}
+		else {
+			WaterSoundManagerScript.StopPlaySound();
 		}
     }
 }
