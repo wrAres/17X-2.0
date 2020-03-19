@@ -58,10 +58,6 @@ public class TileMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SceneManager.LoadScene("scene3");
-        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("scene0");
@@ -75,7 +71,7 @@ public class TileMovement : MonoBehaviour
                 MoveTile(tileToMove, invisTile);
                 UpdatePuzzle("up");
                 AIDataManager.movingPuzzleMoves++;
-                CheckDone();
+                // CheckDone();
             }
             else Debug.Log("No Valid up movement");
         }
@@ -88,7 +84,7 @@ public class TileMovement : MonoBehaviour
                 MoveTile(tileToMove, invisTile);
                 UpdatePuzzle("down");
                 AIDataManager.movingPuzzleMoves++;
-                CheckDone();
+                // CheckDone();
             }
             else Debug.Log("No valid down movement");
         }
@@ -101,7 +97,7 @@ public class TileMovement : MonoBehaviour
                 MoveTile(tileToMove, invisTile);
                 UpdatePuzzle("left");
                 AIDataManager.movingPuzzleMoves++;
-                CheckDone();
+                // CheckDone();
             }
             else Debug.Log("No valid left movement");
         }
@@ -114,7 +110,7 @@ public class TileMovement : MonoBehaviour
                 MoveTile(tileToMove, invisTile);
                 UpdatePuzzle("right");
                 AIDataManager.movingPuzzleMoves++;
-                CheckDone();
+                // CheckDone();
             }
             else Debug.Log("No valid right movement");
         }
@@ -202,7 +198,7 @@ public class TileMovement : MonoBehaviour
     }
 
     // Check to see if puzzle is finished
-    private void CheckDone()
+    public void CheckDone()
     {
         int num = 1;
         bool flag = true;

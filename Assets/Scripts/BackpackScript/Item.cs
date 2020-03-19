@@ -51,6 +51,7 @@ public class Item : MonoBehaviour
         } 
         else if (item.CompareTo("Board") == 0 && position.CompareTo("Background") == 0){
             // waterSeedGrow = true;
+            GameObject.Find("Background").GetComponent<TileMovement>().CheckDone();
         } 
         else if (item.CompareTo("Water Seed") == 0 && position.CompareTo("Dirt") == 0){
             waterSeedGrow = true;
