@@ -20,6 +20,7 @@ public class Item : MonoBehaviour
         itemOnPuzzle.Add("Life Water", "Water Seed");
         itemOnPuzzle.Add("Glowing Sun", "Water Sprout");
         itemOnPuzzle.Add("Taiji Key", "Water Boss Door");
+        itemOnPuzzle.Add("Board", "Background");
     }
 
     public static bool canPlace(string item, string position) {
@@ -47,6 +48,9 @@ public class Item : MonoBehaviour
             
             AIDataManager.UpdateStandardSpellCount("Dirt", 1);
             AIDataManager.UpdateStandardSpellCount("earth", 3);
+        } 
+        else if (item.CompareTo("Board") == 0 && position.CompareTo("Background") == 0){
+            // waterSeedGrow = true;
         } 
         else if (item.CompareTo("Water Seed") == 0 && position.CompareTo("Dirt") == 0){
             waterSeedGrow = true;
