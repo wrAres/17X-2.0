@@ -17,6 +17,10 @@ public class sceneTransition : MonoBehaviour
 
 	void OnTriggerEnter(Collider other){
 
+		if (scene.CompareTo("scene0") == 0) {
+			GameObject.Find("MainUI").GetComponent<Show>().ShowSpelltreeIcon();
+		}
+
 		if (this.gameObject.name.CompareTo("法阵-scene3") == 0 && DontDestroyVariables.enterWaterRoom) {
 			print("scene 3 directly");
 			scene = "scene3";

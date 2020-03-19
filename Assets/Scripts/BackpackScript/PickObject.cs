@@ -25,6 +25,9 @@ public class PickObject : MonoBehaviour
                     GameObject clickObject = hitInfo.collider.gameObject;
                     print(clickObject.name);
                     if (clickObject.tag.CompareTo("Pickable") == 0){
+                        if (clickObject.name == "Earth Key") {
+                            GameObject.Find("MainUI").GetComponent<Show>().ShowBackpackIcon();
+                        }
                         Backpack.backpack.GetComponent<Backpack>().AddItem(clickObject.name);
                         Sprite item = clickObject.GetComponent<SpriteRenderer>().sprite;
                         GameObject.Find("MainUI").GetComponent<FlyingSpell>().FlyTowardsIcon(item, false);
