@@ -51,7 +51,16 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
                     GameObject imageObj = new GameObject(itemOnGround.name);
                     SpriteRenderer image = imageObj.AddComponent<SpriteRenderer>(); //Add the Image Component script
                     image.sprite = Resources.Load<Sprite>(itemOnGround.name); //Set the Sprite of the Image Component on the new GameObject
-                    imageObj.transform.position = hitInfo.point + new Vector3(0.0f, 0.1f, 0);
+                    Vector3 newPosition = new Vector3 (0f, 0f, 0f);
+                    if (itemOnGround.name.CompareTo("Water Seed") != 0) {
+                        imageObj.transform.position = hitInfo.point + new Vector3(0.0f, 0.1f, 0);
+                        newPosition = imageObj.transform.position + new Vector3(0.0f, 0.1f, 0);
+                        print("water seed should not be here");
+                    }
+                    else {
+                        newPosition = GameObject.Find("Flowerpot").transform.position + new Vector3(0f, 0.8f, 0f);
+                        print("Water Seed special position");
+                    }
                     // imageObj.transform.position = hitInfo.point;
                     imageObj.transform.localScale = new Vector3(0.03f, 0.04f, 0.04f);
                     Vector3 temp = imageObj.transform.rotation.eulerAngles;
@@ -61,8 +70,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
                     imageObj.tag = "SpellObject";
                     // Backpack.backpack.GetComponent<Backpack>().RemoveItem(itemOnGround.name);
                     // Destroy(itemOnGround);
-                    Item.puzzleEffect(imageObj.name, dragOnObject.name,
-                        imageObj.transform.position + new Vector3(0.0f, 0.1f, 0));
+                    Item.puzzleEffect(imageObj.name, dragOnObject.name, newPosition);
                 } else {
                     AIDataManager.wrongItemPlacementCount += 1;
                     print("wrong drop: " + AIDataManager.wrongItemPlacementCount);

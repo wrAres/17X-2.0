@@ -21,7 +21,6 @@ public class Backpack : MonoBehaviour
         length = 0;
         // this.AddItem("Dirt");
         // this.AddItem("Life Water");
-        this.AddItem("Taiji Key");
         // this.AddItem("Glowing Sun");
         this.Show(false);
     }
@@ -67,7 +66,7 @@ public class Backpack : MonoBehaviour
         } else if (name.CompareTo("Dirt") == 0) {
             item_transform.anchoredPosition = item_transform.anchoredPosition + new Vector2(0, 5);
             item_transform.sizeDelta = new Vector2(45, 40);
-        } else if (name.CompareTo("Taiji Key") == 0) {
+        } else if (name.CompareTo("Taiji Key") == 0 || name.CompareTo("Earth Key") == 0) {
             item_transform.sizeDelta = new Vector2(180, 120);
         } else {
             item_transform.sizeDelta = new Vector2(50, 50);

@@ -9,6 +9,7 @@ TagManager:
   - Pickable
   - BackpackIcon
   - Item
+  - SpellObject
   layers:
   - Default
   - TransparentFX
