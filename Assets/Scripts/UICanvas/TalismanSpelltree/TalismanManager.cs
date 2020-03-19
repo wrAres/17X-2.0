@@ -58,15 +58,24 @@ public class TalismanManager : MonoBehaviour {
     // Display the list of currently usable elements
     private void DisplaySpellList() {
         int curPos = 0;
+        int curPos2 = 5;
         for (int i = 0; i < elements.Length; i++) {
             TalisDrag ele = elements[i].GetComponent<TalisDrag>();
             // Show element if it's unlocked
             if (!ele.locked && !ele.known) {
                 elements[i].SetActive(true);
-                elements[i].GetComponent<RectTransform>().localPosition =
-                    elePos[curPos];
-                elements[i].GetComponent<TalisDrag>().UpdateOrigin(elePos[curPos]);
-                curPos += 1;
+                if (ele.isLevelTwo()) {
+                    elements[i].GetComponent<RectTransform>().localPosition =
+                        elePos[curPos2];
+                    elements[i].GetComponent<TalisDrag>().UpdateOrigin(elePos[curPos2]);
+                    curPos2 += 1;
+                }
+                else {
+                    elements[i].GetComponent<RectTransform>().localPosition =
+                        elePos[curPos];
+                    elements[i].GetComponent<TalisDrag>().UpdateOrigin(elePos[curPos]);
+                    curPos += 1;
+                }
             }
             else {
                 elements[i].SetActive(false);

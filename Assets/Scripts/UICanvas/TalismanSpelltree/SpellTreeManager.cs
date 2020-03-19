@@ -45,7 +45,7 @@ public class SpellTreeManager : MonoBehaviour {
         */
 
         if (Input.GetKeyDown(KeyCode.Q)) {
-            UnlockElement(TalisDrag.Elements.WATER);
+            UnlockElement(TalisDrag.Elements.WIND);
         }
     }
 
