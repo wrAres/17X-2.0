@@ -56,6 +56,7 @@ public class AIDataManager : MonoBehaviour
         spellAccessStandardCount.Add("wood", 0);
         spellAccessStandardCount.Add("earth", 0);
         spellAccessStandardCount.Add("metal", 0);
+        spellAccessStandardCount.Add("Boom", 0);
         spellAccessStandardCount.Add("", 0);
     }
 
