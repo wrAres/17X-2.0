@@ -10,6 +10,7 @@ public class Show : MonoBehaviour
 {
     public GameObject spellTreeDisp;
     private TalismanManager talisDisp;
+    private bool earthUnlocked;
 
     GraphicRaycaster raycaster;
     PointerEventData pointerData;
@@ -102,7 +103,8 @@ public class Show : MonoBehaviour
     public void ShowSpelltreeIcon() { GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled = true; }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-        if (scene.name == "scene0") {
+        if (scene.name == "scene0" && !earthUnlocked) {
+            earthUnlocked = true;
             GetComponent<SpellTreeManager>().UnlockElement(TalisDrag.Elements.EARTH);
         }
     }
