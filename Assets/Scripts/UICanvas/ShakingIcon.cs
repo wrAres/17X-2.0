@@ -7,15 +7,17 @@ public class ShakingIcon : MonoBehaviour
     private bool shaking = false;
     [SerializeField]
     private float shakeAmt;
+    private Vector3 originalPos;
     // Update is called once per frame
     void Start() {
         shakeAmt = 400;
+        originalPos = transform.position;
     }
     void Update () {
         if (shaking) {
             // RectTransform item_transform = this.GetComponent<RectTransform>();
             // print("haha" + Time.deltaTime);
-            Vector3 newPos = Random.insideUnitSphere * (Time.deltaTime * shakeAmt) + transform.position;
+            Vector3 newPos = Random.insideUnitSphere * (Time.deltaTime * shakeAmt) + originalPos;
             
             newPos.z = transform.position.z;
             // print("newPos" + newPos);
@@ -29,8 +31,6 @@ public class ShakingIcon : MonoBehaviour
     }
 
     IEnumerator ShakeNow() {
-        Vector3 originalPos = transform.position;
-
         if (shaking == false) {
             shaking = true;
         }

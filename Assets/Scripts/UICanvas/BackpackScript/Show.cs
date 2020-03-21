@@ -13,6 +13,8 @@ public class Show : MonoBehaviour
     private bool earthUnlocked;
     private int closedFirstTimeFlag = 0; // Used to mark when to pop up talisman description text
     public bool clickedObject = false;
+    private bool brightBackpack = false;
+    private bool brightSpell = false;
 
     GraphicRaycaster raycaster;
     PointerEventData pointerData;
@@ -63,6 +65,10 @@ public class Show : MonoBehaviour
                 // Debug.Log("Hit " + result.gameObject.tag);
 
                 if (result.gameObject.tag.CompareTo("BackpackIcon") == 0) {
+                    if (brightBackpack) {
+                        GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
+                        brightBackpack = false;
+                    }
                     if (Backpack.backpack.activeSelf) {
                         Backpack.backpack.GetComponent<Backpack>().Show(false);
                     }
@@ -82,6 +88,10 @@ public class Show : MonoBehaviour
                     }
                 }
                 else if (result.gameObject.tag.CompareTo("SpellTreeIcon") == 0) {
+                    if (brightSpell) {
+                        GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
+                        brightSpell = false;
+                    }
                     spellTreeDisp.SetActive(!spellTreeDisp.activeSelf);
              
                     closedFirstTimeFlag++;
@@ -117,9 +127,12 @@ public class Show : MonoBehaviour
     public void ShowBackpackIcon() { 
         GameObject.FindGameObjectWithTag("BackpackIcon").GetComponent<Image>().enabled = true; 
         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().ShineBackpack();
+        brightBackpack = true;
     }
     public void ShowSpelltreeIcon() { 
         GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled = true; 
+        GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().ShineSpellIcon();
+        brightSpell = true;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {

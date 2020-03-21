@@ -6406,7 +6406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b53b478cd2e0a4b46abbf81ec05340db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeAmt: 0
+  shakeAmt: 1
 --- !u!114 &2024886684
 MonoBehaviour:
   m_ObjectHideFlags: 0
