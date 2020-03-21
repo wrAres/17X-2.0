@@ -42,6 +42,8 @@ public class TalismanManager : MonoBehaviour {
             recipeBook = GetComponent<SpellTreeManager>().GetSpellBook();
             display.SetActive(true);
             dispManager.CloseDisplays();
+            // Close any text box that is open
+            TipsDialog.HideTextBox();
             DisplaySpellList();
             curTime = timer;
         }

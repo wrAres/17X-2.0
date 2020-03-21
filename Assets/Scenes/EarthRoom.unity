@@ -654,6 +654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellTreeDisp: {fileID: 318233568}
+  clickedObject: 0
 --- !u!114 &103709453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3545,6 +3546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baeccc97c002842308c3216c75c6ceee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogShow: 0
 --- !u!65 &1027881863
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4048,6 +4050,8 @@ MonoBehaviour:
   backpackDescription: Backpack Description here
   spelltreeDescription: Spelltree Description here
   talismanBuildingDescription: Talisman Description here
+  walkingPuzzleDescription: Walking Puzzle Description here
+  breakMirrorDescription: Break Mirror Description here
 --- !u!114 &1116509721
 MonoBehaviour:
   m_ObjectHideFlags: 0
