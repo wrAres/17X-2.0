@@ -4232,6 +4232,8 @@ MonoBehaviour:
   backpackDescription: Backpack Description here
   spelltreeDescription: Spelltree Description here
   talismanBuildingDescription: Talisman Description here
+  walkingPuzzleDescription: Walking Puzzle Description here
+  breakMirrorDescription: Break Mirror Description here
 --- !u!114 &1116509721
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,6 +9,9 @@ public class PickObject : MonoBehaviour
 
     public bool dialogShow = false;
 
+    private bool firstTimeLobbyFlag = false; // Used to tell if its the first time visiting the lobby scene
+    private bool firstTimeWaterFlag = false; // Used to tell if its the first time visiting the water scene
+
     private void Start() {
         // This would cast rays only against colliders in layer 8.
         // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
@@ -17,8 +20,16 @@ public class PickObject : MonoBehaviour
 
         // Check to see if current scene is the lobby if so show spell tree description
         // "Scene 0" name might eb changed later
-        if (SceneManager.GetActiveScene().name == "scene0")
+        if (SceneManager.GetActiveScene().name == "scene0" && firstTimeLobbyFlag == false)
+        {
             TipsDialog.PrintDialog("Spelltree");
+            firstTimeLobbyFlag = true;
+        }
+        if (SceneManager.GetActiveScene().name == "scene3" && firstTimeWaterFlag == false)
+        {
+            TipsDialog.PrintDialog("Walking Puzzle");
+            firstTimeWaterFlag = true;
+        }
     }
 
     // Update is called once per frame

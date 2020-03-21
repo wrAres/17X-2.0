@@ -13,6 +13,8 @@ public class TipsDialog : MonoBehaviour
     public string backpackDescription;
     public string spelltreeDescription;
     public string talismanBuildingDescription;
+    public string walkingPuzzleDescription;
+    public string breakMirrorDescription;
 
     void Start() {
         dialog = GameObject.Find("Dialog Box");
@@ -23,6 +25,8 @@ public class TipsDialog : MonoBehaviour
         dialogList.Add("Earth Key", backpackDescription);
         dialogList.Add("Spelltree", spelltreeDescription);
         dialogList.Add("Talisman", talismanBuildingDescription);
+        dialogList.Add("Walking Puzzle", walkingPuzzleDescription);
+        dialogList.Add("Break mirror", breakMirrorDescription);
         dialog.SetActive(false);
     }
 
