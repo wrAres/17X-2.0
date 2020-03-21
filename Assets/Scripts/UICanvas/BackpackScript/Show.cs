@@ -114,8 +114,13 @@ public class Show : MonoBehaviour
         spellTreeDisp.SetActive(false);
     }
 
-    public void ShowBackpackIcon() { GameObject.FindGameObjectWithTag("BackpackIcon").GetComponent<Image>().enabled = true; }
-    public void ShowSpelltreeIcon() { GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled = true; }
+    public void ShowBackpackIcon() { 
+        GameObject.FindGameObjectWithTag("BackpackIcon").GetComponent<Image>().enabled = true; 
+        GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().ShineBackpack();
+    }
+    public void ShowSpelltreeIcon() { 
+        GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled = true; 
+    }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
         if (scene.name == "scene0" && !earthUnlocked) {
