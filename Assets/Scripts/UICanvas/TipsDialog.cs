@@ -16,6 +16,14 @@ public class TipsDialog : MonoBehaviour
     public string walkingPuzzleDescription;
     public string breakMirrorDescription;
 
+    /* Where to find what keys are being called:
+     * Keys: River, Earth Key - Called in CanvasUI\BackpackScript\PickObject, line 57
+     *  Note: ^ These keys use OBJECT names ^
+     * Key: Spelltree       - Called in UICanvas\BackpackScript\PickObject, line 25
+     * Key: Talisman        - Called in UICanvas\BackpackScript\Show, line 108
+     * Key: Walking Puzzle  - Called in UICanvas\BackpackScript\PickObject, line 30
+     * Key: Break mirror    - Called in UICanvas\BackpackScript\flowerInMirror, line 49
+     */
     void Start() {
         dialog = GameObject.Find("Dialog Box");
         dialogText = GameObject.Find("Dialog Text").GetComponent<Text>();
