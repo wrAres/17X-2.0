@@ -26,7 +26,7 @@ public class flowerInMirror : MonoBehaviour
     void Update()
     {
         timer++;
-		if(isCracked = true && temp+100==timer){
+		if(isCracked = true && temp+50==timer){
 				this.gameObject.GetComponent<SpriteRenderer>().sprite = def;
 				isCracked = false;
 				mirror.GetComponent<mirrors>().reset();
