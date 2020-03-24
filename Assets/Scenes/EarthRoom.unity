@@ -3255,7 +3255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   element: 4
-  locked: 1
+  locked: 0
   known: 0
   talisman: {fileID: 1289178241}
   dispManager: {fileID: 103709456}
@@ -4454,7 +4454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellTreeDisp: {fileID: 103709450}
-  curState: 0
+  curState: 2
   spellName: Earth
   recipe: 
   level: 1
@@ -4979,7 +4979,6 @@ MonoBehaviour:
   isReverse: 1
   ani: {fileID: 1550972248}
   system: {fileID: 0}
-  status: 0
 --- !u!54 &1550972251
 Rigidbody:
   m_ObjectHideFlags: 0
