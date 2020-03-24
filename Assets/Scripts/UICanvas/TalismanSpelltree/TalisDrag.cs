@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHandler {
+public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHandler, IPointerEnterHandler, IPointerExitHandler {
     public enum Elements { METAL, WOOD, WATER, FIRE, EARTH, THUNDER, SUN, WIND, MOON, NONE };
     public Elements element;
     public bool locked, known;
@@ -12,6 +12,14 @@ public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHand
 
     private Vector3 origin;
     private bool setTalis;
+
+    public void OnPointerEnter(PointerEventData eventData) {
+        dispManager.GetComponent<TalismanManager>().DispTextBox(true, element, eventData.position);
+    }
+
+    public void OnPointerExit(PointerEventData eventData) {
+        dispManager.GetComponent<TalismanManager>().DispTextBox(false, element, eventData.position);
+    }
 
     public bool isLevelTwo() {
         return element == Elements.THUNDER || element == Elements.SUN ||

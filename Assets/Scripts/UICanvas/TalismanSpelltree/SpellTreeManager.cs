@@ -123,6 +123,8 @@ public class SpellTreeManager : MonoBehaviour {
         }
     }
 
+    public void HideTextBox() { textBox.SetActive(false); }
+
     public void UnlockElement(TalisDrag.Elements e) {
         // Unlock the element
         for (int i = 0; i < spell.Count; i++) {

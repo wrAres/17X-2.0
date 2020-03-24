@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Spell : MonoBehaviour, IPointerEnterHandler {
+public class Spell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
     public SpellTreeManager spellTreeDisp;
 
     public enum SpellState { LOCKED, KNOWN, UNLOCKED };
@@ -23,7 +23,13 @@ public class Spell : MonoBehaviour, IPointerEnterHandler {
 
     public void OnPointerEnter(PointerEventData eventData) {
         spellTreeDisp.UpdateTextBox(this);
+        spellTreeDisp.textBox.transform.position = eventData.position;
     }
+
+    public void OnPointerExit(PointerEventData eventData) {
+        spellTreeDisp.HideTextBox();
+    }
+    
 
     // Start is called before the first frame update
     void Awake() {

@@ -30,6 +30,9 @@ public class TalismanManager : MonoBehaviour {
     public Backpack backpack;
     private Show dispManager;
 
+    public GameObject textbox;
+    public Text eleName;
+
     private void Awake() {
         dispManager = GetComponent<Show>();
         ResetCraft();
@@ -190,6 +193,12 @@ public class TalismanManager : MonoBehaviour {
         CloseDisplay();
         return false;
 
+    }
+
+    public void DispTextBox(bool display, TalisDrag.Elements e, Vector2 position) {
+        textbox.SetActive(display);
+        eleName.text = e.ToString();
+        textbox.transform.position = position;
     }
 
 }
