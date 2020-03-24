@@ -134,6 +134,9 @@ public class SpellTreeManager : MonoBehaviour {
                 UISoundScript.PlaySpellTreeIcon();
                 break;
             }
+            else if (spell[i].curState == Spell.SpellState.UNLOCKED) {
+                spell[i].SetOld();
+            }
         }
 
         // Make related recipes known if locked

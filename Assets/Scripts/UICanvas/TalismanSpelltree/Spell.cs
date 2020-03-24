@@ -17,9 +17,11 @@ public class Spell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
     public string knownDes, unlockedDes;
     public TalisDrag.Elements element;
     public Sprite locked;
+    public Image newDisp;
 
     private Sprite ogSprite;
     private Vector3 ogPos, ogScale;
+    private bool isNew = true;
 
     public void OnPointerEnter(PointerEventData eventData) {
         spellTreeDisp.UpdateTextBox(this);
@@ -57,5 +59,12 @@ public class Spell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
         }
 
         curState = s;
+    }
+
+    public void SetOld() { isNew = false; newDisp.enabled = false; }
+
+    private void OnEnable() {
+        if (curState == SpellState.LOCKED) newDisp.enabled = false;
+        else { newDisp.enabled = isNew; }
     }
 }

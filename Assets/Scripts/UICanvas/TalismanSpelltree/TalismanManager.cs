@@ -173,6 +173,7 @@ public class TalismanManager : MonoBehaviour {
                     GetComponent<FlyingSpell>().FlyTowardsIcon(recipeBook[i].GetComponent<Image>().sprite, false);
                     if (recipeBook[i].curState == Spell.SpellState.KNOWN) {
                         recipeBook[i].ChangeState(Spell.SpellState.UNLOCKED);
+                        recipeBook[i].SetOld();
                     }
                 }
                 else {
