@@ -2,13 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
-{   
+public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler, IPointerEnterHandler, IPointerExitHandler {   
     public static bool canPlaceItem = true;
     public static Vector3 previousPosition = new Vector3(0,0,0);
     public static GameObject itemOnGround;
     public static bool holdItem;
+
+    public GameObject textbox;
+    public Text itemName;
+
+    public void OnPointerEnter(PointerEventData eventData) {
+        // dispManager.GetComponent<TalismanManager>().DispTextBox(true, element, eventData.position);
+        textbox.SetActive(true);
+        itemName.text = gameObject.name.ToString();
+        textbox.transform.position = eventData.position;
+    }
+
+    public void OnPointerExit(PointerEventData eventData) {
+        // dispManager.GetComponent<TalismanManager>().DispTextBox(false, element, eventData.position);
+        textbox.SetActive(false);
+    }
 
     public void OnDrag(PointerEventData eventData){
         itemOnGround.transform.position = Input.mousePosition;
