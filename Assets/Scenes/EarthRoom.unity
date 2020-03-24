@@ -698,7 +698,7 @@ MonoBehaviour:
     by Qi of water elements. The drop are able to make anything re-alive.
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
-  newDisp: {fileID: 0}
+  newDisp: {fileID: 73757997}
 --- !u!222 &89794578
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1072,7 +1072,7 @@ MonoBehaviour:
   unlockedDes: The element of East and Spring. It represents everything that is growing.
   element: 1
   locked: {fileID: 21300000, guid: fe92c3c810d254103a410bf78228b667, type: 3}
-  newDisp: {fileID: 0}
+  newDisp: {fileID: 21082847}
 --- !u!222 &119415705
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1353,7 +1353,7 @@ MonoBehaviour:
   unlockedDes: It's said that moon is the most Yin element.
   element: 8
   locked: {fileID: 21300000, guid: fe92c3c810d254103a410bf78228b667, type: 3}
-  newDisp: {fileID: 0}
+  newDisp: {fileID: 559553344}
 --- !u!222 &187082863
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1719,7 +1719,7 @@ MonoBehaviour:
     as the real sun.
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
-  newDisp: {fileID: 0}
+  newDisp: {fileID: 967019057}
 --- !u!222 &373314527
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1943,7 +1943,7 @@ MonoBehaviour:
     two kinds of Qi. The board are able to change its pattern according to the environment.
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
-  newDisp: {fileID: 0}
+  newDisp: {fileID: 427736303}
 --- !u!222 &400256418
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3342,7 +3342,7 @@ MonoBehaviour:
     the Yin element of the five basic elements. Haobin Zhang has left the document."
   element: 2
   locked: {fileID: 21300000, guid: fe92c3c810d254103a410bf78228b667, type: 3}
-  newDisp: {fileID: 0}
+  newDisp: {fileID: 1472300318}
 --- !u!222 &655722352
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3706,7 +3706,7 @@ MonoBehaviour:
   unlockedDes: It's said that wind comes from wood in winter.
   element: 7
   locked: {fileID: 21300000, guid: fe92c3c810d254103a410bf78228b667, type: 3}
-  newDisp: {fileID: 0}
+  newDisp: {fileID: 1693061530}
 --- !u!222 &750374342
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4583,7 +4583,7 @@ MonoBehaviour:
   unlockedDes: The element of West and Fall. It represents everything that is gathering.
   element: 0
   locked: {fileID: 21300000, guid: fe92c3c810d254103a410bf78228b667, type: 3}
-  newDisp: {fileID: 0}
+  newDisp: {fileID: 429865435}
 --- !u!222 &931865565
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4966,7 +4966,7 @@ MonoBehaviour:
   unlockedDes: A gust of wind made by talismam. It comes from south-east.
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
-  newDisp: {fileID: 0}
+  newDisp: {fileID: 134729395}
 --- !u!222 &1017418308
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5184,7 +5184,7 @@ MonoBehaviour:
   unlockedDes: It's said that thunder comes from wood in summer.
   element: 5
   locked: {fileID: 21300000, guid: fe92c3c810d254103a410bf78228b667, type: 3}
-  newDisp: {fileID: 0}
+  newDisp: {fileID: 2077373001}
 --- !u!222 &1048459259
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5297,7 +5297,7 @@ MonoBehaviour:
     overflow of water elements from it. It seems like a key of something.
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
-  newDisp: {fileID: 0}
+  newDisp: {fileID: 242761891}
 --- !u!222 &1067286564
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6938,7 +6938,7 @@ MonoBehaviour:
     wind made by talismam. It comes from south-east.
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
-  newDisp: {fileID: 0}
+  newDisp: {fileID: 842061633}
 --- !u!222 &1642044152
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7481,7 +7481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellTreeDisp: {fileID: 103709450}
-  curState: 1
+  curState: 0
   spellName: Dirt
   recipe: 040000000400000004000000
   level: 3
@@ -7493,7 +7493,7 @@ MonoBehaviour:
     lives.
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
-  newDisp: {fileID: 0}
+  newDisp: {fileID: 565152740}
 --- !u!222 &1743046751
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8328,7 +8328,7 @@ MonoBehaviour:
   unlockedDes: It's said that sun is the most Yang element.
   element: 6
   locked: {fileID: 21300000, guid: fe92c3c810d254103a410bf78228b667, type: 3}
-  newDisp: {fileID: 0}
+  newDisp: {fileID: 709762840}
 --- !u!222 &2069793575
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8707,7 +8707,7 @@ MonoBehaviour:
     destroyed, the Yang element of the five basic elements.
   element: 3
   locked: {fileID: 21300000, guid: fe92c3c810d254103a410bf78228b667, type: 3}
-  newDisp: {fileID: 0}
+  newDisp: {fileID: 1736121646}
 --- !u!222 &2098840987
 CanvasRenderer:
   m_ObjectHideFlags: 0
