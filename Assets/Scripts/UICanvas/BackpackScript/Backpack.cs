@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Backpack : MonoBehaviour
 {
     // private LinkedList<Item> listOfItems;
-    private LinkedList<GameObject> imageObjects;
+    private GameObject[] imageObjects;
     private int length;
     public static GameObject backpack;
     public static GameObject canvas;
@@ -17,7 +17,7 @@ public class Backpack : MonoBehaviour
         backpack = GameObject.FindWithTag("Backpack");
         canvas = GameObject.Find("MainUI");
         // listOfItems = new LinkedList<Item>();
-        imageObjects = new LinkedList<GameObject>();
+        imageObjects = new GameObject[9];
         length = 0;
         // this.AddItem("Dirt");
         // this.AddItem("Taiji Key");
@@ -35,20 +35,17 @@ public class Backpack : MonoBehaviour
     }
 
     public void AddItem(string name) {
-        LinkedList<GameObject>.Enumerator em = imageObjects.GetEnumerator(); 
-        while (em.MoveNext()) {
-            GameObject currObj = em.Current;
+        for (int i = 0; i < length; i++) {
+            GameObject currObj = imageObjects[i];
             if (currObj.name.CompareTo(name) == 0) {
                 return ;
             }
         }
-        length++;
-        // listOfItems.AddLast(item);
 
-        // string name = item.GetName();
         GameObject imageObj = new GameObject(name); //Create the GameObject
         
-        imageObjects.AddLast(imageObj);
+        imageObjects[length] = imageObj;
+        length++;
 
         RawImage image = imageObj.AddComponent<RawImage>(); //Add the Image Component script
         ItemDragHandler handler = imageObj.AddComponent<ItemDragHandler>(); //Add item-drag component
@@ -77,26 +74,28 @@ public class Backpack : MonoBehaviour
     }
 
     public void RemoveItem(string name) {
-        length--;
-        GameObject itemObject = GameObject.Find(name);
-        imageObjects.Remove(itemObject);
-        Destroy(itemObject);
+        int removeIndex = 0;
+        GameObject itemObject = null;
+        for (int i = 0; i < length; i++) {
+            if (name.CompareTo(imageObjects[i].name) == 0) {
+                removeIndex = i;
+                itemObject = imageObjects[i];
+                break;
+            }
+        }
+        for (int i = removeIndex; i < length; i++) {
+            imageObjects[i] = imageObjects[i+1];
+        }
 
-        // LinkedList<Item>.Enumerator em = listOfItems.GetEnumerator(); 
-        // while (em.MoveNext()) {
-        //     Item currItem = em.Current;
-        //     if (currItem.GetName().CompareTo(name) == 0) {
-        //         listOfItems.Remove(currItem);
-        //     }
-        // }
+        length--;
+        Destroy(itemObject);
 
     }
 
     public void Show(bool isShow) {
         backpack.SetActive(isShow);
-        LinkedList<GameObject>.Enumerator em = imageObjects.GetEnumerator(); 
-        while (em.MoveNext()) {
-            GameObject currObj = em.Current;
+        for (int i = 0; i < length; i++) {
+            GameObject currObj = imageObjects[i];
             currObj.SetActive(isShow);
         }
     }

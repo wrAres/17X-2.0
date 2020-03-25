@@ -138,7 +138,6 @@ public class Show : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
         if (scene.name == "scene0" && !earthUnlocked) {
             earthUnlocked = true;
-            ShowSpelltreeIcon();
             GetComponent<SpellTreeManager>().UnlockElement(TalisDrag.Elements.EARTH);
         }
     }
