@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Spell : MonoBehaviour, IPointerEnterHandler {
+public class Spell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
     public SpellTreeManager spellTreeDisp;
 
     public enum SpellState { LOCKED, KNOWN, UNLOCKED };
@@ -17,13 +17,21 @@ public class Spell : MonoBehaviour, IPointerEnterHandler {
     public string knownDes, unlockedDes;
     public TalisDrag.Elements element;
     public Sprite locked;
+    public Image newDisp;
 
     private Sprite ogSprite;
     private Vector3 ogPos, ogScale;
+    private bool isNew = true;
 
     public void OnPointerEnter(PointerEventData eventData) {
         spellTreeDisp.UpdateTextBox(this);
+        spellTreeDisp.textBox.transform.position = eventData.position;
     }
+
+    public void OnPointerExit(PointerEventData eventData) {
+        spellTreeDisp.HideTextBox();
+    }
+    
 
     // Start is called before the first frame update
     void Awake() {
@@ -51,5 +59,12 @@ public class Spell : MonoBehaviour, IPointerEnterHandler {
         }
 
         curState = s;
+    }
+
+    public void SetOld() { isNew = false; newDisp.enabled = false; }
+
+    private void OnEnable() {
+        if (curState == SpellState.LOCKED) newDisp.enabled = false;
+        else { newDisp.enabled = isNew; }
     }
 }

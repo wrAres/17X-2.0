@@ -123,6 +123,8 @@ public class SpellTreeManager : MonoBehaviour {
         }
     }
 
+    public void HideTextBox() { textBox.SetActive(false); }
+
     public void UnlockElement(TalisDrag.Elements e) {
         // Unlock the element
         for (int i = 0; i < spell.Count; i++) {
@@ -131,6 +133,9 @@ public class SpellTreeManager : MonoBehaviour {
                 GetComponent<FlyingSpell>().FlyTowardsIcon(spell[i].GetComponent<Image>().sprite, true);
                 UISoundScript.PlaySpellTreeIcon();
                 break;
+            }
+            else if (spell[i].curState == Spell.SpellState.UNLOCKED) {
+                spell[i].SetOld();
             }
         }
 

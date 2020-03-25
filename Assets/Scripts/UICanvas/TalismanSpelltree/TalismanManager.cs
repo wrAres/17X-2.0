@@ -30,6 +30,9 @@ public class TalismanManager : MonoBehaviour {
     public Backpack backpack;
     private Show dispManager;
 
+    public GameObject textbox;
+    public Text eleName;
+
     private void Awake() {
         dispManager = GetComponent<Show>();
         ResetCraft();
@@ -170,6 +173,7 @@ public class TalismanManager : MonoBehaviour {
                     GetComponent<FlyingSpell>().FlyTowardsIcon(recipeBook[i].GetComponent<Image>().sprite, false);
                     if (recipeBook[i].curState == Spell.SpellState.KNOWN) {
                         recipeBook[i].ChangeState(Spell.SpellState.UNLOCKED);
+                        recipeBook[i].SetOld();
                     }
                 }
                 else {
@@ -190,6 +194,12 @@ public class TalismanManager : MonoBehaviour {
         CloseDisplay();
         return false;
 
+    }
+
+    public void DispTextBox(bool display, TalisDrag.Elements e, Vector2 position) {
+        textbox.SetActive(display);
+        eleName.text = e.ToString();
+        textbox.transform.position = position;
     }
 
 }

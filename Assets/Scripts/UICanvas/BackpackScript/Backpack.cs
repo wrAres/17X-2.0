@@ -11,6 +11,9 @@ public class Backpack : MonoBehaviour
     public static GameObject backpack;
     public static GameObject canvas;
 
+    public GameObject textbox;
+    public Text itemName;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +52,8 @@ public class Backpack : MonoBehaviour
 
         RawImage image = imageObj.AddComponent<RawImage>(); //Add the Image Component script
         ItemDragHandler handler = imageObj.AddComponent<ItemDragHandler>(); //Add item-drag component
+        imageObj.GetComponent<ItemDragHandler>().textbox = textbox;
+        imageObj.GetComponent<ItemDragHandler>().itemName = itemName;
 
         image.texture = Resources.Load<Texture2D>(name); //Set the Sprite of the Image Component on the new GameObject
         imageObj.tag = "Item";
