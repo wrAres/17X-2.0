@@ -5512,7 +5512,7 @@ MonoBehaviour:
   waterGateDiscription: Water Gate
   riverDiscription: River
   backpackDescription: Backpack Description here
-  spelltreeDescription: Spelltree Description here
+  lobbyDescription: 'Wow! An Eight-Trigram-Atlas! '
   talismanNoticeDescription: "\u2026 I \u2026 I just felt like some of my memories
     have come back."
   talismanBuildingDescription: 'What? There are two dragons entwined on my scrolls. '

@@ -14,7 +14,8 @@ public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHand
     private bool setTalis;
 
     public void OnPointerEnter(PointerEventData eventData) {
-        dispManager.GetComponent<TalismanManager>().DispTextBox(true, element, eventData.position);
+        // print("event data: " + eventData.position);
+        dispManager.GetComponent<TalismanManager>().DispTextBox(true, element, this.gameObject.GetComponent<RectTransform>().anchoredPosition + new Vector2(820f, 350f));
     }
 
     public void OnPointerExit(PointerEventData eventData) {

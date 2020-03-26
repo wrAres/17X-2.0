@@ -22,7 +22,7 @@ public class PickObject : MonoBehaviour
         // "Scene 0" name might eb changed later
         if (SceneManager.GetActiveScene().name == "scene0" && firstTimeLobbyFlag == false)
         {
-            TipsDialog.PrintDialog("Spelltree");
+            TipsDialog.PrintDialog("Lobby");
             firstTimeLobbyFlag = true;
         }
         if (SceneManager.GetActiveScene().name == "scene3" && firstTimeWaterFlag == false)

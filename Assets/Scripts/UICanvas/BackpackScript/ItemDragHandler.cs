@@ -17,7 +17,8 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
         // dispManager.GetComponent<TalismanManager>().DispTextBox(true, element, eventData.position);
         textbox.SetActive(true);
         itemName.text = gameObject.name.ToString();
-        textbox.transform.position = eventData.position;
+        // print("event data: " + eventData.position);
+        textbox.transform.position = this.gameObject.GetComponent<RectTransform>().anchoredPosition + new Vector2(800f, 400f);
     }
 
     public void OnPointerExit(PointerEventData eventData) {
@@ -27,6 +28,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
 
     public void OnDrag(PointerEventData eventData){
         itemOnGround.transform.position = Input.mousePosition;
+        textbox.SetActive(false);
     }
 
     public void OnEndDrag(PointerEventData eventData){
