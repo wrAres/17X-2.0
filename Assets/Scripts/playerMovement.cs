@@ -11,7 +11,7 @@ public class playerMovement : MonoBehaviour
 	public SystemTree system;
 	private bool findFloor;
 	public int status;
-
+	public int freeze;
 	private bool isWaterScene =>
         SceneManager.GetActiveScene().name == "scene3";
 
@@ -21,6 +21,7 @@ public class playerMovement : MonoBehaviour
 		system = GameObject.Find("TrigramManager").GetComponent<SystemTree>();
 		findFloor = false;
 		status = 0;
+		//freeze = 1;
     }
 
     // Update is called once per frame
@@ -40,23 +41,24 @@ public class playerMovement : MonoBehaviour
 		
 		ani.SetFloat("Speed", GetComponent<Rigidbody>().velocity.z);
 		ani.SetFloat("status",status);
-		if(Input.GetKey("w")){
-			GetComponent<Rigidbody>().velocity = new Vector3(0,0,3*isReverse);
+		
+		if(Input.GetKey("w") ){
+			GetComponent<Rigidbody>().velocity = new Vector3(0,0,3*isReverse*freeze);
 			if(isWaterScene) WaterSoundManagerScript.PlaySound();
 			status = -1*isReverse;
 		}
 		else if(Input.GetKey("s")){
-			GetComponent<Rigidbody>().velocity = new Vector3(0,0,-3*isReverse);
+			GetComponent<Rigidbody>().velocity = new Vector3(0,0,-3*isReverse*freeze);
 			if (isWaterScene) WaterSoundManagerScript.PlaySound();
 			status = 1*isReverse;
 		}
-        else if(Input.GetKey("a")){
-			GetComponent<Rigidbody>().velocity = new Vector3(-3*isReverse,0,0);
+        else if(Input.GetKey("a") ){
+			GetComponent<Rigidbody>().velocity = new Vector3(-3*isReverse*freeze,0,0);
 			if (isWaterScene) WaterSoundManagerScript.PlaySound();
 			status = 2*isReverse;
 		}
 		else if(Input.GetKey("d")){
-			GetComponent<Rigidbody>().velocity = new Vector3(3*isReverse,0,0);
+			GetComponent<Rigidbody>().velocity = new Vector3(3*isReverse*freeze,0,0);
 			if (isWaterScene) WaterSoundManagerScript.PlaySound();
 			status = -2*isReverse;
 		}

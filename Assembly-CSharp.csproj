@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\LeaveIconBright.cs" />
+    <Compile Include="Assets\MirrorDoor.cs" />
     <Compile Include="Assets\Scripts\AI\AIDataManager.cs" />
     <Compile Include="Assets\Scripts\AI\BT\ActionNode.cs" />
     <Compile Include="Assets\Scripts\AI\BT\CheckNode.cs" />
