@@ -25,7 +25,15 @@ public class Spell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
     public void OnPointerEnter(PointerEventData eventData) {
         spellTreeDisp.UpdateTextBox(this);
-        spellTreeDisp.textBox.transform.position = this.gameObject.transform.parent.GetComponent<RectTransform>().anchoredPosition + new Vector2(850f, 350f);
+        Vector2 thisPosition = this.gameObject.transform.parent.GetComponent<RectTransform>().anchoredPosition;
+        print("position: " + thisPosition);
+        if (thisPosition.y < -120) {
+            spellTreeDisp.textBox.transform.position = thisPosition + new Vector2(900f, 500f);
+        } else if (thisPosition.x > 300) {
+            spellTreeDisp.textBox.transform.position = thisPosition + new Vector2(700f, 240f);
+        } else {
+            spellTreeDisp.textBox.transform.position = thisPosition + new Vector2(900f, 240f);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData) {
