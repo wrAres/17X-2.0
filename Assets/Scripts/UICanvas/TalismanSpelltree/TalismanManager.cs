@@ -33,6 +33,8 @@ public class TalismanManager : MonoBehaviour {
     public GameObject textbox;
     public Text eleName;
 
+    private bool firstAccess = true;
+
     private void Awake() {
         dispManager = GetComponent<Show>();
         ResetCraft();
@@ -42,11 +44,19 @@ public class TalismanManager : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (Input.GetKeyDown("space") && !display.activeSelf) {
+            if (firstAccess) {
+                // print("1st acess talisman");
+                firstAccess = false;
+                this.gameObject.transform.SetSiblingIndex(2);
+                TipsDialog.PrintDialog("Talisman 2");
+            } else {
+                // Close any text box that is open
+                TipsDialog.HideTextBox();
+            }
             recipeBook = GetComponent<SpellTreeManager>().GetSpellBook();
             display.SetActive(true);
             dispManager.CloseDisplays();
-            // Close any text box that is open
-            TipsDialog.HideTextBox();
+
             DisplaySpellList();
             curTime = timer;
         }

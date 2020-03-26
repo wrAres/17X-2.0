@@ -21,7 +21,7 @@ public class playerMovement : MonoBehaviour
 		system = GameObject.Find("TrigramManager").GetComponent<SystemTree>();
 		findFloor = false;
 		status = 0;
-		//freeze = 1;
+		freeze = 1;
     }
 
     // Update is called once per frame

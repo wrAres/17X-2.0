@@ -90,12 +90,14 @@ public class Show : MonoBehaviour
                 else if (result.gameObject.tag.CompareTo("SpellTreeIcon") == 0) {
                     if (brightSpell) {
                         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
+                        TipsDialog.PrintDialog("Spell Tree 2");
                         brightSpell = false;
                     }
                     spellTreeDisp.SetActive(!spellTreeDisp.activeSelf);
              
-                    closedFirstTimeFlag++;
-                    print(closedFirstTimeFlag);
+                    // closedFirstTimeFlag++;
+                    // print(closedFirstTimeFlag);
+
                     // Close other canvas
                     talisDisp.CloseDisplay();
                     Backpack.backpack.GetComponent<Backpack>().Show(false);
@@ -103,16 +105,16 @@ public class Show : MonoBehaviour
             }
         }
         // Show talisman building description after closing the spell tree
-        if (closedFirstTimeFlag == 2)
-        {
-            TipsDialog.PrintDialog("Talisman");
-            clickedObject = true;
-            closedFirstTimeFlag = 3;
-        }
-        else
-        {
-            clickedObject = false;
-        }
+        // if (closedFirstTimeFlag == 2)
+        // {
+        //     TipsDialog.PrintDialog("Talisman");
+        //     clickedObject = true;
+        //     closedFirstTimeFlag = 3;
+        // }
+        // else
+        // {
+        //     clickedObject = false;
+        // }
     }
 
     private void PrintName(GameObject obj) {

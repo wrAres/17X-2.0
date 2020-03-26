@@ -12,17 +12,20 @@ public class TipsDialog : MonoBehaviour
     public string riverDiscription;
     public string backpackDescription;
     public string spelltreeDescription;
+    public string talismanNoticeDescription;
     public string talismanBuildingDescription;
     public string walkingPuzzleDescription;
     public string breakMirrorDescription;
+    public string spellTree1description;
+    public string spellTree2description;
 
     /* Where to find what keys are being called:
      * Keys: River, Earth Key - Called in CanvasUI\BackpackScript\PickObject, line 57
      *  Note: ^ These keys use OBJECT names ^
      * Key: Spelltree       - Called in UICanvas\BackpackScript\PickObject, line 25
-     * Key: Talisman        - Called in UICanvas\BackpackScript\Show, line 108
      * Key: Walking Puzzle  - Called in UICanvas\BackpackScript\PickObject, line 30
      * Key: Break mirror    - Called in UICanvas\BackpackScript\flowerInMirror, line 49
+     * key: click object    - in UICanvas\BackpackScript\PickObject, dialogShow
      */
     void Start() {
         dialog = GameObject.Find("Dialog Box");
@@ -32,9 +35,12 @@ public class TipsDialog : MonoBehaviour
         dialogList.Add("River", riverDiscription);
         dialogList.Add("Earth Key", backpackDescription);
         dialogList.Add("Spelltree", spelltreeDescription);
-        dialogList.Add("Talisman", talismanBuildingDescription);
+        dialogList.Add("Talisman 1", talismanNoticeDescription);
+        dialogList.Add("Talisman 2", talismanBuildingDescription);
         dialogList.Add("Walking Puzzle", walkingPuzzleDescription);
         dialogList.Add("Break mirror", breakMirrorDescription);
+        dialogList.Add("Spell Tree 1", spellTree1description);
+        dialogList.Add("Spell Tree 2", spellTree2description);
         dialog.SetActive(false);
     }
 

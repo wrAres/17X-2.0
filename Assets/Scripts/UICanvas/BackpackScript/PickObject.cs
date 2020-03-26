@@ -58,9 +58,11 @@ public class PickObject : MonoBehaviour
                         dialogShow = true;
                     }
                 }
-            } else if (GameObject.Find("MainUI").GetComponent<Show>().clickedObject) {
-                dialogShow = true;
-            } else {
+            } 
+            // else if (GameObject.Find("MainUI").GetComponent<Show>().clickedObject) {
+            //     dialogShow = true;
+            // }
+            else {
                 TipsDialog.HideTextBox();
                 print("setting dialogshow to false in pickObject");
                 dialogShow = false;

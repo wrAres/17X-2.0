@@ -5513,9 +5513,13 @@ MonoBehaviour:
   riverDiscription: River
   backpackDescription: Backpack Description here
   spelltreeDescription: Spelltree Description here
-  talismanBuildingDescription: Talisman Description here
+  talismanNoticeDescription: "\u2026 I \u2026 I just felt like some of my memories
+    have come back."
+  talismanBuildingDescription: 'What? There are two dragons entwined on my scrolls. '
   walkingPuzzleDescription: Walking Puzzle Description here
   breakMirrorDescription: Break Mirror Description here
+  spellTree1description: All talisman wizards have their own Spelltree pages
+  spellTree2description: Oh no! My Spelltree is covered by some shells
 --- !u!114 &1116509721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6515,6 +6519,7 @@ MonoBehaviour:
   ani: {fileID: 1550972248}
   system: {fileID: 0}
   status: 0
+  freeze: 0
 --- !u!54 &1550972251
 Rigidbody:
   m_ObjectHideFlags: 0

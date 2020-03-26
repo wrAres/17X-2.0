@@ -25,11 +25,12 @@ public class Item : MonoBehaviour
         itemOnPuzzle.Add("Taiji Key", "Water Boss Door");
         itemOnPuzzle.Add("Board", "Background");
         itemOnPuzzle.Add("Taoist Wind", "atlasmap2");
-        itemOnPuzzle.Add("SpellTreeItem", "Cube");
     }
 
     public static bool canPlace(string item, string targetObj) {
         print(item + ", " + targetObj);
+        if (item.CompareTo("SpellTreeItem") == 0)
+            return true;
         string available = (string)itemOnPuzzle[item];
         if (available == null)
             return false;
@@ -67,9 +68,11 @@ public class Item : MonoBehaviour
 
             deleteSpellObject("Dirt");
         } 
-        else if (item.CompareTo("SpellTreeItem") == 0 && position.CompareTo("Cube") == 0){
+        else if (item.CompareTo("SpellTreeItem") == 0){
             GameObject.Find("MainUI").GetComponent<Show>().ShowSpelltreeIcon();
             GameObject.Find("Backpack_Roll").GetComponent<Backpack>().RemoveItem("SpellTreeItem");
+            TipsDialog.PrintDialog("Spell Tree 1");
+            GameObject.Find("Dialog Box").transform.SetSiblingIndex(6);
             deleteSpellObject("SpellTreeItem");
         } 
         else if (item.CompareTo("Earth Key") == 0 && position.CompareTo("EarthPortal") == 0){

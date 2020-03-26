@@ -22,9 +22,9 @@ public class Backpack : MonoBehaviour
         // listOfItems = new LinkedList<Item>();
         imageObjects = new GameObject[9];
         length = 0;
-        // this.AddItem("Dirt");
+        this.AddItem("SpellTreeItem");
         // this.AddItem("Taiji Key");
-        this.AddItem("Glowing Sun");
+        // this.AddItem("Glowing Sun");
         this.Show(false);
     }
     void OnGUI() {
@@ -88,13 +88,14 @@ public class Backpack : MonoBehaviour
                 break;
             }
         }
+        Destroy(itemObject);
+        length--;
         for (int i = removeIndex; i < length; i++) {
             imageObjects[i] = imageObjects[i+1];
+            // print("move obj " + imageObjects[i].name);
+            RectTransform item_tranform = imageObjects[i].GetComponent<RectTransform>();
+            item_tranform.anchoredPosition = item_tranform.anchoredPosition + new Vector2(-100, 0);
         }
-
-        length--;
-        Destroy(itemObject);
-
     }
 
     public void Show(bool isShow) {
