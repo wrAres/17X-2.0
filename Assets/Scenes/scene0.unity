@@ -356,6 +356,7 @@ MonoBehaviour:
   system: {fileID: 0}
   status: 0
   freeze: 1
+  playerSprite: {fileID: 21300000, guid: b217277251dcf20448019dc99521b9d3, type: 3}
 --- !u!54 &126118431
 Rigidbody:
   m_ObjectHideFlags: 0

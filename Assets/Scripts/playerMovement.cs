@@ -12,6 +12,7 @@ public class playerMovement : MonoBehaviour
 	private bool findFloor;
 	public int status;
 	public int freeze;
+	public Sprite playerSprite;
 	private bool isWaterScene =>
         SceneManager.GetActiveScene().name == "scene3";
 
@@ -67,4 +68,10 @@ public class playerMovement : MonoBehaviour
 			status = 0;
 		}
     }
+	
+	void changeSprite(){
+		
+			this.gameObject.GetComponent<SpriteRenderer>().sprite = playerSprite;
+		
+	}
 }
