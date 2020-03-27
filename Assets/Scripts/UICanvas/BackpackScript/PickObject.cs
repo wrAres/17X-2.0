@@ -52,6 +52,10 @@ public class PickObject : MonoBehaviour
                     } else if (clickObject.name.CompareTo("Boss") == 0){
                         AIDataManager.DecideTrigram();
                     }
+                    if (clickObject.tag == "Portals") {
+                        clickObject.GetComponent<ChangeSprite>().Trigger = true;
+                    }
+
                     if (TipsDialog.dialogList.ContainsKey(clickObject.name))
                     {
                         TipsDialog.PrintDialog(clickObject.name);
