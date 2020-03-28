@@ -15,14 +15,9 @@ public class TipsDialog : MonoBehaviour
     public static Dictionary<string, string> dialogList;
     public string waterGateDiscription;
     public string riverDiscription;
-    public string backpackDescription;
-    public string lobbyDescription;
-    public string talismanNoticeDescription;
-    public string talismanBuildingDescription;
-    public string walkingPuzzleDescription;
-    public string breakMirrorDescription;
-    public string spellTree1description;
-    public string spellTree2description;
+    public string earthKeyDescription;
+    public string talismanDescription;
+    public string lobbyPortalDescription;
 
     /* Where to find what keys are being called:
      * Keys: River, Earth Key - Called in CanvasUI\BackpackScript\PickObject, line 57
@@ -46,14 +41,9 @@ public class TipsDialog : MonoBehaviour
         dialogList = new Dictionary<string, string>();
         dialogList.Add("法阵-scene3", waterGateDiscription);
         dialogList.Add("River", riverDiscription);
-        dialogList.Add("Earth Key", backpackDescription);
-        dialogList.Add("Lobby", lobbyDescription);
-        dialogList.Add("Talisman 1", talismanNoticeDescription);
-        dialogList.Add("Talisman 2", talismanBuildingDescription);
-        dialogList.Add("Walking Puzzle", walkingPuzzleDescription);
-        dialogList.Add("Break mirror", breakMirrorDescription);
-        dialogList.Add("Spell Tree 1", spellTree1description);
-        dialogList.Add("Spell Tree 2", spellTree2description);
+        dialogList.Add("Earth Key", earthKeyDescription);
+        dialogList.Add("Talisman", talismanDescription);
+        dialogList.Add("EarthPortal", lobbyPortalDescription);
         dialog.SetActive(false);
     }
 
@@ -86,12 +76,9 @@ public class TipsDialog : MonoBehaviour
                 j++;
             }
         }
-        //if (dialogList.ContainsKey(objName)) {
-         //   dialogText.text = dialogList[objName];
-            dialogText.text = textlist2[1];
-            dialog.SetActive(true);
-            print("Set dialog active");
-        //}
+        dialogText.text = textlist2[1];
+        dialog.SetActive(true);
+        print("Set dialog active");
     }
 
     public static void HideTextBox() {

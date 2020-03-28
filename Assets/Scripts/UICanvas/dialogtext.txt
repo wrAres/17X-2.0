@@ -23,5 +23,14 @@ element generated in the world. Maybe I can go
  check the Water energy first. 
 ---
 Spelltree 1
-All talisman wizards have their own Spelltree pages that record spells they have learned in the past. We draw those spell-characters in the talisman to cast a specific spell.
+All talisman wizards have their own Spelltree pages
+that record spells they have learned in the past. 
+We draw those spell-characters in the talisman to 
+cast a specific spell.
+---
+Spelltree 2
+Oh no! My Spelltree is covered by some shells and
+I somehow cannot remember mostly anything about 
+my spells. Something must be wrong! 
+I must find the way out of here.
 ---

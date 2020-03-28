@@ -1557,7 +1557,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &331384550
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5506,22 +5506,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1116509718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 406b2b674d40b4ac5ba4841faf96f599, type: 3}
+  m_Script: {fileID: 11500000, guid: e7b8da33ab5d340b6a50285fbd020848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textFile: {fileID: 4900000, guid: c029e113ad7d645f6bedba5c828dcda0, type: 3}
   index: 0
   waterGateDiscription: Water Gate
   riverDiscription: River
-  backpackDescription: Backpack Description here
-  lobbyDescription: 'Wow! An Eight-Trigram-Atlas! '
-  talismanNoticeDescription: "\u2026 I \u2026 I just felt like some of my memories
-    have come back."
-  talismanBuildingDescription: 'What? There are two dragons entwined on my scrolls. '
-  walkingPuzzleDescription: Walking Puzzle Description here
-  breakMirrorDescription: Break Mirror Description here
-  spellTree1description: All talisman wizards have their own Spelltree pages
-  spellTree2description: Oh no! My Spelltree is covered by some shells
+  earthKeyDescription: E
+  talismanDescription: t
+  lobbyPortalDescription: L
 --- !u!114 &1116509721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6280,7 +6274,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 45.59, y: 27.247149}
+  m_Size: {x: 10.46, y: 10.46}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -71,7 +71,7 @@ public class Item : MonoBehaviour
         else if (item.CompareTo("SpellTreeItem") == 0){
             GameObject.Find("MainUI").GetComponent<Show>().ShowSpelltreeIcon();
             GameObject.Find("Backpack_Roll").GetComponent<Backpack>().RemoveItem("SpellTreeItem");
-            TipsDialog.PrintDialog("Spell Tree 1");
+            TipsDialog.PrintDialog("Spelltree 1");
             GameObject.Find("Dialog Box").transform.SetSiblingIndex(6);
             deleteSpellObject("SpellTreeItem");
         } 
