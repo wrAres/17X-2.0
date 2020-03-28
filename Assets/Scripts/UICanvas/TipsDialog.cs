@@ -5,8 +5,13 @@ using UnityEngine.UI;
 
 public class TipsDialog : MonoBehaviour
 {
-    public static GameObject dialog;
     public static Text dialogText;
+    public TextAsset textFile;
+    public int index;
+    public static List<string> textlist = new List<string>();
+    public static List<string> textlist2 = new List<string>();
+
+    public static GameObject dialog;
     public static Dictionary<string, string> dialogList;
     public string waterGateDiscription;
     public string riverDiscription;
@@ -28,6 +33,14 @@ public class TipsDialog : MonoBehaviour
      * key: click object    - in UICanvas\BackpackScript\PickObject, dialogShow
      */
     void Start() {
+        //print("start" + textFile.text);
+        var linetext = textFile.text.Split('\n');
+        index = 2;
+        foreach (var line in linetext) {
+                    textlist.Add(line);
+         //           print("read " + line );
+        }
+
         dialog = GameObject.Find("Dialog Box");
         dialogText = GameObject.Find("Dialog Text").GetComponent<Text>();
         dialogList = new Dictionary<string, string>();
@@ -44,12 +57,41 @@ public class TipsDialog : MonoBehaviour
         dialog.SetActive(false);
     }
 
+     void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            print(index);
+            if (index == textlist2.Count-1){
+                index = 2;
+                Debug.Log("no more tips");
+                dialog.SetActive(false);
+            }else{
+                dialogText.text = textlist[index];
+                index ++;
+            }
+        }
+
+
+    }
+
     public static void PrintDialog(string objName){
-        if (dialogList.ContainsKey(objName)) {
-            dialogText.text = dialogList[objName];
+        textlist2.Clear();
+        if (textlist.Contains(objName)){
+            int i = textlist.IndexOf(objName);
+            int j = i;
+            while(textlist[j].CompareTo("---") != 0 ){
+                textlist2.Add(textlist[j]);
+                print(textlist[j]);
+                j++;
+            }
+        }
+        //if (dialogList.ContainsKey(objName)) {
+         //   dialogText.text = dialogList[objName];
+            dialogText.text = textlist2[1];
             dialog.SetActive(true);
             print("Set dialog active");
-        }
+        //}
     }
 
     public static void HideTextBox() {
