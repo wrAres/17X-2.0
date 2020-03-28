@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 677, y: 342}
   m_MaxSize: {x: 12002, y: 8042}
   vertical: 0
-  controlID: 15
+  controlID: 34
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 342}
   m_MaxSize: {x: 8002, y: 8042}
   vertical: 1
-  controlID: 16
+  controlID: 35
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 17
+  controlID: 36
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -338,20 +338,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/UICanvas
+    - Assets/Scripts/UICanvas/TalismanSpelltree
   m_ViewMode: 1
   m_StartGridSize: 50
   m_LastFolders:
-  - Assets/Scripts/UICanvas
+  - Assets/Scripts/UICanvas/TalismanSpelltree
   m_LastFoldersGridSize: 50
   m_LastProjectPath: /Users/wensdon/Desktop/academic/UCSC/Senior/winter 2020/The
     Atlas of Shanhe and Sheji/17X-2.0
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 216}
-    m_SelectedIDs: 4a3b0000
-    m_LastClickedID: 15178
+    scrollPos: {x: 0, y: 232}
+    m_SelectedIDs: 003c0000
+    m_LastClickedID: 15360
     m_ExpandedIDs: 00000000403b0000423b0000443b0000463b0000483b00004a3b00004c3b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -405,8 +405,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: eedeffff
-    m_LastClickedInstanceID: -8466
+    m_SelectedInstanceIDs: 04370000
+    m_LastClickedInstanceID: 14084
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000be5c0000
     m_RenameOverlay:
@@ -502,10 +502,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 239}
+      scrollPos: {x: 0, y: 223}
       m_SelectedIDs: 04370000
       m_LastClickedID: 14084
-      m_ExpandedIDs: 36fbfffff4ffffffb6360000fc3600009e3800005c390000
+      m_ExpandedIDs: 6efbfffff4ffffffb6360000fc3600005c390000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -565,9 +565,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.2281301, y: -8.407365, z: 2.2108073}
+    m_Target: {x: 1.6534607, y: -6.178675, z: 3.7463365}
     speed: 2
-    m_Value: {x: 1.2281301, y: -8.407365, z: 2.2108073}
+    m_Value: {x: 1.6534607, y: -6.178675, z: 3.7463365}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -617,9 +617,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.30126533, y: -0.04089311, z: 0.012934675, w: -0.9525753}
   m_Size:
-    m_Target: 21.084402
+    m_Target: 13.65592
     speed: 2
-    m_Value: 21.084402
+    m_Value: 13.65592
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -676,7 +676,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 619, y: 401}
+  m_TargetSize: {x: 619, y: 348}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -684,7 +684,7 @@ MonoBehaviour:
   m_VSyncEnabled: 0
   m_Gizmos: 0
   m_Stats: 0
-  m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_SelectedSizes: 05000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
@@ -692,8 +692,8 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -154.75
     m_HBaseRangeMax: 154.75
-    m_VBaseRangeMin: -100.25
-    m_VBaseRangeMax: 100.25
+    m_VBaseRangeMin: -87
+    m_VBaseRangeMax: 87
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1

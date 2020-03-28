@@ -34,3 +34,17 @@ I somehow cannot remember mostly anything about
 my spells. Something must be wrong! 
 I must find the way out of here.
 ---
+Talisman 1
+… I … I just felt like some of my memories have come back. 
+A simple spell would be able to let me cross the river.
+【Press ‘SPACE’ to open the talisman】
+---
+Talisman 2 (When the player first open the Talisman)
+What? There are two dragons entwined on my scrolls. 
+The left one looks like the Yellow-Dragon, the God of Earth. 
+What is he doing there? Where are my other characters? 
+Maybe I should try if I can still use the talisman…
+【Click and Drag the character into the dotted lines Boxes 
+on the talisman】
+---
+

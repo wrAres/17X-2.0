@@ -17,8 +17,8 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
         // dispManager.GetComponent<TalismanManager>().DispTextBox(true, element, eventData.position);
         textbox.SetActive(true);
         itemName.text = gameObject.name.ToString();
-        // print("event data: " + eventData.position);
-        textbox.transform.position = this.gameObject.GetComponent<RectTransform>().anchoredPosition + new Vector2(800f, 400f);
+        print("event data: " + this.gameObject.GetComponent<RectTransform>().anchoredPosition);
+        textbox.GetComponent<RectTransform>().anchoredPosition = this.gameObject.GetComponent<RectTransform>().anchoredPosition + new Vector2(0f, -50f);
     }
 
     public void OnPointerExit(PointerEventData eventData) {
