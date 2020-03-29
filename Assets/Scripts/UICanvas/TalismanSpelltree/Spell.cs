@@ -28,11 +28,11 @@ public class Spell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
         Vector2 thisPosition = this.gameObject.transform.parent.GetComponent<RectTransform>().anchoredPosition;
         print("position: " + thisPosition);
         if (thisPosition.y < -120) {
-            spellTreeDisp.textBox.transform.position = thisPosition + new Vector2(900f, 500f);
+            spellTreeDisp.textBox.GetComponent<RectTransform>().anchoredPosition = thisPosition + new Vector2(200f, 100f);
         } else if (thisPosition.x > 300) {
-            spellTreeDisp.textBox.transform.position = thisPosition + new Vector2(700f, 240f);
+            spellTreeDisp.textBox.GetComponent<RectTransform>().anchoredPosition = thisPosition + new Vector2(-100f, -120f);
         } else {
-            spellTreeDisp.textBox.transform.position = thisPosition + new Vector2(900f, 240f);
+            spellTreeDisp.textBox.GetComponent<RectTransform>().anchoredPosition = thisPosition + new Vector2(200f, -120f);
         }
     }
 

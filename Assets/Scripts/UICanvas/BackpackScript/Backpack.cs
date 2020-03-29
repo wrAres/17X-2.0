@@ -59,16 +59,16 @@ public class Backpack : MonoBehaviour
         imageObj.tag = "Item";
 
         RectTransform item_transform = imageObj.GetComponent<RectTransform>();
-        RectTransform backpack_transform = backpack.GetComponent<RectTransform>();
-        item_transform.SetParent(canvas.transform); //Assign the newly created Image GameObject as a Child of the Parent Panel, Canvas/Main UI.
+        // RectTransform backpack_transform = backpack.GetComponent<RectTransform>();
+        item_transform.SetParent(backpack.transform); //Assign the newly created Image GameObject as a Child of the Parent Panel, Canvas/Main UI.
 
-        item_transform.anchoredPosition = backpack_transform.anchoredPosition + new Vector2((length-7.5f)*100, 0);
+        item_transform.anchoredPosition = new Vector2((length-7.5f)*100, 0);
         if (name.CompareTo("Life Water") == 0) {
             item_transform.sizeDelta = new Vector2(60, 35);
         } else if (name.CompareTo("Dirt") == 0) {
             item_transform.anchoredPosition = item_transform.anchoredPosition + new Vector2(0, 5);
             item_transform.sizeDelta = new Vector2(45, 40);
-        } else if (name.CompareTo("Taiji Key") == 0 || name.CompareTo("Earth Key") == 0) {
+        } else if (name.CompareTo("Taiji Key") == 0) {
             item_transform.sizeDelta = new Vector2(180, 120);
         } else {
             item_transform.sizeDelta = new Vector2(50, 50);

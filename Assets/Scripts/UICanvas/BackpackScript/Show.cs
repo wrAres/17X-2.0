@@ -90,7 +90,7 @@ public class Show : MonoBehaviour
                 else if (result.gameObject.tag.CompareTo("SpellTreeIcon") == 0) {
                     if (brightSpell) {
                         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
-                        TipsDialog.PrintDialog("Spell Tree 2");
+                        TipsDialog.PrintDialog("Spelltree 2");
                         brightSpell = false;
                     }
                     spellTreeDisp.SetActive(!spellTreeDisp.activeSelf);

@@ -31,6 +31,6 @@ public class LeaveIconBright : MonoBehaviour
 
     public void ShineSpellIcon() {
         this.gameObject.GetComponent<RawImage>().color = color;
-        this.gameObject.transform.SetSiblingIndex(4);
+        this.gameObject.transform.SetSiblingIndex(7);
     }
 }
