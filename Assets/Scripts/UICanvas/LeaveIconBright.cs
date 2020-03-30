@@ -31,6 +31,9 @@ public class LeaveIconBright : MonoBehaviour
 
     public void ShineSpellIcon() {
         this.gameObject.GetComponent<RawImage>().color = color;
-        this.gameObject.transform.SetSiblingIndex(7);
+        this.gameObject.transform.SetSiblingIndex(6);
+        GameObject spellTree = GameObject.FindGameObjectWithTag("SpellTreeIcon");
+        spellTree.GetComponent<Image>().sprite = Resources.Load<Sprite>("ChangeAsset/Glowing Spelltree");
+        spellTree.transform.localScale = new Vector2(2, 2.3f);
     }
 }

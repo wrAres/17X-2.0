@@ -92,6 +92,9 @@ public class Show : MonoBehaviour
                         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
                         TipsDialog.PrintDialog("Spelltree 2");
                         brightSpell = false;
+                        GameObject spellTree = GameObject.FindGameObjectWithTag("SpellTreeIcon");
+                        spellTree.GetComponent<Image>().sprite = Resources.Load<Sprite>("ChangeAsset/All elements");
+                        spellTree.transform.localScale = new Vector2(2.6f, 2.5f);
                     }
                     spellTreeDisp.SetActive(!spellTreeDisp.activeSelf);
              
@@ -104,7 +107,7 @@ public class Show : MonoBehaviour
                 }
                 else if (result.gameObject.name.CompareTo("Next Button") == 0) {
                     bool textActive = TipsDialog.NextPage();
-                    print("text act" + textActive);
+                    // print("text act" + textActive);
                     GameObject.Find("Dialog Box").SetActive(textActive);
 
                 }

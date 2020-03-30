@@ -2763,7 +2763,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3ea835ea9dd0948039c537e32591a236, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af8189b5d943846fc8f4c77a05518e92, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5629,9 +5629,8 @@ MonoBehaviour:
   textFile: {fileID: 4900000, guid: c029e113ad7d645f6bedba5c828dcda0, type: 3}
   waterGateDiscription: Water Gate
   riverDiscription: River
-  earthKeyDescription: E
   talismanDescription: t
-  lobbyPortalDescription: L
+  lobbyPortalDescription: Is it a scroll or a door?
 --- !u!114 &1116509721
 MonoBehaviour:
   m_ObjectHideFlags: 0

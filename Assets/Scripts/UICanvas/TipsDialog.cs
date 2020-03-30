@@ -13,11 +13,11 @@ public class TipsDialog : MonoBehaviour
 
     public static GameObject dialog;
     public static Dictionary<string, string> dialogList;
-    public string waterGateDiscription;
-    public string riverDiscription;
-    public string earthKeyDescription;
-    public string talismanDescription;
-    public string lobbyPortalDescription;
+    // public string waterGateDiscription;
+    // public string riverDiscription;
+    // public string talismanDescription;
+    // public string lobbyPortalDescription;
+    private static bool dialogOrDesc = true; //true when it is a dialog
 
     /* Where to find what keys are being called:
      * Keys: River, Earth Key - Called in CanvasUI\BackpackScript\PickObject, line 57
@@ -27,23 +27,22 @@ public class TipsDialog : MonoBehaviour
      * Key: Break mirror    - Called in UICanvas\BackpackScript\flowerInMirror, line 49
      * key: click object    - in UICanvas\BackpackScript\PickObject, dialogShow
      */
-    void Start() {
+    void Awake() {
         //print("start" + textFile.text);
         var linetext = textFile.text.Split('\n');
         index = 2;
         foreach (var line in linetext) {
-                    textlist.Add(line);
+            textlist.Add(line);
          //           print("read " + line );
         }
 
         dialog = GameObject.Find("Dialog Box");
         dialogText = GameObject.Find("Dialog Text").GetComponent<Text>();
         dialogList = new Dictionary<string, string>();
-        dialogList.Add("法阵-scene3", waterGateDiscription);
-        dialogList.Add("River", riverDiscription);
-        dialogList.Add("Earth Key", earthKeyDescription);
-        dialogList.Add("Talisman", talismanDescription);
-        dialogList.Add("EarthPortal", lobbyPortalDescription);
+        dialogList.Add("法阵-scene3", "waterGateDiscription");
+        dialogList.Add("River", "riverDiscription");
+        dialogList.Add("Talisman", "talismanDescription");
+        dialogList.Add("EarthPortal", "lobbyPortalDescription");
         dialog.SetActive(false);
     }
 
@@ -56,19 +55,23 @@ public class TipsDialog : MonoBehaviour
     // }
 
     public static bool NextPage() {
-        print("index: " + index + ", list length: " + textlist2.Count);
-        if (index > textlist2.Count - 1){
-            index = 2;
-            Debug.Log("no more tips");
-            // dialog.SetActive(false);
-            return false;
-        }
-        dialogText.text = textlist2[index].Replace("=", "\n");
-        index ++;
-        return true;
+        // if (dialogOrDesc) {
+            // print("index: " + index + ", list length: " + textlist2.Count);
+            if (index > textlist2.Count - 1){
+                index = 2;
+                Debug.Log("no more tips");
+                // dialog.SetActive(false);
+                return false;
+            }
+            dialogText.text = textlist2[index].Replace("=", "\n");
+            index ++;
+            return true;
+        // }
+        // return false;
     }
 
     public static void PrintDialog(string objName){
+        dialogOrDesc = true;
         textlist2.Clear();
         if (textlist.Contains(objName)){
             int i = textlist.IndexOf(objName);
@@ -83,6 +86,12 @@ public class TipsDialog : MonoBehaviour
         dialog.SetActive(true);
         print("Set dialog active, index: " + index + ", list length: " + textlist2.Count);
     }
+
+    // public static void PrintDescription(string objName){
+    //     dialogOrDesc = false;
+    //     dialogText.text = dialogList[objName];
+    //     dialog.SetActive(true);
+    // }
 
     public static void HideTextBox() {
         dialog.SetActive(false);

@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 public class PickObject : MonoBehaviour
 {   
     private int layerMask;
-
     public bool dialogShow = false;
-
+    private bool firstTimeEarthFlag = false; // Used to tell if its the first time visiting the EarthRoom scene
     private bool firstTimeLobbyFlag = false; // Used to tell if its the first time visiting the lobby scene
     private bool firstTimeWaterFlag = false; // Used to tell if its the first time visiting the water scene
 
@@ -20,6 +19,11 @@ public class PickObject : MonoBehaviour
 
         // Check to see if current scene is the lobby if so show spell tree description
         // "Scene 0" name might eb changed later
+        if (SceneManager.GetActiveScene().name == "EarthRoom" && firstTimeEarthFlag == false)
+        {
+            TipsDialog.PrintDialog("Self Introduction");
+            firstTimeEarthFlag = true;
+        }
         if (SceneManager.GetActiveScene().name == "scene0" && firstTimeLobbyFlag == false)
         {
             TipsDialog.PrintDialog("Lobby");
@@ -56,6 +60,11 @@ public class PickObject : MonoBehaviour
                     clickObject.GetComponent<ChangeSprite>().Trigger = true;
                 }
 
+                // if (clickObject.name.CompareTo("Earth Key") == 0){
+                //     TipsDialog.PrintDialog("Earth Key");
+                //     dialogShow = true;
+                // }
+                // else 
                 if (TipsDialog.dialogList.ContainsKey(clickObject.name))
                 {
                     TipsDialog.PrintDialog(clickObject.name);
