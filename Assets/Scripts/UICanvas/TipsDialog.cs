@@ -43,6 +43,7 @@ public class TipsDialog : MonoBehaviour
         dialogList.Add("River", "riverDiscription");
         dialogList.Add("Talisman", "talismanDescription");
         dialogList.Add("EarthPortal", "lobbyPortalDescription");
+        dialogList.Add("EarthGround", "EarthGroundDescription");
         dialog.SetActive(false);
     }
 
