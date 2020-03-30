@@ -44,13 +44,17 @@ public class Show : MonoBehaviour
 
     // public Backpack bk;
     private void Update() {
+        if (talisDisp.display.activeSelf || spellTreeDisp.activeSelf) {
+            pick.descShow = false;
+        } else {
+            pick.descShow = true;
+        }
         //Check if the left Mouse button is clicked
         if (raycaster == null) {
 
         }
         else if (Input.GetMouseButtonDown(0))
         {
-            pick.descShow = true;
             //Set up the new Pointer Event
             pointerData = new PointerEventData(eventSystem);
             pointerData.position = Input.mousePosition;
@@ -63,13 +67,14 @@ public class Show : MonoBehaviour
             //For every result returned, output the name of the GameObject on the Canvas hit by the Ray
             foreach (RaycastResult result in results)
             {
-                // Debug.Log("Hit " + result.gameObject.tag);
+                string name = result.gameObject.name;
+                string tag = result.gameObject.tag;
+                print("obj names: " + name);
 
-                if (result.gameObject.tag.CompareTo("BackpackIcon") == 0) {
+                if (tag.CompareTo("BackpackIcon") == 0) {
                     pick.descShow = false;
                     if (brightBackpack) {
                         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
-                        brightBackpack = false;
                     }
                     if (Backpack.backpack.activeSelf) {
                         Backpack.backpack.GetComponent<Backpack>().Show(false);
@@ -82,7 +87,7 @@ public class Show : MonoBehaviour
                     spellTreeDisp.SetActive(false);
                     talisDisp.CloseDisplay();
                 }
-                else if (result.gameObject.tag.CompareTo("Item") == 0) {
+                else if (tag.CompareTo("Item") == 0) {
                     pick.descShow = false;
                     if (!ItemDragHandler.holdItem) {
                         ItemDragHandler.itemOnGround = result.gameObject;
@@ -90,7 +95,7 @@ public class Show : MonoBehaviour
                         ItemDragHandler.holdItem = true;
                     }
                 }
-                else if (result.gameObject.tag.CompareTo("SpellTreeIcon") == 0) {
+                else if (tag.CompareTo("SpellTreeIcon") == 0) {
                     pick.descShow = false;
                     if (brightSpell) {
                         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
@@ -109,12 +114,11 @@ public class Show : MonoBehaviour
                     talisDisp.CloseDisplay();
                     Backpack.backpack.GetComponent<Backpack>().Show(false);
                 }
-                else if (result.gameObject.name.CompareTo("Next Button") == 0) {
+                else if (name.CompareTo("Next Button") == 0) {
                     pick.descShow = false;
                     bool textActive = TipsDialog.NextPage();
                     // print("text act" + textActive);
                     GameObject.Find("Dialog Box").SetActive(textActive);
-
                 }
             }
             pick.ClickOnGround();

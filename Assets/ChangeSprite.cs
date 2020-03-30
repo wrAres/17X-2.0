@@ -10,14 +10,11 @@ public class ChangeSprite : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update() {
-        if (Trigger)
-        {
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = Target;
-            string name = this.gameObject.name;
-            sceneTransition transition = this.gameObject.GetComponent<sceneTransition>();
-            Trigger = false;
-            transition.CheckOpen();
-        }
+    public void OpenScroll() {
+        Trigger = true;
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = Target;
+        string name = this.gameObject.name;
+        sceneTransition transition = this.gameObject.GetComponent<sceneTransition>();
+        transition.CheckOpen();
     }
 }

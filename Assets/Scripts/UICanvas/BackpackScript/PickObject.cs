@@ -57,7 +57,10 @@ public class PickObject : MonoBehaviour
                     AIDataManager.DecideTrigram();
                 }
                 if (clickObject.tag == "Portals") {
-                    clickObject.GetComponent<ChangeSprite>().Trigger = true;
+                    ChangeSprite change = clickObject.GetComponent<ChangeSprite>();
+                    if (!change.Trigger) {
+                        change.OpenScroll();
+                    }
                 }
 
                 if (TipsDialog.dialogList.ContainsKey(clickObject.name))

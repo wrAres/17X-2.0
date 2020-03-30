@@ -70,8 +70,10 @@ public class Backpack : MonoBehaviour
             item_transform.sizeDelta = new Vector2(45, 40);
         } else if (name.CompareTo("Taiji Key") == 0) {
             item_transform.sizeDelta = new Vector2(180, 120);
+        } else if (name.CompareTo("Earth Key") == 0) {
+            item_transform.sizeDelta = new Vector2(40f, 60f);
         } else {
-            item_transform.sizeDelta = new Vector2(80*1.05f, 80*1.05f);
+            item_transform.sizeDelta = new Vector2(60f, 60f);
         }
         
         UISoundScript.PlayBackpack();
