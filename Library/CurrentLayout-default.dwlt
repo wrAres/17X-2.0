@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 0
 --- !u!114 &2
@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1280
     height: 715
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 678, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 3180
+  controlID: 376
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 3181
+  controlID: 377
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 3182
+  controlID: 352
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
-  m_MaximizeOnPlay: 1
+  m_MaximizeOnPlay: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
   m_Stats: 0
@@ -331,7 +331,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -391,9 +391,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: b63d0000
       m_LastClickedID: 0
-      m_ExpandedIDs: cae3ffffcae6ffffa4e7ffff86eaffffc4f6ffff18f7fffff0faffffce36000014370000364000003e40000084400000984100003e4300008243000098430000
+      m_ExpandedIDs: 9cdcffffdeddffffe2deffffe0e1ffffece2ffff2ce4ffff2ae6ffff78e8ffff74eaffff30ecffff4eedffff44f3ffff56f4fffff0f6ffff82f7ffffdaf9ffff76faffff2cfbfffff4ffffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -453,9 +453,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.3002186, y: -7.2933064, z: -9.2025795}
+    m_Target: {x: -2.9187865, y: 1.8946111, z: -9.2025795}
     speed: 2
-    m_Value: {x: -1.3002186, y: -7.2933064, z: -9.2025795}
+    m_Value: {x: -2.9187865, y: 1.8946111, z: -9.2025795}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -493,21 +493,21 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 1, y: 1}
     m_ShowGrid: 1
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.6627319, y: 0.007190046, z: -0.0063639265, w: 0.7487986}
+    m_Target: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
     speed: 2
-    m_Value: {x: 0.6627302, y: 0.0071900277, z: -0.0063639106, w: 0.74879676}
+    m_Value: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_Size:
     m_Target: 17.330643
     speed: 2
-    m_Value: 16.875021
+    m_Value: 17.330643
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -603,14 +603,15 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scenes
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: /Users/Bz/Desktop/Atlas_3.0/17X-2.0
+  m_LastProjectPath: /Users/wensdon/Desktop/academic/UCSC/Senior/winter 2020/The
+    Atlas of Shanhe and Sheji/17X-2.0
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 154}
-    m_SelectedIDs: 4e3d0000
-    m_LastClickedID: 15694
-    m_ExpandedIDs: 000000006c3b00006e3b0000703b0000723b0000743b0000763b0000783b00007a3b000000ca9a3b
+    scrollPos: {x: 0, y: 170}
+    m_SelectedIDs: 9e3b0000
+    m_LastClickedID: 15262
+    m_ExpandedIDs: 00000000663b0000683b00006a3b00006c3b00006e3b0000703b0000723b0000743b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -638,7 +639,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006c3b00006e3b0000703b0000723b0000743b0000763b0000783b00007a3b000000ca9a3b
+    m_ExpandedIDs: 00000000663b0000683b00006a3b00006c3b00006e3b0000703b0000723b0000743b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
