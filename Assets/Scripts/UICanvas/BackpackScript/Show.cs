@@ -141,10 +141,16 @@ public class Show : MonoBehaviour
         GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled = true; 
         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().ShineSpellIcon();
         brightSpell = true;
+
+        if (SceneManager.GetActiveScene().name == "scene0" && !earthUnlocked) {
+            earthUnlocked = true;
+            GetComponent<SpellTreeManager>().UnlockElement(TalisDrag.Elements.EARTH);
+        }
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-        if (scene.name == "scene0" && !earthUnlocked) {
+        if (scene.name == "scene0" && !earthUnlocked
+            && GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled) {
             earthUnlocked = true;
             GetComponent<SpellTreeManager>().UnlockElement(TalisDrag.Elements.EARTH);
         }
