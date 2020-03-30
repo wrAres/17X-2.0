@@ -12,6 +12,7 @@ TagManager:
   - SpellObject
   - TutorialWall
   - Portals
+  - Ground
   layers:
   - Default
   - TransparentFX

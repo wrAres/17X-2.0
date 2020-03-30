@@ -7,6 +7,7 @@ public class PickObject : MonoBehaviour
 {   
     private int layerMask;
     public bool dialogShow = false;
+    public bool descShow = true;
     private bool firstTimeEarthFlag = false; // Used to tell if its the first time visiting the EarthRoom scene
     private bool firstTimeLobbyFlag = false; // Used to tell if its the first time visiting the lobby scene
     private bool firstTimeWaterFlag = false; // Used to tell if its the first time visiting the water scene
@@ -37,9 +38,8 @@ public class PickObject : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update(){
-        if (Input.GetMouseButtonDown(0)) {
-            // if (!dialogShow) {
+    public void ClickOnGround(){
+        if (descShow){
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, layerMask)) {
@@ -60,26 +60,12 @@ public class PickObject : MonoBehaviour
                     clickObject.GetComponent<ChangeSprite>().Trigger = true;
                 }
 
-                // if (clickObject.name.CompareTo("Earth Key") == 0){
-                //     TipsDialog.PrintDialog("Earth Key");
-                //     dialogShow = true;
-                // }
-                // else 
                 if (TipsDialog.dialogList.ContainsKey(clickObject.name))
                 {
                     TipsDialog.PrintDialog(clickObject.name);
                     dialogShow = true;
                 }
             }
-            // } 
-            // else if (GameObject.Find("MainUI").GetComponent<Show>().clickedObject) {
-            //     dialogShow = true;
-            // }
-            // else {
-            //     TipsDialog.HideTextBox();
-            //     print("setting dialogshow to false in pickObject");
-            //     dialogShow = false;
-            // }
         }
     }
 }

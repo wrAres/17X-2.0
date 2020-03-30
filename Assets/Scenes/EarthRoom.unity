@@ -5106,7 +5106,7 @@ GameObject:
   - component: {fileID: 1027881862}
   m_Layer: 0
   m_Name: EarthGround
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5124,6 +5124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogShow: 0
+  descShow: 1
 --- !u!65 &1027881863
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class Show : MonoBehaviour
     public bool clickedObject = false;
     private bool brightBackpack = false;
     private bool brightSpell = false;
-
+    PickObject pick;
     GraphicRaycaster raycaster;
     PointerEventData pointerData;
     EventSystem eventSystem;
@@ -38,7 +38,7 @@ public class Show : MonoBehaviour
     private void Start() {
         raycaster = GetComponent<GraphicRaycaster>();
         eventSystem = GetComponent<EventSystem>();
-
+        pick = GameObject.FindWithTag("Ground").GetComponent<PickObject>();
         talisDisp = GetComponent<TalismanManager>();
     }
 
@@ -50,6 +50,7 @@ public class Show : MonoBehaviour
         }
         else if (Input.GetMouseButtonDown(0))
         {
+            pick.descShow = true;
             //Set up the new Pointer Event
             pointerData = new PointerEventData(eventSystem);
             pointerData.position = Input.mousePosition;
@@ -65,6 +66,7 @@ public class Show : MonoBehaviour
                 // Debug.Log("Hit " + result.gameObject.tag);
 
                 if (result.gameObject.tag.CompareTo("BackpackIcon") == 0) {
+                    pick.descShow = false;
                     if (brightBackpack) {
                         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
                         brightBackpack = false;
@@ -81,6 +83,7 @@ public class Show : MonoBehaviour
                     talisDisp.CloseDisplay();
                 }
                 else if (result.gameObject.tag.CompareTo("Item") == 0) {
+                    pick.descShow = false;
                     if (!ItemDragHandler.holdItem) {
                         ItemDragHandler.itemOnGround = result.gameObject;
                         ItemDragHandler.previousPosition = result.gameObject.GetComponent<RectTransform>().anchoredPosition;
@@ -88,6 +91,7 @@ public class Show : MonoBehaviour
                     }
                 }
                 else if (result.gameObject.tag.CompareTo("SpellTreeIcon") == 0) {
+                    pick.descShow = false;
                     if (brightSpell) {
                         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
                         TipsDialog.PrintDialog("Spelltree 2");
@@ -106,12 +110,14 @@ public class Show : MonoBehaviour
                     Backpack.backpack.GetComponent<Backpack>().Show(false);
                 }
                 else if (result.gameObject.name.CompareTo("Next Button") == 0) {
+                    pick.descShow = false;
                     bool textActive = TipsDialog.NextPage();
                     // print("text act" + textActive);
                     GameObject.Find("Dialog Box").SetActive(textActive);
 
                 }
             }
+            pick.ClickOnGround();
         }
         // Show talisman building description after closing the spell tree
         // if (closedFirstTimeFlag == 2)

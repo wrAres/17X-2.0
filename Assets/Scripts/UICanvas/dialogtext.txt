@@ -39,3 +39,6 @@ Seems like an extremely strong power is locked behind this scroll, let me =figur
 EarthGround
 The energy of Earth is so strong everywhere in this room, but, for sure, this is just normal soil.
 ---
+法阵-scene3
+Oh, another scroll. But I cannot find the lock this time.
+---
