@@ -201,8 +201,8 @@ public class Item : MonoBehaviour
 
             AIDataManager.gentlypassthedoor = false; 
 
-            GameObject waterBoss = GameObject.Find("QiangYu");
-            waterBoss.SetActive(false);
+            // GameObject waterBoss = GameObject.Find("QiangYu");
+            // waterBoss.GetComponent<SpriteRenderer>().enabled = false;
         }
         else if (item.CompareTo("Taoist Wind") == 0 && position.CompareTo("atlasmap2") == 0){
             GameObject wind = GameObject.Find("WindGroup");
@@ -212,7 +212,7 @@ public class Item : MonoBehaviour
             GameObject.Find("1_water-dark").GetComponent<WaterPool>().timerActivated = true;
             GameObject.Find("6_water-white").GetComponent<WaterPool>().timerActivated = true;
             
-            // GameObject waterBoss = GameObject.FindWithTag("Water Boss");
+            // GameObject waterBoss = GameObject.Find("QiangYu");
             // waterBoss.GetComponent<SpriteRenderer>().enabled = true;
 
             TipsDialog.PrintDialog("Water Boss");
