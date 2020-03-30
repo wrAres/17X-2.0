@@ -1,7 +1,8 @@
 River
-River
+I bet it’s really deep and I don’t know how to swim.
 ---
 Earth Key
+I feel a strong sense of the combination of Yin and Yang on this key. =But what is it used for?
 Oh, wait! I almost forgot an important thing. 
 In such an unknown place, I need to have my “weapons” in hands =        -- Writing Brush and Talismans.
 They should be in my gourd. I used to store everything in my gourd.
@@ -37,8 +38,14 @@ EarthPortal
 Seems like an extremely strong power is locked behind this scroll, let me =figure it out.
 ---
 EarthGround
-The energy of Earth is so strong everywhere in this room, but, for sure, this is just normal soil.
+The energy of Earth is so strong everywhere in this room, but, for sure, =this is just normal soil.
 ---
 法阵-scene3
 Oh, another scroll. But I cannot find the lock this time.
+---
+法阵-scene2
+Stay away from it! I don’t want to burn my brush.
+---
+WaterGround
+It’s wet and soft as if I am stepping on the water.
 ---

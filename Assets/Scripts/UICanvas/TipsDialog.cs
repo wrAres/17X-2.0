@@ -44,6 +44,9 @@ public class TipsDialog : MonoBehaviour
         dialogList.Add("Talisman", "talismanDescription");
         dialogList.Add("EarthPortal", "lobbyPortalDescription");
         dialogList.Add("EarthGround", "EarthGroundDescription");
+        dialogList.Add("法阵-scene2", "EarthGroundDescription");
+        dialogList.Add("WaterGround", "EarthGroundDescription");
+        dialogList.Add("Earth Key", "EarthGroundDescription");
         dialog.SetActive(false);
     }
 
