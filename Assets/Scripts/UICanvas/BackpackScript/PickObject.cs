@@ -35,42 +35,42 @@ public class PickObject : MonoBehaviour
     // Update is called once per frame
     void Update(){
         if (Input.GetMouseButtonDown(0)) {
-            if (!dialogShow) {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hitInfo;
-                if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, layerMask)) {
-                    GameObject clickObject = hitInfo.collider.gameObject;
-                    print(clickObject.name);
-                    if (clickObject.tag.CompareTo("Pickable") == 0){
-                        if (clickObject.name == "Earth Key") {
-                            GameObject.Find("MainUI").GetComponent<Show>().ShowBackpackIcon();
-                        }
-                        Backpack.backpack.GetComponent<Backpack>().AddItem(clickObject.name);
-                        Sprite item = clickObject.GetComponent<SpriteRenderer>().sprite;
-                        GameObject.Find("MainUI").GetComponent<FlyingSpell>().FlyTowardsIcon(item, false);
-                        Destroy(clickObject);
-                    } else if (clickObject.name.CompareTo("Boss") == 0){
-                        AIDataManager.DecideTrigram();
+            // if (!dialogShow) {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hitInfo;
+            if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, layerMask)) {
+                GameObject clickObject = hitInfo.collider.gameObject;
+                print(clickObject.name);
+                if (clickObject.tag.CompareTo("Pickable") == 0){
+                    if (clickObject.name == "Earth Key") {
+                        GameObject.Find("MainUI").GetComponent<Show>().ShowBackpackIcon();
                     }
-                    if (clickObject.tag == "Portals") {
-                        clickObject.GetComponent<ChangeSprite>().Trigger = true;
-                    }
-
-                    if (TipsDialog.dialogList.ContainsKey(clickObject.name))
-                    {
-                        TipsDialog.PrintDialog(clickObject.name);
-                        dialogShow = true;
-                    }
+                    Backpack.backpack.GetComponent<Backpack>().AddItem(clickObject.name);
+                    Sprite item = clickObject.GetComponent<SpriteRenderer>().sprite;
+                    GameObject.Find("MainUI").GetComponent<FlyingSpell>().FlyTowardsIcon(item, false);
+                    Destroy(clickObject);
+                } else if (clickObject.name.CompareTo("Boss") == 0){
+                    AIDataManager.DecideTrigram();
                 }
-            } 
+                if (clickObject.tag == "Portals") {
+                    clickObject.GetComponent<ChangeSprite>().Trigger = true;
+                }
+
+                if (TipsDialog.dialogList.ContainsKey(clickObject.name))
+                {
+                    TipsDialog.PrintDialog(clickObject.name);
+                    dialogShow = true;
+                }
+            }
+            // } 
             // else if (GameObject.Find("MainUI").GetComponent<Show>().clickedObject) {
             //     dialogShow = true;
             // }
-            else {
-                TipsDialog.HideTextBox();
-                print("setting dialogshow to false in pickObject");
-                dialogShow = false;
-            }
+            // else {
+            //     TipsDialog.HideTextBox();
+            //     print("setting dialogshow to false in pickObject");
+            //     dialogShow = false;
+            // }
         }
     }
 }

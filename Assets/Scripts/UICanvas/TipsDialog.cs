@@ -7,7 +7,7 @@ public class TipsDialog : MonoBehaviour
 {
     public static Text dialogText;
     public TextAsset textFile;
-    public int index;
+    public static int index;
     public static List<string> textlist = new List<string>();
     public static List<string> textlist2 = new List<string>();
 
@@ -47,22 +47,24 @@ public class TipsDialog : MonoBehaviour
         dialog.SetActive(false);
     }
 
-     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            print(index);
-            if (index == textlist2.Count-1){
-                index = 2;
-                Debug.Log("no more tips");
-                dialog.SetActive(false);
-            }else{
-                dialogText.text = textlist[index];
-                index ++;
-            }
+    // void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.R))
+    //     {
+    //         NextPage();
+    //     }
+    // }
+
+    public static void NextPage() {
+        print(index);
+        if (index == textlist2.Count-1){
+            index = 2;
+            Debug.Log("no more tips");
+            dialog.SetActive(false);
+        }else{
+            dialogText.text = textlist[index];
+            index ++;
         }
-
-
     }
 
     public static void PrintDialog(string objName){

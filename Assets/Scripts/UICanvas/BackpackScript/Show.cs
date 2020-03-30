@@ -102,6 +102,9 @@ public class Show : MonoBehaviour
                     talisDisp.CloseDisplay();
                     Backpack.backpack.GetComponent<Backpack>().Show(false);
                 }
+                else if (result.gameObject.name.CompareTo("Next Button") == 0) {
+                    TipsDialog.NextPage();
+                }
             }
         }
         // Show talisman building description after closing the spell tree

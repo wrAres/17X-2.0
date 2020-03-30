@@ -39,7 +39,7 @@ Talisman 1
 A simple spell would be able to let me cross the river.
 【Press ‘SPACE’ to open the talisman】
 ---
-Talisman 2 (When the player first open the Talisman)
+Talisman 2
 What? There are two dragons entwined on my scrolls. 
 The left one looks like the Yellow-Dragon, the God of Earth. 
 What is he doing there? Where are my other characters? 
