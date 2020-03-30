@@ -72,6 +72,10 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
                         imageObj.transform.position = GameObject.Find("Flowerpot").transform.position + new Vector3(0f, 0.8f, 0f);
                     } else if (itemOnGround.name.CompareTo("Glowing Sun") == 0) {
                         imageObj.transform.position = GameObject.Find("Flowerpot").transform.position + new Vector3(0f, 2.0f, 0f);
+                    } else if (itemOnGround.name.CompareTo("Earth Portal") == 0){
+                        GameObject portal = GameObject.Find("WaterToEarthPortal");
+                        portal.GetComponent<SpriteRenderer>().enabled = true;
+                        portal.transform.position = hitInfo.point + new Vector3(0.0f, 0.1f, 0);
                     }
                     else {
                         imageObj.transform.position = hitInfo.point + new Vector3(0.0f, 0.1f, 0);

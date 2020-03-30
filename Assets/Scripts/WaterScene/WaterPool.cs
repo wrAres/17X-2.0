@@ -9,6 +9,7 @@ public class WaterPool : MonoBehaviour
 	public Sprite bluePool;
 	int timer;
 	public bool isBlue;
+	public bool timerActivated = false;
 	
     void Start()
     {
@@ -17,14 +18,14 @@ public class WaterPool : MonoBehaviour
 		timer = 0;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        timer++;
-		if(timer%100 == 0){
-			this.changeColor();
+	void Update() {
+		if (timerActivated){
+			timer++;
+			if(timer == 100){
+				this.changeColor();
+			}
 		}
-    }
+	}
 	
 	void changeColor(){
 		if(isBlue){

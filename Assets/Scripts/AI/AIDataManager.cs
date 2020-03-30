@@ -28,7 +28,7 @@ public class AIDataManager : MonoBehaviour
     void Start()
     {   
 
-        spellListBeforeWaterBoss = new string[] {"Taiji Key", "Board", "Life Water", "Taoist Wind", "Firewood", "Glowing Sun", "Dirt"};
+        spellListBeforeWaterBoss = new string[] {"Taiji Key", "Board", "Life Water", "Taoist Wind", "Firewood", "Glowing Sun", "Dirt", "Earth Portal"};
         elementListBeforeWaterBoss = new string[] {"thunder", "sun", "wind", "moon", "water", "fire", "wood", "earth", "metal"};
         spellAccessCount = new Dictionary<string, int>();
         for (int i = 0; i < spellListBeforeWaterBoss.Length; i++) {
@@ -51,6 +51,7 @@ public class AIDataManager : MonoBehaviour
         spellAccessStandardCount.Add("Firewood", 0);
         spellAccessStandardCount.Add("Glowing Sun", 0);
         spellAccessStandardCount.Add("Dirt", 0);
+        spellAccessStandardCount.Add("Earth Portal", 0);
         spellAccessStandardCount.Add("water", 0);
         spellAccessStandardCount.Add("fire", 0);
         spellAccessStandardCount.Add("wood", 0);

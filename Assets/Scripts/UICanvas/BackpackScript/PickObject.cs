@@ -30,11 +30,6 @@ public class PickObject : MonoBehaviour
             TipsDialog.PrintDialog("Lobby");
             firstTimeLobbyFlag = true;
         }
-        if (SceneManager.GetActiveScene().name == "scene3" && firstTimeWaterFlag == false)
-        {
-            TipsDialog.PrintDialog("Walking Puzzle");
-            firstTimeWaterFlag = true;
-        }
     }
 
     // Update is called once per frame

@@ -58,6 +58,7 @@
      <Compile Include="Assets\ChangeSprite.cs" />
      <Compile Include="Assets\MirrorDoor.cs" />
      <Compile Include="Assets\OpenPortal.cs" />
+     <Compile Include="Assets\RenderSprout.cs" />
      <Compile Include="Assets\Rivertip.cs" />
      <Compile Include="Assets\Scripts\AI\AIDataManager.cs" />
      <Compile Include="Assets\Scripts\AI\BT\ActionNode.cs" />
