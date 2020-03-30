@@ -20,7 +20,7 @@ public class Backpack : MonoBehaviour
         backpack = GameObject.FindWithTag("Backpack");
         canvas = GameObject.Find("MainUI");
         // listOfItems = new LinkedList<Item>();
-        imageObjects = new GameObject[9];
+        imageObjects = new GameObject[18];
         length = 0;
         this.AddItem("SpellTreeItem");
         // this.AddItem("Taiji Key");
@@ -38,12 +38,12 @@ public class Backpack : MonoBehaviour
     }
 
     public void AddItem(string name) {
-        for (int i = 0; i < length; i++) {
-            GameObject currObj = imageObjects[i];
-            if (currObj.name.CompareTo(name) == 0) {
-                return ;
-            }
-        }
+        // for (int i = 0; i < length; i++) {
+        //     GameObject currObj = imageObjects[i];
+        //     if (currObj.name.CompareTo(name) == 0) {
+        //         return ;
+        //     }
+        // }
 
         GameObject imageObj = new GameObject(name); //Create the GameObject
         
@@ -62,7 +62,7 @@ public class Backpack : MonoBehaviour
         // RectTransform backpack_transform = backpack.GetComponent<RectTransform>();
         item_transform.SetParent(backpack.transform); //Assign the newly created Image GameObject as a Child of the Parent Panel, Canvas/Main UI.
 
-        item_transform.anchoredPosition = new Vector2((length-7.5f)*100, 0);
+        item_transform.anchoredPosition = new Vector2((length-12f)*80 + 200, 0);
         if (name.CompareTo("Life Water") == 0) {
             item_transform.sizeDelta = new Vector2(60, 35);
         } else if (name.CompareTo("Dirt") == 0) {
@@ -71,7 +71,7 @@ public class Backpack : MonoBehaviour
         } else if (name.CompareTo("Taiji Key") == 0) {
             item_transform.sizeDelta = new Vector2(180, 120);
         } else {
-            item_transform.sizeDelta = new Vector2(50, 50);
+            item_transform.sizeDelta = new Vector2(80*1.05f, 80*1.05f);
         }
         
         UISoundScript.PlayBackpack();

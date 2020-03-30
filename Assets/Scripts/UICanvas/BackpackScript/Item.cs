@@ -70,7 +70,6 @@ public class Item : MonoBehaviour
         } 
         else if (item.CompareTo("SpellTreeItem") == 0){
             GameObject.Find("MainUI").GetComponent<Show>().ShowSpelltreeIcon();
-            GameObject.Find("Backpack_Roll").GetComponent<Backpack>().RemoveItem("SpellTreeItem");
             TipsDialog.PrintDialog("Spelltree 1");
             GameObject.Find("Dialog Box").transform.SetSiblingIndex(6);
             deleteSpellObject("SpellTreeItem");
@@ -195,5 +194,6 @@ public class Item : MonoBehaviour
             GameObject waterBoss = GameObject.Find("QiangYu");
             waterBoss.SetActive(true);
         }
+        GameObject.Find("Backpack_Roll").GetComponent<Backpack>().RemoveItem(item);
     }
 }
