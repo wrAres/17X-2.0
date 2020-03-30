@@ -5627,10 +5627,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textFile: {fileID: 4900000, guid: c029e113ad7d645f6bedba5c828dcda0, type: 3}
-  waterGateDiscription: Water Gate
-  riverDiscription: River
-  talismanDescription: t
-  lobbyPortalDescription: Is it a scroll or a door?
 --- !u!114 &1116509721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5965,7 +5961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &1167077276
 CapsuleCollider:
   m_ObjectHideFlags: 0
