@@ -5148,9 +5148,9 @@ MonoBehaviour:
   spellName: Firewood
   recipe: 010000000100000001000000
   level: 3
-  knownResp: 'Recipe: fire, ?, ?'
-  knownDes: 'A gust of wind made by talismam. It has a direction for sure. '
-  unlockedDes: A gust of wind made by talismam. It comes from south-east.
+  knownResp: 'Recipe: wood, ?, ?'
+  knownDes: 'A brunch of wood made by talismam. Yes, it can be used to setup fire. '
+  unlockedDes: A brunch of wood made by talismam. Yes, it can be used to setup fire.
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
   newDisp: {fileID: 134729395}
