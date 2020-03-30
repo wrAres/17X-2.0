@@ -49,3 +49,52 @@ Stay away from it! I don’t want to burn my brush.
 WaterGround
 It’s wet and soft as if I am stepping on the water.
 ---
+starground
+It looks like the evening sky with plenty of stars. It’s beautiful! 
+---
+GameObject
+Wait… Am I walking on the Dipper? Does it have any meaning?
+---
+End 
+Wait… Am I walking on the Dipper? Does it have any meaning?
+---
+Water Seed
+A seed that looks like Mercury. I can feel the Water energy surrounding it.
+---
+Flowerpot
+An ancient flower vase. It must be older than 5000 years.
+---
+Water Boss Door
+A wood gate with some weird decorations on it. What are their meanings?
+---
+6_water-white
+That’s the first time I see such pure Water energy! They are like thousands of =Life Water I created getting together.
+---
+1_water-dark
+That’s the first time I see such pure Water energy! They are like thousands of =Life Water I created getting together.
+---
+wind
+Strong winds come from somewhere. I can’t move forward against it.
+---
+wind (1)
+Strong winds come from somewhere. I can’t move forward against it.
+---
+wind (2)
+Strong winds come from somewhere. I can’t move forward against it.
+---
+wind (3)
+Strong winds come from somewhere. I can’t move forward against it.
+---
+wind (4)
+Strong winds come from somewhere. I can’t move forward against it.
+---
+wind (5)
+Strong winds come from somewhere. I can’t move forward against it.
+---
+wind (6)
+Strong winds come from somewhere. I can’t move forward against it.
+---
+wind (7)
+Strong winds come from somewhere. I can’t move forward against it.
+---
+

@@ -47,6 +47,26 @@ public class TipsDialog : MonoBehaviour
         dialogList.Add("法阵-scene2", "EarthGroundDescription");
         dialogList.Add("WaterGround", "EarthGroundDescription");
         dialogList.Add("Earth Key", "EarthGroundDescription");
+        dialogList.Add("starground", "EarthGroundDescription");
+        /*dialogList.Add("FloorPiece1", "EarthGroundDescription");
+        dialogList.Add("FloorPiece2", "EarthGroundDescription");
+        dialogList.Add("FloorPiece3", "EarthGroundDescription");
+        dialogList.Add("FloorPiece4", "EarthGroundDescription");*/
+        dialogList.Add("GameObject", "EarthGroundDescription");
+        dialogList.Add("End", "EarthGroundDescription");
+        dialogList.Add("Water Seed", "EarthGroundDescription");
+        dialogList.Add("Flowerpot", "EarthGroundDescription");
+        dialogList.Add("Water Boss Door", "EarthGroundDescription");
+        dialogList.Add("6_water-white", "EarthGroundDescription");
+        dialogList.Add("1_water-dark", "EarthGroundDescription");
+        dialogList.Add("wind", "EarthGroundDescription");
+        dialogList.Add("wind (1)", "EarthGroundDescription");
+        dialogList.Add("wind (2)", "EarthGroundDescription");
+        dialogList.Add("wind (3)", "EarthGroundDescription");
+        dialogList.Add("wind (4)", "EarthGroundDescription");
+        dialogList.Add("wind (5)", "EarthGroundDescription");
+        dialogList.Add("wind (6)", "EarthGroundDescription");
+        dialogList.Add("wind (7)", "EarthGroundDescription");
         dialog.SetActive(false);
     }
 
