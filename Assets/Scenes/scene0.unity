@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: scene2
   enterable: 0
+  openScroll: 0
 --- !u!65 &72247049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -604,7 +605,7 @@ GameObject:
   - component: {fileID: 792944444}
   - component: {fileID: 792944446}
   m_Layer: 0
-  m_Name: "\u6CB3"
+  m_Name: River
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -787,6 +788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: scene4
   enterable: 0
+  openScroll: 0
 --- !u!65 &1566969869
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -990,6 +992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: SampleScene
   enterable: 0
+  openScroll: 0
 --- !u!65 &1928741907
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1178,6 +1181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene: scene1
   enterable: 0
+  openScroll: 0
 --- !u!65 &2120403882
 BoxCollider:
   m_ObjectHideFlags: 0

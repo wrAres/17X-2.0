@@ -55,16 +55,17 @@ public class TipsDialog : MonoBehaviour
     //     }
     // }
 
-    public static void NextPage() {
-        print(index);
-        if (index == textlist2.Count-1){
+    public static bool NextPage() {
+        print("index: " + index + ", list length: " + textlist2.Count);
+        if (index > textlist2.Count - 1){
             index = 2;
             Debug.Log("no more tips");
-            dialog.SetActive(false);
-        }else{
-            dialogText.text = textlist[index];
-            index ++;
+            // dialog.SetActive(false);
+            return false;
         }
+        dialogText.text = textlist2[index].Replace("=", "\n");
+        index ++;
+        return true;
     }
 
     public static void PrintDialog(string objName){
@@ -78,9 +79,9 @@ public class TipsDialog : MonoBehaviour
                 j++;
             }
         }
-        dialogText.text = textlist2[1].Replace("\\n", "\n");
+        dialogText.text = textlist2[1].Replace("=", "\n");
         dialog.SetActive(true);
-        print("Set dialog active");
+        print("Set dialog active, index: " + index + ", list length: " + textlist2.Count);
     }
 
     public static void HideTextBox() {
