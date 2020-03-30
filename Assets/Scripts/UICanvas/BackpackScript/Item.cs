@@ -212,8 +212,8 @@ public class Item : MonoBehaviour
             GameObject.Find("1_water-dark").GetComponent<WaterPool>().timerActivated = true;
             GameObject.Find("6_water-white").GetComponent<WaterPool>().timerActivated = true;
             
-            GameObject waterBoss = GameObject.FindWithTag("Water Boss");
-            waterBoss.GetComponent<SpriteRenderer>().enabled = true;
+            // GameObject waterBoss = GameObject.FindWithTag("Water Boss");
+            // waterBoss.GetComponent<SpriteRenderer>().enabled = true;
 
             TipsDialog.PrintDialog("Water Boss");
         }

@@ -608,7 +608,7 @@ GameObject:
   - component: {fileID: 350201158}
   - component: {fileID: 350201157}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: River Tip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

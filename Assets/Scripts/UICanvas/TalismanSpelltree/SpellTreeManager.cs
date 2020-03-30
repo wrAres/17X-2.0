@@ -138,10 +138,11 @@ public class SpellTreeManager : MonoBehaviour {
                 spell[i].SetOld();
             }
         }
-
+        print("spell list: " + spell);
         // Make related recipes known if locked
         for (int i = 0; i < spell.Count; i++) {
-            if (CanCraft(spell[i]) && spell[i].element == TalisDrag.Elements.NONE) {
+            if (CanCraft(spell[i]) && spell[i].curState == Spell.SpellState.LOCKED){
+            // if (CanCraft(spell[i]) && spell[i].element == TalisDrag.Elements.NONE) {
                 spell[i].ChangeState(Spell.SpellState.KNOWN);
             }
         }

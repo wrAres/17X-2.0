@@ -8,10 +8,6 @@ public class PickObject : MonoBehaviour
     private int layerMask;
     public bool dialogShow = false;
     public bool descShow = true;
-    private bool firstTimeEarthFlag = false; // Used to tell if its the first time visiting the EarthRoom scene
-    private bool firstTimeLobbyFlag = false; // Used to tell if its the first time visiting the lobby scene
-    private bool firstTimeWaterFlag = false; // Used to tell if its the first time visiting the water scene
-
     private void Start() {
         // This would cast rays only against colliders in layer 8.
         // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
@@ -20,15 +16,20 @@ public class PickObject : MonoBehaviour
 
         // Check to see if current scene is the lobby if so show spell tree description
         // "Scene 0" name might eb changed later
-        if (SceneManager.GetActiveScene().name == "EarthRoom" && firstTimeEarthFlag == false)
+        if (SceneManager.GetActiveScene().name == "EarthRoom")
         {
             TipsDialog.PrintDialog("Self Introduction");
-            firstTimeEarthFlag = true;
         }
-        if (SceneManager.GetActiveScene().name == "scene0" && firstTimeLobbyFlag == false)
-        {
-            TipsDialog.PrintDialog("Lobby");
-            firstTimeLobbyFlag = true;
+        if (SceneManager.GetActiveScene().name == "scene0"){
+            if (DontDestroyVariables.firstTimeLobbyFlag){
+                TipsDialog.PrintDialog("Lobby");
+                DontDestroyVariables.firstTimeLobbyFlag = false; // Used to tell if its the first time visiting the lobby scene
+            } else {
+                Destroy(GameObject.Find("River Tip"));
+                GameObject river = GameObject.Find("River");
+                river.GetComponent<CapsuleCollider>().radius = 0;
+                GameObject.Find("River").GetComponent<Renderer>().material.color = Color.gray;
+            }
         }
     }
 
