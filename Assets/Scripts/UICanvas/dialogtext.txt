@@ -8,9 +8,7 @@ River
 River
 ---
 Earth Key
-Oh, wait! I almost forgot an important thing. 
-In such an unknown place, I need to have my 
-“weapons” in hands -- Writing Brush and Talismans.
+Oh, wait! I almost forgot an important thing. In such an unknown place, \nI need to have my “weapons” in hands -- Writing Brush and Talismans.
  They should be in my gourd. I used to store 
 everything in my gourd.
 ---

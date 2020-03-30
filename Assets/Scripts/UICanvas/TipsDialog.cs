@@ -78,7 +78,7 @@ public class TipsDialog : MonoBehaviour
                 j++;
             }
         }
-        dialogText.text = textlist2[1];
+        dialogText.text = textlist2[1].Replace("\\n", "\n");
         dialog.SetActive(true);
         print("Set dialog active");
     }
