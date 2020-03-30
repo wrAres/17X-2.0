@@ -1,36 +1,29 @@
 Player
 Ewww… Where am I? 
 Wasn’t I on my way finding the Five-Elements-Seal?
- I remember I almost found it according to the map 
+I remember I almost found it according to the map 
 that my teacher left for me. I must find the way out!
 ---
 River
 River
 ---
 Earth Key
-Oh, wait! I almost forgot an important thing. In such an unknown place, \nI need to have my “weapons” in hands -- Writing Brush and Talismans.
- They should be in my gourd. I used to store 
-everything in my gourd.
+Oh, wait! I almost forgot an important thing. 
+In such an unknown place, I need to have my “weapons” in hands =        -- Writing Brush and Talismans.
+They should be in my gourd. I used to store everything in my gourd.
 ---
 Lobby
-Wow! An Eight-Trigram-Atlas! I feel the strong
- energies of the other four elements except Earth 
-come from four different directions. According to 
-what my teacher taught me, Water was the first 
-element generated in the world. Maybe I can go
- check the Water energy first. 
+Wow! An Eight-Trigram-Atlas! I feel the strong energies of the other four =elements except Earth come from four different directions. 
+According to what my teacher taught me, Water was the first element =generated in the world. 
+Maybe I can go check the Water energy first. 
 ---
 Spelltree 1
-All talisman wizards have their own Spelltree pages
-that record spells they have learned in the past. 
-We draw those spell-characters in the talisman to 
-cast a specific spell.
+All talisman wizards have their own Spelltree pages that record spells they =have learned in the past. 
+We draw those spell-characters in the talisman to cast a specific spell.
 ---
 Spelltree 2
-Oh no! My Spelltree is covered by some shells and
-I somehow cannot remember mostly anything about 
-my spells. Something must be wrong! 
-I must find the way out of here.
+Oh no! My Spelltree is covered by some shells and I somehow cannot =remember mostly anything about my spells. 
+Something must be wrong! I must find the way out of here.
 ---
 Talisman 1
 … I … I just felt like some of my memories have come back. 
@@ -38,11 +31,8 @@ A simple spell would be able to let me cross the river.
 【Press ‘SPACE’ to open the talisman】
 ---
 Talisman 2
-What? There are two dragons entwined on my scrolls. 
-The left one looks like the Yellow-Dragon, the God of Earth. 
-What is he doing there? Where are my other characters? 
-Maybe I should try if I can still use the talisman…
-【Click and Drag the character into the dotted lines Boxes 
-on the talisman】
+What? There are two dragons entwined on my scrolls. The left one looks =like the Yellow-Dragon, the God of Earth. 
+What is he doing there? Where are my other characters? Maybe I should =try if I can still use the talisman…
+【Click and Drag the character into the dotted lines Boxes on the talisman】
 ---
 

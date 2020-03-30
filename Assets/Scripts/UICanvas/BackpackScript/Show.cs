@@ -103,7 +103,10 @@ public class Show : MonoBehaviour
                     Backpack.backpack.GetComponent<Backpack>().Show(false);
                 }
                 else if (result.gameObject.name.CompareTo("Next Button") == 0) {
-                    TipsDialog.NextPage();
+                    bool textActive = TipsDialog.NextPage();
+                    print("text act" + textActive);
+                    GameObject.Find("Dialog Box").SetActive(textActive);
+
                 }
             }
         }
