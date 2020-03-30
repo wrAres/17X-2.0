@@ -193,7 +193,7 @@ public class Item : MonoBehaviour
             AIDataManager.UpdateStandardSpellCount("Taiji Key", 1);
 
             GameObject waterBoss = GameObject.Find("QiangYu");
-            waterBoss.SetActive(false);
+            //waterBoss.SetActive(false);
         }
         else if (item.CompareTo("Boom") == 0 && position.CompareTo("Water Boss Door") == 0){
             deleteSpellObject("Boom");

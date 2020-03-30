@@ -8,6 +8,8 @@ public class RenderSprout : MonoBehaviour
     void Start()
     {
         if (DontDestroyVariables.growSprout) {
+            GameObject.Find("Water Seed").SetActive(false);
+            
             GameObject flowerpot = GameObject.Find("Flowerpot");
             flowerpot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Flowerpot with dirt");
             

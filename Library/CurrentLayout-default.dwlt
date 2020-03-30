@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 263
+  controlID: 2500
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 264
+  controlID: 2501
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 265
+  controlID: 2502
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -390,10 +390,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 256}
-      m_SelectedIDs: aa400000
-      m_LastClickedID: 16554
-      m_ExpandedIDs: 3cfaffff22fbffffe43f00002a400000cc400000
+      scrollPos: {x: 0, y: 576}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 32edffff34f2ffff02f3ffff74f3ffffdcf4fffff6f4ffff1af5ffff20f9ffff3af9ffff60f9ffff6efbffffbc420000fc530000f25d0000508600000e87000066890000748a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -453,9 +453,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: -1.4847231, y: -9.581444, z: 5.3469753}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: -1.4847231, y: -9.581444, z: 5.3469753}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -501,17 +501,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    m_Target: {x: 0.36294955, y: -0.050282255, z: 0.019618377, w: 0.9302446}
     speed: 2
-    m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    m_Value: {x: 0.36291963, y: -0.051677555, z: 0.020162774, w: 0.9301679}
   m_Size:
-    m_Target: 10
+    m_Target: 17.827168
     speed: 2
-    m_Value: 10
+    m_Value: 17.668152
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
@@ -597,20 +597,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/UICanvas
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/UICanvas
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/Bz/Desktop/Atlas_3.0/17X-2.0
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 154}
-    m_SelectedIDs: 663d0000
-    m_LastClickedID: 15718
-    m_ExpandedIDs: 00000000303d0000323d0000343d0000363d0000383d00003a3d00003c3d00003e3d000000ca9a3b
+    scrollPos: {x: 0, y: 250}
+    m_SelectedIDs: b03b0000
+    m_LastClickedID: 15280
+    m_ExpandedIDs: 00000000a63b0000a83b0000aa3b0000ac3b0000ae3b0000b03b0000b23b0000b43b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -638,7 +638,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000303d0000323d0000343d0000363d0000383d00003a3d00003c3d00003e3d000000ca9a3b
+    m_ExpandedIDs: 00000000a63b0000a83b0000aa3b0000ac3b0000ae3b0000b03b0000b23b0000b43b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
