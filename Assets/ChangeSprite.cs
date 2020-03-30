@@ -14,7 +14,10 @@ public class ChangeSprite : MonoBehaviour
         if (Trigger)
         {
             this.gameObject.GetComponent<SpriteRenderer>().sprite = Target;
+            string name = this.gameObject.name;
+            sceneTransition transition = this.gameObject.GetComponent<sceneTransition>();
             Trigger = false;
+            transition.CheckOpen();
         }
     }
 }

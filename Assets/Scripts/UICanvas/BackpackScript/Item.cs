@@ -37,9 +37,16 @@ public class Item : MonoBehaviour
         availablePutList = available.Split(',');
         for (int i = 0; i < availablePutList.Length; i++) {
             if (targetObj.CompareTo(availablePutList[i]) == 0){
-                if (item.CompareTo("Life Water") != 0)
-                    return true;
-                else if (waterSeedGrow && dirtInPot)
+                if (item.CompareTo("Life Water") == 0) {
+                    if (waterSeedGrow && dirtInPot)
+                        return true;
+                    else return false;
+                } else if (item.CompareTo("Earth Key") == 0) {
+                    if (GameObject.Find("EarthPortal").GetComponent<sceneTransition>().openScroll)
+                        return true;
+                    else return false;
+                }
+                else 
                     return true;
             }
         }
@@ -75,7 +82,9 @@ public class Item : MonoBehaviour
             deleteSpellObject("SpellTreeItem");
         } 
         else if (item.CompareTo("Earth Key") == 0 && position.CompareTo("EarthPortal") == 0){
-            GameObject.Find("EarthPortal").GetComponent<sceneTransition>().enterable = true;
+            GameObject earthPortal = GameObject.Find("EarthPortal");
+            earthPortal.GetComponent<sceneTransition>().enterable = true;
+            earthPortal.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/blank_scroll");
             print("Earthportal");
             deleteSpellObject("Earth Key");
         } 

@@ -7,9 +7,17 @@ public class sceneTransition : MonoBehaviour
     //[SerializeField] private string newlevel;
 	public string scene;
 	public bool enterable;
+	public bool openScroll;
 
 	void Start() {
-		if (this.gameObject.name.CompareTo("法阵-scene2") == 0 || this.gameObject.name.CompareTo("EarthPortal") == 0)
+		openScroll = false;
+		enterable = false;
+	}
+
+	public void CheckOpen() {
+		openScroll = true;
+		string name = this.gameObject.name;
+		if (name.CompareTo("法阵-scene2") == 0 || name.CompareTo("EarthPortal") == 0)
 			enterable = false;
 		else 
 			enterable = true;
