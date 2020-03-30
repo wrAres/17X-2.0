@@ -12,6 +12,9 @@ public class sceneTransition : MonoBehaviour
 	void Start() {
 		openScroll = false;
 		enterable = false;
+		if (this.gameObject.name.CompareTo("WaterToEarthPortal") == 0) {
+			enterable = true;
+		}
 	}
 
 	public void CheckOpen() {

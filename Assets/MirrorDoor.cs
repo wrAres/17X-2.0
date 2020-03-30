@@ -38,7 +38,7 @@ public class MirrorDoor : MonoBehaviour
 		}
 		if(isFreezed == true){
 			timer++;
-			if(timer == 400){
+			if(timer == 50){
 				player.GetComponent<playerMovement>().freeze = 1;
 				isFreezed = false;
 				timer = 0;

@@ -13,6 +13,7 @@ public class flowerInMirror : MonoBehaviour
 	int timer;
 	bool isCracked;
 	int temp;
+	public bool clickable = false;
 	
     void Start()
     {
@@ -35,18 +36,22 @@ public class flowerInMirror : MonoBehaviour
     }
 	
 	void OnMouseDown(){
-		if(!isRight){
-			this.gameObject.GetComponent<SpriteRenderer>().sprite = cracked;
-			temp = timer;
-			isCracked = true;
-			/*if(temp+100<timer){
+		if (clickable) {
+			if(!isRight){
+				this.gameObject.GetComponent<SpriteRenderer>().sprite = cracked;
+				temp = timer;
+				isCracked = true;
+				/*if(temp+100<timer){
 				this.gameObject.GetComponent<SpriteRenderer>().sprite = def;
 				mirror.GetComponent<mirrors>().reset();
-			}*/
-		}else{
-			player.GetComponent<playerMovement>().isReverse = 1;
-			Destroy(mirror);
-			TipsDialog.PrintDialog("Break mirror");
+				}*/
+			}else{
+				player.GetComponent<playerMovement>().isReverse = 1;
+				Destroy(mirror);
+				TipsDialog.PrintDialog("Break mirror");
+			}
+		} else {
+			TipsDialog.PrintDialog("Mirror no effect");
 		}
 	}
 	

@@ -146,14 +146,19 @@ public class Item : MonoBehaviour
             AIDataManager.UpdateStandardSpellCount("wood", 3);
         } 
         else if (item.CompareTo("Glowing Sun") == 0 && position.CompareTo("Water Sprout") == 0){
-            GameObject bloom = new GameObject("Bloom");
-            bloom.transform.position = GameObject.Find("Flowerpot").transform.position + new Vector3(0f, 1.8f, 0f);
-            SpriteRenderer image = bloom.AddComponent<SpriteRenderer>(); //Add the Image Component script
-            image.sprite = Resources.Load<Sprite>("Bloom"); //Set the Sprite of the Image Component on the new GameObject
-            bloom.transform.localScale = new Vector3(0.15f, 0.2f, 0.2f);
-            Vector3 temp = bloom.transform.rotation.eulerAngles;
-            temp.x = 45f;
-            bloom.transform.rotation = Quaternion.Euler(temp);
+            // GameObject bloom = new GameObject("Bloom");
+            // bloom.transform.position = GameObject.Find("Flowerpot").transform.position + new Vector3(0f, 1.8f, 0f);
+            // SpriteRenderer image = bloom.AddComponent<SpriteRenderer>(); //Add the Image Component script
+            // image.sprite = Resources.Load<Sprite>("Bloom"); //Set the Sprite of the Image Component on the new GameObject
+            // bloom.transform.localScale = new Vector3(0.15f, 0.2f, 0.2f);
+            // Vector3 temp = bloom.transform.rotation.eulerAngles;
+            // temp.x = 45f;
+            // bloom.transform.rotation = Quaternion.Euler(temp);
+            GameObject.Find("Bloom").SetActive(true);
+            GameObject[] mirrorArray = GameObject.Find("mirrors").GetComponent<mirrors>().mirrorArray;
+            foreach (GameObject mirror in mirrorArray) {
+                mirror.GetComponent<flowerInMirror>().clickable = true;
+            }
 
             AIDataManager.UpdateStandardSpellCount("Glowing Sun", 1);
             AIDataManager.UpdateStandardSpellCount("sun", 2);
