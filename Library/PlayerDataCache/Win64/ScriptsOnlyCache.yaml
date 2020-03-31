@@ -30,6 +30,7 @@ ScriptsOnlyBuild:
     - WallMoveRight
     - WaterPool
     - WaterSoundManagerScript
+    - WindMovement
     - flowerInMirror
     - mirrors
     - playerMovement
@@ -249,6 +250,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 102
       Script: {instanceID: 0}
     - Class: 104
@@ -259,8 +262,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11182}
     - Class: 114
       Script: {instanceID: 11356}
-    - Class: 114
-      Script: {instanceID: 11396}
     - Class: 114
       Script: {instanceID: 11448}
     - Class: 114
@@ -319,8 +320,6 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
-      Script: {instanceID: 0}
-    - Class: 83
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -527,6 +526,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12530}
     - Class: 114
       Script: {instanceID: 12798}
+    - Class: 114
+      Script: {instanceID: 12944}
     - Class: 114
       Script: {instanceID: 13348}
     - Class: 114
@@ -1407,13 +1408,13 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 19
   scenePathNames:
+  - Assets/Scenes/Tutorial.unity
+  - Assets/Scenes/EarthRoom.unity
   - Assets/Scenes/scene0.unity
   - Assets/Scenes/scene1.unity
   - Assets/Scenes/scene3.unity
   - Assets/Scenes/scene2.unity
   - Assets/Scenes/scene4.unity
   - Assets/Scenes/SampleScene.unity
-  - Assets/Scenes/Tutorial.unity
-  - Assets/Scenes/EarthRoom.unity
   playerPath: /Users/wensdon/Desktop/academic/UCSC/Senior/winter 2020/The Atlas of
-    Shanhe and Sheji/The Atlas/MovePuzzle.exe
+    Shanhe and Sheji/AtlasDemo_Windows/MovePuzzle.exe

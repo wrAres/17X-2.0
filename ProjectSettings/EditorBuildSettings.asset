@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: fd816e70c148e0d4c9f9d8c69ec651e3
+  - enabled: 1
+    path: Assets/Scenes/EarthRoom.unity
+    guid: b28f01f54601d4847834b3e900b1ae53
+  - enabled: 1
     path: Assets/Scenes/scene0.unity
     guid: cb86eee0914f2234f9838c10ac40807b
   - enabled: 1
@@ -25,11 +31,5 @@ EditorBuildSettings:
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
     path: 
-    guid: c152cd801c0b44ce68ca40b3cbd63d67
-  - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: fd816e70c148e0d4c9f9d8c69ec651e3
-  - enabled: 1
-    path: Assets/Scenes/EarthRoom.unity
-    guid: b28f01f54601d4847834b3e900b1ae53
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

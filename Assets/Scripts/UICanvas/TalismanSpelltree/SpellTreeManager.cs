@@ -44,9 +44,9 @@ public class SpellTreeManager : MonoBehaviour {
         }
         */
 
-        if (Input.GetKeyDown(KeyCode.Q)) {
-            UnlockElement(TalisDrag.Elements.WIND);
-        }
+        // if (Input.GetKeyDown(KeyCode.Q)) {
+        //     UnlockElement(TalisDrag.Elements.WOOD);
+        // }
     }
 
     private void UpdateIcons() {

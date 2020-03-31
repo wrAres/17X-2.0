@@ -141,8 +141,7 @@ public class Item : MonoBehaviour
         else if (item.CompareTo("Firewood") == 0 && position.CompareTo("法阵-scene2") == 0){
             sceneTransition sceneTrans = GameObject.Find("法阵-scene2").GetComponent<sceneTransition>();
             GameObject.Find("法阵-scene2").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Fire Scroll");
-            Debug.Log(sceneTrans);
-            sceneTrans.enterable = true;
+            // sceneTrans.enterable = true;
             s.UnlockElement(TalisDrag.Elements.FIRE);
 
             AIDataManager.UpdateStandardSpellCount("Firewood", 1);
@@ -157,7 +156,7 @@ public class Item : MonoBehaviour
             // Vector3 temp = bloom.transform.rotation.eulerAngles;
             // temp.x = 45f;
             // bloom.transform.rotation = Quaternion.Euler(temp);
-            GameObject.Find("Bloom").GetComponent<SpriteRenderer>().enabled = true;
+            GameObject.Find("Bloom").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Bloom");
             GameObject[] mirrorArray = GameObject.Find("mirrors").GetComponent<mirrors>().mirrorArray;
             foreach (GameObject mirror in mirrorArray) {
                 mirror.GetComponent<flowerInMirror>().clickable = true;
