@@ -14,7 +14,7 @@ public class Rivertip : MonoBehaviour
         //Check for a match with the specified name on any GameObject that collides with your GameObject
         if (collision.gameObject.name == "Main Character")
         {
-            this.gameObject.GetComponent<CapsuleCollider>().radius = 0;
+            this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
             TipsDialog.PrintDialog("Talisman 1");
         }
     }
