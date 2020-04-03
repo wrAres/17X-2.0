@@ -67,7 +67,7 @@ public class Item : MonoBehaviour
     public static void puzzleEffect(string item, string position) {
         if (item.CompareTo("Dirt") == 0 && position.CompareTo("River") == 0){
             GameObject river = GameObject.Find("River");
-            river.GetComponent<CapsuleCollider>().radius = 0;
+            river.GetComponent<BoxCollider>().size = new Vector3(0, 0, 0);
             GameObject.Find("River").GetComponent<Renderer>().material.color = Color.gray;
             s.UnlockElement(TalisDrag.Elements.WATER);
             

@@ -92,7 +92,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
                     Item.puzzleEffect(imageObj.name, dragOnObject.name);
                 } else {
                     AIDataManager.wrongItemPlacementCount += 1;
-                    print("wrong drop: " + AIDataManager.wrongItemPlacementCount);
+                    print(dragOnObject.name + "'s wrong drop: " + AIDataManager.wrongItemPlacementCount);
                 }
             }
             else {

@@ -1474,7 +1474,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &350201157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3035,8 +3035,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 89.98, y: 0, z: -0.527}
---- !u!136 &792944446
-CapsuleCollider:
+--- !u!65 &792944446
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3045,10 +3045,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 23.621153
-  m_Height: 47.242306
-  m_Direction: 1
-  m_Center: {x: 0, y: -17.493998, z: -0.00006891305}
+  serializedVersion: 2
+  m_Size: {x: 47.24231, y: 20.398796, z: 0.20000114}
+  m_Center: {x: 0.0000000025452793, y: -3.9756012, z: -1.0673533e-10}
 --- !u!1 &794262378
 GameObject:
   m_ObjectHideFlags: 0
@@ -6943,8 +6942,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 17.461155, y: 9.686036, z: 0.20000005}
-  m_Center: {x: 0.15391171, y: -0.043970346, z: -0.000000036219944}
+  m_Size: {x: 6.273949, y: 9.686036, z: 0.20000005}
+  m_Center: {x: 0.15391096, y: -0.043970346, z: -0.000000036219944}
 --- !u!212 &1928741908
 SpriteRenderer:
   m_ObjectHideFlags: 0
