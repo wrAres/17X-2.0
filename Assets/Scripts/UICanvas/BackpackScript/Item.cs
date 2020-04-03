@@ -46,11 +46,20 @@ public class Item : MonoBehaviour
                     if (GameObject.Find("EarthPortal").GetComponent<sceneTransition>().openScroll)
                         return true;
                     else return false;
+                } else if (item.CompareTo("Water Seed") == 0 && targetObj.CompareTo("Flowerpot") == 0) {
+                    if (dirtInPot) {
+                        return true;
+                    } else {
+                        TipsDialog.PrintDialog("Water Seed Grow Order");
+                        return false;
+                    }
                 }
-                else 
+                else {
                     return true;
+                }
             }
         }
+        TipsDialog.PrintDialog("Wrong Spell");
         return false;
     }
 

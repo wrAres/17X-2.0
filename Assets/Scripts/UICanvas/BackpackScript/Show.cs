@@ -11,10 +11,11 @@ public class Show : MonoBehaviour
     public GameObject spellTreeDisp;
     private TalismanManager talisDisp;
     private bool earthUnlocked;
-    private int closedFirstTimeFlag = 0; // Used to mark when to pop up talisman description text
+    // private int closedFirstTimeFlag = 0; // Used to mark when to pop up talisman description text
     public bool clickedObject = false;
     private bool brightBackpack = false;
     private bool brightSpell = false;
+    public bool seenSpellTree = false;
     PickObject pick;
     GraphicRaycaster raycaster;
     PointerEventData pointerData;
@@ -104,6 +105,7 @@ public class Show : MonoBehaviour
                         GameObject spellTree = GameObject.FindGameObjectWithTag("SpellTreeIcon");
                         spellTree.GetComponent<Image>().sprite = Resources.Load<Sprite>("ChangeAsset/All elements");
                         spellTree.transform.localScale = new Vector2(2.6f, 2.5f);
+                        seenSpellTree = true;
                     }
                     spellTreeDisp.SetActive(!spellTreeDisp.activeSelf);
              

@@ -17,7 +17,7 @@ public class TipsDialog : MonoBehaviour
     // public string riverDiscription;
     // public string talismanDescription;
     // public string lobbyPortalDescription;
-    private static bool dialogOrDesc = true; //true when it is a dialog
+    // private static bool dialogOrDesc = true; //true when it is a dialog
 
     /* Where to find what keys are being called:
      * Keys: River, Earth Key - Called in CanvasUI\BackpackScript\PickObject, line 57
@@ -95,7 +95,7 @@ public class TipsDialog : MonoBehaviour
     }
 
     public static void PrintDialog(string objName){
-        dialogOrDesc = true;
+        // dialogOrDesc = true;
         textlist2.Clear();
         if (textlist.Contains(objName)){
             int i = textlist.IndexOf(objName);

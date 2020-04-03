@@ -15,7 +15,8 @@ public class Rivertip : MonoBehaviour
         if (collision.gameObject.name == "Main Character")
         {
             this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
-            TipsDialog.PrintDialog("Talisman 1");
+            if (!DontDestroyVariables.accidentallyOpenTalisman)
+                TipsDialog.PrintDialog("Talisman 1");
         }
     }
 }

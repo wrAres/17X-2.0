@@ -20,6 +20,10 @@ Spelltree 2
 Oh no! My Spelltree is covered by some shells and I somehow cannot =remember mostly anything about my spells. 
 Something must be wrong! I must find the way out of here.
 ---
+Talisman 0
+What? There are two dragons entwined on my scrolls. The left one looks =like the Yellow-Dragon, the God of Earth. 
+But why my talisman is empty? Maybe I should check my spelltree so =I can remember what to draw on the talisman.
+---
 Talisman 1
 … I … I just felt like some of my memories have come back. 
 A simple spell would be able to let me cross the river.
@@ -112,4 +116,10 @@ Qiang Yu: I am Qiang Yu, God of Water. You do surprise me a lot, human. =You hav
 … …
 Qiang Yu: ☵
 Qiang Yu: Fighting against your fate, don’t let me down, human…
+---
+Water Seed Grow Order
+Someone: you have to put dirt first in order to grow a plant.
+---
+Wrong Spell
+You cannot place the item here.
 ---

@@ -45,10 +45,15 @@ public class TalismanManager : MonoBehaviour {
     void Update() {
         if (Input.GetKeyDown("space") && !display.activeSelf) {
             if (firstAccess) {
-                print(display);
-                firstAccess = false;
-                display.transform.SetSiblingIndex(2);
-                TipsDialog.PrintDialog("Talisman 2");
+                if (!GameObject.Find("MainUI").GetComponent<Show>().seenSpellTree) {
+                    display.transform.SetSiblingIndex(2);
+                    TipsDialog.PrintDialog("Talisman 0");
+                    DontDestroyVariables.accidentallyOpenTalisman = true;
+                } else {
+                    firstAccess = false;
+                    display.transform.SetSiblingIndex(2);
+                    TipsDialog.PrintDialog("Talisman 2");
+                }
             } else {
                 // Close any text box that is open
                 TipsDialog.HideTextBox();
