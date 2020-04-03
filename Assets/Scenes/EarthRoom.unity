@@ -975,6 +975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellTreeDisp: {fileID: 318233568}
   clickedObject: 0
+  seenSpellTree: 0
 --- !u!114 &103709453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8161,7 +8162,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f93b2ccc1643fd444b512dd28e98982c, type: 2}
+  - {fileID: 2100000, guid: 9544fd1f390a241e090a8c409ec5066d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
