@@ -20,7 +20,7 @@ public class PickObject : MonoBehaviour
         {
             TipsDialog.PrintDialog("Self Introduction");
         }
-        if (SceneManager.GetActiveScene().name == "scene0"){
+        else if (SceneManager.GetActiveScene().name == "scene0"){
             if (DontDestroyVariables.firstTimeLobbyFlag){
                 TipsDialog.PrintDialog("Lobby");
                 DontDestroyVariables.firstTimeLobbyFlag = false; // Used to tell if its the first time visiting the lobby scene
@@ -30,6 +30,9 @@ public class PickObject : MonoBehaviour
                 river.GetComponent<CapsuleCollider>().radius = 0;
                 GameObject.Find("River").GetComponent<Renderer>().material.color = Color.gray;
             }
+        } else if (SceneManager.GetActiveScene().name == "scene3") {
+            DontDestroyVariables.enterWaterRoom = true;
+            Item.flowerpot = GameObject.Find("Flowerpot");
         }
     }
 

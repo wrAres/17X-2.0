@@ -117,8 +117,17 @@ Qiang Yu: I am Qiang Yu, God of Water. You do surprise me a lot, human. =You hav
 Qiang Yu: ☵
 Qiang Yu: Fighting against your fate, don’t let me down, human…
 ---
-Water Seed Grow Order
-Someone: you have to put dirt first in order to grow a plant.
+Water Seed Grow Order 0
+Someone: Extra dirt won't help.
+---
+Water Seed Grow Order 1
+Someone: You have to put dirt first in order to grow a plant.
+---
+Water Seed Grow Order 2
+Someone: Water your plant.
+---
+Water Seed Grow Order 3
+Someone: The sun might burn the plant now. Let it grow first.
 ---
 Wrong Spell
 You cannot place the item here.

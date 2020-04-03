@@ -7,21 +7,18 @@ public class Item : MonoBehaviour
     private static Hashtable itemOnPuzzle;
     public static string[] availablePutList;
     public static SpellTreeManager s;
-    private static bool waterSeedGrow;
-    private static bool dirtInPot;
+    public static GameObject flowerpot;
 
     void Start() {
         s = GameObject.Find("MainUI").GetComponent<SpellTreeManager>();
-        waterSeedGrow = false;
-        dirtInPot = false;
         // s = FindObjectsOfType<SpellTreeManager>()[0];;
         itemOnPuzzle = new Hashtable();
         itemOnPuzzle.Add("Earth Key", "EarthPortal");
         itemOnPuzzle.Add("Dirt", "River,Flowerpot");
         itemOnPuzzle.Add("Water Seed", "Flowerpot");
         itemOnPuzzle.Add("Firewood", "法阵-scene2");
-        itemOnPuzzle.Add("Life Water", "Water Seed");
-        itemOnPuzzle.Add("Glowing Sun", "Water Sprout");
+        itemOnPuzzle.Add("Life Water", "Flowerpot");
+        itemOnPuzzle.Add("Glowing Sun", "Flowerpot");
         itemOnPuzzle.Add("Taiji Key", "Water Boss Door");
         itemOnPuzzle.Add("Board", "Background");
         itemOnPuzzle.Add("Earth Portal", "atlasmap2");
@@ -38,21 +35,40 @@ public class Item : MonoBehaviour
         availablePutList = available.Split(',');
         for (int i = 0; i < availablePutList.Length; i++) {
             if (targetObj.CompareTo(availablePutList[i]) == 0){
-                if (item.CompareTo("Life Water") == 0) {
-                    if (waterSeedGrow && dirtInPot)
-                        return true;
-                    else return false;
+                if (targetObj.CompareTo("Flowerpot") == 0) {
+                    if (item.CompareTo("Dirt") == 0) {
+                        if (DontDestroyVariables.growState == 0) {
+                            return true;
+                        } else {
+                            TipsDialog.PrintDialog("Water Seed Grow Order 0");
+                            return false;
+                        }
+                    } else if (item.CompareTo("Water Seed") == 0) {
+                        if (DontDestroyVariables.growState == 1) {
+                            return true;
+                        } else {
+                            TipsDialog.PrintDialog("Water Seed Grow Order 1");
+                            return false;
+                        }
+                    } else if (item.CompareTo("Life Water") == 0){
+                        if (DontDestroyVariables.growState == 2)
+                            return true;
+                        else {
+                            TipsDialog.PrintDialog("Water Seed Grow Order 2");
+                            return false;
+                        }
+                    } else if (item.CompareTo("Glowing Sun") == 0) {
+                        if (DontDestroyVariables.growState == 3) {
+                            return true;
+                        } else {
+                            TipsDialog.PrintDialog("Water Seed Grow Order 3");
+                            return false;
+                        }
+                    }
                 } else if (item.CompareTo("Earth Key") == 0) {
                     if (GameObject.Find("EarthPortal").GetComponent<sceneTransition>().openScroll)
                         return true;
                     else return false;
-                } else if (item.CompareTo("Water Seed") == 0 && targetObj.CompareTo("Flowerpot") == 0) {
-                    if (dirtInPot) {
-                        return true;
-                    } else {
-                        TipsDialog.PrintDialog("Water Seed Grow Order");
-                        return false;
-                    }
                 }
                 else {
                     return true;
@@ -73,7 +89,7 @@ public class Item : MonoBehaviour
         }
     }
 
-    public static void puzzleEffect(string item, string position) {
+    public static void puzzleEffect(string item, string position, Vector3 hitPoint) {
         if (item.CompareTo("Dirt") == 0 && position.CompareTo("River") == 0){
             GameObject river = GameObject.Find("River");
             river.GetComponent<BoxCollider>().size = new Vector3(0, 0, 0);
@@ -82,59 +98,35 @@ public class Item : MonoBehaviour
             
             AIDataManager.UpdateStandardSpellCount("Dirt", 1);
             AIDataManager.UpdateStandardSpellCount("earth", 3);
-
-            deleteSpellObject("Dirt");
         } 
         else if (item.CompareTo("SpellTreeItem") == 0){
             GameObject.Find("MainUI").GetComponent<Show>().ShowSpelltreeIcon();
             TipsDialog.PrintDialog("Spelltree 1");
             GameObject.Find("Dialog Box").transform.SetSiblingIndex(6);
-            deleteSpellObject("SpellTreeItem");
         } 
         else if (item.CompareTo("Earth Key") == 0 && position.CompareTo("EarthPortal") == 0){
             GameObject earthPortal = GameObject.Find("EarthPortal");
             earthPortal.GetComponent<sceneTransition>().enterable = true;
             earthPortal.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/blank_scroll");
-            print("Earthportal");
-            deleteSpellObject("Earth Key");
         } 
         else if (item.CompareTo("Dirt") == 0 && position.CompareTo("Flowerpot") == 0){
-            GameObject flowerpot = GameObject.Find("Flowerpot");
-            flowerpot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Flowerpot with dirt");
+            flowerpot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Flowerpot/Flowerpot with dirt");
 
             AIDataManager.UpdateStandardSpellCount("Dirt", 1);
             AIDataManager.UpdateStandardSpellCount("earth", 3);
 
-            dirtInPot = true;
-
-            deleteSpellObject("Dirt");
+            DontDestroyVariables.growState = 1;
         } 
         else if (item.CompareTo("Board") == 0 && position.CompareTo("Background") == 0){
             GameObject.Find("Background").GetComponent<TileMovement>().CheckDone();
         } 
         else if (item.CompareTo("Water Seed") == 0 && position.CompareTo("Flowerpot") == 0){
-            waterSeedGrow = true;
+            DontDestroyVariables.growState = 2;
+            flowerpot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Flowerpot/Flowerpot with seed");
         } 
-        else if (item.CompareTo("Life Water") == 0 && position.CompareTo("Water Seed") == 0){
-            // GameObject seed = GameObject.Find("Water Seed");
-            GameObject sprout = new GameObject("Water Sprout");
-            // GameObject lifeWater = GameObject.Find("Life Water");
-            // Camera camera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
-            // RectTransform seed_transform = seed.GetComponent<RectTransform>();
-            // RectTransform sprout_transform = sprout.GetComponent<RectTransform>();
-            // sprout_transform.anchoredPosition = seed_transform.anchoredPosition;
-            //sprout.transform.position = camera.ScreenToWorldPoint(seed.transform.position);
-            sprout.transform.position = GameObject.Find("Flowerpot").transform.position + new Vector3(0f, 1.0f, 0f);
-            sprout.transform.localScale = new Vector3(0.03f, 0.04f, 0.04f);
-            Vector3 temp = sprout.transform.rotation.eulerAngles;
-            temp.x = 45f;
-            sprout.transform.rotation = Quaternion.Euler(temp);
-
-            SpriteRenderer image = sprout.AddComponent<SpriteRenderer>(); //Add the Image Component script
-            image.sprite = Resources.Load<Sprite>("ChangeAsset/Flower Bud"); //Set the Sprite of the Image Component on the new GameObject
-            
-            BoxCollider sproutCollider = sprout.AddComponent<BoxCollider>();
-            sproutCollider.size = new Vector3(10f, 10f, 10f);
+        else if (item.CompareTo("Life Water") == 0 && position.CompareTo("Flowerpot") == 0){
+            DontDestroyVariables.growState = 3;
+            flowerpot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Flowerpot/Flowerpot with bud");
 
             s.UnlockElement(TalisDrag.Elements.WOOD);
 
@@ -142,10 +134,6 @@ public class Item : MonoBehaviour
             AIDataManager.UpdateStandardSpellCount("earth", 3);
             AIDataManager.UpdateStandardSpellCount("Life Water", 1);
             AIDataManager.UpdateStandardSpellCount("water", 3);
-
-            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("SpellObject"))
-                Destroy(obj);
-            DontDestroyVariables.growSprout = true;
         }
         else if (item.CompareTo("Firewood") == 0 && position.CompareTo("法阵-scene2") == 0){
             sceneTransition sceneTrans = GameObject.Find("法阵-scene2").GetComponent<sceneTransition>();
@@ -156,16 +144,10 @@ public class Item : MonoBehaviour
             AIDataManager.UpdateStandardSpellCount("Firewood", 1);
             AIDataManager.UpdateStandardSpellCount("wood", 3);
         } 
-        else if (item.CompareTo("Glowing Sun") == 0 && position.CompareTo("Water Sprout") == 0){
-            // GameObject bloom = new GameObject("Bloom");
-            // bloom.transform.position = GameObject.Find("Flowerpot").transform.position + new Vector3(0f, 1.8f, 0f);
-            // SpriteRenderer image = bloom.AddComponent<SpriteRenderer>(); //Add the Image Component script
-            // image.sprite = Resources.Load<Sprite>("Bloom"); //Set the Sprite of the Image Component on the new GameObject
-            // bloom.transform.localScale = new Vector3(0.15f, 0.2f, 0.2f);
-            // Vector3 temp = bloom.transform.rotation.eulerAngles;
-            // temp.x = 45f;
-            // bloom.transform.rotation = Quaternion.Euler(temp);
-            GameObject.Find("Bloom").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Bloom");
+        else if (item.CompareTo("Glowing Sun") == 0 && position.CompareTo("Flowerpot") == 0){
+            DontDestroyVariables.growState = 4;
+            flowerpot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Flowerpot/Flowerpot with Flower and Sun");
+            
             GameObject[] mirrorArray = GameObject.Find("mirrors").GetComponent<mirrors>().mirrorArray;
             foreach (GameObject mirror in mirrorArray) {
                 mirror.GetComponent<flowerInMirror>().clickable = true;
@@ -175,24 +157,9 @@ public class Item : MonoBehaviour
             AIDataManager.UpdateStandardSpellCount("sun", 2);
             AIDataManager.UpdateStandardSpellCount("earth", 1);
             AIDataManager.UpdateStandardSpellCount("fire", 2);
-
-            deleteSpellObject("Water Sprout");
         } 
-        // else if (item.CompareTo("Life Water") == 0 && position.CompareTo("Water Sprout") == 0){
-        //     GameObject sspell = GameObject.Find("Life Water");
-        //     GameObject sprout = new GameObject("Water Sprout");
-        //     sprout.transform.position = seed.transform.position;
-        //     SpriteRenderer image = sprout.AddComponent<SpriteRenderer>(); //Add the Image Component script
-        //     image.sprite = Resources.Load<Sprite>("Water Sprout"); //Set the Sprite of the Image Component on the new GameObject
-        //     sprout.transform.localScale = new Vector3(0.3f, 0.4f, 0.4f);
-        //     Vector3 temp = sprout.transform.rotation.eulerAngles;
-        //     temp.x = 45f;
-        //     sprout.transform.rotation = Quaternion.Euler(temp);
-        //     Destroy(seed);
-        // }
         else if (item.CompareTo("Taiji Key") == 0 && position.CompareTo("Water Boss Door") == 0){
             deleteSpellObject("Water Boss Door");
-            deleteSpellObject("Taiji Key");
 
             AIDataManager.gentlypassthedoor = true; 
             AIDataManager.UpdateStandardSpellCount("water", 3);
@@ -204,7 +171,6 @@ public class Item : MonoBehaviour
             //waterBoss.SetActive(false);
         }
         else if (item.CompareTo("Boom") == 0 && position.CompareTo("Water Boss Door") == 0){
-            deleteSpellObject("Boom");
             deleteSpellObject("Water Boss Door");
 
             AIDataManager.gentlypassthedoor = false; 
@@ -215,7 +181,6 @@ public class Item : MonoBehaviour
         else if (item.CompareTo("Taoist Wind") == 0 && position.CompareTo("atlasmap2") == 0){
             GameObject wind = GameObject.Find("WindGroup");
             wind.SetActive(false);
-            deleteSpellObject("Taoist Wind");
 
             GameObject.Find("1_water-dark").GetComponent<WaterPool>().timerActivated = true;
             GameObject.Find("6_water-white").GetComponent<WaterPool>().timerActivated = true;
@@ -226,7 +191,9 @@ public class Item : MonoBehaviour
             TipsDialog.PrintDialog("Water Boss");
         }
         else if (item.CompareTo("Earth Portal") == 0 && position.CompareTo("atlasmap2") == 0){
-            deleteSpellObject("Earth Portal");
+            GameObject portal = GameObject.Find("WaterToEarthPortal");
+            portal.GetComponent<SpriteRenderer>().enabled = true;
+            portal.transform.position = hitPoint + new Vector3(0.0f, 0.1f, 0);
         }
         GameObject.Find("Backpack_Roll").GetComponent<Backpack>().RemoveItem(item);
     }

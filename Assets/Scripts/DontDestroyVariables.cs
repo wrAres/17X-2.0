@@ -6,7 +6,7 @@ public class DontDestroyVariables : MonoBehaviour
 {
     
 	public static bool enterWaterRoom = false;
-	public static bool growSprout = false;
+	public static int growState = 0; //0: nothing; 1: dirt in; 2: seed in; 3: bud grow; 4: bloom
 	public static bool firstTimeLobbyFlag = true; // Used to tell if its the first time visiting the lobby scene
 	public static bool accidentallyOpenTalisman = false;
 }

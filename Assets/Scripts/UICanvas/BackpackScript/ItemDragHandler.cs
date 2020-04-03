@@ -65,31 +65,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
                 GameObject dragOnObject = hitInfo.collider.gameObject;
                 canPlaceItem = Item.canPlace(itemOnGround.name, dragOnObject.name);
                 if (canPlaceItem) {
-                    GameObject imageObj = new GameObject(itemOnGround.name);
-                    SpriteRenderer image = imageObj.AddComponent<SpriteRenderer>(); //Add the Image Component script
-                    image.sprite = Resources.Load<Sprite>(itemOnGround.name); //Set the Sprite of the Image Component on the new GameObject
-                    if (itemOnGround.name.CompareTo("Water Seed") == 0) {
-                        imageObj.transform.position = GameObject.Find("Flowerpot").transform.position + new Vector3(0f, 0.8f, 0f);
-                    } else if (itemOnGround.name.CompareTo("Glowing Sun") == 0) {
-                        imageObj.transform.position = GameObject.Find("Flowerpot").transform.position + new Vector3(0f, 2.0f, 0f);
-                    } else if (itemOnGround.name.CompareTo("Earth Portal") == 0){
-                        GameObject portal = GameObject.Find("WaterToEarthPortal");
-                        portal.GetComponent<SpriteRenderer>().enabled = true;
-                        portal.transform.position = hitInfo.point + new Vector3(0.0f, 0.1f, 0);
-                    }
-                    else {
-                        imageObj.transform.position = hitInfo.point + new Vector3(0.0f, 0.1f, 0);
-                    }
-                    // imageObj.transform.position = hitInfo.point;
-                    imageObj.transform.localScale = new Vector3(0.03f, 0.04f, 0.04f);
-                    Vector3 temp = imageObj.transform.rotation.eulerAngles;
-                    temp.x = 45f;
-                    imageObj.transform.rotation = Quaternion.Euler(temp);
-                    imageObj.AddComponent<BoxCollider>();
-                    imageObj.tag = "SpellObject";
-                    // Backpack.backpack.GetComponent<Backpack>().RemoveItem(itemOnGround.name);
-                    // Destroy(itemOnGround);
-                    Item.puzzleEffect(imageObj.name, dragOnObject.name);
+                    Item.puzzleEffect(itemOnGround.name, dragOnObject.name, hitInfo.point);
                 } else {
                     AIDataManager.wrongItemPlacementCount += 1;
                     print(dragOnObject.name + "'s wrong drop: " + AIDataManager.wrongItemPlacementCount);
