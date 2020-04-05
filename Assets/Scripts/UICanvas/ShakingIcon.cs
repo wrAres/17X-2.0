@@ -10,14 +10,15 @@ public class ShakingIcon : MonoBehaviour
     private Vector3 originalPos;
     // Update is called once per frame
     void Start() {
-        shakeAmt = 400;
+        shakeAmt = 0.5f;
         originalPos = transform.position;
     }
     void Update () {
         if (shaking) {
             // RectTransform item_transform = this.GetComponent<RectTransform>();
-            // print("haha" + Time.deltaTime);
-            Vector3 newPos = Random.insideUnitSphere * (Time.deltaTime * shakeAmt) + originalPos;
+            print("haha" + Time.deltaTime);
+            // Vector3 newPos = Random.insideUnitSphere * (Time.deltaTime * shakeAmt) + originalPos;
+            Vector3 newPos = Random.insideUnitSphere * (shakeAmt * 0.002f) + originalPos;
             
             newPos.z = transform.position.z;
             // print("newPos" + newPos);
