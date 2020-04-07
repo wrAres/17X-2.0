@@ -55,13 +55,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ChangeSprite.cs" />
-     <Compile Include="Assets\DoorCollider.cs" />
-     <Compile Include="Assets\MirrorDoor.cs" />
-     <Compile Include="Assets\NewBehaviourScript.cs" />
-     <Compile Include="Assets\OpenPortal.cs" />
-     <Compile Include="Assets\RenderSprout.cs" />
-     <Compile Include="Assets\Rivertip.cs" />
      <Compile Include="Assets\Scripts\AI\AIDataManager.cs" />
      <Compile Include="Assets\Scripts\AI\BT\ActionNode.cs" />
      <Compile Include="Assets\Scripts\AI\BT\CheckNode.cs" />
@@ -72,10 +65,12 @@
      <Compile Include="Assets\Scripts\AI\BT\Sequence.cs" />
      <Compile Include="Assets\Scripts\AI\SystemTree.cs" />
      <Compile Include="Assets\Scripts\DontDestroyVariables.cs" />
+     <Compile Include="Assets\Scripts\DoorCollider.cs" />
      <Compile Include="Assets\Scripts\HallwayPuzzle\EndHallwayPuzzle.cs" />
      <Compile Include="Assets\Scripts\HallwayPuzzle\FloorControl.cs" />
      <Compile Include="Assets\Scripts\HallwayPuzzle\PuzzleFloorCollider.cs" />
      <Compile Include="Assets\Scripts\HallwayPuzzle\WindMovement.cs" />
+     <Compile Include="Assets\Scripts\Sound\SpellEffectSounds.cs" />
      <Compile Include="Assets\Scripts\Sound\UISoundScript.cs" />
      <Compile Include="Assets\Scripts\Sound\WaterSoundManagerScript.cs" />
      <Compile Include="Assets\Scripts\TileMovement.cs" />
@@ -95,6 +90,10 @@
      <Compile Include="Assets\Scripts\UICanvas\TalismanSpelltree\TalisDrag.cs" />
      <Compile Include="Assets\Scripts\UICanvas\TalismanSpelltree\TalismanManager.cs" />
      <Compile Include="Assets\Scripts\UICanvas\TipsDialog.cs" />
+     <Compile Include="Assets\Scripts\WaterScene\ChangeSprite.cs" />
+     <Compile Include="Assets\Scripts\WaterScene\MirrorDoor.cs" />
+     <Compile Include="Assets\Scripts\WaterScene\RenderSprout.cs" />
+     <Compile Include="Assets\Scripts\WaterScene\Rivertip.cs" />
      <Compile Include="Assets\Scripts\WaterScene\WaterPool.cs" />
      <Compile Include="Assets\Scripts\WaterScene\flowerInMirror.cs" />
      <Compile Include="Assets\Scripts\WaterScene\mirrors.cs" />
@@ -105,7 +104,6 @@
      <Compile Include="Assets\Scripts\player.cs" />
      <Compile Include="Assets\Scripts\playerMovement.cs" />
      <Compile Include="Assets\Scripts\sceneTransition.cs" />
-     <Compile Include="Assets\river_tips.cs" />
      <None Include="Assets\Scripts\UICanvas\dialogtext.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/wensdon/Desktop/academic/UCSC/Senior/winter 2020/The Atlas of Shanhe and Sheji/17X-2.0/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

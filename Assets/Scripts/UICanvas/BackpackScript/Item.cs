@@ -98,6 +98,8 @@ public class Item : MonoBehaviour
             
             AIDataManager.UpdateStandardSpellCount("Dirt", 1);
             AIDataManager.UpdateStandardSpellCount("earth", 3);
+
+            SpellEffectSounds.PlayDirt();
         } 
         else if (item.CompareTo("SpellTreeItem") == 0){
             GameObject.Find("MainUI").GetComponent<Show>().ShowSpelltreeIcon();
@@ -143,6 +145,8 @@ public class Item : MonoBehaviour
 
             AIDataManager.UpdateStandardSpellCount("Firewood", 1);
             AIDataManager.UpdateStandardSpellCount("wood", 3);
+
+            SpellEffectSounds.PlayFire();
         } 
         else if (item.CompareTo("Glowing Sun") == 0 && position.CompareTo("Flowerpot") == 0){
             DontDestroyVariables.growState = 4;
