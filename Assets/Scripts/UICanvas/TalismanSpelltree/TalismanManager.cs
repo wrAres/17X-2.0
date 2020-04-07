@@ -64,9 +64,11 @@ public class TalismanManager : MonoBehaviour {
 
             DisplaySpellList();
             curTime = timer;
+            UISoundScript.OpenTalisman();
         }
         else if (Input.GetKeyDown("space")) {
             CloseDisplay();
+            UISoundScript.OpenTalisman();
         }
 
         // TEST MAKE BUTTON

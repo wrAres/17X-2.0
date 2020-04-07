@@ -17,7 +17,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
         // dispManager.GetComponent<TalismanManager>().DispTextBox(true, element, eventData.position);
         textbox.SetActive(true);
         itemName.text = gameObject.name.ToString();
-        print("event data: " + this.gameObject.GetComponent<RectTransform>().anchoredPosition);
+        // print("event data: " + this.gameObject.GetComponent<RectTransform>().anchoredPosition);
         textbox.GetComponent<RectTransform>().anchoredPosition = this.gameObject.GetComponent<RectTransform>().anchoredPosition + new Vector2(0f, -50f);
     }
 
@@ -67,8 +67,9 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
                 if (canPlaceItem) {
                     Item.puzzleEffect(itemOnGround.name, dragOnObject.name, hitInfo.point);
                 } else {
+                    UISoundScript.PlayWrongSpell();
                     AIDataManager.wrongItemPlacementCount += 1;
-                    print(dragOnObject.name + "'s wrong drop: " + AIDataManager.wrongItemPlacementCount);
+                    // print(dragOnObject.name + "'s wrong drop: " + AIDataManager.wrongItemPlacementCount);
                 }
             }
             else {

@@ -98,6 +98,7 @@ public class Show : MonoBehaviour
                 }
                 else if (tag.CompareTo("SpellTreeIcon") == 0) {
                     pick.descShow = false;
+                    UISoundScript.OpenSpellTree();
                     if (brightSpell) {
                         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
                         TipsDialog.PrintDialog("Spelltree 2");
