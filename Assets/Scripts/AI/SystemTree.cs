@@ -292,26 +292,26 @@ public class SystemTree : MonoBehaviour
     private NodeStates ChangeMovingPuzzleT1()
     {
         // print("T1 EXE");
-        // SetWalkingPuzzle();
-        // transformPiece1.position = new Vector3(0f, 0.35f, -41.33f);
-        // Vector3 temp = transformPiece1.rotation.eulerAngles;
-        // temp.y = 0f;
-        // transformPiece1.rotation = Quaternion.Euler(temp);
+        SetWalkingPuzzle();
+        transformPiece1.position = new Vector3(0f, 0.35f, -41.33f);
+        Vector3 temp = transformPiece1.rotation.eulerAngles;
+        temp.y = 0f;
+        transformPiece1.rotation = Quaternion.Euler(temp);
 
-        // transformPiece2.position = new Vector3(0f, 0.34f, -36.72f);
-        // transformPiece2.rotation = Quaternion.Euler(temp);
+        transformPiece2.position = new Vector3(0f, 0.34f, -36.72f);
+        transformPiece2.rotation = Quaternion.Euler(temp);
 
-        // transformPiece3.position = new Vector3(0f, 0.341f, -31.45f);
-        // transformPiece3.rotation = Quaternion.Euler(temp);
+        transformPiece3.position = new Vector3(0f, 0.341f, -31.45f);
+        transformPiece3.rotation = Quaternion.Euler(temp);
 
-        // transformPiece4.position = new Vector3(0f, 0.34f, -28.14f);
-        // transformPiece4.rotation = Quaternion.Euler(temp);
+        transformPiece4.position = new Vector3(0f, 0.34f, -28.14f);
+        transformPiece4.rotation = Quaternion.Euler(temp);
 
-        // transformPiece5.position = new Vector3(0f, 0.35f, -20f);
-        // transformPiece5.rotation = Quaternion.Euler(temp);
+        transformPiece5.position = new Vector3(0f, 0.35f, -20f);
+        transformPiece5.rotation = Quaternion.Euler(temp);
 
-        // floorPiece6.SetActive(false);
-        // floorPiece7.SetActive(false);
+        floorPiece6.SetActive(false);
+        floorPiece7.SetActive(false);
 
         return NodeStates.SUCCESS;
     }
@@ -359,33 +359,33 @@ public class SystemTree : MonoBehaviour
 
     private NodeStates ChangeMovingPuzzleT2()
     {
-        // print("T2 EXE");
-        // SetWalkingPuzzle();
-        // transformPiece1.position = new Vector3(2.5f, 0.35f, -41.33f);
-        // Vector3 temp = transformPiece1.rotation.eulerAngles;
-        // temp.y = 48f;
-        // transformPiece1.rotation = Quaternion.Euler(temp);
+        print("T2 EXE");
+        SetWalkingPuzzle();
+        transformPiece1.position = new Vector3(2.5f, 0.35f, -41.33f);
+        Vector3 temp = transformPiece1.rotation.eulerAngles;
+        temp.y = 48f;
+        transformPiece1.rotation = Quaternion.Euler(temp);
 
-        // transformPiece2.position = new Vector3(6.53f, 0.34f, -37.72f);
-        // transformPiece2.rotation = Quaternion.Euler(temp);
+        transformPiece2.position = new Vector3(6.53f, 0.34f, -37.72f);
+        transformPiece2.rotation = Quaternion.Euler(temp);
 
-        // transformPiece3.position = new Vector3(10.2f, 0.35f, -34.45f);
-        // transformPiece3.rotation = Quaternion.Euler(temp);
+        transformPiece3.position = new Vector3(10.2f, 0.35f, -34.45f);
+        transformPiece3.rotation = Quaternion.Euler(temp);
 
-        // temp.y = -48f;
+        temp.y = -48f;
 
-        // transformPiece4.position = new Vector3(10.2f, 0.36f, -30.4f);
-        // transformPiece4.rotation = Quaternion.Euler(temp);
+        transformPiece4.position = new Vector3(10.2f, 0.36f, -30.4f);
+        transformPiece4.rotation = Quaternion.Euler(temp);
 
-        // transformPiece5.position = new Vector3(4.2f, 0.35f, -25f);
-        // transformPiece5.rotation = Quaternion.Euler(temp);
+        transformPiece5.position = new Vector3(4.2f, 0.35f, -25f);
+        transformPiece5.rotation = Quaternion.Euler(temp);
 
-        // transformPiece6.position = new Vector3(-2.1f, 0.33f, -19.35f);
-        // transformPiece6.rotation = Quaternion.Euler(temp);
+        transformPiece6.position = new Vector3(-2.1f, 0.33f, -19.35f);
+        transformPiece6.rotation = Quaternion.Euler(temp);
 
-        // transformPiece7.position = new Vector3(-5.8f, 0.35f, -16f);
-        // transformPiece7.rotation = Quaternion.Euler(temp);
-        // transformPiece7.localScale = new Vector3(1.5f, 0.01f, 2.524f);
+        transformPiece7.position = new Vector3(-5.8f, 0.35f, -16f);
+        transformPiece7.rotation = Quaternion.Euler(temp);
+        transformPiece7.localScale = new Vector3(1.5f, 0.01f, 2.524f);
 
         return NodeStates.SUCCESS;
     }
@@ -442,30 +442,30 @@ public class SystemTree : MonoBehaviour
     private NodeStates ChangeMovingPuzzleT3()
     {
         // print("T3 EXE");
-        // SetWalkingPuzzle();
-        // transformPiece1.position = new Vector3(3f, 0.35f, -43.33f);
-        // Vector3 temp = transformPiece1.rotation.eulerAngles;
-        // temp.y = 90f;
-        // transformPiece1.rotation = Quaternion.Euler(temp);
+        SetWalkingPuzzle();
+        transformPiece1.position = new Vector3(3f, 0.35f, -43.33f);
+        Vector3 temp = transformPiece1.rotation.eulerAngles;
+        temp.y = 90f;
+        transformPiece1.rotation = Quaternion.Euler(temp);
 
-        // transformPiece2.position = new Vector3(6f, 0.34f, -40.72f);
-        // temp.y = 0f;
-        // transformPiece2.rotation = Quaternion.Euler(temp);
+        transformPiece2.position = new Vector3(6f, 0.34f, -40.72f);
+        temp.y = 0f;
+        transformPiece2.rotation = Quaternion.Euler(temp);
 
-        // transformPiece3.position = new Vector3(6f, 0.341f, -35.45f);
-        // transformPiece3.rotation = Quaternion.Euler(temp);
+        transformPiece3.position = new Vector3(6f, 0.341f, -35.45f);
+        transformPiece3.rotation = Quaternion.Euler(temp);
 
-        // temp.y = -40f;
-        // transformPiece4.position = new Vector3(3.8f, 0.36f, -30.5f);
-        // transformPiece4.rotation = Quaternion.Euler(temp);
+        temp.y = -40f;
+        transformPiece4.position = new Vector3(3.8f, 0.36f, -30.5f);
+        transformPiece4.rotation = Quaternion.Euler(temp);
 
-        // transformPiece5.position = new Vector3(-1.25f, 0.35f, -24.48f);
-        // transformPiece5.rotation = Quaternion.Euler(temp);
+        transformPiece5.position = new Vector3(-1.25f, 0.35f, -24.48f);
+        transformPiece5.rotation = Quaternion.Euler(temp);
 
-        // transformPiece6.position = new Vector3(-7f, 0.33f, -17.63f);
-        // transformPiece6.rotation = Quaternion.Euler(temp);
+        transformPiece6.position = new Vector3(-7f, 0.33f, -17.63f);
+        transformPiece6.rotation = Quaternion.Euler(temp);
 
-        // floorPiece7.SetActive(false);
+        floorPiece7.SetActive(false);
 
         return NodeStates.SUCCESS;
     }
@@ -540,35 +540,35 @@ public class SystemTree : MonoBehaviour
     private NodeStates ChangeMovingPuzzleT4()
     {
         // print("T4 EXE");
-        // SetWalkingPuzzle();
-        // transformPiece1.position = new Vector3(0f, 0.35f, -41.33f);
-        // Vector3 temp = transformPiece1.rotation.eulerAngles;
-        // temp.y = 0f;
-        // transformPiece1.rotation = Quaternion.Euler(temp);
+        SetWalkingPuzzle();
+        transformPiece1.position = new Vector3(0f, 0.35f, -41.33f);
+        Vector3 temp = transformPiece1.rotation.eulerAngles;
+        temp.y = 0f;
+        transformPiece1.rotation = Quaternion.Euler(temp);
 
-        // transformPiece2.position = new Vector3(1.32f, 0.34f, -35.5f);
-        // temp.y = 30f;
-        // transformPiece2.rotation = Quaternion.Euler(temp);
+        transformPiece2.position = new Vector3(1.32f, 0.34f, -35.5f);
+        temp.y = 30f;
+        transformPiece2.rotation = Quaternion.Euler(temp);
 
-        // transformPiece3.position = new Vector3(-3.6f, 0.35f, -25f);
-        // temp.y = -40f;
-        // transformPiece3.rotation = Quaternion.Euler(temp);
-        // transformPiece3.localScale = new Vector3(1.5f, 0.01f, 20f);
+        transformPiece3.position = new Vector3(-3.6f, 0.35f, -25f);
+        temp.y = -40f;
+        transformPiece3.rotation = Quaternion.Euler(temp);
+        transformPiece3.localScale = new Vector3(1.5f, 0.01f, 20f);
 
-        // transformPiece4.position = new Vector3(2.96f, 0.36f, -29.7f);
-        // temp.y = 5f;
-        // transformPiece4.rotation = Quaternion.Euler(temp);
+        transformPiece4.position = new Vector3(2.96f, 0.36f, -29.7f);
+        temp.y = 5f;
+        transformPiece4.rotation = Quaternion.Euler(temp);
 
-        // transformPiece5.position = new Vector3(3.6f, 0.35f, -22.48f);
-        // transformPiece5.rotation = Quaternion.Euler(temp);
+        transformPiece5.position = new Vector3(3.6f, 0.35f, -22.48f);
+        transformPiece5.rotation = Quaternion.Euler(temp);
 
-        // transformPiece6.position = new Vector3(-2.1f, 0.33f, -19.35f);
-        // temp.y = 40f;
-        // transformPiece6.rotation = Quaternion.Euler(temp);
-        // transformPiece6.localScale = new Vector3(1.5f, 0.01f, 20f);
+        transformPiece6.position = new Vector3(-2.1f, 0.33f, -19.35f);
+        temp.y = 40f;
+        transformPiece6.rotation = Quaternion.Euler(temp);
+        transformPiece6.localScale = new Vector3(1.5f, 0.01f, 20f);
 
-        // transformPiece7.position = new Vector3(-9.85f, 0.35f, -15.8f);
-        // transformPiece7.localScale = new Vector3(1.5f, 0.01f, 4f);
+        transformPiece7.position = new Vector3(-9.85f, 0.35f, -15.8f);
+        transformPiece7.localScale = new Vector3(1.5f, 0.01f, 4f);
 
         return NodeStates.SUCCESS;
     }
@@ -578,37 +578,37 @@ public class SystemTree : MonoBehaviour
     private NodeStates ChangeMovingPuzzleT5()
     {
         // print("T5 EXE");
-        // SetWalkingPuzzle();
-        // transformPiece1.position = new Vector3(-3.7f, 0.35f, -42.3f);
-        // Vector3 temp = transformPiece1.rotation.eulerAngles;
-        // temp.y = 0f;
-        // transformPiece1.rotation = Quaternion.Euler(temp);
+        SetWalkingPuzzle();
+        transformPiece1.position = new Vector3(-3.7f, 0.35f, -42.3f);
+        Vector3 temp = transformPiece1.rotation.eulerAngles;
+        temp.y = 0f;
+        transformPiece1.rotation = Quaternion.Euler(temp);
 
-        // transformPiece2.position = new Vector3(-1.8f, 0.34f, -44.8f);
-        // temp.y = 50f;
-        // transformPiece2.rotation = Quaternion.Euler(temp);
+        transformPiece2.position = new Vector3(-1.8f, 0.34f, -44.8f);
+        temp.y = 50f;
+        transformPiece2.rotation = Quaternion.Euler(temp);
 
-        // transformPiece5.position = new Vector3(-3.28f, 0.35f, -34f);
-        // temp.y = 5f;
-        // transformPiece5.rotation = Quaternion.Euler(temp);
+        transformPiece5.position = new Vector3(-3.28f, 0.35f, -34f);
+        temp.y = 5f;
+        transformPiece5.rotation = Quaternion.Euler(temp);
 
-        // transformPiece3.position = new Vector3(-9.6f, 0.33f, -25f);
-        // temp.y = -40f;
-        // transformPiece3.rotation = Quaternion.Euler(temp);
-        // transformPiece3.localScale = new Vector3(1.5f, 0.01f, 20f);
+        transformPiece3.position = new Vector3(-9.6f, 0.33f, -25f);
+        temp.y = -40f;
+        transformPiece3.rotation = Quaternion.Euler(temp);
+        transformPiece3.localScale = new Vector3(1.5f, 0.01f, 20f);
 
-        // transformPiece4.position = new Vector3(-2.54f, 0.34f, -25.5f);
-        // temp.y = 5f;
-        // transformPiece4.rotation = Quaternion.Euler(temp);
+        transformPiece4.position = new Vector3(-2.54f, 0.34f, -25.5f);
+        temp.y = 5f;
+        transformPiece4.rotation = Quaternion.Euler(temp);
 
-        // transformPiece6.position = new Vector3(3f, 0.33f, -25.5f);
-        // temp.y = 40f;
-        // transformPiece6.rotation = Quaternion.Euler(temp);
-        // transformPiece6.localScale = new Vector3(1.5f, 0.01f, 20f);
+        transformPiece6.position = new Vector3(3f, 0.33f, -25.5f);
+        temp.y = 40f;
+        transformPiece6.rotation = Quaternion.Euler(temp);
+        transformPiece6.localScale = new Vector3(1.5f, 0.01f, 20f);
 
-        // transformPiece7.position = new Vector3(7.9f, 0.35f, -15.2f);
-        // transformPiece7.rotation = Quaternion.Euler(temp);
-        // transformPiece7.localScale = new Vector3(1.5f, 0.01f, 4f);
+        transformPiece7.position = new Vector3(7.9f, 0.35f, -15.2f);
+        transformPiece7.rotation = Quaternion.Euler(temp);
+        transformPiece7.localScale = new Vector3(1.5f, 0.01f, 4f);
 
         return NodeStates.SUCCESS;
     }
