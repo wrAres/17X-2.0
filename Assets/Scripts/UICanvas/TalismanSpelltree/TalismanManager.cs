@@ -45,7 +45,7 @@ public class TalismanManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown("space") && !display.activeSelf && !dialogShown) {
+        if (Input.GetKeyDown("space") && !display.activeSelf && !dialogShown && DontDestroyVariables.canOpenTalisman) {
             if (firstAccess) {
                 if (!GameObject.Find("MainUI").GetComponent<Show>().seenSpellTree) {
                     display.transform.SetSiblingIndex(2);
@@ -66,9 +66,10 @@ public class TalismanManager : MonoBehaviour {
 
             DisplaySpellList();
             curTime = timer;
+            print("open talisman");
             UISoundScript.OpenTalisman();
         }
-        else if (Input.GetKeyDown("space") && !dialogShown) {
+        else if (Input.GetKeyDown("space") && !dialogShown && DontDestroyVariables.canOpenTalisman) {
             CloseDisplay();
             dispManager.ToggleIcons(true);
             UISoundScript.OpenTalisman();

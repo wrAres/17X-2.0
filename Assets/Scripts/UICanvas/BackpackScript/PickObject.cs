@@ -27,6 +27,7 @@ public class PickObject : MonoBehaviour
             TipsDialog.PrintDialog("Self Introduction");
         }
         else if (SceneManager.GetActiveScene().name == "scene0"){
+            DontDestroyVariables.canOpenTalisman = true;
             if (DontDestroyVariables.firstTimeLobbyFlag){
                 TipsDialog.PrintDialog("Lobby");
                 DontDestroyVariables.firstTimeLobbyFlag = false; // Used to tell if its the first time visiting the lobby scene

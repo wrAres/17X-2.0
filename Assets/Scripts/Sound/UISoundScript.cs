@@ -43,10 +43,10 @@ public class UISoundScript : MonoBehaviour
     }
     public static void OpenTalisman()
     {
-        audioSources[3].PlayOneShot(openTalismanSound, 0.3f);
+        audioSources[3].PlayOneShot(openTalismanSound, 0.1f);
     }
     public static void OpenSpellTree()
     {
-        audioSources[4].PlayOneShot(openSpellTreeSound, 0.3f);
+        audioSources[4].PlayOneShot(openSpellTreeSound, 0.1f);
     }
 }
