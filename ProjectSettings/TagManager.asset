@@ -14,6 +14,7 @@ TagManager:
   - Portals
   - Ground
   - Water Boss
+  - Talisman
   layers:
   - Default
   - TransparentFX

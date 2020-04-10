@@ -5,7 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class PickObject : MonoBehaviour
 {
-    public bool dialogShown => FindObjectOfType<TipsDialog>() != null;
+    public bool canAct => !dialogShown && !talismanShown;
+    public bool dialogShown =>
+        FindObjectOfType<TipsDialog>() != null;
+    public bool talismanShown =>
+        GameObject.FindGameObjectWithTag("Talisman") != null;
+
     private int layerMask;
     public bool dialogShow = false;
     public bool descShow = true;
@@ -42,7 +47,7 @@ public class PickObject : MonoBehaviour
         if (descShow){
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
-            if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, layerMask) && !dialogShown) {
+            if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, layerMask) && canAct) {
                 GameObject clickObject = hitInfo.collider.gameObject;
                 print(clickObject.name);
                 if (clickObject.tag.CompareTo("Pickable") == 0){

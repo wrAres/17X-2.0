@@ -62,7 +62,7 @@ public class TalismanManager : MonoBehaviour {
             }
             recipeBook = GetComponent<SpellTreeManager>().GetSpellBook();
             display.SetActive(true);
-            dispManager.CloseDisplays();
+            dispManager.ToggleIcons(false);
 
             DisplaySpellList();
             curTime = timer;
@@ -70,6 +70,7 @@ public class TalismanManager : MonoBehaviour {
         }
         else if (Input.GetKeyDown("space") && !dialogShown) {
             CloseDisplay();
+            dispManager.ToggleIcons(true);
             UISoundScript.OpenTalisman();
         }
 

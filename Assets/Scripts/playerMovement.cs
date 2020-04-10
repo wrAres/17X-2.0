@@ -14,8 +14,11 @@ public class playerMovement : MonoBehaviour
 	public int freeze;
 	private bool isWaterScene =>
         SceneManager.GetActiveScene().name == "scene3";
+	public bool canAct => !dialogShown && !talismanShown;
 	public bool dialogShown =>
         FindObjectOfType<TipsDialog>() != null;
+	public bool talismanShown =>
+		GameObject.FindGameObjectWithTag("Talisman") != null;
 
 
 	void Start()
@@ -44,7 +47,7 @@ public class playerMovement : MonoBehaviour
 		ani.SetFloat("Speed", GetComponent<Rigidbody>().velocity.z);
 		ani.SetFloat("status",status);
 
-		if (!dialogShown) {
+		if (canAct) {
 			if (Input.GetKey("w")) {
 				GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 3 * isReverse * freeze);
 				if (isWaterScene) WaterSoundManagerScript.PlaySound();

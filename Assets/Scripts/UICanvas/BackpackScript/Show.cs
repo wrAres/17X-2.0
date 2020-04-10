@@ -8,14 +8,20 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(TalismanManager))]
 public class Show : MonoBehaviour
 {
+    public bool canAct => !dialogShown && !talismanShown;
+    public bool dialogShown =>
+        FindObjectOfType<TipsDialog>() != null;
+    public bool talismanShown =>
+        GameObject.FindGameObjectWithTag("Talisman") != null;
+
     public GameObject spellTreeDisp;
     private TalismanManager talisDisp;
-    public bool dialogShown => FindObjectOfType<TipsDialog>() != null;
     private bool earthUnlocked;
     // private int closedFirstTimeFlag = 0; // Used to mark when to pop up talisman description text
     public bool clickedObject = false;
     private bool brightBackpack = false;
     private bool brightSpell = false;
+    private bool backpackUnlocked, spellTreeUnlocked;
     public bool seenSpellTree = false;
     PickObject pick;
     GraphicRaycaster raycaster;
@@ -73,7 +79,7 @@ public class Show : MonoBehaviour
                 string tag = result.gameObject.tag;
                 print("obj names: " + name);
 
-                if (tag.CompareTo("BackpackIcon") == 0 && !dialogShown) {
+                if (tag.CompareTo("BackpackIcon") == 0 && canAct) {
                     pick.descShow = false;
                     if (brightBackpack) {
                         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
@@ -89,7 +95,7 @@ public class Show : MonoBehaviour
                     spellTreeDisp.SetActive(false);
                     talisDisp.CloseDisplay();
                 }
-                else if (tag.CompareTo("Item") == 0 && !dialogShown) {
+                else if (tag.CompareTo("Item") == 0 && canAct) {
                     pick.descShow = false;
                     if (!ItemDragHandler.holdItem) {
                         ItemDragHandler.itemOnGround = result.gameObject;
@@ -97,7 +103,7 @@ public class Show : MonoBehaviour
                         ItemDragHandler.holdItem = true;
                     }
                 }
-                else if (tag.CompareTo("SpellTreeIcon") == 0 && !dialogShown) {
+                else if (tag.CompareTo("SpellTreeIcon") == 0 && canAct) {
                     pick.descShow = false;
                     UISoundScript.OpenSpellTree();
                     if (brightSpell) {
@@ -153,11 +159,13 @@ public class Show : MonoBehaviour
         GameObject.FindGameObjectWithTag("BackpackIcon").GetComponent<Image>().enabled = true; 
         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().ShineBackpack();
         brightBackpack = true;
+        backpackUnlocked = true;
     }
     public void ShowSpelltreeIcon() { 
         GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled = true; 
         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().ShineSpellIcon();
         brightSpell = true;
+        spellTreeUnlocked = true;
 
         if (SceneManager.GetActiveScene().name == "scene0" && !earthUnlocked) {
             earthUnlocked = true;
@@ -171,5 +179,12 @@ public class Show : MonoBehaviour
             earthUnlocked = true;
             GetComponent<SpellTreeManager>().UnlockElement(TalisDrag.Elements.EARTH);
         }
+    }
+
+    public void ToggleIcons(bool isOn) {
+        if (!isOn || backpackUnlocked) GameObject.FindGameObjectWithTag("BackpackIcon").GetComponent<Image>().enabled = isOn;
+        if (!isOn || spellTreeUnlocked) GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled = isOn;
+
+        if (!isOn) CloseDisplays();
     }
 }
