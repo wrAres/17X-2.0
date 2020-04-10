@@ -22,6 +22,9 @@ public class LeaveIconBright : MonoBehaviour
         
         this.gameObject.GetComponent<RawImage>().color = color;
         this.gameObject.transform.SetSiblingIndex(0);
+        GameObject spellTree = GameObject.FindGameObjectWithTag("BackpackIcon");
+        spellTree.GetComponent<Image>().sprite = Resources.Load<Sprite>("ChangeAsset/Glowing Backpack");
+        //spellTree.transform.localScale = new Vector2(2, 2.3f);
     }
 
     public void DarkBackpack() {

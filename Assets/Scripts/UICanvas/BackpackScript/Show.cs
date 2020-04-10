@@ -83,6 +83,10 @@ public class Show : MonoBehaviour
                     pick.descShow = false;
                     if (brightBackpack) {
                         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
+                        brightBackpack = false;
+
+                        GameObject spellTree = GameObject.FindGameObjectWithTag("BackpackIcon");
+                        spellTree.GetComponent<Image>().sprite = Resources.Load<Sprite>("ChangeAsset/Hulu3");
                     }
                     if (Backpack.backpack.activeSelf) {
                         Backpack.backpack.GetComponent<Backpack>().Show(false);

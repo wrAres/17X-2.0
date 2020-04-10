@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1280
     height: 663
-  m_MinSize: {x: 679, y: 342}
-  m_MaxSize: {x: 12004, y: 8042}
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 1048
+  controlID: 6596
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -135,10 +135,10 @@ MonoBehaviour:
     y: 0
     width: 898
     height: 663
-  m_MinSize: {x: 403, y: 342}
-  m_MaxSize: {x: 8003, y: 8042}
+  m_MinSize: {x: 403, y: 492}
+  m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 1049
+  controlID: 6597
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 1029
+  controlID: 6598
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -183,8 +183,8 @@ MonoBehaviour:
     y: 0
     width: 224
     height: 388
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -218,10 +218,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 22}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 2afbffffd4360000
+      m_ExpandedIDs: 2afbfffff4ffffffd4360000c03a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -264,8 +264,8 @@ MonoBehaviour:
     y: 0
     width: 674
     height: 388
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 8}
@@ -424,7 +424,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -433,14 +433,14 @@ MonoBehaviour:
     y: 388
     width: 898
     height: 275
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 12}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
   - {fileID: 12}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -480,20 +480,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/UICanvas
+    - Assets/img/UI
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/UICanvas
+  - Assets/img/UI
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/Heatler/Games/17X-2.0
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 171.1167}
-    m_SelectedIDs: 2a3e0000
-    m_LastClickedID: 15914
-    m_ExpandedIDs: 00000000de3d0000e03d0000e23d0000e43d0000e63d0000e83d0000ea3d000000ca9a3b
+    scrollPos: {x: 0, y: 170.65448}
+    m_SelectedIDs: 0e3e0000
+    m_LastClickedID: 15886
+    m_ExpandedIDs: 00000000de3d0000e03d0000e23d0000e43d0000e63d0000e83d0000ea3d0000f43d00002a3e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -521,7 +521,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000de3d0000e03d0000e23d0000e43d0000e63d0000e83d0000ea3d000000ca9a3b
+    m_ExpandedIDs: 00000000de3d0000e03d0000e23d0000e43d0000e63d0000e83d0000ea3d0000f43d00002a3e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -546,10 +546,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: e2390000
-    m_LastClickedInstanceID: 14818
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000000000002e3c00009e440000
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c6230000000000002e3c00009e44000010db0000f83c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -665,5 +665,5 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: 14818
+  m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
