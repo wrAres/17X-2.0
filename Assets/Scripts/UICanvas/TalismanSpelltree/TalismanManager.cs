@@ -13,6 +13,8 @@ public class TalismanManager : MonoBehaviour {
         public TalisDrag.Elements[] element = new TalisDrag.Elements[3];
     }
     */
+    public bool dialogShown => FindObjectOfType<TipsDialog>() != null;
+
     // Main display variables
     public GameObject display;
     public float timer;
@@ -43,7 +45,7 @@ public class TalismanManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown("space") && !display.activeSelf) {
+        if (Input.GetKeyDown("space") && !display.activeSelf && !dialogShown) {
             if (firstAccess) {
                 if (!GameObject.Find("MainUI").GetComponent<Show>().seenSpellTree) {
                     display.transform.SetSiblingIndex(2);
@@ -66,7 +68,7 @@ public class TalismanManager : MonoBehaviour {
             curTime = timer;
             UISoundScript.OpenTalisman();
         }
-        else if (Input.GetKeyDown("space")) {
+        else if (Input.GetKeyDown("space") && !dialogShown) {
             CloseDisplay();
             UISoundScript.OpenTalisman();
         }

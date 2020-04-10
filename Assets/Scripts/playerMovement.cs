@@ -14,6 +14,8 @@ public class playerMovement : MonoBehaviour
 	public int freeze;
 	private bool isWaterScene =>
         SceneManager.GetActiveScene().name == "scene3";
+	public bool dialogShown =>
+        FindObjectOfType<TipsDialog>() != null;
 
 
 	void Start()
@@ -41,30 +43,32 @@ public class playerMovement : MonoBehaviour
 		
 		ani.SetFloat("Speed", GetComponent<Rigidbody>().velocity.z);
 		ani.SetFloat("status",status);
-		
-		if(Input.GetKey("w") ){
-			GetComponent<Rigidbody>().velocity = new Vector3(0,0,3*isReverse*freeze);
-			if(isWaterScene) WaterSoundManagerScript.PlaySound();
-			status = -1*isReverse;
-		}
-		else if(Input.GetKey("s")){
-			GetComponent<Rigidbody>().velocity = new Vector3(0,0,-3*isReverse*freeze);
-			if (isWaterScene) WaterSoundManagerScript.PlaySound();
-			status = 1*isReverse;
-		}
-        else if(Input.GetKey("a") ){
-			GetComponent<Rigidbody>().velocity = new Vector3(-3*isReverse*freeze,0,0);
-			if (isWaterScene) WaterSoundManagerScript.PlaySound();
-			status = 2*isReverse;
-		}
-		else if(Input.GetKey("d")){
-			GetComponent<Rigidbody>().velocity = new Vector3(3*isReverse*freeze,0,0);
-			if (isWaterScene) WaterSoundManagerScript.PlaySound();
-			status = -2*isReverse;
-		}
-		else {
-			if (isWaterScene) WaterSoundManagerScript.StopPlaySound();
-			status = 0;
+
+		if (!dialogShown) {
+			if (Input.GetKey("w")) {
+				GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 3 * isReverse * freeze);
+				if (isWaterScene) WaterSoundManagerScript.PlaySound();
+				status = -1 * isReverse;
+			}
+			else if (Input.GetKey("s")) {
+				GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -3 * isReverse * freeze);
+				if (isWaterScene) WaterSoundManagerScript.PlaySound();
+				status = 1 * isReverse;
+			}
+			else if (Input.GetKey("a")) {
+				GetComponent<Rigidbody>().velocity = new Vector3(-3 * isReverse * freeze, 0, 0);
+				if (isWaterScene) WaterSoundManagerScript.PlaySound();
+				status = 2 * isReverse;
+			}
+			else if (Input.GetKey("d")) {
+				GetComponent<Rigidbody>().velocity = new Vector3(3 * isReverse * freeze, 0, 0);
+				if (isWaterScene) WaterSoundManagerScript.PlaySound();
+				status = -2 * isReverse;
+			}
+			else {
+				if (isWaterScene) WaterSoundManagerScript.StopPlaySound();
+				status = 0;
+			}
 		}
     }
 }

@@ -73,25 +73,23 @@ public class Show : MonoBehaviour
                 string tag = result.gameObject.tag;
                 print("obj names: " + name);
 
-                if (tag.CompareTo("BackpackIcon") == 0) {
-                    if (!dialogShown) {
-                        pick.descShow = false;
-                        if (brightBackpack) {
-                            GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
-                        }
-                        if (Backpack.backpack.activeSelf) {
-                            Backpack.backpack.GetComponent<Backpack>().Show(false);
-                        }
-                        else {
-                            Backpack.backpack.GetComponent<Backpack>().Show(true);
-                            GetComponent<FlyingSpell>().ResetFlyingSpell();
-                        }
-                        // Close other canvas
-                        spellTreeDisp.SetActive(false);
-                        talisDisp.CloseDisplay();
+                if (tag.CompareTo("BackpackIcon") == 0 && !dialogShown) {
+                    pick.descShow = false;
+                    if (brightBackpack) {
+                        GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
                     }
+                    if (Backpack.backpack.activeSelf) {
+                        Backpack.backpack.GetComponent<Backpack>().Show(false);
+                    }
+                    else {
+                        Backpack.backpack.GetComponent<Backpack>().Show(true);
+                        GetComponent<FlyingSpell>().ResetFlyingSpell();
+                    }
+                    // Close other canvas
+                    spellTreeDisp.SetActive(false);
+                    talisDisp.CloseDisplay();
                 }
-                else if (tag.CompareTo("Item") == 0) {
+                else if (tag.CompareTo("Item") == 0 && !dialogShown) {
                     pick.descShow = false;
                     if (!ItemDragHandler.holdItem) {
                         ItemDragHandler.itemOnGround = result.gameObject;
@@ -99,25 +97,23 @@ public class Show : MonoBehaviour
                         ItemDragHandler.holdItem = true;
                     }
                 }
-                else if (tag.CompareTo("SpellTreeIcon") == 0) {
-                    if (!dialogShown) {
-                        pick.descShow = false;
-                        UISoundScript.OpenSpellTree();
-                        if (brightSpell) {
-                            GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
-                            TipsDialog.PrintDialog("Spelltree 2");
-                            brightSpell = false;
-                            GameObject spellTree = GameObject.FindGameObjectWithTag("SpellTreeIcon");
-                            spellTree.GetComponent<Image>().sprite = Resources.Load<Sprite>("ChangeAsset/All elements");
-                            spellTree.transform.localScale = new Vector2(2.6f, 2.5f);
-                            seenSpellTree = true;
-                        }
-                        spellTreeDisp.SetActive(!spellTreeDisp.activeSelf);
+                else if (tag.CompareTo("SpellTreeIcon") == 0 && !dialogShown) {
+                    pick.descShow = false;
+                    UISoundScript.OpenSpellTree();
+                    if (brightSpell) {
+                        GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
+                        TipsDialog.PrintDialog("Spelltree 2");
+                        brightSpell = false;
+                        GameObject spellTree = GameObject.FindGameObjectWithTag("SpellTreeIcon");
+                        spellTree.GetComponent<Image>().sprite = Resources.Load<Sprite>("ChangeAsset/All elements");
+                        spellTree.transform.localScale = new Vector2(2.6f, 2.5f);
+                        seenSpellTree = true;
+                    }
+                    spellTreeDisp.SetActive(!spellTreeDisp.activeSelf);
 
                         // Close other canvas
-                        talisDisp.CloseDisplay();
-                        Backpack.backpack.GetComponent<Backpack>().Show(false);
-                    }
+                    talisDisp.CloseDisplay();
+                    Backpack.backpack.GetComponent<Backpack>().Show(false);
              
                     // closedFirstTimeFlag++;
                     // print(closedFirstTimeFlag);
