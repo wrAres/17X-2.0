@@ -18,6 +18,7 @@ public class Spell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
     public TalisDrag.Elements element;
     public Sprite locked;
     public Image newDisp;
+    public Sprite glow;
 
     private Sprite ogSprite;
     private Vector3 ogPos, ogScale;
@@ -69,10 +70,11 @@ public class Spell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
         curState = s;
     }
 
-    public void SetOld() { isNew = false; newDisp.enabled = false; }
+    public void SetOld() { isNew = false; newDisp.enabled = false; Debug.Log("called"); }
 
     private void OnEnable() {
         if (curState == SpellState.LOCKED) newDisp.enabled = false;
         else { newDisp.enabled = isNew; }
+        
     }
 }

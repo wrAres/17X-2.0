@@ -16,7 +16,6 @@ public class ShakingIcon : MonoBehaviour
     void Update () {
         if (shaking) {
             // RectTransform item_transform = this.GetComponent<RectTransform>();
-            print("haha" + Time.deltaTime);
             // Vector3 newPos = Random.insideUnitSphere * (Time.deltaTime * shakeAmt) + originalPos;
             Vector3 newPos = Random.insideUnitSphere * (shakeAmt * 0.002f) + originalPos;
             

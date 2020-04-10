@@ -77,6 +77,7 @@ public class TalismanManager : MonoBehaviour {
         // TEST MAKE BUTTON
         if (Input.GetKey(KeyCode.Return) && display.activeSelf) {
             MakeItem();
+            dispManager.ToggleIcons(true);
         }
     }
 
@@ -190,10 +191,17 @@ public class TalismanManager : MonoBehaviour {
                     backpack.AddItem(recipeBook[i].spellName);
                     AIDataManager.IncrementSpellAccess(recipeBook[i].spellName);
                     // GameObject.Find("Backpack_Icon").GetComponent<ShakingIcon>().ShakeMe();
-                    GetComponent<FlyingSpell>().FlyTowardsIcon(recipeBook[i].GetComponent<Image>().sprite, false);
+                    GetComponent<FlyingSpell>().FlyTowardsIcon(recipeBook[i].glow, false);
                     if (recipeBook[i].curState == Spell.SpellState.KNOWN) {
                         recipeBook[i].ChangeState(Spell.SpellState.UNLOCKED);
                         recipeBook[i].SetOld();
+                    }
+
+                    // Update old element status
+                    for (int j = 0; j < recipeBook[i].recipe.Length; j++) {
+                        if (recipeBook[i].recipe[j] != TalisDrag.Elements.NONE) {
+                            GetComponent<SpellTreeManager>().SetElementToOld(recipeBook[i].recipe[j]);
+                        }
                     }
                 }
                 else {

@@ -13,6 +13,8 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
     public GameObject textbox;
     public Text itemName;
 
+    public bool dialogShown => FindObjectOfType<TipsDialog>() != null;
+
     public void OnPointerEnter(PointerEventData eventData) {
         // dispManager.GetComponent<TalismanManager>().DispTextBox(true, element, eventData.position);
         textbox.SetActive(true);
@@ -27,20 +29,24 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
     }
 
     public void OnDrag(PointerEventData eventData){
-        itemOnGround.transform.position = Input.mousePosition;
-        textbox.SetActive(false);
+        if (!dialogShown) {
+            itemOnGround.transform.position = Input.mousePosition;
+            textbox.SetActive(false);
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData){
         // StartCoroutine(Put());
-        Put();
-        itemOnGround.GetComponent<RectTransform>().anchoredPosition = previousPosition;
-        holdItem = false;
+        if (!dialogShown) {
+            Put();
+            itemOnGround.GetComponent<RectTransform>().anchoredPosition = previousPosition;
+            holdItem = false;
+        }
     }
 
     public void OnBeginDrag(PointerEventData eventData) {
         // print("begin drag: "+itemOnGround.name);
-        holdItem = true;
+        if(!dialogShown) holdItem = true;
     }
 
     // Start is called before the first frame update
@@ -61,7 +67,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             RaycastHit hitInfo;
-            if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity)) {
+            if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity) && !dialogShown) {
                 GameObject dragOnObject = hitInfo.collider.gameObject;
                 canPlaceItem = Item.canPlace(itemOnGround.name, dragOnObject.name);
                 if (canPlaceItem) {

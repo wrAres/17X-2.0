@@ -581,7 +581,7 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 103709456}
-  m_RootOrder: 3
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -780,6 +780,7 @@ MonoBehaviour:
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
   newDisp: {fileID: 73757997}
+  glow: {fileID: 21300000, guid: 1fac2c744bbd04afaafce41cdf9939a4, type: 3}
 --- !u!222 &89794578
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -898,7 +899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6a2cb4c93bde43f7a66ab1a0cdd43b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconSpeed: 1000
+  iconSpeed: 700
   spellIcon: {fileID: 60670946}
   spellTreeIcon: {fileID: 481698908}
   backpackIcon: {fileID: 2024886682}
@@ -1050,12 +1051,12 @@ RectTransform:
   - {fileID: 439654259}
   - {fileID: 318233569}
   - {fileID: 1116509719}
-  - {fileID: 60670949}
   - {fileID: 1733698979}
   - {fileID: 2024886682}
   - {fileID: 184300772}
   - {fileID: 813484270}
   - {fileID: 481698908}
+  - {fileID: 60670949}
   - {fileID: 548218403}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -1198,6 +1199,7 @@ MonoBehaviour:
   element: 1
   locked: {fileID: 21300000, guid: fe92c3c810d254103a410bf78228b667, type: 3}
   newDisp: {fileID: 21082847}
+  glow: {fileID: 21300000, guid: 21cbc086728694a0fa350956969a8df4, type: 3}
 --- !u!222 &119415705
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1611,7 +1613,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 103709456}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1766,6 +1768,7 @@ MonoBehaviour:
   element: 8
   locked: {fileID: 21300000, guid: fe92c3c810d254103a410bf78228b667, type: 3}
   newDisp: {fileID: 559553344}
+  glow: {fileID: 21300000, guid: 6a354a106484f4fa39ff99566d2d02e3, type: 3}
 --- !u!222 &187082863
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2713,6 +2716,7 @@ MonoBehaviour:
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
   newDisp: {fileID: 967019057}
+  glow: {fileID: 21300000, guid: 5d84f6acef0fd4295802314bc5bf8fa4, type: 3}
 --- !u!222 &373314527
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2824,6 +2828,7 @@ MonoBehaviour:
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
   newDisp: {fileID: 1447013598}
+  glow: {fileID: 21300000, guid: 1a658ec8eb7574606995169dab0c7f0e, type: 3}
 --- !u!222 &390860077
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3018,6 +3023,7 @@ MonoBehaviour:
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
   newDisp: {fileID: 427736303}
+  glow: {fileID: 21300000, guid: 3d6186e62113649b6b3b4d577f372dd8, type: 3}
 --- !u!222 &400256418
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4334,7 +4340,7 @@ RectTransform:
   m_LocalScale: {x: 3.5249999, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 103709456}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5725,6 +5731,7 @@ MonoBehaviour:
   element: 2
   locked: {fileID: 21300000, guid: fe92c3c810d254103a410bf78228b667, type: 3}
   newDisp: {fileID: 1472300318}
+  glow: {fileID: 21300000, guid: 045fe6bdff7084c44a4bdae2451bef9a, type: 3}
 --- !u!222 &655722352
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6451,6 +6458,7 @@ MonoBehaviour:
   element: 7
   locked: {fileID: 21300000, guid: fe92c3c810d254103a410bf78228b667, type: 3}
   newDisp: {fileID: 1693061530}
+  glow: {fileID: 21300000, guid: d9b44d0652b5f4ec8af8358f7724af34, type: 3}
 --- !u!222 &750374342
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6757,7 +6765,7 @@ RectTransform:
   - {fileID: 1790807904}
   - {fileID: 59179416}
   m_Father: {fileID: 103709456}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7534,6 +7542,7 @@ MonoBehaviour:
   element: 0
   locked: {fileID: 21300000, guid: fe92c3c810d254103a410bf78228b667, type: 3}
   newDisp: {fileID: 429865435}
+  glow: {fileID: 21300000, guid: cfa464e2d86354cd49e652c5d4bc7612, type: 3}
 --- !u!222 &931865565
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8380,6 +8389,7 @@ MonoBehaviour:
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
   newDisp: {fileID: 134729395}
+  glow: {fileID: 21300000, guid: bde20edb9bf3e4ac9b1b920fafb9f43d, type: 3}
 --- !u!222 &1017418308
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8599,6 +8609,7 @@ MonoBehaviour:
   element: 5
   locked: {fileID: 21300000, guid: fe92c3c810d254103a410bf78228b667, type: 3}
   newDisp: {fileID: 2077373001}
+  glow: {fileID: 21300000, guid: b5692dba463aa47c88bb19fe1025c044, type: 3}
 --- !u!222 &1048459259
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8756,6 +8767,7 @@ MonoBehaviour:
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
   newDisp: {fileID: 242761891}
+  glow: {fileID: 21300000, guid: 0f13ad7a2004b4178a2c393667834d01, type: 3}
 --- !u!222 &1067286564
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9511,6 +9523,7 @@ MonoBehaviour:
   element: 4
   locked: {fileID: 21300000, guid: fe92c3c810d254103a410bf78228b667, type: 3}
   newDisp: {fileID: 1004102208}
+  glow: {fileID: 21300000, guid: 38901177650a441c28d5e26149143d67, type: 3}
 --- !u!222 &1122469201
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12548,6 +12561,7 @@ MonoBehaviour:
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
   newDisp: {fileID: 842061633}
+  glow: {fileID: 21300000, guid: abb971ca2657842588499494db411909, type: 3}
 --- !u!222 &1642044152
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13309,7 +13323,7 @@ RectTransform:
   m_Children:
   - {fileID: 810526738}
   m_Father: {fileID: 103709456}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13509,6 +13523,7 @@ MonoBehaviour:
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
   newDisp: {fileID: 565152740}
+  glow: {fileID: 21300000, guid: cff73710d01e544a6bf5168b60a6888a, type: 3}
 --- !u!222 &1743046751
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14025,6 +14040,7 @@ MonoBehaviour:
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
   newDisp: {fileID: 1568764256}
+  glow: {fileID: 21300000, guid: 5d3da9ba63fcc46f8aef0083f49e8130, type: 3}
 --- !u!222 &1814573642
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15179,7 +15195,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 103709456}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15404,6 +15420,7 @@ MonoBehaviour:
   element: 6
   locked: {fileID: 21300000, guid: fe92c3c810d254103a410bf78228b667, type: 3}
   newDisp: {fileID: 709762840}
+  glow: {fileID: 21300000, guid: fe3f20f5252534b938c95229b64dd0ae, type: 3}
 --- !u!222 &2069793575
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15945,6 +15962,7 @@ MonoBehaviour:
   element: 3
   locked: {fileID: 21300000, guid: fe92c3c810d254103a410bf78228b667, type: 3}
   newDisp: {fileID: 1736121646}
+  glow: {fileID: 21300000, guid: f2bc4ca14028340559bda1fe29063709, type: 3}
 --- !u!222 &2098840987
 CanvasRenderer:
   m_ObjectHideFlags: 0

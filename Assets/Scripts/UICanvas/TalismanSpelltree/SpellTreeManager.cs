@@ -23,11 +23,15 @@ public class SpellTreeManager : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         //   UpdateIcons();
+        UpdateSpell();
+    }
+
+    private void UpdateSpell() {
         display.SetActive(true);
-       // spell = GetComponentsInChildren<Spell>();
+        spell = new List<Spell>();
         foreach (Transform child in transform) {
             Spell[] spellList = child.GetComponentsInChildren<Spell>();
-            for(int i = 0; i < spellList.Length; i++)
+            for (int i = 0; i < spellList.Length; i++)
                 spell.Add(spellList[i]);
         }
         display.SetActive(false);
@@ -44,9 +48,15 @@ public class SpellTreeManager : MonoBehaviour {
         }
         */
 
-        // if (Input.GetKeyDown(KeyCode.Q)) {
-        //     UnlockElement(TalisDrag.Elements.WOOD);
-        // }
+         if (Input.GetKeyDown(KeyCode.Q)) {
+             UnlockElement(TalisDrag.Elements.WATER);
+         }
+        if (Input.GetKeyDown(KeyCode.E)) {
+            UnlockElement(TalisDrag.Elements.EARTH);
+        }
+        if (Input.GetKeyDown(KeyCode.R)) {
+            UnlockElement(TalisDrag.Elements.WIND);
+        }
     }
 
     private void UpdateIcons() {
@@ -126,19 +136,21 @@ public class SpellTreeManager : MonoBehaviour {
     public void HideTextBox() { textBox.SetActive(false); }
 
     public void UnlockElement(TalisDrag.Elements e) {
+        UpdateSpell();
         // Unlock the element
         for (int i = 0; i < spell.Count; i++) {
             if (spell[i].element == e) {
                 spell[i].ChangeState(Spell.SpellState.UNLOCKED);
-                GetComponent<FlyingSpell>().FlyTowardsIcon(spell[i].GetComponent<Image>().sprite, true);
+                GetComponent<FlyingSpell>().FlyTowardsIcon(spell[i].glow, true);
                 UISoundScript.PlaySpellTreeIcon();
-                break;
+               /// break;
             }
             else if (spell[i].curState == Spell.SpellState.UNLOCKED) {
                 spell[i].SetOld();
             }
         }
-        print("spell list: " + spell);
+     //   print("spell list: " + spell);
+
         // Make related recipes known if locked
         for (int i = 0; i < spell.Count; i++) {
             if (CanCraft(spell[i]) && spell[i].curState == Spell.SpellState.LOCKED){
@@ -154,11 +166,21 @@ public class SpellTreeManager : MonoBehaviour {
     
 
     public Spell[] GetSpellBook() {
+        UpdateSpell();
         Spell[] theList = new Spell[spell.Count];
         for (int i = 0; i < spell.Count; i++) {
             theList[i] = spell[i];
         }
         return theList;
+    }
+
+    public void SetElementToOld(TalisDrag.Elements e) {
+        UpdateSpell();
+        for (int i = 0; i < spell.Count; i++) {
+            if (spell[i].element == e && spell[i].curState == Spell.SpellState.UNLOCKED) {
+                spell[i].SetOld();
+            }
+        }
     }
     
 }
