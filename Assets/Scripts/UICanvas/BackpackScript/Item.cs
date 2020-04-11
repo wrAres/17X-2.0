@@ -105,6 +105,7 @@ public class Item : MonoBehaviour
             GameObject.Find("MainUI").GetComponent<Show>().ShowSpelltreeIcon();
             TipsDialog.PrintDialog("Spelltree 1");
             GameObject.Find("Dialog Box").transform.SetSiblingIndex(6);
+            DontDestroyVariables.canOpenTalisman = true;
         } 
         else if (item.CompareTo("Earth Key") == 0 && position.CompareTo("EarthPortal") == 0){
             GameObject earthPortal = GameObject.Find("EarthPortal");

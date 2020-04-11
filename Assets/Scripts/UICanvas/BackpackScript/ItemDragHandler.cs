@@ -20,7 +20,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
         textbox.SetActive(true);
         itemName.text = gameObject.name.ToString();
         // print("event data: " + this.gameObject.GetComponent<RectTransform>().anchoredPosition);
-        textbox.GetComponent<RectTransform>().anchoredPosition = this.gameObject.GetComponent<RectTransform>().anchoredPosition + new Vector2(0f, -50f);
+        textbox.GetComponent<RectTransform>().anchoredPosition = this.gameObject.GetComponent<RectTransform>().anchoredPosition + new Vector2(-80f, -60f);
     }
 
     public void OnPointerExit(PointerEventData eventData) {
