@@ -6,12 +6,15 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public void PlayGame(){
-     SceneManager.LoadScene("Tutorial");
+       SceneManager.LoadScene("Tutorial");
     }
 
     public void QuitGame(){
-     UnityEditor.EditorApplication.isPlaying = false;
-     Debug.Log("quit game");
-     Application.Quit();
+       UnityEditor.EditorApplication.isPlaying = false;
+       Debug.Log("quit game");
+       Application.Quit();
+    }
+    public void Credit() {
+       SceneManager.LoadScene("Credits");
     }
 }
