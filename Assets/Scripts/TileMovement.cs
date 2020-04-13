@@ -13,7 +13,7 @@ public class TileMovement : MonoBehaviour
     private Transform invisTile;
 
     private float speed = 100.0f;
-    public static int mixTimes = 10;
+    public static int mixTimes = 30;
 
     private float start;
 
@@ -134,14 +134,31 @@ public class TileMovement : MonoBehaviour
     private void MixPuzzle()
     {
         // Mix the completed puzzle
-        for (int i = 0; i < mixTimes; i++)
+        int numMix = 0;
+        while(numMix < mixTimes)
         {
             Tuple<bool, string>[] tiles = GetTiles();
             int number = UnityEngine.Random.Range(1, 5);
-            if (number == 1 && tiles[0].Item1 == true) UpdatePuzzle("up");
-            else if (number == 2 && tiles[1].Item1 == true) UpdatePuzzle("down");
-            else if (number == 3 && tiles[2].Item1 == true) UpdatePuzzle("left");
-            else if (number == 4 && tiles[3].Item1 == true) UpdatePuzzle("right");
+            if (number == 1 && tiles[0].Item1 == true)
+            {
+                UpdatePuzzle("up");
+                numMix++;
+            }
+            else if (number == 2 && tiles[1].Item1 == true)
+            {
+                UpdatePuzzle("down");
+                numMix++;
+            }
+            else if (number == 3 && tiles[2].Item1 == true)
+            {
+                UpdatePuzzle("left");
+                numMix++;
+            }
+            else if (number == 4 && tiles[3].Item1 == true)
+            {
+                UpdatePuzzle("right");
+                numMix++;
+            }
         }
         // Update the tiles in 3D space
         for (int i = 0; i < 3; i++)
