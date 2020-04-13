@@ -19,15 +19,10 @@ public class WaterPool : MonoBehaviour
     }
 
 	void Update() {
-		if (timerActivated){
-			timer++;
-			if(timer == 100){
-				this.changeColor();
-			}
-		}
+		
 	}
 	
-	void changeColor(){
+	public void changeColor(){
 		if(isBlue){
 			this.gameObject.GetComponent<SpriteRenderer>().sprite = darkPool;
 			isBlue = false;

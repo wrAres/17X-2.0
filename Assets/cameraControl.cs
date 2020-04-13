@@ -9,8 +9,11 @@ public class cameraControl : MonoBehaviour
 	public Camera zoomed;
 	AudioListener CameraDefAudio;
 	AudioListener CameraZoomedAudio;
+	public bool active;
     void Start()
     {
+		active = true;
+		
         def.enabled = true;
 		zoomed.enabled = false;
 		CameraDefAudio = def.GetComponent<AudioListener>();
@@ -24,7 +27,8 @@ public class cameraControl : MonoBehaviour
     {
 		
 		
-        if (Input.GetKeyDown("z")) {
+        if (Input.GetKeyDown("z")&&active) {
+			zoomed.GetComponent<Rigidbody>().transform.position = new Vector3(-3,2,-14);
 			def.enabled = !def.enabled;
 			zoomed.enabled = !zoomed.enabled;
 		}

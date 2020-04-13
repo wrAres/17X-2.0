@@ -886,6 +886,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68070e20af0ae3f41b52162ac57ae530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BigPool: {fileID: 1818209182}
+  SmallPool: {fileID: 1306112932}
 --- !u!1 &85644070
 GameObject:
   m_ObjectHideFlags: 0
@@ -7371,6 +7373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   def: {fileID: 1962050184}
   zoomed: {fileID: 1904357345}
+  active: 0
 --- !u!4 &930218974
 Transform:
   m_ObjectHideFlags: 0
