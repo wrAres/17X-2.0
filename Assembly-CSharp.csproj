@@ -113,6 +113,8 @@
     <Compile Include="Assets\Scripts\player.cs" />
     <Compile Include="Assets\Scripts\playerMovement.cs" />
     <Compile Include="Assets\Scripts\sceneTransition.cs" />
+    <Compile Include="Assets\cameraControl.cs" />
+    <Compile Include="Assets\mirrorCamera.cs" />
     <Compile Include="Assets\waterBoss.cs" />
     <None Include="Assets\Scripts\UICanvas\dialogtext.txt" />
     <Reference Include="Unity.Timeline.Editor">
