@@ -2,48 +2,45 @@ River
 I bet it’s really deep and I don’t know how to swim.
 ---
 Earth Key
-I feel a strong sense of the combination of Yin and Yang on this key. =But what is it used for?
+I feel a strong sense of the combination of Yin and Yang on this =key. But what is it used for?
 Oh, wait! I almost forgot an important thing. 
 In such an unknown place, I need to have my “weapons” in hands =        -- Writing Brush and Talismans.
 They should be in my gourd. I used to store everything in my gourd.
 ---
 Lobby
-Wow! An Eight-Trigram-Atlas! I feel the strong energies of the other four =elements except Earth come from four different directions. 
-According to what my teacher taught me, Water was the first element =generated in the world. 
+Wow! An Eight-Trigram-Atlas! I feel the strong energies of the other =four elements except Earth come from four different directions. 
+According to what my teacher taught me, Water was the first =element generated in the world. 
 Maybe I can go check the Water energy first. 
 ---
 Spelltree 1
-All talisman wizards have their own Spelltree pages that record spells they =have learned in the past. 
-We draw those spell-characters in the talisman to cast a specific spell.
+All talisman wizards have their own Spelltree pages that record =spells they have learned in the past. 
+We draw those spell-characters in the talisman to cast a specific =spell.
 ---
 Spelltree 2
-Oh no! My Spelltree is covered by some shells and I somehow cannot =remember mostly anything about my spells. 
+Oh no! My Spelltree is covered by some shells and I somehow =cannot remember mostly anything about my spells. 
 Something must be wrong! I must find the way out of here.
----
-Talisman 0
-What? There are two dragons entwined on my scrolls. The left one looks =like the Yellow-Dragon, the God of Earth. 
-But why my talisman is empty? Maybe I should check my spelltree so =I can remember what to draw on the talisman.
 ---
 Talisman 1
 … I … I just felt like some of my memories have come back. 
 A simple spell would be able to let me cross the river.
-【Press ‘SPACE’ to open the talisman】
+【Press ‘SPACE’ to open and close the talisman】
 ---
 Talisman 2
-What? There are two dragons entwined on my scrolls. The left one looks =like the Yellow-Dragon, the God of Earth. 
-What is he doing there? Where are my other characters? Maybe I should =try if I can still use the talisman…
-【Click and Drag the character into the dotted lines Boxes on the talisman】
-【Press 'ENTER' to open and close the talisman】
+What? There are two dragons entwined on my scrolls. The left one =looks like the Yellow-Dragon, the God of Earth. 
+What is he doing there? Where are my other characters? Maybe =I should try if I can still use the talisman…
+【Click and Drag characters into dotted lines Boxes on the talisman】
+【Press 'ENTER' to finish drawing the talisman】
 ---
 Self Introduction
-Ewww… Where am I? Wasn’t I on my way finding the Five-Elements-Seal? =I remember I almost found it according to the map that my teacher left for me. 
+Ewww… Where am I? Wasn’t I on my way finding the =Five-Elements-Seal? 
+I remember I almost found it according to the map that my =teacher left for me. 
 I must find the way out!=【Use ‘WSAD’ to move around】
 ---
 EarthPortal
-Seems like an extremely strong power is locked behind this scroll, let me =figure it out.
+Seems like an extremely strong power is locked behind this scroll, =let me figure it out.
 ---
 EarthGround
-The energy of Earth is so strong everywhere in this room, but, for sure, =this is just normal soil.
+The energy of Earth is so strong everywhere in this room, but, for =sure, this is just normal soil.
 ---
 法阵-scene3
 Oh, another scroll. But I cannot find the lock this time.
@@ -64,19 +61,19 @@ End
 Wait… Am I walking on the Dipper? Does it have any meaning?
 ---
 Water Seed
-A seed that looks like Mercury. I can feel the Water energy surrounding it.
+A seed that looks like Mercury. I can feel the Water energy =surrounding it.
 ---
 Flowerpot
 An ancient flower vase. It must be older than 5000 years.
 ---
 Water Boss Door
-A wood gate with some weird decorations on it. What are their meanings?
+A wood gate with some weird decorations on it. What are their =meanings?
 ---
 6_water-white
-That’s the first time I see such pure Water energy! They are like thousands of =Life Water I created getting together.
+That’s the first time I see such pure Water energy! They are like =thousands of Life Water I created getting together.
 ---
 1_water-dark
-That’s the first time I see such pure Water energy! They are like thousands of =Life Water I created getting together.
+That’s the first time I see such pure Water energy! They are like =thousands of Life Water I created getting together.
 ---
 wind
 Strong winds come from somewhere. I can’t move forward against it.
@@ -103,13 +100,15 @@ wind (7)
 Strong winds come from somewhere. I can’t move forward against it.
 ---
 Break Mirror
-Someone: Nice job human. The world is back to normal now. I am waiting for =you behind the gate now.
+Someone: Nice job human. The world is back to normal now. =I am waiting for you behind the gate now.
 ---
 Mirror no effect
-Six mirrors with 6 beautiful flowers, are they all the same? I am always =confused about which side is the real world, or do I live in a mirror as well?
+Six mirrors with 6 beautiful flowers, are they all the same? 
+I am always confused about which side is the real world, =or do I live in a mirror as well?
 ---
 Water Boss
-Qiang Yu: I am Qiang Yu, God of Water. You do surprise me a lot, human. =You have earned my respect and I will give you a gift: my divination. Let =me predict your future.
+Qiang Yu: I am Qiang Yu, God of Water. 
+Qiang Yu: You do surprise me a lot, human. =You have earned my respect and I will give you a gift: my divination. =Let me predict your future.
 … … 
 … …
 … …

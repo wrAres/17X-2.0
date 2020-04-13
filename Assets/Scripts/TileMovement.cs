@@ -13,7 +13,7 @@ public class TileMovement : MonoBehaviour
     private Transform invisTile;
 
     private float speed = 100.0f;
-    public static int mixTimes = 30;
+    public static int mixTimes = 0;
 
     private float start;
 

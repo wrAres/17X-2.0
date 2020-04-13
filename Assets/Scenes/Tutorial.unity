@@ -1082,16 +1082,16 @@ TextMesh:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506364835}
   m_Text: "The world is constructed of five basic elements: \r\nMetal, Wood, Water,
-    Fire, Earth\r\nFive Element Theory asserts that the world changes\naccording
+    Fire, Earth\r\nFive Element Theory asserts that the world changes \naccording
     to the five elements' generating or overcoming\nrelationships. Generating and
-    overcoming are the\ncomplementary processes \u2014 the Yin and Yang \u2014 \nof
-    Five Element Theory. Generating processes promote\ndevelopment, while overcoming
-    processes control\ndevelopment. By promoting and restraining,\nsystems are harmonized
+    overcoming are the \ncomplementary processes \u2014 the Yin and Yang \u2014 \nof
+    Five Element Theory. Generating processes promote \ndevelopment, while overcoming
+    processes control\ndevelopment. By promoting and restraining, systems are\nharmonized
     and balance is maintained.\r\r\nPeople always say \u201CWho understands the rule
-    and meaning\nof these five elements, the guy will become the real\nimmortal.
-    If you want to touch the fountainheads of the\n five elements, you must find
-    the Five-Elements-Seal, which\nno one alive has seen.\r Thus, for everyone who
-    cultivates \nTaoist, finding the Five-Elements-Seal is the most important thing.\r\n"
+    and meaning of\nthese five elements, the guy will become the real immortal.\nIf
+    you want to touch the fountainheads of the five elements, \nyou must find the
+    Five-Elements-Seal, which no one alive has\nseen.\r Thus, for everyone who cultivates
+    Taoist, finding the \nFive-Elements-Seal is the most important thing.\r\n"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
