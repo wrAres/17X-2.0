@@ -12,7 +12,7 @@ public class mirrors : MonoBehaviour
 	public GameObject f5;
 	public GameObject f6;
 	public GameObject[] mirrorArray = new GameObject[6];
-
+	
 	void Start()
     {
         

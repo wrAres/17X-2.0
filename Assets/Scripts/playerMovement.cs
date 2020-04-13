@@ -20,21 +20,26 @@ public class playerMovement : MonoBehaviour
 	public bool talismanShown =>
 		GameObject.FindGameObjectWithTag("Talisman") != null;
 
-
+	public int startPosition;
 	void Start()
     {
 		system = GameObject.Find("TrigramManager").GetComponent<SystemTree>();
 		findFloor = false;
 		status = 0;
 		freeze = 1;
+		startPosition = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
 		
-		if(GetComponent<Rigidbody>().transform.position.y < -20){
-			GetComponent<Rigidbody>().transform.position = new Vector3(0,2,-43);
+		if(GetComponent<Rigidbody>().transform.position.y < -20 ){
+			if(startPosition == 0){
+				GetComponent<Rigidbody>().transform.position = new Vector3(0,2,-43);
+			}else{
+				GetComponent<Rigidbody>().transform.position = new Vector3(-3,2,-13);
+			}
 			GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
 			AIDataManager.walkingPuzzleFalls++;
 			if (!findFloor) {

@@ -23,6 +23,7 @@ public class Item : MonoBehaviour
         itemOnPuzzle.Add("Board", "Background");
         itemOnPuzzle.Add("Earth Portal", "atlasmap2");
         itemOnPuzzle.Add("Taoist Wind", "atlasmap2");
+		
     }
 
     public static bool canPlace(string item, string targetObj) {
