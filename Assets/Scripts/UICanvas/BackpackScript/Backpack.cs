@@ -96,7 +96,7 @@ public class Backpack : MonoBehaviour
             imageObjects[i] = imageObjects[i+1];
             // print("move obj " + imageObjects[i].name);
             RectTransform item_tranform = imageObjects[i].GetComponent<RectTransform>();
-            item_tranform.anchoredPosition = item_tranform.anchoredPosition + new Vector2(-100, 0);
+            item_tranform.anchoredPosition = item_tranform.anchoredPosition + new Vector2(-80, 0);
         }
     }
 

@@ -72,9 +72,12 @@ public class Show : MonoBehaviour
             //Raycast using the Graphics Raycaster and mouse click position
             raycaster.Raycast(pointerData, results);
 
+            int resultSize = 0;
+
             //For every result returned, output the name of the GameObject on the Canvas hit by the Ray
             foreach (RaycastResult result in results)
             {
+                resultSize += 1;
                 string name = result.gameObject.name;
                 string tag = result.gameObject.tag;
                 print("obj names: " + name);
@@ -135,7 +138,8 @@ public class Show : MonoBehaviour
                     GameObject.Find("Dialog Box").SetActive(textActive);
                 }
             }
-            pick.ClickOnGround();
+            if (resultSize == 0)
+                pick.ClickOnGround();
         }
         // Show talisman building description after closing the spell tree
         // if (closedFirstTimeFlag == 2)

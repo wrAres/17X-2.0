@@ -35,7 +35,7 @@ public class flowerInMirror : MonoBehaviour
 		}
     }
 	
-	void OnMouseDown(){
+	public void ClickMirror(){
 		if (clickable) {
 			if(!isRight){
 				this.gameObject.GetComponent<SpriteRenderer>().sprite = cracked;

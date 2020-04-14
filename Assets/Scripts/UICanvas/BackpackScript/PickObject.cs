@@ -60,6 +60,8 @@ public class PickObject : MonoBehaviour
                     Destroy(clickObject);
                 } else if (clickObject.name.CompareTo("Boss") == 0){
                     AIDataManager.DecideTrigram();
+                } else if (clickObject.name.CompareTo("Flower 1") == 0 || clickObject.name.CompareTo("Flower 2") == 0 || clickObject.name.CompareTo("Flower 3") == 0 || clickObject.name.CompareTo("Flower 4") == 0 || clickObject.name.CompareTo("Flower 5") == 0 || clickObject.name.CompareTo("Flower 6") == 0) {  
+                    clickObject.GetComponent<flowerInMirror>().ClickMirror();
                 }
                 if (clickObject.tag == "Portals") {
                     ChangeSprite change = clickObject.GetComponent<ChangeSprite>();
