@@ -116,7 +116,7 @@ public class Show : MonoBehaviour
                         brightSpell = false;
                         GameObject spellTree = GameObject.FindGameObjectWithTag("SpellTreeIcon");
                         spellTree.GetComponent<Image>().sprite = Resources.Load<Sprite>("ChangeAsset/All elements");
-                        spellTree.transform.localScale = new Vector2(2.6f, 2.5f);
+                        // spellTree.transform.localScale = new Vector2(2.6f, 2.5f);
                         seenSpellTree = true;
                     }
                     spellTreeDisp.SetActive(!spellTreeDisp.activeSelf);
