@@ -33,7 +33,7 @@ public class PickObject : MonoBehaviour
             } else {
                 Destroy(GameObject.Find("River Tip"));
                 GameObject river = GameObject.Find("River");
-                river.GetComponent<CapsuleCollider>().radius = 0;
+                river.GetComponent<BoxCollider>().size = new Vector3(0f, 0f, 0f);
                 GameObject.Find("River").GetComponent<Renderer>().material.color = Color.gray;
             }
         } else if (SceneManager.GetActiveScene().name == "scene3") {

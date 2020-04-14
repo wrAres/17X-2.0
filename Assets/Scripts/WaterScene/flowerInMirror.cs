@@ -53,6 +53,7 @@ public class flowerInMirror : MonoBehaviour
 			}
 		} else {
 			TipsDialog.PrintDialog("Mirror no effect");
+			GameObject.Find("cameraControl").GetComponent<cameraControl>().active = true;
 		}
 	}
 	

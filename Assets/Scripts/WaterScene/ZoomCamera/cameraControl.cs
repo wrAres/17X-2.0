@@ -12,7 +12,7 @@ public class cameraControl : MonoBehaviour
 	public bool active;
     void Start()
     {
-		active = true;
+		active = false;
 		
         def.enabled = true;
 		zoomed.enabled = false;
