@@ -14,11 +14,11 @@ public class mirrorCamera : MonoBehaviour
     void Update()
     {
 		GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-        if (Input.GetKey("left"))
+        if (Input.GetKey("left")&&GetComponent<Rigidbody>().transform.position.x>=-9)
         {
             GetComponent<Rigidbody>().velocity = new Vector3(-3, 0, 0);
         }
-		if (Input.GetKey("right"))
+	if (Input.GetKey("right")&&GetComponent<Rigidbody>().transform.position.x<=4)
         {
             GetComponent<Rigidbody>().velocity = new Vector3(3, 0, 0);
         }
