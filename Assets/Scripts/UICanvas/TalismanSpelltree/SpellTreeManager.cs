@@ -140,10 +140,12 @@ public class SpellTreeManager : MonoBehaviour {
         // Unlock the element
         for (int i = 0; i < spell.Count; i++) {
             if (spell[i].element == e) {
-                spell[i].ChangeState(Spell.SpellState.UNLOCKED);
-                GetComponent<FlyingSpell>().FlyTowardsIcon(spell[i].glow, true);
-                UISoundScript.PlaySpellTreeIcon();
-               /// break;
+                if (spell[i].curState != Spell.SpellState.UNLOCKED) {
+                    GetComponent<FlyingSpell>().FlyTowardsIcon(spell[i].glow, true);
+                    spell[i].ChangeState(Spell.SpellState.UNLOCKED);
+                    UISoundScript.PlaySpellTreeIcon();
+                }
+                /// break;
             }
             else if (spell[i].curState == Spell.SpellState.UNLOCKED) {
                 spell[i].SetOld();
