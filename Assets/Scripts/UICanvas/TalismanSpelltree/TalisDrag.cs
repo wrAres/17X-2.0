@@ -15,7 +15,9 @@ public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHand
 
     public void OnPointerEnter(PointerEventData eventData) {
         // print("event data: " + eventData.position);
-        dispManager.GetComponent<TalismanManager>().DispTextBox(true, element, this.gameObject.GetComponent<RectTransform>().anchoredPosition + new Vector2(820f, 350f));
+        if(transform.localPosition == origin)
+            dispManager.GetComponent<TalismanManager>().DispTextBox(true, element, transform.localPosition + new Vector3(820f, 270f, 0f));
+        //dispManager.GetComponent<TalismanManager>().DispTextBox(true, element, gameObject.GetComponent<RectTransform>().anchoredPosition + new Vector2(820f, 0f));
     }
 
     public void OnPointerExit(PointerEventData eventData) {
@@ -48,10 +50,9 @@ public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHand
 
     public void OnDrop(PointerEventData eventData) {
         RectTransform invPanel = talisman as RectTransform;
-
         if (RectTransformUtility.RectangleContainsScreenPoint(invPanel, Input.mousePosition)) {
             //setTalis = true;
-            dispManager.GetComponent<TalismanManager>().AddCraft(element, GetComponent<Image>().sprite);
+            dispManager.GetComponent<TalismanManager>().AddCraft(element, GetComponentInChildren<Image>().sprite);
         }
     }
 

@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{723736E0-234A-81B5-781F-EA4585C42642}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UICanvas/TalismanSpelltree/SpellTreeManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UICanvas/TalismanSpelltree/TalisDrag.cs">
     <Files>
       <File FileName="Assets/Scripts/Sound/WaterSoundManagerScript.cs" Line="5" Column="18" />
-      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/TalismanManager.cs" />
+      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/TalismanManager.cs" Line="174" Column="1" />
       <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/Spell.cs" />
-      <File FileName="Assets/Scripts/UICanvas/BackpackScript/Show.cs" />
-      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/SpellTreeManager.cs" Line="152" Column="25" />
+      <File FileName="Assets/Scripts/UICanvas/BackpackScript/Show.cs" Line="89" Column="48" />
+      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/SpellTreeManager.cs" Line="146" Column="55" />
+      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/TalisDrag.cs" Line="18" Column="170" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
