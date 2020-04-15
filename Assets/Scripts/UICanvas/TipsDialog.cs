@@ -45,9 +45,11 @@ public class TipsDialog : MonoBehaviour
         dialogList.Add("EarthPortal", "lobbyPortalDescription");
         dialogList.Add("EarthGround", "EarthGroundDescription");
         dialogList.Add("法阵-scene2", "EarthGroundDescription");
-        dialogList.Add("WaterGround", "EarthGroundDescription");
+        dialogList.Add("atlasmap2", "EarthGroundDescription");
+        //dialogList.Add("Lobbyground", "EarthGroundDescription");
         dialogList.Add("Earth Key", "EarthGroundDescription");
         dialogList.Add("starground", "EarthGroundDescription");
+        dialogList.Add("Moving Puzzle Tip", "EarthGroundDescription");
         /*dialogList.Add("FloorPiece1", "EarthGroundDescription");
         dialogList.Add("FloorPiece2", "EarthGroundDescription");
         dialogList.Add("FloorPiece3", "EarthGroundDescription");

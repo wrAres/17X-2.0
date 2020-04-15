@@ -159,6 +159,9 @@ public class Item : MonoBehaviour
                 mirror.GetComponent<flowerInMirror>().clickable = true;
             }
 
+            GameObject.Find("cameraControl").GetComponent<cameraControl>().active = true;
+            TipsDialog.PrintDialog("Zoom In Active");
+
             AIDataManager.UpdateStandardSpellCount("Glowing Sun", 1);
             AIDataManager.UpdateStandardSpellCount("sun", 2);
             AIDataManager.UpdateStandardSpellCount("earth", 1);

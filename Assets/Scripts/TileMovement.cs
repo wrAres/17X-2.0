@@ -13,7 +13,7 @@ public class TileMovement : MonoBehaviour
     private Transform invisTile;
 
     private float speed = 100.0f;
-    public static int mixTimes = 0;
+    public static int mixTimes = 15;
 
     private float start;
 
@@ -53,6 +53,7 @@ public class TileMovement : MonoBehaviour
 
         Puzzle = StartPuzzle();
         MixPuzzle();
+        TipsDialog.PrintDialog("Moving Puzzle Tip");
     }
 
     // Update is called once per frame

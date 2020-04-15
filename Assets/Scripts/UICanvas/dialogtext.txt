@@ -49,7 +49,7 @@ Oh, another scroll. But I cannot find the lock this time.
 法阵-scene2
 Stay away from it! I don’t want to burn my brush.
 ---
-WaterGround
+atlasmap2
 It’s wet and soft as if I am stepping on the water.
 ---
 starground
@@ -131,4 +131,14 @@ Someone: The sun might burn the plant now. Let it grow first.
 ---
 Wrong Spell
 You cannot place the item here.
+---
+Lobbyground
+A Eight-Trigrams-Atlas. Different Trigrams represent different meanings =and elements. 
+My teacher said that everything could be comprehended according =to Atlas.
+---
+Zoom In Active
+【Press 'z' to see the details of flowers. Use arrow keys to check =different mirrors.】
+---
+Moving Puzzle Tip
+【Use arrow keys to move puzzle pieces.】
 ---
