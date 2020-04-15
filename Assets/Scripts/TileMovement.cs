@@ -61,7 +61,7 @@ public class TileMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("scene0");
+            SceneManager.LoadScene("scene3");
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
