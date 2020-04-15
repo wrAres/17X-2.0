@@ -45,5 +45,7 @@ public class FlyingSpell : MonoBehaviour {
         isBackpack = !isSpell;
         spellIcon.GetComponent<Image>().enabled = true;
         spellIcon.GetComponent<Image>().sprite = s;
+        if (isSpell)    { spellIcon.transform.localScale = new Vector3(4, 4, 1); }
+        else            { spellIcon.transform.localScale = new Vector3(2, 2, 1); }
     }
 }
