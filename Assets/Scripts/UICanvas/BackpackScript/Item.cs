@@ -93,8 +93,12 @@ public class Item : MonoBehaviour
     public static void puzzleEffect(string item, string position, Vector3 hitPoint) {
         if (item.CompareTo("Dirt") == 0 && position.CompareTo("River") == 0){
             GameObject river = GameObject.Find("River");
-            river.GetComponent<BoxCollider>().size = new Vector3(0, 0, 0);
-            GameObject.Find("River").GetComponent<Renderer>().material.color = Color.gray;
+            // river.GetComponent<BoxCollider>().size = new Vector3(0, 0, 0);
+            // river .GetComponent<Renderer>().material.color = Color.gray;
+            Destroy(river);
+            Destroy(GameObject.Find("River Sound 1"));
+            Destroy(GameObject.Find("River Sound 2"));
+            Destroy(GameObject.Find("River Sound 3"));
             s.UnlockElement(TalisDrag.Elements.WATER);
             
             AIDataManager.UpdateStandardSpellCount("Dirt", 1);
@@ -194,8 +198,8 @@ public class Item : MonoBehaviour
             GameObject.Find("1_water-dark").GetComponent<WaterPool>().timerActivated = true;
             GameObject.Find("6_water-white").GetComponent<WaterPool>().timerActivated = true;
             
-            // GameObject waterBoss = GameObject.Find("QiangYu");
-            // waterBoss.GetComponent<SpriteRenderer>().enabled = true;
+            GameObject waterBoss = GameObject.Find("QiangYu");
+            waterBoss.GetComponent<waterBoss>().appear();
 
             TipsDialog.PrintDialog("Water Boss");
         }

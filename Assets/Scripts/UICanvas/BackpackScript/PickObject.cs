@@ -33,8 +33,12 @@ public class PickObject : MonoBehaviour
             } else {
                 Destroy(GameObject.Find("River Tip"));
                 GameObject river = GameObject.Find("River");
-                river.GetComponent<BoxCollider>().size = new Vector3(0f, 0f, 0f);
-                GameObject.Find("River").GetComponent<Renderer>().material.color = Color.gray;
+                // river.GetComponent<BoxCollider>().size = new Vector3(0, 0, 0);
+                // river .GetComponent<Renderer>().material.color = Color.gray;
+                Destroy(river);
+                Destroy(GameObject.Find("River Sound 1"));
+                Destroy(GameObject.Find("River Sound 2"));
+                Destroy(GameObject.Find("River Sound 3"));
             }
         } else if (SceneManager.GetActiveScene().name == "scene3") {
             DontDestroyVariables.enterWaterRoom = true;

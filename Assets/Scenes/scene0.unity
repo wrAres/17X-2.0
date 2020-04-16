@@ -1296,7 +1296,7 @@ GameObject:
   - component: {fileID: 336070323}
   - component: {fileID: 336070327}
   m_Layer: 0
-  m_Name: WaterGround
+  m_Name: Baguamap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1333,7 +1333,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9a74939de3e0f48a9a12b2ff92397aca, type: 2}
+  - {fileID: 2100000, guid: 659f0685e8d804f3a937592331c541ec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1677,10 +1677,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.555247
-  m_Height: 5.547105
+  m_Radius: 0.6032078
+  m_Height: 5.8517065
   m_Direction: 1
-  m_Center: {x: 0, y: 0.27355242, z: 0.063673854}
+  m_Center: {x: 0, y: 0.27355242, z: 0.114089005}
 --- !u!23 &350201159
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3317,15 +3317,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6766d9fc739e1456b8298a4d5e0bf3a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 47.24231, y: 28.349998}
+  m_Size: {x: 59.436924, y: 31.749998}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &792944445
@@ -3336,8 +3336,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792944443}
   m_LocalRotation: {x: 0.7069311, y: 0.0032496508, z: -0.0032511966, w: 0.70726746}
-  m_LocalPosition: {x: -0.97, y: 1.02, z: -10.02}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalPosition: {x: -1.32, y: 1.02, z: -9.55}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.15}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -3353,8 +3353,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 64.58999, y: 32.69055, z: 0.20000114}
-  m_Center: {x: -2.2862496, y: 2.1702797, z: -2.2650973e-11}
+  m_Size: {x: 45.360226, y: 26.645882, z: 0.20000114}
+  m_Center: {x: 0.5694032, y: -0.85209733, z: -3.075724e-12}
 --- !u!1 &794262378
 GameObject:
   m_ObjectHideFlags: 0
@@ -4390,7 +4390,7 @@ GameObject:
   - component: {fileID: 1166661565}
   - component: {fileID: 1166661564}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Watercld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4870,7 +4870,7 @@ GameObject:
   - component: {fileID: 1280981462}
   - component: {fileID: 1280981461}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Firecld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6706,7 +6706,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1732261693}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.21, y: 2.37, z: -10.34}
+  m_LocalPosition: {x: 1.62, y: 2.37, z: -10.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7916,7 +7916,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928741905}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -0.96, y: 1.67, z: -10.31}
+  m_LocalPosition: {x: -1.25, y: 1.67, z: -10.31}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 1166661563}

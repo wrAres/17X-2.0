@@ -4,8 +4,8 @@ I bet it’s really deep and I don’t know how to swim.
 Earth Key
 I feel a strong sense of the combination of Yin and Yang on this =key. But what is it used for?
 Oh, wait! I almost forgot an important thing. 
-In such an unknown place, I need to have my “weapons” in hands =        -- Writing Brush and Talismans.
-They should be in my gourd. I used to store everything in my gourd.
+In such an unknown place, I need to have my “weapon” in hands =        -- Spelltree.
+It should be in my gourd. I used to store everything in my gourd.
 ---
 Lobby
 Wow! An Eight-Trigram-Atlas! I feel the strong energies of the other =four elements except Earth come from four different directions. 
@@ -132,7 +132,7 @@ Someone: The sun might burn the plant now. Let it grow first.
 Wrong Spell
 You cannot place the item here.
 ---
-Lobbyground
+Baguamap
 A Eight-Trigrams-Atlas. Different Trigrams represent different meanings =and elements. 
 My teacher said that everything could be comprehended according =to Atlas.
 ---

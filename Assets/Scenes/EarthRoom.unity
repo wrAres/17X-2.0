@@ -8044,7 +8044,7 @@ GameObject:
   - component: {fileID: 970678129}
   - component: {fileID: 970678130}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Earthscrollcld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8832,7 +8832,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9544fd1f390a241e090a8c409ec5066d, type: 2}
+  - {fileID: 2100000, guid: 8bafc0bd550a6447ba3e832e4e1d9912, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
