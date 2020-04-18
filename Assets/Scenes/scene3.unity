@@ -7500,6 +7500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   def: {fileID: 1962050184}
   zoomed: {fileID: 1904357345}
+  player: {fileID: 2124352805}
   active: 1
 --- !u!4 &930218974
 Transform:
@@ -17392,6 +17393,7 @@ MonoBehaviour:
   system: {fileID: 0}
   status: 0
   freeze: 1
+  fall: 0
   startPosition: 0
 --- !u!54 &2124352809
 Rigidbody:

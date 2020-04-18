@@ -9,6 +9,7 @@ public class cameraControl : MonoBehaviour
 	public Camera zoomed;
 	AudioListener CameraDefAudio;
 	AudioListener CameraZoomedAudio;
+	public GameObject player;
 	public bool active;
     void Start()
     {
@@ -31,6 +32,11 @@ public class cameraControl : MonoBehaviour
 			zoomed.GetComponent<Rigidbody>().transform.position = new Vector3(-3,2,-14);
 			def.enabled = !def.enabled;
 			zoomed.enabled = !zoomed.enabled;
+			if(zoomed.enabled){
+				player.GetComponent<playerMovement>().freeze = 0;
+			}else{
+				player.GetComponent<playerMovement>().freeze = 1;
+			}
 		}
     }
 }

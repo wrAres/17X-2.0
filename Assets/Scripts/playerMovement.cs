@@ -19,7 +19,7 @@ public class playerMovement : MonoBehaviour
         FindObjectOfType<TipsDialog>() != null;
 	public bool talismanShown =>
 		GameObject.FindGameObjectWithTag("Talisman") != null;
-
+	public bool fall;
 	public int startPosition;
 	void Start()
     {
@@ -28,11 +28,18 @@ public class playerMovement : MonoBehaviour
 		status = 0;
 		freeze = 1;
 		startPosition = 0;
+		fall = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+		
+		if(GetComponent<Rigidbody>().velocity.y<-0.1){
+			fall=true;
+		}else{
+			fall=false;
+		}
 		
 		if(GetComponent<Rigidbody>().transform.position.y < -20 ){
 			if(startPosition == 0){
@@ -52,7 +59,7 @@ public class playerMovement : MonoBehaviour
 		ani.SetFloat("Speed", GetComponent<Rigidbody>().velocity.z);
 		ani.SetFloat("status",status);
 
-		if (canAct) {
+		if (canAct&&!fall) {
 			if (Input.GetKey("w")) {
 				GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 3 * isReverse * freeze);
 				if (isWaterScene) WaterSoundManagerScript.PlaySound();
