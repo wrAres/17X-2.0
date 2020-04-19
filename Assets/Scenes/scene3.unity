@@ -13372,11 +13372,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1582128111}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.286299, y: 0.10382605, z: 0.7743554}
-  m_Center: {x: 0.0034591993, y: -0.12739605, z: 0.28717983}
+  m_Size: {x: 0.286299, y: 0.1287078, z: 0.690156}
+  m_Center: {x: 0.0034591993, y: -0.11495484, z: 0.3292834}
 --- !u!1 &1601744579
 GameObject:
   m_ObjectHideFlags: 0
@@ -15323,7 +15323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!20 &1904357345
 Camera:
   m_ObjectHideFlags: 0
