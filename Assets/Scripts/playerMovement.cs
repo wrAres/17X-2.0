@@ -21,20 +21,29 @@ public class playerMovement : MonoBehaviour
 		GameObject.FindGameObjectWithTag("Talisman") != null;
 	public bool fall;
 	public int startPosition;
+	Vector3 old_pos;
+	bool isMoving;
 	void Start()
-    {
+	{
 		system = GameObject.Find("TrigramManager").GetComponent<SystemTree>();
 		findFloor = false;
 		status = 0;
 		freeze = 1;
 		startPosition = 0;
 		fall = false;
+		isMoving = false;
+		old_pos = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-		
+		/*if(old_pos != transform.position){
+			isMoving = true;
+		}else{
+			isMoving = false;
+		}*/
+		old_pos = transform.position;
 		if(GetComponent<Rigidbody>().velocity.y<-0.1){
 			fall=true;
 		}else{
@@ -56,33 +65,38 @@ public class playerMovement : MonoBehaviour
 			system.Execute();
 		} 
 		
-		ani.SetFloat("Speed", GetComponent<Rigidbody>().velocity.z);
+		//ani.SetFloat("Speed", GetComponent<Rigidbody>().velocity.z);
 		ani.SetFloat("status",status);
-
+		ani.SetBool("isMoving",isMoving);
 		if (canAct&&!fall) {
 			if (Input.GetKey("w")) {
 				GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 3 * isReverse * freeze);
 				if (isWaterScene) WaterSoundManagerScript.PlaySound();
 				status = -1 * isReverse;
+				isMoving=true;
 			}
 			else if (Input.GetKey("s")) {
 				GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -3 * isReverse * freeze);
 				if (isWaterScene) WaterSoundManagerScript.PlaySound();
 				status = 1 * isReverse;
+				isMoving = true;
 			}
 			else if (Input.GetKey("a")) {
 				GetComponent<Rigidbody>().velocity = new Vector3(-3 * isReverse * freeze, 0, 0);
 				if (isWaterScene) WaterSoundManagerScript.PlaySound();
 				status = 2 * isReverse;
+				isMoving = true;
 			}
 			else if (Input.GetKey("d")) {
 				GetComponent<Rigidbody>().velocity = new Vector3(3 * isReverse * freeze, 0, 0);
 				if (isWaterScene) WaterSoundManagerScript.PlaySound();
 				status = -2 * isReverse;
+				isMoving = true;
 			}
 			else {
 				if (isWaterScene) WaterSoundManagerScript.StopPlaySound();
-				status = 0;
+				//status = 0;
+				isMoving = false;
 			}
 		}
     }
