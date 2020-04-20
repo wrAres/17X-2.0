@@ -80,6 +80,9 @@ public class TalismanManager : MonoBehaviour {
             MakeItem();
             dispManager.ToggleIcons(true);
         }
+        else if (Input.GetKey(KeyCode.Backspace) && display.activeSelf) {
+            ResetCraft();
+        }
     }
 
     // Display the list of currently usable elements
