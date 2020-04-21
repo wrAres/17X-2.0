@@ -134,8 +134,14 @@ public class Show : MonoBehaviour
                 else if (name.CompareTo("Next Button") == 0) {
                     pick.descShow = false;
                     bool textActive = TipsDialog.NextPage();
+                    bool CalledScene = TipsDialog.CallScene();
                     // print("text act" + textActive);
                     GameObject.Find("Dialog Box").SetActive(textActive);
+                    // check for water boss-->credits scene
+                    if(!textActive && CalledScene){
+                        Invoke("ToLoadScene" , 5);
+                        print("Active Credits Scene in 5 secs");
+                    }
                 }
             }
             if (resultSize == 0)
@@ -194,5 +200,9 @@ public class Show : MonoBehaviour
         if (!isOn || spellTreeUnlocked) GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled = isOn;
 
         if (!isOn) CloseDisplays();
+    }
+
+    void ToLoadScene(){
+        SceneManager.LoadScene("Credits");
     }
 }

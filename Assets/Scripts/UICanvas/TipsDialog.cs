@@ -10,7 +10,7 @@ public class TipsDialog : MonoBehaviour
     public static int index;
     public static List<string> textlist = new List<string>();
     public static List<string> textlist2 = new List<string>();
-
+    public static string ToSceneName;
     public static GameObject dialog;
     public static Dictionary<string, string> dialogList;
     // public string waterGateDiscription;
@@ -69,6 +69,7 @@ public class TipsDialog : MonoBehaviour
         dialogList.Add("wind (5)", "EarthGroundDescription");
         dialogList.Add("wind (6)", "EarthGroundDescription");
         dialogList.Add("wind (7)", "EarthGroundDescription");
+        dialogList.Add("Water Boss", "EarthGroundDescription");
         dialog.SetActive(false);
     }
 
@@ -108,6 +109,7 @@ public class TipsDialog : MonoBehaviour
                 j++;
             }
         }
+        ToSceneName = objName;
         dialogText.text = textlist2[1].Replace("=", "\n");
         dialog.SetActive(true);
         print("Set dialog active, index: " + index + ", list length: " + textlist2.Count);
@@ -122,5 +124,13 @@ public class TipsDialog : MonoBehaviour
     public static void HideTextBox() {
         dialog.SetActive(false);
         print("set dialog false");
+    }
+
+    public static bool CallScene(){
+        if ( ToSceneName.CompareTo("Water Boss") == 0) {
+            return true;
+        } else {
+            return false; 
+        }
     }
 }
