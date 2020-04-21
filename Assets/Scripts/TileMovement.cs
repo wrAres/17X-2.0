@@ -11,11 +11,14 @@ public class TileMovement : MonoBehaviour
 
     private Transform tileToMove;
     private Transform invisTile;
+    private GameObject eightTiles;
+    private GameObject fullPicture; // TODO add in final picture to scene
 
     private float speed = 100.0f;
-    public static int mixTimes = 15;
+    public int mixTimes = 30;
 
     private float start;
+    private bool finished = false;
 
     Dictionary<int, string> dict = new Dictionary<int, string>();
     static Dictionary<Tuple<int, int>, Vector3> startPos = new Dictionary<Tuple<int, int>, Vector3>();
@@ -26,6 +29,11 @@ public class TileMovement : MonoBehaviour
     {
         // Set up componants for TrigramManager
         GameObject manager = GameObject.Find("TrigramManager");
+        //Find the full 8 tiles object
+        fullPicture = GameObject.Find("Full_Picture");  // TODO uncommment after adding in full_picture
+        fullPicture.active = false;
+        eightTiles = GameObject.Find("Full_8_Tiles");
+        eightTiles.active = false;
 
         Debug.Log("Data Manager object name: " + manager.name);
 
@@ -53,7 +61,6 @@ public class TileMovement : MonoBehaviour
 
         Puzzle = StartPuzzle();
         MixPuzzle();
-        TipsDialog.PrintDialog("Moving Puzzle Tip");
     }
 
     // Update is called once per frame
@@ -61,57 +68,61 @@ public class TileMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("scene3");
+            SceneManager.LoadScene("scene0");
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Tuple<bool, string>[] tiles = GetTiles();
-            if (tiles[0].Item1 == true)
+            if (tiles[0].Item1 == true && !finished)
             {
                 tileToMove = GameObject.Find(tiles[0].Item2).GetComponent<Transform>();
                 MoveTile(tileToMove, invisTile);
                 UpdatePuzzle("up");
                 AIDataManager.movingPuzzleMoves++;
-                // CheckDone();
+                CombineTiles();
+                //CheckDone();
             }
             else Debug.Log("No Valid up movement");
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             Tuple<bool, string>[] tiles = GetTiles();
-            if (tiles[1].Item1 == true)
+            if (tiles[1].Item1 == true && !finished)
             {
                 tileToMove = GameObject.Find(tiles[1].Item2).GetComponent<Transform>();
                 MoveTile(tileToMove, invisTile);
                 UpdatePuzzle("down");
                 AIDataManager.movingPuzzleMoves++;
-                // CheckDone();
+                CombineTiles();
+                //CheckDone();
             }
             else Debug.Log("No valid down movement");
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             Tuple<bool, string>[] tiles = GetTiles();
-            if (tiles[2].Item1 == true)
+            if (tiles[2].Item1 == true && !finished)
             {
                 tileToMove = GameObject.Find(tiles[2].Item2).GetComponent<Transform>();
                 MoveTile(tileToMove, invisTile);
                 UpdatePuzzle("left");
                 AIDataManager.movingPuzzleMoves++;
-                // CheckDone();
+                CombineTiles();
+                //CheckDone();
             }
             else Debug.Log("No valid left movement");
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             Tuple<bool, string>[] tiles = GetTiles();
-            if (tiles[3].Item1 == true)
+            if (tiles[3].Item1 == true && !finished)
             {
                 tileToMove = GameObject.Find(tiles[3].Item2).GetComponent<Transform>();
                 MoveTile(tileToMove, invisTile);
                 UpdatePuzzle("right");
                 AIDataManager.movingPuzzleMoves++;
-                // CheckDone();
+                CombineTiles();
+                //CheckDone();
             }
             else Debug.Log("No valid right movement");
         }
@@ -136,27 +147,32 @@ public class TileMovement : MonoBehaviour
     {
         // Mix the completed puzzle
         int numMix = 0;
-        while(numMix < mixTimes)
+        string lastMove = "";
+        while (numMix < mixTimes)
         {
             Tuple<bool, string>[] tiles = GetTiles();
             int number = UnityEngine.Random.Range(1, 5);
-            if (number == 1 && tiles[0].Item1 == true)
+            if (number == 1 && tiles[0].Item1 == true && lastMove != "up")
             {
+                lastMove = "up";
                 UpdatePuzzle("up");
                 numMix++;
             }
-            else if (number == 2 && tiles[1].Item1 == true)
+            else if (number == 2 && tiles[1].Item1 == true && lastMove != "down")
             {
+                lastMove = "down";
                 UpdatePuzzle("down");
                 numMix++;
             }
-            else if (number == 3 && tiles[2].Item1 == true)
+            else if (number == 3 && tiles[2].Item1 == true && lastMove != "left")
             {
+                lastMove = "left";
                 UpdatePuzzle("left");
                 numMix++;
             }
-            else if (number == 4 && tiles[3].Item1 == true)
+            else if (number == 4 && tiles[3].Item1 == true && lastMove != "right")
             {
+                lastMove = "right";
                 UpdatePuzzle("right");
                 numMix++;
             }
@@ -215,6 +231,24 @@ public class TileMovement : MonoBehaviour
         return arr;
     }
 
+    private void CombineTiles()
+    {
+        int num = 1;
+        bool flag = true;
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                if (Puzzle[i, j] != num++) flag = false;
+            }
+        }
+        if (flag)
+        {
+            eightTiles.active = true;
+            finished = true;
+        }
+    }
+
     // Check to see if puzzle is finished
     public void CheckDone()
     {
@@ -229,6 +263,7 @@ public class TileMovement : MonoBehaviour
         }
         if (flag)
         {
+            fullPicture.active = true;
             // TODO: Implement element combination to make last piece of puzzle
             // For now spawn in last piece
             GameObject lastTile = GameObject.Find("Tile9");

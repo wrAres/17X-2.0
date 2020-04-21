@@ -91,6 +91,7 @@ public class TipsDialog : MonoBehaviour
                 return false;
             }
             dialogText.text = textlist2[index].Replace("=", "\n");
+            //dialogText.text = "haha";
             index ++;
             return true;
         // }
@@ -111,6 +112,7 @@ public class TipsDialog : MonoBehaviour
         }
         ToSceneName = objName;
         dialogText.text = textlist2[1].Replace("=", "\n");
+        //dialogText.text = "haha";
         dialog.SetActive(true);
         print("Set dialog active, index: " + index + ", list length: " + textlist2.Count);
     }
