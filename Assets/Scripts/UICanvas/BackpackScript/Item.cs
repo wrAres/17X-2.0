@@ -54,15 +54,21 @@ public class Item : MonoBehaviour
                     } else if (item.CompareTo("Life Water") == 0){
                         if (DontDestroyVariables.growState == 2)
                             return true;
-                        else {
+                        else if (DontDestroyVariables.growState < 2){
                             TipsDialog.PrintDialog("Water Seed Grow Order 2");
+                            return false;
+                        } else {
+                            TipsDialog.PrintDialog("Water Seed Grow Order 2.1");
                             return false;
                         }
                     } else if (item.CompareTo("Glowing Sun") == 0) {
                         if (DontDestroyVariables.growState == 3) {
                             return true;
-                        } else {
+                        } else if (DontDestroyVariables.growState < 3) {
                             TipsDialog.PrintDialog("Water Seed Grow Order 3");
+                            return false;
+                        } else {
+                            TipsDialog.PrintDialog("Water Seed Grow Order 3.1");
                             return false;
                         }
                     }

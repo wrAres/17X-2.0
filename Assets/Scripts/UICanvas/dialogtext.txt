@@ -124,10 +124,16 @@ Water Seed Grow Order 1
 Someone: You have to put dirt first in order to grow a plant.
 ---
 Water Seed Grow Order 2
-Someone: Water your plant.
+Someone: Use it to water your plant.
+---
+Water Seed Grow Order 2.1
+Someone: You don't need to water your plant again.
 ---
 Water Seed Grow Order 3
 Someone: The sun might burn the plant now. Let it grow first.
+---
+Water Seed Grow Order 3.1
+The sun is shining. Such a beautiful peach blossom tree.
 ---
 Wrong Spell
 You cannot place the item here.
