@@ -80,16 +80,7 @@ public class Backpack : MonoBehaviour
         imageObj.SetActive(Backpack.backpack.activeSelf);
     }
 
-    public void RemoveItem(string name) {
-        int removeIndex = 0;
-        GameObject itemObject = null;
-        for (int i = 0; i < length; i++) {
-            if (name.CompareTo(imageObjects[i].name) == 0) {
-                removeIndex = i;
-                itemObject = imageObjects[i];
-                break;
-            }
-        }
+    public void RemoveItem(GameObject itemObject, int removeIndex) {
         Destroy(itemObject);
         length--;
         for (int i = removeIndex; i < length; i++) {

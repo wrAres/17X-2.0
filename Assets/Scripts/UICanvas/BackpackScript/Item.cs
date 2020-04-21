@@ -214,6 +214,5 @@ public class Item : MonoBehaviour
             portal.GetComponent<SpriteRenderer>().enabled = true;
             portal.transform.position = hitPoint + new Vector3(0.0f, 0.1f, 0);
         }
-        GameObject.Find("Backpack_Roll").GetComponent<Backpack>().RemoveItem(item);
     }
 }

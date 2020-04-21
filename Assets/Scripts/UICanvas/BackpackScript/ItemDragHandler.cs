@@ -8,6 +8,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
     public static bool canPlaceItem = true;
     public static Vector3 previousPosition = new Vector3(0,0,0);
     public static GameObject itemOnGround;
+    public static float x;
     public static bool holdItem;
 
     public GameObject textbox;
@@ -69,9 +70,14 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity) && !dialogShown) {
                 GameObject dragOnObject = hitInfo.collider.gameObject;
+                int position = ((int)x + 680) / 80;
+                print("drag item position: " + x);
+                print("drag item index: " + position);
+
                 canPlaceItem = Item.canPlace(itemOnGround.name, dragOnObject.name);
                 if (canPlaceItem) {
                     Item.puzzleEffect(itemOnGround.name, dragOnObject.name, hitInfo.point);
+                    GameObject.Find("Backpack_Roll").GetComponent<Backpack>().RemoveItem(itemOnGround, position);
                 } else {
                     UISoundScript.PlayWrongSpell();
                     AIDataManager.wrongItemPlacementCount += 1;
