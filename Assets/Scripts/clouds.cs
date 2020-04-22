@@ -23,9 +23,9 @@ public class clouds : MonoBehaviour
 			number *= -1;
 		}
 		if(number<0){
-			GetComponent<Rigidbody>().velocity = new Vector3(0.3f,0,0);
+			GetComponent<Rigidbody>().velocity = new Vector3(0.1f,0,0);
 		}else{
-			GetComponent<Rigidbody>().velocity = new Vector3(-0.3f,0,0);
+			GetComponent<Rigidbody>().velocity = new Vector3(-0.1f,0,0);
 		}
 		
     }
