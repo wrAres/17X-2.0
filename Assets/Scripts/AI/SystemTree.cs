@@ -213,7 +213,7 @@ public class SystemTree : MonoBehaviour
 
     // Call this function to run the behavior tree
     public void Execute() {
-        AIDataManager.Print();
+        // AIDataManager.Print();
         rootNode.Evaluate();
     }
     
@@ -359,7 +359,7 @@ public class SystemTree : MonoBehaviour
 
     private NodeStates ChangeMovingPuzzleT2()
     {
-        print("T2 EXE");
+        // print("T2 EXE");
         SetWalkingPuzzle();
         transformPiece1.position = new Vector3(2.5f, 0.35f, -41.33f);
         Vector3 temp = transformPiece1.rotation.eulerAngles;

@@ -71,8 +71,8 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
             if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity) && !dialogShown) {
                 GameObject dragOnObject = hitInfo.collider.gameObject;
                 int position = ((int)x + 680) / 80;
-                print("drag item position: " + x);
-                print("drag item index: " + position);
+                // print("drag item position: " + x);
+                // print("drag item index: " + position);
 
                 canPlaceItem = Item.canPlace(itemOnGround.name, dragOnObject.name);
                 if (canPlaceItem) {

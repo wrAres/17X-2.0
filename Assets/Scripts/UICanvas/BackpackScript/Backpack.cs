@@ -55,7 +55,8 @@ public class Backpack : MonoBehaviour
         imageObj.GetComponent<ItemDragHandler>().textbox = textbox;
         imageObj.GetComponent<ItemDragHandler>().itemName = itemName;
 
-        image.texture = Resources.Load<Texture2D>(name); //Set the Sprite of the Image Component on the new GameObject
+        image.texture = Resources.Load<Texture2D>("spell/" + name); //Set the Sprite of the Image Component on the new GameObject
+        print("texture backpack item: " + name);
         imageObj.tag = "Item";
 
         RectTransform item_transform = imageObj.GetComponent<RectTransform>();
@@ -72,6 +73,8 @@ public class Backpack : MonoBehaviour
             item_transform.sizeDelta = new Vector2(180, 120);
         } else if (name.CompareTo("Earth Key") == 0) {
             item_transform.sizeDelta = new Vector2(40f, 60f);
+        } else if (name.CompareTo("8 Trigram Portal") == 0) {
+            item_transform.sizeDelta = new Vector2(48f, 32f);
         } else {
             item_transform.sizeDelta = new Vector2(60f, 60f);
         }

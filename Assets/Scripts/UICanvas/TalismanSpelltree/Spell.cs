@@ -27,7 +27,7 @@ public class Spell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
     public void OnPointerEnter(PointerEventData eventData) {
         spellTreeDisp.UpdateTextBox(this);
         Vector2 thisPosition = this.gameObject.transform.parent.GetComponent<RectTransform>().anchoredPosition;
-        print("position: " + thisPosition);
+        // print("position: " + thisPosition);
         
         if (thisPosition.x >= 0)    { thisPosition.x -= 330f; }
         else                        { thisPosition.x += 330f; }

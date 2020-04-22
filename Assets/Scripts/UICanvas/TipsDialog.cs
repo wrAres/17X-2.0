@@ -106,7 +106,7 @@ public class TipsDialog : MonoBehaviour
             int j = i;
             while(textlist[j].CompareTo("---") != 0 ){
                 textlist2.Add(textlist[j]);
-                print(textlist[j]);
+                // print(textlist[j]);
                 j++;
             }
         }
@@ -114,7 +114,7 @@ public class TipsDialog : MonoBehaviour
         dialogText.text = textlist2[1].Replace("=", "\n");
         //dialogText.text = "haha";
         dialog.SetActive(true);
-        print("Set dialog active, index: " + index + ", list length: " + textlist2.Count);
+        // print("Set dialog active, index: " + index + ", list length: " + textlist2.Count);
     }
 
     // public static void PrintDescription(string objName){
@@ -125,7 +125,6 @@ public class TipsDialog : MonoBehaviour
 
     public static void HideTextBox() {
         dialog.SetActive(false);
-        print("set dialog false");
     }
 
     public static bool CallScene(){

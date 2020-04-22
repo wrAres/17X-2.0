@@ -29,12 +29,12 @@ public class sceneTransition : MonoBehaviour
 	void OnTriggerEnter(Collider other){
 
 		if (this.gameObject.name.CompareTo("法阵-scene3") == 0 && DontDestroyVariables.enterWaterRoom) {
-			print("scene 3 directly");
+			// print("scene 3 directly");
 			scene = "scene3";
 		}
 
 		if (other.CompareTag("Player") && enterable) {
-			Debug.Log("trasferring");
+			// Debug.Log("trasferring");
 			SceneManager.LoadScene(scene);
 		}
 	}

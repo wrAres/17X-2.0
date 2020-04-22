@@ -16454,7 +16454,7 @@ MonoBehaviour:
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
   newDisp: {fileID: 1568764256}
-  glow: {fileID: 21300000, guid: 5d3da9ba63fcc46f8aef0083f49e8130, type: 3}
+  glow: {fileID: 21300000, guid: c156804c5c8794704bed0dd361027666, type: 3}
 --- !u!222 &1814573642
 CanvasRenderer:
   m_ObjectHideFlags: 0

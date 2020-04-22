@@ -22,12 +22,12 @@ public class Item : MonoBehaviour
         itemOnPuzzle.Add("Taiji Key", "Water Boss Door");
         itemOnPuzzle.Add("Board", "Background");
         itemOnPuzzle.Add("8 Trigram Portal", "atlasmap2");
-        itemOnPuzzle.Add("Taoist Wind", "atlasmap2");
+        itemOnPuzzle.Add("Taoist Wind", "Wind Collider");
 		
     }
 
     public static bool canPlace(string item, string targetObj) {
-        print(item + ", " + targetObj);
+        // print(item + ", " + targetObj);
         if (item.CompareTo("SpellTreeItem") == 0)
             return true;
         string available = (string)itemOnPuzzle[item];
@@ -197,7 +197,7 @@ public class Item : MonoBehaviour
             // GameObject waterBoss = GameObject.Find("QiangYu");
             // waterBoss.GetComponent<SpriteRenderer>().enabled = false;
         }
-        else if (item.CompareTo("Taoist Wind") == 0 && position.CompareTo("atlasmap2") == 0){
+        else if (item.CompareTo("Taoist Wind") == 0 && position.CompareTo("Wind Collider") == 0){
             GameObject wind = GameObject.Find("WindGroup");
             wind.SetActive(false);
 

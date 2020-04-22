@@ -138,7 +138,7 @@ public class AIDataManager : MonoBehaviour
 	public static void TryNonExistentRecipe()
 	{
         nonExistentRecipeTries++;
-        print("Add non exist recipe: " + nonExistentRecipeTries);
+        // print("Add non exist recipe: " + nonExistentRecipeTries);
 	}
 	public static void DiscoverNewSpell(float time)
 	{

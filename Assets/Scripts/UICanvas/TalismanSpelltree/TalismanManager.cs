@@ -66,7 +66,7 @@ public class TalismanManager : MonoBehaviour {
 
             DisplaySpellList();
             curTime = timer;
-            print("open talisman");
+            // print("open talisman");
             UISoundScript.OpenTalisman();
         }
         else if (Input.GetKeyDown("space") && !dialogShown && DontDestroyVariables.canOpenTalisman) {

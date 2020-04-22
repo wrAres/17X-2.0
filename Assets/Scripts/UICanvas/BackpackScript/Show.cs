@@ -80,7 +80,7 @@ public class Show : MonoBehaviour
                 resultSize += 1;
                 string name = result.gameObject.name;
                 string tag = result.gameObject.tag;
-                print("obj names: " + name);
+                // print("obj names: " + name);
 
                 if (tag.CompareTo("BackpackIcon") == 0 && canAct) {
                     pick.descShow = false;

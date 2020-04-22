@@ -53,7 +53,7 @@ public class PickObject : MonoBehaviour
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo, Mathf.Infinity, layerMask) && canAct) {
                 GameObject clickObject = hitInfo.collider.gameObject;
-                print(clickObject.name);
+                // print(clickObject.name);
                 if (clickObject.tag.CompareTo("Pickable") == 0){
                     if (clickObject.name == "Earth Key") {
                         GameObject.Find("MainUI").GetComponent<Show>().ShowBackpackIcon();
