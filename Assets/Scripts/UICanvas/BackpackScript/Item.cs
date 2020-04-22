@@ -21,7 +21,7 @@ public class Item : MonoBehaviour
         itemOnPuzzle.Add("Glowing Sun", "Flowerpot");
         itemOnPuzzle.Add("Taiji Key", "Water Boss Door");
         itemOnPuzzle.Add("Board", "Background");
-        itemOnPuzzle.Add("Earth Portal", "atlasmap2");
+        itemOnPuzzle.Add("8 Trigram Portal", "atlasmap2");
         itemOnPuzzle.Add("Taoist Wind", "atlasmap2");
 		
     }
@@ -121,7 +121,7 @@ public class Item : MonoBehaviour
         else if (item.CompareTo("Earth Key") == 0 && position.CompareTo("EarthPortal") == 0){
             GameObject earthPortal = GameObject.Find("EarthPortal");
             earthPortal.GetComponent<sceneTransition>().enterable = true;
-            earthPortal.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/blank_scroll");
+            earthPortal.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Earth Portal");
         } 
         else if (item.CompareTo("Dirt") == 0 && position.CompareTo("Flowerpot") == 0){
             flowerpot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Flowerpot/Flowerpot with dirt");
@@ -209,7 +209,7 @@ public class Item : MonoBehaviour
 
             TipsDialog.PrintDialog("Water Boss");
         }
-        else if (item.CompareTo("Earth Portal") == 0 && position.CompareTo("atlasmap2") == 0){
+        else if (item.CompareTo("8 Trigram Portal") == 0 && position.CompareTo("atlasmap2") == 0){
             GameObject portal = GameObject.Find("WaterToEarthPortal");
             portal.GetComponent<SpriteRenderer>().enabled = true;
             portal.transform.position = hitPoint + new Vector3(0.0f, 0.1f, 0);
