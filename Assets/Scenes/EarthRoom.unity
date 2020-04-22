@@ -1144,7 +1144,7 @@ MonoBehaviour:
   spellName: Life Water
   recipe: 020000000200000002000000
   level: 3
-  knownResp: 'Recipe: water, ?, ?'
+  knownResp: 'Recipe: water*?'
   knownDes: 'A drop of water made by talismam. It''s full of energy after created
     by Qi of water elements. '
   unlockedDes: A drop of water made by talismam. It's full of energy after created
@@ -3289,7 +3289,7 @@ MonoBehaviour:
   spellName: Glowing Sun
   recipe: 040000000600000006000000
   level: 3
-  knownResp: 'Recipe: ?, sun, ?'
+  knownResp: 'Recipe: ?, sun*?'
   knownDes: A entity of sun made by talismam. It's hot.
   unlockedDes: A entity of sun made by talismam. It's hot and excatly functioning
     as the real sun.
@@ -3516,8 +3516,8 @@ MonoBehaviour:
   recipe: 030000000300000003000000
   level: 3
   knownResp: 'Recipe: Fire * 3'
-  knownDes: Destroy something.
-  unlockedDes: Destroy the door to boss room.
+  knownDes: Not ready yet.
+  unlockedDes: Not ready yet.
   element: 9
   locked: {fileID: 21300000, guid: 65bb38e8b67894065b24f1bf0f55205e, type: 3}
   newDisp: {fileID: 1447013598}
@@ -3740,7 +3740,7 @@ MonoBehaviour:
   spellName: Board
   recipe: 040000000400000002000000
   level: 3
-  knownResp: 'Recipe: ?, earth, ?'
+  knownResp: 'Recipe: ?*?, earth'
   knownDes: 'A piece of board made by talismam. It became concrete after combining
     two kinds of Qi. '
   unlockedDes: A piece of board made by talismam. It became concrete after combining
@@ -10277,7 +10277,7 @@ MonoBehaviour:
   spellName: Firewood
   recipe: 010000000100000001000000
   level: 3
-  knownResp: 'Recipe: wood, ?, ?'
+  knownResp: 'Recipe: wood*?'
   knownDes: 'A brunch of wood made by talismam. Yes, it can be used to setup fire. '
   unlockedDes: A brunch of wood made by talismam. Yes, it can be used to setup fire.
   element: 9
@@ -15028,7 +15028,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Recipe: ? ? ?'
+  m_Text: 'Recipe: ?, ?, ?'
 --- !u!1 &1658805918
 GameObject:
   m_ObjectHideFlags: 0
@@ -15830,7 +15830,7 @@ MonoBehaviour:
   spellName: Dirt
   recipe: 040000000400000004000000
   level: 3
-  knownResp: 'Recipe: earth, ?, ?'
+  knownResp: 'Recipe: earth*?'
   knownDes: A block of dirt made by talisman. It became dense after created by Qi
     of earth elements.
   unlockedDes: A block of dirt made by talisman. It became dense and concrete after
@@ -15958,7 +15958,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: d372e63cb545261468a0409c35e56923, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
@@ -16448,7 +16448,7 @@ MonoBehaviour:
   spellName: 8 Trigram Portal
   recipe: 040000000700000007000000
   level: 3
-  knownResp: 'Recipe: wind, ?, ?'
+  knownResp: 'Recipe: wind*?, ?'
   knownDes: Create a scroll that can lead to everywhere.
   unlockedDes: Create a scroll that can lead to everywhere.
   element: 9
