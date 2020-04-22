@@ -5,7 +5,7 @@ Earth Key
 I feel a strong sense of the combination of Yin and Yang on this =key. But what is it used for?
 Oh, wait! I almost forgot an important thing. 
 In such an unknown place, I need to have my “weapon” in hands =        -- Spelltree.
-It should be in my gourd. I used to store everything in my gourd.
+It should be in my gourd. I used to store everything in my gourd.=【Click and drag the 'SpelltreeItem' out】
 ---
 Lobby
 Wow! An Eight-Trigram-Atlas! I feel the strong energies of the other =four elements except Earth come from four different directions. 
@@ -23,13 +23,13 @@ Something must be wrong! I must find the way out of here.
 Talisman 1
 … I … I just felt like some of my memories have come back. 
 A simple spell would be able to let me cross the river.
-【Press ‘SPACE’ to open and close the talisman】
+【Check the Spelltree first】=【Press ‘SPACE’ to open and close the talisman】
 ---
 Talisman 2
 What? There are two dragons entwined on my scrolls. The left one =looks like the Yellow-Dragon, the God of Earth. 
 What is he doing there? Where are my other characters? Maybe =I should try if I can still use the talisman…
 【Click and Drag characters into dotted lines Boxes on the talisman】
-【Press 'ENTER' to finish drawing the talisman】
+【Press 'ENTER' to finish drawing the talisman】=【Press 'DELETE' to erase characters on the talisman】
 ---
 Self Introduction
 Ewww… Where am I? 
@@ -44,7 +44,7 @@ EarthGround
 The energy of Earth is so strong everywhere in this room, but, for =sure, this is just normal soil.
 ---
 法阵-scene3
-Oh, another scroll. But I cannot find the lock this time.
+Oh, another scroll. Seems like it's unlocked this time.
 ---
 法阵-scene2
 Stay away from it! I don’t want to burn my brush.
@@ -62,10 +62,10 @@ End
 Wait… Am I walking on the Dipper? Does it have any meaning?
 ---
 Water Seed
-A seed that looks like Mercury. I can feel the Water energy =surrounding it.
+A flower seed that looks like Mercury. I can feel the energy of =Water surrounding it.
 ---
 Flowerpot
-An ancient flower vase. It must be older than 5000 years.
+An ancient flowerpot. It must be older than me.
 ---
 Water Boss Door
 A wood gate with some weird decorations on it. What are their =meanings?
@@ -143,8 +143,8 @@ A Eight-Trigrams-Atlas. Different Trigrams represent different meanings =and ele
 My teacher said that everything could be comprehended according =to Atlas.
 ---
 Zoom In Active
-【Press 'z' to see the details of flowers. Use arrow keys to check =different mirrors.】
+【Press 'z' to see the details of flowers. Use arrow keys to check =different mirrors】
 ---
 Moving Puzzle Tip
-【Use arrow keys to move puzzle pieces.】
+【Use arrow keys to move puzzle pieces】
 ---
