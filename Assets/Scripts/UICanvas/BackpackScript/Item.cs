@@ -27,7 +27,7 @@ public class Item : MonoBehaviour
     }
 
     public static bool canPlace(string item, string targetObj) {
-        // print(item + ", " + targetObj);
+        print(item + ", drop to: " + targetObj);
         if (item.CompareTo("SpellTreeItem") == 0)
             return true;
         string available = (string)itemOnPuzzle[item];
