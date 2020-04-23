@@ -40,11 +40,20 @@ I must find the way out!=【Use ‘WSAD’ to move around】
 EarthPortal
 Seems like an extremely strong power is locked behind this scroll, =let me figure it out.
 ---
+EarthPortal Open
+You can get in now.
+---
+EarthPortal Wait Key
+You need a key.
+---
 EarthGround
 The energy of Earth is so strong everywhere in this room, but, for =sure, this is just normal soil.
 ---
 法阵-scene3
 Oh, another scroll. Seems like it's unlocked this time.
+---
+法阵-scene3 Open
+You can get into the scroll now.
 ---
 法阵-scene2
 Stay away from it! I don’t want to burn my brush.

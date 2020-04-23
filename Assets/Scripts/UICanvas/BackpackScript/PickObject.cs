@@ -69,13 +69,23 @@ public class PickObject : MonoBehaviour
                 }
                 if (clickObject.tag == "Portals") {
                     ChangeSprite change = clickObject.GetComponent<ChangeSprite>();
+                    if (clickObject.name.CompareTo("EarthPortal") == 0) {
+                        if (change.Trigger) {
+                            if (clickObject.GetComponent<sceneTransition>().enterable)
+                                TipsDialog.PrintDialog(clickObject.name + " Open");
+                            else
+                                TipsDialog.PrintDialog(clickObject.name + " Wait Key");
+                        }
+                    } else {
+                        if (change.Trigger) {
+                            TipsDialog.PrintDialog(clickObject.name + " Open");
+                        }
+                    }
                     if (!change.Trigger) {
                         change.OpenScroll();
-                    }
-                }
-
-                if (TipsDialog.dialogList.ContainsKey(clickObject.name))
-                {
+                        TipsDialog.PrintDialog(clickObject.name);
+                    } 
+                } else if (TipsDialog.dialogList.ContainsKey(clickObject.name)){
                     TipsDialog.PrintDialog(clickObject.name);
                     dialogShow = true;
                 }
