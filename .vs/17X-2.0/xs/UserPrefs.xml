@@ -2,15 +2,15 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UICanvas/TalismanSpelltree/TalismanManager.cs">
     <Files>
       <File FileName="Assets/Scripts/Sound/WaterSoundManagerScript.cs" Line="5" Column="18" />
-      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/TalismanManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/Spell.cs" Line="66" Column="42" />
+      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/TalismanManager.cs" Line="48" Column="30" />
+      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/Spell.cs" />
       <File FileName="Assets/Scripts/UICanvas/BackpackScript/Show.cs" />
       <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/SpellTreeManager.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ace737a6-9c47-4b07-9525-26d944606853" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8a653ca9-313b-4762-b9b8-4f6760a6e84f" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

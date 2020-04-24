@@ -61,8 +61,7 @@ public class Show : MonoBehaviour
         if (raycaster == null) {
 
         }
-        else if (Input.GetMouseButtonDown(0))
-        {
+        else if (Input.GetMouseButtonDown(0)) {
             //Set up the new Pointer Event
             pointerData = new PointerEventData(eventSystem);
             pointerData.position = Input.mousePosition;
@@ -75,8 +74,7 @@ public class Show : MonoBehaviour
             int resultSize = 0;
 
             //For every result returned, output the name of the GameObject on the Canvas hit by the Ray
-            foreach (RaycastResult result in results)
-            {
+            foreach (RaycastResult result in results) {
                 resultSize += 1;
                 string name = result.gameObject.name;
                 string tag = result.gameObject.tag;
@@ -125,10 +123,10 @@ public class Show : MonoBehaviour
                     }
                     spellTreeDisp.SetActive(!spellTreeDisp.activeSelf);
 
-                        // Close other canvas
+                    // Close other canvas
                     talisDisp.CloseDisplay();
                     Backpack.backpack.GetComponent<Backpack>().Show(false);
-             
+
                     // closedFirstTimeFlag++;
                     // print(closedFirstTimeFlag);
                 }
@@ -139,14 +137,34 @@ public class Show : MonoBehaviour
                     // print("text act" + textActive);
                     GameObject.Find("Dialog Box").SetActive(textActive);
                     // check for water boss-->credits scene
-                    if(!textActive && CalledScene){
-                        Invoke("ToLoadScene" , 5);
+                    if (!textActive && CalledScene) {
+                        Invoke("ToLoadScene", 5);
                         print("Active Credits Scene in 5 secs");
                     }
                 }
             }
             if (resultSize == 0)
                 pick.ClickOnGround();
+        }
+        else if (Input.GetKeyDown(KeyCode.B) && canAct) {
+            pick.descShow = false;
+            if (brightBackpack) {
+                GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
+                brightBackpack = false;
+
+                GameObject spellTree = GameObject.FindGameObjectWithTag("BackpackIcon");
+                spellTree.GetComponent<Image>().sprite = Resources.Load<Sprite>("ChangeAsset/backpack_icon");
+            }
+            if (Backpack.backpack.activeSelf) {
+                Backpack.backpack.GetComponent<Backpack>().Show(false);
+            }
+            else {
+                Backpack.backpack.GetComponent<Backpack>().Show(true);
+                GetComponent<FlyingSpell>().ResetFlyingSpell();
+            }
+            // Close other canvas
+            spellTreeDisp.SetActive(false);
+            talisDisp.CloseDisplay();
         }
         // Show talisman building description after closing the spell tree
         // if (closedFirstTimeFlag == 2)
