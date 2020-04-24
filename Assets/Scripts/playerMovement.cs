@@ -23,6 +23,7 @@ public class playerMovement : MonoBehaviour
 	public int startPosition;
 	Vector3 old_pos;
 	bool isMoving;
+	int timer;
 	void Start()
 	{
 		system = GameObject.Find("TrigramManager").GetComponent<SystemTree>();
@@ -33,6 +34,7 @@ public class playerMovement : MonoBehaviour
 		fall = false;
 		isMoving = false;
 		old_pos = transform.position;
+		timer = 0;
     }
 
     // Update is called once per frame
@@ -43,6 +45,7 @@ public class playerMovement : MonoBehaviour
 		}else{
 			isMoving = false;
 		}*/
+		timer++;
 		old_pos = transform.position;
 		if(GetComponent<Rigidbody>().velocity.y<-0.1){
 			fall=true;
@@ -98,6 +101,41 @@ public class playerMovement : MonoBehaviour
 				//status = 0;
 				isMoving = false;
 			}
+			
 		}
     }
+	
+	public void pushBack(){
+		switch(status){
+			case -1:
+				isMoving = false;
+				GetComponent<Rigidbody>().AddForce(0,0,-50);
+				Debug.Log(-1);
+				break;
+			case 1:
+				isMoving = false;
+				GetComponent<Rigidbody>().AddForce(0,0,50);
+				Debug.Log(1);
+				break;
+			case -2:
+				isMoving = false;
+				GetComponent<Rigidbody>().AddForce(-50,0,0);
+				Debug.Log(-2);
+				break;
+			case 2:
+				isMoving = false;
+				GetComponent<Rigidbody>().AddForce(50,0,0);
+				Debug.Log(2);
+				break;
+			default:
+				break;
+		}
+	}
 }
+
+
+
+
+
+
+
