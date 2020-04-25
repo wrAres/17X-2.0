@@ -21,6 +21,7 @@ public class playerMovement : MonoBehaviour
 		GameObject.FindGameObjectWithTag("Talisman") != null;
 	public bool fall;
 	public int startPosition;
+	public bool collide;
 	Vector3 old_pos;
 	bool isMoving;
 	int timer;
@@ -35,6 +36,8 @@ public class playerMovement : MonoBehaviour
 		isMoving = false;
 		old_pos = transform.position;
 		timer = 0;
+		GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+		collide = false;
     }
 
     // Update is called once per frame
@@ -46,7 +49,9 @@ public class playerMovement : MonoBehaviour
 			isMoving = false;
 		}*/
 		timer++;
-		old_pos = transform.position;
+		if(timer%30 ==0){
+			old_pos = transform.position;
+		}
 		if(GetComponent<Rigidbody>().velocity.y<-0.1){
 			fall=true;
 		}else{
@@ -71,7 +76,7 @@ public class playerMovement : MonoBehaviour
 		//ani.SetFloat("Speed", GetComponent<Rigidbody>().velocity.z);
 		ani.SetFloat("status",status);
 		ani.SetBool("isMoving",isMoving);
-		if (canAct&&!fall) {
+		if (canAct&&!fall&&!collide) {
 			if (Input.GetKey("w")) {
 				GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 3 * isReverse * freeze);
 				if (isWaterScene) WaterSoundManagerScript.PlaySound();
@@ -108,9 +113,16 @@ public class playerMovement : MonoBehaviour
 			}
 			
 		}
+		
+		
     }
 	
 	public void pushBack(){
+		Debug.Log(status);
+		GetComponent<Rigidbody>().transform.position = old_pos;
+		timer = 0;
+		collide = true;
+		freeze = 0;
 		switch(status){
 			case -1:
 				isMoving = false;
@@ -135,6 +147,8 @@ public class playerMovement : MonoBehaviour
 			default:
 				break;
 		}
+		collide = false;
+		freeze = 1;
 	}
 }
 
