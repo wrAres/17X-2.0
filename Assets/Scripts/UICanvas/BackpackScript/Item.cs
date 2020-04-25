@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Item : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Item : MonoBehaviour
     public static string[] availablePutList;
     public static SpellTreeManager s;
     public static GameObject flowerpot;
+    private static bool spell = false;
+    private static string[] groundNames;
 
     void Start() {
         s = GameObject.Find("MainUI").GetComponent<SpellTreeManager>();
@@ -23,10 +26,14 @@ public class Item : MonoBehaviour
         itemOnPuzzle.Add("Board", "Background");
         itemOnPuzzle.Add("8 Trigram Portal", "atlasmap2");
         itemOnPuzzle.Add("Taoist Wind", "Wind Collider");
-		
+    }
+
+    public static void getGroundNames() {
+        groundNames = GameObject.FindGameObjectsWithTag("Ground").Select(x => x.name).ToArray();
     }
 
     public static bool canPlace(string item, string targetObj) {
+        spell = false;
         print(item + ", drop to: " + targetObj);
         if (item.CompareTo("SpellTreeItem") == 0)
             return true;
@@ -80,6 +87,9 @@ public class Item : MonoBehaviour
                 else {
                     return true;
                 }
+            } else if (groundNames.Contains(targetObj) && item.CompareTo("Water Seed") != 0 && item.CompareTo("Earth Key") != 0) {
+                spell = true;
+                return true;
             }
         }
         TipsDialog.PrintDialog("Wrong Spell");
@@ -213,6 +223,18 @@ public class Item : MonoBehaviour
             GameObject portal = GameObject.Find("WaterToEarthPortal");
             portal.GetComponent<SpriteRenderer>().enabled = true;
             portal.transform.position = hitPoint + new Vector3(0.0f, 0.1f, 0);
+        } 
+        else if (spell){
+            GameObject spell = new GameObject(item);
+
+            spell.transform.position = hitPoint + new Vector3(0.0f, 0.1f, 0);;
+            spell.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+            Vector3 temp = spell.transform.rotation.eulerAngles;
+            temp.x = 45f;
+            spell.transform.rotation = Quaternion.Euler(temp);
+
+            SpriteRenderer image = spell.AddComponent<SpriteRenderer>(); //Add the Image Component script
+            image.sprite = Resources.Load<Sprite>("spell/" + item);
         }
     }
 }

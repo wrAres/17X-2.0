@@ -55,7 +55,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\EarthSoundManager.cs" />
      <Compile Include="Assets\Scripts\AI\AIDataManager.cs" />
      <Compile Include="Assets\Scripts\AI\BT\ActionNode.cs" />
      <Compile Include="Assets\Scripts\AI\BT\CheckNode.cs" />
@@ -71,6 +70,7 @@
      <Compile Include="Assets\Scripts\HallwayPuzzle\FloorControl.cs" />
      <Compile Include="Assets\Scripts\HallwayPuzzle\PuzzleFloorCollider.cs" />
      <Compile Include="Assets\Scripts\HallwayPuzzle\WindMovement.cs" />
+     <Compile Include="Assets\Scripts\Sound\EarthSoundManager.cs" />
      <Compile Include="Assets\Scripts\Sound\SpellEffectSounds.cs" />
      <Compile Include="Assets\Scripts\Sound\UISoundScript.cs" />
      <Compile Include="Assets\Scripts\Sound\WaterSoundManagerScript.cs" />

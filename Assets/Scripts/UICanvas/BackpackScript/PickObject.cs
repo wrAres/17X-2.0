@@ -24,9 +24,11 @@ public class PickObject : MonoBehaviour
         // "Scene 0" name might eb changed later
         if (SceneManager.GetActiveScene().name == "EarthRoom")
         {
+            Item.getGroundNames();
             TipsDialog.PrintDialog("Self Introduction");
         }
         else if (SceneManager.GetActiveScene().name == "scene0"){
+            Item.getGroundNames();
             EarthSoundManager.StopPlaySound();
             if (DontDestroyVariables.firstTimeLobbyFlag){
                 TipsDialog.PrintDialog("Lobby");
@@ -42,6 +44,7 @@ public class PickObject : MonoBehaviour
                 Destroy(GameObject.Find("River Sound 3"));
             }
         } else if (SceneManager.GetActiveScene().name == "scene3") {
+            Item.getGroundNames();
             DontDestroyVariables.enterWaterRoom = true;
             Item.flowerpot = GameObject.Find("Flowerpot");
             GameObject.Find("EarthSoundManager").SetActive(false);
