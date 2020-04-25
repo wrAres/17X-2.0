@@ -11627,8 +11627,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c142d6f2374f1f40a3d1f2bf06a6ddc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  darkPool: {fileID: 21300000, guid: 159dedb30b23a6448b67dc1b2915735d, type: 3}
-  bluePool: {fileID: 21300000, guid: 9933d90fde9b449f5bc74f34c4626ac1, type: 3}
+  darkPool: {fileID: 21300000, guid: 9933d90fde9b449f5bc74f34c4626ac1, type: 3}
+  bluePool: {fileID: 21300000, guid: 159dedb30b23a6448b67dc1b2915735d, type: 3}
   isBlue: 1
   timerActivated: 0
 --- !u!65 &1306112936

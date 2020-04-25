@@ -27,6 +27,7 @@ public class PickObject : MonoBehaviour
             TipsDialog.PrintDialog("Self Introduction");
         }
         else if (SceneManager.GetActiveScene().name == "scene0"){
+            EarthSoundManager.StopPlaySound();
             if (DontDestroyVariables.firstTimeLobbyFlag){
                 TipsDialog.PrintDialog("Lobby");
                 DontDestroyVariables.firstTimeLobbyFlag = false; // Used to tell if its the first time visiting the lobby scene
@@ -43,6 +44,9 @@ public class PickObject : MonoBehaviour
         } else if (SceneManager.GetActiveScene().name == "scene3") {
             DontDestroyVariables.enterWaterRoom = true;
             Item.flowerpot = GameObject.Find("Flowerpot");
+            GameObject.Find("EarthSoundManager").SetActive(false);
+        } else if (SceneManager.GetActiveScene().name == "SampleScene") {
+            EarthSoundManager.StopPlaySound();
         }
     }
 
