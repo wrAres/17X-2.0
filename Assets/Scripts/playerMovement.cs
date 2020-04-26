@@ -79,42 +79,38 @@ public class playerMovement : MonoBehaviour
 		if (canAct&&!fall&&!collide) {
 			if (Input.GetKey("w")) {
 				GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 3 * isReverse * freeze);
-				if (isWaterScene) WaterSoundManagerScript.PlaySound();
-				else EarthSoundManager.PlaySound();
 				status = -1 * isReverse;
 				isMoving=true;
 			}
 			else if (Input.GetKey("s")) {
 				GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -3 * isReverse * freeze);
-				if (isWaterScene) WaterSoundManagerScript.PlaySound();
-				else EarthSoundManager.PlaySound();
 				status = 1 * isReverse;
 				isMoving = true;
 			}
 			else if (Input.GetKey("a")) {
 				GetComponent<Rigidbody>().velocity = new Vector3(-3 * isReverse * freeze, 0, 0);
-				if (isWaterScene) WaterSoundManagerScript.PlaySound();
-				else EarthSoundManager.PlaySound();
 				status = 2 * isReverse;
 				isMoving = true;
 			}
 			else if (Input.GetKey("d")) {
 				GetComponent<Rigidbody>().velocity = new Vector3(3 * isReverse * freeze, 0, 0);
-				if (isWaterScene) WaterSoundManagerScript.PlaySound();
-				else EarthSoundManager.PlaySound();
 				status = -2 * isReverse;
 				isMoving = true;
 			}
 			else {
-				if (isWaterScene) WaterSoundManagerScript.StopPlaySound();
-				else EarthSoundManager.StopPlaySound();
 				//status = 0;
 				isMoving = false;
 			}
 			
 		}
 		
-		
+		if (freeze == 1 && isMoving) {
+			if (isWaterScene) WaterSoundManagerScript.PlaySound();
+			else EarthSoundManager.PlaySound();
+		} else {
+			if (isWaterScene) WaterSoundManagerScript.StopPlaySound();
+			else EarthSoundManager.StopPlaySound();
+		}
     }
 	
 	public void pushBack(){
