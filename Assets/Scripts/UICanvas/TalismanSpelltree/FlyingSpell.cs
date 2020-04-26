@@ -11,24 +11,32 @@ public class FlyingSpell : MonoBehaviour {
 
     bool isSpell, isBackpack;
     Vector3 origin;
+    private float timer;
 
     // Start is called before the first frame update
     void Start() {
         spellIcon.GetComponent<Image>().enabled = false;
         origin = spellIcon.transform.position;
+        timer = 2;
     }
 
     // Update is called once per frame
     void Update() {
         if (isSpell || isBackpack) {
-            Vector3 targetPos = spellTreeIcon.transform.position;
-            if (isBackpack) targetPos = backpackIcon.transform.position;
+            timer -= Time.deltaTime;
+            if (timer <= 0) {
+                Vector3 targetPos = spellTreeIcon.transform.position;
+                if (isBackpack) targetPos = backpackIcon.transform.position;
 
-            spellIcon.transform.position = Vector3.MoveTowards(spellIcon.transform.position, targetPos, iconSpeed * Time.deltaTime);
-            if (Vector3.Distance(spellIcon.transform.position, targetPos) < 1) {
-                if (isSpell)    { isSpell = false; spellTreeIcon.GetComponent<ShakingIcon>().ShakeMe(); }
-                else            { isBackpack = false; backpackIcon.GetComponent<ShakingIcon>().ShakeMe(); }
-                ResetFlyingSpell();
+                spellIcon.transform.position = Vector3.MoveTowards(spellIcon.transform.position, targetPos, iconSpeed * Time.deltaTime);
+                if (Vector3.Distance(spellIcon.transform.position, targetPos) < 1) {
+                    if (isSpell) { isSpell = false; spellTreeIcon.GetComponent<ShakingIcon>().ShakeMe(); }
+                    else { isBackpack = false; backpackIcon.GetComponent<ShakingIcon>().ShakeMe(); }
+                    ResetFlyingSpell();
+                }
+
+                if (isSpell) { spellIcon.transform.localScale = new Vector3(4, 4, 1); }
+                else { spellIcon.transform.localScale = new Vector3(2, 2, 1); }
             }
         }
     }
@@ -45,7 +53,8 @@ public class FlyingSpell : MonoBehaviour {
         isBackpack = !isSpell;
         spellIcon.GetComponent<Image>().enabled = true;
         spellIcon.GetComponent<Image>().sprite = s;
-        if (isSpell)    { spellIcon.transform.localScale = new Vector3(4, 4, 1); }
-        else            { spellIcon.transform.localScale = new Vector3(2, 2, 1); }
+        if (isSpell)    { spellIcon.transform.localScale = new Vector3(8, 8, 1); }
+        else            { spellIcon.transform.localScale = new Vector3(4, 4, 1); }
+        timer = 2;
     }
 }
