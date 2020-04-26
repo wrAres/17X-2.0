@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHandler, IPointerEnterHandler, IPointerExitHandler {
+public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler {
     public enum Elements { METAL, WOOD, WATER, FIRE, EARTH, THUNDER, SUN, WIND, MOON, NONE };
     public Elements element;
     public bool locked, known;
@@ -12,6 +12,12 @@ public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHand
 
     private Vector3 origin;
     private bool setTalis;
+
+    public void OnPointerDown(PointerEventData pointerEventData) {
+        //Output the name of the GameObject that is being clicked
+        //Debug.Log(name + "Game Object Click in Progress");
+        dispManager.GetComponent<TalismanManager>().AddCraft(element, GetComponentInChildren<Image>().sprite);
+    }
 
     public void OnPointerEnter(PointerEventData eventData) {
         // print("event data: " + eventData.position);
