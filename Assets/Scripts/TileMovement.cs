@@ -12,7 +12,7 @@ public class TileMovement : MonoBehaviour
     private Transform tileToMove;
     private Transform invisTile;
     private GameObject eightTiles;
-    private GameObject fullPicture; // TODO add in final picture to scene
+    private GameObject fullPicture; 
 
     private float speed = 100.0f;
     public int mixTimes = 30;
@@ -23,6 +23,7 @@ public class TileMovement : MonoBehaviour
     Dictionary<int, string> dict = new Dictionary<int, string>();
     static Dictionary<Tuple<int, int>, Vector3> startPos = new Dictionary<Tuple<int, int>, Vector3>();
     int[,] Puzzle;
+    Stack movements; // Stores the moves to solve the puzzle
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,8 @@ public class TileMovement : MonoBehaviour
         fullPicture.active = false;
         eightTiles = GameObject.Find("Full_8_Tiles");
         eightTiles.active = false;
+
+        movements = new Stack();
 
         Debug.Log("Data Manager object name: " + manager.name);
 
@@ -61,6 +64,9 @@ public class TileMovement : MonoBehaviour
 
         Puzzle = StartPuzzle();
         MixPuzzle();
+
+        CheckSolveable();
+
         TipsDialog.PrintDialog("Moving Puzzle Tip");
     }
 
@@ -156,24 +162,28 @@ public class TileMovement : MonoBehaviour
             if (number == 1 && tiles[0].Item1 == true && lastMove != "up")
             {
                 lastMove = "up";
+                movements.Push("down");
                 UpdatePuzzle("up");
                 numMix++;
             }
             else if (number == 2 && tiles[1].Item1 == true && lastMove != "down")
             {
                 lastMove = "down";
+                movements.Push("up");
                 UpdatePuzzle("down");
                 numMix++;
             }
             else if (number == 3 && tiles[2].Item1 == true && lastMove != "left")
             {
                 lastMove = "left";
+                movements.Push("right");
                 UpdatePuzzle("left");
                 numMix++;
             }
             else if (number == 4 && tiles[3].Item1 == true && lastMove != "right")
             {
                 lastMove = "right";
+                movements.Push("left");
                 UpdatePuzzle("right");
                 numMix++;
             }
@@ -345,6 +355,91 @@ public class TileMovement : MonoBehaviour
 
 
     // Debug methods delete later...
+
+    private void CheckSolveable()
+    {
+        // Get current board
+        // Loop: till stack is empty
+        // Pop movement off stack
+        // Change board
+        // Check if board is in starting position
+
+        int[,] CheckPuzzle = StartPuzzle();
+        int[,] StartPosition = StartPuzzle();
+        bool solution = true;
+        string moveSet = "";
+
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                CheckPuzzle[i, j] = Puzzle[i, j];
+            }
+        }
+
+        while (movements.Count != 0)
+        {
+            string move = (string) movements.Pop();
+            moveSet += move + ", ";
+            applyMove(CheckPuzzle, move);
+        }
+
+        // Check if board is in starting positon
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                if (CheckPuzzle[i, j] != StartPosition[i, j]) solution = false;
+            }
+        }
+
+        Debug.Log(moveSet);
+
+        if (solution) Debug.Log("Solvable");
+        else Debug.Log("No solution");
+    }
+
+    private void applyMove(int[,] p, string move)
+    {
+        // Need this here to not move multiple times on a press for "up" and "left"
+        bool movedAlready = false;
+
+        for (int i = 0; i < 3; i++)
+        {
+            for (int j = 0; j < 3; j++)
+            {
+                if (p[i, j] == 9)
+                {
+                    if (move == "up" && movedAlready == false)
+                    {
+                        int temp = p[i, j];
+                        p[i, j] = p[i + 1, j];
+                        p[i + 1, j] = temp;
+                        movedAlready = true;
+                    }
+                    else if (move == "down")
+                    {
+                        int temp = p[i, j];
+                        p[i, j] = p[i - 1, j];
+                        p[i - 1, j] = temp;
+                    }
+                    else if (move == "left" && movedAlready == false)
+                    {
+                        int temp = p[i, j];
+                        p[i, j] = p[i, j + 1];
+                        p[i, j + 1] = temp;
+                        movedAlready = true;
+                    }
+                    else if (move == "right")
+                    {
+                        int temp = p[i, j];
+                        p[i, j] = p[i, j - 1];
+                        p[i, j - 1] = temp;
+                    }
+                }
+            }
+        }
+    }
 
     private void print_puzzle()
     {
