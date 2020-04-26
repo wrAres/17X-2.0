@@ -104,7 +104,7 @@ public class playerMovement : MonoBehaviour
 			
 		}
 		
-		if (freeze == 1 && isMoving) {
+		if (freeze == 1 && canAct && isMoving) {
 			if (isWaterScene) WaterSoundManagerScript.PlaySound();
 			else EarthSoundManager.PlaySound();
 		} else {
