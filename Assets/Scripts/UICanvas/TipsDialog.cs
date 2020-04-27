@@ -73,13 +73,13 @@ public class TipsDialog : MonoBehaviour
         dialog.SetActive(false);
     }
 
-    // void Update()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.R))
-    //     {
-    //         NextPage();
-    //     }
-    // }
+     void Update()
+     {
+         if (Input.GetKeyDown(KeyCode.Space))
+         {
+             if(!NextPage()) dialog.SetActive(false);
+         }
+     }
 
     public static bool NextPage() {
         // if (dialogOrDesc) {
