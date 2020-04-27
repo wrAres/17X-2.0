@@ -98,6 +98,7 @@
     <Compile Include="Assets\Scripts\UICanvas\TalismanSpelltree\Spell.cs" />
     <Compile Include="Assets\Scripts\UICanvas\TalismanSpelltree\SpellTreeManager.cs" />
     <Compile Include="Assets\Scripts\UICanvas\TalismanSpelltree\TalisDrag.cs" />
+    <Compile Include="Assets\Scripts\UICanvas\TalismanSpelltree\TalisSet.cs" />
     <Compile Include="Assets\Scripts\UICanvas\TalismanSpelltree\TalismanManager.cs" />
     <Compile Include="Assets\Scripts\UICanvas\TipsDialog.cs" />
     <Compile Include="Assets\Scripts\WaterScene\ChangeSprite.cs" />

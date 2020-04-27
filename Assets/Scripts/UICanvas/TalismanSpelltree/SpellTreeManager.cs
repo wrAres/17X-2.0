@@ -47,7 +47,7 @@ public class SpellTreeManager : MonoBehaviour {
             display.SetActive(false);
         }
         */
-
+        /*
          if (Input.GetKeyDown(KeyCode.Q)) {
              UnlockElement(TalisDrag.Elements.WATER);
          }
@@ -57,6 +57,7 @@ public class SpellTreeManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.R)) {
             UnlockElement(TalisDrag.Elements.WIND);
         }
+        */
     }
 
     private void UpdateIcons() {

@@ -113,6 +113,18 @@ public class TalismanManager : MonoBehaviour {
         }
     }
 
+    public void RemoveEle(int id) {
+        if (craft[id] == TalisDrag.Elements.NONE) return;
+        for (int i = id; i < craft.Length-1; i++) {
+            slots[i].sprite = slots[i+1].sprite;
+            craft[i] = craft[i+1];
+            if (craft[i] == TalisDrag.Elements.NONE) slots[i].enabled = false;
+            else slots[i].enabled = true;
+        }
+        craft[2] = TalisDrag.Elements.NONE;
+        slots[2].enabled = false;
+    }
+
     // Reset the craft log
     private void ResetCraft() {
         for (int i = 0; i < craft.Length; i++) {
