@@ -68,6 +68,7 @@ public class TileMovement : MonoBehaviour
         CheckSolveable();
 
         TipsDialog.PrintDialog("Moving Puzzle Tip");
+        EarthSoundManager.StopPlaySound();
     }
 
     // Update is called once per frame

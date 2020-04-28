@@ -48,9 +48,7 @@ public class PickObject : MonoBehaviour
             DontDestroyVariables.enterWaterRoom = true;
             Item.flowerpot = GameObject.Find("Flowerpot");
             GameObject.Find("EarthSoundManager").SetActive(false);
-        } else if (SceneManager.GetActiveScene().name == "SampleScene") {
-            EarthSoundManager.StopPlaySound();
-        }
+        } 
     }
 
     // Update is called once per frame

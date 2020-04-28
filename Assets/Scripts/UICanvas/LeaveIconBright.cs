@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class LeaveIconBright : MonoBehaviour
 {
     private Color color = new Color(0.15f, 0.15f, 0.15f, 0.7f);
+    public bool shine = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class LeaveIconBright : MonoBehaviour
     }
 
     public void ShineBackpack() {
-        
+        shine = true;
         this.gameObject.GetComponent<RawImage>().color = color;
         this.gameObject.transform.SetSiblingIndex(0);
         GameObject spellTree = GameObject.FindGameObjectWithTag("BackpackIcon");
@@ -28,11 +29,13 @@ public class LeaveIconBright : MonoBehaviour
     }
 
     public void DarkBackpack() {
+        shine = false;
         Color colorW = new Color(0f, 0f, 0f, 0f);
         this.gameObject.GetComponent<RawImage>().color = colorW;
     }
 
     public void ShineSpellIcon() {
+        shine = true;
         this.gameObject.GetComponent<RawImage>().color = color;
         this.gameObject.transform.SetSiblingIndex(6);
         GameObject spellTree = GameObject.FindGameObjectWithTag("SpellTreeIcon");

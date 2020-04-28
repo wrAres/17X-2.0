@@ -16,7 +16,7 @@ public class playerMovement : MonoBehaviour
         SceneManager.GetActiveScene().name == "scene3";
 	public bool canAct => !dialogShown && !talismanShown;
 	public bool dialogShown =>
-        FindObjectOfType<TipsDialog>() != null;
+        FindObjectOfType<TipsDialog>() != null || GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().shine;
 	public bool talismanShown =>
 		GameObject.FindGameObjectWithTag("Talisman") != null;
 	public bool fall;
