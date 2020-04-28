@@ -16,12 +16,14 @@ public class playerMovement : MonoBehaviour
         SceneManager.GetActiveScene().name == "scene3";
 	public bool canAct => !dialogShown && !talismanShown;
 	public bool dialogShown =>
-        FindObjectOfType<TipsDialog>() != null || GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().shine;
+        FindObjectOfType<TipsDialog>() != null;
 	public bool talismanShown =>
 		GameObject.FindGameObjectWithTag("Talisman") != null;
 	public bool fall;
 	public int startPosition;
 	public bool collide;
+	bool cooldown;
+	int recorder;
 	Vector3 old_pos;
 	bool isMoving;
 	int timer;
@@ -38,6 +40,8 @@ public class playerMovement : MonoBehaviour
 		timer = 0;
 		GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
 		collide = false;
+		recorder = 0;
+		cooldown = false;
     }
 
     // Update is called once per frame
@@ -49,6 +53,10 @@ public class playerMovement : MonoBehaviour
 			isMoving = false;
 		}*/
 		timer++;
+		if(recorder + 100 <= timer && collide == true){
+			collide = false;
+			cooldown = false;
+		}
 		if(timer%30 ==0){
 			old_pos = transform.position;
 		}
@@ -131,7 +139,12 @@ public class playerMovement : MonoBehaviour
 			}
 			
 		}
-		
+		if(Input.GetKey("y")){
+			GetComponent<Rigidbody>().AddForce(0,0,-100);
+			GetComponent<Rigidbody>().AddForce(0,0,100);
+			GetComponent<Rigidbody>().AddForce(100,0,0);
+			GetComponent<Rigidbody>().AddForce(-100,0,0);
+		}
 		if (freeze == 1 && canAct && isMoving) {
 			if (isWaterScene) WaterSoundManagerScript.PlaySound();
 			else EarthSoundManager.PlaySound();
@@ -142,10 +155,17 @@ public class playerMovement : MonoBehaviour
     }
 	
 	public void pushBack(){
+		if(cooldown == true){
+			return;
+		}else{
+			cooldown = true;
+		}
 		Debug.Log(status);
-		timer = 0;
+		
+		
 		collide = true;
-		freeze = 0;
+		
+		recorder = timer;
 		switch(status){
 			case -1:
 				isMoving = false;
@@ -170,8 +190,7 @@ public class playerMovement : MonoBehaviour
 			default:
 				break;
 		}
-		collide = false;
-		freeze = 1;
+		
 	}
 }
 
