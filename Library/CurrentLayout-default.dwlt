@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 406
+  controlID: 36
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 407
+  controlID: 37
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 67
+  controlID: 38
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -392,10 +392,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 86}
-      m_SelectedIDs: fe380000
-      m_LastClickedID: 14590
-      m_ExpandedIDs: 6efbfffff4ffffff103700002e3b0000
+      scrollPos: {x: 0, y: 22}
+      m_SelectedIDs: 96a70000
+      m_LastClickedID: 42902
+      m_ExpandedIDs: 62f2ffff6efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -455,9 +455,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.3621082, y: 0.11505365, z: -6.155467}
+    m_Target: {x: -1.5433788, y: -1.7238135, z: -8.484569}
     speed: 2
-    m_Value: {x: 1.3621082, y: 0.11505365, z: -6.155467}
+    m_Value: {x: -1.5433788, y: -1.7238135, z: -8.484569}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -503,13 +503,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+    m_Target: {x: 0.46248794, y: 0.017287219, z: -0.009019657, w: 0.88641155}
     speed: 2
-    m_Value: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+    m_Value: {x: 0.4651449, y: 0.017260076, z: -0.009071475, w: 0.8850198}
   m_Size:
-    m_Target: 15.382556
+    m_Target: 3.1832051
     speed: 2
-    m_Value: 15.382556
+    m_Value: 3.256476
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -692,11 +692,11 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/wensdon/Desktop/academic/UCSC/Senior/winter 2020/The
     Atlas of Shanhe and Sheji/17X-2.0
@@ -704,8 +704,8 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 95}
-    m_SelectedIDs: 90400000
-    m_LastClickedID: 16528
+    m_SelectedIDs: ea400000
+    m_LastClickedID: 16618
     m_ExpandedIDs: 0000000090400000924000009440000096400000984000009a4000009c4000009e40000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0

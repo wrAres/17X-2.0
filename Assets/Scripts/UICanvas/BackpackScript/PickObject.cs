@@ -53,6 +53,7 @@ public class PickObject : MonoBehaviour
 
     // Update is called once per frame
     public void ClickOnGround(){
+        print("click on ground");
         if (descShow){
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hitInfo;
@@ -96,5 +97,6 @@ public class PickObject : MonoBehaviour
                 }
             }
         }
+        descShow = false;
     }
 }

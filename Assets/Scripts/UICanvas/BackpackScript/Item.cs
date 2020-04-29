@@ -189,9 +189,9 @@ public class Item : MonoBehaviour
             AIDataManager.UpdateStandardSpellCount("fire", 2);
         } 
         else if (item.CompareTo("Taiji Key") == 0 && position.CompareTo("Water Boss Door") == 0){
+            deleteSpellObject("Water Boss Door");
             GameObject.Find("doorLeft").GetComponent<doorController>().openDoor();
             GameObject.Find("doorRight").GetComponent<doorController>().openDoor();
-            deleteSpellObject("Water Boss Door");
 
             AIDataManager.gentlypassthedoor = true; 
             AIDataManager.UpdateStandardSpellCount("water", 3);
@@ -199,13 +199,13 @@ public class Item : MonoBehaviour
             AIDataManager.UpdateStandardSpellCount("sun", 1);
             AIDataManager.UpdateStandardSpellCount("Taiji Key", 1);
 
-            GameObject waterBoss = GameObject.Find("QiangYu");
+            // GameObject waterBoss = GameObject.Find("QiangYu");
             //waterBoss.SetActive(false);
         }
         else if (item.CompareTo("Boom") == 0 && position.CompareTo("Water Boss Door") == 0){
+            deleteSpellObject("Water Boss Door");
             GameObject.Find("doorLeft").GetComponent<doorController>().openDoor();
             GameObject.Find("doorRight").GetComponent<doorController>().openDoor();
-            deleteSpellObject("Water Boss Door");
 
             AIDataManager.gentlypassthedoor = false; 
 

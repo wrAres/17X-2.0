@@ -56,10 +56,5 @@ public class flowerInMirror : MonoBehaviour
 			TipsDialog.PrintDialog("Mirror no effect");
 		}
 	}
-	
-	void OnMouseDown(){
-		Debug.Log("!!!");
-		ClickMirror();
-	}
 		
 }
