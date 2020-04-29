@@ -71,6 +71,10 @@ public class TipsDialog : MonoBehaviour
         dialogList.Add("wind (6)", "EarthGroundDescription");
         dialogList.Add("wind (7)", "EarthGroundDescription");
         dialogList.Add("Water Boss", "EarthGroundDescription");
+        dialogList.Add("Rock1", "EarthGroundDescription");
+        dialogList.Add("Rock2", "EarthGroundDescription");
+        dialogList.Add("Rock3", "EarthGroundDescription");
+        dialogList.Add("Rock4", "EarthGroundDescription");
         dialog.SetActive(false);
     }
 

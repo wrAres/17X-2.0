@@ -160,3 +160,15 @@ Zoom In Active
 Moving Puzzle Tip
 【Use arrow keys to move puzzle pieces】
 ---
+Rock1
+Hard rocks.
+---
+Rock2
+Hard rocks.
+---
+Rock3
+Hard rocks.
+---
+Rock4
+Hard rocks.
+---
