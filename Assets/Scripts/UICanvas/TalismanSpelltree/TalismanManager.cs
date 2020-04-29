@@ -76,7 +76,7 @@ public class TalismanManager : MonoBehaviour {
         }
 
         // TEST MAKE BUTTON
-        if (Input.GetKey(KeyCode.Return) && display.activeSelf) {
+        if (Input.GetKey(KeyCode.G) && display.activeSelf) {
             MakeItem();
             dispManager.ToggleIcons(true);
         }

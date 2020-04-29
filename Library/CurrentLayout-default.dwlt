@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 7654
+  controlID: 627
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 7655
+  controlID: 628
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 7656
+  controlID: 629
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -395,7 +395,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: b2eaffffd0eaffff1cecffff74ecffff8aecffff92eeffff94f3ffffa6f3ffffe0f3ffff16f6ffff20f6ffff6efbffff3e6b0000f86b0000766c0000707c00002c910000da940000
+      m_ExpandedIDs: 2cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -507,9 +507,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.16536136, y: 0.06592375, z: -0.011078799, w: -0.98396826}
   m_Size:
-    m_Target: 5.0997896
+    m_Target: 13.829637
     speed: 2
-    m_Value: 5.0997896
+    m_Value: 13.829637
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -652,7 +652,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -9786
+  m_LastSelectedObjectID: 14510
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -692,20 +692,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/UICanvas
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 75
   m_LastFolders:
-  - Assets/Scripts/UICanvas
+  - Assets
   m_LastFoldersGridSize: 75
-  m_LastProjectPath: /Users/Bz/Desktop/Atlas_3.0/17X-2.0
+  m_LastProjectPath: /Users/wensdon/Desktop/academic/UCSC/Senior/winter 2020/The
+    Atlas of Shanhe and Sheji/17X-2.0
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 142}
-    m_SelectedIDs: 9e400000
-    m_LastClickedID: 16542
-    m_ExpandedIDs: 000000009440000096400000984000009a4000009c4000009e400000a0400000a240000000ca9a3b
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: c2400000
+    m_LastClickedID: 16578
+    m_ExpandedIDs: 00000000c2400000c4400000c6400000c8400000ca400000cc400000ce400000d040000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -733,7 +734,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009440000096400000984000009a4000009c4000009e400000a0400000a240000000ca9a3b
+    m_ExpandedIDs: 00000000c2400000c4400000c6400000c8400000ca400000cc400000ce400000d040000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
