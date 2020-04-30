@@ -1,16 +1,20 @@
 ﻿<Properties StartupConfiguration="{723736E0-234A-81B5-781F-EA4585C42642}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UICanvas/TalismanSpelltree/SpellTreeManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AI/AIDataManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/UICanvas/BackpackScript/Backpack.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/TalisSet.cs" Line="9" Column="19" />
+      <File FileName="Assets/Scripts/AI/AIDataManager.cs" Line="68" Column="1" IsPinned="True" />
+      <File FileName="Assets/Scripts/UICanvas/BackpackScript/Show.cs" Line="169" Column="76" IsPinned="True" />
+      <File FileName="Assets/Scripts/UICanvas/BackpackScript/Backpack.cs" />
+      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/TalisSet.cs" />
       <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/TalismanManager.cs" Line="119" Column="40" />
-      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/TalisDrag.cs" Line="12" Column="1" />
-      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/SpellTreeManager.cs" Line="60" Column="11" />
+      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/TalisDrag.cs" />
+      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/SpellTreeManager.cs" Line="52" Column="51" />
+      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/FlyingSpell.cs" Line="52" Column="47" />
+      <File FileName="Assets/Scripts/AI/AIDataManager.cs" Line="53" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6a1442b8-6bb2-4fc2-9961-ce7bed96d59e" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f65668e5-0cb7-4c54-bfc2-031d1095c603" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -36,6 +36,7 @@ public class TalismanManager : MonoBehaviour {
     public Text eleName;
 
     private bool firstAccess = true;
+    public Animator talis;
 
     private void Awake() {
         dispManager = GetComponent<Show>();
@@ -80,8 +81,9 @@ public class TalismanManager : MonoBehaviour {
             MakeItem();
             dispManager.ToggleIcons(true);
         }
-        else if (Input.GetKey(KeyCode.Backspace) && display.activeSelf) {
+        else if (Input.GetKeyDown(KeyCode.Backspace) && display.activeSelf) {
             ResetCraft();
+            talis.SetTrigger("newTalis");
         }
     }
 

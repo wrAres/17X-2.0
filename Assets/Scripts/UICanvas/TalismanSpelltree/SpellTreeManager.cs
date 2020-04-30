@@ -47,9 +47,10 @@ public class SpellTreeManager : MonoBehaviour {
             display.SetActive(false);
         }
         */
+
         /*
          if (Input.GetKeyDown(KeyCode.Q)) {
-             UnlockElement(TalisDrag.Elements.WATER);
+             UnlockElement(TalisDrag.Elements.FIRE);
          }
         if (Input.GetKeyDown(KeyCode.E)) {
             UnlockElement(TalisDrag.Elements.EARTH);
@@ -57,7 +58,7 @@ public class SpellTreeManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.R)) {
             UnlockElement(TalisDrag.Elements.WIND);
         }
-        */
+       */ 
     }
 
     private void UpdateIcons() {
@@ -125,7 +126,7 @@ public class SpellTreeManager : MonoBehaviour {
                     if (i + 1 >= s.recipe.Length) break;
                     recipe.text += ", ";
                 }
-                if (s.recipe.Length <= 0) { recipe.text += "N/A"; }
+                if (s.recipe.Length <= 0) { recipe.text += "Fundamental Element"; }
             }
             else {
                 desc.text = s.knownDes;

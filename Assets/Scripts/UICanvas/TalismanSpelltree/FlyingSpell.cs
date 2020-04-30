@@ -49,6 +49,7 @@ public class FlyingSpell : MonoBehaviour {
     }
 
     public void FlyTowardsIcon(Sprite s, bool isSpell) {
+        spellIcon.transform.position = origin;
         this.isSpell = isSpell;
         isBackpack = !isSpell;
         spellIcon.GetComponent<Image>().enabled = true;

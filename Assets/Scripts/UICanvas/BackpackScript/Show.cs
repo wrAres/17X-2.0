@@ -166,18 +166,36 @@ public class Show : MonoBehaviour
             spellTreeDisp.SetActive(false);
             talisDisp.CloseDisplay();
         }
-        // Show talisman building description after closing the spell tree
-        // if (closedFirstTimeFlag == 2)
-        // {
-        //     TipsDialog.PrintDialog("Talisman");
-        //     clickedObject = true;
-        //     closedFirstTimeFlag = 3;
-        // }
-        // else
-        // {
-        //     clickedObject = false;
-        // }
-    }
+        else if (Input.GetKeyDown(KeyCode.Q) && canAct && spellTreeUnlocked) {
+            pick.descShow = false;
+            UISoundScript.OpenSpellTree();
+            if (brightSpell) {
+                GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
+                TipsDialog.PrintDialog("Spelltree 2");
+                brightSpell = false;
+                GameObject spellTree = GameObject.FindGameObjectWithTag("SpellTreeIcon");
+                spellTree.GetComponent<Image>().sprite = Resources.Load<Sprite>("ChangeAsset/All elements");
+                // spellTree.transform.localScale = new Vector2(2.6f, 2.5f);
+                seenSpellTree = true;
+            }
+            spellTreeDisp.SetActive(!spellTreeDisp.activeSelf);
+
+            // Close other canvas
+            talisDisp.CloseDisplay();
+            Backpack.backpack.GetComponent<Backpack>().Show(false);
+        }
+            // Show talisman building description after closing the spell tree
+            // if (closedFirstTimeFlag == 2)
+            // {
+            //     TipsDialog.PrintDialog("Talisman");
+            //     clickedObject = true;
+            //     closedFirstTimeFlag = 3;
+            // }
+            // else
+            // {
+            //     clickedObject = false;
+            // }
+        }
 
     private void PrintName(GameObject obj) {
         print("Debug" + obj.name);
