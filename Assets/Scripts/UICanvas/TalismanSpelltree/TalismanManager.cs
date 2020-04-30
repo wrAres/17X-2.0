@@ -77,9 +77,12 @@ public class TalismanManager : MonoBehaviour {
         }
 
         // TEST MAKE BUTTON
-        if (Input.GetKey(KeyCode.G) && display.activeSelf) {
-            MakeItem();
-            dispManager.ToggleIcons(true);
+        if (Input.GetKeyDown(KeyCode.G) && display.activeSelf) {
+            if (MakeItem()) { dispManager.ToggleIcons(true); }
+            else {
+                ResetCraft();
+                talis.SetTrigger("newTalis");
+            }
         }
         else if (Input.GetKeyDown(KeyCode.Backspace) && display.activeSelf) {
             ResetCraft();
@@ -237,7 +240,7 @@ public class TalismanManager : MonoBehaviour {
         // Failed to make item
         AIDataManager.TryNonExistentRecipe();
         Debug.Log("No items can be made");
-        CloseDisplay();
+        //CloseDisplay();
         return false;
 
     }

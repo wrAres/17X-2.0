@@ -1,15 +1,15 @@
 ﻿<Properties StartupConfiguration="{723736E0-234A-81B5-781F-EA4585C42642}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/AI/AIDataManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UICanvas/TalismanSpelltree/TalismanManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/AI/AIDataManager.cs" Line="68" Column="1" IsPinned="True" />
+      <File FileName="Assets/Scripts/AI/AIDataManager.cs" Line="192" Column="1" IsPinned="True" />
       <File FileName="Assets/Scripts/UICanvas/BackpackScript/Show.cs" Line="169" Column="76" IsPinned="True" />
       <File FileName="Assets/Scripts/UICanvas/BackpackScript/Backpack.cs" />
       <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/TalisSet.cs" />
-      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/TalismanManager.cs" Line="119" Column="40" />
+      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/TalismanManager.cs" Line="84" Column="34" />
       <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/TalisDrag.cs" />
-      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/SpellTreeManager.cs" Line="52" Column="51" />
+      <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/SpellTreeManager.cs" Line="61" Column="10" />
       <File FileName="Assets/Scripts/UICanvas/TalismanSpelltree/FlyingSpell.cs" Line="52" Column="47" />
-      <File FileName="Assets/Scripts/AI/AIDataManager.cs" Line="53" Column="9" />
+      <File FileName="Assets/Scripts/AI/AIDataManager.cs" Line="192" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
