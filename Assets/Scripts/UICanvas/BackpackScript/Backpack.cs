@@ -56,7 +56,6 @@ public class Backpack : MonoBehaviour
         imageObj.GetComponent<ItemDragHandler>().itemName = itemName;
 
         image.texture = Resources.Load<Texture2D>("spell/" + name); //Set the Sprite of the Image Component on the new GameObject
-        print("texture backpack item: " + name);
         imageObj.tag = "Item";
 
         RectTransform item_transform = imageObj.GetComponent<RectTransform>();
@@ -79,7 +78,7 @@ public class Backpack : MonoBehaviour
             item_transform.sizeDelta = new Vector2(60f, 60f);
         }
         
-        UISoundScript.PlayBackpack();
+        UISoundScript.PlayGetItem();
         imageObj.SetActive(Backpack.backpack.activeSelf);
     }
 

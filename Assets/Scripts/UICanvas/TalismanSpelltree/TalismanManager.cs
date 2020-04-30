@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Show))]
 [RequireComponent(typeof(SpellTreeManager))]
@@ -36,6 +37,7 @@ public class TalismanManager : MonoBehaviour {
     public Text eleName;
 
     private bool firstAccess = true;
+    public Animator talis;
 
     private void Awake() {
         dispManager = GetComponent<Show>();
@@ -45,17 +47,19 @@ public class TalismanManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown(KeyCode.T) && !display.activeSelf && !dialogShown && DontDestroyVariables.canOpenTalisman) {
+        if (!GameObject.Find("MainUI").GetComponent<Show>().seenSpellTree) {
+
+        } else if (!DontDestroyVariables.haveSeenRiverTip) {
+
+        }
+        else if (Input.GetKeyDown(KeyCode.T) && !display.activeSelf && !dialogShown && DontDestroyVariables.canOpenTalisman) {
             if (firstAccess) {
-                if (!GameObject.Find("MainUI").GetComponent<Show>().seenSpellTree) {
-                    display.transform.SetSiblingIndex(2);
-                    TipsDialog.PrintDialog("Talisman 0");
-                    DontDestroyVariables.accidentallyOpenTalisman = true;
-                } else {
-                    firstAccess = false;
-                    display.transform.SetSiblingIndex(2);
-                    TipsDialog.PrintDialog("Talisman 2");
-                }
+                    // display.transform.SetSiblingIndex(2);
+                    // TipsDialog.PrintDialog("Talisman 0");
+                    // DontDestroyVariables.accidentallyOpenTalisman = true;
+                firstAccess = false;
+                display.transform.SetSiblingIndex(2);
+                TipsDialog.PrintDialog("Talisman 2");
             } else {
                 // Close any text box that is open
                 TipsDialog.HideTextBox();
@@ -80,8 +84,9 @@ public class TalismanManager : MonoBehaviour {
             MakeItem();
             dispManager.ToggleIcons(true);
         }
-        else if (Input.GetKey(KeyCode.Backspace) && display.activeSelf) {
+        else if (Input.GetKeyDown(KeyCode.Backspace) && display.activeSelf) {
             ResetCraft();
+            talis.SetTrigger("newTalis");
         }
     }
 
@@ -234,7 +239,8 @@ public class TalismanManager : MonoBehaviour {
 
         // Failed to make item
         AIDataManager.TryNonExistentRecipe();
-        Debug.Log("No items can be made");
+        // Debug.Log("No items can be made");
+        UISoundScript.PlayWrongSpell();
         CloseDisplay();
         return false;
 

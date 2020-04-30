@@ -144,7 +144,7 @@ public class SpellTreeManager : MonoBehaviour {
                 if (spell[i].curState != Spell.SpellState.UNLOCKED) {
                     GetComponent<FlyingSpell>().FlyTowardsIcon(spell[i].glow, true);
                     spell[i].ChangeState(Spell.SpellState.UNLOCKED);
-                    UISoundScript.PlaySpellTreeIcon();
+                    UISoundScript.PlayGetElement();
                 }
                 /// break;
             }

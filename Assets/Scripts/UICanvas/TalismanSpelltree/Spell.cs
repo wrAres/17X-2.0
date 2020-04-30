@@ -69,7 +69,11 @@ public class Spell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
         curState = s;
     }
 
-    public void SetOld() { isNew = false; newDisp.enabled = false; Debug.Log("called"); }
+    public void SetOld() { 
+        isNew = false; 
+        newDisp.enabled = false; 
+        // Debug.Log("called"); 
+    }
 
     private void OnEnable() {
         if (curState == SpellState.LOCKED) newDisp.enabled = false;

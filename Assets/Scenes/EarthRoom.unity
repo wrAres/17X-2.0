@@ -1334,6 +1334,7 @@ MonoBehaviour:
   backpack: {fileID: 1733698975}
   textbox: {fileID: 59179415}
   eleName: {fileID: 592398765}
+  talis: {fileID: 0}
 --- !u!114 &103709452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5246,7 +5247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b53b478cd2e0a4b46abbf81ec05340db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeAmt: 0
+  shakeAmp: 100
 --- !u!114 &481698910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15093,9 +15094,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8108a5c4a5a324667b1691fce40637e7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -15285,7 +15286,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -19321,7 +19322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b53b478cd2e0a4b46abbf81ec05340db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeAmt: 1
+  shakeAmp: 100
 --- !u!114 &2024886684
 MonoBehaviour:
   m_ObjectHideFlags: 0

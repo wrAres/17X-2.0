@@ -34,7 +34,7 @@ public class Item : MonoBehaviour
 
     public static bool canPlace(string item, string targetObj) {
         spell = false;
-        print(item + ", drop to: " + targetObj);
+        // print(item + ", drop to: " + targetObj);
         if (item.CompareTo("SpellTreeItem") == 0)
             return true;
         string available = (string)itemOnPuzzle[item];

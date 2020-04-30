@@ -19,7 +19,7 @@ public class WallMove : MonoBehaviour
 
     public void Move() 
     {
-        Debug.Log("moved");
+        // Debug.Log("moved");
         GetComponent<Rigidbody>().velocity = new Vector3(-speed, 0, 0);
     }
 }

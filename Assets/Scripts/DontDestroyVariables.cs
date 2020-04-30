@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿  
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,4 +11,5 @@ public class DontDestroyVariables : MonoBehaviour
 	public static bool firstTimeLobbyFlag = true; // Used to tell if its the first time visiting the lobby scene
 	public static bool accidentallyOpenTalisman = false;
 	public static bool canOpenTalisman = false;
+	public static bool haveSeenRiverTip = false;
 }

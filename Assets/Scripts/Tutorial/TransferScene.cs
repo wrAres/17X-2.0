@@ -17,7 +17,7 @@ public class TransferScene : MonoBehaviour
 	{
 		if (other.CompareTag("TutorialWall") && enterable)
 		{
-			Debug.Log("trasferring");
+			// Debug.Log("trasferring");
 			SceneManager.LoadScene(scene);
 		}
 	}

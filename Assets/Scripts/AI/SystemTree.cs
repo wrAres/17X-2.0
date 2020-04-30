@@ -70,7 +70,7 @@ public class SystemTree : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        print("start system");
+        // print("start system");
 
         /* First Subtree creation - noda_1A
          * Create and add child nodes to a list for Sequence node_1A

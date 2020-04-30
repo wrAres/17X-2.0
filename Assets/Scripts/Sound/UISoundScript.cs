@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,12 +29,12 @@ public class UISoundScript : MonoBehaviour
         // InvokeRepeating("PlaySound",0.001f,0.3f);
     }
 
-    public static void PlayBackpack()
+    public static void PlayGetItem()
     {
         audioSources[0].PlayOneShot(backpackSound, 0.05f);
     }
 
-    public static void PlaySpellTreeIcon()
+    public static void PlayGetElement()
     {
         audioSources[1].PlayOneShot(spellTreeIconSound, 0.05f);
     }
