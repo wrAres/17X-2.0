@@ -87,10 +87,11 @@ public class Item : MonoBehaviour
                 else {
                     return true;
                 }
-            } else if (groundNames.Contains(targetObj) && item.CompareTo("Water Seed") != 0 && item.CompareTo("Earth Key") != 0) {
-                spell = true;
-                return true;
-            }
+            } 
+            // else if (groundNames.Contains(targetObj) && item.CompareTo("Water Seed") != 0 && item.CompareTo("Earth Key") != 0) {
+            //     spell = true;
+            //     return true;
+            // }
         }
         TipsDialog.PrintDialog("Wrong Spell");
         return false;
@@ -189,6 +190,8 @@ public class Item : MonoBehaviour
         } 
         else if (item.CompareTo("Taiji Key") == 0 && position.CompareTo("Water Boss Door") == 0){
             deleteSpellObject("Water Boss Door");
+            GameObject.Find("doorLeft").GetComponent<doorController>().openDoor();
+            GameObject.Find("doorRight").GetComponent<doorController>().openDoor();
 
             AIDataManager.gentlypassthedoor = true; 
             AIDataManager.UpdateStandardSpellCount("water", 3);
@@ -196,11 +199,13 @@ public class Item : MonoBehaviour
             AIDataManager.UpdateStandardSpellCount("sun", 1);
             AIDataManager.UpdateStandardSpellCount("Taiji Key", 1);
 
-            GameObject waterBoss = GameObject.Find("QiangYu");
+            // GameObject waterBoss = GameObject.Find("QiangYu");
             //waterBoss.SetActive(false);
         }
         else if (item.CompareTo("Boom") == 0 && position.CompareTo("Water Boss Door") == 0){
             deleteSpellObject("Water Boss Door");
+            GameObject.Find("doorLeft").GetComponent<doorController>().openDoor();
+            GameObject.Find("doorRight").GetComponent<doorController>().openDoor();
 
             AIDataManager.gentlypassthedoor = false; 
 
@@ -224,17 +229,17 @@ public class Item : MonoBehaviour
             portal.GetComponent<SpriteRenderer>().enabled = true;
             portal.transform.position = hitPoint + new Vector3(0.0f, 1f, 0);
         } 
-        else if (spell){
-            GameObject spell = new GameObject(item);
+        // else if (spell){
+        //     GameObject spell = new GameObject(item);
 
-            spell.transform.position = hitPoint + new Vector3(0.0f, 0.1f, 0);;
-            spell.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
-            Vector3 temp = spell.transform.rotation.eulerAngles;
-            temp.x = 45f;
-            spell.transform.rotation = Quaternion.Euler(temp);
+        //     spell.transform.position = hitPoint + new Vector3(0.0f, 0.1f, 0);;
+        //     spell.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
+        //     Vector3 temp = spell.transform.rotation.eulerAngles;
+        //     temp.x = 45f;
+        //     spell.transform.rotation = Quaternion.Euler(temp);
 
-            SpriteRenderer image = spell.AddComponent<SpriteRenderer>(); //Add the Image Component script
-            image.sprite = Resources.Load<Sprite>("spell/" + item);
-        }
+        //     SpriteRenderer image = spell.AddComponent<SpriteRenderer>(); //Add the Image Component script
+        //     image.sprite = Resources.Load<Sprite>("spell/" + item);
+        // }
     }
 }

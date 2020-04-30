@@ -22,6 +22,8 @@ public class playerMovement : MonoBehaviour
 	public bool fall;
 	public int startPosition;
 	public bool collide;
+	bool cooldown;
+	int recorder;
 	Vector3 old_pos;
 	bool isMoving;
 	int timer;
@@ -38,6 +40,8 @@ public class playerMovement : MonoBehaviour
 		timer = 0;
 		GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
 		collide = false;
+		recorder = 0;
+		cooldown = false;
     }
 
     // Update is called once per frame
@@ -49,6 +53,10 @@ public class playerMovement : MonoBehaviour
 			isMoving = false;
 		}*/
 		timer++;
+		if(recorder + 20 <= timer && collide == true){
+			collide = false;
+			cooldown = false;
+		}
 		if(timer%30 ==0){
 			old_pos = transform.position;
 		}
@@ -78,24 +86,52 @@ public class playerMovement : MonoBehaviour
 		ani.SetBool("isMoving",isMoving);
 		if (canAct&&!fall&&!collide) {
 			if (Input.GetKey("w")) {
-				GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 3 * isReverse * freeze);
+				
 				status = -1 * isReverse;
 				isMoving=true;
+				if(Input.GetKey("a")){
+					GetComponent<Rigidbody>().velocity = new Vector3(-2 * isReverse, 0, 2 * isReverse * freeze);
+				}else if(Input.GetKey("d")){
+					GetComponent<Rigidbody>().velocity = new Vector3(2 * isReverse, 0, 2 * isReverse * freeze);
+				}else {
+					GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 3 * isReverse * freeze);
+				}
 			}
 			else if (Input.GetKey("s")) {
-				GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -3 * isReverse * freeze);
+				
 				status = 1 * isReverse;
 				isMoving = true;
+				if(Input.GetKey("a")){
+					GetComponent<Rigidbody>().velocity = new Vector3(-2 * isReverse, 0, -2 * isReverse * freeze);
+				}else if(Input.GetKey("d")){
+					GetComponent<Rigidbody>().velocity = new Vector3(2 * isReverse, 0, -2 * isReverse * freeze);
+				}else {
+					GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -3 * isReverse * freeze);
+				}
 			}
 			else if (Input.GetKey("a")) {
-				GetComponent<Rigidbody>().velocity = new Vector3(-3 * isReverse * freeze, 0, 0);
+				
 				status = 2 * isReverse;
 				isMoving = true;
+				if(Input.GetKey("w")){
+					GetComponent<Rigidbody>().velocity = new Vector3(-2 * isReverse, 0, 2 * isReverse * freeze);
+				}else if(Input.GetKey("s")){
+					GetComponent<Rigidbody>().velocity = new Vector3(-2 * isReverse, 0, -2 * isReverse * freeze);
+				}else {
+					GetComponent<Rigidbody>().velocity = new Vector3(-3 * isReverse * freeze, 0, 0);
+				}
 			}
 			else if (Input.GetKey("d")) {
 				GetComponent<Rigidbody>().velocity = new Vector3(3 * isReverse * freeze, 0, 0);
 				status = -2 * isReverse;
 				isMoving = true;
+				if(Input.GetKey("w")){
+					GetComponent<Rigidbody>().velocity = new Vector3(2 * isReverse, 0, 2 * isReverse * freeze);
+				}else if(Input.GetKey("s")){
+					GetComponent<Rigidbody>().velocity = new Vector3(2 * isReverse, 0, -2 * isReverse * freeze);
+				}else {
+					GetComponent<Rigidbody>().velocity = new Vector3(3 * isReverse * freeze, 0, 0);
+				}
 			}
 			else {
 				//status = 0;
@@ -103,7 +139,12 @@ public class playerMovement : MonoBehaviour
 			}
 			
 		}
-		
+		if(Input.GetKey("y")){
+			GetComponent<Rigidbody>().AddForce(0,0,-100);
+			GetComponent<Rigidbody>().AddForce(0,0,100);
+			GetComponent<Rigidbody>().AddForce(100,0,0);
+			GetComponent<Rigidbody>().AddForce(-100,0,0);
+		}
 		if (freeze == 1 && canAct && isMoving) {
 			if (isWaterScene) WaterSoundManagerScript.PlaySound();
 			else EarthSoundManager.PlaySound();
@@ -114,37 +155,42 @@ public class playerMovement : MonoBehaviour
     }
 	
 	public void pushBack(){
+		if(cooldown == true){
+			return;
+		}else{
+			cooldown = true;
+		}
 		Debug.Log(status);
-		GetComponent<Rigidbody>().transform.position = old_pos;
-		timer = 0;
+		
+		
 		collide = true;
-		freeze = 0;
+		
+		recorder = timer;
 		switch(status){
 			case -1:
 				isMoving = false;
-				GetComponent<Rigidbody>().AddForce(0,0,-50);
+				GetComponent<Rigidbody>().AddForce(0,0,-100);
 				Debug.Log(-1);
 				break;
 			case 1:
 				isMoving = false;
-				GetComponent<Rigidbody>().AddForce(0,0,50);
+				GetComponent<Rigidbody>().AddForce(0,0,100);
 				Debug.Log(1);
 				break;
 			case -2:
 				isMoving = false;
-				GetComponent<Rigidbody>().AddForce(-50,0,0);
+				GetComponent<Rigidbody>().AddForce(-100,0,0);
 				Debug.Log(-2);
 				break;
 			case 2:
 				isMoving = false;
-				GetComponent<Rigidbody>().AddForce(50,0,0);
+				GetComponent<Rigidbody>().AddForce(100,0,0);
 				Debug.Log(2);
 				break;
 			default:
 				break;
 		}
-		collide = false;
-		freeze = 1;
+		
 	}
 }
 

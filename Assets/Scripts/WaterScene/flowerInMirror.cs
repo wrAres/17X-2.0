@@ -50,16 +50,11 @@ public class flowerInMirror : MonoBehaviour
 				player.GetComponent<playerMovement>().isReverse = 1;
 				player.GetComponent<playerMovement>().startPosition = 1;
 				Destroy(mirror);
-			//	TipsDialog.PrintDialog("Break Mirror");
+				TipsDialog.PrintDialog("Break Mirror");
 			}
 		} else {
-		//	TipsDialog.PrintDialog("Mirror no effect");
+			TipsDialog.PrintDialog("Mirror no effect");
 		}
-	}
-	
-	void OnMouseDown(){
-		Debug.Log("!!!");
-		ClickMirror();
 	}
 		
 }

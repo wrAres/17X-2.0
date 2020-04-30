@@ -2,39 +2,40 @@ River
 I bet it’s really deep and I don’t know how to swim.
 ---
 Earth Key
-I feel a strong sense of the combination of Yin and Yang on this =key. But what is it used for?
+I feel a strong sense of the combination of Yin and Yang from this =key. But what is it used for?
 Oh, wait! I almost forgot an important thing. 
-In such an unknown place, I need to have my “weapon” in hands =        -- Spelltree.
-It should be in my gourd. I used to store everything in my gourd.=【Click and drag the 'SpelltreeItem' out】
+In such an unknown place, I need to have my “weapon” in hands =        -- SpelltreeItem.
+It should be in my gourd. I used to store everything in my gourd.
+【Press 'B' or click the gourd to open the backpack】=【Click and drag the 'SpelltreeItem' out】
 ---
 Lobby
 Wow! An Eight-Trigram-Atlas! I feel the strong energies of the other =four elements except Earth come from four different directions. 
-According to what my teacher taught me, Water was the first =element generated in the world. 
+According to what my master taught me, Water was the first =element generated in the world. 
 Maybe I can go check the Water energy first. 
 ---
 Spelltree 1
 All talisman wizards have their own Spelltree pages that record =spells they have learned in the past. 
-We draw those spell-characters in the talisman to cast a specific =spell.
+We draw those elements-characters in the talisman to cast a =specific spell.
 ---
 Spelltree 2
-Oh no! My Spelltree is covered by some shells and I somehow =cannot remember mostly anything about my spells. 
+That's weird. There can't be nothing on my Spelltree! I somehow =cannot remember mostly anything about my spells. 
 Something must be wrong! I must find the way out of here.
 ---
 Talisman 1
-… I … I just felt like some of my memories have come back. 
+...I ...I just felt like some of my memories have come back. 
 A simple spell would be able to let me cross the river.
-【Check the Spelltree first】=【Press ‘SPACE’ to open and close the talisman】
+【Check the Spelltree first】=【Press ‘T’ to open and close the talisman】
 ---
 Talisman 2
 What? There are two dragons entwined on my scrolls. The left one =looks like the Yellow-Dragon, the God of Earth. 
 What is he doing there? Where are my other characters? Maybe =I should try if I can still use the talisman…
-【Click and Drag characters into dotted lines Boxes on the talisman】
-【Press 'ENTER' to finish drawing the talisman】=【Press 'DELETE' to erase characters on the talisman】
+【Left click to select elements on the scrolls】
+【Press 'G' to finish drawing the talisman】=【Press 'DELETE' to erase characters on the talisman】
 ---
 Self Introduction
-Ewww… Where am I? 
+Ewww… Where am I? =【Press 'SPACE' or click 'NEXT' to continue】
 Wasn’t I on my way finding the Five-Elements-Seal? 
-I remember I almost found it according to the map that my =teacher left for me. I must find the way out!
+I remember I almost found it according to the map that my =master left for me. I should find the way out!
 【Use ‘WSAD’ to move around】=【Use mouse to explore the world】
 ---
 EarthPortal
@@ -77,7 +78,7 @@ Flowerpot
 An ancient flowerpot. It must be older than me.
 ---
 Water Boss Door
-A wood gate with some weird decorations on it. What are their =meanings?
+A iron gate with some weird decorations on it. What are their =meanings?
 ---
 6_water-white
 That’s the first time I see such pure Water energy! They are like =thousands of Life Water I created getting together.
@@ -118,7 +119,9 @@ I am always confused about which side is the real world, =or do I live in a mirr
 ---
 Water Boss
 Qiang Yu: I am Qiang Yu, God of Water. 
-Qiang Yu: You do surprise me a lot, human. =You have earned my respect and I will give you a gift: my divination. =Let me predict your future.
+Qiang Yu: You do surprise me a lot, human. 
+Qiang Yu: You have earned my respect and I will give you a gift.
+Qiang Yu: Let me predict your future.
 … … 
 … …
 … …
@@ -156,4 +159,16 @@ Zoom In Active
 ---
 Moving Puzzle Tip
 【Use arrow keys to move puzzle pieces】
+---
+Rock1
+Hard rocks.
+---
+Rock2
+Hard rocks.
+---
+Rock3
+Hard rocks.
+---
+Rock4
+Hard rocks.
 ---

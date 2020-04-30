@@ -13,6 +13,7 @@ public class TipsDialog : MonoBehaviour
     public static string ToSceneName;
     public static GameObject dialog;
     public static Dictionary<string, string> dialogList;
+    public static bool nextOnClick = false;
     // public string waterGateDiscription;
     // public string riverDiscription;
     // public string talismanDescription;
@@ -70,24 +71,38 @@ public class TipsDialog : MonoBehaviour
         dialogList.Add("wind (6)", "EarthGroundDescription");
         dialogList.Add("wind (7)", "EarthGroundDescription");
         dialogList.Add("Water Boss", "EarthGroundDescription");
+        dialogList.Add("Rock1", "EarthGroundDescription");
+        dialogList.Add("Rock2", "EarthGroundDescription");
+        dialogList.Add("Rock3", "EarthGroundDescription");
+        dialogList.Add("Rock4", "EarthGroundDescription");
         dialog.SetActive(false);
     }
 
      void Update()
      {
-         if (Input.GetKeyDown(KeyCode.Space))
-         {
-             if(!NextPage()) dialog.SetActive(false);
-         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if(!NextPage()) dialog.SetActive(false);
+        }
+        if ((Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space)) && nextOnClick)
+        {
+            print("up space");
+            GameObject.Find("Next Button").GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button");
+            nextOnClick = false;
+        }
      }
 
     public static bool NextPage() {
+        GameObject nextButton = GameObject.Find("Next Button");
+        nextButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button shadow");
+        nextOnClick = true;
         // if (dialogOrDesc) {
             // print("index: " + index + ", list length: " + textlist2.Count);
             if (index > textlist2.Count - 1){
                 index = 2;
                 Debug.Log("no more tips");
                 // dialog.SetActive(false);
+                GameObject.Find("Next Button").GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button");
                 return false;
             }
             dialogText.text = textlist2[index].Replace("=", "\n");
