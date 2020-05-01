@@ -10,6 +10,7 @@ public class UISoundScript : MonoBehaviour
     public static AudioClip wrongSpellSound;
     public static AudioClip openTalismanSound;
     public static AudioClip openSpellTreeSound;
+    public static AudioClip dialogNextSound;
     static AudioSource[] audioSources;
 
     // Start is called before the first frame update
@@ -20,12 +21,14 @@ public class UISoundScript : MonoBehaviour
         wrongSpellSound = Resources.Load<AudioClip>("Sound/UI/wrong_spell");
         openTalismanSound = Resources.Load<AudioClip>("Sound/UI/open_talisman");
         openSpellTreeSound = Resources.Load<AudioClip>("Sound/UI/open_spell_tree");
+        dialogNextSound = Resources.Load<AudioClip>("Sound/UI/dialog_next");
         audioSources = this.gameObject.GetComponents<AudioSource>();
         audioSources[0].clip = backpackSound;
         audioSources[1].clip = spellTreeIconSound;
         audioSources[2].clip = wrongSpellSound;
         audioSources[3].clip = openTalismanSound;
         audioSources[4].clip = openSpellTreeSound;
+        audioSources[5].clip = dialogNextSound;
         // InvokeRepeating("PlaySound",0.001f,0.3f);
     }
 
@@ -40,7 +43,7 @@ public class UISoundScript : MonoBehaviour
     }
     public static void PlayWrongSpell()
     {
-        audioSources[2].PlayOneShot(wrongSpellSound, 0.3f);
+        audioSources[2].Play();
     }
     public static void OpenTalisman()
     {
@@ -49,5 +52,9 @@ public class UISoundScript : MonoBehaviour
     public static void OpenSpellTree()
     {
         audioSources[4].PlayOneShot(openSpellTreeSound, 0.1f);
+    }
+    public static void PlayDialogNext()
+    {
+        audioSources[5].Play();
     }
 }

@@ -82,12 +82,16 @@ public class TipsDialog : MonoBehaviour
      {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(!NextPage()) dialog.SetActive(false);
+            if(!NextPage()) {
+                dialog.SetActive(false);
+                UISoundScript.PlayDialogNext();
+            }
         }
         if ((Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space)) && nextOnClick)
         {
             GameObject.Find("Next Button").GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button");
             nextOnClick = false;
+            UISoundScript.PlayDialogNext();
         }
      }
 
