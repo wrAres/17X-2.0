@@ -121,7 +121,8 @@ public class TipsDialog : MonoBehaviour
                 GameObject.Find("Next Button").GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button");
                 return false;
             }
-            dialogText.text = textlist2[index].Replace("=", "\n");
+            //dialogText.text = textlist2[index].Replace("=", "\n");
+            dialogText.text = "haha";
             startTyping = true;
             //dialogText.text = "haha";
             index ++;
@@ -143,7 +144,8 @@ public class TipsDialog : MonoBehaviour
             }
         }
         ToSceneName = objName;
-        dialogText.text = textlist2[1].Replace("=", "\n");
+        //dialogText.text = textlist2[1].Replace("=", "\n");
+        dialogText.text = "haha";
         startTyping = true;
         //dialogText.text = "haha";
         dialog.SetActive(true);

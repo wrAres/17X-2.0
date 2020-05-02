@@ -7,7 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class TileMovement : MonoBehaviour
 {
+    //Scale: 1,1,1 | Position: 4.6, -4.5, -1
     public Sprite finalTile; // The last piece to the puzzle
+    //Scale: 0.235, 0.233, 1 | Position 4.67, -4.625, -1
+    public Animation glowingTile; // Tile to indicate last piece
+
+    public Animator animator;
 
     private Transform tileToMove;
     private Transform invisTile;
@@ -258,6 +263,21 @@ public class TileMovement : MonoBehaviour
         {
             eightTiles.active = true;
             finished = true;
+
+            //Make 9th tile visable
+            GameObject lastTile = GameObject.Find("Tile9");
+            Transform lastTileTransform = lastTile.GetComponent<Transform>();
+            lastTileTransform.localScale = new Vector3(0.235f, 0.233f, 1.0f);
+            lastTileTransform.position = new Vector3(4.67f, -4.625f, -1.0f);
+
+            //lastTile.GetComponent<SpriteRenderer>().sprite = finalTile;
+            var tempColor = lastTile.GetComponent<SpriteRenderer>().color;
+            tempColor.a = 1.0f;
+            lastTile.GetComponent<SpriteRenderer>().color = tempColor;
+
+            animator.SetBool("Missing9th", true);
+
+            Debug.Log("Did the glow thing");
         }
     }
 
@@ -278,10 +298,16 @@ public class TileMovement : MonoBehaviour
             fullPicture.active = true;
             // TODO: Implement element combination to make last piece of puzzle
             // For now spawn in last piece
+            animator.SetBool("Missing9th", false);
+            animator.SetBool("FullPicDone", true);
+
             GameObject lastTile = GameObject.Find("Tile9");
-            lastTile.GetComponent<SpriteRenderer>().sprite = finalTile;
+            /*Transform lastTileTransform = lastTile.GetComponent<Transform>();
+            lastTileTransform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            lastTileTransform.position = new Vector3(4.6f, -4.5f, -1.0f);
+            lastTile.GetComponent<SpriteRenderer>().sprite = finalTile;*/
             var tempColor = lastTile.GetComponent<SpriteRenderer>().color;
-            tempColor.a = 1.0f;
+            tempColor.a = 0.0f;
             lastTile.GetComponent<SpriteRenderer>().color = tempColor;
             // Debug.Log("Finished Puzzle");
             // Debug.Log("Number of moves: " + AIDataManager.movingPuzzleMoves);
@@ -394,7 +420,7 @@ public class TileMovement : MonoBehaviour
             }
         }
 
-        // Debug.Log(moveSet);
+        Debug.Log(moveSet);
 
         // if (solution) Debug.Log("Solvable");
         // else Debug.Log("No solution");
