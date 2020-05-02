@@ -14,6 +14,11 @@ public class TipsDialog : MonoBehaviour
     public static GameObject dialog;
     public static Dictionary<string, string> dialogList;
     public static bool nextOnClick = false;
+
+    public string sentence;
+    public static bool startTyping;
+    public float textspeed;
+    
     // public string waterGateDiscription;
     // public string riverDiscription;
     // public string talismanDescription;
@@ -80,6 +85,14 @@ public class TipsDialog : MonoBehaviour
 
      void Update()
      {
+        sentence = null;
+        if (startTyping){
+            //Stops the previous sentence
+            StopAllCoroutines();    
+            sentence = GameObject.Find("Dialog Text").GetComponent<Text>().text;
+            StartCoroutine(Typing(sentence));
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if(!NextPage()) {
@@ -109,6 +122,7 @@ public class TipsDialog : MonoBehaviour
                 return false;
             }
             dialogText.text = textlist2[index].Replace("=", "\n");
+            startTyping = true;
             //dialogText.text = "haha";
             index ++;
             return true;
@@ -130,6 +144,7 @@ public class TipsDialog : MonoBehaviour
         }
         ToSceneName = objName;
         dialogText.text = textlist2[1].Replace("=", "\n");
+        startTyping = true;
         //dialogText.text = "haha";
         dialog.SetActive(true);
         // print("Set dialog active, index: " + index + ", list length: " + textlist2.Count);
@@ -151,5 +166,15 @@ public class TipsDialog : MonoBehaviour
         } else {
             return false; 
         }
+    }
+    
+    IEnumerator Typing(string sentences) {
+         startTyping = false;
+         dialogText.text = "";
+         //print("sentences : " + sentences);
+         foreach(char letter in sentences.ToCharArray()){
+            dialogText.text += letter;
+            yield return new WaitForSeconds(textspeed);
+         } 
     }
 }

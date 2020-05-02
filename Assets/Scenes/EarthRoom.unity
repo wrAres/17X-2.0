@@ -12342,6 +12342,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textFile: {fileID: 4900000, guid: c029e113ad7d645f6bedba5c828dcda0, type: 3}
+  sentence: 
+  textspeed: 0.01
 --- !u!114 &1116509721
 MonoBehaviour:
   m_ObjectHideFlags: 0
