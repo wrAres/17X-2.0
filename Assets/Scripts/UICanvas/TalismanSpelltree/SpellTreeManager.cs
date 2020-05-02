@@ -125,7 +125,7 @@ public class SpellTreeManager : MonoBehaviour {
                     if (i + 1 >= s.recipe.Length) break;
                     recipe.text += ", ";
                 }
-                if (s.recipe.Length <= 0) { recipe.text += "N/A"; }
+                if (s.recipe.Length <= 0) { recipe.text += "Fundamental Element"; }
             }
             else {
                 desc.text = s.knownDes;
