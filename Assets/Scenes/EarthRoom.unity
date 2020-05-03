@@ -15323,7 +15323,9 @@ MonoBehaviour:
   fall: 0
   startPosition: 0
   collide: 0
+  camera: {fileID: 873089400}
   speed: 3
+  events: 0
 --- !u!54 &1550972251
 Rigidbody:
   m_ObjectHideFlags: 0
