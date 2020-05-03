@@ -16,16 +16,16 @@ public class playerCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		float cameraY = this.transform.position.y;
-		float cameraZ = this.transform.position.z;
-        if(Input.GetAxis("Mouse ScrollWheel")>0f &&cameraY >= -0.2f ){
+		float cameraY = this.transform.localPosition.y;
+		float cameraZ = this.transform.localPosition.z;
+        if(Input.GetAxis("Mouse ScrollWheel")>0f &&cameraY <= 1.8f ){
 			this.transform.position += dy;
-			
+			Debug.Log(cameraY);
 		}
 		
-		if(Input.GetAxis("Mouse ScrollWheel")<0f && cameraY<= 2.5f ){
+		if(Input.GetAxis("Mouse ScrollWheel")<0f && cameraY>= -4.0f ){
 			this.transform.position -= dy;
-			
+			Debug.Log(cameraY);
 		}
     }
 }
