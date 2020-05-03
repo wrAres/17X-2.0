@@ -16,6 +16,7 @@ public class MirrorDoor : MonoBehaviour
     {
         timer = 0;
 		isFreezed = false;
+		this.gameObject.GetComponent<SpriteRenderer>().sprite = back;
     }
 
     // Update is called once per frame

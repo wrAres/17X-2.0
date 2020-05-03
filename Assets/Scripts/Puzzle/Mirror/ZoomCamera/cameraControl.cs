@@ -29,13 +29,15 @@ public class cameraControl : MonoBehaviour
 		
 		
         if (Input.GetKeyDown("z")&&active) {
-			zoomed.GetComponent<Rigidbody>().transform.position = new Vector3(-3,2,-14);
+			zoomed.GetComponent<Rigidbody>().transform.position = new Vector3(-3,3,-9);
 			def.enabled = !def.enabled;
 			zoomed.enabled = !zoomed.enabled;
 			if(zoomed.enabled){
 				player.GetComponent<playerMovement>().freeze = 0;
+				//player.GetComponent<playerMovement>().canAct = false;
 			}else{
 				player.GetComponent<playerMovement>().freeze = 1;
+				//player.GetComponent<playerMovement>().canAct = true;
 			}
 		}
     }

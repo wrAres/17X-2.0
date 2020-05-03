@@ -5,7 +5,7 @@ using UnityEngine;
 public class EndHallwayPuzzle : MonoBehaviour
 {
     public FloorControl bounds;
-
+	
     private void OnTriggerEnter(Collider obj)
     {
         bounds.start = false;

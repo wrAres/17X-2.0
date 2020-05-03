@@ -772,6 +772,7 @@ MonoBehaviour:
   fall: 0
   startPosition: 0
   collide: 0
+  speed: 3
 --- !u!54 &126118431
 Rigidbody:
   m_ObjectHideFlags: 0

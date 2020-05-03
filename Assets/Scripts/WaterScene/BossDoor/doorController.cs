@@ -11,6 +11,7 @@ public class doorController : MonoBehaviour
 	public Vector3 target;
 	public Vector3 axis;
 	public int angle;
+	public GameObject player;
     void Start()
     {
         open = 0;
@@ -26,6 +27,8 @@ public class doorController : MonoBehaviour
 		}
 		if(open==1&& openTime +250 > timer){
 			transform.RotateAround(target, axis, 30 * Time.deltaTime);
+		}else if(openTime+250<timer){
+			player.GetComponent<playerMovement>().events = false;
 		}
     }
 	
@@ -33,5 +36,6 @@ public class doorController : MonoBehaviour
 	public void openDoor(){
 		open = 1;
 		openTime = timer;
+		player.GetComponent<playerMovement>().events = true;
 	}
 }

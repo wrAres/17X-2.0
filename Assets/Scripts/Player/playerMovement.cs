@@ -14,7 +14,7 @@ public class playerMovement : MonoBehaviour
 	public int freeze;
 	private bool isWaterScene =>
         SceneManager.GetActiveScene().name == "scene3";
-	public bool canAct => !dialogShown && !talismanShown && !shineIcon;
+	public bool canAct => !dialogShown && !talismanShown && !shineIcon && camera.enabled &&!events;
 	public bool dialogShown =>
         FindObjectOfType<TipsDialog>() != null;
 	public bool talismanShown =>
@@ -24,11 +24,14 @@ public class playerMovement : MonoBehaviour
 	public bool fall;
 	public int startPosition;
 	public bool collide;
+	public Camera camera;
 	bool cooldown;
 	int recorder;
 	Vector3 old_pos;
 	bool isMoving;
 	int timer;
+	public float speed;
+	public bool events;
 	void Start()
 	{
 		system = GameObject.Find("TrigramManager").GetComponent<SystemTree>();
@@ -44,6 +47,7 @@ public class playerMovement : MonoBehaviour
 		collide = false;
 		recorder = 0;
 		cooldown = false;
+		events = false;
     }
 
     // Update is called once per frame
@@ -92,11 +96,11 @@ public class playerMovement : MonoBehaviour
 				status = -1 * isReverse;
 				isMoving=true;
 				if(Input.GetKey("a")){
-					GetComponent<Rigidbody>().velocity = new Vector3(-2 * isReverse, 0, 2 * isReverse * freeze);
+					GetComponent<Rigidbody>().velocity = new Vector3(-0.75f*speed * isReverse* freeze, 0, 0.75f*speed * isReverse * freeze);
 				}else if(Input.GetKey("d")){
-					GetComponent<Rigidbody>().velocity = new Vector3(2 * isReverse, 0, 2 * isReverse * freeze);
+					GetComponent<Rigidbody>().velocity = new Vector3(0.75f*speed * isReverse * freeze, 0, 0.75f * speed * isReverse * freeze);
 				}else {
-					GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 3 * isReverse * freeze);
+					GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 1 * speed * isReverse * freeze);
 				}
 			}
 			else if (Input.GetKey("s")) {
@@ -104,11 +108,11 @@ public class playerMovement : MonoBehaviour
 				status = 1 * isReverse;
 				isMoving = true;
 				if(Input.GetKey("a")){
-					GetComponent<Rigidbody>().velocity = new Vector3(-2 * isReverse, 0, -2 * isReverse * freeze);
+					GetComponent<Rigidbody>().velocity = new Vector3(-0.75f*speed * isReverse* freeze, 0, -0.75f*speed * isReverse * freeze);
 				}else if(Input.GetKey("d")){
-					GetComponent<Rigidbody>().velocity = new Vector3(2 * isReverse, 0, -2 * isReverse * freeze);
+					GetComponent<Rigidbody>().velocity = new Vector3(0.75f*speed * isReverse * freeze, 0, -0.75f * speed * isReverse * freeze);
 				}else {
-					GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -3 * isReverse * freeze);
+					GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -1 * speed * isReverse * freeze);
 				}
 			}
 			else if (Input.GetKey("a")) {
@@ -116,23 +120,23 @@ public class playerMovement : MonoBehaviour
 				status = 2 * isReverse;
 				isMoving = true;
 				if(Input.GetKey("w")){
-					GetComponent<Rigidbody>().velocity = new Vector3(-2 * isReverse, 0, 2 * isReverse * freeze);
+					GetComponent<Rigidbody>().velocity = new Vector3(-0.75f*speed * isReverse* freeze, 0, 0.75f*speed * isReverse * freeze);
 				}else if(Input.GetKey("s")){
-					GetComponent<Rigidbody>().velocity = new Vector3(-2 * isReverse, 0, -2 * isReverse * freeze);
+					GetComponent<Rigidbody>().velocity = new Vector3(-0.75f*speed * isReverse * freeze, 0, -0.75f * speed * isReverse * freeze);
 				}else {
-					GetComponent<Rigidbody>().velocity = new Vector3(-3 * isReverse * freeze, 0, 0);
+					GetComponent<Rigidbody>().velocity = new Vector3(-1 * speed * isReverse * freeze, 0, 0);
 				}
 			}
 			else if (Input.GetKey("d")) {
-				GetComponent<Rigidbody>().velocity = new Vector3(3 * isReverse * freeze, 0, 0);
+				//GetComponent<Rigidbody>().velocity = new Vector3(3 * isReverse * freeze, 0, 0);
 				status = -2 * isReverse;
 				isMoving = true;
 				if(Input.GetKey("w")){
-					GetComponent<Rigidbody>().velocity = new Vector3(2 * isReverse, 0, 2 * isReverse * freeze);
+					GetComponent<Rigidbody>().velocity = new Vector3(0.75f*speed * isReverse* freeze, 0, 0.75f*speed * isReverse * freeze);
 				}else if(Input.GetKey("s")){
-					GetComponent<Rigidbody>().velocity = new Vector3(2 * isReverse, 0, -2 * isReverse * freeze);
+					GetComponent<Rigidbody>().velocity = new Vector3(0.75f*speed * isReverse* freeze, 0, -0.75f*speed * isReverse * freeze);
 				}else {
-					GetComponent<Rigidbody>().velocity = new Vector3(3 * isReverse * freeze, 0, 0);
+					GetComponent<Rigidbody>().velocity = new Vector3(1 * speed * isReverse * freeze, 0, 0);
 				}
 			}
 			else {
