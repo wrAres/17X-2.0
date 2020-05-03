@@ -14,8 +14,7 @@ public class TipsDialog : MonoBehaviour
     public static GameObject dialog;
     public static Dictionary<string, string> dialogList;
     public static bool nextOnClick = false;
-
-    public string sentence;
+    public static string Line;
     public static bool startTyping;
     public float textspeed;
     
@@ -85,17 +84,16 @@ public class TipsDialog : MonoBehaviour
 
      void Update()
      {
-        sentence = null;
         if (startTyping){
             //Stops the previous sentence
-            StopAllCoroutines();    
-            sentence = GameObject.Find("Dialog Text").GetComponent<Text>().text;
-            StartCoroutine(Typing(sentence));
+            StopAllCoroutines(); 
+            StartCoroutine(Typing(Line));
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if(!NextPage()) {
+                dialogText.text = "";
                 dialog.SetActive(false);
                 UISoundScript.PlayDialogNext();
             }
@@ -118,10 +116,11 @@ public class TipsDialog : MonoBehaviour
                 index = 2;
                 // Debug.Log("no more tips");
                 // dialog.SetActive(false);
+                dialogText.text = "";
                 GameObject.Find("Next Button").GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button");
                 return false;
             }
-            dialogText.text = textlist2[index].Replace("=", "\n");
+            Line = textlist2[index].Replace("=", "\n");
             //dialogText.text = "haha";
             startTyping = true;
             index ++;
@@ -143,7 +142,7 @@ public class TipsDialog : MonoBehaviour
             }
         }
         ToSceneName = objName;
-        dialogText.text = textlist2[1].Replace("=", "\n");
+        Line = textlist2[1].Replace("=", "\n");
         //dialogText.text = "haha";
         startTyping = true;
         dialog.SetActive(true);
@@ -157,6 +156,7 @@ public class TipsDialog : MonoBehaviour
     // }
 
     public static void HideTextBox() {
+        dialogText.text = "";
         dialog.SetActive(false);
     }
 
