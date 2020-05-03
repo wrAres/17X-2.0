@@ -23,7 +23,7 @@ public class mirrorCamera : MonoBehaviour
             GetComponent<Rigidbody>().velocity = new Vector3(3, 0, 0);
         }
 		if(Input.GetKey("up")){
-			GetComponent<Rigidbody>().transform.position = new Vector3(-9,2,-8);
+			GetComponent<Rigidbody>().transform.position = new Vector3(-9,2,-7);
 		}
 		if(Input.GetKey("down")){
 			GetComponent<Rigidbody>().transform.position = new Vector3(-3,3,-9);

@@ -3622,7 +3622,7 @@ MonoBehaviour:
   target: {x: 1.05, y: 0, z: -1.16}
   axis: {x: 0, y: 1, z: 0}
   angle: 40
-  player: {fileID: 0}
+  player: {fileID: 2124352805}
 --- !u!212 &419909227
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6012,7 +6012,7 @@ MonoBehaviour:
   target: {x: -5.75, y: 0, z: -1.06}
   axis: {x: 0, y: -1, z: 0}
   angle: 40
-  player: {fileID: 0}
+  player: {fileID: 2124352805}
 --- !u!212 &708814562
 SpriteRenderer:
   m_ObjectHideFlags: 0
