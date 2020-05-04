@@ -98,11 +98,13 @@ public class TipsDialog : MonoBehaviour
                 UISoundScript.PlayDialogNext();
             }
         }
-        if ((Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space)) && nextOnClick)
-        {
-            GameObject.Find("Next Button").GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button");
-            nextOnClick = false;
-            UISoundScript.PlayDialogNext();
+
+        if ((Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space)) && nextOnClick) {
+            if (GameObject.Find("Next Button")) { 
+                GameObject.Find("Next Button").GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button");
+                nextOnClick = false;
+                UISoundScript.PlayDialogNext();
+            }
         }
      }
 

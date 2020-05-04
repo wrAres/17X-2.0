@@ -23,13 +23,13 @@ public class Spell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
     private Sprite ogSprite;
     private Vector3 ogPos, ogScale;
     private bool isNew = true;
-
+    
     public void OnPointerEnter(PointerEventData eventData) {
         spellTreeDisp.UpdateTextBox(this);
         Vector2 thisPosition = this.gameObject.transform.parent.GetComponent<RectTransform>().anchoredPosition;
         // print("position: " + thisPosition);
         
-        if (thisPosition.x >= 0)    { thisPosition.x -= 330f; }
+        if (thisPosition.x >= 100)    { thisPosition.x -= 330f; }
         else                        { thisPosition.x += 330f; }
         if (thisPosition.y >= 0)    { thisPosition.y -= 200f; }
         else                        { thisPosition.y += 200f; }
