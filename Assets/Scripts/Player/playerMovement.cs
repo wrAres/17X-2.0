@@ -25,6 +25,7 @@ public class playerMovement : MonoBehaviour
 	public int startPosition;
 	public bool collide;
 	public Camera camera;
+	int direction;
 	bool cooldown;
 	int recorder;
 	Vector3 old_pos;
@@ -48,6 +49,7 @@ public class playerMovement : MonoBehaviour
 		recorder = 0;
 		cooldown = false;
 		events = false;
+		direction = 0;
     }
 
     // Update is called once per frame
@@ -59,9 +61,10 @@ public class playerMovement : MonoBehaviour
 			isMoving = false;
 		}*/
 		timer++;
-		if(recorder + 20 <= timer && collide == true){
+		if(recorder + 100 <= timer && collide == true){
 			collide = false;
 			cooldown = false;
+			GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
 		}
 		if(timer%30 ==0){
 			old_pos = transform.position;
@@ -92,49 +95,62 @@ public class playerMovement : MonoBehaviour
 		ani.SetBool("isMoving",isMoving);
 		if (canAct&&!fall&&!collide) {
 			if (Input.GetKey("w")) {
-				
+				direction = -1 * isReverse;
 				status = -1 * isReverse;
 				isMoving=true;
 				if(Input.GetKey("a")){
 					GetComponent<Rigidbody>().velocity = new Vector3(-0.75f*speed * isReverse* freeze, 0, 0.75f*speed * isReverse * freeze);
+					status = 2 * isReverse;
+					direction = -3* isReverse;
 				}else if(Input.GetKey("d")){
 					GetComponent<Rigidbody>().velocity = new Vector3(0.75f*speed * isReverse * freeze, 0, 0.75f * speed * isReverse * freeze);
+					status = -2 * isReverse;
+					direction = 4* isReverse;
 				}else {
 					GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 1 * speed * isReverse * freeze);
 				}
 			}
 			else if (Input.GetKey("s")) {
-				
+				direction = 1 * isReverse;
 				status = 1 * isReverse;
 				isMoving = true;
 				if(Input.GetKey("a")){
 					GetComponent<Rigidbody>().velocity = new Vector3(-0.75f*speed * isReverse* freeze, 0, -0.75f*speed * isReverse * freeze);
+					status = 2 * isReverse;
+					direction = -4* isReverse;
 				}else if(Input.GetKey("d")){
 					GetComponent<Rigidbody>().velocity = new Vector3(0.75f*speed * isReverse * freeze, 0, -0.75f * speed * isReverse * freeze);
+					status = -2 * isReverse;
+					direction = 3* isReverse;
 				}else {
 					GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -1 * speed * isReverse * freeze);
 				}
 			}
 			else if (Input.GetKey("a")) {
-				
+				direction = 2 * isReverse;
 				status = 2 * isReverse;
 				isMoving = true;
 				if(Input.GetKey("w")){
 					GetComponent<Rigidbody>().velocity = new Vector3(-0.75f*speed * isReverse* freeze, 0, 0.75f*speed * isReverse * freeze);
+					direction = -3* isReverse;
 				}else if(Input.GetKey("s")){
 					GetComponent<Rigidbody>().velocity = new Vector3(-0.75f*speed * isReverse * freeze, 0, -0.75f * speed * isReverse * freeze);
+					direction = -4* isReverse;
 				}else {
 					GetComponent<Rigidbody>().velocity = new Vector3(-1 * speed * isReverse * freeze, 0, 0);
 				}
 			}
 			else if (Input.GetKey("d")) {
 				//GetComponent<Rigidbody>().velocity = new Vector3(3 * isReverse * freeze, 0, 0);
+				direction = -2 * isReverse;
 				status = -2 * isReverse;
 				isMoving = true;
 				if(Input.GetKey("w")){
 					GetComponent<Rigidbody>().velocity = new Vector3(0.75f*speed * isReverse* freeze, 0, 0.75f*speed * isReverse * freeze);
+					direction = 4* isReverse;
 				}else if(Input.GetKey("s")){
 					GetComponent<Rigidbody>().velocity = new Vector3(0.75f*speed * isReverse* freeze, 0, -0.75f*speed * isReverse * freeze);
+					direction = 3* isReverse;
 				}else {
 					GetComponent<Rigidbody>().velocity = new Vector3(1 * speed * isReverse * freeze, 0, 0);
 				}
@@ -145,12 +161,7 @@ public class playerMovement : MonoBehaviour
 			}
 			
 		}
-		if(Input.GetKey("y")){
-			GetComponent<Rigidbody>().AddForce(0,0,-100);
-			GetComponent<Rigidbody>().AddForce(0,0,100);
-			GetComponent<Rigidbody>().AddForce(100,0,0);
-			GetComponent<Rigidbody>().AddForce(-100,0,0);
-		}
+		
 		if (freeze == 1 && canAct && isMoving) {
 			if (isWaterScene) WaterSoundManagerScript.PlaySound();
 			else EarthSoundManager.PlaySound();
@@ -172,26 +183,42 @@ public class playerMovement : MonoBehaviour
 		collide = true;
 		
 		recorder = timer;
-		switch(status){
+		switch(direction){
 			case -1:
 				isMoving = false;
-				GetComponent<Rigidbody>().AddForce(0,0,-100);
+				GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -5);
 				// Debug.Log(-1);
 				break;
 			case 1:
 				isMoving = false;
-				GetComponent<Rigidbody>().AddForce(0,0,100);
+				GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 5);
 				// Debug.Log(1);
 				break;
 			case -2:
 				isMoving = false;
-				GetComponent<Rigidbody>().AddForce(-100,0,0);
+				GetComponent<Rigidbody>().velocity = new Vector3(-5, 0, 0);
 				// Debug.Log(-2);
 				break;
 			case 2:
 				isMoving = false;
-				GetComponent<Rigidbody>().AddForce(100,0,0);
+				GetComponent<Rigidbody>().velocity = new Vector3(5, 0, 0);
 				// Debug.Log(2);
+				break;
+			case -3:
+				isMoving = false;
+				GetComponent<Rigidbody>().velocity = new Vector3(3, 0, -3);
+				break;
+			case 3:
+				isMoving = false;
+				GetComponent<Rigidbody>().velocity = new Vector3(-3, 0, 3);
+				break;
+			case -4:
+				isMoving = false;
+				GetComponent<Rigidbody>().velocity = new Vector3(3, 0, 3);
+				break;
+			case 4:
+				isMoving = false;
+				GetComponent<Rigidbody>().velocity = new Vector3(-3, 0, -3);
 				break;
 			default:
 				break;
