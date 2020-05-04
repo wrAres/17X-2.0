@@ -16,7 +16,7 @@ public class Spell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
     public string knownResp;
     public string knownDes, unlockedDes;
     public TalisDrag.Elements element;
-    public Sprite locked;
+    public GameObject locked;
     public Image newDisp;
     public Sprite glow;
 
@@ -48,12 +48,17 @@ public class Spell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
         ogSprite = GetComponent<Image>().sprite;
 
         if (curState == SpellState.LOCKED) {
-            transform.localPosition = new Vector3(0, 0, 0);
-            transform.localScale = new Vector3(1,1,1);
-            GetComponent<Image>().sprite = locked;
+            locked.SetActive(true);
+            //transform.localPosition = new Vector3(0, 0, 0);
+            //transform.localScale = new Vector3(1,1,1);
+            //GetComponent<Image>().sprite = locked;
+        }
+        else {
+            locked.SetActive(false);
+            print("called");
         }
     }
-
+    
     // Update is called once per frame
     void Update() {
         
@@ -79,5 +84,6 @@ public class Spell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
         if (curState == SpellState.LOCKED) newDisp.enabled = false;
         else { newDisp.enabled = isNew; }
         
+        locked.SetActive(curState == SpellState.LOCKED);
     }
 }
