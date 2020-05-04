@@ -564,7 +564,7 @@ GameObject:
   - component: {fileID: 21082848}
   - component: {fileID: 21082847}
   m_Layer: 5
-  m_Name: wood (1)
+  m_Name: new
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
