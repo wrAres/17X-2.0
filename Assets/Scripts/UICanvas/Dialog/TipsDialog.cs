@@ -16,6 +16,8 @@ public class TipsDialog : MonoBehaviour
     public static bool nextOnClick = false;
     public static string Line;
     public static bool startTyping;
+    public static bool isTyping = false;
+    public static bool printfull = false;
     public float textspeed;
     
     // public string waterGateDiscription;
@@ -89,22 +91,35 @@ public class TipsDialog : MonoBehaviour
             StopAllCoroutines(); 
             StartCoroutine(Typing(Line));
         }
+        // type full text if click next
+        if (isTyping && printfull ){
+                StopAllCoroutines(); 
+                dialogText.text = "";
+                dialogText.text = Line;
+                isTyping = false;
+                printfull = false;
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(!NextPage()) {
+            // type full text if press space
+            if (isTyping){
+                StopAllCoroutines(); 
+                dialogText.text = "";
+                dialogText.text = Line;
+                isTyping = false;
+                UISoundScript.PlayDialogNext();
+        } else if(!NextPage()) {
                 dialogText.text = "";
                 dialog.SetActive(false);
                 UISoundScript.PlayDialogNext();
             }
         }
-
-        if ((Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space)) && nextOnClick) {
-            if (GameObject.Find("Next Button")) { 
-                GameObject.Find("Next Button").GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button");
-                nextOnClick = false;
-                UISoundScript.PlayDialogNext();
-            }
+        if ((Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space)) && nextOnClick)
+        {
+            GameObject.Find("Next Button").GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button");
+            nextOnClick = false;
+            UISoundScript.PlayDialogNext();
         }
      }
 
@@ -170,13 +185,19 @@ public class TipsDialog : MonoBehaviour
         }
     }
     
+    public static void PrintFullDialog(){
+        printfull = true;
+    }
+
     IEnumerator Typing(string sentences) {
          startTyping = false;
+         isTyping = true;
          dialogText.text = "";
          //print("sentences : " + sentences);
          foreach(char letter in sentences.ToCharArray()){
             dialogText.text += letter;
             yield return new WaitForSeconds(textspeed);
-         } 
+         }
+         isTyping = false; 
     }
 }
