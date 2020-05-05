@@ -227,7 +227,7 @@ public class Item : MonoBehaviour
         else if (item.CompareTo("8 Trigram Portal") == 0 && position.CompareTo("atlasmap2") == 0){
             GameObject portal = GameObject.Find("WaterToEarthPortal");
             portal.GetComponent<SpriteRenderer>().enabled = true;
-            portal.transform.position = hitPoint + new Vector3(0.0f, 1f, 0);
+            portal.transform.position = hitPoint + new Vector3(0.0f, 0.6f, 0);
         } 
         // else if (spell){
         //     GameObject spell = new GameObject(item);

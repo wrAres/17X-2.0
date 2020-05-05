@@ -1232,7 +1232,7 @@ MonoBehaviour:
   spellName: Life Water
   recipe: 020000000200000002000000
   level: 3
-  knownResp: 'Recipe: water*?'
+  knownResp: "Recipe: water \xD7 ?"
   knownDes: 'A drop of water made by talismam. It''s full of energy after created
     by Qi of water elements. '
   unlockedDes: A drop of water made by talismam. It's full of energy after created
@@ -2542,7 +2542,7 @@ MonoBehaviour:
   spellName: Moon
   recipe: 0200000002000000
   level: 2
-  knownResp: 'Recipe: ?, ?'
+  knownResp: "Recipe: ? \xD7 ?"
   knownDes: It's said that moon is the represent of the most Yin element.
   unlockedDes: It's said that moon is the most Yin element.
   element: 8
@@ -3804,7 +3804,7 @@ MonoBehaviour:
   spellName: Glowing Sun
   recipe: 040000000600000006000000
   level: 3
-  knownResp: 'Recipe: ?, sun*?'
+  knownResp: "Recipe: ?, sun \xD7 ?"
   knownDes: A entity of sun made by talismam. It's hot.
   unlockedDes: A entity of sun made by talismam. It's hot and excatly functioning
     as the real sun.
@@ -4255,7 +4255,7 @@ MonoBehaviour:
   spellName: Board
   recipe: 040000000400000002000000
   level: 3
-  knownResp: 'Recipe: ?*?, earth'
+  knownResp: "Recipe: ? \xD7 ?, earth"
   knownDes: 'A piece of board made by talismam. It became concrete after combining
     two kinds of Qi. '
   unlockedDes: A piece of board made by talismam. It became concrete after combining
@@ -12153,7 +12153,7 @@ MonoBehaviour:
   spellName: Firewood
   recipe: 010000000100000001000000
   level: 3
-  knownResp: 'Recipe: wood*?'
+  knownResp: "Recipe: wood \xD7 ?"
   knownDes: 'A brunch of wood made by talismam. Yes, it can be used to setup fire. '
   unlockedDes: A brunch of wood made by talismam. Yes, it can be used to setup fire.
   element: 9
@@ -18651,10 +18651,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   earthKey: {x: 48, y: 72}
-  dirt: {x: 130, y: 130}
-  board: {x: 240, y: 280}
+  dirt: {x: 140, y: 130}
+  board: {x: 435, y: 550}
   lifeWater: {x: 60, y: 35}
-  waterSeed: {x: 20, y: 20}
+  waterSeed: {x: 35, y: 35}
   earthPortal: {x: 200, y: 120}
   firewood: {x: 130, y: 130}
   glowingSun: {x: 130, y: 130}
@@ -18844,7 +18844,7 @@ MonoBehaviour:
   spellName: Dirt
   recipe: 040000000400000004000000
   level: 3
-  knownResp: 'Recipe: earth*?'
+  knownResp: "Recipe: earth \xD7 ?"
   knownDes: A block of dirt made by talisman. It became dense after created by Qi
     of earth elements.
   unlockedDes: A block of dirt made by talisman. It became dense and concrete after
@@ -19503,7 +19503,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 3.8, y: -5.3}
-  m_SizeDelta: {x: 110, y: 110}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1814573639
 MonoBehaviour:
@@ -19536,7 +19536,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c156804c5c8794704bed0dd361027666, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0755ac2a092d84e28a8fd5303808325e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -19563,7 +19563,7 @@ MonoBehaviour:
   spellName: 8 Trigram Portal
   recipe: 040000000700000007000000
   level: 3
-  knownResp: 'Recipe: wind*?, ?'
+  knownResp: "Recipe: wind \xD7 ?, ?"
   knownDes: Create a scroll that can bring you to everywhere. Only human could enter
     it since the scroll has your own energy.
   unlockedDes: Create a scroll that can bring you to everywhere. Only human could
@@ -21773,7 +21773,7 @@ MonoBehaviour:
   spellName: Sun
   recipe: 0300000003000000
   level: 2
-  knownResp: 'Recipe: ?, ?'
+  knownResp: "Recipe: ? \xD7 ?"
   knownDes: It's said that sun is the represent of the most Yang element.
   unlockedDes: It's said that sun is the most Yang element.
   element: 6

@@ -31,6 +31,7 @@ public class PickObject : MonoBehaviour
             TipsDialog.PrintDialog("Self Introduction");
         }
         else if (SceneManager.GetActiveScene().name == "scene0"){
+            GameObject.Find("EarthSoundManager").GetComponents<AudioSource>()[2].volume = 0.3f;
             Item.getGroundNames();
             EarthSoundManager.StopPlaySound();
             if (DontDestroyVariables.firstTimeLobbyFlag){
@@ -50,7 +51,7 @@ public class PickObject : MonoBehaviour
             Item.getGroundNames();
             DontDestroyVariables.enterWaterRoom = true;
             Item.flowerpot = GameObject.Find("Flowerpot");
-            GameObject.Find("EarthSoundManager").SetActive(false);
+            GameObject.Find("EarthSoundManager").GetComponents<AudioSource>()[2].volume = 0f;
         } 
     }
 

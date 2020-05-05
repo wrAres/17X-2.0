@@ -135,19 +135,20 @@ public class Show : MonoBehaviour
                 }
                 else if (name.CompareTo("Next Button") == 0) {
                     pick.descShow = false;
+                    TipsDialog.ChangeNextButton();
                     if (TipsDialog.isTyping){ // type full text
                         TipsDialog.PrintFullDialog();
                     } else {
-                    bool textActive = TipsDialog.NextPage();
-                    bool CalledScene = TipsDialog.CallScene();
-                    // print("text act" + textActive);
-                    GameObject.Find("Dialog Box").SetActive(textActive);
-                    // check for water boss-->credits scene
-                    if (!textActive && CalledScene) {
-                        Invoke("ToLoadScene", 5);
-                        print("Active Credits Scene in 5 secs");
+                        bool textActive = TipsDialog.NextPage();
+                        bool CalledScene = TipsDialog.CallScene();
+                        // print("text act" + textActive);
+                        GameObject.Find("Dialog Box").SetActive(textActive);
+                        // check for water boss-->credits scene
+                        if (!textActive && CalledScene) {
+                            Invoke("ToLoadScene", 5);
+                            print("Active Credits Scene in 5 secs");
+                        }
                     }
-                }
                 }
             }
             if (resultSize == 0)

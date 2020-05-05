@@ -69,7 +69,7 @@ public class Backpack : MonoBehaviour
             item_transform.anchoredPosition = item_transform.anchoredPosition + new Vector2(0, 5);
             item_transform.sizeDelta = new Vector2(45, 40);
         } else if (name.CompareTo("Taiji Key") == 0) {
-            item_transform.sizeDelta = new Vector2(180, 120);
+            item_transform.sizeDelta = new Vector2(80, 80);
         } else if (name.CompareTo("Earth Key") == 0) {
             item_transform.sizeDelta = new Vector2(40f, 60f);
         } else if (name.CompareTo("8 Trigram Portal") == 0) {

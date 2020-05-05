@@ -102,31 +102,33 @@ public class TipsDialog : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            ChangeNextButton();
             // type full text if press space
             if (isTyping){
                 StopAllCoroutines(); 
                 dialogText.text = "";
                 dialogText.text = Line;
                 isTyping = false;
-                UISoundScript.PlayDialogNext();
-        } else if(!NextPage()) {
+            } else if(!NextPage()) {
                 dialogText.text = "";
                 dialog.SetActive(false);
-                UISoundScript.PlayDialogNext();
             }
         }
         if ((Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space)) && nextOnClick)
         {
             GameObject.Find("Next Button").GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button");
             nextOnClick = false;
-            UISoundScript.PlayDialogNext();
         }
      }
 
-    public static bool NextPage() {
+    public static void ChangeNextButton() {
         GameObject nextButton = GameObject.Find("Next Button");
         nextButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button shadow");
         nextOnClick = true;
+        UISoundScript.PlayDialogNext();
+    }
+
+    public static bool NextPage() {
         // if (dialogOrDesc) {
             // print("index: " + index + ", list length: " + textlist2.Count);
             if (index > textlist2.Count - 1){

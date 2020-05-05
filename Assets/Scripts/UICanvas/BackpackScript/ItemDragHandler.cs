@@ -54,7 +54,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
         else if (name.CompareTo("Water Seed") == 0) {
             item_transform.sizeDelta = variables.waterSeed;
         }
-        else if (name.CompareTo("Earth Portal") == 0) {
+        else if (name.CompareTo("8 Trigram Portal") == 0) {
             item_transform.sizeDelta = variables.earthPortal;
         }
         else if (name.CompareTo("Glowing Sun") == 0) {
