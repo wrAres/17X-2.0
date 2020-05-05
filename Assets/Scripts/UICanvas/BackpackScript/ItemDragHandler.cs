@@ -8,6 +8,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
     public static bool canPlaceItem = true;
     public static Vector3 previousPosition = new Vector3(0,0,0);
     public static GameObject itemOnGround;
+    public static Vector2 originalSize = new Vector2(0f, 0f);
     public static float x;
     public static bool holdItem;
 
@@ -33,6 +34,40 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
         if (!dialogShown) {
             itemOnGround.transform.position = Input.mousePosition;
             textbox.SetActive(false);
+        }
+        RectTransform item_transform = itemOnGround.GetComponent<RectTransform>();
+        string name = itemOnGround.name;
+        DragSizes variables = GameObject.Find("Backpack_Roll").GetComponent<DragSizes>();
+        if (name.CompareTo("Earth Key") == 0) {
+            item_transform.sizeDelta = variables.earthKey;
+            // new Vector2(48f, 72f);
+        } 
+        else if (name.CompareTo("Dirt") == 0) {
+            item_transform.sizeDelta = variables.dirt;
+        }
+        else if (name.CompareTo("Life Water") == 0) {
+            item_transform.sizeDelta = variables.lifeWater;
+        }
+        else if (name.CompareTo("Board") == 0) {
+            item_transform.sizeDelta = variables.board;
+        }
+        else if (name.CompareTo("Water Seed") == 0) {
+            item_transform.sizeDelta = variables.waterSeed;
+        }
+        else if (name.CompareTo("Earth Portal") == 0) {
+            item_transform.sizeDelta = variables.earthPortal;
+        }
+        else if (name.CompareTo("Glowing Sun") == 0) {
+            item_transform.sizeDelta = variables.glowingSun;
+        }
+        else if (name.CompareTo("Firewood") == 0) {
+            item_transform.sizeDelta = variables.firewood;
+        }
+        else if (name.CompareTo("Taiji Key") == 0) {
+            item_transform.sizeDelta = variables.taijiKey;
+        }
+        else {
+            item_transform.sizeDelta = variables.elseSize;
         }
     }
 
@@ -81,7 +116,8 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
                 } else {
                     UISoundScript.PlayWrongSpell();
                     AIDataManager.wrongItemPlacementCount += 1;
-                    // print(dragOnObject.name + "'s wrong drop: " + AIDataManager.wrongItemPlacementCount);
+                    itemOnGround.GetComponent<RectTransform>().sizeDelta = originalSize;
+                    print(itemOnGround.name + " 's size become: " + originalSize);
                 }
             }
             else {

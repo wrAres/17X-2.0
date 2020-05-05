@@ -18550,6 +18550,7 @@ GameObject:
   - component: {fileID: 1733698977}
   - component: {fileID: 1733698975}
   - component: {fileID: 1733698976}
+  - component: {fileID: 1733698980}
   m_Layer: 5
   m_Name: Backpack_Roll
   m_TagString: Backpack
@@ -18636,6 +18637,28 @@ RectTransform:
   m_AnchoredPosition: {x: 45, y: -390}
   m_SizeDelta: {x: 1535, y: 132}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1733698980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733698974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761c2958b28c24e9b9ee917b82ad0949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  earthKey: {x: 48, y: 72}
+  dirt: {x: 45, y: 60}
+  board: {x: 240, y: 280}
+  lifeWater: {x: 60, y: 35}
+  waterSeed: {x: 20, y: 20}
+  earthPortal: {x: 200, y: 120}
+  firewood: {x: 60, y: 60}
+  glowingSun: {x: 80, y: 80}
+  taijiKey: {x: 80, y: 80}
+  elseSize: {x: 120, y: 120}
 --- !u!1 &1736121643
 GameObject:
   m_ObjectHideFlags: 0

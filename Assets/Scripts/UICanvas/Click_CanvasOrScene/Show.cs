@@ -107,6 +107,8 @@ public class Show : MonoBehaviour
                         ItemDragHandler.previousPosition = result.gameObject.GetComponent<RectTransform>().anchoredPosition;
                         ItemDragHandler.holdItem = true;
                         ItemDragHandler.x = ItemDragHandler.previousPosition.x;
+                        RectTransform item_transform = ItemDragHandler.itemOnGround.GetComponent<RectTransform>();
+                        ItemDragHandler.originalSize = item_transform.sizeDelta;
                     }
                 }
                 else if (tag.CompareTo("SpellTreeIcon") == 0 && canAct) {
