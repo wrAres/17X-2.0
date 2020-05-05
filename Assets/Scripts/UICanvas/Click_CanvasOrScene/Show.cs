@@ -41,6 +41,7 @@ public class Show : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
         GameObject.FindGameObjectWithTag("BackpackIcon").GetComponent<Image>().enabled = false;
         GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled = false;
+        Destroy(GameObject.Find("Theme Song"));
     }
 
     private void Start() {
