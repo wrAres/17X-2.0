@@ -61,7 +61,7 @@ public class playerMovement : MonoBehaviour
 			isMoving = false;
 		}*/
 		timer++;
-		if(recorder + 100 <= timer && collide == true){
+		if(recorder + 20 <= timer && collide == true){
 			collide = false;
 			cooldown = false;
 			GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);

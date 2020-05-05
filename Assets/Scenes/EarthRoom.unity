@@ -9061,7 +9061,8 @@ MonoBehaviour:
   level: 2
   knownResp: 'Recipe: ?, wood'
   knownDes: It's said that wind comes from wood in winter.
-  unlockedDes: It's said that wind comes from wood in winter.
+  unlockedDes: It's said that wind comes from wood in winter. It said that ancient
+    gods ride wind to travel around the world.
   element: 7
   locked: {fileID: 419496072}
   newDisp: {fileID: 1693061530}
@@ -18650,13 +18651,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   earthKey: {x: 48, y: 72}
-  dirt: {x: 45, y: 60}
+  dirt: {x: 130, y: 130}
   board: {x: 240, y: 280}
   lifeWater: {x: 60, y: 35}
   waterSeed: {x: 20, y: 20}
   earthPortal: {x: 200, y: 120}
-  firewood: {x: 60, y: 60}
-  glowingSun: {x: 80, y: 80}
+  firewood: {x: 130, y: 130}
+  glowingSun: {x: 130, y: 130}
   taijiKey: {x: 80, y: 80}
   elseSize: {x: 120, y: 120}
 --- !u!1 &1736121643
@@ -19563,8 +19564,10 @@ MonoBehaviour:
   recipe: 040000000700000007000000
   level: 3
   knownResp: 'Recipe: wind*?, ?'
-  knownDes: Create a scroll that can lead to everywhere.
-  unlockedDes: Create a scroll that can lead to everywhere.
+  knownDes: Create a scroll that can bring you to everywhere. Only human could enter
+    it since the scroll has your own energy.
+  unlockedDes: Create a scroll that can bring you to everywhere. Only human could
+    enter it since the scroll has your own energy.
   element: 9
   locked: {fileID: 659408160}
   newDisp: {fileID: 1568764256}

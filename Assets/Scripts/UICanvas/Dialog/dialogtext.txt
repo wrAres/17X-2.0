@@ -6,7 +6,7 @@ I feel a strong sense of the combination of Yin and Yang from this =key. But wha
 Oh, wait! I almost forgot an important thing. 
 In such an unknown place, I need to have my “weapon” in hands =        -- SpelltreeItem.
 It should be in my gourd. I used to store everything in my gourd.
-【Press 'B' or click the gourd to open the backpack】=【Click and drag the 'SpelltreeItem' out】
+【Press 'B' or click the gourd to open/close the backpack】=【Click and drag the 'SpelltreeItem' out】
 ---
 Lobby
 Wow! An Eight-Trigram-Atlas! I feel the strong energies of the other =four elements except Earth come from four different directions. 
@@ -16,6 +16,7 @@ Maybe I can go check the Water energy first.
 Spelltree 1
 All talisman wizards have their own Spelltree pages that record =spells they have learned in the past. 
 We draw those elements-characters in the talisman to cast a =specific spell.
+【Press 'Q' or click the icon to open/close the Spelltree】
 ---
 Spelltree 2
 That's weird. There can't be nothing on my Spelltree! I somehow =cannot remember mostly anything about my spells. 
@@ -24,7 +25,7 @@ Something must be wrong! I must find the way out of here.
 Talisman 1
 ...I ...I just felt like some of my memories have come back. 
 A simple spell would be able to let me cross the river.
-【Check the Spelltree first】=【Press ‘T’ to open and close the talisman】
+【Check the Spelltree first】=【Press ‘T’ to open/close the talisman】
 ---
 Talisman 2
 What? There are two dragons entwined on my scrolls. The left one =looks like the Yellow-Dragon, the God of Earth. 
@@ -37,6 +38,7 @@ Ewww… Where am I? =【Press 'SPACE' or click 'NEXT' to continue】
 Wasn’t I on my way finding the Five-Elements-Seal? 
 I remember I almost found it according to the map that my =master left for me. I should find the way out!
 【Use ‘WSAD’ to move around】=【Use mouse to explore the world】
+【Use mouse wheel to zoom in/out】
 ---
 EarthPortal
 Seems like an extremely strong power is locked behind this scroll, =let me figure it out.
@@ -78,10 +80,11 @@ Flowerpot
 An ancient flowerpot. It must be older than me.
 ---
 Flower Need Sun
-The bud probably needs warmness to grow. Like the sun, or the fire. 
+The bud needs photosynthesis to grow up.
 ---
 Water Boss Door
 A iron gate with some weird decorations on it. What are their =meanings?
+【Use 'Z' again to observe the gate】
 ---
 6_water-white
 That’s the first time I see such pure Water energy! They are like =thousands of Life Water I created getting together.
@@ -121,40 +124,40 @@ Six mirrors with 6 beautiful flowers, are they all the same?
 I am always confused about which side is the real world, =or do I live in a mirror as well?
 ---
 Mirror need flower
-Am I growing a plant just look like one of the flowers in =the mirrors?
+These flowers look similar to the bud I plant.
 ---
 Water Boss
 Qiang Yu: I am Qiang Yu, God of Water. 
 Qiang Yu: You do surprise me a lot, human. 
 Qiang Yu: You have earned my respect and I will give you a gift.
 Qiang Yu: Let me predict your future.
-… … 
-… …
-… …
-… …
+.
+..
+...
+....
 Qiang Yu: ☵
 Qiang Yu: Fighting against your fate, don’t let me down, human…
 ---
 Water Seed Grow Order 0
-Someone: Extra dirt won't help.
+The flowerpot is full.
 ---
 Water Seed Grow Order 1
-Someone: You have to put dirt first in order to grow a plant.
+The seed needs soil .
 ---
 Water Seed Grow Order 2
-Someone: Use it to water your plant.
+The soil is too dry for the seed to grow up.
 ---
 Water Seed Grow Order 2.1
-Someone: You don't need to water your plant again.
+I already watered it.
 ---
 Water Seed Grow Order 3
 Someone: The sun might burn the plant now. Let it grow first.
 ---
 Water Seed Grow Order 3.1
-The sun is shining. Such a beautiful peach blossom tree.
+The sun is shining. Such a beautiful prunus mume.
 ---
 Wrong Spell
-You cannot place the item here.
+Nothing happens.
 ---
 Baguamap
 A Eight-Trigrams-Atlas. Different Trigrams represent different meanings =and elements. 
