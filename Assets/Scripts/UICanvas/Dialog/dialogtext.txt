@@ -117,7 +117,7 @@ wind (7)
 Strong winds come from somewhere. I can’t move forward against it.
 ---
 Break Mirror
-Someone: Nice job human. The world is back to normal now. =I am waiting for you behind the gate now.
+Someone: Nice job human. The world is back to normal now. =I am waiting for you behind the gate.
 ---
 Mirror no effect
 Six mirrors with 6 beautiful flowers, are they all the same? 
@@ -142,10 +142,10 @@ Water Seed Grow Order 0
 The flowerpot is full.
 ---
 Water Seed Grow Order 1
-The seed needs soil .
+The seed needs soil.
 ---
 Water Seed Grow Order 2
-The soil is too dry for the seed to grow up.
+I better plant the seed first.
 ---
 Water Seed Grow Order 2.1
 I already watered it.
