@@ -8,21 +8,23 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(TalismanManager))]
 public class Show : MonoBehaviour
 {
-    public bool canAct => !dialogShown && !talismanShown;
+    public bool canAct => !dialogShown;
     public bool dialogShown =>
         FindObjectOfType<TipsDialog>() != null;
-    public bool talismanShown =>
-        GameObject.FindGameObjectWithTag("Talisman") != null;
+    // public bool talismanShown =>
+    //     GameObject.FindGameObjectWithTag("Talisman") != null;
 
     public GameObject spellTreeDisp;
     private TalismanManager talisDisp;
     private bool earthUnlocked;
     // private int closedFirstTimeFlag = 0; // Used to mark when to pop up talisman description text
     public bool clickedObject = false;
-    private bool brightBackpack = false;
+    public bool brightBackpack = false;
+      public bool brightTalisman = false;
     private bool brightSpell = false;
-    private bool backpackUnlocked, spellTreeUnlocked;
+    private bool backpackUnlocked, spellTreeUnlocked, talismanUnlocked;
     public bool seenSpellTree = false;
+    public Sprite talismanIcon;
     PickObject pick;
     GraphicRaycaster raycaster;
     PointerEventData pointerData;
@@ -79,27 +81,36 @@ public class Show : MonoBehaviour
                 resultSize += 1;
                 string name = result.gameObject.name;
                 string tag = result.gameObject.tag;
-                // print("obj names: " + name);
+                print("obj names: " + name);
 
-                if (tag.CompareTo("BackpackIcon") == 0 && canAct) {
+                // if (tag.CompareTo("BackpackIcon") == 0 && canAct) {
+                //     pick.descShow = false;
+                //     if (brightBackpack) {
+                //         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
+                //         brightBackpack = false;
+
+                //         GameObject spellTree = GameObject.FindGameObjectWithTag("BackpackIcon");
+                //         spellTree.GetComponent<Image>().sprite = Resources.Load<Sprite>("ChangeAsset/backpack_icon");
+                //     }
+                //     if (Backpack.backpack.activeSelf) {
+                //         Backpack.backpack.GetComponent<Backpack>().Show(false);
+                //     }
+                //     else {
+                //         Backpack.backpack.GetComponent<Backpack>().Show(true);
+                //         GetComponent<FlyingSpell>().ResetFlyingSpell();
+                //     }
+                //     // Close other canvas
+                //     spellTreeDisp.SetActive(false);
+                //     talisDisp.CloseDisplay();
+                // }
+                
+                if (tag.CompareTo("TalismanIcon") == 0 && canAct) {
                     pick.descShow = false;
-                    if (brightBackpack) {
-                        GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
-                        brightBackpack = false;
-
-                        GameObject spellTree = GameObject.FindGameObjectWithTag("BackpackIcon");
-                        spellTree.GetComponent<Image>().sprite = Resources.Load<Sprite>("ChangeAsset/backpack_icon");
-                    }
-                    if (Backpack.backpack.activeSelf) {
-                        Backpack.backpack.GetComponent<Backpack>().Show(false);
-                    }
-                    else {
-                        Backpack.backpack.GetComponent<Backpack>().Show(true);
-                        GetComponent<FlyingSpell>().ResetFlyingSpell();
-                    }
+                    GameObject.Find("MainUI").GetComponent<TalismanManager>().OpenTalisman();
+                    
                     // Close other canvas
-                    spellTreeDisp.SetActive(false);
-                    talisDisp.CloseDisplay();
+                    // spellTreeDisp.SetActive(false);
+                    // Backpack.backpack.GetComponent<Backpack>().Show(false);
                 }
                 else if (tag.CompareTo("Item") == 0 && canAct) {
                     pick.descShow = false;
@@ -125,10 +136,10 @@ public class Show : MonoBehaviour
                         seenSpellTree = true;
                     }
                     spellTreeDisp.SetActive(!spellTreeDisp.activeSelf);
+                    Backpack.backpack.GetComponent<Backpack>().Show(!spellTreeDisp.activeSelf);
 
                     // Close other canvas
                     talisDisp.CloseDisplay();
-                    Backpack.backpack.GetComponent<Backpack>().Show(false);
 
                     // closedFirstTimeFlag++;
                     // print(closedFirstTimeFlag);
@@ -154,26 +165,53 @@ public class Show : MonoBehaviour
             if (resultSize == 0)
                 pick.ClickOnGround();
         }
-        else if (Input.GetKeyDown(KeyCode.B) && canAct) {
-            pick.descShow = false;
-            if (brightBackpack) {
-                GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
-                brightBackpack = false;
+        else if (Input.GetMouseButtonDown(1)) {
+            //Set up the new Pointer Event
+            pointerData = new PointerEventData(eventSystem);
+            pointerData.position = Input.mousePosition;
+            List<RaycastResult> results = new List<RaycastResult>();
+            // print("raycaster");
+            // print(raycaster);
+            //Raycast using the Graphics Raycaster and mouse click position
+            raycaster.Raycast(pointerData, results);
 
-                GameObject spellTree = GameObject.FindGameObjectWithTag("BackpackIcon");
-                spellTree.GetComponent<Image>().sprite = Resources.Load<Sprite>("ChangeAsset/backpack_icon");
+            int resultSize = 0;
+
+            //For every result returned, output the name of the GameObject on the Canvas hit by the Ray
+            foreach (RaycastResult result in results) {
+                resultSize += 1;
+                string name = result.gameObject.name;
+                string tag = result.gameObject.tag;
+                // print("obj names: " + name);
+
+                if (tag.CompareTo("Item") == 0 && canAct) {
+                    pick.descShow = false;
+                    if (!ItemDragHandler.holdItem) {
+                        
+                    }
+                }
             }
-            if (Backpack.backpack.activeSelf) {
-                Backpack.backpack.GetComponent<Backpack>().Show(false);
-            }
-            else {
-                Backpack.backpack.GetComponent<Backpack>().Show(true);
-                GetComponent<FlyingSpell>().ResetFlyingSpell();
-            }
-            // Close other canvas
-            spellTreeDisp.SetActive(false);
-            talisDisp.CloseDisplay();
         }
+        // else if (Input.GetKeyDown(KeyCode.B) && canAct) {
+        //     pick.descShow = false;
+        //     if (brightBackpack) {
+        //         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
+        //         brightBackpack = false;
+
+        //         GameObject spellTree = GameObject.FindGameObjectWithTag("BackpackIcon");
+        //         spellTree.GetComponent<Image>().sprite = Resources.Load<Sprite>("ChangeAsset/backpack_icon");
+        //     }
+        //     if (Backpack.backpack.activeSelf) {
+        //         Backpack.backpack.GetComponent<Backpack>().Show(false);
+        //     }
+        //     else {
+        //         Backpack.backpack.GetComponent<Backpack>().Show(true);
+        //         GetComponent<FlyingSpell>().ResetFlyingSpell();
+        //     }
+        //     // Close other canvas
+        //     spellTreeDisp.SetActive(false);
+        //     talisDisp.CloseDisplay();
+        // }
         else if (Input.GetKeyDown(KeyCode.Q) && canAct && spellTreeUnlocked) {
             pick.descShow = false;
             UISoundScript.OpenSpellTree();
@@ -187,11 +225,12 @@ public class Show : MonoBehaviour
                 seenSpellTree = true;
             }
             spellTreeDisp.SetActive(!spellTreeDisp.activeSelf);
+            Backpack.backpack.GetComponent<Backpack>().Show(!spellTreeDisp.activeSelf);
 
             // Close other canvas
             talisDisp.CloseDisplay();
-            Backpack.backpack.GetComponent<Backpack>().Show(false);
         }
+        
         // Show talisman building description after closing the spell tree
         // if (closedFirstTimeFlag == 2)
         // {
@@ -216,10 +255,15 @@ public class Show : MonoBehaviour
 
     public void ShowBackpackIcon() { 
         GameObject.FindGameObjectWithTag("BackpackIcon").GetComponent<Image>().enabled = true; 
-        GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().ShineBackpack();
-        brightBackpack = true;
         backpackUnlocked = true;
     }
+    public void ShowTalismanIcon() { 
+        GameObject.FindGameObjectWithTag("TalismanIcon").GetComponent<Image>().enabled = true; 
+        GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().ShineTalisman();
+        brightTalisman = true;
+        talismanUnlocked = true;
+    }
+
     public void ShowSpelltreeIcon() { 
         GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled = true; 
         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().ShineSpellIcon();
@@ -243,6 +287,7 @@ public class Show : MonoBehaviour
     public void ToggleIcons(bool isOn) {
         if (!isOn || backpackUnlocked) GameObject.FindGameObjectWithTag("BackpackIcon").GetComponent<Image>().enabled = isOn;
         if (!isOn || spellTreeUnlocked) GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled = isOn;
+        // if (!isOn || talismanUnlocked) GameObject.FindGameObjectWithTag("TalismanIcon").GetComponent<Image>().enabled = isOn;
 
         if (!isOn) CloseDisplays();
     }

@@ -52,11 +52,54 @@ public class TalismanManager : MonoBehaviour {
         } else if (!DontDestroyVariables.haveSeenRiverTip) {
 
         }
-        else if (Input.GetKeyDown(KeyCode.T) && !display.activeSelf && !dialogShown && DontDestroyVariables.canOpenTalisman) {
+        else if (Input.GetKeyDown(KeyCode.T)) {
+            OpenTalisman();
+        }
+        // else if (Input.GetKeyDown(KeyCode.T) && !display.activeSelf && !dialogShown && DontDestroyVariables.canOpenTalisman) {
+        //     if (firstAccess) {
+        //             // display.transform.SetSiblingIndex(2);
+        //             // TipsDialog.PrintDialog("Talisman 0");
+        //             // DontDestroyVariables.accidentallyOpenTalisman = true;
+        //         firstAccess = false;
+        //         display.transform.SetSiblingIndex(2);
+        //         TipsDialog.PrintDialog("Talisman 2");
+        //     } else {
+        //         // Close any text box that is open
+        //         TipsDialog.HideTextBox();
+        //     }
+        //     recipeBook = GetComponent<SpellTreeManager>().GetSpellBook();
+        //     display.SetActive(true);
+        //     dispManager.ToggleIcons(false);
+
+        //     DisplaySpellList();
+        //     curTime = timer;
+        //     // print("open talisman");
+        //     UISoundScript.OpenTalisman();
+        // }
+        // else if (Input.GetKeyDown(KeyCode.T) && !dialogShown && DontDestroyVariables.canOpenTalisman) {
+        //     CloseDisplay();
+        //     dispManager.ToggleIcons(true);
+        //     UISoundScript.OpenTalisman();
+        // }
+
+        // TEST MAKE BUTTON
+        if (Input.GetKey(KeyCode.G) && display.activeSelf) {
+            MakeItem();
+            dispManager.ToggleIcons(true);
+        }
+        else if (Input.GetKeyDown(KeyCode.Backspace) && display.activeSelf) {
+            ResetCraft();
+            talis.SetTrigger("newTalis");
+        }
+    }
+
+    public void OpenTalisman() {
+        if (GameObject.Find("MainUI").GetComponent<Show>().brightTalisman) {
+            GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
+            GameObject.Find("MainUI").GetComponent<Show>().brightTalisman = false;
+        }
+        if (!display.activeSelf && !dialogShown && DontDestroyVariables.canOpenTalisman) {
             if (firstAccess) {
-                    // display.transform.SetSiblingIndex(2);
-                    // TipsDialog.PrintDialog("Talisman 0");
-                    // DontDestroyVariables.accidentallyOpenTalisman = true;
                 firstAccess = false;
                 display.transform.SetSiblingIndex(2);
                 TipsDialog.PrintDialog("Talisman 2");
@@ -70,23 +113,12 @@ public class TalismanManager : MonoBehaviour {
 
             DisplaySpellList();
             curTime = timer;
-            // print("open talisman");
             UISoundScript.OpenTalisman();
         }
-        else if (Input.GetKeyDown(KeyCode.T) && !dialogShown && DontDestroyVariables.canOpenTalisman) {
+        else if (!dialogShown && DontDestroyVariables.canOpenTalisman) {
             CloseDisplay();
             dispManager.ToggleIcons(true);
             UISoundScript.OpenTalisman();
-        }
-
-        // TEST MAKE BUTTON
-        if (Input.GetKey(KeyCode.G) && display.activeSelf) {
-            MakeItem();
-            dispManager.ToggleIcons(true);
-        }
-        else if (Input.GetKeyDown(KeyCode.Backspace) && display.activeSelf) {
-            ResetCraft();
-            talis.SetTrigger("newTalis");
         }
     }
 

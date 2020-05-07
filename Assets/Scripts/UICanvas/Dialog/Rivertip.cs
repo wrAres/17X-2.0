@@ -16,6 +16,7 @@ public class Rivertip : MonoBehaviour
         {
             this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
             DontDestroyVariables.haveSeenRiverTip = true;
+            GameObject.Find("MainUI").GetComponent<Show>().ShowTalismanIcon();
             if (!DontDestroyVariables.accidentallyOpenTalisman)
                 TipsDialog.PrintDialog("Talisman 1");
         }

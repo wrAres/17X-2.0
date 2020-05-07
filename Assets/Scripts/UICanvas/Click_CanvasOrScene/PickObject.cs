@@ -67,6 +67,7 @@ public class PickObject : MonoBehaviour
                 if (clickObject.tag.CompareTo("Pickable") == 0){
                     if (clickObject.name == "Earth Key") {
                         GameObject.Find("MainUI").GetComponent<Show>().ShowBackpackIcon();
+                        Backpack.backpack.GetComponent<Backpack>().Show(true);
                     }
                     Backpack.backpack.GetComponent<Backpack>().AddItem(clickObject.name);
                     Sprite item = clickObject.GetComponent<SpriteRenderer>().sprite;

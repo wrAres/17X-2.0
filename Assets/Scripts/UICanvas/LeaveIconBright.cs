@@ -23,9 +23,14 @@ public class LeaveIconBright : MonoBehaviour
         shine = true;
         this.gameObject.GetComponent<RawImage>().color = color;
         this.gameObject.transform.SetSiblingIndex(0);
-        GameObject spellTree = GameObject.FindGameObjectWithTag("BackpackIcon");
-        spellTree.GetComponent<Image>().sprite = Resources.Load<Sprite>("ChangeAsset/Glowing Backpack");
+        // GameObject spellTree = GameObject.FindGameObjectWithTag("BackpackIcon");
+        // spellTree.GetComponent<Image>().sprite = Resources.Load<Sprite>("ChangeAsset/Glowing Backpack");
         //spellTree.transform.localScale = new Vector2(2, 2.3f);
+    }
+    public void ShineTalisman() {
+        shine = true;
+        this.gameObject.GetComponent<RawImage>().color = color;
+        this.gameObject.transform.SetSiblingIndex(5);
     }
 
     public void DarkBackpack() {
@@ -37,7 +42,7 @@ public class LeaveIconBright : MonoBehaviour
     public void ShineSpellIcon() {
         shine = true;
         this.gameObject.GetComponent<RawImage>().color = color;
-        this.gameObject.transform.SetSiblingIndex(6);
+        this.gameObject.transform.SetSiblingIndex(5);
         GameObject spellTree = GameObject.FindGameObjectWithTag("SpellTreeIcon");
         spellTree.GetComponent<Image>().sprite = Resources.Load<Sprite>("ChangeAsset/Glowing Spelltree");
         // spellTree.transform.localScale = new Vector2(2, 2.3f);
