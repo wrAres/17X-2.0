@@ -81,7 +81,7 @@ public class Show : MonoBehaviour
                 resultSize += 1;
                 string name = result.gameObject.name;
                 string tag = result.gameObject.tag;
-                print("obj names: " + name);
+                // print("obj names: " + name);
 
                 // if (tag.CompareTo("BackpackIcon") == 0 && canAct) {
                 //     pick.descShow = false;
@@ -182,12 +182,14 @@ public class Show : MonoBehaviour
                 resultSize += 1;
                 string name = result.gameObject.name;
                 string tag = result.gameObject.tag;
-                // print("obj names: " + name);
 
                 if (tag.CompareTo("Item") == 0 && canAct) {
+                    // print("obj names: " + name);
                     pick.descShow = false;
                     if (!ItemDragHandler.holdItem) {
-                        
+                        int position = ((int)result.gameObject.GetComponent<RectTransform>().anchoredPosition.x + 680) / 80;
+                        Backpack.backpack.GetComponent<Backpack>().RemoveItem(result.gameObject, position);
+                        break;
                     }
                 }
             }
@@ -290,6 +292,7 @@ public class Show : MonoBehaviour
         // if (!isOn || talismanUnlocked) GameObject.FindGameObjectWithTag("TalismanIcon").GetComponent<Image>().enabled = isOn;
 
         if (!isOn) CloseDisplays();
+        else Backpack.backpack.GetComponent<Backpack>().Show(true);
     }
 
     void ToLoadScene(){

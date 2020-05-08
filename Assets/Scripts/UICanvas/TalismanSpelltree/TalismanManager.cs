@@ -118,6 +118,7 @@ public class TalismanManager : MonoBehaviour {
         else if (!dialogShown && DontDestroyVariables.canOpenTalisman) {
             CloseDisplay();
             dispManager.ToggleIcons(true);
+            Backpack.backpack.GetComponent<Backpack>().Show(true);
             UISoundScript.OpenTalisman();
         }
     }
