@@ -7684,7 +7684,7 @@ BoxCollider:
   m_GameObject: {fileID: 625935916}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 13.382677, y: 14.840765, z: 0.41487956}
   m_Center: {x: 0.096089244, y: -1.0796181, z: -0.10743995}
@@ -11567,7 +11567,6 @@ GameObject:
   - component: {fileID: 970678128}
   - component: {fileID: 970678129}
   - component: {fileID: 970678130}
-  - component: {fileID: 970678131}
   m_Layer: 0
   m_Name: Earthscrollcld
   m_TagString: Untagged
@@ -11615,18 +11614,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portal: {fileID: 1354479195}
---- !u!114 &970678131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 970678127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc16878b25cdde84c8c56b8d43b85adb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &979374856
 GameObject:
   m_ObjectHideFlags: 0
@@ -16189,7 +16176,7 @@ BoxCollider:
   m_GameObject: {fileID: 1405611141}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 9.365535, y: 1, z: 1.9018676}
   m_Center: {x: -0.93354225, y: 1.1160613, z: -1.3640745}
@@ -16975,7 +16962,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!212 &1550972252
 SpriteRenderer:
@@ -17035,7 +17022,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1550972247}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -1.34, y: -1.517909, z: -3.061}
+  m_LocalPosition: {x: -1.34, y: -1.357909, z: -3.061}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children:
   - {fileID: 873089398}
