@@ -14,7 +14,7 @@ public class playerMovement : MonoBehaviour
 	public int freeze;
 	private bool isWaterScene =>
         SceneManager.GetActiveScene().name == "scene3";
-	public bool canAct => !dialogShown && !talismanShown && !shineIcon && camera.enabled &&!events;
+	public bool canAct => !dialogShown && !talismanShown && !shineIcon && camera.enabled &&!events&&!fall;
 	public bool dialogShown =>
         FindObjectOfType<TipsDialog>() != null;
 	public bool talismanShown =>
@@ -71,6 +71,8 @@ public class playerMovement : MonoBehaviour
 		}
 		if(GetComponent<Rigidbody>().velocity.y<-0.1){
 			fall=true;
+			status = 0;
+			isMoving = false;
 		}else{
 			fall=false;
 		}
@@ -89,7 +91,9 @@ public class playerMovement : MonoBehaviour
 			}
 			system.Execute();
 		} 
-		
+		if(canAct == false){
+			isMoving = false;
+		}
 		//ani.SetFloat("Speed", GetComponent<Rigidbody>().velocity.z);
 		ani.SetFloat("status",status);
 		ani.SetBool("isMoving",isMoving);
