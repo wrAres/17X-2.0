@@ -242,21 +242,23 @@ public class TalismanManager : MonoBehaviour {
             if (CheckRecipe(recipeBook[i])) {
                 // Add to backpack if it's not an element
                 if (recipeBook[i].element == TalisDrag.Elements.NONE) {
-                    backpack.AddItem(recipeBook[i].spellName);
-                    AIDataManager.IncrementSpellAccess(recipeBook[i].spellName);
-                    // GameObject.Find("Backpack_Icon").GetComponent<ShakingIcon>().ShakeMe();
-                    GetComponent<FlyingSpell>().FlyTowardsIcon(recipeBook[i].glow, false);
-                    if (recipeBook[i].curState == Spell.SpellState.KNOWN) {
-                        recipeBook[i].ChangeState(Spell.SpellState.UNLOCKED);
-                        recipeBook[i].SetOld();
-                    }
+                    if (backpack.AddItem(recipeBook[i].spellName)) {
+                        // GameObject.Find("Backpack_Icon").GetComponent<ShakingIcon>().ShakeMe();
+                        GetComponent<FlyingSpell>().FlyTowardsIcon(recipeBook[i].glow, false);
+                        if (recipeBook[i].curState == Spell.SpellState.KNOWN) {
+                            recipeBook[i].ChangeState(Spell.SpellState.UNLOCKED);
+                            recipeBook[i].SetOld();
+                        }
 
-                    // Update old element status
-                    for (int j = 0; j < recipeBook[i].recipe.Length; j++) {
-                        if (recipeBook[i].recipe[j] != TalisDrag.Elements.NONE) {
-                            GetComponent<SpellTreeManager>().SetElementToOld(recipeBook[i].recipe[j]);
+                        // Update old element status
+                        for (int j = 0; j < recipeBook[i].recipe.Length; j++) {
+                            if (recipeBook[i].recipe[j] != TalisDrag.Elements.NONE) {
+                                GetComponent<SpellTreeManager>().SetElementToOld(recipeBook[i].recipe[j]);
+                            }
                         }
                     }
+                    
+                    AIDataManager.IncrementSpellAccess(recipeBook[i].spellName);
                 }
                 else {
                     AIDataManager.DiscoverNewSpell(Time.time - AIDataManager.previousUnlockTime);

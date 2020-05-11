@@ -69,10 +69,11 @@ public class PickObject : MonoBehaviour
                         GameObject.Find("MainUI").GetComponent<Show>().ShowBackpackIcon();
                         Backpack.backpack.GetComponent<Backpack>().Show(true);
                     }
-                    Backpack.backpack.GetComponent<Backpack>().AddItem(clickObject.name);
-                    Sprite item = clickObject.GetComponent<SpriteRenderer>().sprite;
-                    GameObject.Find("MainUI").GetComponent<FlyingSpell>().FlyTowardsIcon(item, false);
-                    Destroy(clickObject);
+                    if (Backpack.backpack.GetComponent<Backpack>().AddItem(clickObject.name)) {
+                        Sprite item = clickObject.GetComponent<SpriteRenderer>().sprite;
+                        GameObject.Find("MainUI").GetComponent<FlyingSpell>().FlyTowardsIcon(item, false);
+                        Destroy(clickObject);
+                    }
                 } else if (clickObject.name.CompareTo("Boss") == 0){
                     AIDataManager.DecideTrigram();
                 } else if (clickObject.name.CompareTo("Flower 1") == 0 || clickObject.name.CompareTo("Flower 2") == 0 || clickObject.name.CompareTo("Flower 3") == 0 || clickObject.name.CompareTo("Flower 4") == 0 || clickObject.name.CompareTo("Flower 5") == 0 || clickObject.name.CompareTo("Flower 6") == 0) {  

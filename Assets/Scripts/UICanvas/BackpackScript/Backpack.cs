@@ -37,13 +37,17 @@ public class Backpack : MonoBehaviour
         
     }
 
-    public void AddItem(string name) {
+    public bool AddItem(string name) {
         // for (int i = 0; i < length; i++) {
         //     GameObject currObj = imageObjects[i];
         //     if (currObj.name.CompareTo(name) == 0) {
         //         return ;
         //     }
         // }
+        if(length >= 18) {
+            TipsDialog.PrintDialog("Backpack Full");
+            return false;
+        }
 
         GameObject imageObj = new GameObject(name); //Create the GameObject
         
@@ -80,6 +84,7 @@ public class Backpack : MonoBehaviour
         
         UISoundScript.PlayGetItem();
         imageObj.SetActive(Backpack.backpack.activeSelf);
+        return true;
     }
 
     public void RemoveItem(GameObject itemObject, int removeIndex) {

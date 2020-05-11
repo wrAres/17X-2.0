@@ -181,3 +181,6 @@ Hard rocks.
 Rock4
 Hard rocks.
 ---
+Backpack Full
+Gourd is full. Right-click on the item to delete it.
+---

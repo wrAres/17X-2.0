@@ -110,6 +110,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
                 // print("drag item index: " + position);
 
                 canPlaceItem = Item.canPlace(itemOnGround.name, dragOnObject.name);
+                print(itemOnGround.name + ", on to: " + dragOnObject.name);
                 if (canPlaceItem) {
                     Item.puzzleEffect(itemOnGround.name, dragOnObject.name, hitInfo.point);
                     GameObject.Find("Backpack_Roll").GetComponent<Backpack>().RemoveItem(itemOnGround, position);
@@ -117,7 +118,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
                     UISoundScript.PlayWrongSpell();
                     AIDataManager.wrongItemPlacementCount += 1;
                     itemOnGround.GetComponent<RectTransform>().sizeDelta = originalSize;
-                    print(itemOnGround.name + " 's size become: " + originalSize);
+                    // print(itemOnGround.name + " 's size become: " + originalSize);
                 }
             }
             else {
