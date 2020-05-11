@@ -14,7 +14,7 @@ public class playerMovement : MonoBehaviour
 	public int freeze;
 	private bool isWaterScene =>
         SceneManager.GetActiveScene().name == "scene3";
-	public bool canAct => /*!dialogShown && !talismanShown && !shineIcon && camera.enabled &&*/!events&&!fall;
+	public bool canAct => !dialogShown && !talismanShown && !shineIcon && camera.enabled &&!events&&!fall;
 	public bool dialogShown =>
         FindObjectOfType<TipsDialog>() != null;
 	public bool talismanShown =>
@@ -61,6 +61,7 @@ public class playerMovement : MonoBehaviour
 			isMoving = false;
 		}*/
 		timer++;
+		
 		if(recorder + 20 <= timer && collide == true){
 			collide = false;
 			cooldown = false;
@@ -76,7 +77,7 @@ public class playerMovement : MonoBehaviour
 		}else{
 			fall=false;
 		}
-		
+		float yPos = Mathf.Clamp(GetComponent<Rigidbody>().transform.position.y,-100,0.8f);
 		if(GetComponent<Rigidbody>().transform.position.y < -20 ){
 			if(startPosition == 0){
 				GetComponent<Rigidbody>().transform.position = new Vector3(0,2,-43);

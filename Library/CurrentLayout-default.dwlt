@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1536
     height: 821
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -112,10 +112,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 771
-  m_MinSize: {x: 677, y: 492}
-  m_MaxSize: {x: 14001, y: 14042}
+  m_MinSize: {x: 678, y: 321}
+  m_MaxSize: {x: 12003, y: 8021}
   vertical: 0
-  controlID: 38
+  controlID: 72
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -137,10 +137,10 @@ MonoBehaviour:
     y: 0
     width: 1205
     height: 771
-  m_MinSize: {x: 402, y: 492}
-  m_MaxSize: {x: 10001, y: 14042}
+  m_MinSize: {x: 402, y: 321}
+  m_MaxSize: {x: 8002, y: 8021}
   vertical: 1
-  controlID: 39
+  controlID: 73
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 40
+  controlID: 74
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -240,15 +240,15 @@ MonoBehaviour:
     y: 456
     width: 1205
     height: 315
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 17}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 17}
   - {fileID: 18}
   - {fileID: 19}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -268,8 +268,8 @@ MonoBehaviour:
     y: 0
     width: 331
     height: 771
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -392,24 +392,24 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: de8f0000
-      m_LastClickedID: 36830
-      m_ExpandedIDs: 86efffff6efbffff8c390000d03c0000563f0000de8f0000
+      scrollPos: {x: 0, y: 180}
+      m_SelectedIDs: 6c4c0000
+      m_LastClickedID: 19564
+      m_ExpandedIDs: 2cfaffff6efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Earthscrollcld
-        m_OriginalName: Earthscrollcld
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 15124
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -455,9 +455,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.1368606, y: -3.957875, z: 4.4991655}
+    m_Target: {x: -1.5028416, y: -0.4943967, z: -3.8274992}
     speed: 2
-    m_Value: {x: -1.1368606, y: -3.957875, z: 4.4991655}
+    m_Value: {x: -1.5028416, y: -0.4943967, z: -3.8274992}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -503,13 +503,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.16423741, y: 0.013316246, z: -0.0022173414, w: 0.9863287}
+    m_Target: {x: 0.13609271, y: -0.65920657, z: 0.12302272, w: 0.7292411}
     speed: 2
-    m_Value: {x: 0.16423737, y: 0.013316243, z: -0.002217341, w: 0.9863285}
+    m_Value: {x: 0.13609259, y: -0.65920603, z: 0.123022616, w: 0.7292405}
   m_Size:
-    m_Target: 32.148468
+    m_Target: 12.8578825
     speed: 2
-    m_Value: 32.148468
+    m_Value: 12.8578825
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -714,20 +714,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/Player
   m_ViewMode: 1
   m_StartGridSize: 75
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/Player
   m_LastFoldersGridSize: 75
   m_LastProjectPath: G:\git\17X-2.0
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 270}
-    m_SelectedIDs: 82420000
-    m_LastClickedID: 17026
-    m_ExpandedIDs: 00000000284200002a4200002c4200002e420000304200003242000034420000364200003842000000ca9a3b
+    scrollPos: {x: 0, y: 334}
+    m_SelectedIDs: 80420000
+    m_LastClickedID: 17024
+    m_ExpandedIDs: 000000001e42000020420000224200002442000026420000284200002a4200002c4200002e42000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -755,7 +755,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000284200002a4200002c4200002e4200003042000032420000344200003642000038420000
+    m_ExpandedIDs: 000000001e42000020420000224200002442000026420000284200002a4200002c4200002e420000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -780,8 +780,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: d64d0000
+    m_LastClickedInstanceID: 19926
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300002e3c00009e440000404b00006c4b000000000000384700009c510000
     m_RenameOverlay:
@@ -865,7 +865,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 36936
+  m_LastSelectedObjectID: 19926
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -903,4 +903,4 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 5
+  m_LastVerticalScrollValue: 0
