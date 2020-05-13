@@ -12,7 +12,10 @@ public class MirrorDoor : MonoBehaviour
 	public Sprite back;
 	public Sprite left;
 	public Sprite right;
-    void Start()
+	public float newX;
+	public float newY;
+	public float newZ;
+	void Start()
     {
         timer = 0;
 		isFreezed = false;
@@ -51,7 +54,7 @@ public class MirrorDoor : MonoBehaviour
 	
 		other.GetComponent<playerMovement>().isReverse = -1;
 		other.GetComponent<playerMovement>().freeze = 0;
-		other.GetComponent<Rigidbody>().transform.position = new Vector3(0,2,-43);
+		other.GetComponent<Rigidbody>().transform.position = new Vector3(newX, newY, newZ);
 		
 		isFreezed = true;
 		

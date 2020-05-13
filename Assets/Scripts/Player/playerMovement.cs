@@ -80,7 +80,7 @@ public class playerMovement : MonoBehaviour
 		float yPos = Mathf.Clamp(GetComponent<Rigidbody>().transform.position.y,-100,0.8f);
 		if(GetComponent<Rigidbody>().transform.position.y < -20 ){
 			if(startPosition == 0){
-				GetComponent<Rigidbody>().transform.position = new Vector3(0,2,-43);
+				GetComponent<Rigidbody>().transform.position = new Vector3(8.56f, 0.763f, -61.31f);
 			}else{
 				GetComponent<Rigidbody>().transform.position = new Vector3(-3,2,-13);
 			}
