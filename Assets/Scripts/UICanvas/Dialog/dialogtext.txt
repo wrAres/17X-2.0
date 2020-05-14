@@ -34,17 +34,18 @@ What is he doing there? Where are my other characters? Maybe =I should try if I 
 【Press 'G' to finish drawing the talisman】=【Press 'DELETE' to erase characters on the talisman】
 ---
 Self Introduction
-Ewww… Where am I? =【Press 'SPACE' or click 'NEXT' to continue】
-Wasn’t I on my way finding the Five-Elements-Seal? 
-I remember I almost found it according to the map that my =master left for me. I should find the way out!
+Ouch! =【Press 'SPACE' or click 'NEXT' to continue】
+...
+This must be the interior world of the Five-Element-Signet! The map =and tale the Master left for me are real!
+I must find and save him!
 【Use ‘WSAD’ to move around】=【Use mouse to explore the world】
 【Use mouse wheel to zoom in/out】
 ---
 EarthPortal
-Seems like an extremely strong power is locked behind this scroll, =let me figure it out.
+Seems like an extremely strong power is locked behind this scroll, =I might need a key to go into it.
 ---
 EarthPortal Open
-Time to move on!
+The portal is open now! Time to move on! 
 ---
 EarthPortal Wait Key
 I probably need a key to enter the portal.
@@ -170,16 +171,18 @@ Moving Puzzle Tip
 【Use arrow keys to move puzzle pieces】
 ---
 Rock1
-Hard rocks.
+Someone curved a sentense on the hard rock...
+"The world is co   ructed of fi e basic ele ents: M   l, Wood, =Wa er, Fire, Ear h"
+Some characters are hard to recognize now.
 ---
 Rock2
-Hard rocks.
+Someone curved a sentense on the hard rock...
 ---
 Rock3
-Hard rocks.
+Someone curved a sentense on the hard rock...
 ---
 Rock4
-Hard rocks.
+Someone curved a sentense on the hard rock...
 ---
 Backpack Full
 Gourd is full. Right-click on the item to delete it.
