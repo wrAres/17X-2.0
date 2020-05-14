@@ -16,6 +16,7 @@ TagManager:
   - Water Boss
   - Talisman
   - TalismanIcon
+  - MainUI
   layers:
   - Default
   - TransparentFX

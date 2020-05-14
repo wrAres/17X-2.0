@@ -160,6 +160,18 @@ public class Show : MonoBehaviour
                             print("Active Credits Scene in 5 secs");
                         }
                     }
+                } 
+                else if (name.CompareTo("OptionButton") == 0) {
+                    InGameMenu.Option();
+                }
+                else if (name.CompareTo("ControlButton") == 0) {
+                    InGameMenu.Control();
+                }
+                else if (name.CompareTo("MainMenuButton") == 0) {
+                    InGameMenu.MainMenu();
+                }
+                else if (name.CompareTo("QuitButton") == 0) {
+                    InGameMenu.QuitGame();
                 }
             }
             if (resultSize == 0)
