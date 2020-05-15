@@ -142,7 +142,7 @@ public class SpellTreeManager : MonoBehaviour {
         for (int i = 0; i < spell.Count; i++) {
             if (spell[i].element == e) {
                 if (spell[i].curState != Spell.SpellState.UNLOCKED) {
-                    GetComponent<FlyingSpell>().FlyTowardsIcon(spell[i].glow, true);
+                    GetComponent<FlyingSpell>().FlyTowardsIcon(spell[i].glow, true, "");
                     spell[i].ChangeState(Spell.SpellState.UNLOCKED);
                     UISoundScript.PlayGetElement();
                 }

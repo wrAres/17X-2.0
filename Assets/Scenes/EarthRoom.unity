@@ -1560,6 +1560,7 @@ MonoBehaviour:
   spellIcon: {fileID: 60670946}
   spellTreeIcon: {fileID: 481698908}
   backpackIcon: {fileID: 2024886682}
+  backpack: {fileID: 1733698975}
 --- !u!114 &103709450
 MonoBehaviour:
   m_ObjectHideFlags: 0

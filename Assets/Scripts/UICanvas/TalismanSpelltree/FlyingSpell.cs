@@ -12,6 +12,8 @@ public class FlyingSpell : MonoBehaviour {
     bool isSpell, isBackpack;
     Vector3 origin;
     private float timer;
+    private string itemBuffer;
+    public Backpack backpack;
 
     // Start is called before the first frame update
     void Start() {
@@ -31,7 +33,11 @@ public class FlyingSpell : MonoBehaviour {
                 spellIcon.transform.position = Vector3.MoveTowards(spellIcon.transform.position, targetPos, iconSpeed * Time.deltaTime);
                 if (Vector3.Distance(spellIcon.transform.position, targetPos) < 1) {
                     if (isSpell) { isSpell = false; spellTreeIcon.GetComponent<ShakingIcon>().ShakeMe(); }
-                    else { isBackpack = false; backpackIcon.GetComponent<ShakingIcon>().ShakeMe(); }
+                    else { 
+                        isBackpack = false; backpackIcon.GetComponent<ShakingIcon>().ShakeMe(); 
+                        backpack.AddItem(itemBuffer);
+                        itemBuffer = "";
+                    }
                     ResetFlyingSpell();
                 }
 
@@ -46,9 +52,13 @@ public class FlyingSpell : MonoBehaviour {
         spellIcon.transform.position = origin;
         isSpell = false;
         isBackpack = false;
+        if(itemBuffer != "") {
+            backpack.AddItem(itemBuffer);
+            itemBuffer = "";
+        }
     }
 
-    public void FlyTowardsIcon(Sprite s, bool isSpell) {
+    public void FlyTowardsIcon(Sprite s, bool isSpell, string spell) {
         spellIcon.transform.position = origin;
         this.isSpell = isSpell;
         isBackpack = !isSpell;
@@ -57,5 +67,6 @@ public class FlyingSpell : MonoBehaviour {
         if (isSpell)    { spellIcon.transform.localScale = new Vector3(8, 8, 1); }
         else            { spellIcon.transform.localScale = new Vector3(4, 4, 1); }
         timer = 2;
+        itemBuffer = spell;
     }
 }

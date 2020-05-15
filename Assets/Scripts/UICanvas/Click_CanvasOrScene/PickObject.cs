@@ -70,9 +70,9 @@ public class PickObject : MonoBehaviour
                         Backpack.backpack.GetComponent<Backpack>().Show(true);
                     }
                     if (Backpack.backpack.GetComponent<Backpack>().CanAddItem()) {
-                        Backpack.backpack.GetComponent<Backpack>().AddItem(clickObject.name);
+                        //Backpack.backpack.GetComponent<Backpack>().AddItem(clickObject.name);
                         Sprite item = clickObject.GetComponent<SpriteRenderer>().sprite;
-                        GameObject.Find("MainUI").GetComponent<FlyingSpell>().FlyTowardsIcon(item, false);
+                        GameObject.Find("MainUI").GetComponent<FlyingSpell>().FlyTowardsIcon(item, false, clickObject.name);
                         Destroy(clickObject);
                     }
                 } else if (clickObject.name.CompareTo("Boss") == 0){

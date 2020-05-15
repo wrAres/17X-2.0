@@ -245,8 +245,8 @@ public class TalismanManager : MonoBehaviour {
 
                     if (backpack.CanAddItem()) {
                         // GameObject.Find("Backpack_Icon").GetComponent<ShakingIcon>().ShakeMe();
-                        GetComponent<FlyingSpell>().FlyTowardsIcon(recipeBook[i].glow, false);
-                        backpack.AddItem(recipeBook[i].spellName);
+                        GetComponent<FlyingSpell>().FlyTowardsIcon(recipeBook[i].glow, false, recipeBook[i].spellName);
+                        //backpack.AddItem(recipeBook[i].spellName);
                         if (recipeBook[i].curState == Spell.SpellState.KNOWN) {
                             recipeBook[i].ChangeState(Spell.SpellState.UNLOCKED);
                             recipeBook[i].SetOld();
