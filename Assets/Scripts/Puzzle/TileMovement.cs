@@ -79,11 +79,11 @@ public class TileMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             SceneManager.LoadScene("scene3");
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             Tuple<bool, string>[] tiles = GetTiles();
             if (tiles[0].Item1 == true && !finished)
@@ -97,7 +97,7 @@ public class TileMovement : MonoBehaviour
             }
             // else Debug.Log("No Valid up movement");
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             Tuple<bool, string>[] tiles = GetTiles();
             if (tiles[1].Item1 == true && !finished)
@@ -111,7 +111,7 @@ public class TileMovement : MonoBehaviour
             }
             // else Debug.Log("No valid down movement");
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             Tuple<bool, string>[] tiles = GetTiles();
             if (tiles[2].Item1 == true && !finished)
@@ -125,7 +125,7 @@ public class TileMovement : MonoBehaviour
             }
             // else Debug.Log("No valid left movement");
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             Tuple<bool, string>[] tiles = GetTiles();
             if (tiles[3].Item1 == true && !finished)

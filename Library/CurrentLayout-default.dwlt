@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 12553
+  controlID: 222
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 12554
+  controlID: 223
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 12555
+  controlID: 224
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -299,7 +299,7 @@ MonoBehaviour:
     x: 273
     y: 19
     width: 730
-    height: 422
+    height: 369
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewsNames: []
   m_SerializedViewsValues: []
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1426, y: 802}
+  m_TargetSize: {x: 1237, y: 696}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -321,10 +321,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -631
-    m_HBaseRangeMax: 631
-    m_VBaseRangeMin: -355
-    m_VBaseRangeMax: 355
+    m_HBaseRangeMin: -552
+    m_HBaseRangeMax: 552
+    m_VBaseRangeMin: -310.5
+    m_VBaseRangeMax: 310.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -343,9 +343,9 @@ MonoBehaviour:
       x: 0
       y: 21
       width: 1280
-      height: 710
+      height: 621
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 640, y: 355}
+    m_Translation: {x: 640, y: 310.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -353,12 +353,12 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -640
-      y: -355
+      y: -310.5
       width: 1280
-      height: 710
+      height: 621
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 2560, y: 1462}
+  m_LastWindowPixelSize: {x: 2560, y: 1284}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -395,7 +395,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 86caffff44d3ffff62d8fffffae2ffff08e3ffff1ae3ffff8cf1ffffcef1ffff7ef9ffffeafafffff4ffffff0a460000be710000c8710000d2710000ec71000008720000008b00005e8c0000368d00000e8f0000f490000090d40000c6d40000f0d50000
+      m_ExpandedIDs: 90ebffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -507,9 +507,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.17607547, y: -0.004429733, z: 0.0007923449, w: -0.98436636}
   m_Size:
-    m_Target: 2243.7063
+    m_Target: 723.4904
     speed: 2
-    m_Value: 2220.3918
+    m_Value: 723.4904
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -714,20 +714,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 75
   m_LastFolders:
-  - Assets/Scenes
+  - Assets
   m_LastFoldersGridSize: 75
-  m_LastProjectPath: /Users/Bz/Desktop/Atlas_3.0/17X-2.0
+  m_LastProjectPath: /Users/wensdon/Desktop/academic/UCSC/Senior/winter 2020/The
+    Atlas of Shanhe and Sheji/17X-2.0
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 294}
-    m_SelectedIDs: e6420000
-    m_LastClickedID: 17126
-    m_ExpandedIDs: 000000008a4200008c4200008e42000090420000924200009442000096420000984200009a42000000ca9a3b
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: a83b0000
+    m_LastClickedID: 15272
+    m_ExpandedIDs: 00000000a83b0000aa3b0000ac3b0000ae3b0000b03b0000b23b0000b43b0000b63b0000b83b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -755,7 +756,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008a4200008c4200008e42000090420000924200009442000096420000984200009a42000000ca9a3b
+    m_ExpandedIDs: 00000000a83b0000aa3b0000ac3b0000ae3b0000b03b0000b23b0000b43b0000b63b0000b83b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -782,7 +783,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300002e3c00009e440000404b00006c4b000000000000384700009c510000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
