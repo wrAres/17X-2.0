@@ -38,6 +38,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
             itemOnGround.transform.position = Input.mousePosition;
             textbox.SetActive(false);
         }
+        if(!itemOnGround) return;
         RectTransform item_transform = itemOnGround.GetComponent<RectTransform>();
         string name = itemOnGround.name;
         DragSizes variables = GameObject.Find("Backpack_Roll").GetComponent<DragSizes>();

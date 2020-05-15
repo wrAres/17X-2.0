@@ -82,27 +82,6 @@ public class Show : MonoBehaviour
                 string name = result.gameObject.name;
                 string tag = result.gameObject.tag;
                 // print("obj names: " + name);
-
-                // if (tag.CompareTo("BackpackIcon") == 0 && canAct) {
-                //     pick.descShow = false;
-                //     if (brightBackpack) {
-                //         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().DarkBackpack();
-                //         brightBackpack = false;
-
-                //         GameObject spellTree = GameObject.FindGameObjectWithTag("BackpackIcon");
-                //         spellTree.GetComponent<Image>().sprite = Resources.Load<Sprite>("ChangeAsset/backpack_icon");
-                //     }
-                //     if (Backpack.backpack.activeSelf) {
-                //         Backpack.backpack.GetComponent<Backpack>().Show(false);
-                //     }
-                //     else {
-                //         Backpack.backpack.GetComponent<Backpack>().Show(true);
-                //         GetComponent<FlyingSpell>().ResetFlyingSpell();
-                //     }
-                //     // Close other canvas
-                //     spellTreeDisp.SetActive(false);
-                //     talisDisp.CloseDisplay();
-                // }
                 
                 if (tag.CompareTo("TalismanIcon") == 0 && canAct) {
                     pick.descShow = false;

@@ -7,6 +7,10 @@ public class LeaveIconBright : MonoBehaviour
 {
     private Color color = new Color(0.15f, 0.15f, 0.15f, 0.7f);
     public bool shine = false;
+    public GameObject arrow;
+    public bool spelltreeShown;
+    public Vector3 talisPos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +20,7 @@ public class LeaveIconBright : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        arrow.GetComponent<Image>().enabled = shine;
     }
 
     public void ShineBackpack() {
@@ -31,6 +35,9 @@ public class LeaveIconBright : MonoBehaviour
         shine = true;
         this.gameObject.GetComponent<RawImage>().color = color;
         this.gameObject.transform.SetSiblingIndex(5);
+        spelltreeShown = true;
+        arrow.transform.localScale *= -1;
+        arrow.transform.localPosition = talisPos;
     }
 
     public void DarkBackpack() {
