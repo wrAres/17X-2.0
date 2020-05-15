@@ -10,8 +10,10 @@ public class UISoundScript : MonoBehaviour
     public static AudioClip wrongSpellSound;
     public static AudioClip openTalismanSound;
     public static AudioClip openSpellTreeSound;
-    public static AudioClip dialogNextSound;
+    public static AudioClip pickObjSound;
+    public static AudioClip[] dialogNextSounds;
     static AudioSource[] audioSources;
+    public static bool next = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,14 +23,21 @@ public class UISoundScript : MonoBehaviour
         wrongSpellSound = Resources.Load<AudioClip>("Sound/UI/wrong_spell");
         openTalismanSound = Resources.Load<AudioClip>("Sound/UI/open_talisman");
         openSpellTreeSound = Resources.Load<AudioClip>("Sound/UI/open_spell_tree");
-        dialogNextSound = Resources.Load<AudioClip>("Sound/UI/dialog_next");
+        pickObjSound = Resources.Load<AudioClip>("Sound/UI/pick");
+
+        dialogNextSounds = new AudioClip[2];
+        dialogNextSounds[0] = Resources.Load<AudioClip>("Sound/UI/dialog_next");
+        dialogNextSounds[1] = Resources.Load<AudioClip>("Sound/UI/dialog_next1");
+
+
         audioSources = this.gameObject.GetComponents<AudioSource>();
         audioSources[0].clip = backpackSound;
         audioSources[1].clip = spellTreeIconSound;
         audioSources[2].clip = wrongSpellSound;
         audioSources[3].clip = openTalismanSound;
         audioSources[4].clip = openSpellTreeSound;
-        audioSources[5].clip = dialogNextSound;
+        audioSources[5].clip = dialogNextSounds[0];
+        audioSources[6].clip = pickObjSound;
         // InvokeRepeating("PlaySound",0.001f,0.3f);
     }
 
@@ -55,6 +64,12 @@ public class UISoundScript : MonoBehaviour
     }
     public static void PlayDialogNext()
     {
-        audioSources[5].Play();
+        int nextInt = next ? 1 : 0;
+        audioSources[5].PlayOneShot(dialogNextSounds[nextInt], 0.5f);
+        next = !next;
+    }
+    public static void PlayPick()
+    {
+        audioSources[6].Play();
     }
 }

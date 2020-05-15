@@ -108,6 +108,7 @@ public class PickObject : MonoBehaviour
                     TipsDialog.PrintDialog(clickObject.name);
                     dialogShow = true;
                 }
+                UISoundScript.PlayPick();
             }
         }
         descShow = false;
