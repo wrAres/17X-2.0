@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1280
     height: 661
-  m_MinSize: {x: 578, y: 471}
-  m_MaxSize: {x: 14000, y: 14021}
+  m_MinSize: {x: 577, y: 471}
+  m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
-  controlID: 5349
+  controlID: 180
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -135,10 +135,10 @@ MonoBehaviour:
     y: 0
     width: 1004
     height: 661
-  m_MinSize: {x: 303, y: 471}
-  m_MaxSize: {x: 10000, y: 14021}
+  m_MinSize: {x: 302, y: 471}
+  m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 5313
+  controlID: 134
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -160,10 +160,10 @@ MonoBehaviour:
     y: 0
     width: 1004
     height: 390
-  m_MinSize: {x: 303, y: 221}
-  m_MaxSize: {x: 8003, y: 4021}
+  m_MinSize: {x: 302, y: 200}
+  m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 5314
+  controlID: 108
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -183,8 +183,8 @@ MonoBehaviour:
     y: 0
     width: 272
     height: 390
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -221,7 +221,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6ce9ffff42eaffff7ef5ffffd8f6ffff78f7ffffd8f9ffff6efbffff68930000
+      m_ExpandedIDs: 6efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -549,8 +549,8 @@ MonoBehaviour:
     y: 390
     width: 1004
     height: 271
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -597,21 +597,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Sound/UI
+    - Assets/Scripts/UICanvas/Click_CanvasOrScene
   m_ViewMode: 1
   m_StartGridSize: 75
   m_LastFolders:
-  - Assets/Resources/Sound/UI
+  - Assets/Scripts/UICanvas/Click_CanvasOrScene
   m_LastFoldersGridSize: 75
   m_LastProjectPath: /Users/wensdon/Desktop/academic/UCSC/Senior/winter 2020/The
     Atlas of Shanhe and Sheji/17X-2.0
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 394}
-    m_SelectedIDs: 02430000
-    m_LastClickedID: 17154
-    m_ExpandedIDs: 000000008442000086420000884200008a4200008c4200008e420000904200009242000094420000f642000000ca9a3b
+    scrollPos: {x: 0, y: 618}
+    m_SelectedIDs: 28430000
+    m_LastClickedID: 17192
+    m_ExpandedIDs: 0000000086420000884200008a4200008c4200008e42000090420000924200009442000096420000fa42000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -639,7 +639,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008442000086420000884200008a4200008c4200008e42000090420000924200009442000000ca9a3b
+    m_ExpandedIDs: 0000000086420000884200008a4200008c4200008e42000090420000924200009442000096420000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -664,9 +664,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: e0940000
-    m_LastClickedInstanceID: 38112
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300002e3c00009e440000404b00006c4b000000000000384700009c510000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -812,5 +812,5 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: 38112
-  m_LastVerticalScrollValue: 100
+  m_LastInspectedObjectInstanceID: -1
+  m_LastVerticalScrollValue: 0

@@ -69,7 +69,8 @@ public class PickObject : MonoBehaviour
                         GameObject.Find("MainUI").GetComponent<Show>().ShowBackpackIcon();
                         Backpack.backpack.GetComponent<Backpack>().Show(true);
                     }
-                    if (Backpack.backpack.GetComponent<Backpack>().AddItem(clickObject.name)) {
+                    if (Backpack.backpack.GetComponent<Backpack>().CanAddItem()) {
+                        Backpack.backpack.GetComponent<Backpack>().AddItem(clickObject.name);
                         Sprite item = clickObject.GetComponent<SpriteRenderer>().sprite;
                         GameObject.Find("MainUI").GetComponent<FlyingSpell>().FlyTowardsIcon(item, false);
                         Destroy(clickObject);
