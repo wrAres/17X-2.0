@@ -16,6 +16,8 @@ public class SpellTreeManager : MonoBehaviour {
     private List<Spell> spell = new List<Spell>();
     public GameObject display;
 
+    public float scaleAmount;
+
     // Textbox display
     public GameObject textBox;
     public Text spellName, recipe, desc;

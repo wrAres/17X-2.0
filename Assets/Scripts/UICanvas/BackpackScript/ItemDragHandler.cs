@@ -13,6 +13,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
     public static bool holdItem;
 
     public GameObject textbox;
+    public float itemScale;
     public Text itemName;
 
     public bool dialogShown => FindObjectOfType<TipsDialog>() != null;
@@ -23,11 +24,13 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
         itemName.text = gameObject.name.ToString();
         // print("event data: " + this.gameObject.GetComponent<RectTransform>().anchoredPosition);
         textbox.GetComponent<RectTransform>().anchoredPosition = this.gameObject.GetComponent<RectTransform>().anchoredPosition + new Vector2(-80f, -60f);
+        transform.localScale *= itemScale;
     }
 
     public void OnPointerExit(PointerEventData eventData) {
         // dispManager.GetComponent<TalismanManager>().DispTextBox(false, element, eventData.position);
         textbox.SetActive(false);
+        transform.localScale /= itemScale;
     }
 
     public void OnDrag(PointerEventData eventData){

@@ -34,10 +34,12 @@ public class Spell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
         if (thisPosition.y >= -200)    { thisPosition.y -= 200f; }
         else                        { thisPosition.y += 200f; }
         spellTreeDisp.textBox.GetComponent<RectTransform>().anchoredPosition = thisPosition;
+        transform.parent.gameObject.transform.localScale *= spellTreeDisp.scaleAmount;
     }
 
     public void OnPointerExit(PointerEventData eventData) {
         spellTreeDisp.HideTextBox();
+        transform.parent.gameObject.transform.localScale /= spellTreeDisp.scaleAmount;
     }
     
 

@@ -1574,6 +1574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   display: {fileID: 318233568}
+  scaleAmount: 1.2
   textBox: {fileID: 331384549}
   spellName: {fileID: 1102737784}
   recipe: {fileID: 1648511585}
@@ -3767,7 +3768,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: c3e25f5a3d5084e3d9f7c0a4d3e62c76, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19531,6 +19532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textbox: {fileID: 810526737}
   itemName: {fileID: 1127569461}
+  scaleAmount: 1.2
 --- !u!114 &1733698976
 MonoBehaviour:
   m_ObjectHideFlags: 0

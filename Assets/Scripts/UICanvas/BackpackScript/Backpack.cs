@@ -13,6 +13,7 @@ public class Backpack : MonoBehaviour
 
     public GameObject textbox;
     public Text itemName;
+    public float scaleAmount;
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +62,7 @@ public class Backpack : MonoBehaviour
         ItemDragHandler handler = imageObj.AddComponent<ItemDragHandler>(); //Add item-drag component
         imageObj.GetComponent<ItemDragHandler>().textbox = textbox;
         imageObj.GetComponent<ItemDragHandler>().itemName = itemName;
+        imageObj.GetComponent<ItemDragHandler>().itemScale = scaleAmount;
 
         image.texture = Resources.Load<Texture2D>("spell/" + name); //Set the Sprite of the Image Component on the new GameObject
         imageObj.tag = "Item";
