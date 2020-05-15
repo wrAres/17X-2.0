@@ -6,7 +6,7 @@ using UnityEngine;
 public class EarthSoundManager : MonoBehaviour
 {
     public static AudioClip playerStepSound;
-    public static AudioClip player1StepSound;
+    public static AudioClip[] playerStepSounds;
     static AudioSource[] audioSources;
     public static bool triggerStep = false;
     public static bool shortStep = true;
@@ -15,10 +15,15 @@ public class EarthSoundManager : MonoBehaviour
     void Start()
     {
         playerStepSound = Resources.Load<AudioClip>("Sound/Steps/step_earth");
-        player1StepSound = Resources.Load<AudioClip>("Sound/Steps/step_earth_1");
+
+        playerStepSounds = new AudioClip[24];
+        for (int i = 0; i < 24; i++){
+            playerStepSounds[i] = Resources.Load<AudioClip>("Sound/Steps/earth_steps/step_earth_" + i);
+        }
+        
         audioSources = this.gameObject.GetComponents<AudioSource>();
         audioSources[0].clip = playerStepSound;
-        audioSources[1].clip = player1StepSound;
+        audioSources[1].clip = playerStepSounds[0];
         // InvokeRepeating("PlaySound",0.001f,0.3f);
     }
 
@@ -30,7 +35,7 @@ public class EarthSoundManager : MonoBehaviour
     {
         if (shortStep) {
             audioSources[1].volume = Random.Range(0.05f, 0.1f);
-            audioSources[1].PlayOneShot(player1StepSound);
+            audioSources[1].PlayOneShot(playerStepSounds[Random.Range(0, 24)]);
             shortStep = false;
         }
         else if (!triggerStep) {
