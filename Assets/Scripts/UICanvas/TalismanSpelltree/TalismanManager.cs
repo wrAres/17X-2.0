@@ -39,6 +39,10 @@ public class TalismanManager : MonoBehaviour {
     private bool firstAccess = true;
     public Animator talis;
 
+    public bool TenSecTimer = false;
+    public float countdownTime = 10.0f;
+    public float timeLeft;
+
     private void Awake() {
         dispManager = GetComponent<Show>();
         ResetCraft();
@@ -82,6 +86,16 @@ public class TalismanManager : MonoBehaviour {
         //     UISoundScript.OpenTalisman();
         // }
 
+        //Countdown for Dialog Pop up for idle mouse
+        if (TenSecTimer && timeLeft > 0) timeLeft -= Time.deltaTime;
+        if (TenSecTimer && timeLeft < 0)
+        {
+            // TODO: Create a Talisman Tip and call it here
+            // TipsDialog.PrintDialog("TalismanTip");
+            Debug.Log("No Tip implemented yet for Talisman Timer");
+            TenSecTimer = false;
+        }
+
         // TEST MAKE BUTTON
         if (Input.GetKey(KeyCode.G) && display.activeSelf) {
             MakeItem();
@@ -114,6 +128,10 @@ public class TalismanManager : MonoBehaviour {
             DisplaySpellList();
             curTime = timer;
             UISoundScript.OpenTalisman();
+
+            TenSecTimer = true;
+            timeLeft = countdownTime;
+            
         }
         else if (!dialogShown && DontDestroyVariables.canOpenTalisman) {
             CloseDisplay();
@@ -210,6 +228,9 @@ public class TalismanManager : MonoBehaviour {
         display.SetActive(false);
         ResetCraft();
         curTime = 0;
+
+        TenSecTimer = false;
+        timeLeft = countdownTime;
     }
 
     // Add an element to the craft log

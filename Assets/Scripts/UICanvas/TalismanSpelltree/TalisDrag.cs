@@ -13,10 +13,13 @@ public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHand
     private Vector3 origin;
     private bool setTalis;
 
+    private TalismanManager Tmanager;
+
     public void OnPointerDown(PointerEventData pointerEventData) {
         //Output the name of the GameObject that is being clicked
         //Debug.Log(name + "Game Object Click in Progress");
         dispManager.GetComponent<TalismanManager>().AddCraft(element, GetComponentInChildren<Image>().sprite);
+        if (Tmanager.TenSecTimer) Tmanager.timeLeft = Tmanager.countdownTime;
     }
 
     public void OnPointerEnter(PointerEventData eventData) {
@@ -65,6 +68,8 @@ public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHand
     // Start is called before the first frame update
     void Start() {
         origin = gameObject.GetComponent<RectTransform>().localPosition;
+
+        Tmanager = GameObject.Find("MainUI").GetComponent<TalismanManager>();
     }
 
     // Update is called once per frame

@@ -81,6 +81,7 @@ public class TipsDialog : MonoBehaviour
         dialogList.Add("Rock2", "EarthGroundDescription");
         dialogList.Add("Rock3", "EarthGroundDescription");
         dialogList.Add("Rock4", "EarthGroundDescription");
+        dialogList.Add("TalismanTip", "TalismanTips"); // TODO: Add Talisman Tips to the text file dialogtext 
         dialog.SetActive(false);
     }
 
