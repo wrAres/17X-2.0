@@ -61,7 +61,7 @@ public class playerMovement : MonoBehaviour
 			isMoving = false;
 		}*/
 		timer++;
-		
+		//GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
 		if(recorder + 20 <= timer && collide == true){
 			collide = false;
 			cooldown = false;
@@ -76,8 +76,12 @@ public class playerMovement : MonoBehaviour
 			isMoving = false;
 		}else{
 			fall=false;
+			
 		}
-		float yPos = Mathf.Clamp(GetComponent<Rigidbody>().transform.position.y,-100,0.8f);
+		float yPos = Mathf.Clamp(GetComponent<Rigidbody>().transform.position.y,0.8f,0.8f);
+		if(GetComponent<Rigidbody>().velocity.y >= 0.1){
+			GetComponent<Rigidbody>().AddForce(0,-50,0);
+		}
 		if(GetComponent<Rigidbody>().transform.position.y < -20 ){
 			if(startPosition == 0){
 				GetComponent<Rigidbody>().transform.position = new Vector3(8.56f, 0.763f, -61.31f);
