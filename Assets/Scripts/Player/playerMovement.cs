@@ -14,7 +14,7 @@ public class playerMovement : MonoBehaviour
 	public int freeze;
 	private bool isWaterScene =>
         SceneManager.GetActiveScene().name == "scene3";
-	public bool canAct => !dialogShown && !talismanShown && !shineIcon && camera.enabled &&!events&&!fall;
+	public bool canAct => /*!dialogShown && !talismanShown && !shineIcon && camera.enabled &&*/!events&&!fall;
 	public bool dialogShown =>
         FindObjectOfType<TipsDialog>() != null;
 	public bool talismanShown =>
@@ -33,6 +33,7 @@ public class playerMovement : MonoBehaviour
 	int timer;
 	public float speed;
 	public bool events;
+	Vector3 checkpoint;
 	void Start()
 	{
 		system = GameObject.Find("TrigramManager").GetComponent<SystemTree>();
@@ -71,6 +72,9 @@ public class playerMovement : MonoBehaviour
 			old_pos = transform.position;
 		}
 		if(GetComponent<Rigidbody>().velocity.y<-0.1){
+			if(fall == false){
+				checkpoint = old_pos;
+			}
 			fall=true;
 			status = 0;
 			isMoving = false;
@@ -83,11 +87,12 @@ public class playerMovement : MonoBehaviour
 			GetComponent<Rigidbody>().AddForce(0,-50,0);
 		}
 		if(GetComponent<Rigidbody>().transform.position.y < -20 ){
-			if(startPosition == 0){
+			/*if(startPosition == 0){
 				GetComponent<Rigidbody>().transform.position = new Vector3(8.56f, 0.763f, -61.31f);
 			}else{
 				GetComponent<Rigidbody>().transform.position = new Vector3(-3,2,-13);
-			}
+			}*/
+			GetComponent<Rigidbody>().transform.position = checkpoint;
 			GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
 			AIDataManager.walkingPuzzleFalls++;
 			if (!findFloor) {
