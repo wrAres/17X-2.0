@@ -23,7 +23,7 @@ public class Backpack : MonoBehaviour
         // listOfItems = new LinkedList<Item>();
         imageObjects = new GameObject[18];
         length = 0;
-        this.AddItem("SpellTreeItem");
+        this.AddItem("Tao-Book");
         // this.AddItem("Taiji Key");
         this.Show(false);
     }

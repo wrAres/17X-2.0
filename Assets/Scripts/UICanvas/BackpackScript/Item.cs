@@ -35,7 +35,7 @@ public class Item : MonoBehaviour
     public static bool canPlace(string item, string targetObj) {
         spell = false;
         print(item + ", drop to: " + targetObj);
-        if (item.CompareTo("SpellTreeItem") == 0)
+        if (item.CompareTo("Tao-Book") == 0)
             return true;
         string available = (string)itemOnPuzzle[item];
         if (available == null)
@@ -123,7 +123,7 @@ public class Item : MonoBehaviour
 
             SpellEffectSounds.PlayDirt();
         } 
-        else if (item.CompareTo("SpellTreeItem") == 0){
+        else if (item.CompareTo("Tao-Book") == 0){
             GameObject.Find("MainUI").GetComponent<Show>().ShowSpelltreeIcon();
             TipsDialog.PrintDialog("Spelltree 1");
             GameObject.Find("Dialog Box").transform.SetSiblingIndex(6);

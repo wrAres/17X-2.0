@@ -4,9 +4,9 @@ I bet it’s really deep and I don’t know how to swim.
 Earth Key
 I feel a strong sense of the combination of Yin and Yang from this =key. But what is it used for?
 Oh, wait! I almost forgot an important thing. 
-In such an unknown place, I need to have my “weapon” in hands =        -- SpelltreeItem.
+In such an unknown place, I need to have my “weapon” in hands =        -- Tao-Book.
 It should be in my gourd. I used to store everything in my gourd.
-【Press 'B' or click the gourd to open/close the backpack】=【Click and drag the 'SpelltreeItem' out】
+【Press 'B' or click the gourd to open/close the backpack】=【Click and drag the 'Tao-Book' out】
 ---
 Lobby
 Wow! An Eight-Trigram-Atlas! I feel the strong energies of the other =four elements except Earth come from four different directions. 
