@@ -46,25 +46,25 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
             item_transform.sizeDelta = variables.earthKey;
             // new Vector2(48f, 72f);
         } 
-        else if (name.CompareTo("Dirt") == 0) {
+        else if (name.CompareTo("Changable Soil") == 0) {
             item_transform.sizeDelta = variables.dirt;
         }
-        else if (name.CompareTo("Life Water") == 0) {
+        else if (name.CompareTo("Heavenly Water") == 0) {
             item_transform.sizeDelta = variables.lifeWater;
         }
-        else if (name.CompareTo("Board") == 0) {
+        else if (name.CompareTo("Natural Board") == 0) {
             item_transform.sizeDelta = variables.board;
         }
         else if (name.CompareTo("Water Seed") == 0) {
             item_transform.sizeDelta = variables.waterSeed;
         }
-        else if (name.CompareTo("8 Trigram Portal") == 0) {
+        else if (name.CompareTo("Yin-Yang Portal") == 0) {
             item_transform.sizeDelta = variables.earthPortal;
         }
-        else if (name.CompareTo("Glowing Sun") == 0) {
+        else if (name.CompareTo("Prime Sun") == 0) {
             item_transform.sizeDelta = variables.glowingSun;
         }
-        else if (name.CompareTo("Firewood") == 0) {
+        else if (name.CompareTo("Golden Wood") == 0) {
             item_transform.sizeDelta = variables.firewood;
         }
         else if (name.CompareTo("Taiji Key") == 0) {

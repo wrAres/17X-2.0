@@ -25,7 +25,6 @@ public class Backpack : MonoBehaviour
         length = 0;
         this.AddItem("SpellTreeItem");
         // this.AddItem("Taiji Key");
-        // this.AddItem("Glowing Sun");
         this.Show(false);
     }
     void OnGUI() {
@@ -72,16 +71,16 @@ public class Backpack : MonoBehaviour
         item_transform.SetParent(backpack.transform); //Assign the newly created Image GameObject as a Child of the Parent Panel, Canvas/Main UI.
 
         item_transform.anchoredPosition = new Vector2((length-12f)*80 + 200, 0);
-        if (name.CompareTo("Life Water") == 0) {
+        if (name.CompareTo("Heavenly Water") == 0) {
             item_transform.sizeDelta = new Vector2(60, 35);
-        } else if (name.CompareTo("Dirt") == 0) {
+        } else if (name.CompareTo("Changable Soil") == 0) {
             item_transform.anchoredPosition = item_transform.anchoredPosition + new Vector2(0, 5);
             item_transform.sizeDelta = new Vector2(45, 40);
         } else if (name.CompareTo("Taiji Key") == 0) {
             item_transform.sizeDelta = new Vector2(80, 80);
         } else if (name.CompareTo("Earth Key") == 0) {
             item_transform.sizeDelta = new Vector2(40f, 60f);
-        } else if (name.CompareTo("8 Trigram Portal") == 0) {
+        } else if (name.CompareTo("Yin-Yang Portal") == 0) {
             item_transform.sizeDelta = new Vector2(48f, 32f);
         } else {
             item_transform.sizeDelta = new Vector2(60f, 60f);

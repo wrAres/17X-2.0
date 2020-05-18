@@ -17,15 +17,15 @@ public class Item : MonoBehaviour
         // s = FindObjectsOfType<SpellTreeManager>()[0];;
         itemOnPuzzle = new Hashtable();
         itemOnPuzzle.Add("Earth Key", "EarthPortal");
-        itemOnPuzzle.Add("Dirt", "River,Flowerpot");
+        itemOnPuzzle.Add("Changable Soil", "River,Flowerpot");
         itemOnPuzzle.Add("Water Seed", "Flowerpot");
-        itemOnPuzzle.Add("Firewood", "法阵-scene2");
-        itemOnPuzzle.Add("Life Water", "Flowerpot");
-        itemOnPuzzle.Add("Glowing Sun", "Flowerpot");
+        itemOnPuzzle.Add("Golden Wood", "法阵-scene2");
+        itemOnPuzzle.Add("Heavenly Water", "Flowerpot");
+        itemOnPuzzle.Add("Prime Sun", "Flowerpot");
         itemOnPuzzle.Add("Taiji Key", "Water Boss Door");
-        itemOnPuzzle.Add("Board", "Background");
-        itemOnPuzzle.Add("8 Trigram Portal", "atlasmap2");
-        itemOnPuzzle.Add("Taoist Wind", "Wind Collider");
+        itemOnPuzzle.Add("Natural Board", "Background");
+        itemOnPuzzle.Add("Yin-Yang Portal", "atlasmap2");
+        itemOnPuzzle.Add("Taoism Wind", "Wind Collider");
     }
 
     public static void getGroundNames() {
@@ -44,7 +44,7 @@ public class Item : MonoBehaviour
         for (int i = 0; i < availablePutList.Length; i++) {
             if (targetObj.CompareTo(availablePutList[i]) == 0){
                 if (targetObj.CompareTo("Flowerpot") == 0) {
-                    if (item.CompareTo("Dirt") == 0) {
+                    if (item.CompareTo("Changable Soil") == 0) {
                         if (DontDestroyVariables.growState == 0) {
                             return true;
                         } else {
@@ -58,7 +58,7 @@ public class Item : MonoBehaviour
                             TipsDialog.PrintDialog("Water Seed Grow Order 1");
                             return false;
                         }
-                    } else if (item.CompareTo("Life Water") == 0){
+                    } else if (item.CompareTo("Heavenly Water") == 0){
                         if (DontDestroyVariables.growState == 2)
                             return true;
                         else if (DontDestroyVariables.growState < 2){
@@ -68,7 +68,7 @@ public class Item : MonoBehaviour
                             TipsDialog.PrintDialog("Water Seed Grow Order 2.1");
                             return false;
                         }
-                    } else if (item.CompareTo("Glowing Sun") == 0) {
+                    } else if (item.CompareTo("Prime Sun") == 0) {
                         if (DontDestroyVariables.growState == 3) {
                             return true;
                         } else if (DontDestroyVariables.growState < 3) {
@@ -108,7 +108,7 @@ public class Item : MonoBehaviour
     }
 
     public static void puzzleEffect(string item, string position, Vector3 hitPoint) {
-        if (item.CompareTo("Dirt") == 0 && position.CompareTo("River") == 0){
+        if (item.CompareTo("Changable Soil") == 0 && position.CompareTo("River") == 0){
             GameObject river = GameObject.Find("River");
             // river.GetComponent<BoxCollider>().size = new Vector3(0, 0, 0);
             // river .GetComponent<Renderer>().material.color = Color.gray;
@@ -134,7 +134,7 @@ public class Item : MonoBehaviour
             earthPortal.GetComponent<sceneTransition>().enterable = true;
             earthPortal.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Earth Portal");
         } 
-        else if (item.CompareTo("Dirt") == 0 && position.CompareTo("Flowerpot") == 0){
+        else if (item.CompareTo("Changable Soil") == 0 && position.CompareTo("Flowerpot") == 0){
             flowerpot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Flowerpot/Flowerpot with dirt");
 
             AIDataManager.UpdateStandardSpellCount("Dirt", 1);
@@ -142,25 +142,25 @@ public class Item : MonoBehaviour
 
             DontDestroyVariables.growState = 1;
         } 
-        else if (item.CompareTo("Board") == 0 && position.CompareTo("Background") == 0){
+        else if (item.CompareTo("Natural Board") == 0 && position.CompareTo("Background") == 0){
             GameObject.Find("Background").GetComponent<TileMovement>().CheckDone();
         } 
         else if (item.CompareTo("Water Seed") == 0 && position.CompareTo("Flowerpot") == 0){
             DontDestroyVariables.growState = 2;
             flowerpot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Flowerpot/Flowerpot with seed");
         } 
-        else if (item.CompareTo("Life Water") == 0 && position.CompareTo("Flowerpot") == 0){
+        else if (item.CompareTo("Heavenly Water") == 0 && position.CompareTo("Flowerpot") == 0){
             DontDestroyVariables.growState = 3;
             flowerpot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Flowerpot/Flowerpot with bud");
 
             s.UnlockElement(TalisDrag.Elements.WOOD);
 
-            AIDataManager.UpdateStandardSpellCount("Dirt", 1);
-            AIDataManager.UpdateStandardSpellCount("earth", 3);
+            // AIDataManager.UpdateStandardSpellCount("Dirt", 1);
+            // AIDataManager.UpdateStandardSpellCount("earth", 3);
             AIDataManager.UpdateStandardSpellCount("Life Water", 1);
             AIDataManager.UpdateStandardSpellCount("water", 3);
         }
-        else if (item.CompareTo("Firewood") == 0 && position.CompareTo("法阵-scene2") == 0){
+        else if (item.CompareTo("Golden Wood") == 0 && position.CompareTo("法阵-scene2") == 0){
             sceneTransition sceneTrans = GameObject.Find("法阵-scene2").GetComponent<sceneTransition>();
             GameObject.Find("法阵-scene2").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Fire Scroll");
             // sceneTrans.enterable = true;
@@ -171,7 +171,7 @@ public class Item : MonoBehaviour
 
             SpellEffectSounds.PlayFire();
         } 
-        else if (item.CompareTo("Glowing Sun") == 0 && position.CompareTo("Flowerpot") == 0){
+        else if (item.CompareTo("Prime Sun") == 0 && position.CompareTo("Flowerpot") == 0){
             DontDestroyVariables.growState = 4;
             flowerpot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Flowerpot/Flowerpot with Flower and Sun");
             
@@ -212,7 +212,7 @@ public class Item : MonoBehaviour
             // GameObject waterBoss = GameObject.Find("QiangYu");
             // waterBoss.GetComponent<SpriteRenderer>().enabled = false;
         }
-        else if (item.CompareTo("Taoist Wind") == 0 && position.CompareTo("Wind Collider") == 0){
+        else if (item.CompareTo("Taoism Wind") == 0 && position.CompareTo("Wind Collider") == 0){
             GameObject wind = GameObject.Find("WindGroup");
             wind.SetActive(false);
 
@@ -224,7 +224,7 @@ public class Item : MonoBehaviour
 
             TipsDialog.PrintDialog("Water Boss");
         }
-        else if (item.CompareTo("8 Trigram Portal") == 0 && position.CompareTo("atlasmap2") == 0){
+        else if (item.CompareTo("Yin-Yang Portal") == 0 && position.CompareTo("atlasmap2") == 0){
             GameObject portal = GameObject.Find("WaterToEarthPortal");
             portal.GetComponent<SpriteRenderer>().enabled = true;
             portal.transform.position = hitPoint + new Vector3(0.0f, 0.6f, 0);
