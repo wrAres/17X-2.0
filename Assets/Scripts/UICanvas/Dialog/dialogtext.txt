@@ -1,48 +1,48 @@
 River
-I bet it’s really deep and I don’t know how to swim.
+I bet the river is really deep and I don’t know how to swim.
 ---
 Earth Key
-I feel a strong sense of the combination of Yin and Yang from this =key. But what is it used for?
+I feel a strong sense of the combination of Yin and Yang energies =from this key. But what is it used for?
 Oh, wait! I almost forgot an important thing. 
-In such an unknown place, I need to have my “weapon” in hands =        -- Tao-Book.
-It should be in my gourd. I used to store everything in my gourd.
+In such an unknown space, I need to review my incantations for =my safety=        -- Tao-Book.
+It should be in my gourd, which I used to store all my stuff.
 【Press 'B' or click the gourd to open/close the backpack】=【Click and drag the 'Tao-Book' out】
 ---
 Lobby
-Wow! An Eight-Trigram-Atlas! I feel the strong energies of the other =four elements except Earth come from four different directions. 
-According to what my master taught me, Water was the first =element generated in the world. 
-Maybe I can go check the Water energy first. 
+Wow! An Eight-Trigram-Atlas! I can feel the strong energies of the =other four elements except Earth come from four directions. 
+According to what the Master taught me, Water was the first =element born in the world. 
+Maybe I can go check the energy of Water first. 
 ---
 Spelltree 1
-All talisman wizards have their own Spelltree pages that record =spells they have learned in the past. 
+All talisman wizards have their own Tao-Books that record spells =they have learned in the past. 
 We draw those elements-characters in the talisman to cast a =specific spell.
-【Press 'Q' or click the icon to open/close the Spelltree】
+【Press 'Q' or click the icon to open/close the Tao-Book】
 ---
 Spelltree 2
-That's weird. There can't be nothing on my Spelltree! I somehow =cannot remember mostly anything about my spells. 
-Something must be wrong! I must find the way out of here.
+That's weird. There can't be nothing in my book! And I somehow =cannot remember any spells. 
+Something must be wrong! I must figure it out!
 ---
 Talisman 1
-...I ...I just felt like some of my memories have come back. 
-A simple spell would be able to let me cross the river.
-【Check the Spelltree first】=【Press ‘T’ to open/close the talisman】
+...I ...I just felt like some of my memories have flown back. A simple =spell would be able to let me cross the river.
+Thank god I still know how to use the talisman.
+【Press ‘T’ or click the icon to open/close the talisman】=【Check the Tao-Book to see the new spell】
 ---
 Talisman 2
-What? There are two dragons entwined on my scrolls. The left one =looks like the Yellow-Dragon, the God of Earth. 
-What is he doing there? Where are my other characters? Maybe =I should try if I can still use the talisman…
-【Left click to select elements on the scrolls】
-【Press 'G' to finish drawing the talisman】=【Press 'DELETE' to erase characters on the talisman】
+A talisman is a piece of paper that is written with different kinds =of magical symbols, utilizing energies those symbols represent, to cast =spells.
+I cannot remember anything but the Earth symbol right now. Maybe =I should try if the talisman is still usable.
+【Left-click the first symbol on the left scroll】
+【Press 'G' to finish drawing the talisman】=【Press 'DELETE' to replace with a new talisman】
 ---
 Self Introduction
 Ouch! =【Press 'SPACE' or click 'NEXT' to continue】
 ...
-This must be the interior world of the Five-Element-Signet! The map =and tale the Master left for me are real!
+This should be the interior world of the Five-Element-Signet! The =map and tale the Master left for me are real!
 I must find and save him!
 【Use ‘WSAD’ to move around】=【Use mouse to explore the world】
 【Use mouse wheel to zoom in/out】
 ---
 EarthPortal
-Seems like an extremely strong power is locked behind this scroll, =I might need a key to go into it.
+Seems like an extremely strong power is locked behind this scroll =portal, I might need a key to go through it.
 ---
 EarthPortal Open
 The portal is open now! Time to move on! 
@@ -63,127 +63,128 @@ Nothing restricts me from going through the portal.
 Stay away from it! I don’t want to burn my brush.
 ---
 atlasmap2
-It’s wet and soft as if I am stepping on the water.
+I feel like I am stepping on the water but the ground is definitely =dry.
 ---
 starground
-It looks like the evening sky with plenty of stars. It’s beautiful! 
----
-GameObject
-Wait… Am I walking on the Dipper? Does it have any meaning?
----
-End 
-Wait… Am I walking on the Dipper? Does it have any meaning?
+It’s like I am standing above an evening sky with plenty of stars. 
 ---
 Water Seed
-A flower seed that looks like Mercury. I can feel the energy of =Water surrounding it.
+A seed that looks like Mercury. I can feel the energy of =Water surrounding it.
 ---
 Flowerpot
-An ancient flowerpot. It must be older than me.
+An ancient flower pot. It must be older than me.
 ---
 Flower Need Sun
-The bud needs photosynthesis to grow up.
+The bud needs more Yang energy to keep balance in order to =grow up.
 ---
 Water Boss Door
-A iron gate with some weird decorations on it. What are their =meanings?
+An iron gate with some weird decorations on it. What are their =meanings?
 【Use 'Z' again to observe the gate】
 ---
 6_water-white
-That’s the first time I see such pure Water energy! They are like =thousands of Heavenly Water I created getting together.
+The wind is so strong! I can’t move forward against it.
 ---
 1_water-dark
-That’s the first time I see such pure Water energy! They are like =thousands of Heavenly Water I created getting together.
+Oh my god... I can’t believe that there is such a kind of pure energy of Water.
 ---
 wind
-Strong winds come from somewhere. I can’t move forward against it.
+The wind is so strong! I can’t move forward against it.
 ---
 wind (1)
-Strong winds come from somewhere. I can’t move forward against it.
+The wind is so strong! I can’t move forward against it.
 ---
 wind (2)
-Strong winds come from somewhere. I can’t move forward against it.
+The wind is so strong! I can’t move forward against it.
 ---
 wind (3)
-Strong winds come from somewhere. I can’t move forward against it.
+The wind is so strong! I can’t move forward against it.
 ---
 wind (4)
-Strong winds come from somewhere. I can’t move forward against it.
+The wind is so strong! I can’t move forward against it.
 ---
 wind (5)
-Strong winds come from somewhere. I can’t move forward against it.
+The wind is so strong! I can’t move forward against it.
 ---
 wind (6)
-Strong winds come from somewhere. I can’t move forward against it.
+The wind is so strong! I can’t move forward against it.
 ---
 wind (7)
-Strong winds come from somewhere. I can’t move forward against it.
+The wind is so strong! I can’t move forward against it.
 ---
 Break Mirror
-Someone: Nice job human. The world is back to normal now. =I am waiting for you behind the gate.
+Someone: Nice job human. The reversed magic has been relieved. =I am waiting for you behind this iron gate.
 ---
 Mirror no effect
-Six mirrors with 6 beautiful flowers, are they all the same? 
-I am always confused about which side is the real world, =or do I live in a mirror as well?
+Six mirrors with 6 beautiful flowers, are they all the same or not? 
+The whole space became weird after I entered the mirror, =feeling like everything was unreal.
 ---
 Mirror need flower
-These flowers look similar to the bud I plant.
+These flowers look similar to the bud I just planted.
 ---
 Water Boss
-Qiang Yu: I am Qiang Yu, God of Water. 
-Qiang Yu: You do surprise me a lot, human. 
-Qiang Yu: You have earned my respect and I will give you a gift.
-Qiang Yu: Let me predict your future.
+Qiang Yu: I am Qiang Yu, the god of Water. 
+Qiang Yu: You do surprise me a lot.
+Qiang Yu: I will give you a gift: =            -- A prediction of your future.
 .
 ..
 ...
 ....
-Qiang Yu: ☵
-Qiang Yu: Fighting against your fate, don’t let me down, human…
+Qiang Yu: That’s what I have for you: =            ☵
+Qiang Yu: Interesting… =Fighting against your fate, please don’t let me down, human…
 ---
 Water Seed Grow Order 0
-The flowerpot is full.
+The flowerpot is full of soil.
 ---
 Water Seed Grow Order 1
-The seed needs soil.
+The seed needs soil to grow.
 ---
 Water Seed Grow Order 2
 I better plant the seed first.
 ---
 Water Seed Grow Order 2.1
-I already watered it.
+The bud cannot take more energy. 
 ---
 Water Seed Grow Order 3
 Someone: The sun might burn the plant now. Let it grow first.
 ---
 Water Seed Grow Order 3.1
-The sun is shining. Such a beautiful prunus mume.
+The sun is warm and shining. A beautiful prunus mume is blooming right now.
 ---
 Wrong Spell
-Nothing happens.
+Nothing happens I guess.
 ---
 Baguamap
 A Eight-Trigrams-Atlas. Different Trigrams represent different meanings =and elements. 
-My teacher said that everything could be comprehended according =to Atlas.
+The Master said that everything could be comprehended according =to Atlas.
 ---
 Zoom In Active
-【Press 'z' to see the details of flowers. Use arrow keys to check =different mirrors】
+【Press 'z' to look at the details of flowers.】
+【Use arrow keys to check different mirrors】
 ---
 Moving Puzzle Tip
-【Use arrow keys to move puzzle pieces】
+【Use 'WASD' to move puzzle pieces】
 ---
 Rock1
-Someone curved a sentense on the hard rock...
-"The world is co   ructed of fi e basic ele ents: M   l, Wood, =Wa er, Fire, Ear h"
+A sentence is curved on the hard rock:
+"The world is constr cted of      basic ele ents: M   l, Wood, =Wa er, Fire, Ear h." =            --   e  a   r
 Some characters are hard to recognize now.
 ---
 Rock2
-Someone curved a sentense on the hard rock...
+A sentence is curved on the hard rock:
+"There a   genera ing and over oming relationships betw en each =t o elements.” =            -- T       e    
+Some characters are hard to recognize now.
 ---
 Rock3
-Someone curved a sentense on the hard rock...
+A sentence is curved on the hard rock:
+"By pr moting a d restra ning loop, t   balance of the w rld is =maintained. =            --  h  M st
+Some characters are hard to recognize now.
 ---
 Rock4
-Someone curved a sentense on the hard rock...
+A sentence is curved on the hard rock:
+"Please! someone please bring me out from this f  kin  place... I =don’t wan  to die here."
+Some characters are hard to recognize now. I am sure this guy was =definitely disappointed at that moment.
 ---
 Backpack Full
-Gourd is full. Right-click on the item to delete it.
+My Gourd is full. 
+【Right-click to eliminate the spell】
 ---
