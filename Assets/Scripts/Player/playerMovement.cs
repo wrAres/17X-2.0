@@ -104,10 +104,14 @@ public class playerMovement : MonoBehaviour
 		if(canAct == false){
 			isMoving = false;
 		}
+		 
 		//ani.SetFloat("Speed", GetComponent<Rigidbody>().velocity.z);
 		ani.SetFloat("status",status);
 		ani.SetBool("isMoving",isMoving);
 		if (canAct&&!fall&&!collide) {
+			if (Input.GetKeyUp("w")||Input.GetKeyUp("a")||Input.GetKeyUp("s")||Input.GetKeyUp("d")){
+				GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+			}
 			if (Input.GetKey("w")) {
 				direction = -1 * isReverse;
 				status = -1 * isReverse;
