@@ -19837,6 +19837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogShow: 0
   descShow: 1
+  distanceToClick: 8
 --- !u!212 &1798768910
 SpriteRenderer:
   m_ObjectHideFlags: 0

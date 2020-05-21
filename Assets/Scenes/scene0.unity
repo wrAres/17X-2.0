@@ -1218,7 +1218,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isReverse: 1
   ani: {fileID: 126118433}
-  system: {fileID: 0}
   status: 0
   freeze: 1
   fall: 0
@@ -2170,6 +2169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogShow: 0
   descShow: 1
+  distanceToClick: 8
 --- !u!1 &348457821
 GameObject:
   m_ObjectHideFlags: 0

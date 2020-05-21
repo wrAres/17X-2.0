@@ -14989,6 +14989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogShow: 0
   descShow: 1
+  distanceToClick: 8
 --- !u!65 &1027881863
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20735,7 +20736,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isReverse: 1
   ani: {fileID: 1550972248}
-  system: {fileID: 0}
   status: 0
   freeze: 1
   fall: 0
