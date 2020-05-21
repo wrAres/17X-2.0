@@ -25,6 +25,7 @@ public class Backpack : MonoBehaviour
         length = 0;
         this.AddItem("Tao-Book");
         this.AddItem("Talisman");
+        this.AddItem("Taoism Wind");
         // this.AddItem("Taiji Key");
         this.Show(false);
     }

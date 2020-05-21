@@ -103,6 +103,7 @@
      <Compile Include="Assets\Scripts\UICanvas\Click_CanvasOrScene\PickObject.cs" />
      <Compile Include="Assets\Scripts\UICanvas\Click_CanvasOrScene\Show.cs" />
      <Compile Include="Assets\Scripts\UICanvas\CreditMenu.cs" />
+     <Compile Include="Assets\Scripts\UICanvas\Dialog\BossTip.cs" />
      <Compile Include="Assets\Scripts\UICanvas\Dialog\Rivertip.cs" />
      <Compile Include="Assets\Scripts\UICanvas\Dialog\TipsDialog.cs" />
      <Compile Include="Assets\Scripts\UICanvas\InGameMenu.cs" />

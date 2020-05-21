@@ -12,4 +12,5 @@ public class DontDestroyVariables : MonoBehaviour
 	public static bool accidentallyOpenTalisman = false;
 	public static bool canOpenTalisman = false;
 	public static bool haveSeenRiverTip = false;
+	public static bool windExist = true;
 }

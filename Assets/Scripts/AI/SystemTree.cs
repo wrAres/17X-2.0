@@ -217,24 +217,24 @@ public class SystemTree : MonoBehaviour
         rootNode.Evaluate();
     }
     
-    public void FindFloorPiecesTranform()
-    {
-        floorPiece1 = GameObject.Find("FloorPiece1");
-        floorPiece2 = GameObject.Find("FloorPiece2");
-        floorPiece3 = GameObject.Find("FloorPiece3");
-        floorPiece4 = GameObject.Find("FloorPiece4");
-        floorPiece5 = GameObject.Find("FloorPiece5");
-        floorPiece6 = GameObject.Find("FloorPiece6");
-        floorPiece7 = GameObject.Find("End");
+    // public void FindFloorPiecesTranform()
+    // {
+    //     floorPiece1 = GameObject.Find("FloorPiece1");
+    //     floorPiece2 = GameObject.Find("FloorPiece2");
+    //     floorPiece3 = GameObject.Find("FloorPiece3");
+    //     floorPiece4 = GameObject.Find("FloorPiece4");
+    //     floorPiece5 = GameObject.Find("FloorPiece5");
+    //     floorPiece6 = GameObject.Find("FloorPiece6");
+    //     floorPiece7 = GameObject.Find("End");
 
-        transformPiece1 = floorPiece1.GetComponent<Transform>();
-        transformPiece2 = floorPiece2.GetComponent<Transform>();
-        transformPiece3 = floorPiece3.GetComponent<Transform>();
-        transformPiece4 = floorPiece4.GetComponent<Transform>();
-        transformPiece5 = floorPiece5.GetComponent<Transform>();
-        transformPiece6 = floorPiece6.GetComponent<Transform>();
-        transformPiece7 = floorPiece7.GetComponent<Transform>();
-    }
+    //     transformPiece1 = floorPiece1.GetComponent<Transform>();
+    //     transformPiece2 = floorPiece2.GetComponent<Transform>();
+    //     transformPiece3 = floorPiece3.GetComponent<Transform>();
+    //     transformPiece4 = floorPiece4.GetComponent<Transform>();
+    //     transformPiece5 = floorPiece5.GetComponent<Transform>();
+    //     transformPiece6 = floorPiece6.GetComponent<Transform>();
+    //     transformPiece7 = floorPiece7.GetComponent<Transform>();
+    // }
 
     /* Hit a problem with delegate methods and not being able to pass in paramaters
      * Since every subtree has different thresholds for deciding things I just made
@@ -312,7 +312,7 @@ public class SystemTree : MonoBehaviour
 
         // floorPiece6.SetActive(false);
         // floorPiece7.SetActive(false);
-
+        AIDataManager.trigramDecision = "\u2630"; //qian; Firmament
         return NodeStates.SUCCESS;
     }
 
@@ -387,6 +387,7 @@ public class SystemTree : MonoBehaviour
         // transformPiece7.rotation = Quaternion.Euler(temp);
         // transformPiece7.localScale = new Vector3(1.5f, 0.01f, 2.524f);
 
+        AIDataManager.trigramDecision = "\u2637"; //kun; Ground
         return NodeStates.SUCCESS;
     }
 
@@ -467,6 +468,7 @@ public class SystemTree : MonoBehaviour
 
         // floorPiece7.SetActive(false);
 
+        AIDataManager.trigramDecision = "\u2633"; //zhen; Thunder
         return NodeStates.SUCCESS;
     }
 
@@ -570,6 +572,7 @@ public class SystemTree : MonoBehaviour
         // transformPiece7.position = new Vector3(-9.85f, 0.35f, -15.8f);
         // transformPiece7.localScale = new Vector3(1.5f, 0.01f, 4f);
 
+        AIDataManager.trigramDecision = "\u2634"; //xun; Wind
         return NodeStates.SUCCESS;
     }
 
@@ -610,6 +613,7 @@ public class SystemTree : MonoBehaviour
         // transformPiece7.rotation = Quaternion.Euler(temp);
         // transformPiece7.localScale = new Vector3(1.5f, 0.01f, 4f);
 
+        AIDataManager.trigramDecision = "\u2635"; //kan; Water
         return NodeStates.SUCCESS;
     }
 

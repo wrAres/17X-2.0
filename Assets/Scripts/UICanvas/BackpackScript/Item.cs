@@ -35,7 +35,7 @@ public class Item : MonoBehaviour
 
     public static bool canPlace(string item, string targetObj) {
         spell = false;
-        print(item + ", drop to: " + targetObj);
+        // print(item + ", drop to: " + targetObj);
         if (item.CompareTo("Tao-Book") == 0) {
             taoBookOpened = true;
             return true;
@@ -241,13 +241,7 @@ public class Item : MonoBehaviour
             GameObject wind = GameObject.Find("WindGroup");
             wind.SetActive(false);
 
-            GameObject.Find("1_water-dark").GetComponent<WaterPool>().timerActivated = true;
-            GameObject.Find("6_water-white").GetComponent<WaterPool>().timerActivated = true;
-            
-            GameObject waterBoss = GameObject.Find("QiangYu");
-            waterBoss.GetComponent<waterBoss>().appear();
-
-            TipsDialog.PrintDialog("Water Boss");
+            DontDestroyVariables.windExist = false;
         }
         else if (item.CompareTo("Yin-Yang Portal") == 0 && position.CompareTo("atlasmap2") == 0){
             GameObject portal = GameObject.Find("WaterToEarthPortal");

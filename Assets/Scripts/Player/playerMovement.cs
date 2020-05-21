@@ -8,7 +8,6 @@ public class playerMovement : MonoBehaviour
     // Start is called before the first frame update
 	public int isReverse;
 	public Animator ani;
-	public SystemTree system;
 	private bool findFloor;
 	public int status;
 	public int freeze;
@@ -36,7 +35,6 @@ public class playerMovement : MonoBehaviour
 	Vector3 checkpoint;
 	void Start()
 	{
-		system = GameObject.Find("TrigramManager").GetComponent<SystemTree>();
 		findFloor = false;
 		status = 0;
 		freeze = 1;
@@ -95,11 +93,10 @@ public class playerMovement : MonoBehaviour
 			GetComponent<Rigidbody>().transform.position = checkpoint;
 			GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
 			AIDataManager.walkingPuzzleFalls++;
-			if (!findFloor) {
-				system.FindFloorPiecesTranform();
-				findFloor = true;
-			}
-			system.Execute();
+			// if (!findFloor) {
+			// 	system.FindFloorPiecesTranform();
+			// 	findFloor = true;
+			// }
 		} 
 		if(canAct == false){
 			isMoving = false;

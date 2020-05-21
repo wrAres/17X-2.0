@@ -15,8 +15,7 @@ public class AIDataManager : MonoBehaviour
 
     public static int movingPuzzleMoves = 0;
     public static float movingPuzzleTime = 0.0f;
-    
-
+    public static SystemTree system;
 	static int incorrectMirrorCount = 0;
 	static List<double> timeForSpellUnlock = new List<double>();
     static List<double> bestTimeForSpellUnlock = new List<double>(); //TODO add perfect times for spell discovery
@@ -24,10 +23,11 @@ public class AIDataManager : MonoBehaviour
 
     public static int walkingPuzzleFalls = 0;
     public static float previousUnlockTime = 0;
+    public static string trigramDecision;
     // Start is called before the first frame update
     void Start()
     {   
-
+        system = GameObject.Find("TrigramManager").GetComponent<SystemTree>();
         spellListBeforeWaterBoss = new string[] {"Taiji Key", "Board", "Life Water", "Taoist Wind", "Firewood", "Glowing Sun", "Dirt", "Boom", "8 Trigram Portal"};
         elementListBeforeWaterBoss = new string[] {"thunder", "sun", "wind", "moon", "water", "fire", "wood", "earth", "metal"};
         spellAccessCount = new Dictionary<string, int>();
@@ -111,25 +111,26 @@ public class AIDataManager : MonoBehaviour
     }
 
     public static string DecideTrigram() {
-        int sum = 0;
-        if (sum == 32) {
-            print("\u2630"); //qian; Firmament
-        } else if (sum > 32 && sum <= 35) {
-            print("\u2637"); //kun; Ground
-        }  else if (sum > 35 && sum <= 38) {
-            print("\u2633"); //zhen; Thunder
-        }  else if (sum > 38 && sum <= 40) {
-            print("\u2634"); //xun; Wind
-        }  else if (sum > 40 && sum <= 42) {
-            print("\u2635"); //kan; Water
-        }  else if (sum > 42 && sum <= 45) {
-            print("\u2632"); //li; Fire
-        }  else if (sum > 45 && sum <= 48) {
-            print("\u2635"); //gen; Mountain
-        }  else {
-            print("\u2631"); //yue; Lake
-        }
-        return "";
+        system.Execute();
+        // int sum = 0;
+        // if (sum == 32) {
+        //     trigramDecision = "\u2630"; //qian; Firmament
+        // } else if (sum > 32 && sum <= 35) {
+        //     trigramDecision = "\u2637"; //kun; Ground
+        // }  else if (sum > 35 && sum <= 38) {
+        //     trigramDecision = "\u2633"; //zhen; Thunder
+        // }  else if (sum > 38 && sum <= 40) {
+        //     trigramDecision = "\u2634"; //xun; Wind
+        // }  else if (sum > 40 && sum <= 42) {
+        //     trigramDecision = "\u2635"; //kan; Water
+        // }  else if (sum > 42 && sum <= 45) {
+        //     trigramDecision = "\u2632"; //li; Fire
+        // }  else if (sum > 45 && sum <= 48) {
+        //     trigramDecision = "\u2635"; //gen; Mountain
+        // }  else {
+        //     trigramDecision = "\u2631"; //yue; Lake
+        // }
+        return trigramDecision;
     }
 
 	public static void ClickedWrongMirror()
