@@ -1224,7 +1224,7 @@ MonoBehaviour:
   startPosition: 0
   collide: 0
   camera: {fileID: 348457823}
-  speed: 10
+  speed: 2
   events: 0
 --- !u!54 &126118431
 Rigidbody:

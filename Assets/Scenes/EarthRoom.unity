@@ -20742,7 +20742,7 @@ MonoBehaviour:
   startPosition: 0
   collide: 0
   camera: {fileID: 873089400}
-  speed: 10
+  speed: 2
   events: 0
 --- !u!54 &1550972251
 Rigidbody:
@@ -22933,7 +22933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textbox: {fileID: 810526737}
   itemName: {fileID: 1127569461}
-  scaleAmount: 1.2
+  scaleAmount: 2
 --- !u!114 &1733698976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26205,16 +26205,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024886681}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.05309435, w: 0.9985896}
   m_LocalPosition: {x: 0, y: 0, z: 27}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children: []
   m_Father: {fileID: 103709456}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.0870004}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -740, y: -388}
+  m_AnchoredPosition: {x: -739.4, y: -380}
   m_SizeDelta: {x: 140, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2024886683
