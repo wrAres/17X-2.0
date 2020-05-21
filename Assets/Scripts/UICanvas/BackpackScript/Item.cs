@@ -11,13 +11,14 @@ public class Item : MonoBehaviour
     public static GameObject flowerpot;
     private static bool spell = false;
     private static string[] groundNames;
+    private static bool taoBookOpened = false;
 
     void Start() {
         s = GameObject.Find("MainUI").GetComponent<SpellTreeManager>();
         // s = FindObjectsOfType<SpellTreeManager>()[0];;
         itemOnPuzzle = new Hashtable();
         itemOnPuzzle.Add("Earth Key", "EarthPortal");
-        itemOnPuzzle.Add("Changable Soil", "River,Flowerpot");
+        itemOnPuzzle.Add("Changable Soil", "River,Flowerpot,FutureRock");
         itemOnPuzzle.Add("Water Seed", "Flowerpot");
         itemOnPuzzle.Add("Golden Wood", "法阵-scene2");
         itemOnPuzzle.Add("Heavenly Water", "Flowerpot");
@@ -35,8 +36,18 @@ public class Item : MonoBehaviour
     public static bool canPlace(string item, string targetObj) {
         spell = false;
         print(item + ", drop to: " + targetObj);
-        if (item.CompareTo("Tao-Book") == 0)
+        if (item.CompareTo("Tao-Book") == 0) {
+            taoBookOpened = true;
             return true;
+        }
+        else if (item.CompareTo("Talisman") == 0) {
+            if (taoBookOpened)
+                return true;
+            else {
+                TipsDialog.PrintDialog("Check Tao Book First");
+                return false;
+            }
+        }
         string available = (string)itemOnPuzzle[item];
         if (available == null)
             return false;
@@ -108,7 +119,17 @@ public class Item : MonoBehaviour
     }
 
     public static void puzzleEffect(string item, string position, Vector3 hitPoint) {
-        if (item.CompareTo("Changable Soil") == 0 && position.CompareTo("River") == 0){
+        if (item.CompareTo("Changable Soil") == 0 && position.CompareTo("FutureRock") == 0){
+            GameObject futureRock = GameObject.Find("FutureRock");
+            Destroy(futureRock);
+
+            GameObject.Find("Rock10").transform.position = GameObject.Find("Rock5").transform.position + new Vector3(1.8f, 0f, 0f);
+            GameObject.Find("Earth Key").transform.position = new Vector3(-1.34f, -1.765f, 3.5f);
+            
+            AIDataManager.UpdateStandardSpellCount("Dirt", 1);
+            AIDataManager.UpdateStandardSpellCount("earth", 3);
+        } 
+        else if (item.CompareTo("Changable Soil") == 0 && position.CompareTo("River") == 0){
             GameObject river = GameObject.Find("River");
             // river.GetComponent<BoxCollider>().size = new Vector3(0, 0, 0);
             // river .GetComponent<Renderer>().material.color = Color.gray;
@@ -128,6 +149,10 @@ public class Item : MonoBehaviour
             TipsDialog.PrintDialog("Spelltree 1");
             GameObject.Find("Dialog Box").transform.SetSiblingIndex(6);
             DontDestroyVariables.canOpenTalisman = true;
+        } 
+        else if (item.CompareTo("Talisman") == 0){
+            GameObject.Find("MainUI").GetComponent<Show>().ShowTalismanIcon();
+            TipsDialog.PrintDialog("Talisman 1");
         } 
         else if (item.CompareTo("Earth Key") == 0 && position.CompareTo("EarthPortal") == 0){
             GameObject earthPortal = GameObject.Find("EarthPortal");

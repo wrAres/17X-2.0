@@ -34,7 +34,7 @@ public class LeaveIconBright : MonoBehaviour
     public void ShineTalisman() {
         shine = true;
         this.gameObject.GetComponent<RawImage>().color = color;
-        this.gameObject.transform.SetSiblingIndex(5);
+        this.gameObject.transform.SetSiblingIndex(2);
         spelltreeShown = true;
         arrow.transform.localScale *= -1;
         arrow.transform.localPosition = talisPos;

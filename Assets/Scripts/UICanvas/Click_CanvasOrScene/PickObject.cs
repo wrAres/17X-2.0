@@ -65,18 +65,15 @@ public class PickObject : MonoBehaviour
                 GameObject clickObject = hitInfo.collider.gameObject;
                 // print(clickObject.name);
                 if (clickObject.tag.CompareTo("Pickable") == 0){
-                    if (clickObject.name == "Earth Key") {
-                        GameObject.Find("MainUI").GetComponent<Show>().ShowBackpackIcon();
-                        Backpack.backpack.GetComponent<Backpack>().Show(true);
-                    }
+                    // if (clickObject.name == "Earth Key") {
+                        
+                    // }
                     if (Backpack.backpack.GetComponent<Backpack>().CanAddItem()) {
                         //Backpack.backpack.GetComponent<Backpack>().AddItem(clickObject.name);
                         Sprite item = clickObject.GetComponent<SpriteRenderer>().sprite;
                         GameObject.Find("MainUI").GetComponent<FlyingSpell>().FlyTowardsIcon(item, false, clickObject.name);
                         Destroy(clickObject);
                     }
-                } else if (clickObject.name.CompareTo("Boss") == 0){
-                    AIDataManager.DecideTrigram();
                 } else if (clickObject.name.CompareTo("Flower 1") == 0 || clickObject.name.CompareTo("Flower 2") == 0 || clickObject.name.CompareTo("Flower 3") == 0 || clickObject.name.CompareTo("Flower 4") == 0 || clickObject.name.CompareTo("Flower 5") == 0 || clickObject.name.CompareTo("Flower 6") == 0) {  
                     clickObject.GetComponent<flowerInMirror>().ClickMirror();
                 }

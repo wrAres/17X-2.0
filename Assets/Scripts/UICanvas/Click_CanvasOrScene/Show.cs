@@ -263,7 +263,7 @@ public class Show : MonoBehaviour
         brightSpell = true;
         spellTreeUnlocked = true;
 
-        if (SceneManager.GetActiveScene().name == "scene0" && !earthUnlocked) {
+        if (SceneManager.GetActiveScene().name == "EarthRoom" && !earthUnlocked) {
             earthUnlocked = true;
             GetComponent<SpellTreeManager>().UnlockElement(TalisDrag.Elements.EARTH);
         }

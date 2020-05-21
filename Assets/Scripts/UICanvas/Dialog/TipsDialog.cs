@@ -19,6 +19,7 @@ public class TipsDialog : MonoBehaviour
     public static bool isTyping = false;
     public static bool printfull = false;
     public float textspeed;
+    private static string currDialogRef;
     
     // public string waterGateDiscription;
     // public string riverDiscription;
@@ -113,6 +114,11 @@ public class TipsDialog : MonoBehaviour
             } else if(!NextPage()) {
                 dialogText.text = "";
                 dialog.SetActive(false);
+                if (currDialogRef.CompareTo("Self Introduction") == 0) {
+                    //show backpack
+                    GameObject.Find("MainUI").GetComponent<Show>().ShowBackpackIcon();
+                    Backpack.backpack.GetComponent<Backpack>().Show(true);
+                }
             }
         }
         if ((Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space)) && nextOnClick)
@@ -151,6 +157,7 @@ public class TipsDialog : MonoBehaviour
 
     public static void PrintDialog(string objName){
         // dialogOrDesc = true;
+        currDialogRef = objName;
         textlist2.Clear();
         if (textlist.Contains(objName)){
             int i = textlist.IndexOf(objName);
