@@ -25,7 +25,7 @@ public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHand
     public void OnPointerEnter(PointerEventData eventData) {
         // print("event data: " + eventData.position);
         if(transform.localPosition == origin)
-            dispManager.GetComponent<TalismanManager>().DispTextBox(true, element, transform.localPosition + new Vector3(820f, 270f, 0f));
+            dispManager.GetComponent<TalismanManager>().DispTextBox(true, element, transform.position);
         //dispManager.GetComponent<TalismanManager>().DispTextBox(true, element, gameObject.GetComponent<RectTransform>().anchoredPosition + new Vector2(820f, 0f));
     }
 

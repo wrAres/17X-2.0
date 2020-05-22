@@ -66,7 +66,6 @@ public class AIDataManager : MonoBehaviour
     }
 
     public static void IncrementSpellAccess(string spell) {
-        print(spell);
         spellAccessCount[spell] = spellAccessCount[spell] + 1;
     }
 
