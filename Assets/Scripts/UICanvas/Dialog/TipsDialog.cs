@@ -163,7 +163,11 @@ public class TipsDialog : MonoBehaviour
             int i = textlist.IndexOf(objName);
             int j = i;
             while(textlist[j].CompareTo("---") != 0 ){
-                textlist2.Add(textlist[j]);
+                if (textlist[j].CompareTo("Qiang Yu: That is all I have for you:") == 0) {
+                    textlist2.Add(textlist[j] + "            " + AIDataManager.DecideTrigram());
+                } else {
+                    textlist2.Add(textlist[j]);
+                }
                 // print(textlist[j]);
                 j++;
             }
