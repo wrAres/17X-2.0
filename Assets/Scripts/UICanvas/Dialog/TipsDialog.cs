@@ -20,7 +20,10 @@ public class TipsDialog : MonoBehaviour
     public static bool printfull = false;
     public float textspeed;
     private static string currDialogRef;
-    
+    public static GameObject nextButton;
+    public static GameObject Option;
+    public static string GetOption;
+    public static bool pickOption = false;
     // public string waterGateDiscription;
     // public string riverDiscription;
     // public string talismanDescription;
@@ -46,6 +49,9 @@ public class TipsDialog : MonoBehaviour
 
         dialog = GameObject.Find("Dialog Box");
         dialogText = GameObject.Find("Dialog Text").GetComponent<Text>();
+        Option = GameObject.Find("Options");
+        nextButton = GameObject.Find("Next Button");
+
         dialogList = new Dictionary<string, string>();
         dialogList.Add("法阵-scene3", "waterGateDiscription");
         dialogList.Add("River", "riverDiscription");
@@ -84,6 +90,8 @@ public class TipsDialog : MonoBehaviour
         dialogList.Add("Rock4", "EarthGroundDescription");
         dialogList.Add("TalismanTip", "TalismanTips"); // TODO: Add Talisman Tips to the text file dialogtext 
         dialog.SetActive(false);
+        dialog.SetActive(false);
+        Option.SetActive(false);
     }
 
      void Update()
@@ -121,15 +129,17 @@ public class TipsDialog : MonoBehaviour
                 }
             }
         }
-        if ((Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space)) && nextOnClick)
-        {
-            GameObject.Find("Next Button").GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button");
-            nextOnClick = false;
-        }
+        if(!pickOption){
+	        if ((Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space)) && nextOnClick)
+	        {
+	            GameObject.Find("Next Button").GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button");
+	            nextOnClick = false;
+	        }
+	    }
      }
 
     public static void ChangeNextButton() {
-        GameObject nextButton = GameObject.Find("Next Button");
+    	// GameObject nextButton = GameObject.Find("Next Button");
         nextButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button shadow");
         nextOnClick = true;
         UISoundScript.PlayDialogNext();
@@ -137,9 +147,17 @@ public class TipsDialog : MonoBehaviour
 
     public static bool NextPage() {
         // if (dialogOrDesc) {
-            // print("index: " + index + ", list length: " + textlist2.Count);
-            if (index > textlist2.Count - 1){
-                index = 2;
+             //print("index: " + index + ", list length: " + textlist2.Count);
+    		//Active option button while water boss finishes its last sentence
+	    	if (index == textlist2.Count && textlist2[textlist2.Count - 1].CompareTo("Qiang Yu: Interesting... Fighting against your fate, please =don’t let me down, human...") == 0){	
+	    			dialogText.text = "";
+			        Option.SetActive(true);
+			       	nextButton.SetActive(false);
+			       	index ++;
+			       	pickOption = true;	
+			       	return true;
+	    	} else if (index > textlist2.Count - 1){
+    			index = 2;
                 // Debug.Log("no more tips");
                 // dialog.SetActive(false);
                 dialogText.text = "";
@@ -178,6 +196,7 @@ public class TipsDialog : MonoBehaviour
         startTyping = true;
         dialog.SetActive(true);
         // print("Set dialog active, index: " + index + ", list length: " + textlist2.Count);
+       
     }
 
     // public static void PrintDescription(string objName){
@@ -201,6 +220,18 @@ public class TipsDialog : MonoBehaviour
     
     public static void PrintFullDialog(){
         printfull = true;
+    }
+ 
+    public static void PlayOption(string Name){
+    	// store option name
+    	GetOption = Name;
+        print(GetOption);
+        //reset
+        index = 2;
+        Option.SetActive(false);
+        nextButton.SetActive(true);
+        pickOption = false;
+        HideTextBox();
     }
 
     IEnumerator Typing(string sentences) {

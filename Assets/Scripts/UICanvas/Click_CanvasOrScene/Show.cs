@@ -140,6 +140,9 @@ public class Show : MonoBehaviour
                         }
                     }
                 } 
+                else if (tag.CompareTo("OptionButton") == 0) {
+                    TipsDialog.PlayOption(name);
+                }
                 else if (name.CompareTo("OptionButton") == 0) {
                     InGameMenu.Option();
                 }
