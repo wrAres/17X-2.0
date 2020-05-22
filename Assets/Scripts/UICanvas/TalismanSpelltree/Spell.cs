@@ -29,7 +29,7 @@ public class Spell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
         Vector2 thisPosition = this.gameObject.transform.parent.GetComponent<RectTransform>().anchoredPosition;
         // print("position: " + thisPosition);
         
-        if (thisPosition.x >= 500)    { thisPosition.x -= 330f; }
+        if (thisPosition.x >= 200)    { thisPosition.x -= 330f; }
         else                        { thisPosition.x += 330f; }
         if (thisPosition.y >= -200)    { thisPosition.y -= 200f; }
         else                        { thisPosition.y += 200f; }
