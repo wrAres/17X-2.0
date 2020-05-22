@@ -22,6 +22,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
         // dispManager.GetComponent<TalismanManager>().DispTextBox(true, element, eventData.position);
         textbox.SetActive(true);
         itemName.text = gameObject.name.ToString();
+        textbox.GetComponent<TextboxScaler>().UpdateBoxSize();
         // print("event data: " + this.gameObject.GetComponent<RectTransform>().anchoredPosition);
         textbox.GetComponent<RectTransform>().anchoredPosition = this.gameObject.GetComponent<RectTransform>().anchoredPosition + new Vector2(-80f, -60f);
         transform.localScale *= itemScale;

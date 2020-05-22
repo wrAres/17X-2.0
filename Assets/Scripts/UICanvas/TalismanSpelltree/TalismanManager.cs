@@ -307,6 +307,7 @@ public class TalismanManager : MonoBehaviour {
     public void DispTextBox(bool display, TalisDrag.Elements e, Vector2 position) {
         textbox.SetActive(display);
         eleName.text = e.ToString();
+        textbox.GetComponent<TextboxScaler>().UpdateBoxSize();
         textbox.transform.position = position;
     }
 
