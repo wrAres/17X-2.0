@@ -28,7 +28,7 @@ public class AIDataManager : MonoBehaviour
     void Start()
     {   
         system = GameObject.Find("TrigramManager").GetComponent<SystemTree>();
-        spellListBeforeWaterBoss = new string[] {"Taiji Key", "Board", "Life Water", "Taoist Wind", "Firewood", "Glowing Sun", "Dirt", "Boom", "8 Trigram Portal"};
+        spellListBeforeWaterBoss = new string[] {"Taiji Key", "Board", "Life Water", "Taoist Wind", "Firewood", "Glowing Sun", "Changable Soil", "Boom", "8 Trigram Portal"};
         elementListBeforeWaterBoss = new string[] {"thunder", "sun", "wind", "moon", "water", "fire", "wood", "earth", "metal"};
         spellAccessCount = new Dictionary<string, int>();
         for (int i = 0; i < spellListBeforeWaterBoss.Length; i++) {
@@ -50,7 +50,7 @@ public class AIDataManager : MonoBehaviour
         spellAccessStandardCount.Add("Taoist Wind", 0);
         spellAccessStandardCount.Add("Firewood", 0);
         spellAccessStandardCount.Add("Glowing Sun", 0);
-        spellAccessStandardCount.Add("Dirt", 0);
+        spellAccessStandardCount.Add("Changable Soil", 0);
         spellAccessStandardCount.Add("Boom", 0);
         spellAccessStandardCount.Add("8 Trigram Portal", 0);
         spellAccessStandardCount.Add("water", 0);
@@ -66,6 +66,7 @@ public class AIDataManager : MonoBehaviour
     }
 
     public static void IncrementSpellAccess(string spell) {
+        print(spell);
         spellAccessCount[spell] = spellAccessCount[spell] + 1;
     }
 
