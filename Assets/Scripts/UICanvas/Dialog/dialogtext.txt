@@ -1,3 +1,6 @@
+TalismanTip
+Use "G" to generate the spell.
+---
 River
 The river is unmistakably deep and I never learned how to swim.
 ---

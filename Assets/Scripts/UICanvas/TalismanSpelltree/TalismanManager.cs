@@ -91,8 +91,8 @@ public class TalismanManager : MonoBehaviour {
         if (TenSecTimer && timeLeft < 0)
         {
             // TODO: Create a Talisman Tip and call it here
-            // TipsDialog.PrintDialog("TalismanTip");
-            Debug.Log("No Tip implemented yet for Talisman Timer");
+            TipsDialog.PrintDialog("TalismanTip");
+            // Debug.Log("No Tip implemented yet for Talisman Timer");
             TenSecTimer = false;
         }
 
