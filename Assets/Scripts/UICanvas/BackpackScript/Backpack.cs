@@ -101,6 +101,7 @@ public class Backpack : MonoBehaviour
             RectTransform item_tranform = imageObjects[i].GetComponent<RectTransform>();
             item_tranform.anchoredPosition = item_tranform.anchoredPosition + new Vector2(-80, 0);
         }
+        textbox.SetActive(false);
     }
 
     public void Show(bool isShow) {
