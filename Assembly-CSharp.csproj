@@ -107,6 +107,7 @@
      <Compile Include="Assets\Scripts\UICanvas\Dialog\BossTip.cs" />
      <Compile Include="Assets\Scripts\UICanvas\Dialog\Rivertip.cs" />
      <Compile Include="Assets\Scripts\UICanvas\Dialog\TipsDialog.cs" />
+     <Compile Include="Assets\Scripts\UICanvas\Dialog\TransferToCredit.cs" />
      <Compile Include="Assets\Scripts\UICanvas\InGameMenu.cs" />
      <Compile Include="Assets\Scripts\UICanvas\LeaveIconBright.cs" />
      <Compile Include="Assets\Scripts\UICanvas\MainMenu.cs" />

@@ -130,13 +130,11 @@ public class Show : MonoBehaviour
                         TipsDialog.PrintFullDialog();
                     } else {
                         bool textActive = TipsDialog.NextPage();
-                        bool CalledScene = TipsDialog.CallScene();
                         // print("text act" + textActive);
                         GameObject.Find("Dialog Box").SetActive(textActive);
                         // check for water boss-->credits scene
-                        if (!textActive && CalledScene) {
-                            Invoke("ToLoadScene", 5);
-                            print("Active Credits Scene in 5 secs");
+                        if (!textActive) {
+                            TipsDialog.CheckCurrentTipForNextMove();
                         }
                     }
                 } 
@@ -287,9 +285,5 @@ public class Show : MonoBehaviour
 
         if (!isOn) CloseDisplays();
         else Backpack.backpack.GetComponent<Backpack>().Show(true);
-    }
-
-    void ToLoadScene(){
-        SceneManager.LoadScene("Credits");
     }
 }

@@ -122,11 +122,7 @@ public class TipsDialog : MonoBehaviour
             } else if(!NextPage()) {
                 dialogText.text = "";
                 dialog.SetActive(false);
-                if (currDialogRef.CompareTo("Self Introduction") == 0) {
-                    //show backpack
-                    GameObject.Find("MainUI").GetComponent<Show>().ShowBackpackIcon();
-                    Backpack.backpack.GetComponent<Backpack>().Show(true);
-                }
+                CheckCurrentTipForNextMove();
             }
         }
         if(!pickOption){
@@ -138,6 +134,15 @@ public class TipsDialog : MonoBehaviour
 	    }
      }
 
+    public static void CheckCurrentTipForNextMove() {
+        if (currDialogRef.CompareTo("Self Introduction") == 0) {
+            //show backpack
+            GameObject.Find("MainUI").GetComponent<Show>().ShowBackpackIcon();
+            Backpack.backpack.GetComponent<Backpack>().Show(true);
+        } else if (CallScene()) {
+            GameObject.Find("WaterSoundManager").GetComponent<TransferToCredit>().Transfer();
+        }
+    }
     public static void ChangeNextButton() {
     	// GameObject nextButton = GameObject.Find("Next Button");
         nextButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button shadow");

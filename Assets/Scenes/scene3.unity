@@ -12603,6 +12603,7 @@ GameObject:
   - component: {fileID: 1078807051}
   - component: {fileID: 1078807052}
   - component: {fileID: 1078807053}
+  - component: {fileID: 1078807054}
   m_Layer: 0
   m_Name: WaterSoundManager
   m_TagString: Untagged
@@ -12934,6 +12935,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 272a8ebd733c24af7aefe41fb6354ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1078807054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078807047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12ac3d2c1b988487f9f1e6a5af70f9b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1080622929
