@@ -7,6 +7,7 @@ public class playerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
 	public int isReverse;
+	
 	public Animator ani;
 	private bool findFloor;
 	public int status;
@@ -32,7 +33,8 @@ public class playerMovement : MonoBehaviour
 	int timer;
 	public float speed;
 	public bool events;
-	Vector3 checkpoint;
+	public Vector3 checkpoint;
+	public int pushbackForce;
 	void Start()
 	{
 		findFloor = false;
@@ -49,6 +51,8 @@ public class playerMovement : MonoBehaviour
 		cooldown = false;
 		events = false;
 		direction = 0;
+		checkpoint = new Vector3(8.56f,0.763f,-61.032f);
+		
     }
 
     // Update is called once per frame
@@ -70,9 +74,7 @@ public class playerMovement : MonoBehaviour
 			old_pos = transform.position;
 		}
 		if(GetComponent<Rigidbody>().velocity.y<-0.1){
-			if(fall == false){
-				checkpoint = old_pos;
-			}
+			
 			fall=true;
 			status = 0;
 			isMoving = false;
@@ -177,6 +179,7 @@ public class playerMovement : MonoBehaviour
 			
 		}
 		
+		
 		if (freeze == 1 && canAct && isMoving) {
 			if (isWaterScene) WaterSoundManagerScript.PlaySound();
 			else EarthSoundManager.PlaySound();
@@ -201,39 +204,47 @@ public class playerMovement : MonoBehaviour
 		switch(direction){
 			case -1:
 				isMoving = false;
-				GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -5);
+				GetComponent<Rigidbody>().velocity = new Vector3(0, 0, -1*pushbackForce);
+				//GetComponent<Rigidbody>().AddForce(0,0,-1*pushbackForce);
 				// Debug.Log(-1);
 				break;
 			case 1:
 				isMoving = false;
-				GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 5);
+				GetComponent<Rigidbody>().velocity = new Vector3(0, 0, pushbackForce);
+				//GetComponent<Rigidbody>().AddForce(0,0,pushbackForce);
 				// Debug.Log(1);
 				break;
 			case -2:
 				isMoving = false;
-				GetComponent<Rigidbody>().velocity = new Vector3(-5, 0, 0);
+				GetComponent<Rigidbody>().velocity = new Vector3(-1*pushbackForce, 0, 0);
+				//GetComponent<Rigidbody>().AddForce(-1*pushbackForce,0,0);
 				// Debug.Log(-2);
 				break;
 			case 2:
 				isMoving = false;
-				GetComponent<Rigidbody>().velocity = new Vector3(5, 0, 0);
+				GetComponent<Rigidbody>().velocity = new Vector3(pushbackForce, 0, 0);
+				//GetComponent<Rigidbody>().AddForce(pushbackForce,0,0);
 				// Debug.Log(2);
 				break;
 			case -3:
 				isMoving = false;
-				GetComponent<Rigidbody>().velocity = new Vector3(3, 0, -3);
+				GetComponent<Rigidbody>().velocity = new Vector3(0.6f*pushbackForce,0,-0.6f*pushbackForce);
+				//GetComponent<Rigidbody>().AddForce(0.6f*pushbackForce,0,-0.6f*pushbackForce);
 				break;
 			case 3:
 				isMoving = false;
-				GetComponent<Rigidbody>().velocity = new Vector3(-3, 0, 3);
+				GetComponent<Rigidbody>().velocity = new Vector3(-0.6f*pushbackForce,0,0.6f*pushbackForce);
+				//GetComponent<Rigidbody>().AddForce(-0.6f*pushbackForce,0,0.6f*pushbackForce);
 				break;
 			case -4:
 				isMoving = false;
-				GetComponent<Rigidbody>().velocity = new Vector3(3, 0, 3);
+				GetComponent<Rigidbody>().velocity = new Vector3(0.6f*pushbackForce,0,0.6f*pushbackForce);
+				//GetComponent<Rigidbody>().AddForce(0.6f*pushbackForce,0,0.6f*pushbackForce);
 				break;
 			case 4:
 				isMoving = false;
-				GetComponent<Rigidbody>().velocity = new Vector3(-3, 0, -3);
+				GetComponent<Rigidbody>().velocity = new Vector3(-0.6f*pushbackForce,0,-0.6f*pushbackForce);
+				//GetComponent<Rigidbody>().AddForce(-0.6f*pushbackForce,0,-0.6f*pushbackForce);
 				break;
 			default:
 				break;

@@ -132,6 +132,9 @@
     <Compile Include="Assets\Scripts\WaterScene\WaterPool.cs" />
     <Compile Include="Assets\Scripts\WaterScene\waterBoss.cs" />
     <Compile Include="Assets\Scripts\blockMovement.cs" />
+    <Compile Include="Assets\castEffect.cs" />
+    <Compile Include="Assets\checkpoint.cs" />
+    <Compile Include="Assets\shuffle.cs" />
     <None Include="Assets\Scripts\UICanvas\Dialog\dialogtext.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>G:/git/17X-2.0/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
