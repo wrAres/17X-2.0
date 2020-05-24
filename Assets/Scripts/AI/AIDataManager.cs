@@ -28,7 +28,7 @@ public class AIDataManager : MonoBehaviour
     void Start()
     {   
         system = GameObject.Find("TrigramManager").GetComponent<SystemTree>();
-        spellListBeforeWaterBoss = new string[] {"Taiji Key", "Board", "Life Water", "Taoist Wind", "Firewood", "Glowing Sun", "Changable Soil", "Boom", "8 Trigram Portal"};
+        spellListBeforeWaterBoss = new string[] {"Taiji Key", "Natural Board", "Heavenly Water", "Taoism Wind", "Golden Wood", "Prime Sun", "Changable Soil", "Boom", "Yin-Yang Portal"};
         elementListBeforeWaterBoss = new string[] {"thunder", "sun", "wind", "moon", "water", "fire", "wood", "earth", "metal"};
         spellAccessCount = new Dictionary<string, int>();
         for (int i = 0; i < spellListBeforeWaterBoss.Length; i++) {
@@ -45,14 +45,14 @@ public class AIDataManager : MonoBehaviour
         spellAccessStandardCount.Add("wind", 0);
         spellAccessStandardCount.Add("moon", 0);
         spellAccessStandardCount.Add("Taiji Key", 0);
-        spellAccessStandardCount.Add("Board", 0);
-        spellAccessStandardCount.Add("Life Water", 0);
-        spellAccessStandardCount.Add("Taoist Wind", 0);
-        spellAccessStandardCount.Add("Firewood", 0);
-        spellAccessStandardCount.Add("Glowing Sun", 0);
+        spellAccessStandardCount.Add("Natural Board", 0);
+        spellAccessStandardCount.Add("Heavenly Water", 0);
+        spellAccessStandardCount.Add("Taoism Wind", 0);
+        spellAccessStandardCount.Add("Golden Wood", 0);
+        spellAccessStandardCount.Add("Prime Sun", 0);
         spellAccessStandardCount.Add("Changable Soil", 0);
         spellAccessStandardCount.Add("Boom", 0);
-        spellAccessStandardCount.Add("8 Trigram Portal", 0);
+        spellAccessStandardCount.Add("Yin-Yang Portal", 0);
         spellAccessStandardCount.Add("water", 0);
         spellAccessStandardCount.Add("fire", 0);
         spellAccessStandardCount.Add("wood", 0);

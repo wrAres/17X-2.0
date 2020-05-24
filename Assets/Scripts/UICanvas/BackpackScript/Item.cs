@@ -126,7 +126,7 @@ public class Item : MonoBehaviour
             GameObject.Find("Rock10").transform.position = GameObject.Find("Rock5").transform.position + new Vector3(1.8f, 0f, 0f);
             GameObject.Find("Earth Key").transform.position = new Vector3(-1.34f, -1.765f, 3.5f);
             
-            AIDataManager.UpdateStandardSpellCount("Dirt", 1);
+            AIDataManager.UpdateStandardSpellCount("Changable Soil", 1);
             AIDataManager.UpdateStandardSpellCount("earth", 3);
         } 
         else if (item.CompareTo("Changable Soil") == 0 && position.CompareTo("River") == 0){
@@ -139,7 +139,7 @@ public class Item : MonoBehaviour
             Destroy(GameObject.Find("River Sound 3"));
             s.UnlockElement(TalisDrag.Elements.WATER);
             
-            AIDataManager.UpdateStandardSpellCount("Dirt", 1);
+            AIDataManager.UpdateStandardSpellCount("Changable Soil", 1);
             AIDataManager.UpdateStandardSpellCount("earth", 3);
 
             SpellEffectSounds.PlayDirt();
@@ -162,13 +162,17 @@ public class Item : MonoBehaviour
         else if (item.CompareTo("Changable Soil") == 0 && position.CompareTo("Flowerpot") == 0){
             flowerpot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Flowerpot/Flowerpot with dirt");
 
-            AIDataManager.UpdateStandardSpellCount("Dirt", 1);
+            AIDataManager.UpdateStandardSpellCount("Changable Soil", 1);
             AIDataManager.UpdateStandardSpellCount("earth", 3);
 
             DontDestroyVariables.growState = 1;
         } 
         else if (item.CompareTo("Natural Board") == 0 && position.CompareTo("Background") == 0){
             GameObject.Find("Background").GetComponent<TileMovement>().CheckDone();
+
+            AIDataManager.UpdateStandardSpellCount("Natural Board", 1);
+            AIDataManager.UpdateStandardSpellCount("earth", 2);
+            AIDataManager.UpdateStandardSpellCount("water", 1);
         } 
         else if (item.CompareTo("Water Seed") == 0 && position.CompareTo("Flowerpot") == 0){
             DontDestroyVariables.growState = 2;
@@ -180,9 +184,7 @@ public class Item : MonoBehaviour
 
             s.UnlockElement(TalisDrag.Elements.WOOD);
 
-            // AIDataManager.UpdateStandardSpellCount("Dirt", 1);
-            // AIDataManager.UpdateStandardSpellCount("earth", 3);
-            AIDataManager.UpdateStandardSpellCount("Life Water", 1);
+            AIDataManager.UpdateStandardSpellCount("Heavenly Water", 1);
             AIDataManager.UpdateStandardSpellCount("water", 3);
         }
         else if (item.CompareTo("Golden Wood") == 0 && position.CompareTo("法阵-scene2") == 0){
@@ -191,8 +193,11 @@ public class Item : MonoBehaviour
             // sceneTrans.enterable = true;
             s.UnlockElement(TalisDrag.Elements.FIRE);
 
-            AIDataManager.UpdateStandardSpellCount("Firewood", 1);
+            AIDataManager.UpdateStandardSpellCount("Golden Wood", 1);
             AIDataManager.UpdateStandardSpellCount("wood", 3);
+            AIDataManager.UpdateStandardSpellCount("earth", 1);
+            AIDataManager.UpdateStandardSpellCount("wind", 2);
+            AIDataManager.UpdateStandardSpellCount("Yin-Yang Portal", 1);
 
             SpellEffectSounds.PlayFire();
         } 
@@ -208,7 +213,7 @@ public class Item : MonoBehaviour
             GameObject.Find("cameraControl").GetComponent<cameraControl>().active = true;
             TipsDialog.PrintDialog("Zoom In Active");
 
-            AIDataManager.UpdateStandardSpellCount("Glowing Sun", 1);
+            AIDataManager.UpdateStandardSpellCount("Prime Sun", 1);
             AIDataManager.UpdateStandardSpellCount("sun", 2);
             AIDataManager.UpdateStandardSpellCount("earth", 1);
             AIDataManager.UpdateStandardSpellCount("fire", 2);
@@ -219,10 +224,6 @@ public class Item : MonoBehaviour
             GameObject.Find("doorRight").GetComponent<doorController>().openDoor();
 
             AIDataManager.gentlypassthedoor = true; 
-            AIDataManager.UpdateStandardSpellCount("water", 3);
-            AIDataManager.UpdateStandardSpellCount("moon", 1);
-            AIDataManager.UpdateStandardSpellCount("sun", 1);
-            AIDataManager.UpdateStandardSpellCount("Taiji Key", 1);
 
             // GameObject waterBoss = GameObject.Find("QiangYu");
             //waterBoss.SetActive(false);
@@ -242,6 +243,11 @@ public class Item : MonoBehaviour
             wind.SetActive(false);
 
             DontDestroyVariables.windExist = false;
+
+            AIDataManager.UpdateStandardSpellCount("fire", 1);
+            AIDataManager.UpdateStandardSpellCount("wood", 1);
+            AIDataManager.UpdateStandardSpellCount("wind", 1);
+            AIDataManager.UpdateStandardSpellCount("Taoism Wind", 1);
         }
         else if (item.CompareTo("Yin-Yang Portal") == 0 && position.CompareTo("atlasmap2") == 0){
             GameObject portal = GameObject.Find("WaterToEarthPortal");
