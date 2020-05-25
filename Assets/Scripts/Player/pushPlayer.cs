@@ -38,11 +38,11 @@ public class pushPlayer : MonoBehaviour
 
     void OnCollisionEnter(Collision collisionInfo)
     {
-        Debug.Log("Collide with" + collisionInfo.collider.name);
-        Debug.Log("cuurpush" + currentlyPush);
+        // Debug.Log("Collide with" + collisionInfo.collider.name);
+        // Debug.Log("cuurpush" + currentlyPush);
         if (!currentlyPush)
         {
-            Debug.Log(collisionInfo.collider.name);
+            // Debug.Log(collisionInfo.collider.name);
             //ItemtoPush = collisionInfo.collider.gameObject;
             foreach (string item in pushItems)
             {
@@ -70,7 +70,7 @@ public class pushPlayer : MonoBehaviour
     {
         Hud.CloseMessagePanel();
         avaliblePush = false;
-        Debug.Log("Push is exit: " + avaliblePush);
+        // Debug.Log("Push is exit: " + avaliblePush);
         //ItemtoPush.transform.parent = tempTransform;
         ItemtoPush = null;
 
