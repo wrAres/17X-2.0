@@ -44,19 +44,21 @@ public class pushPlayer : MonoBehaviour
         {
             Debug.Log(collisionInfo.collider.name);
             //ItemtoPush = collisionInfo.collider.gameObject;
-            ItemtoPush = collisionInfo.collider.gameObject.transform.parent.gameObject;
-            tempTransform = ItemtoPush.transform.parent; 
             foreach (string item in pushItems)
             {
-                if (ItemtoPush.name == item)
+                if (collisionInfo.collider.name.CompareTo(item) == 0)
                 {
+                    Debug.Log(collisionInfo.collider.name + " true ");
                     avaliblePush = true;
+                    ItemtoPush = collisionInfo.collider.gameObject.transform.parent.gameObject;
+                    tempTransform = ItemtoPush.transform.parent; 
                     Debug.Log("Push is: " + avaliblePush);
+                    Hud.OpenMessagePanel(collisionInfo.collider.name);
+                    Debug.Log("ShowPanel");
+                    break;
                 }
             }
         }
-        Hud.OpenMessagePanel(collisionInfo.collider.name);
-        Debug.Log("ShowPanel");
         /*if(collision.gameObject.tag == "Player"){
 			//collision.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
 			collision.gameObject.GetComponent<playerMovement>().pushBack();
@@ -68,7 +70,7 @@ public class pushPlayer : MonoBehaviour
     {
         Hud.CloseMessagePanel();
         avaliblePush = false;
-        Debug.Log("Push is: " + avaliblePush);
+        Debug.Log("Push is exit: " + avaliblePush);
         //ItemtoPush.transform.parent = tempTransform;
         ItemtoPush = null;
 
