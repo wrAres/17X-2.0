@@ -690,6 +690,7 @@ MonoBehaviour:
   scene: scene2
   enterable: 0
   openScroll: 0
+  loading: {fileID: 0}
 --- !u!65 &72247049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6211,7 +6212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb7ffc8980e05bf48a745aef85b41d36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portal: {fileID: 1928741905}
+  portal: {fileID: 2070173843}
 --- !u!65 &1166661565
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7878,6 +7879,7 @@ MonoBehaviour:
   scene: scene4
   enterable: 0
   openScroll: 0
+  loading: {fileID: 0}
 --- !u!65 &1566969869
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10415,6 +10417,7 @@ MonoBehaviour:
   scene: SampleScene
   enterable: 0
   openScroll: 0
+  loading: {fileID: 0}
 --- !u!65 &1928741907
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10508,6 +10511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 21300000, guid: 54a3ca1193fc14e81b199116af56ab95, type: 3}
   Trigger: 0
+  trans: {fileID: 2070173843}
 --- !u!1 &1932674550
 GameObject:
   m_ObjectHideFlags: 0
@@ -11657,6 +11661,7 @@ MonoBehaviour:
   scene: SampleScene
   enterable: 0
   openScroll: 0
+  loading: {fileID: 0}
 --- !u!65 &2070173846
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11668,8 +11673,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 16.559786, y: 0.43346044, z: 10.276021}
-  m_Center: {x: -1.3825208, y: -4.1954155, z: 0.09583488}
+  m_Size: {x: 17.95347, y: 2.547879, z: 12.819318}
+  m_Center: {x: -0.6856787, y: -4.210311, z: -1.1758134}
 --- !u!1 &2115696896
 GameObject:
   m_ObjectHideFlags: 0
@@ -11881,6 +11886,7 @@ MonoBehaviour:
   scene: scene1
   enterable: 0
   openScroll: 0
+  loading: {fileID: 0}
 --- !u!65 &2120403882
 BoxCollider:
   m_ObjectHideFlags: 0

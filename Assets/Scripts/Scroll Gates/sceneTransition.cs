@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class sceneTransition : MonoBehaviour
 {
     //[SerializeField] private string newlevel;
 	public string scene;
 	public bool enterable;
 	public bool openScroll;
-
+	public Text myText;
 	void Start() {
 		openScroll = false;
 		enterable = false;
 		if (this.gameObject.name.CompareTo("WaterToEarthPortal") == 0) {
 			enterable = true;
 		}
+		myText.text = "";
 	}
 
 	public void CheckOpen() {
@@ -30,11 +32,13 @@ public class sceneTransition : MonoBehaviour
 
 		if (this.gameObject.name.CompareTo("法阵-scene3") == 0 && DontDestroyVariables.enterWaterRoom) {
 			// print("scene 3 directly");
+			//myText.text = "Loading";
 			scene = "scene3";
 		}
 
 		if (other.CompareTag("Player") && enterable) {
 			// Debug.Log("trasferring");
+			//myText.text = "Loading";
 			SceneManager.LoadScene(scene);
 		}
 	}
