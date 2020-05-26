@@ -122,6 +122,7 @@ public class TipsDialog : MonoBehaviour
             } else if(!NextPage()) {
                 dialogText.text = "";
                 dialog.SetActive(false);
+                nextOnClick = false;
                 CheckCurrentTipForNextMove();
             }
         }
@@ -139,6 +140,9 @@ public class TipsDialog : MonoBehaviour
             //show backpack
             GameObject.Find("MainUI").GetComponent<Show>().ShowBackpackIcon();
             Backpack.backpack.GetComponent<Backpack>().Show(true);
+        } else if (currDialogRef.CompareTo("Fire Boss") == 0) {
+            GameObject.Find("法阵-scene2").GetComponent<SpriteRenderer>().enabled = true;
+            GameObject.Find("Fire Boss").GetComponent<SpriteRenderer>().enabled = false;
         } else if (CallScene()) {
             GameObject.Find("WaterSoundManager").GetComponent<TransferToCredit>().Transfer();
         }

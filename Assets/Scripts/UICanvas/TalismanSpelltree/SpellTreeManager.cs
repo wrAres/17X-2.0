@@ -146,7 +146,9 @@ public class SpellTreeManager : MonoBehaviour {
                 if (spell[i].curState != Spell.SpellState.UNLOCKED) {
                     GetComponent<FlyingSpell>().FlyTowardsIcon(spell[i].glow, true, "");
                     spell[i].ChangeState(Spell.SpellState.UNLOCKED);
-                    UISoundScript.PlayGetElement();
+                    if (spell[i].element != TalisDrag.Elements.EARTH) {
+                        UISoundScript.PlayGetElement();
+                    }
                 }
                 /// break;
             }

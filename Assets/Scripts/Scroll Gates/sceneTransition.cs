@@ -16,7 +16,7 @@ public class sceneTransition : MonoBehaviour
 		if (this.gameObject.name.CompareTo("WaterToEarthPortal") == 0) {
 			enterable = true;
 		}
-		myText.text = "";
+		// myText.text = "";
 	}
 
 	public void CheckOpen() {

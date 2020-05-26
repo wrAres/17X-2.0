@@ -194,3 +194,6 @@ Backpack Full
 My Gourd is full. I can’t carry anything else.
 【Right-click to eliminate the spell】
 ---
+Fire Boss
+I am Fei.
+---

@@ -190,7 +190,9 @@ public class Item : MonoBehaviour
         }
         else if (item.CompareTo("Golden Wood") == 0 && position.CompareTo("法阵-scene2") == 0){
             sceneTransition sceneTrans = GameObject.Find("法阵-scene2").GetComponent<sceneTransition>();
-            GameObject.Find("法阵-scene2").GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Fire Scroll");
+            GameObject.Find("法阵-scene2").GetComponent<SpriteRenderer>().enabled = false;
+            GameObject.Find("Fire Boss").GetComponent<SpriteRenderer>().enabled = true;
+
             // sceneTrans.enterable = true;
             s.UnlockElement(TalisDrag.Elements.FIRE);
 
@@ -201,6 +203,8 @@ public class Item : MonoBehaviour
             AIDataManager.UpdateStandardSpellCount("Yin-Yang Portal", 1);
 
             SpellEffectSounds.PlayFire();
+
+            TipsDialog.PrintDialog("Fire Boss");
         } 
         else if (item.CompareTo("Prime Sun") == 0 && position.CompareTo("Flowerpot") == 0){
             DontDestroyVariables.growState = 4;
