@@ -254,6 +254,7 @@ public class Show : MonoBehaviour
     public void ShowTalismanIcon() { 
         GameObject.FindGameObjectWithTag("TalismanIcon").GetComponent<Image>().enabled = true; 
         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().ShineTalisman();
+        DontDestroyVariables.canOpenTalisman = true;
         brightTalisman = true;
         talismanUnlocked = true;
     }
@@ -263,16 +264,22 @@ public class Show : MonoBehaviour
         GameObject.Find("DarkBackground").GetComponent<LeaveIconBright>().ShineSpellIcon();
         brightSpell = true;
         spellTreeUnlocked = true;
-
+/*
         if (SceneManager.GetActiveScene().name == "EarthRoom" && !earthUnlocked) {
             earthUnlocked = true;
             GetComponent<SpellTreeManager>().UnlockElement(TalisDrag.Elements.EARTH);
         }
+  */
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
         if (scene.name == "scene0" && !earthUnlocked
             && GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled) {
+            earthUnlocked = true;
+            GetComponent<SpellTreeManager>().UnlockElement(TalisDrag.Elements.EARTH);
+        }
+
+        if (SceneManager.GetActiveScene().name == "EarthRoom" && !earthUnlocked) {
             earthUnlocked = true;
             GetComponent<SpellTreeManager>().UnlockElement(TalisDrag.Elements.EARTH);
         }

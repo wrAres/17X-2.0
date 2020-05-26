@@ -10,11 +10,14 @@ public class LeaveIconBright : MonoBehaviour
     public GameObject arrow;
     public bool spelltreeShown;
     public Vector3 talisPos;
+    private Vector3 ogPos, ogScale;
 
     // Start is called before the first frame update
     void Start()
     {
         this.gameObject.GetComponent<RawImage>().color = Color.clear;
+        ogPos = arrow.transform.localPosition;
+        ogScale = arrow.transform.localScale;
     }
 
     // Update is called once per frame
@@ -53,5 +56,7 @@ public class LeaveIconBright : MonoBehaviour
         GameObject spellTree = GameObject.FindGameObjectWithTag("SpellTreeIcon");
         spellTree.GetComponent<Image>().sprite = Resources.Load<Sprite>("ChangeAsset/Glowing Spelltree");
         // spellTree.transform.localScale = new Vector2(2, 2.3f);
+        arrow.transform.localScale = ogScale;
+        arrow.transform.localPosition = ogPos;
     }
 }

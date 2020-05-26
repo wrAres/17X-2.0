@@ -51,12 +51,13 @@ public class TalismanManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (!GameObject.Find("MainUI").GetComponent<Show>().seenSpellTree) {
+       // if (!GameObject.Find("MainUI").GetComponent<Show>().seenSpellTree) {
 
-        } else if (!DontDestroyVariables.haveSeenRiverTip) {
+     //   } //else if (!DontDestroyVariables.haveSeenRiverTip) {
 
-        }
-        else if (Input.GetKeyDown(KeyCode.T)) {
+     //   }
+       // else
+        if (Input.GetKeyDown(KeyCode.T)) {
             OpenTalisman();
         }
         // else if (Input.GetKeyDown(KeyCode.T) && !display.activeSelf && !dialogShown && DontDestroyVariables.canOpenTalisman) {
