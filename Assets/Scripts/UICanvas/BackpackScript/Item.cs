@@ -41,12 +41,13 @@ public class Item : MonoBehaviour
             return true;
         }
         else if (item.CompareTo("Talisman") == 0) {
-            if (taoBookOpened)
-                return true;
-            else {
-                TipsDialog.PrintDialog("Check Tao Book First");
-                return false;
-            }
+            // if (taoBookOpened)
+            //     return true;
+            // else {
+            //     TipsDialog.PrintDialog("Check Tao Book First");
+            //     return false;
+            // }
+            return true;
         }
         string available = (string)itemOnPuzzle[item];
         if (available == null)

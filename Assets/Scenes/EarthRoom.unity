@@ -14897,7 +14897,7 @@ GameObject:
   - component: {fileID: 978706144}
   - component: {fileID: 978706145}
   m_Layer: 0
-  m_Name: particleEffect
+  m_Name: playerParticleEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
