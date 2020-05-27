@@ -148,15 +148,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89200114}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 6}
-  m_LocalScale: {x: 0.05, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0, z: 3.78}
+  m_LocalScale: {x: 0.04, y: 0.08, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1240078168}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 50}
   m_AnchorMax: {x: 0.5, y: 50}
-  m_AnchoredPosition: {x: -241.3, y: -27604.81}
+  m_AnchoredPosition: {x: -231.17, y: -27604.518}
   m_SizeDelta: {x: 100, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &89200116
@@ -1162,16 +1162,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506364835}
-  m_Text: "\nFive Element Theory asserts that the world changes \naccording to the
-    five elements' generating or overcoming\nrelationships. Generating and overcoming
-    are the \ncomplementary processes \u2014 the Yin and Yang \u2014 \nof Five Element
-    Theory. Generating processes promote \ndevelopment, while overcoming processes
-    control\ndevelopment. By promoting and restraining, systems are\nharmonized and
-    balance is maintained.\r\r\nPeople always say \u201CWho understands the rule
-    and meaning of\nthese five elements, the guy will become the real immortal.\nIf
-    you want to touch the fountainheads of the five elements, \nyou must find the
-    Five-Elements-Seal, which no one alive has\nseen.\r Thus, for everyone who cultivates
-    Taoist, finding the \nFive-Elements-Seal is the most important thing.\r\n"
+  m_Text: "To my student Shan:\n\n\t\tWhen you see this letter, it means I can no
+    \n\tlonger be with you anymore. \n\t...\n\t...\n\t...\n\t...\n\t...\n\t...\n\t...\n\t...\n\t...\n\tTake
+    care of yourself."
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
