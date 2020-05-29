@@ -19,6 +19,6 @@ public class checkpoint : MonoBehaviour
 		if(other.gameObject.tag == "Player"){
 			other.gameObject.GetComponent<playerMovement>().checkpoint = this.transform.position;
 		}
-		Debug.Log(this.transform.position);
+		//Debug.Log(this.transform.position);
 	}
 }

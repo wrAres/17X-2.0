@@ -10,6 +10,7 @@ public class sceneTransition : MonoBehaviour
 	public bool enterable;
 	public bool openScroll;
 	public Text myText;
+	public GameObject loadingScreen;
 	void Start() {
 		openScroll = false;
 		enterable = false;
@@ -39,6 +40,7 @@ public class sceneTransition : MonoBehaviour
 		if (other.CompareTag("Player") && enterable) {
 			// Debug.Log("trasferring");
 			//myText.text = "Loading";
+			loadingScreen.GetComponent<Renderer>().enabled = true;
 			SceneManager.LoadScene(scene);
 		}
 	}
