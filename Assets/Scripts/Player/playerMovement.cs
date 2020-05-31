@@ -15,6 +15,7 @@ public class playerMovement : MonoBehaviour
 	private bool isWaterScene =>
         SceneManager.GetActiveScene().name == "scene3";
 	public bool canAct => !dialogShown && !talismanShown && !shineIcon && camera.enabled &&!events&&!fall;
+	// public bool canAct => !events&&!fall;
 	public bool dialogShown =>
         FindObjectOfType<TipsDialog>() != null;
 	public bool talismanShown =>
