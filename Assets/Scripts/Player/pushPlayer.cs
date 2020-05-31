@@ -68,11 +68,14 @@ public class pushPlayer : MonoBehaviour
 
     void OnCollisionExit(Collision collisionInfo)
     {
-        Hud.CloseMessagePanel();
-        avaliblePush = false;
-        // Debug.Log("Push is exit: " + avaliblePush);
-        //ItemtoPush.transform.parent = tempTransform;
-        ItemtoPush = null;
+        if (!currentlyPush)
+        {
+            Hud.CloseMessagePanel();
+            avaliblePush = false;
+            // Debug.Log("Push is exit: " + avaliblePush);
+            //ItemtoPush.transform.parent = tempTransform;
+            ItemtoPush = null;
+        }
 
     }
 }
