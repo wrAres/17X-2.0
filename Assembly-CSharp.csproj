@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\EarthGround.cs" />
+     <Compile Include="Assets\RockOnBase.cs" />
      <Compile Include="Assets\Scripts\AI\AIDataManager.cs" />
      <Compile Include="Assets\Scripts\AI\BT\ActionNode.cs" />
      <Compile Include="Assets\Scripts\AI\BT\CheckNode.cs" />

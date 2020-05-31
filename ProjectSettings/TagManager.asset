@@ -18,6 +18,10 @@ TagManager:
   - TalismanIcon
   - MainUI
   - OptionButton
+  - RockBase
+  - CrystalBase
+  - Rock
+  - Crystal
   layers:
   - Default
   - TransparentFX
