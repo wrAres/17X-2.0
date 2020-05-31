@@ -18,7 +18,8 @@ public class FlyingSpell : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         spellIcon.GetComponent<Image>().enabled = false;
-        origin = spellIcon.transform.position;
+        origin = spellIcon.transform.localPosition;
+        print(origin);
         timer = 2;
     }
 
@@ -27,11 +28,11 @@ public class FlyingSpell : MonoBehaviour {
         if (isSpell || isBackpack) {
             timer -= Time.deltaTime;
             if (timer <= 0) {
-                Vector3 targetPos = spellTreeIcon.transform.position;
-                if (isBackpack) targetPos = backpackIcon.transform.position;
+                Vector3 targetPos = spellTreeIcon.transform.localPosition;
+                if (isBackpack) targetPos = backpackIcon.transform.localPosition;
 
-                spellIcon.transform.position = Vector3.MoveTowards(spellIcon.transform.position, targetPos, iconSpeed * Time.deltaTime);
-                if (Vector3.Distance(spellIcon.transform.position, targetPos) < 1) {
+                spellIcon.transform.localPosition = Vector3.MoveTowards(spellIcon.transform.localPosition, targetPos, iconSpeed * Time.deltaTime);
+                if (Vector3.Distance(spellIcon.transform.localPosition, targetPos) < 1) {
                     if (isSpell) { isSpell = false; spellTreeIcon.GetComponent<ShakingIcon>().ShakeMe(); }
                     else { 
                         isBackpack = false; backpackIcon.GetComponent<ShakingIcon>().ShakeMe(); 
@@ -49,7 +50,7 @@ public class FlyingSpell : MonoBehaviour {
 
     public void ResetFlyingSpell() {
         spellIcon.GetComponent<Image>().enabled = false;
-        spellIcon.transform.position = origin;
+        spellIcon.transform.localPosition = origin;
         isSpell = false;
         isBackpack = false;
         if(itemBuffer != "") {
@@ -59,7 +60,8 @@ public class FlyingSpell : MonoBehaviour {
     }
 
     public void FlyTowardsIcon(Sprite s, bool isSpell, string spell) {
-        spellIcon.transform.position = origin;
+        spellIcon.transform.localPosition = origin;
+        print("called");
         this.isSpell = isSpell;
         isBackpack = !isSpell;
         spellIcon.GetComponent<Image>().enabled = true;
