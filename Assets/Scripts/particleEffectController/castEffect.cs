@@ -23,19 +23,19 @@ public class castEffect : MonoBehaviour
         /*if(start +140<=timer && cast ==true){
 			cast = false;
 		}*/
-		if (Input.GetKey("p")){
-			castAni();
-		}
-		if (Input.GetKey("t")){
-			stopCasting();
-		}
+		// if (Input.GetKey("p")){
+		// 	castAni();
+		// }
+		// if (Input.GetKey("t")){
+		// 	stopCasting();
+		// }
     }
 	
-	void castAni(){
+	public void castAni(){
 		//start = timer;
 		cast = true;
 	}
-	void stopCasting(){
+	public void stopCasting(){
 		cast = false;
 	}
 }

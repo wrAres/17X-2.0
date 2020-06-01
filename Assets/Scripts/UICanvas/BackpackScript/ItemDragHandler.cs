@@ -88,6 +88,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
     public void OnBeginDrag(PointerEventData eventData) {
         // print("begin drag: "+itemOnGround.name);
         if(!dialogShown) holdItem = true;
+        GameObject.Find("playerParticleEffect").GetComponent<castEffect>().castAni();
     }
 
     // Start is called before the first frame update
@@ -118,6 +119,8 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
                 print(itemOnGround.name + ", on to: " + dragOnObject.name);
                 if (canPlaceItem) {
                     Item.puzzleEffect(itemOnGround.name, dragOnObject.name, hitInfo.point);
+                    if (itemOnGround.name.CompareTo("Tao-Book") != 0 && itemOnGround.name.CompareTo("Talisman") != 0)
+                        GameObject.Find("pickupEffect").GetComponent<pickupEffect>().castAni(hitInfo.point);
                     GameObject.Find("Backpack_Roll").GetComponent<Backpack>().RemoveItem(itemOnGround, position);
                 } else {
                     UISoundScript.PlayWrongSpell();
@@ -125,6 +128,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
                     itemOnGround.GetComponent<RectTransform>().sizeDelta = originalSize;
                     // print(itemOnGround.name + " 's size become: " + originalSize);
                 }
+                GameObject.Find("playerParticleEffect").GetComponent<castEffect>().stopCasting();
             }
             else {
                 print("physics error");
