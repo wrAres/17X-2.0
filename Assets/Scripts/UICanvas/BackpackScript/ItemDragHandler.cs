@@ -118,10 +118,10 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
                 canPlaceItem = Item.canPlace(itemOnGround.name, dragOnObject.name);
                 print(itemOnGround.name + ", on to: " + dragOnObject.name);
                 if (canPlaceItem) {
-                    Item.puzzleEffect(itemOnGround.name, dragOnObject.name, hitInfo.point);
-                    if (itemOnGround.name.CompareTo("Tao-Book") != 0 && itemOnGround.name.CompareTo("Talisman") != 0)
-                        GameObject.Find("pickupEffect").GetComponent<pickupEffect>().castAni(hitInfo.point);
                     GameObject.Find("Backpack_Roll").GetComponent<Backpack>().RemoveItem(itemOnGround, position);
+                    Item.puzzleEffect(itemOnGround.name, dragOnObject.name, hitInfo.point);
+                    if (itemOnGround.name.CompareTo("Tao-Book") != 0 && itemOnGround.name.CompareTo("Talisman") != 0 && itemOnGround.name.CompareTo("The Atlas") != 0)
+                        GameObject.Find("pickupEffect").GetComponent<pickupEffect>().castAni(hitInfo.point);
                 } else {
                     UISoundScript.PlayWrongSpell();
                     AIDataManager.wrongItemPlacementCount += 1;

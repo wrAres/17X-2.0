@@ -112,7 +112,6 @@ public class AIDataManager : MonoBehaviour
 
     public static string DecideTrigram() {
         system.Execute();
-        // int sum = 0;
         // if (sum == 32) {
         //     trigramDecision = "\u2630"; //qian; Firmament
         // } else if (sum > 32 && sum <= 35) {

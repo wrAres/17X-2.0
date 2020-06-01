@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ReturnFromAtlas.cs" />
      <Compile Include="Assets\Scripts\AI\AIDataManager.cs" />
      <Compile Include="Assets\Scripts\AI\BT\ActionNode.cs" />
      <Compile Include="Assets\Scripts\AI\BT\CheckNode.cs" />

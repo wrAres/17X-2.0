@@ -9,6 +9,8 @@ public class Item : MonoBehaviour
     public static string[] availablePutList;
     public static SpellTreeManager s;
     public static GameObject flowerpot;
+    public static Show dispManager;
+    public static TalismanManager talisDisp;
     private static bool spell = false;
     private static string[] groundNames;
     private static bool taoBookOpened = false;
@@ -27,6 +29,9 @@ public class Item : MonoBehaviour
         itemOnPuzzle.Add("Natural Board", "Background");
         itemOnPuzzle.Add("Yin-Yang Portal", "atlasmap2");
         itemOnPuzzle.Add("Taoism Wind", "Wind Collider");
+
+        talisDisp = GameObject.FindObjectOfType<TalismanManager>();
+        dispManager = GameObject.FindObjectOfType<Show>();
     }
 
     public static void getGroundNames() {
@@ -40,7 +45,7 @@ public class Item : MonoBehaviour
             taoBookOpened = true;
             return true;
         }
-        else if (item.CompareTo("Talisman") == 0) {
+        else if (item.CompareTo("Talisman") == 0 || item.CompareTo("The Atlas") == 0) {
             // if (taoBookOpened)
             //     return true;
             // else {
@@ -155,6 +160,12 @@ public class Item : MonoBehaviour
             GameObject.Find("MainUI").GetComponent<Show>().ShowTalismanIcon();
             TipsDialog.PrintDialog("Talisman 1");
         } 
+        else if (item.CompareTo("The Atlas") == 0){
+            // print("talisDisp " + talisDisp == null);
+            // print("talisDisp atlas " + talisDisp.atlas == null);
+            talisDisp.atlas.SetActive(true);
+            dispManager.ToggleIcons(false);
+        }
         else if (item.CompareTo("Earth Key") == 0 && position.CompareTo("EarthPortal") == 0){
             GameObject earthPortal = GameObject.Find("EarthPortal");
             earthPortal.GetComponent<sceneTransition>().enterable = true;

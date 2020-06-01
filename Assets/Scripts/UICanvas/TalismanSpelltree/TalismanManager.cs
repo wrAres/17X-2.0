@@ -42,11 +42,13 @@ public class TalismanManager : MonoBehaviour {
     public bool TenSecTimer = false;
     public float countdownTime = 10.0f;
     public float timeLeft;
+    public GameObject atlas;
 
     private void Awake() {
         dispManager = GetComponent<Show>();
         ResetCraft();
         CloseDisplay();
+        atlas.SetActive(false);
     }
 
     // Update is called once per frame

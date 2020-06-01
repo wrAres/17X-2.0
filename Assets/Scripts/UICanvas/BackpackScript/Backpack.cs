@@ -23,9 +23,9 @@ public class Backpack : MonoBehaviour
         // listOfItems = new LinkedList<Item>();
         imageObjects = new GameObject[18];
         length = 0;
+        this.AddItem("The Atlas");
         this.AddItem("Tao-Book");
         this.AddItem("Talisman");
-        this.AddItem("Taoism Wind");
         // this.AddItem("Taiji Key");
         this.Show(false);
     }
