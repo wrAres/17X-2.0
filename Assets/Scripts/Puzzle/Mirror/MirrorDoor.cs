@@ -51,10 +51,11 @@ public class MirrorDoor : MonoBehaviour
     }
 	
 	void OnTriggerEnter(Collider other){
-	
-		other.GetComponent<playerMovement>().isReverse = -1;
-		other.GetComponent<playerMovement>().freeze = 0;
-		other.GetComponent<Rigidbody>().transform.position = new Vector3(newX, newY, newZ);
+		if(other.gameObject.tag == "Player"){
+			other.GetComponent<playerMovement>().isReverse = -1;
+			other.GetComponent<playerMovement>().freeze = 0;
+			other.GetComponent<Rigidbody>().transform.position = new Vector3(newX, newY, newZ);
+		}
 		
 		isFreezed = true;
 		
