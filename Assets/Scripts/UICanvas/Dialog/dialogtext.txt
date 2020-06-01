@@ -1,18 +1,14 @@
 TalismanTip
-Use "G" to generate the spell.
+【Use 'G' to generate the spell】
 ---
 River
 The river is unmistakably deep and I never learned how to swim.
 ---
 Check Tao Book First
-Please check Tao-Book first if you want to use Talisman.
+I should check the Tao-Book first.
 ---
 Earth Key
 I feel both Yin and Yang energies from this key. But what is it =used for?
-Oh, wait! I almost forgot something important. 
-In such an unknown space, I need to review my safety incantations=        -- Tao-Book.
-It should be in my gourd, which I fashioned into a pack for all my =things.
-【Click and drag the 'Tao-Book' out】
 ---
 Lobby
 Wow! An Eight-Trigram-Atlas! I can feel the powerful energy of the =other four elements from four opposing directions. 
@@ -45,6 +41,11 @@ This should be the interior world of the Five-Element-Signet! The =map The Maste
 I must save him!
 【Use ‘WSAD’ to move around】=【Use mouse to explore the world】
 【Use mouse wheel to zoom in/out】
+...
+Oh, wait! I almost forgot something important. 
+In such an unknown space, I need to review my safety incantations=        -- Tao-Book.
+It should be in my gourd, which I fashioned into a pack for all my =things.
+【Click and drag the 'Tao-Book' and the 'Talisman' out】
 ---
 EarthPortal
 It seems like an extremely strong power is locked behind this scroll =portal, I need a key to go through it, however.
