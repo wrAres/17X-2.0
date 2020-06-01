@@ -11,7 +11,7 @@ public class RockOnBase : MonoBehaviour
     }
 
     // Update is called once per frame
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
         print("collide some obj " + collision.gameObject + ", " + collision.gameObject.tag);
         print("base " + this.gameObject.name);

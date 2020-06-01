@@ -64,7 +64,7 @@ public class PickObject : MonoBehaviour
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo, distanceToClick, layerMask) && canAct) {
                 GameObject clickObject = hitInfo.collider.gameObject;
-                // print(clickObject.name);
+                print(clickObject.name + " click it");
                 if (clickObject.tag.CompareTo("Pickable") == 0){
                     // if (clickObject.name == "Earth Key") {
                         
@@ -103,7 +103,8 @@ public class PickObject : MonoBehaviour
                         TipsDialog.PrintDialog("Flower Need Sun");
                     }
                 }
-                else if (TipsDialog.dialogList.ContainsKey(clickObject.name)){
+                else if (TipsDialog.dialogList.Contains(clickObject.name)){
+                    print("click on " + clickObject.name);
                     TipsDialog.PrintDialog(clickObject.name);
                     dialogShow = true;
                 }

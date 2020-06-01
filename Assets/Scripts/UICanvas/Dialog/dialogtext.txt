@@ -196,3 +196,15 @@ My Gourd is full. I can’t carry anything else.
 Fire Boss
 I am Fei.
 ---
+Walking Puzzle Hint 1
+Hint 1.
+---
+Walking Puzzle Hint 2
+Hint 2.
+---
+Walking Puzzle Hint 3
+Hint 3.
+---
+Walking Puzzle Hint 4
+Hint 4.
+---
