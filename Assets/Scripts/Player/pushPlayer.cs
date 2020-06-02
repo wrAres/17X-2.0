@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class pushPlayer : MonoBehaviour
 {
-    private GameObject ItemtoPush = null;
+    public GameObject ItemtoPush = null;
 
     private bool avaliblePush = false;
-    private bool currentlyPush = false;
+    public bool currentlyPush = false;
     private Transform tempTransform;
 
     public PushHud Hud;
@@ -17,17 +17,19 @@ public class pushPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pushItems = new string[] { "Rock1", "Rock2", "Rock3", "Rock4", "Rock5", "Rock6", "Rock7", "Rock8", "Rock9", "Rock10"};
+        pushItems = new string[] { "Rock1", "Rock2", "Rock3", "Rock4", "Rock5", "Rock6", "Rock7", "Rock8", "Rock9", "Rock10",
+                                   "Metal1", "Metal2", "Metal3", "Metal4", "Metal5"};
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        //Debug.Log("CurrentlyPush: " + currentlyPush);
         if (ItemtoPush != null && Input.GetKeyDown(KeyCode.E) && avaliblePush)
         {
             currentlyPush = true;
             ItemtoPush.transform.parent = transform;
-            Debug.Log("Made " + ItemtoPush.name + " Child of me");
+            //Debug.Log("Made " + ItemtoPush.name + " Child of me");
         }
         if (Input.GetKeyUp(KeyCode.E) && ItemtoPush != null)
         {
@@ -39,7 +41,7 @@ public class pushPlayer : MonoBehaviour
     void OnCollisionEnter(Collision collisionInfo)
     {
         // Debug.Log("Collide with" + collisionInfo.collider.name);
-        // Debug.Log("cuurpush" + currentlyPush);
+        //Debug.Log("cuurpush before " + currentlyPush);
         if (!currentlyPush)
         {
             // Debug.Log(collisionInfo.collider.name);
@@ -52,9 +54,9 @@ public class pushPlayer : MonoBehaviour
                     avaliblePush = true;
                     ItemtoPush = collisionInfo.collider.gameObject.transform.parent.gameObject;
                     tempTransform = ItemtoPush.transform.parent; 
-                    Debug.Log("Push is: " + avaliblePush);
+                    //Debug.Log("Push is: " + avaliblePush);
                     Hud.OpenMessagePanel(collisionInfo.collider.name);
-                    Debug.Log("ShowPanel");
+                    //Debug.Log("ShowPanel");
                     break;
                 }
             }
