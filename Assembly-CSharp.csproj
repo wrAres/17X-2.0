@@ -55,7 +55,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ReturnFromAtlas.cs" />
      <Compile Include="Assets\Scripts\AI\AIDataManager.cs" />
      <Compile Include="Assets\Scripts\AI\BT\ActionNode.cs" />
      <Compile Include="Assets\Scripts\AI\BT\CheckNode.cs" />
@@ -102,6 +101,7 @@
      <Compile Include="Assets\Scripts\UICanvas\BackpackScript\DragSizes.cs" />
      <Compile Include="Assets\Scripts\UICanvas\BackpackScript\Item.cs" />
      <Compile Include="Assets\Scripts\UICanvas\BackpackScript\ItemDragHandler.cs" />
+     <Compile Include="Assets\Scripts\UICanvas\BackpackScript\ReturnFromAtlas.cs" />
      <Compile Include="Assets\Scripts\UICanvas\Click_CanvasOrScene\MouseCursor.cs" />
      <Compile Include="Assets\Scripts\UICanvas\Click_CanvasOrScene\PickObject.cs" />
      <Compile Include="Assets\Scripts\UICanvas\Click_CanvasOrScene\Show.cs" />

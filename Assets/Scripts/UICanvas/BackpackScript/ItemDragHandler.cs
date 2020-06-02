@@ -15,6 +15,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
     public GameObject textbox;
     public float itemScale;
     public Text itemName;
+    public Vector2 itemOriginalScale;
 
     public bool dialogShown => FindObjectOfType<TipsDialog>() != null;
 
@@ -96,6 +97,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
     {
         itemOnGround = null;
         holdItem = false;
+        itemOriginalScale = transform.localScale;
     }
 
     // Update is called once per frame
@@ -118,7 +120,11 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
                 canPlaceItem = Item.canPlace(itemOnGround.name, dragOnObject.name);
                 print(itemOnGround.name + ", on to: " + dragOnObject.name);
                 if (canPlaceItem) {
-                    GameObject.Find("Backpack_Roll").GetComponent<Backpack>().RemoveItem(itemOnGround, position);
+                    if (itemOnGround.name.CompareTo("The Atlas") == 0)
+                        transform.localScale = itemOriginalScale / itemScale;
+                    else 
+                        GameObject.Find("Backpack_Roll").GetComponent<Backpack>().RemoveItem(itemOnGround, position);
+                    
                     Item.puzzleEffect(itemOnGround.name, dragOnObject.name, hitInfo.point);
                     if (itemOnGround.name.CompareTo("Tao-Book") != 0 && itemOnGround.name.CompareTo("Talisman") != 0 && itemOnGround.name.CompareTo("The Atlas") != 0)
                         GameObject.Find("pickupEffect").GetComponent<pickupEffect>().castAni(hitInfo.point);
