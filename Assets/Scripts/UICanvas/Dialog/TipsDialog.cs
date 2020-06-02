@@ -51,6 +51,7 @@ public class TipsDialog : MonoBehaviour
         dialogText = GameObject.Find("Dialog Text").GetComponent<Text>();
         Option = GameObject.Find("Options");
         nextButton = GameObject.Find("Next Button");
+        nextButton.GetComponent<NextButtonEffect>().effective = false;
 
         dialogList = new List<string>();
         dialogList.Add("法阵-scene3");
@@ -112,7 +113,7 @@ public class TipsDialog : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ChangeNextButton();
+            nextButton.GetComponent<NextButtonEffect>().ChangeNextButton();
             // type full text if press space
             if (isTyping){
                 StopAllCoroutines(); 
@@ -146,12 +147,6 @@ public class TipsDialog : MonoBehaviour
         } else if (CallScene()) {
             GameObject.Find("WaterSoundManager").GetComponent<TransferToCredit>().Transfer();
         }
-    }
-    public static void ChangeNextButton() {
-    	// GameObject nextButton = GameObject.Find("Next Button");
-        nextButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button shadow");
-        nextOnClick = true;
-        UISoundScript.PlayDialogNext();
     }
 
     public static bool NextPage() {

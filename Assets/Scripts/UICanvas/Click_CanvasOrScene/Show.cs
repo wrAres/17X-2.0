@@ -125,7 +125,7 @@ public class Show : MonoBehaviour
                 }
                 else if (name.CompareTo("Next Button") == 0) {
                     pick.descShow = false;
-                    TipsDialog.ChangeNextButton();
+                    TipsDialog.nextButton.GetComponent<NextButtonEffect>().ChangeNextButton();
                     if (TipsDialog.isTyping){ // type full text
                         TipsDialog.PrintFullDialog();
                     } else {
