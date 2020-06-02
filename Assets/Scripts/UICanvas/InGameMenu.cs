@@ -49,6 +49,14 @@ public class InGameMenu : MonoBehaviour
 	    public static void MainMenu(){
 	    	//remove dontdestroyonload
 	    	Destroy(Object); 
+			DontDestroyVariables.enterWaterRoom = false;
+			DontDestroyVariables.growState = 0; //0: nothing; 1: dirt in; 2: seed in; 3: bud grow; 4: bloom
+			DontDestroyVariables.firstTimeLobbyFlag = true; // Used to tell if its the first time visiting the lobby scene
+			DontDestroyVariables.accidentallyOpenTalisman = false;
+			DontDestroyVariables.canOpenTalisman = false;
+			DontDestroyVariables.haveSeenRiverTip = false;
+			DontDestroyVariables.windExist = true;
+			DontDestroyVariables.baseDisappearCount = 0;
 	      	SceneManager.LoadScene("MainMenu");
 	    }
 	    public static void Option(){
