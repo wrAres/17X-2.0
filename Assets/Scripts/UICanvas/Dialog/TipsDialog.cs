@@ -21,8 +21,20 @@ public class TipsDialog : MonoBehaviour
     public float textspeed;
     private static string currDialogRef;
     public static GameObject nextButton;
+
     public static GameObject Option;
+    // store option name(instrad of using GetOption)
     public static string GetOption;
+    public static List<string> OptionList = new List<string>();
+    public static Text OptionAText;
+    public static string OptionA;
+    public static Text OptionBText;
+    public static string OptionB;
+    public static Text OptionCText;
+    public static string OptionC;
+    public static Text OptionDText;
+    public static string OptionD;
+    public static bool getOption = false;
     public static bool pickOption = false;
     // public string waterGateDiscription;
     // public string riverDiscription;
@@ -50,6 +62,11 @@ public class TipsDialog : MonoBehaviour
         dialog = GameObject.Find("Dialog Box");
         dialogText = GameObject.Find("Dialog Text").GetComponent<Text>();
         Option = GameObject.Find("Options");
+        OptionAText = GameObject.Find("OptionA Text").GetComponent<Text>();
+        OptionBText = GameObject.Find("OptionB Text").GetComponent<Text>();
+        OptionCText = GameObject.Find("OptionC Text").GetComponent<Text>();
+        OptionDText = GameObject.Find("OptionD Text").GetComponent<Text>();
+
         nextButton = GameObject.Find("Next Button");
         nextButton.GetComponent<NextButtonEffect>().effective = false;
 
@@ -90,6 +107,7 @@ public class TipsDialog : MonoBehaviour
         dialogList.Add("Walking Puzzle Hint 2");
         dialogList.Add("Walking Puzzle Hint 3");
         dialogList.Add("Walking Puzzle Hint 4");
+
         dialog.SetActive(false);
         dialog.SetActive(false);
         Option.SetActive(false);
@@ -150,16 +168,19 @@ public class TipsDialog : MonoBehaviour
     }
 
     public static bool NextPage() {
-        // if (dialogOrDesc) {
-             //print("index: " + index + ", list length: " + textlist2.Count);
-    		//Active option button while water boss finishes its last sentence
-	    	if (index == textlist2.Count && textlist2[textlist2.Count - 1].CompareTo("Qiang Yu: Interesting... Fighting against your fate, please =don’t let me down, human...") == 0){	
-	    			dialogText.text = "";
-			        Option.SetActive(true);
-			       	nextButton.SetActive(false);
-			       	index ++;
-			       	pickOption = true;	
-			       	return true;
+       
+         // if (dialogOrDesc) {
+              //print("index: " + index + ", list length: " + textlist2.Count);
+	     	//if (index == textlist2.Count && textlist2[textlist2.Count - 1].CompareTo("Qiang Yu: Interesting... Fighting against your fate, please =don’t let me down, human...") == 0){	
+	    // } else {
+            // To make sure the conditions for activating multiple choice are met
+        	if (index < textlist2.Count - 1 && textlist2[index].CompareTo("Qiang Yu: And I have some questions for you:") == 0){
+			    PrintOptions();
+                //Active option button
+                Option.SetActive(true);
+                nextButton.SetActive(false);
+                pickOption = true;
+                return true;      	
 	    	} else if (index > textlist2.Count - 1){
     			index = 2;
                 // Debug.Log("no more tips");
@@ -173,7 +194,7 @@ public class TipsDialog : MonoBehaviour
             startTyping = true;
             index ++;
             return true;
-        // }
+        //}
         // return false;
     }
 
@@ -228,14 +249,41 @@ public class TipsDialog : MonoBehaviour
  
     public static void PlayOption(string Name){
     	// store option name
-    	GetOption = Name;
-        print(GetOption);
+        if (Name.CompareTo("OptionA") == 0){
+            OptionList.Add(OptionA);
+        } else if (Name.CompareTo("OptionB") == 0){
+            OptionList.Add(OptionB);
+        } else if (Name.CompareTo("OptionC") == 0){
+            OptionList.Add(OptionC);
+        } else if (Name.CompareTo("OptionD") == 0){
+            OptionList.Add(OptionD);
+        }
         //reset
-        index = 2;
-        Option.SetActive(false);
-        nextButton.SetActive(true);
-        pickOption = false;
-        HideTextBox();
+        if (index < textlist2.Count - 1 && textlist2[index].CompareTo("Me") == 0){
+            getOption = false;
+            Option.SetActive(false);
+            nextButton.SetActive(true);
+            pickOption = false;
+            Line = textlist2[++index].Replace("=", "\n");
+            startTyping = true;
+            index++;
+        //next option
+        } else{
+             PrintOptions();
+        }
+    }
+
+    public static void PrintOptions(){
+            index++;
+            dialogText.text = textlist2[index];
+            OptionA =  textlist2[++index];
+            OptionAText.text = OptionA;
+            OptionB = textlist2[++index];
+            OptionBText.text = OptionB;
+            OptionC = textlist2[++index];
+            OptionCText.text = OptionC;
+            OptionD = textlist2[++index];
+            OptionDText.text = OptionD;
     }
 
     IEnumerator Typing(string sentences) {
