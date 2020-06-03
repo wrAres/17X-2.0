@@ -21,18 +21,21 @@ public class movingBoard : MonoBehaviour
 		}
     }
 	
-	void OnCollisionEnter(Collision other){
+	void OnTriggerEnter(Collider other){
 		if(other.gameObject.tag == "Player"){
 		/*	other.gameObject.GetComponent<playerMovement>().dx = this.GetComponent<Rigidbody>().velocity.x;
-			other.gameObject.GetComponent<playerMovement>().dz = this.GetComponent<Rigidbody>().velocity.z;*/
-			isContact = true;
+			other.gameObject.GetComponent<playerMovement>().dz = this.GetComponent<Rigidbody>().velocity.z;
+			isContact = true;*/
+			other.transform.parent = transform;
 		}
 	}
-	void OnCollisionExit(Collision other){
+	void OnTriggerExit(Collider other){
 		if(other.gameObject.tag == "Player"){
-			other.gameObject.GetComponent<playerMovement>().dx = 0;
+			/*other.gameObject.GetComponent<playerMovement>().dx = 0;
 			other.gameObject.GetComponent<playerMovement>().dz = 0;
-			isContact = false;
+			isContact = false;*/
+			other.transform.parent = null;
 		}
+		
 	}
 }
