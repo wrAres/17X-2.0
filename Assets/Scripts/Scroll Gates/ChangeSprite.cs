@@ -9,9 +9,9 @@ public class ChangeSprite : MonoBehaviour
     // Start is called before the first frame update
 	public GameObject trans;
 	void Update(){
-		/*if(Input.GetKey("o")){
+		if(Input.GetKey("o")){
 			OpenScroll();
-		}*/
+		}
 		
 		
 	}

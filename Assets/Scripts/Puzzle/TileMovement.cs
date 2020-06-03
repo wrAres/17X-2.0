@@ -13,7 +13,7 @@ public class TileMovement : MonoBehaviour
     public Animation glowingTile; // Tile to indicate last piece
 
     public Animator animator;
-
+	public GameObject loadingScreen;
     private Transform tileToMove;
     private Transform invisTile;
     private GameObject eightTiles;
@@ -40,7 +40,7 @@ public class TileMovement : MonoBehaviour
         fullPicture.active = false;
         eightTiles = GameObject.Find("Full_8_Tiles");
         eightTiles.active = false;
-
+		loadingScreen.GetComponent<Renderer>().enabled = false;
         movements = new Stack();
 
         // Debug.Log("Data Manager object name: " + manager.name);
@@ -81,6 +81,7 @@ public class TileMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
+			loadingScreen.GetComponent<Renderer>().enabled = true;
             SceneManager.LoadScene("scene3");
         }
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
@@ -315,7 +316,7 @@ public class TileMovement : MonoBehaviour
             float totalTime = Time.time - start;
             // Debug.Log("Time: " + totalTime);
             AIDataManager.movingPuzzleTime = totalTime;
-
+			loadingScreen.GetComponent<Renderer>().enabled = true;
             SceneManager.LoadScene("scene3");
         }
     }
