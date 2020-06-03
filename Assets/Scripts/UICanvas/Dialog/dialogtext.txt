@@ -230,3 +230,6 @@ Hint 3.
 Walking Puzzle Hint 4
 Hint 4.
 ---
+rockInWaterRoom
+Stars hide secrets of the life and growth.
+---
