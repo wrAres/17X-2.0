@@ -154,7 +154,7 @@ public class Item : MonoBehaviour
             GameObject.Find("MainUI").GetComponent<Show>().ShowSpelltreeIcon();
             TipsDialog.PrintDialog("Spelltree 1");
             GameObject.Find("Dialog Box").transform.SetSiblingIndex(6);
-            DontDestroyVariables.canOpenTalisman = true;
+            //DontDestroyVariables.canOpenTalisman = true;
         } 
         else if (item.CompareTo("Talisman") == 0){
             GameObject.Find("MainUI").GetComponent<Show>().ShowTalismanIcon();

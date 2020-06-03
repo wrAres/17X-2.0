@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler {
+public class TalisDrag : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler {
     public enum Elements { METAL, WOOD, WATER, FIRE, EARTH, THUNDER, SUN, WIND, MOON, NONE };
     public Elements element;
     public bool locked, known;
@@ -41,28 +41,6 @@ public class TalisDrag : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHand
     // Reset position of talisman
     private void OnDisable() {
         transform.position = origin;
-    }
-
-    public void OnDrag(PointerEventData eventData) {
-        if (!locked) {
-            transform.position = Input.mousePosition;
-        }
-    }
-
-    public void OnEndDrag(PointerEventData eventData) {
-        if (!setTalis) {
-            //transform.position = origin;
-            gameObject.GetComponent<RectTransform>().localPosition = origin;
-            
-        }
-    }
-
-    public void OnDrop(PointerEventData eventData) {
-        RectTransform invPanel = talisman as RectTransform;
-        if (RectTransformUtility.RectangleContainsScreenPoint(invPanel, Input.mousePosition)) {
-            //setTalis = true;
-            dispManager.GetComponent<TalismanManager>().AddCraft(element, GetComponentInChildren<Image>().sprite);
-        }
     }
 
     // Start is called before the first frame update

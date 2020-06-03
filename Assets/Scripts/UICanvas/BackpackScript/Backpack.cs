@@ -71,6 +71,7 @@ public class Backpack : MonoBehaviour
         RectTransform item_transform = imageObj.GetComponent<RectTransform>();
         // RectTransform backpack_transform = backpack.GetComponent<RectTransform>();
         item_transform.SetParent(backpack.transform); //Assign the newly created Image GameObject as a Child of the Parent Panel, Canvas/Main UI.
+        item_transform.SetAsFirstSibling();
 
         item_transform.anchoredPosition = new Vector2((length-12f)*80 + 200, 0);
         if (name.CompareTo("Heavenly Water") == 0) {
