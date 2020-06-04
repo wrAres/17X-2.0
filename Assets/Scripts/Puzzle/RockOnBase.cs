@@ -37,9 +37,9 @@ public class RockOnBase : MonoBehaviour
         //Check for a match with the specified name on any GameObject that collides with your GameObject
         if (crystalBack || rockBack)
         {
-            //print("collide correct obj");
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             DontDestroyVariables.baseDisappearCount += 1;
+            Debug.Log("baseDisappearCount " + DontDestroyVariables.baseDisappearCount);
 
             if (push.ItemtoPush != null)
             {
@@ -51,6 +51,12 @@ public class RockOnBase : MonoBehaviour
                 push.closeHUD();
                 push.avaliblePush = false;
                 push.currentlyPush = false;
+
+                if (DontDestroyVariables.baseDisappearCount == 14) {
+                    GameObject futureRockBase = GameObject.Find("FutureRock");
+                    futureRockBase.GetComponent<SpriteRenderer>().enabled = true;
+                    futureRockBase.GetComponent<BoxCollider>().enabled = true;
+                }
             }
         }
     }

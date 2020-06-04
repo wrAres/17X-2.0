@@ -40,6 +40,6 @@ public class CreditMenu : MonoBehaviour
 
 	public void Back(){
 		SceneManager.LoadScene("MainMenu");
-		Debug.Log("back");
+		// Debug.Log("back");
 	}
 }

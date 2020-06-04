@@ -36,7 +36,7 @@ public class flowerInMirror : MonoBehaviour
 		}
 
 		if(des == true && temp+50==timer){
-			Debug.Log("destroy");
+			// Debug.Log("destroy");
 			Destroy(mirror);
 			
 		}
@@ -49,7 +49,7 @@ public class flowerInMirror : MonoBehaviour
 				mirror.GetComponent<mirrors>().disappear();
 				temp = timer;
 				isCracked = true;
-				Debug.Log("wrong");
+				// Debug.Log("wrong");
 				/*if(temp+100<timer){
 				this.gameObject.GetComponent<SpriteRenderer>().sprite = def;
 				mirror.GetComponent<mirrors>().reset();

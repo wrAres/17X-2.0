@@ -46,7 +46,7 @@ public class mirrors : MonoBehaviour
 	}
 	public void disappear(){
 
-		Debug.Log("disappeared");
+		// Debug.Log("disappeared");
 		shuffle.GetComponent<Renderer>().enabled = true;
 		f1.GetComponent<Renderer>().enabled = false;
 		f2.GetComponent<Renderer>().enabled = false;

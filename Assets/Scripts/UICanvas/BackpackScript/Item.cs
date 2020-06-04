@@ -129,7 +129,7 @@ public class Item : MonoBehaviour
             GameObject futureRock = GameObject.Find("FutureRock");
             Destroy(futureRock);
 
-            GameObject.Find("Rock10").transform.position = GameObject.Find("Rock5").transform.position + new Vector3(1.8f, 0f, 0f);
+            GameObject.Find("Rock10").transform.position = GameObject.Find("Rock Base (1)").transform.position + new Vector3(3.8f, 0f, 0f);
             GameObject.Find("Earth Key").transform.position = new Vector3(-1.34f, -1.765f, 3.5f);
             
             AIDataManager.UpdateStandardSpellCount("Changable Soil", 1);

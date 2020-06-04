@@ -39,13 +39,13 @@ public class InGameMenu : MonoBehaviour
 
 	    public static void QuitGame(){
 	      //  UnityEditor.EditorApplication.isPlaying = false;
-	       Debug.Log("quit game");
+	    //    Debug.Log("quit game");
 	       Application.Quit();
 	    }
 	    public static void Control() {
 	       	GameIsPaused = false;
 	       	GameMenu.SetActive(false);
-	       	Debug.Log("Control");
+	       	// Debug.Log("Control");
 	    }
 
 	    public static void MainMenu(){
@@ -62,7 +62,7 @@ public class InGameMenu : MonoBehaviour
 	      	SceneManager.LoadScene("MainMenu");
 	    }
 	    public static void Option(){
-	       	Debug.Log("Option");
+	       	// Debug.Log("Option");
 	       	GameMenu.SetActive(false);
 	       	GameIsPaused = false;
 	    }

@@ -40,8 +40,8 @@ public class pushPlayer : MonoBehaviour
 
     void OnCollisionEnter(Collision collisionInfo)
     {
-        Debug.Log("Collide with" + collisionInfo.collider.name);
-        Debug.Log("cuurpush before " + currentlyPush);
+        // Debug.Log("Collide with" + collisionInfo.collider.name);
+        // Debug.Log("cuurpush before " + currentlyPush);
         if (!currentlyPush)
         {
             //Debug.Log(collisionInfo.collider.name);
@@ -50,7 +50,7 @@ public class pushPlayer : MonoBehaviour
             {
                 if (collisionInfo.collider.name.CompareTo(item) == 0)
                 {
-                    Debug.Log(collisionInfo.collider.name + " true ");
+                    // Debug.Log(collisionInfo.collider.name + " true ");
                     avaliblePush = true;
                     ItemtoPush = collisionInfo.collider.gameObject.transform.parent.gameObject;
                     tempTransform = ItemtoPush.transform.parent; 

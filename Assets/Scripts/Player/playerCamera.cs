@@ -20,12 +20,12 @@ public class playerCamera : MonoBehaviour
 		float cameraZ = this.transform.localPosition.z;
         if(Input.GetAxis("Mouse ScrollWheel")>0f &&cameraY <= 1.8f ){
 			this.transform.position += dy;
-			Debug.Log(cameraY);
+			// Debug.Log(cameraY);
 		}
 		
 		if(Input.GetAxis("Mouse ScrollWheel")<0f && cameraY>= -4.0f ){
 			this.transform.position -= dy;
-			Debug.Log(cameraY);
+			// Debug.Log(cameraY);
 		}
     }
 }
