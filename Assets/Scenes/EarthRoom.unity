@@ -2002,6 +2002,7 @@ MonoBehaviour:
   brightTalisman: 0
   seenSpellTree: 0
   talismanIcon: {fileID: 0}
+  lockGame: 0
 --- !u!114 &103709453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2808,7 +2809,7 @@ GameObject:
   - component: {fileID: 158658223}
   - component: {fileID: 158658224}
   m_Layer: 0
-  m_Name: Rock4
+  m_Name: Rock9
   m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4613,8 +4614,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &349107673
 GameObject:
   m_ObjectHideFlags: 0
@@ -5997,7 +6001,7 @@ GameObject:
   - component: {fileID: 432021433}
   - component: {fileID: 432021434}
   m_Layer: 0
-  m_Name: Rock4
+  m_Name: Rock8
   m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23673,8 +23677,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 103709458}
+  pushItems: []
 --- !u!1 &1551779910
 GameObject:
   m_ObjectHideFlags: 0

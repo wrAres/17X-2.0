@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,7 +25,7 @@ public class RockOnBase : MonoBehaviour
         //print("base " + this.gameObject.name);
         currPush = push.currentlyPush;
         //Debug.Log("Currpush in Base: " + currPush);
-        if (currPush)
+        if (currPush && push.ItemtoPush != null)
         {
             //Debug.Log("Base Collided with: " + push.ItemtoPush);
             //Debug.Log("Collider: " + collision.name);
@@ -39,6 +40,18 @@ public class RockOnBase : MonoBehaviour
             //print("collide correct obj");
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             DontDestroyVariables.baseDisappearCount += 1;
+
+            if (push.ItemtoPush != null)
+            {
+                push.ItemtoPush.transform.parent = push.tempTransform;
+                int index = Array.IndexOf(push.pushItems, push.ItemtoPush.name);
+                push.pushItems[index] = null;
+                push.ItemtoPush = null;
+
+                push.closeHUD();
+                push.avaliblePush = false;
+                push.currentlyPush = false;
+            }
         }
     }
 }

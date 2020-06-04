@@ -6,13 +6,13 @@ public class pushPlayer : MonoBehaviour
 {
     public GameObject ItemtoPush = null;
 
-    private bool avaliblePush = false;
+    public bool avaliblePush = false;
     public bool currentlyPush = false;
-    private Transform tempTransform;
+    public Transform tempTransform;
 
     public PushHud Hud;
 
-    private string[] pushItems;
+    public string[] pushItems;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class pushPlayer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         //Debug.Log("CurrentlyPush: " + currentlyPush);
         if (ItemtoPush != null && Input.GetKeyDown(KeyCode.E) && avaliblePush)
@@ -40,11 +40,11 @@ public class pushPlayer : MonoBehaviour
 
     void OnCollisionEnter(Collision collisionInfo)
     {
-        // Debug.Log("Collide with" + collisionInfo.collider.name);
-        //Debug.Log("cuurpush before " + currentlyPush);
+        Debug.Log("Collide with" + collisionInfo.collider.name);
+        Debug.Log("cuurpush before " + currentlyPush);
         if (!currentlyPush)
         {
-            // Debug.Log(collisionInfo.collider.name);
+            //Debug.Log(collisionInfo.collider.name);
             //ItemtoPush = collisionInfo.collider.gameObject;
             foreach (string item in pushItems)
             {
@@ -72,12 +72,24 @@ public class pushPlayer : MonoBehaviour
     {
         if (!currentlyPush)
         {
-            Hud.CloseMessagePanel();
+            closeHUD();
             avaliblePush = false;
-            // Debug.Log("Push is exit: " + avaliblePush);
-            //ItemtoPush.transform.parent = tempTransform;
             ItemtoPush = null;
         }
+    }
 
+    public void closeHUD()
+    {
+        Hud.CloseMessagePanel();
+    }
+
+    public void printItems()
+    {
+        string toPrint = "";
+        foreach (string item in pushItems)
+        {
+            toPrint += item + ", ";
+        }
+        Debug.Log(toPrint);
     }
 }
