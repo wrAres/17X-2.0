@@ -772,7 +772,7 @@ MonoBehaviour:
   enterable: 0
   openScroll: 0
   myText: {fileID: 0}
-  loadingScreen: {fileID: 1194092956}
+  loadingScreen: {fileID: 0}
 --- !u!65 &72247049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1893,8 +1893,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &235787177
 GameObject:
   m_ObjectHideFlags: 0
@@ -2196,8 +2199,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &316123971
 GameObject:
   m_ObjectHideFlags: 0
@@ -2273,8 +2279,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &336070322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2465,7 +2474,7 @@ Transform:
   m_LocalPosition: {x: 2, y: -1, z: -4.46}
   m_LocalScale: {x: 20, y: 20, z: 1}
   m_Children:
-  - {fileID: 1194092959}
+  - {fileID: 1854070968}
   m_Father: {fileID: 126118429}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
@@ -3567,8 +3576,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &488077625
 GameObject:
   m_ObjectHideFlags: 0
@@ -3983,8 +3995,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &633475333
 GameObject:
   m_ObjectHideFlags: 0
@@ -4648,8 +4663,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &763108354
 GameObject:
   m_ObjectHideFlags: 0
@@ -4725,8 +4743,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &792944443
 GameObject:
   m_ObjectHideFlags: 0
@@ -4917,8 +4938,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &874837367
 GameObject:
   m_ObjectHideFlags: 0
@@ -5220,8 +5244,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &952019472
 GameObject:
   m_ObjectHideFlags: 0
@@ -5717,8 +5744,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &1043745211
 GameObject:
   m_ObjectHideFlags: 0
@@ -6455,100 +6485,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1194092956
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1194092959}
-  - component: {fileID: 1194092958}
-  - component: {fileID: 1194092957}
-  m_Layer: 0
-  m_Name: loading
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1194092957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194092956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1890ae58d6cf1e846973dc7590040f8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!212 &1194092958
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194092956}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 20
-  m_Sprite: {fileID: 21300000, guid: ebd396e745771dd478b90e0cd9d343ed, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 18.98, y: 9.68}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1194092959
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1194092956}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.09499996, y: -4.094011, z: -1.4724984}
-  m_LocalScale: {x: 0.15, y: 0.20000002, z: 0.20000002}
-  m_Children: []
-  m_Father: {fileID: 348457824}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1232590683
 GameObject:
   m_ObjectHideFlags: 0
@@ -6961,8 +6897,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!54 &1280981464
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7506,8 +7445,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &1403619205
 GameObject:
   m_ObjectHideFlags: 0
@@ -7922,8 +7864,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &1542438111
 GameObject:
   m_ObjectHideFlags: 0
@@ -8065,8 +8010,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &1566969867
 GameObject:
   m_ObjectHideFlags: 0
@@ -8368,8 +8316,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &1603096070
 GameObject:
   m_ObjectHideFlags: 0
@@ -9336,8 +9287,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &1732261693
 GameObject:
   m_ObjectHideFlags: 0
@@ -9549,8 +9503,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &1758259000
 GameObject:
   m_ObjectHideFlags: 0
@@ -9739,8 +9696,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &1789189367
 GameObject:
   m_ObjectHideFlags: 0
@@ -10317,6 +10277,120 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1854070967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1854070968}
+  - component: {fileID: 1854070971}
+  - component: {fileID: 1854070970}
+  - component: {fileID: 1854070969}
+  m_Layer: 0
+  m_Name: loading
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1854070968
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854070967}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.21499996, y: -3.452034, z: -2.7564526}
+  m_LocalScale: {x: 0.1, y: 0.10000001, z: 0.10000001}
+  m_Children: []
+  m_Father: {fileID: 348457824}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1854070969
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854070967}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 00aa7307a2280f147a35f0cb8d2929f6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1854070970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854070967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1890ae58d6cf1e846973dc7590040f8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &1854070971
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854070967}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 20
+  m_Sprite: {fileID: 21300000, guid: cf8a53115cceeb441b68ff2da5793cca, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 18.98, y: 9.68}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1897510507
 GameObject:
   m_ObjectHideFlags: 0
@@ -10392,8 +10466,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &1898312148
 GameObject:
   m_ObjectHideFlags: 0
@@ -10772,7 +10849,7 @@ MonoBehaviour:
   enterable: 0
   openScroll: 0
   myText: {fileID: 0}
-  loadingScreen: {fileID: 1194092956}
+  loadingScreen: {fileID: 0}
 --- !u!65 &1928741907
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11168,8 +11245,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &1965709863
 GameObject:
   m_ObjectHideFlags: 0
@@ -11245,8 +11325,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemtoPush: {fileID: 0}
+  avaliblePush: 0
   currentlyPush: 0
+  tempTransform: {fileID: 0}
   Hud: {fileID: 0}
+  pushItems: []
 --- !u!1 &1968719622
 GameObject:
   m_ObjectHideFlags: 0
@@ -12023,7 +12106,7 @@ MonoBehaviour:
   enterable: 0
   openScroll: 0
   myText: {fileID: 0}
-  loadingScreen: {fileID: 1194092956}
+  loadingScreen: {fileID: 0}
 --- !u!65 &2070173846
 BoxCollider:
   m_ObjectHideFlags: 0
