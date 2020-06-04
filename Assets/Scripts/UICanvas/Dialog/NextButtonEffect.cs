@@ -6,12 +6,15 @@ using UnityEngine.EventSystems;
 
 public class NextButtonEffect : MonoBehaviour, IPointerDownHandler
 {
+    public bool isPaused => FindObjectOfType<Show>().lockGame;
     public bool effective = true;
     public void ChangeNextButton() {
-        this.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button shadow");
-        if (!effective){
-            TipsDialog.nextOnClick = true;
-            UISoundScript.PlayDialogNext();
+        if(!isPaused) {
+            this.gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button shadow");
+            if (!effective){
+                TipsDialog.nextOnClick = true;
+                UISoundScript.PlayDialogNext();
+            }
         }
     }
 

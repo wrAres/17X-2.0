@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(TalismanManager))]
 public class Show : MonoBehaviour
 {
-    public bool canAct => !dialogShown;
+    public bool canAct => !dialogShown && !lockGame;
     public bool dialogShown =>
         FindObjectOfType<TipsDialog>() != null;
     // public bool talismanShown =>
@@ -30,6 +30,8 @@ public class Show : MonoBehaviour
     PointerEventData pointerData;
     EventSystem eventSystem;
 
+    private LeaveIconBright light;
+
     private static Show showInstance;
     void Awake() {
         DontDestroyOnLoad(this);
@@ -44,6 +46,7 @@ public class Show : MonoBehaviour
         GameObject.FindGameObjectWithTag("BackpackIcon").GetComponent<Image>().enabled = false;
         GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled = false;
         Destroy(GameObject.Find("Theme Song"));
+        light = FindObjectOfType<LeaveIconBright>();
     }
 
     private void Start() {
@@ -288,9 +291,21 @@ public class Show : MonoBehaviour
     public void ToggleIcons(bool isOn) {
         if (!isOn || backpackUnlocked) GameObject.FindGameObjectWithTag("BackpackIcon").GetComponent<Image>().enabled = isOn;
         if (!isOn || spellTreeUnlocked) GameObject.FindGameObjectWithTag("SpellTreeIcon").GetComponent<Image>().enabled = isOn;
-        // if (!isOn || talismanUnlocked) GameObject.FindGameObjectWithTag("TalismanIcon").GetComponent<Image>().enabled = isOn;
+        if (!isOn || talismanUnlocked) GameObject.FindGameObjectWithTag("TalismanIcon").GetComponent<Image>().enabled = isOn;
 
         if (!isOn) CloseDisplays();
-        else Backpack.backpack.GetComponent<Backpack>().Show(true);
+        else if(backpackUnlocked) Backpack.backpack.GetComponent<Backpack>().Show(true);
+    }
+
+    public bool lockGame;
+    public void ToggleLock(bool isLock) {
+        ToggleIcons(!isLock);
+        if(isLock){
+            GameObject.Find("MainUI").GetComponent<TalismanManager>().CloseDisplay();
+        }
+        TipsDialog.ToggleTextBox(!isLock);
+        lockGame = isLock;
+        
+        if(light != null) light.gameObject.SetActive(!isLock);
     }
 }

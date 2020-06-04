@@ -36,7 +36,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
     }
 
     public void OnDrag(PointerEventData eventData){
-        if (!dialogShown) {
+        if (!dialogShown && itemOnGround != null) {
             itemOnGround.transform.position = Input.mousePosition;
             textbox.SetActive(false);
         }
@@ -79,7 +79,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
 
     public void OnEndDrag(PointerEventData eventData){
         // StartCoroutine(Put());
-        if (!dialogShown) {
+        if (!dialogShown && itemOnGround != null) {
             Put();
             itemOnGround.GetComponent<RectTransform>().anchoredPosition = previousPosition;
             holdItem = false;

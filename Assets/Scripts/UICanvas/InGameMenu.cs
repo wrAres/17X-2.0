@@ -26,12 +26,14 @@ public class InGameMenu : MonoBehaviour
 	      // }
 	      if(Input.GetKeyDown(KeyCode.Escape)){
 	            if(!GameIsPaused){
-	                    GameMenu.SetActive(true);
-	                    GameIsPaused = true;
-	                } else{
-	                    GameMenu.SetActive(false);
-	                    GameIsPaused = false;
-	                }
+					GameMenu.SetActive(true);
+					GetComponent<Show>().ToggleLock(true);
+					GameIsPaused = true;
+				} else{
+					GameMenu.SetActive(false);
+					GetComponent<Show>().ToggleLock(false);
+					GameIsPaused = false;
+				}
 	        }
 	    }
 

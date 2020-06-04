@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PickObject : MonoBehaviour
 {
-    public bool canAct => !dialogShown && !talismanShown && !shineIcon;
+    public bool canAct => !dialogShown && !talismanShown && !shineIcon && !FindObjectOfType<Show>().lockGame;
     public bool dialogShown =>
         FindObjectOfType<TipsDialog>() != null;
     public bool talismanShown =>

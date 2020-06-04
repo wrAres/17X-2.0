@@ -14,7 +14,7 @@ public class TalismanManager : MonoBehaviour {
         public TalisDrag.Elements[] element = new TalisDrag.Elements[3];
     }
     */
-    public bool dialogShown => FindObjectOfType<TipsDialog>() != null;
+    public bool dialogShown => FindObjectOfType<TipsDialog>() != null && !FindObjectOfType<Show>().lockGame;
 
     // Main display variables
     public GameObject display;

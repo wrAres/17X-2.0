@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class TipsDialog : MonoBehaviour
 {
+    public bool isPaused => FindObjectOfType<Show>().lockGame;
+
     public static Text dialogText;
     public TextAsset textFile;
     public static int index;
@@ -129,7 +131,7 @@ public class TipsDialog : MonoBehaviour
                 printfull = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !isPaused)
         {
             nextButton.GetComponent<NextButtonEffect>().ChangeNextButton();
             // type full text if press space
@@ -146,7 +148,7 @@ public class TipsDialog : MonoBehaviour
             }
         }
         if(!pickOption){
-	        if ((Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space)) && nextOnClick)
+	        if ((Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space)) && nextOnClick && !isPaused)
 	        {
 	            GameObject.Find("Next Button").GetComponent<Image>().sprite = Resources.Load<Sprite>("UI/Next Button");
 	            nextOnClick = false;
@@ -233,6 +235,16 @@ public class TipsDialog : MonoBehaviour
     public static void HideTextBox() {
         dialogText.text = "";
         dialog.SetActive(false);
+    }
+
+    public static void ToggleTextBox(bool show) {
+        if(!show || (show && dialogText.text != "")) {
+            dialog.SetActive(show);
+        }
+        if(show && dialogText.text != "") {
+            isTyping = false;
+            dialogText.text = Line;
+        }
     }
 
     public static bool CallScene(){

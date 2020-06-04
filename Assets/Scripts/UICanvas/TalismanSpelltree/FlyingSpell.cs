@@ -19,7 +19,6 @@ public class FlyingSpell : MonoBehaviour {
     void Start() {
         spellIcon.GetComponent<Image>().enabled = false;
         origin = spellIcon.transform.localPosition;
-        print(origin);
         timer = 2;
     }
 
@@ -61,7 +60,8 @@ public class FlyingSpell : MonoBehaviour {
 
     public void FlyTowardsIcon(Sprite s, bool isSpell, string spell) {
         spellIcon.transform.localPosition = origin;
-        print("called");
+        //Vector3 center = FindObjectOfType<Camera>().ScreenToWorldPoint(new Vector3(Screen.width/2,Screen.height/2,0));
+        FindObjectOfType<pickupEffect>().castAni(GameObject.FindGameObjectWithTag("Player").transform.position);
         this.isSpell = isSpell;
         isBackpack = !isSpell;
         spellIcon.GetComponent<Image>().enabled = true;
