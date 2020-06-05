@@ -14,9 +14,9 @@ public class BossTip : MonoBehaviour
         if (collision.gameObject.name == "Main Character")
         {
             print("collide boxx tip");
-            this.gameObject.GetComponent<BoxCollider>().enabled = false;
             
             if (!DontDestroyVariables.windExist) {
+                this.gameObject.GetComponent<BoxCollider>().enabled = false;
                 // GameObject.Find("1_water-dark").GetComponent<WaterPool>().timerActivated = true;
                 // GameObject.Find("6_water-white").GetComponent<WaterPool>().timerActivated = true;
 
