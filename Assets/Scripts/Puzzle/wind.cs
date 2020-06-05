@@ -11,7 +11,7 @@ public class wind : MonoBehaviour
 	
     void Start()
     {
-        
+        rb = player.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
