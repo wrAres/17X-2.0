@@ -772,7 +772,7 @@ MonoBehaviour:
   enterable: 0
   openScroll: 0
   myText: {fileID: 0}
-  loadingScreen: {fileID: 0}
+  loadingScreen: {fileID: 1854070967}
 --- !u!65 &72247049
 BoxCollider:
   m_ObjectHideFlags: 0
