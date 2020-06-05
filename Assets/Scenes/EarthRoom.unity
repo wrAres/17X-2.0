@@ -6230,7 +6230,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439598434}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 5, y: -0.16999997, z: 0.04400021}
+  m_LocalPosition: {x: 5.97, y: -0.16999997, z: 0.04400021}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children:
   - {fileID: 1643270370}
@@ -11236,8 +11236,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.25516546, y: 0.044169825, z: 0.12716071}
-  m_Center: {x: 0.024278104, y: -0.0029997604, z: 0.036419667}
+  m_Size: {x: 0.25516546, y: 0.044169825, z: 0.18887724}
+  m_Center: {x: 0.024278104, y: -0.0029997604, z: 0.0055613928}
 --- !u!212 &679025042
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12083,8 +12083,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.25516546, y: 0.039515387, z: 0.12716071}
-  m_Center: {x: 0.024278104, y: -0.022581665, z: 0.036419667}
+  m_Size: {x: 0.25516546, y: 0.039515387, z: 0.21098699}
+  m_Center: {x: 0.024278104, y: -0.022581665, z: -0.0054934807}
 --- !u!212 &726195534
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18988,8 +18988,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.417177, y: 1.0563933, z: 0.64353275}
-  m_Center: {x: 0.59101105, y: -2.2752306, z: 2.3528535}
+  m_Size: {x: 8.845598, y: 1.0563933, z: 0.64353275}
+  m_Center: {x: 0.3768003, y: -2.2752318, z: 2.3528547}
 --- !u!1 &1134089369
 GameObject:
   m_ObjectHideFlags: 0
@@ -22163,8 +22163,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.25516546, y: 0.043481376, z: 0.12716071}
-  m_Center: {x: 0.024278104, y: -0.005231967, z: 0.036419667}
+  m_Size: {x: 0.25516546, y: 0.043481376, z: 0.19222166}
+  m_Center: {x: 0.024278104, y: -0.005231968, z: 0.0038891882}
 --- !u!212 &1439992494
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23357,8 +23357,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.25516546, y: 0.04797819, z: 0.12716071}
-  m_Center: {x: 0.024278104, y: -0.009416909, z: 0.036419667}
+  m_Size: {x: 0.25516546, y: 0.04797819, z: 0.2262279}
+  m_Center: {x: 0.024278104, y: -0.009416909, z: -0.013113938}
 --- !u!212 &1539348957
 SpriteRenderer:
   m_ObjectHideFlags: 0

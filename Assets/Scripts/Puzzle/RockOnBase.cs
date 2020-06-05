@@ -46,6 +46,10 @@ public class RockOnBase : MonoBehaviour
                 push.ItemtoPush.transform.parent = push.tempTransform;
                 int index = Array.IndexOf(push.pushItems, push.ItemtoPush.name);
                 push.pushItems[index] = null;
+
+                // Move rock/crystal to base position
+                Vector3 newpos = new Vector3(this.transform.position.x, push.ItemtoPush.transform.position.y, this.transform.position.z);
+                push.ItemtoPush.transform.position = newpos;
                 push.ItemtoPush = null;
 
                 push.closeHUD();
