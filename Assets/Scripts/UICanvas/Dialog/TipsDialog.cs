@@ -29,13 +29,9 @@ public class TipsDialog : MonoBehaviour
     public static string GetOption;
     public static List<string> OptionList = new List<string>();
     public static Text OptionAText;
-    public static string OptionA;
     public static Text OptionBText;
-    public static string OptionB;
     public static Text OptionCText;
-    public static string OptionC;
     public static Text OptionDText;
-    public static string OptionD;
     public static bool getOption = false;
     public static bool pickOption = false;
     // public string waterGateDiscription;
@@ -100,6 +96,7 @@ public class TipsDialog : MonoBehaviour
         dialogList.Add("wind (6)");
         dialogList.Add("wind (7)");
         dialogList.Add("Water Boss");
+        dialogList.Add("Water Boss 2");
         dialogList.Add("Rock1");
         dialogList.Add("Rock2");
         dialogList.Add("Rock3");
@@ -131,7 +128,7 @@ public class TipsDialog : MonoBehaviour
                 printfull = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !isPaused)
+        if (Input.GetKeyDown(KeyCode.Space) && !isPaused && !pickOption)
         {
             nextButton.GetComponent<NextButtonEffect>().ChangeNextButton();
             // type full text if press space
@@ -177,11 +174,11 @@ public class TipsDialog : MonoBehaviour
 	    // } else {
             // To make sure the conditions for activating multiple choice are met
         	if (index < textlist2.Count - 1 && textlist2[index].CompareTo("Qiang Yu: And I have some questions for you:") == 0){
-			    PrintOptions();
                 //Active option button
                 Option.SetActive(true);
                 nextButton.SetActive(false);
                 pickOption = true;
+                PrintOptions();
                 return true;      	
 	    	} else if (index > textlist2.Count - 1){
     			index = 2;
@@ -205,11 +202,12 @@ public class TipsDialog : MonoBehaviour
         currDialogRef = objName;
         textlist2.Clear();
         if (textlist.Contains(objName)){
-            int i = textlist.IndexOf(objName);
-            int j = i;
+            int j = textlist.IndexOf(objName);
+            //int j = i;
             while(textlist[j].CompareTo("---") != 0 ){
                 if (textlist[j].CompareTo("Qiang Yu: That is all I have for you:") == 0) {
-                    textlist2.Add(textlist[j] + "            " + AIDataManager.DecideTrigram());
+                    textlist2.Add(textlist[j]);
+                   // textlist2.Add(textlist[j] + "            " + AIDataManager.DecideTrigram());
                 } else {
                     textlist2.Add(textlist[j]);
                 }
@@ -262,23 +260,23 @@ public class TipsDialog : MonoBehaviour
     public static void PlayOption(string Name){
     	// store option name
         if (Name.CompareTo("OptionA") == 0){
-            OptionList.Add(OptionA);
+            OptionList.Add("A");
         } else if (Name.CompareTo("OptionB") == 0){
-            OptionList.Add(OptionB);
+            OptionList.Add("B");
         } else if (Name.CompareTo("OptionC") == 0){
-            OptionList.Add(OptionC);
+            OptionList.Add("C");
         } else if (Name.CompareTo("OptionD") == 0){
-            OptionList.Add(OptionD);
+            OptionList.Add("D");
         }
         //reset
-        if (index < textlist2.Count - 1 && textlist2[index].CompareTo("Me") == 0){
+        if (index == textlist2.Count-1 && textlist2[index].CompareTo("Me") == 0){
             getOption = false;
             Option.SetActive(false);
             nextButton.SetActive(true);
             pickOption = false;
-            Line = textlist2[++index].Replace("=", "\n");
-            startTyping = true;
-            index++;
+            index = 2;
+            print(OptionList[0] + OptionList[1] + OptionList[2] +OptionList[3] );
+            PrintDialog("Water Boss 2");
         //next option
         } else{
              PrintOptions();
@@ -288,14 +286,10 @@ public class TipsDialog : MonoBehaviour
     public static void PrintOptions(){
             index++;
             dialogText.text = textlist2[index];
-            OptionA =  textlist2[++index];
-            OptionAText.text = OptionA;
-            OptionB = textlist2[++index];
-            OptionBText.text = OptionB;
-            OptionC = textlist2[++index];
-            OptionCText.text = OptionC;
-            OptionD = textlist2[++index];
-            OptionDText.text = OptionD;
+            OptionAText.text = textlist2[++index];
+            OptionBText.text = textlist2[++index];
+            OptionCText.text = textlist2[++index];
+            OptionDText.text = textlist2[++index];
     }
 
     IEnumerator Typing(string sentences) {
