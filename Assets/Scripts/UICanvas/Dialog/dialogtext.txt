@@ -248,3 +248,12 @@ Ditto board copied
 Someone: It seems that you were cheating, human, but the reversed =magic has been quelled. 
 I will wait for you behind this iron gate.
 ---
+Fire Seed
+The seed is too hot to pick up.
+---
+Cooled down
+The seed is cooled down.
+---
+Cold Fire Seed
+The seed become fire element.
+---

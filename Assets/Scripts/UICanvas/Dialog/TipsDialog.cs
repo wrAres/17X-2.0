@@ -109,6 +109,8 @@ public class TipsDialog : MonoBehaviour
         dialogList.Add("Walking Puzzle Hint 4");
         dialogList.Add("rockInWaterRoom");
         dialogList.Add("Ditto Mirror");
+        dialogList.Add("Fire Seed");
+        dialogList.Add("Cold Fire Seed");
 
         dialog.SetActive(false);
         dialog.SetActive(false);

@@ -59,6 +59,7 @@ public class InGameMenu : MonoBehaviour
 			DontDestroyVariables.haveSeenRiverTip = false;
 			DontDestroyVariables.windExist = true;
 			DontDestroyVariables.baseDisappearCount = 0;
+			DontDestroyVariables.fireLevel = 3;
 	      	SceneManager.LoadScene("MainMenu");
 	    }
 	    public static void Option(){

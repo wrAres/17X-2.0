@@ -22,8 +22,8 @@ public class Item : MonoBehaviour
         itemOnPuzzle.Add("Earth Key", "EarthPortal");
         itemOnPuzzle.Add("Changable Soil", "River,Flowerpot,FutureRock,EarthPortal");
         itemOnPuzzle.Add("Water Seed", "Flowerpot");
-        itemOnPuzzle.Add("Golden Wood", "法阵-scene2");
-        itemOnPuzzle.Add("Heavenly Water", "Flowerpot,River Collider");
+        itemOnPuzzle.Add("Golden Wood", "法阵-scene2,Fire Seed");
+        itemOnPuzzle.Add("Heavenly Water", "Flowerpot,River Collider,Fire Seed,法阵-scene2");
         itemOnPuzzle.Add("Prime Sun", "Flowerpot");
         itemOnPuzzle.Add("Taiji Key", "Water Boss Door");
         itemOnPuzzle.Add("Ditto Board", "Background,Flower 1,Flower 2,Flower 3,Flower 4,Flower 5,Flower 6");
@@ -165,6 +165,12 @@ public class Item : MonoBehaviour
             }
             AIDataManager.wrongItemPlacementCount++;
         }
+        else if (item.CompareTo("Heavenly Water") == 0 && position.CompareTo("法阵-scene2") == 0){
+            fireLevel(2, hitPoint);
+        }
+        else if (item.CompareTo("Heavenly Water") == 0 && position.CompareTo("Fire Seed") == 0){
+            fireLevel(1, hitPoint);
+        }
         else if (item.CompareTo("Tao-Book") == 0){
             GameObject.Find("MainUI").GetComponent<Show>().ShowSpelltreeIcon();
             TipsDialog.PrintDialog("Spelltree 1");
@@ -250,6 +256,9 @@ public class Item : MonoBehaviour
 
             TipsDialog.PrintDialog("Fire Boss");
         } 
+        else if (item.CompareTo("Golden Wood") == 0 && position.CompareTo("Fire Seed") == 0){
+            fireLevel(3, hitPoint);
+        }
         else if (item.CompareTo("Prime Sun") == 0 && position.CompareTo("Flowerpot") == 0){
             DontDestroyVariables.growState = 4;
             flowerpot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Flowerpot/Flowerpot with Flower and Sun");
@@ -316,5 +325,44 @@ public class Item : MonoBehaviour
         //     SpriteRenderer image = spell.AddComponent<SpriteRenderer>(); //Add the Image Component script
         //     image.sprite = Resources.Load<Sprite>("spell/" + item);
         // }
+    }
+
+    public static void fireLevel(int level, Vector3 hitPoint) {
+        if (level == 0) {
+            Destroy(GameObject.Find("Fire Seed"));
+            DontDestroyVariables.fireLevel = 0;
+        } else if (level == 1) {
+            GameObject seed = GameObject.Find("Fire Seed");
+            seed.name = "Cold Fire Seed";
+            seed.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("spell/Cold Fire Seed");;
+            TipsDialog.PrintDialog("Cooled down");
+            seed.tag = "Pickable";
+
+            DontDestroyVariables.fireLevel = 1;
+        } else if (level == 2) {
+            GameObject flame = GameObject.Find("法阵-scene2");
+            flame.GetComponent<SpriteRenderer>().enabled = false;
+            flame.GetComponent<BoxCollider>().enabled = false;
+            GameObject.Find("Firecld").GetComponent<BoxCollider>().enabled = false;
+
+            GameObject seed = GameObject.Find("Fire Seed");
+            seed.GetComponent<SpriteRenderer>().enabled = true;
+            seed.GetComponent<BoxCollider>().enabled = true;
+            seed.transform.position = hitPoint;
+            seed.GetComponent<Rigidbody>().useGravity = true;
+
+            DontDestroyVariables.fireLevel = 2;
+        } else if (level == 3) {
+            GameObject seed = GameObject.Find("Fire Seed");
+            seed.GetComponent<SpriteRenderer>().enabled = false;
+            seed.GetComponent<BoxCollider>().enabled = false;
+
+            GameObject flame = GameObject.Find("法阵-scene2");
+            flame.GetComponent<SpriteRenderer>().enabled = true;
+            flame.GetComponent<BoxCollider>().enabled = true;
+            GameObject.Find("Firecld").GetComponent<BoxCollider>().enabled = true;
+
+            DontDestroyVariables.fireLevel = 3;
+        }
     }
 }

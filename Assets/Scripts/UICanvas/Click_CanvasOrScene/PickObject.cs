@@ -48,7 +48,10 @@ public class PickObject : MonoBehaviour
                 Destroy(GameObject.Find("River Sound 2"));
                 Destroy(GameObject.Find("River Sound 3"));
             }
-        } else if (SceneManager.GetActiveScene().name == "scene3") {
+
+            Item.fireLevel(DontDestroyVariables.fireLevel, GameObject.Find("法阵-scene2").transform.position);
+        }
+        else if (SceneManager.GetActiveScene().name == "scene3") {
             Item.getGroundNames();
             DontDestroyVariables.enterWaterRoom = true;
             Item.flowerpot = GameObject.Find("Flowerpot");
@@ -65,14 +68,17 @@ public class PickObject : MonoBehaviour
             if (Physics.Raycast(ray, out hitInfo, distanceToClick, layerMask) && canAct) {
                 GameObject clickObject = hitInfo.collider.gameObject;
                 // print(clickObject.name + " click it");
-                if (clickObject.tag.CompareTo("Pickable") == 0){
-                    // if (clickObject.name == "Earth Key") {
-                        
-                    // }
-                    if (Backpack.backpack.GetComponent<Backpack>().CanAddItem()) {
+                if (clickObject.tag == "Pickable"){
+                    if (clickObject.name.CompareTo("Cold Fire Seed") == 0) {
+                        Item.s.UnlockElement(TalisDrag.Elements.FIRE);
+                        Destroy(clickObject);
+                        DontDestroyVariables.fireLevel = 0;
+                    }
+                    else if (Backpack.backpack.GetComponent<Backpack>().CanAddItem()) {
                         //Backpack.backpack.GetComponent<Backpack>().AddItem(clickObject.name);
                         Sprite item = clickObject.GetComponent<SpriteRenderer>().sprite;
                         GameObject.Find("MainUI").GetComponent<FlyingSpell>().FlyTowardsIcon(item, false, clickObject.name);
+                        GameObject.Find("pickupEffect").GetComponent<pickupEffect>().castAni(clickObject.transform.position);
                         Destroy(clickObject);
                     }
                 } else if (clickObject.name.CompareTo("Flower 1") == 0 || clickObject.name.CompareTo("Flower 2") == 0 || clickObject.name.CompareTo("Flower 3") == 0 || clickObject.name.CompareTo("Flower 4") == 0 || clickObject.name.CompareTo("Flower 5") == 0 || clickObject.name.CompareTo("Flower 6") == 0) {  
