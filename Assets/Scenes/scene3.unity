@@ -1858,6 +1858,7 @@ MonoBehaviour:
   XMovement: 4
   YMovement: 0
   ZMovement: -4
+  wind: {fileID: 1601744579}
 --- !u!212 &151111975
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2655,6 +2656,7 @@ MonoBehaviour:
   XMovement: -4
   YMovement: 0
   ZMovement: 4
+  wind: {fileID: 1601744579}
 --- !u!212 &195490388
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3894,6 +3896,7 @@ MonoBehaviour:
   XMovement: -4
   YMovement: 0
   ZMovement: 4
+  wind: {fileID: 1601744579}
 --- !u!212 &265532525
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6715,6 +6718,7 @@ MonoBehaviour:
   XMovement: 4
   YMovement: 0
   ZMovement: -4
+  wind: {fileID: 1601744579}
 --- !u!212 &540254634
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8513,6 +8517,7 @@ MonoBehaviour:
   XMovement: 4
   YMovement: 0
   ZMovement: -4
+  wind: {fileID: 1601744579}
 --- !u!212 &698261905
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10879,6 +10884,7 @@ MonoBehaviour:
   XMovement: 4
   YMovement: 0
   ZMovement: -4
+  wind: {fileID: 1601744579}
 --- !u!54 &880005788
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11487,6 +11493,7 @@ MonoBehaviour:
   XMovement: 4
   YMovement: 0
   ZMovement: -4
+  wind: {fileID: 1601744579}
 --- !u!212 &913718769
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13098,6 +13105,7 @@ MonoBehaviour:
   XMovement: -4
   YMovement: 0
   ZMovement: 4
+  wind: {fileID: 1601744579}
 --- !u!212 &1062693478
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15225,6 +15233,7 @@ MonoBehaviour:
   XMovement: 4
   YMovement: 0
   ZMovement: -4
+  wind: {fileID: 1601744579}
 --- !u!212 &1201218495
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16288,6 +16297,7 @@ MonoBehaviour:
   XMovement: -4
   YMovement: 0
   ZMovement: 4
+  wind: {fileID: 1601744579}
 --- !u!212 &1259618594
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16402,6 +16412,7 @@ MonoBehaviour:
   XMovement: -4
   YMovement: 0
   ZMovement: 4
+  wind: {fileID: 1601744579}
 --- !u!212 &1260105154
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19062,6 +19073,7 @@ MonoBehaviour:
   XMovement: -4
   YMovement: 0
   ZMovement: 4
+  wind: {fileID: 1601744579}
 --- !u!212 &1494278840
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19913,6 +19925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2124352805}
   rb: {fileID: 0}
+  boardCast: 0
 --- !u!1 &1602749142
 GameObject:
   m_ObjectHideFlags: 0
@@ -23473,6 +23486,7 @@ MonoBehaviour:
   XMovement: 4
   YMovement: 0
   ZMovement: -4
+  wind: {fileID: 1601744579}
 --- !u!212 &1957964427
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25188,6 +25202,7 @@ MonoBehaviour:
   XMovement: 4
   YMovement: 0
   ZMovement: -4
+  wind: {fileID: 1601744579}
 --- !u!212 &2026633579
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25464,6 +25479,7 @@ MonoBehaviour:
   XMovement: -4
   YMovement: 0
   ZMovement: 4
+  wind: {fileID: 1601744579}
 --- !u!212 &2051453134
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26134,6 +26150,7 @@ MonoBehaviour:
   XMovement: -4
   YMovement: 0
   ZMovement: 4
+  wind: {fileID: 1601744579}
 --- !u!212 &2109063847
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -8,14 +8,25 @@ public class WindMovement : MonoBehaviour
     public float XMovement;
     public float YMovement;
     public float ZMovement;
+	public GameObject wind;
+	float trans;
     void Start()
     {
-        
+        trans = 0.7f;
     }
 
     // Update is called once per frame
     void Update()
     {
+		
+		if(wind.GetComponent<wind>().boardCast==true){
+			GetComponent<SpriteRenderer>().color = new Color(1,1,1,trans);
+			trans -= 0.01f;
+			Debug.Log("fade");
+		}
+		if(trans<= 0){
+			this.gameObject.SetActive(false);
+		}
         if (GetComponent<Rigidbody>().transform.position.z < 1f)
         {
             Vector3 v = GetComponent<Rigidbody>().transform.position;
