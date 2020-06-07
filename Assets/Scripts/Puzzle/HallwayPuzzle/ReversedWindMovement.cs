@@ -10,18 +10,32 @@ public class ReversedWindMovement : MonoBehaviour
     public float ZMovement;
 	public GameObject wind;
 	float trans;
+	bool disappear;
     void Start()
     {
-        trans = 0.7f;
+        trans = 0.0f;
+		GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
+		disappear = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-		if(wind.GetComponent<wind>().boardCast==true){
+		if(wind.GetComponent<wind>().boardCast==true&&trans<=1&&disappear==false){
+			GetComponent<SpriteRenderer>().color = new Color(1,1,1,trans);
+			trans += 0.01f;
+		}
+		if(trans>=1){
+			disappear=true;
+			
+		}
+		if(disappear==true){
 			GetComponent<SpriteRenderer>().color = new Color(1,1,1,trans);
 			trans -= 0.01f;
-			Debug.Log("fade");
+
+		}
+		if(trans<=0.1f){
+			//this.gameObject.SetActive(false);
 		}
         if (GetComponent<Rigidbody>().transform.position.z > 15f)
         {

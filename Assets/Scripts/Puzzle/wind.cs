@@ -9,6 +9,7 @@ public class wind : MonoBehaviour
 	public GameObject player;
 	public Rigidbody rb;
 	public bool boardCast;
+
     void Start()
     {
         rb = player.GetComponent<Rigidbody>();
