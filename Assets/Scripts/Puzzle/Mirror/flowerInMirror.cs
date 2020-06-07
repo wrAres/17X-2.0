@@ -55,11 +55,7 @@ public class flowerInMirror : MonoBehaviour
 				mirror.GetComponent<mirrors>().reset();
 				}*/
 			}else{
-				mirror.GetComponent<mirrors>().crackAll();
-				temp = timer;
-				des = true;
-				player.GetComponent<playerMovement>().isReverse = 1;
-				player.GetComponent<playerMovement>().startPosition = 1;
+				ClickedCorrectMirror();
 				TipsDialog.PrintDialog("Break Mirror");
 			}
 		} else if (DontDestroyVariables.growState < 3){
@@ -68,7 +64,15 @@ public class flowerInMirror : MonoBehaviour
 			TipsDialog.PrintDialog("Mirror need flower");
 		}
 	}
-	
+
+	public void ClickedCorrectMirror(){
+		mirror.GetComponent<mirrors>().crackAll();
+		temp = timer;
+		des = true;
+		player.GetComponent<playerMovement>().isReverse = 1;
+		player.GetComponent<playerMovement>().startPosition = 1;
+	}
+
 	public void crack(){
 		this.gameObject.GetComponent<SpriteRenderer>().sprite = cracked;
 	}

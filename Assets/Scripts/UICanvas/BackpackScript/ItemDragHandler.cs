@@ -54,7 +54,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
         else if (name.CompareTo("Heavenly Water") == 0) {
             item_transform.sizeDelta = variables.lifeWater;
         }
-        else if (name.CompareTo("Natural Board") == 0) {
+        else if (name.CompareTo("Ditto Board") == 0) {
             item_transform.sizeDelta = variables.board;
         }
         else if (name.CompareTo("Water Seed") == 0) {

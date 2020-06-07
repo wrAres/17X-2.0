@@ -16,6 +16,7 @@ public class TipsDialog : MonoBehaviour
     public static GameObject dialog;
     public static List<string> dialogList;
     public static bool nextOnClick = false;
+    public static int ditto = 0;
     public static string Line;
     public static bool startTyping;
     public static bool isTyping = false;
@@ -106,6 +107,8 @@ public class TipsDialog : MonoBehaviour
         dialogList.Add("Walking Puzzle Hint 2");
         dialogList.Add("Walking Puzzle Hint 3");
         dialogList.Add("Walking Puzzle Hint 4");
+        dialogList.Add("rockInWaterRoom");
+        dialogList.Add("Ditto Mirror");
 
         dialog.SetActive(false);
         dialog.SetActive(false);
@@ -205,9 +208,8 @@ public class TipsDialog : MonoBehaviour
             int j = textlist.IndexOf(objName);
             //int j = i;
             while(textlist[j].CompareTo("---") != 0 ){
-                if (textlist[j].CompareTo("Qiang Yu: That is all I have for you:") == 0) {
-                    textlist2.Add(textlist[j]);
-                   // textlist2.Add(textlist[j] + "            " + AIDataManager.DecideTrigram());
+                if (textlist[j].CompareTo("Ditto board copied") == 0) {
+                    textlist2.Add("Ditto board copied " + ditto + "th mirror.");
                 } else {
                     textlist2.Add(textlist[j]);
                 }

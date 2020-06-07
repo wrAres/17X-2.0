@@ -152,8 +152,6 @@ A illusory and reversed world
 North, Winter, and everything that is permeated
 The Yinest element among the five basic elements
 Me
----
-Water Boss 2
 .
 ..
 ...
@@ -234,4 +232,9 @@ Hint 4.
 ---
 rockInWaterRoom
 Stars hide secrets of the life and growth.
+---
+Ditto Mirror
+Ditto board copied
+Someone: It seems that you were cheating, human, but the reversed =magic has been quelled. 
+I will wait for you behind this iron gate.
 ---

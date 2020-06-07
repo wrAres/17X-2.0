@@ -5265,7 +5265,7 @@ GameObject:
   - component: {fileID: 400256416}
   - component: {fileID: 400256415}
   m_Layer: 5
-  m_Name: natural board
+  m_Name: ditto board
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5345,7 +5345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellTreeDisp: {fileID: 103709450}
   curState: 0
-  spellName: Natural Board
+  spellName: Ditto Board
   recipe: 040000000400000002000000
   level: 3
   knownResp: "Recipe: ? \xD7 ?, earth"
@@ -6139,7 +6139,7 @@ GameObject:
   - component: {fileID: 434399437}
   - component: {fileID: 434399436}
   m_Layer: 5
-  m_Name: Natural BOARD SPELL BACKGROUND
+  m_Name: Ditto BOARD SPELL BACKGROUND
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
