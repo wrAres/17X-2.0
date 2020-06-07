@@ -19,9 +19,9 @@ public class wind : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		// if(Input.GetKeyDown("p")){
-		// 	windFadeOut();
-		// }
+		 if(Input.GetKeyDown("p")){
+		 	windFadeOut();
+		 }
         if(player.GetComponent<Rigidbody>().position.z > 0){
 			//player.GetComponent<Rigidbody>().velocity = new Vector3(3,0,0);
 			rb.AddForce(5,0,0);

@@ -25,7 +25,7 @@ public class WindMovement : MonoBehaviour
 			Debug.Log("fade");
 		}
 		if(trans<= 0){
-			this.gameObject.SetActive(false);
+			wind.SetActive(false);
 		}
         if (GetComponent<Rigidbody>().transform.position.z < 1f)
         {
