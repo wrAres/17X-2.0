@@ -18,6 +18,7 @@ public class PickObject : MonoBehaviour
     public bool dialogShow = false;
     public bool descShow = true;
     public int distanceToClick;
+    public float cameraDistance = 0;
     private void Start() {
         // This would cast rays only against colliders in layer 8.
         // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
@@ -64,10 +65,10 @@ public class PickObject : MonoBehaviour
         // Mathf.Infinity
         if (descShow){
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            // print("distance " + (distanceToClick + cameraDistance));
             RaycastHit hitInfo;
-            if (Physics.Raycast(ray, out hitInfo, distanceToClick, layerMask) && canAct) {
+            if (Physics.Raycast(ray, out hitInfo, (distanceToClick + cameraDistance), layerMask) && canAct) {
                 GameObject clickObject = hitInfo.collider.gameObject;
-                // print(clickObject.name + " click it");
                 if (clickObject.tag == "Pickable"){
                     if (clickObject.name.CompareTo("Cold Fire Seed") == 0) {
                         Item.s.UnlockElement(TalisDrag.Elements.FIRE);

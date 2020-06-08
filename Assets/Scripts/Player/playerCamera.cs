@@ -20,11 +20,13 @@ public class playerCamera : MonoBehaviour
 		float cameraZ = this.transform.localPosition.z;
         if(Input.GetAxis("Mouse ScrollWheel")>0f &&cameraY <= 1.8f ){
 			this.transform.position += dy;
+			GameObject.FindWithTag("Ground").GetComponent<PickObject>().cameraDistance -= dy.magnitude;
 			// Debug.Log(cameraY);
 		}
 		
 		if(Input.GetAxis("Mouse ScrollWheel")<0f && cameraY>= -4.0f ){
 			this.transform.position -= dy;
+			GameObject.FindWithTag("Ground").GetComponent<PickObject>().cameraDistance += dy.magnitude;
 			// Debug.Log(cameraY);
 		}
     }

@@ -291,7 +291,7 @@ public class SystemTree : MonoBehaviour
 
     private NodeStates ChangeMovingPuzzleT1()
     {
-        if (TipsDialog.GetOption.CompareTo("A") == 0 || TipsDialog.GetOption.CompareTo("C") == 0) {
+        if (TipsDialog.OptionList[1].CompareTo("A") == 0 || TipsDialog.OptionList[1].CompareTo("C") == 0) {
             AIDataManager.trigramDecision = "\u2630"; //qian; Firmament
         } else {
             AIDataManager.trigramDecision = "\u2632"; //li; Fire
@@ -342,7 +342,7 @@ public class SystemTree : MonoBehaviour
 
     private NodeStates ChangeMovingPuzzleT2()
     {
-        if (TipsDialog.GetOption.CompareTo("A") == 0 || TipsDialog.GetOption.CompareTo("C") == 0) {
+        if (TipsDialog.OptionList[1].CompareTo("A") == 0 || TipsDialog.OptionList[1].CompareTo("C") == 0) {
             AIDataManager.trigramDecision = "\u2637"; //kun; Ground
         } else {
             AIDataManager.trigramDecision = "\u2635"; //gen; Mountain
@@ -401,7 +401,7 @@ public class SystemTree : MonoBehaviour
 
     private NodeStates ChangeMovingPuzzleT3()
     {
-        if (TipsDialog.GetOption.CompareTo("A") == 0 || TipsDialog.GetOption.CompareTo("C") == 0) {
+        if (TipsDialog.OptionList[1].CompareTo("A") == 0 || TipsDialog.OptionList[1].CompareTo("C") == 0) {
             AIDataManager.trigramDecision = "\u2633"; //zhen; Thunder
         } else {
             AIDataManager.trigramDecision = "\u2631"; //yue; Lake
