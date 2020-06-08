@@ -254,6 +254,9 @@ Ditto board copied
 Someone: It seems that you were cheating, human, but the reversed =magic has been quelled. 
 I will wait for you behind this iron gate.
 ---
+Ditto No Mirror
+Ditto Board has copied a useless flowerpot.
+---
 Fire Seed
 The seed is too hot to pick up.
 ---
@@ -262,4 +265,7 @@ The seed is cooled down.
 ---
 Cold Fire Seed
 The seed become fire element.
+---
+Stick Destroy Rock
+The rock is sinked in the water for too long. It just broke.
 ---

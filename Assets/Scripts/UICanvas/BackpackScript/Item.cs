@@ -22,13 +22,13 @@ public class Item : MonoBehaviour
         itemOnPuzzle.Add("Earth Key", "EarthPortal");
         itemOnPuzzle.Add("Changable Soil", "River,Flowerpot,FutureRock,EarthPortal");
         itemOnPuzzle.Add("Water Seed", "Flowerpot");
-        itemOnPuzzle.Add("Golden Wood", "法阵-scene2,Fire Seed");
+        itemOnPuzzle.Add("Golden Wood", "法阵-scene2,Fire Seed,Left Reefs,Right Reefs,rockInWaterRoom");
         itemOnPuzzle.Add("Heavenly Water", "Flowerpot,River Collider,Fire Seed,法阵-scene2");
         itemOnPuzzle.Add("Prime Sun", "Flowerpot");
         itemOnPuzzle.Add("Taiji Key", "Water Boss Door");
         itemOnPuzzle.Add("Ditto Board", "Background,Flower 1,Flower 2,Flower 3,Flower 4,Flower 5,Flower 6");
         itemOnPuzzle.Add("Yin-Yang Portal", "atlasmap2");
-        itemOnPuzzle.Add("Taoism Wind", "Wind Collider");
+        itemOnPuzzle.Add("Taoism Wind", "Wind Collider,法阵-scene2");
 
         talisDisp = GameObject.FindObjectOfType<TalismanManager>();
         dispManager = GameObject.FindObjectOfType<Show>();
@@ -165,7 +165,7 @@ public class Item : MonoBehaviour
             }
             AIDataManager.wrongItemPlacementCount++;
         }
-        else if (item.CompareTo("Heavenly Water") == 0 && position.CompareTo("法阵-scene2") == 0){
+        else if ((item.CompareTo("Heavenly Water") == 0 || item.CompareTo("Taoism Wind") == 0) && position.CompareTo("法阵-scene2") == 0){
             fireLevel(2, hitPoint);
         }
         else if (item.CompareTo("Heavenly Water") == 0 && position.CompareTo("Fire Seed") == 0){
@@ -211,18 +211,22 @@ public class Item : MonoBehaviour
             AIDataManager.UpdateStandardSpellCount("water", 1);
         } 
         else if (item.CompareTo("Ditto Board") == 0 && (position.CompareTo("Flower 1") == 0 || position.CompareTo("Flower 2") == 0 || position.CompareTo("Flower 3") == 0 || position.CompareTo("Flower 4") == 0 || position.CompareTo("Flower 5") == 0 || position.CompareTo("Flower 6") == 0)) {
-            GameObject[] mirrorArray = GameObject.Find("mirrors").GetComponent<mirrors>().mirrorArray;
+            if (DontDestroyVariables.growState == 4) {
+                GameObject[] mirrorArray = GameObject.Find("mirrors").GetComponent<mirrors>().mirrorArray;
 
-            int rightIndex = 0;
-            foreach (GameObject mirror in mirrorArray) {
-                rightIndex++;
-                if (mirror.GetComponent<flowerInMirror>().isRight) {
-                    mirror.GetComponent<flowerInMirror>().ClickedCorrectMirror();
-                    break;
+                int rightIndex = 0;
+                foreach (GameObject mirror in mirrorArray) {
+                    rightIndex++;
+                    if (mirror.GetComponent<flowerInMirror>().isRight) {
+                        mirror.GetComponent<flowerInMirror>().ClickedCorrectMirror();
+                        break;
+                    }
                 }
+                TipsDialog.ditto = rightIndex;
+                TipsDialog.PrintDialog("Ditto Mirror");
+            } else {
+                TipsDialog.PrintDialog("Ditto No Mirror");
             }
-            TipsDialog.ditto = rightIndex;
-            TipsDialog.PrintDialog("Ditto Mirror");
 
         }
         else if (item.CompareTo("Water Seed") == 0 && position.CompareTo("Flowerpot") == 0){
@@ -286,15 +290,13 @@ public class Item : MonoBehaviour
             // GameObject waterBoss = GameObject.Find("QiangYu");
             //waterBoss.SetActive(false);
         }
-        else if (item.CompareTo("Boom") == 0 && position.CompareTo("Water Boss Door") == 0){
-            deleteSpellObject("Water Boss Door");
-            GameObject.Find("doorLeft").GetComponent<doorController>().openDoor();
-            GameObject.Find("doorRight").GetComponent<doorController>().openDoor();
-
+        else if (item.CompareTo("Golden Wood") == 0 && (position.CompareTo("rockInWaterRoom") == 0 || position.CompareTo("Left Reefs") == 0 || position.CompareTo("Right Reefs") == 0)){
+            Destroy(GameObject.Find(position));
+            if (position.CompareTo("rockInWaterRoom") != 0) {
+                Destroy(GameObject.Find("wall " + position));
+            }
+            TipsDialog.PrintDialog("Stick Destroy Rock");
             AIDataManager.gentlypassthedoor = false; 
-
-            // GameObject waterBoss = GameObject.Find("QiangYu");
-            // waterBoss.GetComponent<SpriteRenderer>().enabled = false;
         }
         else if (item.CompareTo("Taoism Wind") == 0 && position.CompareTo("Wind Collider") == 0){
             GameObject wind = GameObject.Find("WindGroup");

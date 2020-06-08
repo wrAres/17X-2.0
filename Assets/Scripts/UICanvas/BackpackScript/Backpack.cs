@@ -26,7 +26,7 @@ public class Backpack : MonoBehaviour
         this.AddItem("The Atlas");
         this.AddItem("Tao-Book");
         this.AddItem("Talisman");
-        // this.AddItem("Taiji Key");
+        this.AddItem("Taoism Wind");
         this.Show(false);
     }
     void OnGUI() {
