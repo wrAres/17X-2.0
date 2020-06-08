@@ -17232,6 +17232,7 @@ MonoBehaviour:
   dialogShow: 0
   descShow: 1
   distanceToClick: 8
+  cameraDistance: 0
 --- !u!65 &1027881863
 BoxCollider:
   m_ObjectHideFlags: 0
