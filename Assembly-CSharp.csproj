@@ -142,9 +142,9 @@
     <Compile Include="Assets\Scripts\blockMovement.cs" />
     <Compile Include="Assets\Scripts\misc\EarthGround.cs" />
     <Compile Include="Assets\Scripts\misc\loadingScene.cs" />
+    <Compile Include="Assets\Scripts\misc\lockOnGround.cs" />
     <Compile Include="Assets\Scripts\particleEffectController\castEffect.cs" />
     <Compile Include="Assets\Scripts\particleEffectController\pickupEffect.cs" />
-    <Compile Include="Assets\lockOnGround.cs" />
     <Compile Include="Assets\movingBoard.cs" />
     <Compile Include="Assets\shuffle.cs" />
     <None Include="Assets\Scripts\UICanvas\Dialog\dialogtext.txt" />
