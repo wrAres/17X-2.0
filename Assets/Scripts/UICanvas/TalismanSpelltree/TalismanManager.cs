@@ -47,7 +47,13 @@ public class TalismanManager : MonoBehaviour {
     private void Awake() {
         dispManager = GetComponent<Show>();
         ResetCraft();
-        CloseDisplay();
+        //CloseDisplay();
+        display.SetActive(false);
+        ResetCraft();
+        curTime = 0;
+
+        TenSecTimer = false;
+        timeLeft = countdownTime;
         atlas.SetActive(false);
     }
 
@@ -93,6 +99,7 @@ public class TalismanManager : MonoBehaviour {
             recipeBook = GetComponent<SpellTreeManager>().GetSpellBook();
             display.SetActive(true);
             dispManager.ToggleIcons(false);
+            dispManager.ToggleTalis(true);
 
             DisplaySpellList();
             curTime = timer;
@@ -104,8 +111,6 @@ public class TalismanManager : MonoBehaviour {
         }
         else if (!dialogShown && DontDestroyVariables.canOpenTalisman) {
             CloseDisplay();
-            dispManager.ToggleIcons(true);
-            Backpack.backpack.GetComponent<Backpack>().Show(true);
             UISoundScript.OpenTalisman();
         }
     }
@@ -195,6 +200,9 @@ public class TalismanManager : MonoBehaviour {
     // Close the entire talisman display
     public void CloseDisplay() {
         display.SetActive(false);
+        dispManager.ToggleTalis(false);
+        dispManager.ToggleIcons(true);
+        Backpack.backpack.GetComponent<Backpack>().Show(true);
         ResetCraft();
         curTime = 0;
 

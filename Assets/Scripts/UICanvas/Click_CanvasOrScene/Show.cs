@@ -31,6 +31,7 @@ public class Show : MonoBehaviour
     EventSystem eventSystem;
 
     private LeaveIconBright light;
+    private bool isTalis;
 
     private static Show showInstance;
     void Awake() {
@@ -88,8 +89,8 @@ public class Show : MonoBehaviour
                 
                 if (tag.CompareTo("TalismanIcon") == 0 && canAct) {
                     pick.descShow = false;
-                    GameObject.Find("MainUI").GetComponent<TalismanManager>().OpenTalisman();
-                    
+                    if(!isTalis) GameObject.Find("MainUI").GetComponent<TalismanManager>().OpenTalisman();
+                    else GameObject.Find("MainUI").GetComponent<TalismanManager>().CloseDisplay();
                     // Close other canvas
                     // spellTreeDisp.SetActive(false);
                     // Backpack.backpack.GetComponent<Backpack>().Show(false);
@@ -239,6 +240,12 @@ public class Show : MonoBehaviour
         // {
         //     clickedObject = false;
         // }
+    }
+
+    public void ToggleTalis(bool isShow) {
+        isTalis = isShow;
+        GameObject.FindGameObjectWithTag("TalismanIcon").GetComponent<Image>().enabled = isShow;
+        print("SADASSD" + isShow);
     }
 
     private void PrintName(GameObject obj) {
