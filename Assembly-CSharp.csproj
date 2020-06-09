@@ -55,7 +55,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GameStartLoading.cs" />
      <Compile Include="Assets\Scripts\AI\AIDataManager.cs" />
      <Compile Include="Assets\Scripts\AI\BT\ActionNode.cs" />
      <Compile Include="Assets\Scripts\AI\BT\CheckNode.cs" />
@@ -116,9 +115,11 @@
      <Compile Include="Assets\Scripts\UICanvas\Dialog\Rivertip.cs" />
      <Compile Include="Assets\Scripts\UICanvas\Dialog\TipsDialog.cs" />
      <Compile Include="Assets\Scripts\UICanvas\Dialog\TransferToCredit.cs" />
-     <Compile Include="Assets\Scripts\UICanvas\InGameMenu.cs" />
+     <Compile Include="Assets\Scripts\UICanvas\GameStartLoading.cs" />
      <Compile Include="Assets\Scripts\UICanvas\LeaveIconBright.cs" />
-     <Compile Include="Assets\Scripts\UICanvas\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\UICanvas\Menu\InGameMenu.cs" />
+     <Compile Include="Assets\Scripts\UICanvas\Menu\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\UICanvas\Menu\MenuButton.cs" />
      <Compile Include="Assets\Scripts\UICanvas\PushHud.cs" />
      <Compile Include="Assets\Scripts\UICanvas\ShakingIcon.cs" />
      <Compile Include="Assets\Scripts\UICanvas\TalismanSpelltree\FlyingSpell.cs" />
