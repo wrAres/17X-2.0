@@ -35,20 +35,8 @@ public class TipsDialog : MonoBehaviour
     public static Text OptionDText;
     public static bool getOption = false;
     public static bool pickOption = false;
-    // public string waterGateDiscription;
-    // public string riverDiscription;
-    // public string talismanDescription;
-    // public string lobbyPortalDescription;
-    // private static bool dialogOrDesc = true; //true when it is a dialog
+    public static bool introAppear = false;
 
-    /* Where to find what keys are being called:
-     * Keys: River, Earth Key - Called in CanvasUI\BackpackScript\PickObject, line 57
-     *  Note: ^ These keys use OBJECT names ^
-     * Key: lobby       - Called in UICanvas\BackpackScript\PickObject, line 25
-     * Key: Walking Puzzle  - Called in UICanvas\BackpackScript\PickObject, line 30
-     * Key: Break mirror    - Called in UICanvas\BackpackScript\flowerInMirror, line 49
-     * key: click object    - in UICanvas\BackpackScript\PickObject, dialogShow
-     */
     void Awake() {
         //print("start" + textFile.text);
         var linetext = textFile.text.Split('\n');
@@ -203,6 +191,9 @@ public class TipsDialog : MonoBehaviour
     }
 
     public static void PrintDialog(string objName){
+        if (objName.CompareTo("Self Introduction") == 0 && introAppear) {
+            return ;
+        }
         // dialogOrDesc = true;
         currDialogRef = objName;
         textlist2.Clear();

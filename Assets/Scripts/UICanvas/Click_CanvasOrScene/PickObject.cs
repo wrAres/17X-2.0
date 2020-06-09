@@ -32,6 +32,7 @@ public class PickObject : MonoBehaviour
             Item.getGroundNames();
         }
         else if (SceneManager.GetActiveScene().name == "scene0"){
+            GameObject.Find("Main UI").GetComponent<Show>().ToggleLock(false);
             GameObject.Find("EarthSoundManager").GetComponents<AudioSource>()[2].volume = 0.3f;
             Item.getGroundNames();
             EarthSoundManager.StopPlaySound();
@@ -52,6 +53,7 @@ public class PickObject : MonoBehaviour
             Item.fireLevel(DontDestroyVariables.fireLevel, GameObject.Find("法阵-scene2").transform.position);
         }
         else if (SceneManager.GetActiveScene().name == "scene3") {
+            GameObject.Find("Main UI").GetComponent<Show>().ToggleLock(false);
             Item.getGroundNames();
             DontDestroyVariables.enterWaterRoom = true;
             Item.flowerpot = GameObject.Find("Flowerpot");

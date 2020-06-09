@@ -119,10 +119,10 @@ public class Show : MonoBehaviour
                         seenSpellTree = true;
                     }
                     spellTreeDisp.SetActive(!spellTreeDisp.activeSelf);
-                    Backpack.backpack.GetComponent<Backpack>().Show(!spellTreeDisp.activeSelf);
-
                     // Close other canvas
                     talisDisp.CloseDisplay();
+
+                    Backpack.backpack.GetComponent<Backpack>().Show(!spellTreeDisp.activeSelf);
 
                     // closedFirstTimeFlag++;
                     // print(closedFirstTimeFlag);

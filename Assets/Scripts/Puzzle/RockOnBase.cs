@@ -38,11 +38,11 @@ public class RockOnBase : MonoBehaviour
         if (crystalBack || rockBack)
         {
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            DontDestroyVariables.baseDisappearCount += 1;
             Debug.Log("baseDisappearCount " + DontDestroyVariables.baseDisappearCount);
 
             if (push.ItemtoPush != null)
             {
+                DontDestroyVariables.baseDisappearCount += 1;
                 push.ItemtoPush.transform.parent = push.tempTransform;
                 int index = Array.IndexOf(push.pushItems, push.ItemtoPush.name);
                 push.pushItems[index] = null;
