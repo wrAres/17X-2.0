@@ -40,7 +40,7 @@ public class sceneTransition : MonoBehaviour
 		if (other.CompareTag("Player") && enterable) {
 			// Debug.Log("trasferring");
 			//myText.text = "Loading";
-			GameObject.Find("Main UI").GetComponent<Show>().ToggleLock(true);
+			GameObject.Find("MainUI").GetComponent<Show>().ToggleLock(true);
 			loadingScreen.GetComponent<Renderer>().enabled = true;
 			SceneManager.LoadScene(scene);
 		}

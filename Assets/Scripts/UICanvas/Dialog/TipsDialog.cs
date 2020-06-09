@@ -203,6 +203,8 @@ public class TipsDialog : MonoBehaviour
             while(textlist[j].CompareTo("---") != 0 ){
                 if (textlist[j].CompareTo("Ditto board copied") == 0) {
                     textlist2.Add("Ditto board copied " + ditto + "th mirror.");
+                } else if (textlist[j].CompareTo("Qiang Yu: That is all I have for you:") == 0) {
+                   textlist2.Add(textlist[j] + "            " + AIDataManager.DecideTrigram());
                 } else {
                     textlist2.Add(textlist[j]);
                 }

@@ -81,7 +81,7 @@ public class TileMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-			GameObject.Find("Main UI").GetComponent<Show>().ToggleLock(true);
+			GameObject.Find("MainUI").GetComponent<Show>().ToggleLock(true);
             loadingScreen.GetComponent<Renderer>().enabled = true;
             SceneManager.LoadScene("scene3");
         }
@@ -317,7 +317,7 @@ public class TileMovement : MonoBehaviour
             float totalTime = Time.time - start;
             // Debug.Log("Time: " + totalTime);
             AIDataManager.movingPuzzleTime = totalTime;
-			GameObject.Find("Main UI").GetComponent<Show>().ToggleLock(true);
+			GameObject.Find("MainUI").GetComponent<Show>().ToggleLock(true);
             loadingScreen.GetComponent<Renderer>().enabled = true;
             SceneManager.LoadScene("scene3");
         }
