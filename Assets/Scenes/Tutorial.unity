@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 50}
   m_AnchorMax: {x: 0.5, y: 50}
-  m_AnchoredPosition: {x: -231.17, y: -27604.518}
+  m_AnchoredPosition: {x: -229.3, y: -27610.6}
   m_SizeDelta: {x: 100, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &89200116
@@ -473,8 +473,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 716915306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.6, y: -0.26548243, z: -0.55}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalPosition: {x: 3.8, y: -0.26548243, z: -0.55}
+  m_LocalScale: {x: 1.5, y: 2.3, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -508,7 +508,7 @@ Transform:
   m_GameObject: {fileID: 757825986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -11.7, y: 61.17002, z: -103.782455}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 694236489}
   m_RootOrder: 1
@@ -722,7 +722,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075311365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -29.4}
+  m_LocalPosition: {x: 0, y: 0, z: -41.6}
   m_LocalScale: {x: 0.20767996, y: 0.20767996, z: 0.20767996}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1078,7 +1078,7 @@ Transform:
   m_GameObject: {fileID: 1345637161}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 19.55, y: 61.17002, z: -103.782455}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 694236489}
   m_RootOrder: 0
@@ -1188,9 +1188,20 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506364835}
-  m_Text: "To my student Shan:\n\n\t\tWhen you see this letter, it means I can no
-    \n\tlonger be with you anymore. \n\t...\n\t...\n\t...\n\t...\n\t...\n\t...\n\t...\n\t...\n\t...\n\tTake
-    care of yourself."
+  m_Text: "To my student Shan:\n\n\tWhen you see this letter, it means I can no longer
+    \nbe with you anymore. Cultivating oneself to become an \nimmortal is trying
+    to fight against nature and rules of the \nworld. I knew my end would come soon
+    after the day I \ndidn\u2019t overcome the Thunder of God\u2019s Punishment.
+    The only \nway left for me is to go inside the Five Element Seal to \nfind and
+    understand the origin of everything. There\u2019s not \nmuch time for me\u2026\nThe
+    only one I am worried about is you, my student. Don\u2019t \ntry to find me unless
+    you figure out the truth of the world, \nof the five elements. I put the Atlas,
+    a drawing with \npatterns about directions and elements, in your gourd. It\u2019s
+    \nthe treasure being passed generation by generation from \nmy forefathers. It\u2019s
+    said to be the key to understanding \neverything. \n\tI can\u2019t.\n\tIt\u2019s
+    your turn now. I am looking forward to seeing you \nbecome a true immortal one
+    day.\n\tTake care of yourself. I hope we will have a \nchance to see each other
+    again.\n\n\t\t\t\t\t\t\t\t\tThe Master"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -1251,7 +1262,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506364835}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11, y: 11.42, z: -2.08}
+  m_LocalPosition: {x: -11, y: 17.3, z: -2.08}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1285,7 +1296,7 @@ RectTransform:
   m_GameObject: {fileID: 1695882299}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 6.6}
-  m_LocalScale: {x: 0.52, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.52, y: 0.3075, z: 1}
   m_Children:
   - {fileID: 1787690257}
   m_Father: {fileID: 1240078168}
@@ -1293,8 +1304,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -240.6, y: -75.1}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -240.89009, y: -74.7}
+  m_SizeDelta: {x: 147.73, y: 141.72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1695882301
 MonoBehaviour:
@@ -1444,8 +1455,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.846146, y: 16.666656}
-  m_SizeDelta: {x: 200, y: 30}
+  m_AnchoredPosition: {x: 3.7, y: -1.1}
+  m_SizeDelta: {x: 361.78, y: 160.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1787690258
 MonoBehaviour:
@@ -1466,7 +1477,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: d372e63cb545261468a0409c35e56923, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -1478,7 +1489,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You have to save your master
+  m_Text: "You didn\u2019t listen to The Master\u2019s word. \nYou knew he was still
+    alive and you would never give up your only kinsfolk in the world.\nAfter reading
+    the letter, you started your five years long trip, looking for the Five Element
+    Seal.\nAnd, finally, you found it and entered its inner world of it...\n"
 --- !u!222 &1787690259
 CanvasRenderer:
   m_ObjectHideFlags: 0

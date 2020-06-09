@@ -1496,10 +1496,11 @@ MonoBehaviour:
   recipe: 020000000200000002000000
   level: 3
   knownResp: "Recipe: water \xD7 ?"
-  knownDes: 'A drop of water made by talismam. It''s full of energy after created
-    by Qi of water elements. '
-  unlockedDes: A drop of water made by talismam. It's full of energy after created
-    by Qi of water elements. The drop are able to make anything re-alive.
+  knownDes: "A drop of water created by pure Water elements. It has great vitality
+    even though it\u2019s only a small drop."
+  unlockedDes: "A drop of water created by pure Water elements. It has great vitality
+    even though it\u2019s only a small drop. It could be used to gift life but also
+    to extinguish anything related to the Fire element."
   element: 9
   locked: {fileID: 775786323}
   newDisp: {fileID: 73757997}
@@ -2096,7 +2097,8 @@ MonoBehaviour:
   level: 1
   knownResp: 
   knownDes: 
-  unlockedDes: The element of East and Spring. It represents everything that is growing.
+  unlockedDes: The element of East and Spring. It represents everything that is growing
+    and vivid. It's also one of the five basic elements.
   element: 1
   locked: {fileID: 309685545}
   newDisp: {fileID: 21082847}
@@ -3152,8 +3154,9 @@ MonoBehaviour:
   recipe: 0200000002000000
   level: 2
   knownResp: "Recipe: ? \xD7 ?"
-  knownDes: It's said that moon is the represent of the most Yin element.
-  unlockedDes: It's said that moon is the most Yin element.
+  knownDes: The most Yin elements evolved from one of the five basic elements.
+  unlockedDes: The most Yin elements evolved from Water elements. It says that Taiji
+    comes up by merging the Moon element with the Sun element.
   element: 8
   locked: {fileID: 1147113193}
   newDisp: {fileID: 559553344}
@@ -4659,9 +4662,12 @@ MonoBehaviour:
   recipe: 040000000600000006000000
   level: 3
   knownResp: "Recipe: ?, sun \xD7 ?"
-  knownDes: A entity of sun made by talismam. It's hot.
-  unlockedDes: A entity of sun made by talismam. It's hot and excatly functioning
-    as the real sun.
+  knownDes: A glowing sun created by Yangest elements. In order to maintain the greatest
+    amount of  Yang energy, it has to contain another stable element at the same
+    time.
+  unlockedDes: 'A glowing sun created by Yangest elements. In order to maintain the
+    greatest amount of Yang energy, it has to contain the Earth element at the same
+    time. The Prime Sun functions as the real sun, but much more powerful. '
   element: 9
   locked: {fileID: 1010732623}
   newDisp: {fileID: 967019057}
@@ -5154,10 +5160,9 @@ MonoBehaviour:
   recipe: 040000000400000002000000
   level: 3
   knownResp: "Recipe: ? \xD7 ?, earth"
-  knownDes: 'A piece of board made by talismam. It became concrete after combining
-    two kinds of Qi. '
-  unlockedDes: A piece of board made by talismam. It became concrete after combining
-    two kinds of Qi. The board are able to change its pattern according to the environment.
+  knownDes: A board created by mixing two kinds of elements.
+  unlockedDes: A board created by mixing two kinds of elements. The board could show
+    different patterns based on different environments for different uses.
   element: 9
   locked: {fileID: 1134089369}
   newDisp: {fileID: 427736303}
@@ -8316,17 +8321,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528236589}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.008749682, w: 0.99996173}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1290127960}
   m_Father: {fileID: 740944032}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.003}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -136}
+  m_AnchoredPosition: {x: 17.336168, y: -135.99586}
   m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528236591
@@ -9425,16 +9430,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588888625}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.000018163117, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.8181816, y: 1.0526317, z: 1}
   m_Children: []
   m_Father: {fileID: 740944032}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.002}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27, y: 253}
+  m_AnchoredPosition: {x: 27.00005, y: 253}
   m_SizeDelta: {x: 534.8, y: 354.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &588888627
@@ -10626,7 +10631,7 @@ MonoBehaviour:
   knownResp: 
   knownDes: 
   unlockedDes: The element of North and Winter. It represents everything that is
-    permeated, the Yin element of the five basic elements.
+    permeated and illusory. The Yin element of the five basic elements.
   element: 2
   locked: {fileID: 614648254}
   newDisp: {fileID: 1472300318}
@@ -12147,9 +12152,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740944031}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.55, y: 0.95, z: 1}
+  m_LocalScale: {x: 0.45, y: 0.92, z: 1}
   m_Children:
   - {fileID: 1867848008}
   - {fileID: 528236590}
@@ -12159,7 +12164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 16}
   m_SizeDelta: {x: 2000, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &740944033
@@ -12372,9 +12377,9 @@ MonoBehaviour:
   recipe: 0200000001000000
   level: 2
   knownResp: 'Recipe: ?, wood'
-  knownDes: It's said that wind comes from wood in winter.
-  unlockedDes: It's said that wind comes from wood in winter. It said that ancient
-    gods ride wind to travel around the world.
+  knownDes: It says that trees generate winds to the world in winter.
+  unlockedDes: The derivative element of Wood and Water elements. It says that ancient
+    immortals rode the winds to travel around the world.
   element: 7
   locked: {fileID: 419496072}
   newDisp: {fileID: 1693061530}
@@ -16839,8 +16844,9 @@ MonoBehaviour:
   recipe: 010000000100000001000000
   level: 3
   knownResp: "Recipe: wood \xD7 ?"
-  knownDes: 'A brunch of wood made by talismam. Yes, it can be used to setup fire. '
-  unlockedDes: A brunch of wood made by talismam. Yes, it can be used to setup fire.
+  knownDes: 'A bunch of sticks created by Wood elements. '
+  unlockedDes: A bunch of sticks created by Wood elements. The magical sticks are
+    able to absorb the essence of all kinds of rocks, as well as generate fire.
   element: 9
   locked: {fileID: 1479442633}
   newDisp: {fileID: 134729395}
@@ -17174,8 +17180,10 @@ MonoBehaviour:
   recipe: 0300000001000000
   level: 2
   knownResp: 'Recipe: ?, wood'
-  knownDes: It's said that thunder comes from wood in summer.
-  unlockedDes: It's said that thunder comes from wood in summer.
+  knownDes: It says that trees bring thunder and lightning to the world in summer.
+  unlockedDes: The derivative element of Wood and Fire elements. It stores a great
+    amount of pure energy since the damaging and growing characters from its parent
+    elements have been neutralized.
   element: 5
   locked: {fileID: 70762039}
   newDisp: {fileID: 2077373001}
@@ -17391,10 +17399,11 @@ MonoBehaviour:
   recipe: 020000000600000008000000
   level: 3
   knownResp: 'Recipe: ?, ?, ?'
-  knownDes: 'A compass of Taiji symbol made by talismam. Everyone can feel the overflow
-    of water elements from it. '
-  unlockedDes: A compass of Taiji symbol made by talismam. Everyone can feel the
-    overflow of water elements from it. It seems like a key of something.
+  knownDes: A key created by Yin and Yang energies. It says that the recipe of this
+    magic comes from patterns of an ancient folk.
+  unlockedDes: A key created by Yin and Yang energies. People say that the recipe
+    of this magic comes from patterns of an ancient folk. It could be used to open
+    any locks related to the Water element.
   element: 9
   locked: {fileID: 1217731390}
   newDisp: {fileID: 242761891}
@@ -18703,7 +18712,7 @@ MonoBehaviour:
   knownResp: 
   knownDes: 
   unlockedDes: The element of Middle and Long-Summer. It represents everything that
-    is syncretic, the only element belongs to humans.
+    is tough and syncretic. The only basic element belonging to humans.
   element: 4
   locked: {fileID: 143196121}
   newDisp: {fileID: 1004102208}
@@ -23456,7 +23465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1550972247}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -1.22, y: 0.5, z: -10.374}
+  m_LocalPosition: {x: -1.22, y: 12, z: -10.374}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children:
   - {fileID: 978706142}
@@ -24399,9 +24408,9 @@ MonoBehaviour:
   recipe: 030000000100000007000000
   level: 3
   knownResp: 'Recipe: fire, ?, ?'
-  knownDes: 'A gust of wind made by talismam. It has a direction for sure. '
-  unlockedDes: A gust of wind made by talismam. It comes from south-east.A gust of
-    wind made by talismam. It comes from south-east.
+  knownDes: 'A gust of magical wind comes from the south-east direction. '
+  unlockedDes: 'A gust of magical wind comes from the south-east direction. The wind
+    is so high that it could blow away anything, even other winds. '
   element: 9
   locked: {fileID: 1373985142}
   newDisp: {fileID: 842061633}
@@ -25628,11 +25637,10 @@ MonoBehaviour:
   recipe: 040000000400000004000000
   level: 3
   knownResp: "Recipe: earth \xD7 ?"
-  knownDes: A block of dirt made by talisman. It became dense after created by Qi
-    of earth elements.
-  unlockedDes: A block of dirt made by talisman. It became dense and concrete after
-    forming by Qi of earth elements. The dirt is able to absorb liquid and cultivate
-    lives.
+  knownDes: A block of soil created by pure Earth elements.
+  unlockedDes: A block of soil created by pure Earth elements. Its texture and hardness
+    are malleable, transforming into all materials related to the Earth element.
+    The magical soil is able to absorb liquid and cultivate lives as well.
   element: 9
   locked: {fileID: 220205693}
   newDisp: {fileID: 565152740}
@@ -26347,10 +26355,10 @@ MonoBehaviour:
   recipe: 040000000700000007000000
   level: 3
   knownResp: "Recipe: wind \xD7 ?, ?"
-  knownDes: Create a scroll that can bring you to everywhere. Only human could enter
-    it since the scroll has your own energy.
-  unlockedDes: Create a scroll that can bring you to everywhere. Only human could
-    enter it since the scroll has your own energy.
+  knownDes: A scroll gate created by Wind elements. Wizards normally mix the element
+    belonging to them to make sure only themselves could enter the gate.
+  unlockedDes: A scroll gate created by Wind elements. Wizards normally mix the element
+    belonging to them to make sure only themselves could enter the gate.
   element: 9
   locked: {fileID: 659408160}
   newDisp: {fileID: 1568764256}
@@ -26950,7 +26958,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 22}
+  m_AnchoredPosition: {x: 17, y: 22}
   m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1867848010
@@ -29374,8 +29382,9 @@ MonoBehaviour:
   recipe: 0300000003000000
   level: 2
   knownResp: "Recipe: ? \xD7 ?"
-  knownDes: It's said that sun is the represent of the most Yang element.
-  unlockedDes: It's said that sun is the most Yang element.
+  knownDes: The most Yang element evolved from one of the five basic elements.
+  unlockedDes: The most Yang element evolved from Fire elements. It says that Taiji
+    comes up by merging the Sun element with the Moon element.
   element: 6
   locked: {fileID: 1162015525}
   newDisp: {fileID: 709762840}
@@ -30172,7 +30181,7 @@ MonoBehaviour:
   knownResp: 
   knownDes: 
   unlockedDes: The element of South and Summer. It represents everything that is
-    destroyed, the Yang element of the five basic elements.
+    intensive and damaging. The Yang element of the five basic elements.
   element: 3
   locked: {fileID: 1753096585}
   newDisp: {fileID: 1736121646}
