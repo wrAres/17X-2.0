@@ -25,6 +25,7 @@ public class EarthGround : MonoBehaviour
 																			RigidbodyConstraints.FreezeRotationX|
 																			RigidbodyConstraints.FreezeRotationZ|
 																			RigidbodyConstraints.FreezeRotationY;
+			TipsDialog.PrintDialog("Self Introduction");
 		}
 		
 	}

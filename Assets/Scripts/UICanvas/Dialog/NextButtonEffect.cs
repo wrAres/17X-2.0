@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class NextButtonEffect : MonoBehaviour, IPointerDownHandler
 {
-    public bool isPaused => FindObjectOfType<Show>().lockGame;
+    public bool isPaused => SceneManager.GetActiveScene().name == "Tutorial" ? false : FindObjectOfType<Show>().lockGame;
     public bool effective = true;
     public void ChangeNextButton() {
         if(!isPaused) {

@@ -30,7 +30,6 @@ public class PickObject : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "EarthRoom")
         {
             Item.getGroundNames();
-            TipsDialog.PrintDialog("Self Introduction");
         }
         else if (SceneManager.GetActiveScene().name == "scene0"){
             GameObject.Find("EarthSoundManager").GetComponents<AudioSource>()[2].volume = 0.3f;
