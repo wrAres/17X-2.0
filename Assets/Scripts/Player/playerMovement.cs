@@ -104,9 +104,6 @@ public class playerMovement : MonoBehaviour
 		if(canAct == false){
 			isMoving = false;
 		}
-		 if (Input.GetKey("t")) {
-			 GetComponent<Rigidbody>().velocity = new Vector3(dx,dy,dz);
-		 }
 		//ani.SetFloat("Speed", GetComponent<Rigidbody>().velocity.z);
 		ani.SetFloat("status",status);
 		ani.SetBool("isMoving",isMoving);

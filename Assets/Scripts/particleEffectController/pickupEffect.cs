@@ -24,12 +24,6 @@ public class pickupEffect : MonoBehaviour
 		if(cast==true&&startTime+40 <=timer){
 			cast = false;
 		}
-        // if (Input.GetKey("l")){
-		// 	castAni();
-		// }
-		// if (Input.GetKey("t")){
-		// 	stopCasting();
-		// }
     }
 	public void castAni(Vector3 castPoint){
 		this.gameObject.transform.position = castPoint;

@@ -23,12 +23,6 @@ public class castEffect : MonoBehaviour
         /*if(start +140<=timer && cast ==true){
 			cast = false;
 		}*/
-		// if (Input.GetKey("p")){
-		// 	castAni();
-		// }
-		// if (Input.GetKey("t")){
-		// 	stopCasting();
-		// }
     }
 	
 	public void castAni(){

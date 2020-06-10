@@ -21,9 +21,6 @@ public class waterBoss : MonoBehaviour
     void Update()
     {
 
-		if(Input.GetKey("t")){
-			appear();
-		}
     }
 	
 	public void appear(){

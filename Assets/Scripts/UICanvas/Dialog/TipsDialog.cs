@@ -36,7 +36,7 @@ public class TipsDialog : MonoBehaviour
     public static bool getOption = false;
     public static bool pickOption = false;
     public static bool introAppear = false;
-    public static bool spaceEnabled;
+    // public static bool spaceEnabled;
 
     void Awake() {
         //print("start" + textFile.text);
@@ -136,7 +136,7 @@ public class TipsDialog : MonoBehaviour
         getOption = false;
         pickOption = false;
         introAppear = false;
-        spaceEnabled = true;
+        // spaceEnabled = true;
     }
 
      void Update()
@@ -155,7 +155,7 @@ public class TipsDialog : MonoBehaviour
                 printfull = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !isPaused && !pickOption && spaceEnabled)
+        if (Input.GetKeyDown(KeyCode.Space) && !isPaused && !pickOption)
         {
             nextButton.GetComponent<NextButtonEffect>().ChangeNextButton();
             // type full text if press space
@@ -200,8 +200,9 @@ public class TipsDialog : MonoBehaviour
 	     	//if (index == textlist2.Count && textlist2[textlist2.Count - 1].CompareTo("Qiang Yu: Interesting... Fighting against your fate, please =don’t let me down, human...") == 0){	
 	    // } else {
             // To make sure the conditions for activating multiple choice are met
-        	if (index < textlist2.Count - 1 && textlist2[index].CompareTo("Qiang Yu: And I have some questions for you:") == 0){
+        	if (index < textlist2.Count - 1 && textlist2[index].CompareTo("Qiang Yu: And I have some questions for you:=【Click on the choices】") == 0){
                 //Active option button
+                // spaceEnabled = false;
                 Option.SetActive(true);
                 nextButton.SetActive(false);
                 pickOption = true;
@@ -237,9 +238,6 @@ public class TipsDialog : MonoBehaviour
             while(textlist[j].CompareTo("---") != 0 ){
                 if (textlist[j].CompareTo("Ditto board copied") == 0) {
                     textlist2.Add("Ditto board copied " + ditto + "th mirror.");
-                } else if (textlist[j].CompareTo("Qiang Yu: And I have some questions for you:=【Click on the choices】") == 0){
-                    textlist2.Add(textlist[j]);
-                    spaceEnabled = false;
                 } else if (textlist[j].CompareTo("Qiang Yu: That is all I have for you:") == 0) {
                     textlist2.Add(textlist[j] + "            " + AIDataManager.DecideTrigram());
                 } else {
@@ -310,7 +308,7 @@ public class TipsDialog : MonoBehaviour
             pickOption = false;
             index = 2;
             print(OptionList[0] + OptionList[1] + OptionList[2] +OptionList[3] );
-            spaceEnabled = true;
+            // spaceEnabled = true;
             PrintDialog("Water Boss 2");
         //next option
         } else{
