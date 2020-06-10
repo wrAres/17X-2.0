@@ -40,7 +40,7 @@ public class TalismanManager : MonoBehaviour {
     public Animator talis;
 
     public bool TenSecTimer = false;
-    public float countdownTime = 10.0f;
+    public float countdownTime = 20.0f;
     public float timeLeft;
     public GameObject atlas;
 

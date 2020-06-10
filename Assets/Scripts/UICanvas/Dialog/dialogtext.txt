@@ -131,26 +131,26 @@ Water Boss
 Qiang Yu: I am Qiang Yu, the god of Water. 
 Qiang Yu: You have piqued my curiosity, a rare event.
 Qiang Yu: As such, I will give you a precious gift: =            -- A prediction of your future.
-Qiang Yu: And I have some questions for you:
+Qiang Yu: And I have some questions for you:=【Click on the choices】
 Who are you?
 Shan
 A Taoist Wizard
 The Master 
-Why should I tell you?
+I don't need to tell you
 Why would you enter the Water scroll first?
-The Master told me that Water was the first element generated in the world. 
-I feel like I have been here before.
-Water is the easiest element to control.
-I don’t know.
+The Master told me to do that
+I feel like I have been here before
+Water is the easiest element to control
+I don’t know
 Which two numbers have the strongest Yin and Yang energy? 
 6, 9
 1, 10
 5, 3
 9, 6
 What does Water represent?
-An illusory and reversed world.
-North, Winter, and everything that is permeated.
-The most Yin element among the five basic elements.
+An illusory and reversed world
+North, Winter, and everything that is permeated
+The most Yin element among the five basic elements
 Me
 ---
 Water Boss 2
@@ -281,3 +281,75 @@ Enter the platform
 Someone: Welcome to my world, human. I see you.
 …
 Who’s that? Is there anyone else in the Five Element Seal?
+---
+EastClouds
+The clouds are trying to hide something.
+---
+WestClouds
+The clouds are trying to hide something.
+---
+coral1
+A beautiful coral shining in vivid colors.
+---
+Separate Mirror
+It's definitely not a normal mirror. But that's me.
+---
+stargc
+It’s like I am standing above an evening sky, painted with stars. 
+---
+coral1 (1)
+A beautiful coral shining in vivid colors.
+---
+coral1 (2)
+A beautiful coral shining in vivid colors.
+---
+coral1 (3)
+A beautiful coral shining in vivid colors.
+---
+coral1 (4)
+A beautiful coral shining in vivid colors.
+---
+coral1 (5)
+A beautiful coral shining in vivid colors.
+---
+coral1 (6)
+A beautiful coral shining in vivid colors.
+---
+coral1 (7)
+A beautiful coral shining in vivid colors.
+---
+coral1 (8)
+A beautiful coral shining in vivid colors.
+---
+coral1 (9)
+A beautiful coral shining in vivid colors.
+---
+coral1 (10)
+A beautiful coral shining in vivid colors.
+---
+coral1 (11)
+A beautiful coral shining in vivid colors.
+---
+coral1 (12)
+A beautiful coral shining in vivid colors.
+---
+coral1 (13)
+A beautiful coral shining in vivid colors.
+---
+coral1 (14)
+A beautiful coral shining in vivid colors.
+---
+coral1 (15)
+A beautiful coral shining in vivid colors.
+---
+coral1 (16)
+A beautiful coral shining in vivid colors.
+---
+coral1 (17)
+A beautiful coral shining in vivid colors.
+---
+Left Reefs
+The reefs are too steep to climb.
+---
+Right Reefs
+The reefs are too steep to climb.
