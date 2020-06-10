@@ -25,10 +25,8 @@ public class doorController : MonoBehaviour
         if (Input.GetKey("o")) {
 			openDoor();
 		}
-		if(open==1&& openTime +250 > timer){
+		if(open==1){
 			transform.RotateAround(target, axis, 30 * Time.deltaTime);
-		}else if(openTime+250<timer){
-			player.GetComponent<playerMovement>().events = false;
 		}
     }
 	
@@ -37,5 +35,13 @@ public class doorController : MonoBehaviour
 		open = 1;
 		openTime = timer;
 		player.GetComponent<playerMovement>().events = true;
+	}
+	
+	void OnCollisionEnter(Collision collision){
+		Debug.Log("stop");
+		if(collision.gameObject.tag == "doorstop"){
+			open =0;
+			player.GetComponent<playerMovement>().events = false;
+		}
 	}
 }

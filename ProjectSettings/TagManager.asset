@@ -22,6 +22,7 @@ TagManager:
   - CrystalBase
   - Rock
   - Crystal
+  - doorstop
   layers:
   - Default
   - TransparentFX
