@@ -40,6 +40,7 @@ public class TileMovement : MonoBehaviour
         fullPicture.active = false;
         eightTiles = GameObject.Find("Full_8_Tiles");
         eightTiles.active = false;
+        GameObject.Find("MainUI").GetComponent<Show>().ToggleLock(false);
 		loadingScreen.GetComponent<Renderer>().enabled = false;
         movements = new Stack();
 

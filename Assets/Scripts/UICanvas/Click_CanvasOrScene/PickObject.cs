@@ -32,7 +32,7 @@ public class PickObject : MonoBehaviour
             Item.getGroundNames();
         }
         else if (SceneManager.GetActiveScene().name == "scene0"){
-            GameObject.Find("Main UI").GetComponent<Show>().ToggleLock(false);
+            GameObject.Find("MainUI").GetComponent<Show>().ToggleLock(false);
             GameObject.Find("EarthSoundManager").GetComponents<AudioSource>()[2].volume = 0.3f;
             Item.getGroundNames();
             EarthSoundManager.StopPlaySound();
@@ -53,7 +53,7 @@ public class PickObject : MonoBehaviour
             Item.fireLevel(DontDestroyVariables.fireLevel, GameObject.Find("法阵-scene2").transform.position);
         }
         else if (SceneManager.GetActiveScene().name == "scene3") {
-            GameObject.Find("Main UI").GetComponent<Show>().ToggleLock(false);
+            GameObject.Find("MainUI").GetComponent<Show>().ToggleLock(false);
             Item.getGroundNames();
             DontDestroyVariables.enterWaterRoom = true;
             Item.flowerpot = GameObject.Find("Flowerpot");
@@ -109,6 +109,8 @@ public class PickObject : MonoBehaviour
                         TipsDialog.PrintDialog("Flowerpot");
                     } else if (DontDestroyVariables.growState < 4) {
                         TipsDialog.PrintDialog("Flower Need Sun");
+                    } else {
+                        TipsDialog.PrintDialog("Water Seed Grow Order 3.1");
                     }
                 }
                 else if (TipsDialog.dialogList.Contains(clickObject.name)){

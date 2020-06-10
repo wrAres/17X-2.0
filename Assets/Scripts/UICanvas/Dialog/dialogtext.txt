@@ -44,7 +44,7 @@ I must save him!
 ...
 Oh, wait! I almost forgot something important. 
 In such an unknown space, I need to review my safety incantations=        -- Tao-Book and Talismans.
-They should be in my gourd, which I fashioned into a pack for all my =things.
+They should be in my gourd, which I fashioned into a pack for all =my things.
 【Click and drag the 'Tao-Book' and the 'Talisman' out】
 ---
 EarthPortal
@@ -219,36 +219,35 @@ My Gourd is full. I can’t carry anything else.
 【Right-click to eliminate the spell】
 ---
 Fire Boss
-Fei: Look at this, a human. The last time I saw a human was five =years ago! You are here for the Fire element, aren’t you? I will give you the power as =a gift for feeding me more flames. 
-Let me tell you one last thing. The ‘snake-bird-man’ controls winds =blowing from the north-west direction, you should pay attention to that. Blow him back! 
+Fei: Look at this, a human. The last time I saw a human was five =years ago! You are here for the Fire element, aren’t you? I will =give you the power as a gift for feeding me more flames. 
+Let me tell you one last thing. The ‘snake-bird-man’ controls winds =blowing from the north-west direction, you should pay attention to that. =Blow him back! 
 …
 Five years ago… That must be The Master...
 ---
 Walking Puzzle Hint 1
 The remainder of some sentence shows up on the star:
-“Hi there, brave latecomer, I have studied the long walking maze =for a while, the spiritual power in the maze led me to the secret of the =mirrored world.
-I believe the power to unlock the mirrored status is to eventually =grow a plant somewhere. A complex plant that needs a lot of =effort to take care of.
-Hopefully, this message can help you, and I’ll try to record =some other information deeper in the maze.”
+“Hi there, brave latecomer, I have studied the long walking maze =for a while, the spiritual power in the maze led me to the secret =of the mirrored world.
+I believe the power to unlock the mirrored status is to eventually =grow a plant somewhere. A complex plant that needs a lot of effort =to take care of.
+Hopefully, this message can help you, and I’ll try to record some =other information deeper in the maze.”
 ---
 Walking Puzzle Hint 2
 The remainder of some sentence shows up on the star:
-“You have probably seen my first message, the secret behind =this mirrored situation is far more serious than I imagined.
-I think there is a great power controlling the maze and this =environment. Based on my interpretation of energy flow in the maze, 
-I feel the plant has a special seed =somewhere,
+“You have probably seen my first message, the secret behind this =mirrored situation is far more serious than I imagined.
+I think there is a great power controlling the maze and this =environment. Based on my interpretation of energy flow in the maze, =I feel the plant has a special seed somewhere,
 and planting the seed with dirt will be a great attempt to solve this =strange situation, and oh, don’t forget to water the seed to see =what happens.”
 ---
 Walking Puzzle Hint 3
 The remainder of several sentences appear on the star:
-“I have carved a message about how to start the growing of the 
-plant somewhere in the maze, don’t know if you’ve seen it.
-But, anyway, you will see the strong wood energy of that plant after =it grows. In the sense of wood energy, I think the energy will take you on a path to the fire energy in the previous environment =if you remember.
+“I have carved a message about how to start the growing of the =plant somewhere in the maze, don’t know if you’ve seen it.
+But, anyway, you will see the strong wood energy of that plant after =it grows. In the sense of wood energy, I think the energy will take 
+you on a path to the fire energy in the previous environment if you =remember.
 Well, I’ll be brief here, because I am going to try to get back to =the previous environment according to the wood energy trajectory.”
 ---
 Walking Puzzle Hint 4
 The remainder of several sentences appear up on the star:
-“Shit, this could be the last message I leave here, this is =the far end of the maze, it shows the existence of fire energy =after the wood energy 
-is needed to make the most Yang sun element to =complete the growing process.
-But unfortunately, I failed once in teleporting back to the previous =environment because I used the wrong components to =create the teleport magic.
+“Shit, this could be the last message I leave here, this is the far =end of the maze, it shows the existence of fire energy after the 
+wood energy is needed to make the most Yang sun element to =complete the growing process.
+But unfortunately, I failed once in teleporting back to the previous =environment because I used the wrong components to create the =teleport magic.
 Good luck on your adventure, mine is likely over.”
 ---
 rockInWaterRoom
@@ -260,7 +259,7 @@ The sentence just ends here...
 ---
 Ditto Mirror
 Ditto board copied
-Someone: I didn’t imagine that, human. The reverse =magic has been quelled. 
+Someone: I didn’t imagine that, human. The reverse magic has been quelled. 
 I will be waiting for you behind this iron gate.
 ---
 Ditto No Mirror
@@ -281,4 +280,4 @@ The vitality of the rock is absorbed by sticks. It has broken apart.
 Enter the platform
 Someone: Welcome to my world, human. I see you.
 …
-Who’s that? Is there anyone else in the Five Element Seal? 
+Who’s that? Is there anyone else in the Five Element Seal?

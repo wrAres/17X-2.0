@@ -15,4 +15,5 @@ public class DontDestroyVariables : MonoBehaviour
 	public static bool windExist = true;
 	public static int baseDisappearCount = 0;
 	public static int fireLevel = 3;
+	public static bool fromGame = false;
 }

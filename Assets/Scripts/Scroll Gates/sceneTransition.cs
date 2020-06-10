@@ -34,6 +34,7 @@ public class sceneTransition : MonoBehaviour
 		if (this.gameObject.name.CompareTo("法阵-scene3") == 0 && DontDestroyVariables.enterWaterRoom) {
 			// print("scene 3 directly");
 			//myText.text = "Loading";
+			EarthSoundManager.StopPlaySound();
 			scene = "scene3";
 		}
 

@@ -243,7 +243,7 @@ public class TipsDialog : MonoBehaviour
     }
 
     public static bool CallScene(){
-        if ( ToSceneName.CompareTo("Water Boss") == 0) {
+        if ( ToSceneName.CompareTo("Water Boss 2") == 0) {
             return true;
         } else {
             return false; 
