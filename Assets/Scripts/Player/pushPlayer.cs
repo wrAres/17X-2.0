@@ -25,7 +25,7 @@ public class pushPlayer : MonoBehaviour
     void Update()
     {
         //Debug.Log("CurrentlyPush: " + currentlyPush);
-        if (ItemtoPush != null && Input.GetKeyDown(KeyCode.E) && avaliblePush)
+        if (ItemtoPush != null && Input.GetKeyDown(KeyCode.F) && avaliblePush)
         {
             currentlyPush = true;
             ItemtoPush.transform.parent = transform;

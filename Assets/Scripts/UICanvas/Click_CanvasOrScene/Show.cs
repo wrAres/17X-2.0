@@ -306,6 +306,7 @@ public class Show : MonoBehaviour
 
     public bool lockGame;
     public void ToggleLock(bool isLock) {
+        Debug.Log("lock " + isLock);
         ToggleIcons(!isLock);
         if(isLock){
             GameObject.Find("MainUI").GetComponent<TalismanManager>().CloseDisplay();

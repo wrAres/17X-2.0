@@ -22,7 +22,7 @@ public class PushHud : MonoBehaviour
 
     public void OpenMessagePanel(string item)
     {
-        PushMessage.text = "Hold E to move " + item;
+        PushMessage.text = "Hold F to move the rock";
         MessagePanel.SetActive(true);
     }
 

@@ -11,6 +11,7 @@ public class sceneTransition : MonoBehaviour
 	public bool openScroll;
 	public Text myText;
 	public GameObject loadingScreen;
+	public bool loading = false;
 	void Start() {
 		openScroll = false;
 		enterable = false;
@@ -39,11 +40,18 @@ public class sceneTransition : MonoBehaviour
 		}
 
 		if (other.CompareTag("Player") && enterable) {
-			// Debug.Log("trasferring");
+			Debug.Log("trasferring");
 			//myText.text = "Loading";
 			GameObject.Find("MainUI").GetComponent<Show>().ToggleLock(true);
+			loading = true;
+		}
+	}
+
+	void Update() {
+		if (loading) {
 			loadingScreen.GetComponent<Renderer>().enabled = true;
 			SceneManager.LoadScene(scene);
+			loading = false;
 		}
 	}
 }
