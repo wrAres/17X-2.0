@@ -11,8 +11,8 @@ public class EndDisappear : MonoBehaviour
         if (DontDestroyVariables.fromGame) {
             GameObject.Find("Finish 1").GetComponent<Image>().enabled = false;
             GameObject.Find("Finish 2").GetComponent<Image>().enabled = false;
-            GameObject.Find("Prologue").GetComponent<Image>().enabled = false;
-            GameObject.Find("Ends").GetComponent<Image>().enabled = false;
+            GameObject.Find("Prologue").GetComponent<Text>().enabled = false;
+            GameObject.Find("Ends").GetComponent<Text>().enabled = false;
 
             this.gameObject.GetComponent<AudioSource>().volume = 0.8f;
         }
