@@ -40,10 +40,11 @@ public class sceneTransition : MonoBehaviour
 		}
 
 		if (other.CompareTag("Player") && enterable) {
-			Debug.Log("trasferring");
+			// Debug.Log("trasferring");
 			//myText.text = "Loading";
 			GameObject.Find("MainUI").GetComponent<Show>().ToggleLock(true);
 			loading = true;
+			
 		}
 	}
 

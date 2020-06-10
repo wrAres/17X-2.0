@@ -50,6 +50,12 @@ public class RockOnBase : MonoBehaviour
                 // Move rock/crystal to base position
                 Vector3 newpos = new Vector3(this.transform.position.x, push.ItemtoPush.transform.position.y, this.transform.position.z);
                 push.ItemtoPush.transform.position = newpos;
+
+                Vector3 distance = GameObject.Find("Main Character").transform.position - newpos;
+                if (distance.magnitude <= 0.5) {
+                    GameObject.Find("Main Character").transform.position = newpos - new Vector3(0, 0, 0.5f);
+                }
+                
                 push.ItemtoPush = null;
 
                 push.closeHUD();

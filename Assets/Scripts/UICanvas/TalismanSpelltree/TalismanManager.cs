@@ -110,9 +110,13 @@ public class TalismanManager : MonoBehaviour {
             
         }
         else if (!dialogShown && DontDestroyVariables.canOpenTalisman) {
-            CloseDisplay();
-            UISoundScript.OpenTalisman();
+            if(CloseDisplay()) UISoundScript.OpenTalisman();
         }
+    }
+    
+    bool AnimatorIsPlaying(Animator animator){
+        return animator.GetCurrentAnimatorStateInfo(0).length >
+            animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
     }
 
     // Display the list of currently usable elements
@@ -198,16 +202,20 @@ public class TalismanManager : MonoBehaviour {
      
 
     // Close the entire talisman display
-    public void CloseDisplay() {
-        display.SetActive(false);
-        dispManager.ToggleTalis(false);
-        dispManager.ToggleIcons(true);
-        Backpack.backpack.GetComponent<Backpack>().Show(true);
-        ResetCraft();
-        curTime = 0;
+    public bool CloseDisplay() {
+        if(!AnimatorIsPlaying(talis)){
+            display.SetActive(false);
+            dispManager.ToggleTalis(false);
+            dispManager.ToggleIcons(true);
+            Backpack.backpack.GetComponent<Backpack>().Show(true);
+            ResetCraft();
+            curTime = 0;
 
-        TenSecTimer = false;
-        timeLeft = countdownTime;
+            TenSecTimer = false;
+            timeLeft = countdownTime;
+            return true;
+        }
+        return false;
     }
 
     // Add an element to the craft log

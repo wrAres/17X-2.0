@@ -83,7 +83,7 @@ public class TileMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
 			GameObject.Find("MainUI").GetComponent<Show>().ToggleLock(true);
-            loadingScreen.GetComponent<Renderer>().enabled = true;
+            // loadingScreen.GetComponent<Renderer>().enabled = true;
             SceneManager.LoadScene("scene3");
         }
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
@@ -319,7 +319,7 @@ public class TileMovement : MonoBehaviour
             // Debug.Log("Time: " + totalTime);
             AIDataManager.movingPuzzleTime = totalTime;
 			GameObject.Find("MainUI").GetComponent<Show>().ToggleLock(true);
-            loadingScreen.GetComponent<Renderer>().enabled = true;
+            // loadingScreen.GetComponent<Renderer>().enabled = true;
             SceneManager.LoadScene("scene3");
         }
     }

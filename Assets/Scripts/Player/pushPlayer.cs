@@ -25,13 +25,13 @@ public class pushPlayer : MonoBehaviour
     void Update()
     {
         //Debug.Log("CurrentlyPush: " + currentlyPush);
-        if (ItemtoPush != null && Input.GetKeyDown(KeyCode.F) && avaliblePush)
+        if (ItemtoPush != null && Input.GetKeyDown(KeyCode.LeftShift) && avaliblePush)
         {
             currentlyPush = true;
             ItemtoPush.transform.parent = transform;
             //Debug.Log("Made " + ItemtoPush.name + " Child of me");
         }
-        if (Input.GetKeyUp(KeyCode.F) && ItemtoPush != null)
+        if (Input.GetKeyUp(KeyCode.LeftShift) && ItemtoPush != null)
         {
             currentlyPush = false;
             ItemtoPush.transform.parent = tempTransform;
