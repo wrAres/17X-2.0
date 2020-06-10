@@ -59,6 +59,11 @@ public class FlyingSpell : MonoBehaviour {
     }
 
     public void FlyTowardsIcon(Sprite s, bool isSpell, string spell) {
+        if(itemBuffer != "") {
+            backpack.AddItem(itemBuffer);
+            itemBuffer = "";
+        }
+        
         spellIcon.transform.localPosition = origin;
         //Vector3 center = FindObjectOfType<Camera>().ScreenToWorldPoint(new Vector3(Screen.width/2,Screen.height/2,0));
         if(GameObject.FindGameObjectWithTag("Player"))
