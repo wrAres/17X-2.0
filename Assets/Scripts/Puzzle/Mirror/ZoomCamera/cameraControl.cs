@@ -29,7 +29,7 @@ public class cameraControl : MonoBehaviour
 		
 		
         if (Input.GetKeyDown("z")&&active) {
-			zoomed.GetComponent<Rigidbody>().transform.position = new Vector3(-3,3,-9);
+			zoomed.GetComponent<Rigidbody>().transform.position = new Vector3(-2.41f,2.73f,-7.87f);
 			def.enabled = !def.enabled;
 			zoomed.enabled = !zoomed.enabled;
 			if(zoomed.enabled){

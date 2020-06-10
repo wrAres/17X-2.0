@@ -7,7 +7,7 @@ public class mirrorCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Rigidbody>().transform.position = new Vector3(-3,3,-9);
+        GetComponent<Rigidbody>().transform.position = new Vector3(-2.41f,2.73f,-7.87f);
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class mirrorCamera : MonoBehaviour
 			GetComponent<Rigidbody>().transform.position = new Vector3(-9,2,-7);
 		}
 		if(Input.GetKey("down")){
-			GetComponent<Rigidbody>().transform.position = new Vector3(-3,3,-9);
+			GetComponent<Rigidbody>().transform.position = new Vector3(-2.41f,2.73f,-7.87f);
 		}
     }
 }
