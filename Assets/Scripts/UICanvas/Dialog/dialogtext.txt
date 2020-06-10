@@ -212,7 +212,7 @@ Some characters are hard to recognize now.
 Rock4
 The remainder of a sentence is curved on the hard rock:
 "Please! someone please rescue me from this f  kin  place... I =don’t wan  to die here."
-Some characters are hard to recognize now. I am sure this guy was =definitely disappointed at that moment.
+Some characters are hard to recognize now. I am sure this guy =was definitely disappointed at that moment.
 ---
 Backpack Full
 My Gourd is full. I can’t carry anything else.
