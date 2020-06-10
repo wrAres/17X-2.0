@@ -125,7 +125,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
                 // print("drag item index: " + position);
 
                 canPlaceItem = Item.canPlace(itemOnGround.name, dragOnObject.name);
-                // print(itemOnGround.name + ", on to: " + dragOnObject.name);
+                print(itemOnGround.name + ", on to: " + dragOnObject.name);
                 if (canPlaceItem) {
                     if (itemOnGround.name.CompareTo("The Atlas") == 0)
                         transform.localScale = itemOriginalScale / itemScale;

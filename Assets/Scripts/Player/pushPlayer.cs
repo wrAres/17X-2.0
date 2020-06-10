@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pushPlayer : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class pushPlayer : MonoBehaviour
     public PushHud Hud;
 
     public string[] pushItems;
+    private bool isWaterScene =>
+        SceneManager.GetActiveScene().name == "scene3";
 
     // Start is called before the first frame update
     void Start()
@@ -70,7 +73,7 @@ public class pushPlayer : MonoBehaviour
 
     void OnCollisionExit(Collision collisionInfo)
     {
-        if (!currentlyPush)
+        if (!currentlyPush && !isWaterScene)
         {
             closeHUD();
             avaliblePush = false;
