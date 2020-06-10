@@ -31,7 +31,7 @@ public class pushPlayer : MonoBehaviour
             ItemtoPush.transform.parent = transform;
             //Debug.Log("Made " + ItemtoPush.name + " Child of me");
         }
-        if (Input.GetKeyUp(KeyCode.E) && ItemtoPush != null)
+        if (Input.GetKeyUp(KeyCode.F) && ItemtoPush != null)
         {
             currentlyPush = false;
             ItemtoPush.transform.parent = tempTransform;

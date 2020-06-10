@@ -103,6 +103,15 @@ public class TipsDialog : MonoBehaviour
         dialog.SetActive(false);
         dialog.SetActive(false);
         Option.SetActive(false);
+
+        nextOnClick = false;
+        ditto = 0;
+        isTyping = false;
+        printfull = false;
+        OptionList = new List<string>();
+        getOption = false;
+        pickOption = false;
+        introAppear = false;
     }
 
      void Update()

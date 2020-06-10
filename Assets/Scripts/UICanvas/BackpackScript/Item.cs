@@ -16,6 +16,9 @@ public class Item : MonoBehaviour
     private static bool taoBookOpened = false;
 
     void Start() {
+        spell = false;
+        taoBookOpened = false;
+        
         s = GameObject.Find("MainUI").GetComponent<SpellTreeManager>();
         // s = FindObjectsOfType<SpellTreeManager>()[0];;
         itemOnPuzzle = new Hashtable();

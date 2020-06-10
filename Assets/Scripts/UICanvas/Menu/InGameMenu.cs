@@ -17,6 +17,8 @@ public class InGameMenu : MonoBehaviour
       GameMenu = GameObject.Find("InGameMenu");
       Object = GameObject.Find("MainUI");
       GameMenu.SetActive(false);
+
+	  GameIsPaused = false;
     }
 
 	void Update()
@@ -60,6 +62,7 @@ public class InGameMenu : MonoBehaviour
 			DontDestroyVariables.windExist = true;
 			DontDestroyVariables.baseDisappearCount = 0;
 			DontDestroyVariables.fireLevel = 3;
+			DontDestroyVariables.fromGame = false;
 	      	SceneManager.LoadScene("MainMenu");
 	    }
 	    public static void Option(){

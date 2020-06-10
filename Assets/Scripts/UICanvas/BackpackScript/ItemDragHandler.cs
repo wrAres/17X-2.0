@@ -19,6 +19,11 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
 
     public bool dialogShown => FindObjectOfType<TipsDialog>() != null;
 
+    void Awake() {
+        canPlaceItem = true;
+        previousPosition = new Vector3(0,0,0);
+        originalSize = new Vector2(0f, 0f);
+    }
     public void OnPointerEnter(PointerEventData eventData) {
         // dispManager.GetComponent<TalismanManager>().DispTextBox(true, element, eventData.position);
         textbox.SetActive(true);

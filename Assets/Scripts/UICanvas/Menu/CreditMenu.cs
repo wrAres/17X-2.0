@@ -15,6 +15,7 @@ public class CreditMenu : MonoBehaviour
     {
     	InCreditMenu = GameObject.Find("InCreditMenu");
         InCreditMenu.SetActive(false);
+		GameIsPaused = false;
     }
 
     // Update is called once per frame
