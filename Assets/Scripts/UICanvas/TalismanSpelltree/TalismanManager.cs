@@ -88,6 +88,8 @@ public class TalismanManager : MonoBehaviour {
             GameObject.Find("MainUI").GetComponent<Show>().brightTalisman = false;
         }
         if (!display.activeSelf && !dialogShown && DontDestroyVariables.canOpenTalisman) {
+            if (SceneManager.GetActiveScene().name != "SampleScene")
+                GameObject.Find("playerParticleEffect").GetComponent<castEffect>().castAni();
             if (firstAccess) {
                 firstAccess = false;
                 display.transform.SetSiblingIndex(2);
@@ -110,7 +112,11 @@ public class TalismanManager : MonoBehaviour {
             
         }
         else if (!dialogShown && DontDestroyVariables.canOpenTalisman) {
-            if(CloseDisplay()) UISoundScript.OpenTalisman();
+            if (SceneManager.GetActiveScene().name != "SampleScene")
+                GameObject.Find("playerParticleEffect").GetComponent<castEffect>().stopCasting();
+            if(CloseDisplay()) {
+                UISoundScript.OpenTalisman();
+            }
         }
     }
     

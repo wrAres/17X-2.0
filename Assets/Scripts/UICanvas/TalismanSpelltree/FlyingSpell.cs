@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FlyingSpell : MonoBehaviour {
 
@@ -20,6 +21,7 @@ public class FlyingSpell : MonoBehaviour {
         spellIcon.GetComponent<Image>().enabled = false;
         origin = spellIcon.transform.localPosition;
         timer = 2;
+        itemBuffer = "";
     }
 
     // Update is called once per frame
@@ -59,7 +61,10 @@ public class FlyingSpell : MonoBehaviour {
     }
 
     public void FlyTowardsIcon(Sprite s, bool isSpell, string spell) {
+        if (SceneManager.GetActiveScene().name != "SampleScene")
+            GameObject.Find("playerParticleEffect").GetComponent<castEffect>().stopCasting();
         if(itemBuffer != "") {
+            // print("item buffer " + itemBuffer + ", is spell " + isSpell + ", spell" + spell);
             backpack.AddItem(itemBuffer);
             itemBuffer = "";
         }

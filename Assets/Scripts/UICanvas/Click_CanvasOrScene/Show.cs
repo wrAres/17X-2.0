@@ -291,7 +291,6 @@ public class Show : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "EarthRoom" && !earthUnlocked) {
             earthUnlocked = true;
-            GetComponent<SpellTreeManager>().UnlockElement(TalisDrag.Elements.EARTH);
         }
     }
 

@@ -55,7 +55,7 @@ public class Backpack : MonoBehaviour
         // }
 
         GameObject imageObj = new GameObject(name); //Create the GameObject
-        
+        // print("img" + imageObj + ", length " + length);
         imageObjects[length] = imageObj;
         length++;
 

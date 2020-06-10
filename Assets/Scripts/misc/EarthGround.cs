@@ -27,6 +27,7 @@ public class EarthGround : MonoBehaviour
 																			RigidbodyConstraints.FreezeRotationY;
 			TipsDialog.PrintDialog("Self Introduction");
 			TipsDialog.introAppear = true;
+			GameObject.Find("MainUI").GetComponent<SpellTreeManager>().UnlockElement(TalisDrag.Elements.EARTH);
 		}
 		
 	}

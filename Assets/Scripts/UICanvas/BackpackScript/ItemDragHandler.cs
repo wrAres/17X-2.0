@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler, IPointerEnterHandler, IPointerExitHandler {   
     public static bool canPlaceItem = true;
@@ -94,7 +95,8 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
     public void OnBeginDrag(PointerEventData eventData) {
         // print("begin drag: "+itemOnGround.name);
         if(!dialogShown) holdItem = true;
-        GameObject.Find("playerParticleEffect").GetComponent<castEffect>().castAni();
+        if (SceneManager.GetActiveScene().name != "SampleScene")
+            GameObject.Find("playerParticleEffect").GetComponent<castEffect>().castAni();
     }
 
     // Start is called before the first frame update
@@ -131,7 +133,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
                         GameObject.Find("Backpack_Roll").GetComponent<Backpack>().RemoveItem(itemOnGround, position);
                     
                     Item.puzzleEffect(itemOnGround.name, dragOnObject.name, hitInfo.point);
-                    if (itemOnGround.name.CompareTo("Tao-Book") != 0 && itemOnGround.name.CompareTo("Talisman") != 0 && itemOnGround.name.CompareTo("The Atlas") != 0)
+                    if (itemOnGround.name.CompareTo("Tao-Book") != 0 && itemOnGround.name.CompareTo("Talisman") != 0 && itemOnGround.name.CompareTo("The Atlas") != 0 && SceneManager.GetActiveScene().name != "SampleScene")
                         GameObject.Find("pickupEffect").GetComponent<pickupEffect>().castAni(hitInfo.point);
                 } else {
                     UISoundScript.PlayWrongSpell();
@@ -139,7 +141,8 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler, IBe
                     itemOnGround.GetComponent<RectTransform>().sizeDelta = originalSize;
                     // print(itemOnGround.name + " 's size become: " + originalSize);
                 }
-                GameObject.Find("playerParticleEffect").GetComponent<castEffect>().stopCasting();
+                if (SceneManager.GetActiveScene().name != "SampleScene")
+                    GameObject.Find("playerParticleEffect").GetComponent<castEffect>().stopCasting();
             }
             else {
                 print("physics error");

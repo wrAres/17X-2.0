@@ -53,7 +53,9 @@ public class RockOnBase : MonoBehaviour
 
                 Vector3 distance = GameObject.Find("Main Character").transform.position - newpos;
                 if (distance.magnitude <= 0.5) {
-                    GameObject.Find("Main Character").transform.position = newpos - new Vector3(0, 0, 0.5f);
+                    Vector3 changePosition = newpos - new Vector3(0, 0, 1f);
+                    changePosition.y = -1.456869f;
+                    GameObject.Find("Main Character").transform.position = changePosition;
                 }
                 
                 push.ItemtoPush = null;
