@@ -20,18 +20,14 @@ public class waterBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		timer++;
-		if(triggered && timer-60>temp){
-			BigPool.GetComponent<WaterPool>().changeColor();
-			SmallPool.GetComponent<WaterPool>().changeColor();
-			triggered = false;
-		}
+
 		if(Input.GetKey("t")){
 			appear();
 		}
     }
 	
 	public void appear(){
+		this.transform.position = new Vector3(-2.56f,1.87f,11.69f);
 		triggered = true;
 		temp = timer;
 		GetComponent<Renderer>().enabled = true;

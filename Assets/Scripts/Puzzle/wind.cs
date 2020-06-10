@@ -24,7 +24,7 @@ public class wind : MonoBehaviour
 		 }
         if(player.GetComponent<Rigidbody>().position.z > 0){
 			//player.GetComponent<Rigidbody>().velocity = new Vector3(3,0,0);
-			rb.AddForce(5,0,0);
+			rb.AddForce(5,0,-2);
 		}
     }
 	
