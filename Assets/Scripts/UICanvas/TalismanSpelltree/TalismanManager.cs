@@ -112,8 +112,6 @@ public class TalismanManager : MonoBehaviour {
             
         }
         else if (!dialogShown && DontDestroyVariables.canOpenTalisman) {
-            if (SceneManager.GetActiveScene().name != "SampleScene")
-                GameObject.Find("playerParticleEffect").GetComponent<castEffect>().stopCasting();
             if(CloseDisplay()) {
                 UISoundScript.OpenTalisman();
             }
@@ -210,6 +208,8 @@ public class TalismanManager : MonoBehaviour {
     // Close the entire talisman display
     public bool CloseDisplay() {
         if(!AnimatorIsPlaying(talis)){
+            if (SceneManager.GetActiveScene().name != "SampleScene")
+                GameObject.Find("playerParticleEffect").GetComponent<castEffect>().stopCasting();
             display.SetActive(false);
             dispManager.ToggleTalis(false);
             dispManager.ToggleIcons(true);
