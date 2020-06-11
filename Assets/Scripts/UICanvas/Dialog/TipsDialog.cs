@@ -77,6 +77,7 @@ public class TipsDialog : MonoBehaviour
         dialogList.Add("Water Boss Door");
         dialogList.Add("6_water-white");
         dialogList.Add("1_water-dark");
+        dialogList.Add("Flowerpot cld");
         dialogList.Add("wind");
         dialogList.Add("wind (1)");
         dialogList.Add("wind (2)");

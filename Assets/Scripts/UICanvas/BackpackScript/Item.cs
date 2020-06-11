@@ -23,11 +23,11 @@ public class Item : MonoBehaviour
         // s = FindObjectsOfType<SpellTreeManager>()[0];;
         itemOnPuzzle = new Hashtable();
         itemOnPuzzle.Add("Earth Key", "EarthPortal");
-        itemOnPuzzle.Add("Changable Soil", "River,Flowerpot,FutureRock,EarthPortal");
-        itemOnPuzzle.Add("Water Seed", "Flowerpot");
+        itemOnPuzzle.Add("Changable Soil", "River,Flowerpot,Flowerpot cld,FutureRock,EarthPortal");
+        itemOnPuzzle.Add("Water Seed", "Flowerpot,Flowerpot cld");
         itemOnPuzzle.Add("Golden Wood", "法阵-scene2,Fire Seed,Left Reefs,Right Reefs,rockInWaterRoom");
-        itemOnPuzzle.Add("Heavenly Water", "Flowerpot,River Collider,Fire Seed,法阵-scene2");
-        itemOnPuzzle.Add("Prime Sun", "Flowerpot");
+        itemOnPuzzle.Add("Heavenly Water", "Flowerpot,Flowerpot cld,River Collider,Fire Seed,法阵-scene2");
+        itemOnPuzzle.Add("Prime Sun", "Flowerpot,Flowerpot cld");
         itemOnPuzzle.Add("Taiji Key", "Water Boss Door");
         itemOnPuzzle.Add("Ditto Board", "Background,Flower 1,Flower 2,Flower 3,Flower 4,Flower 5,Flower 6");
         itemOnPuzzle.Add("Yin-Yang Portal", "atlasmap2");
@@ -63,7 +63,7 @@ public class Item : MonoBehaviour
         availablePutList = available.Split(',');
         for (int i = 0; i < availablePutList.Length; i++) {
             if (targetObj.CompareTo(availablePutList[i]) == 0){
-                if (targetObj.CompareTo("Flowerpot") == 0) {
+                if (targetObj.CompareTo("Flowerpot") == 0 || targetObj.CompareTo("Flowerpot cld") == 0) {
                     if (item.CompareTo("Changable Soil") == 0) {
                         if (DontDestroyVariables.growState == 0) {
                             return true;
@@ -198,7 +198,7 @@ public class Item : MonoBehaviour
                 AIDataManager.wrongItemPlacementCount++;
             }
         } 
-        else if (item.CompareTo("Changable Soil") == 0 && position.CompareTo("Flowerpot") == 0){
+        else if (item.CompareTo("Changable Soil") == 0 && (position.CompareTo("Flowerpot") == 0 || position.CompareTo("Flowerpot cld") == 0)){
             flowerpot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Flowerpot/Flowerpot with dirt");
 
             AIDataManager.UpdateStandardSpellCount("Changable Soil", 1);
@@ -232,11 +232,11 @@ public class Item : MonoBehaviour
             }
 
         }
-        else if (item.CompareTo("Water Seed") == 0 && position.CompareTo("Flowerpot") == 0){
+        else if (item.CompareTo("Water Seed") == 0 && (position.CompareTo("Flowerpot") == 0 || position.CompareTo("Flowerpot cld") == 0)){
             DontDestroyVariables.growState = 2;
             flowerpot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Flowerpot/Flowerpot with seed");
         } 
-        else if (item.CompareTo("Heavenly Water") == 0 && position.CompareTo("Flowerpot") == 0){
+        else if (item.CompareTo("Heavenly Water") == 0 && (position.CompareTo("Flowerpot") == 0 || position.CompareTo("Flowerpot cld") == 0)){
             DontDestroyVariables.growState = 3;
             flowerpot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Flowerpot/Flowerpot with bud");
 
@@ -266,7 +266,7 @@ public class Item : MonoBehaviour
         else if (item.CompareTo("Golden Wood") == 0 && position.CompareTo("Fire Seed") == 0){
             fireLevel(3, hitPoint);
         }
-        else if (item.CompareTo("Prime Sun") == 0 && position.CompareTo("Flowerpot") == 0){
+        else if (item.CompareTo("Prime Sun") == 0 && (position.CompareTo("Flowerpot") == 0 || position.CompareTo("Flowerpot cld") == 0)){
             DontDestroyVariables.growState = 4;
             flowerpot.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("ChangeAsset/Flowerpot/Flowerpot with Flower and Sun");
             

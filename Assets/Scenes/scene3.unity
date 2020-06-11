@@ -21000,8 +21000,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.26485935, y: 0.12272379, z: 0.13241401}
-  m_Center: {x: 0.003868252, y: -0.123581834, z: -0.019584289}
+  m_Size: {x: 0.26485935, y: 0.2701351, z: 0.08806251}
+  m_Center: {x: 0.003868252, y: -0.19944932, z: -0.007992863}
 --- !u!1 &1597408079
 GameObject:
   m_ObjectHideFlags: 0
@@ -24042,8 +24042,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1852849850}
   - component: {fileID: 1852849849}
+  - component: {fileID: 1852849852}
+  - component: {fileID: 1852849851}
   m_Layer: 0
-  m_Name: Flowerpot Cld
+  m_Name: Flowerpot cld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24060,8 +24062,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.1151075, y: 0.46354723, z: 0.31183425}
-  m_Center: {x: 0.06997013, y: -0.02207804, z: -0.13896911}
+  m_Size: {x: 4.188175, y: 0.46354723, z: 0.37345517}
+  m_Center: {x: 0.03266859, y: 0.7624678, z: -1.0281262}
 --- !u!4 &1852849850
 Transform:
   m_ObjectHideFlags: 0
@@ -24076,6 +24078,32 @@ Transform:
   m_Father: {fileID: 1582128113}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1852849851
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852849848}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7009219, y: 0.23236781, z: 0.9109955}
+  m_Center: {x: 0.045243204, y: 0.38012943, z: 0.004186273}
+--- !u!65 &1852849852
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852849848}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.9101517, y: 0.24903473, z: 0.72562695}
+  m_Center: {x: 0.05114329, y: 1.0890064, z: -1.0000696}
 --- !u!1 &1854849060
 GameObject:
   m_ObjectHideFlags: 0
